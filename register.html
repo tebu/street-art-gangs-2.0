@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>Register</title>
+  
+  
+  <!-- Stylesheets -->
+
+  <link rel="stylesheet" href="font/sag/style.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <!-- jQuery and jQuery Mobile -->
+
+  <script src="https://d10ajoocuyu32n.cloudfront.net/jquery-1.9.1.min.js"></script>
+
+
+  <!-- Custom scripts -->
+  <script src="js/scripts.js"></script>
+   
+</head>
+
+<body id="register">
+
+
+<!-- Home -->
+<div data-role="page" id="register">
+
+    <div data-theme="a" data-role="header" data-position="fixed">
+
+      <div class="onerow">
+        <div class="col12">
+        <h1>Sign Up</h1>
+        </div>
+      </div>
+
+    </div><!-- header -->
+
+    <div data-role="content">
+
+      <div class="onerow">
+
+        <div class="col12 last">
+            <div id="form-main">
+
+                <div id="form-div">
+                      <form class="form" id="form1">
+                        
+                        <p class="name">
+                          <input name="name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Alias" id="name" />
+                        </p>
+
+                        <p class="password">
+                          <input name="password" type="password" class="length[0,100]] feedback-input" placeholder="Enter password" id="password" />
+                        </p>
+
+                        <p class="password">
+                          <input name="password" type="password" class="length[0,100]] feedback-input" placeholder="Retype password" id="password" />
+                        </p>
+                        
+                        <p class="email">
+                          <input name="email" type="text" class="validate[required,custom[email]] feedback-input" id="email" placeholder="Email" />
+                        </p>
+
+                         <select id="gang" name="country" class="feedback-input">
+                          <option>Choose Your Gang</option>
+                          <option>Kannuttajat [Reds]</option>
+                          <option>Taistelutoverit [Greens]</option>
+                          <option>Kadunvaltaajat [Blues]</option>
+                        </select>
+                    
+                        
+                        
+                        <div class="submit">
+                          <input type="submit" value="I'm Ready" id="button-blue"/>
+                          <div class="ease"></div>
+                        </div>
+                      </form>
+                </div>
+
+            </div>
+          </div>        
+      </div><!-- row -->
+
+
+     
+    </div><!-- content -->
+
+    <div id="footer">
+
+
+</div><!-- /footer -->
+
+</div><!-- page -->
+
+
+<script src="js/jquery.fittext.js"></script>
+
+
+</body>
+</html>
