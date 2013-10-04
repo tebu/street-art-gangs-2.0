@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="139"
+   height="215"
+   id="svg2">
+  <defs
+     id="defs4">
+    <font
+       horiz-origin-x="0"
+       horiz-origin-y="0"
+       horiz-adv-x="1024"
+       vert-origin-x="45"
+       vert-origin-y="90"
+       vert-adv-y="90"
+       id="font2987" />
+    <filter
+       color-interpolation-filters="sRGB"
+       id="filter5388">
+      <feGaussianBlur
+         stdDeviation="0.93"
+         id="feGaussianBlur5390" />
+    </filter>
+    <filter
+       color-interpolation-filters="sRGB"
+       id="filter3773">
+      <feGaussianBlur
+         id="feGaussianBlur3775"
+         stdDeviation="1.0053607" />
+    </filter>
+  </defs>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="matrix(1.0231272,0,0,1.0036805,-1.2061039,-842.02224)"
+     id="layer1" />
+  <path
+     d="m 23.913871,128.36122 c -5.956926,5.47752 -16.9618352,4.64453 -5.88046,31.75448 -5.76639,-18.95525 -0.731588,-26.20921 5.88046,-31.75448 z M 76.44598,14.280298 C 67.220016,14.741886 54.011737,16.200661 53.708202,25.649187 52.86846,26.367394 69.249433,12.421417 76.44598,14.280298 z m -30.838612,6.55205 C 49.300548,10.154885 69.068886,6.1593907 80.575216,5.167891 94.711682,3.9497529 73.55032,61.683857 93.278845,57.983617 107.89552,55.242143 122.41609,10.112766 131.38973,24.373609 c 2.98499,4.743736 4.28028,20.665452 0,28.808578 -5.29256,10.068957 -25.55683,5.894623 -30.49004,16.137677 -18.440717,38.289346 51.28475,98.378836 24.87468,124.677666 -12.37345,12.32135 -43.166629,25.3327 -45.199154,10.07609 C 77.959367,184.43843 101.65544,62.065091 81.778508,86.005248 59.465942,112.87893 37.268371,173.53901 29.760704,178.01935 13.670968,187.62123 -6.2732685,138.92853 12.375392,125.28338 35.604072,108.28704 70.706186,101.63931 76.163147,75.535694 80.495568,54.811364 40.722466,34.955229 45.607368,20.832348 z"
+     id="path2989"
+     style="fill:#00ffff;fill-opacity:1;stroke:#fa0000;stroke-width:3.4000001;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.94117647;stroke-dasharray:none;filter:url(#filter3773)" />
+</svg>

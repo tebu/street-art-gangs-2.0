@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="139"
+   height="215"
+   id="svg2">
+  <defs
+     id="defs4">
+    <font
+       horiz-origin-x="0"
+       horiz-origin-y="0"
+       horiz-adv-x="1024"
+       vert-origin-x="45"
+       vert-origin-y="90"
+       vert-adv-y="90"
+       id="font2987" />
+    <filter
+       color-interpolation-filters="sRGB"
+       id="filter5191">
+      <feGaussianBlur
+         id="feGaussianBlur5193"
+         stdDeviation="1.005" />
+    </filter>
+    <filter
+       x="-0.16"
+       y="-0.036923077"
+       width="1.3200001"
+       height="1.0738462"
+       color-interpolation-filters="sRGB"
+       id="filter3780">
+      <feGaussianBlur
+         id="feGaussianBlur3782"
+         stdDeviation="1" />
+    </filter>
+  </defs>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="matrix(1.0695026,0,0,1,-18.623491,-835.37697)"
+     id="layer1">
+    <path
+       d="m 24.595655,862.01276 c -8.616058,-13.15593 -0.115757,-30.10284 7.388957,-23.8678 10.822161,12.51589 2.334994,35.12996 -7.388957,23.8678 z m -6.960771,-34.73521 c -10.6236178,62.13286 5.123231,147.4957 16.546728,204.34945 1.658021,8.1177 -12.982813,-8.0882 -15.422955,-0.3478 -2.265957,7.1878 3.217875,19.129 8.027795,20.2889 10.810195,2.607 38.215164,-22.7062 66.246577,-12.1012 10.524241,3.9816 9.599431,-52.51456 -8.18299,-58.69461 -13.989467,-4.86186 -24.580648,46.47891 -37.392292,35.70921 -22.999341,-19.3335 -18.875531,-93.12939 -11.33395,-130.05951 6.099289,-29.86741 17.150742,-49.47617 8.175243,-65.83633 -6.146971,-11.20444 -20.69929,-5.11999 -26.664156,6.69189 z"
+       transform="matrix(1.3834532,0,0,0.86506927,4.9205596,135.56851)"
+       id="path2994"
+       style="fill:#00ffff;fill-opacity:1;stroke:#fa0000;stroke-width:3.40031028;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.94117647;stroke-dasharray:none;filter:url(#filter3780)" />
+  </g>
+</svg>
