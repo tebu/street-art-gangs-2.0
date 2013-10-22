@@ -1,34 +1,22 @@
+*,
+*:after,
+*::before {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+}
+
+
 @font-face {
 	font-family: 'icomoon';
-	src:url('fonts/icomoon.eot');
-	src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
-		url('fonts/icomoon.woff') format('woff'),
-		url('fonts/icomoon.ttf') format('truetype'),
-		url('fonts/icomoon.svg#icomoon') format('svg');
+	src:url('../font/sag/fonts/icomoon.eot');
+	src:url('../font/sag/fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('../font/sag/fonts/icomoon.woff') format('woff'),
+		url('../font/sag/fonts/icomoon.ttf') format('truetype'),
+		url('../font/sag/fonts/icomoon.svg#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
-
-/* Use the following CSS code if you want to use data attributes for inserting your icons */
-/*[data-icon]:before {
-	font-family: 'icomoon';
-	content: attr(data-icon);
-	speak: none;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}*/
-
-/* Use the following CSS code if you want to have a class per icon */
-/*
-Instead of a list of all class selectors,
-you can use the generic selector below, but it's slower:
-[class*="icon-"] {
-*/
-
 
 .icon-office, .icon-newspaper, .icon-paint-format, .icon-map, .icon-truck, .icon-arrow-left-big, .icon-arrow-right-big, .icon-basket, .icon-gift, .icon-dom-waters-speedo, .icon-users, .icon-graduation, .icon-sun, .icon-remove, .icon-arrow-right-small, .icon-arrow-left-small, .icon-dot, .icon-moon, .icon-pencil, .icon-message-bubble, .icon-money, .icon-mail, .icon-question, .icon-info, .icon-map-marker, .icon-write, .icon-map-marker-2, .icon-focus, .icon-talk, .icon-wand, .icon-config, .icon-eye, .icon-trophy, .icon-food, .icon-rocket, .icon-speech-bubble, .icon-speech-bubble-2, .icon-check, .icon-remove-x, .icon-dude, .icon-dudes, .icon-hourglass, .icon-square, .icon-circle-dot, .icon-spray, .icon-star, .icon-home, .icon-locked, .icon-unlocked, .icon-surprised, .icon-happy, .icon-map-marker-3, .icon-chris-spittles-geo-location, .icon-list, .icon-add-to-list, .icon-layout, .icon-list-2, .icon-history, .icon-blocked, .icon-ccw, .icon-arrow-up, .icon-arrow-down, .icon-wand-2, .icon-cog, .icon-cart, .icon-directions, .icon-map-2, .icon-trophy-2, .icon-tag, .icon-ticket, .icon-barcode, .icon-ticket-2 {
 	font-family: 'icomoon';
@@ -261,35 +249,16 @@ you can use the generic selector below, but it's slower:
 
 @font-face {
 	font-family: 'icomoon2';
-	src:url('fonts/icomoon2.eot');
-	src:url('fonts/icomoon2.eot?#iefix') format('embedded-opentype'),
-		url('fonts/icomoon2.woff') format('woff'),
-		url('fonts/icomoon2.ttf') format('truetype'),
-		url('fonts/icomoon.svg#icomoon2') format('svg');
+	src:url('../font/sag/fonts/icomoon2.eot');
+	src:url('../font/sag/fonts/icomoon2.eot?#iefix') format('embedded-opentype'),
+		url('../font/sag/fonts/icomoon2.woff') format('woff'),
+		url('../font/sag/fonts/icomoon2.ttf') format('truetype'),
+		url('../font/sag/fonts/icomoon.svg#icomoon2') format('svg');
 	font-weight: normal;
 	font-style: normal;
 
 }
 
-/* Use the following CSS code if you want to use data attributes for inserting your icons */
-/*[data-icon]:before {
-	font-family: 'icomoon2';
-	content: attr(data-icon);
-	speak: none;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}*/
-
-/* Use the following CSS code if you want to have a class per icon */
-/*
-Instead of a list of all class selectors,
-you can use the generic selector below, but it's slower:
-[class*="icon-"] {
-*/
 .icon-food, .icon-droplet {
 	font-family: 'icomoon2';
 	speak: none;
@@ -307,4 +276,5 @@ you can use the generic selector below, but it's slower:
 .icon-droplet:before {
 	content: "\e001";
 }
+
 

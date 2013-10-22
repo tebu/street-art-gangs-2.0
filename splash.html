@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>Splash</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+  <link rel="stylesheet" type="text/css" href="css/icons.css" />
+  <link rel="stylesheet" type="text/css" href="css/universal.css" />
+  <link rel="stylesheet" type="text/css" href="css/splash.css" />
+
+</head>
+
+<body class="splash">
+
+<div class="rotate">
+
+    <div class="logo">
+        <p><span class="street">street</span> <span class="art">Art</span> <span class="gangs">gangs</span></p>
+        <p id="slogan">tagging the city</p>
+    </div>
+
+    </div>
+
+    <nav id="cl-effect-19" class="cl-effect-19">
+      <a href="signup.html">Signup <span class="icon-arrow-right-small"></span></a>
+      <a href="login.html">Login <span class="icon-arrow-right-small"></span></a>
+    </nav>
+
+    <!-- Scripts -->
+
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+    <script src="js/jquery.fittext.js"></script>
+    <script>
+
+      // Fittext.js
+      $(document).ready(function(){
+        $(".logo").fitText(1);
+      });
+
+      //Animate.css
+      $(document).ready(function(){
+        $('.logo').addClass('animated bounceInDown');
+        $('nav a').addClass('animated bounceInUp');
+      });
+
+    </script>
+
+</body>
+</html>

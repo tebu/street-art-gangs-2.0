@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>Register</title>
+  
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="font/sag/style.css">
+  <link rel="stylesheet" href="css/animate.css">
+   <link rel="stylesheet" type="text/css" href="css/universal.css" />
+  <link rel="stylesheet" href="css/signup.css">
+   
+</head>
+
+<body id="signup">
+
+    <div class="header">
+        <h1>Sign Up</h1>
+    </div>
+
+    <div class="content">
+
+       <div class="form">
+          <input type="text" class="input" placeholder="Name">
+          <input type="text" class="input" placeholder="Email">
+          <input type="password" class="input" placeholder="Password">
+          <input type="password" class="input" placeholder="Password again">
+          <select id="gang" name="gang" class="feedback-input">
+            <option>Choose Your Gang</option>
+            <option id="reds">Purple</option>
+            <option id="greens">Green</option>
+            <option id="blues">Blue</option>
+          </select>
+      </div>
+
+      <div class="btn btntxt">I'm ready <span class="icon-arrow-right-small"></span></div>
+
+    </div>
+
+    <!-- Scripts -->
+
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+    <script>
+
+      //Animate.css
+      $(document).ready(function(){
+        $('h1').addClass('animated pulse');
+        $('input, select').addClass('animated bounceInUp');
+        $('.btn').addClass('animated bounceInUp');
+      });
+
+    </script>
+
+</body>
+</html>

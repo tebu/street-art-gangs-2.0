@@ -52,7 +52,7 @@
   margin:0 auto;
   /* Do not edit below this line */
   clear: both;
-  overflow: auto;
+  overflow: visible; /*I changed this from auto to visible*/
   position: relative;
 }
 
