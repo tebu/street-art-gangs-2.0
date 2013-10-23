@@ -1,41 +1,47 @@
 /* Register screen **************************/
 
 body#signup {
+
+    text-shadow: none;
+    color:#fff;
+    margin: 0;
+    font-family: "Lato";
+}
+
+body#signup.neutral{
     background-image: -webkit-gradient(linear, right bottom, left top, color-stop(0%, #6d085b), color-stop(50%, #4e59df), color-stop(100%, #4feea6));
     background-image: -webkit-linear-gradient(right bottom, #6d085b 0%, #4e59df 50%, #4feea6 100%);
     background-image: -moz-linear-gradient(right bottom, #6d085b 0%, #4e59df 50%, #4feea6 100%);
     background-image: -ms-linear-gradient(right bottom, #6d085b 0%, #4e59df 50%, #4feea6 100%);
     background-image: -o-linear-gradient(right bottom, #6d085b 0%, #4e59df 50%, #4feea6 100%);
     background-image: linear-gradient(to left top, #6d085b 0%, #4e59df 50%, #4feea6 100%);
-
+}
     /*Purple background*/
-/*  background-image: -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 116, color-stop(25%, #b80068), color-stop(100%, #990157));
+body#signup.purple{
+    background-image: -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 116, color-stop(25%, #b80068), color-stop(100%, #990157));
     background-image: -webkit-radial-gradient(center bottom, farthest-side circle, #b80068 25%, #990157 100%);
     background-image: -moz-radial-gradient(center bottom, farthest-side circle, #b80068 25%, #990157 100%);
     background-image: -ms-radial-gradient(center bottom, farthest-side circle, #b80068 25%, #990157 100%);
     background-image: -o-radial-gradient(center bottom, farthest-side circle, #b80068 25%, #990157 100%);
     background-image: radial-gradient(farthest-side circle at center bottom, #b80068 25%, #990157 100%);*/
-
+}
     /*Blue background*/
-/*  background-image: -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 116, color-stop(25%, #5BECFF), color-stop(100%, #4DBBFF));
+body#signup.blue{
+    background-image: -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 116, color-stop(25%, #5BECFF), color-stop(100%, #4DBBFF));
     background-image: -webkit-radial-gradient(center bottom, farthest-side circle, #5BECFF 25%, #4DBBFF 100%);
     background-image: -moz-radial-gradient(center bottom, farthest-side circle, #5BECFF 25%, #4DBBFF 100%);
     background-image: -ms-radial-gradient(center bottom, farthest-side circle, #5BECFF 25%, #4DBBFF 100%);
     background-image: -o-radial-gradient(center bottom, farthest-side circle, #5BECFF 25%, #4DBBFF 100%);
-    background-image: radial-gradient(farthest-side circle at center bottom, #5BECFF 25%, #4DBBFF 100%);*/
-
+    background-image: radial-gradient(farthest-side circle at center bottom, #5BECFF 25%, #4DBBFF 100%);
+}
     /*Green background*/
-/*  background-image: -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 116, color-stop(15%, #ABFFE2), color-stop(100%, #54CC9A));
+body#signup.green{
+    background-image: -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 116, color-stop(15%, #ABFFE2), color-stop(100%, #54CC9A));
     background-image: -webkit-radial-gradient(center bottom, farthest-side circle, #ABFFE2 25%, #54CC9A 100%);
     background-image: -moz-radial-gradient(center bottom, farthest-side circle, #ABFFE2 25%, #54CC9A 100%);
     background-image: -ms-radial-gradient(center bottom, farthest-side circle, #ABFFE2 25%, #54CC9A 100%);
     background-image: -o-radial-gradient(center bottom, farthest-side circle, #ABFFE2 25%, #54CC9A 100%);
     background-image: radial-gradient(circle farthest-side at center bottom , #ABFFE2 25%, #54CC9A 100%);
-*/
-    text-shadow: none;
-    color:#fff;
-    margin: 0;
-    font-family: "Lato";
 }
 
 body#signup .header {
