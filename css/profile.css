@@ -1,0 +1,141 @@
+/*Styles for profile screen*/
+
+
+body.purple-page {
+    background: #990157;
+}
+
+body.blue-page {
+    background: #4DBBFF;
+}
+
+body.green-page {
+    background: #54CC9A;
+}
+
+h1 {
+    line-height: 0;
+    text-align: center;
+    position: relative;
+    font-weight: 700;
+}
+
+h2 {
+    text-transform: uppercase;
+    line-height: 0;
+    letter-spacing: .2em;
+    text-align: center;
+}
+
+h3 {
+    position: relative;
+    top: -10px;
+    text-align: center;
+}
+
+h4.mood-title {
+    text-align: center;
+}
+
+h3.mood {
+    top: -35px;
+}
+
+h3.player-full-name {
+    top: 0;
+    min-height: 10px
+}
+
+h4 {
+    position: relative;
+    top: -15px;
+}
+
+.container > header {
+    padding: 120px 50px 10px;
+}
+
+.avatar-frame, .avatar-frame img {
+    border-radius: 50%;
+    height: auto;
+    width: 100%;
+    position: relative;
+    z-index: 0;
+    top: -10px;
+    margin: 0 auto;
+    max-width: 100px;
+}
+
+.avatar-frame:after {
+    content: "";
+    display: block;
+    background: rgba(123, 0, 41, .6);
+    position: absolute;
+    top: -11px;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+/*    right: 0*/;
+}
+
+ul.profile-list {
+    clear: both;
+    list-style: none;
+    width: 100%;
+    background: #fff;
+    padding: 0;
+    text-transform: uppercase;
+    position: relative;
+    font-size: .8em
+}
+
+ul.profile-list li {
+    border-bottom: 1px solid #eee;
+    border-right: 1px solid #eee;
+    text-decoration: none;
+    color: #b80068;
+    padding: 15px;
+    width: 50%;
+    height: auto;
+    float: left;
+    background:#fff;
+}
+
+body.blue-page ul.profile-list li {
+    color: #1d9eee;
+}
+
+body.green-page ul.profile-list li {
+    color: #40cd92;
+}
+
+ul.profile-list li.no-border {
+    border-right: none;
+}
+
+.description {
+    display: block;
+    font-size: .8em
+}
+
+span.profile-icon {
+    padding: 0 20px 0 0;
+    margin-left: 15px
+}
+
+span.profile-icon.points, span.profile-icon.erased {
+    margin-left: 12px
+}
+
+span.profile-icon.busts {
+    margin-left: 10px
+}
+
+span.info {
+    padding: 0 20px 0 20px;
+    font-size: 1.4em;
+    position: relative;
+    top: 6px;
+    font-weight: 400;
+}

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>Spray - Purple</title>
+   
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="font/sag/style.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/universal.css" />
+  <link rel="stylesheet" href="css/spraying.css">
+   
+</head>
+
+<body class="purple-page"><!-- .purple-page = purple gang , .blue-page = blue gang, .green-page = green gang -->
+      <div id="loading">
+          <div class="bar-percentage" data-percentage="101"></div>
+      </div>
+      <div class="load-wrap">
+        <div class="loading"></div>
+        <div class="showup">
+          <div class="disappear">
+            <img id="can-spraying" src="img/can-purple.png"> <!-- if purple-page this is visible -->
+            <!-- <img id="can-spraying" src="img/can-blue.png"> -->  <!-- if blue-page this is visible -->
+            <!-- <img id="can-spraying" src="img/can-green.png"> --> <!-- if green-page this is visible -->
+          </div>
+        </div>
+      </div>
+
+
+      <div id="footer">
+        <div id="spray-text">
+          <p id="prepare">Preparing...</p>
+          <p id="progress">Okey, here we go!</p>
+          <p id="finished">Cool, it's done!</p>
+        </div>
+      </div>
+
+      <div class="points-earned">
+        <p>Gongrats<br><span>1000</span><br> points earned!</p>
+      </div>
+
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+    <script src="js/ion.sound.min.js"></script>
+
+    <script>
+    
+      // Pervcentage loading
+      $('.bar-percentage[data-percentage]').each(function () {
+        var progress = $(this);
+        var percentage = Math.ceil($(this).attr('data-percentage'));
+        $({countNum: 0}).delay(10000).animate({countNum: percentage}, {
+          duration: 8000,
+          easing:'linear',
+          step: function() {
+            // What todo on every count
+            var pct = Math.floor(this.countNum) + '%';
+            progress.text(pct) && progress.siblings().children().css('width',pct);
+          }
+        });
+      });
+
+      // Showing and hiding text elements
+      jQuery(document).ready(function() {
+        // jQuery("p#prepare").fadeIn(1000);
+        jQuery("p#prepare").delay(2000).fadeOut(1000);
+        // jQuery("p#progress").delay(5000).fadeIn(1000);
+        jQuery("p#progress").delay(8000).fadeOut(1000); 
+        // jQuery("p#finished").delay(19000).fadeIn(500);
+         jQuery("p#finished").delay(20000).fadeOut(300);
+         jQuery("#loading").delay(22000).fadeOut(300);
+
+        // Redirect to home screen after finished spraying
+        setTimeout(function() {
+        window.location.href = "home.html";
+      }, 27000);
+    });
+
+    // Animate.css
+    jQuery(document).ready(function(){
+            jQuery('p#prepare, p#progress, p#finished').addClass('animated bounceInDown');
+            jQuery('.load-wrap').addClass('animated wobble');
+            jQuery('#can-spraying').addClass('animated pulse');
+            jQuery('.showup').addClass('animated bounceInDown');
+            jQuery('.disappear').addClass('animated bounceOutDown');
+            jQuery('.overlay').addClass('animated fadeIn');
+            jQuery('.points-earned').addClass('animated bounceInDown');
+    });
+
+    // Sound effects
+    $.ionSound({
+        sounds: [ 
+            "athmo", // set needed sounds names
+            "shake",
+            "spray",
+            "swoosh",
+            "bum",
+            "counter"
+        ],
+        path: "sounds/", // set path to sounds
+        multiPlay: true, // playing only 1 sound at once
+        volume: "0.3" // not so loud please
+    });
+              
+
+    setTimeout(function (){
+
+         $.ionSound.play("athmo");
+
+     }, 5000); // delay this sound
+
+    setTimeout(function (){
+
+        $.ionSound.play("swoosh");
+
+     }, 1500); // delay this sound
+
+    setTimeout(function (){
+      
+         $.ionSound.play("shake");
+
+     }, 2000); // delay this sound
+
+    setTimeout(function (){
+
+         $.ionSound.play("spray");
+
+     }, 8800); // delay this sound
+
+    setTimeout(function (){
+
+         $.ionSound.play("bum");
+          $.ionSound.play("counter");
+
+     }, 22500); // delay this sound
+
+    // Points animation
+    jQuery({someValue: 0}).delay(23000).animate({someValue:1260}, {
+        duration: 1000,
+        easing:'swing',
+        step: function() { 
+           $('.points-earned span').text (Math.ceil(this.someValue) + "");
+        }
+      });
+
+  </script> 
+
+</body>
+</html>

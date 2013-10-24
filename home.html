@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>Home - Purple</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+  <link rel="stylesheet" type="text/css" href="css/icons.css" />
+  <link rel="stylesheet" type="text/css" href="css/universal.css" />
+  <link rel="stylesheet" type="text/css" href="css/home.css" />
+  <link rel="stylesheet" href="css/liquid-slider.css">
+
+   <!-- Modernizr.js needed for the Menu -->
+  <script src="js/modernizr.custom.js"></script>
+</head>
+
+<body class="purple-page"><!-- .purple-page = purple gang , .blue-page = blue gang, .green-page = green gang -->
+
+    <div class="container">
+
+      <ul id="gn-menu" class="gn-menu-main">
+        <li class="gn-trigger">
+          <a class="gn-icon gn-icon-menu icon-list-2"><span class="hide">Menu</span></a>
+          <nav class="gn-menu-wrapper">
+            <div class="gn-scroller">
+              <ul class="gn-menu">
+                <li><a class="gn-icon" href="profile.html"><span class="nav-icon icon-dude"></span>Profile</a></li>
+                <li><a class="gn-icon" href="gang.html"><span class="nav-icon icon-dudes"></span>Gang</a></li>
+                <li><a class="gn-icon" href="leaderboard.html"><span class="nav-icon icon-trophy"></span>Leaderboard</a></li>
+                <li><a class="gn-icon" href="spray.html"><span class="nav-icon icon-config"></span>Tweaks</a></li>                
+              </ul>
+            </div><!-- /gn-scroller -->
+          </nav>
+        </li>
+        <li class="messages"><a href="chat.html">4<span class="icon-message-bubble"></a></li>
+      </ul><!-- /gn-menu -->
+
+
+          <div class="liquid-slider"  id="main-slider">
+
+            <div class="venue">
+              <p class="owner"><span class="blue-owns">Blue</span> gang owns</p>              
+              <div class="category icon-sun"></div>
+              <h3 class="title">great outdoors</h2>
+              <h1 class="location">Toripolliisi</h2>
+            </div>
+
+            <div class="venue">
+              <p class="owner"><span class="purple-owns">Purple</span> gang owns</p>
+              <div class="category icon-moon"></div>
+              <h3 class="title">nightlife spots</h2>
+              <h1 class="location">Tivoli</h2>
+            </div> 
+
+            <div class="owner">
+              <p class="owner"><span class="green-owns">Green</span> gang owns</p>
+              <div class="category icon-ticket"></div>
+              <h3 class="title">arts & entertainment</h2>
+              <h1 class="location">Teatteri</h2>
+            </div>
+
+            <div class="venue">
+              <p class="owner"><span class="purple-owns">Purple</span> gang owns</p>
+              <div class="category icon-graduation"></div>
+              <h3 class="title">education</h2>
+              <h1 class="location">University</h2>
+            </div>
+
+            <div class="venue">
+              <p class="owner"><span class="blue-owns">Blue</span> gang owns</p>
+              <div class="category icon-food"></div>
+              <h3 class="title">food</h2>
+              <h1 class="location">Amarillo</h2>
+            </div>
+
+            <div class="venue">
+              <p class="owner"><span class="blue-owns">Blue</span> gang owns</p> 
+              <div class="category icon-office"></div>
+              <h3 class="title">other places</h2>
+              <h1 class="location">City Hall</h2>
+            </div>
+            
+            <div class="venue">
+              <p class="owner"><span class="purple-owns">Purple</span> gang owns</p>
+              <div class="category icon-cart"></div>
+              <h3 class="title">shops & services</h2>
+              <h1 class="location">Stockmann</h2>
+            </div>
+
+            <div class="venue">
+              <p class="owner"><span class="green-owns">Green</span> gang owns</p>
+              <div class="category icon-rocket"></div>
+              <h3 class="title">travel & transport</h2>
+              <h1 class="location">Bus station</h2>
+            </div>
+
+          </div><!-- /liquid-slider -->
+
+          <div class="arrows">
+            <a id="to-left" class="icon-arrow-left-big" href="#left" data-liquidslider-ref="main-slider"></a>
+            <a id="to-right" class="icon-arrow-right-big" href="#right" data-liquidslider-ref="main-slider"></a>
+          </div><!-- /arrows -->
+
+          <div id="start-to-spray">
+            <a class="spray icon-droplet" href="spray-purple.html"></a> 
+          </div> 
+
+
+
+    </div><!-- /container -->
+
+  <!-- Scripts -->
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+    <script src="js/classie_menu.js"></script>
+    <script src="js/gnmenu.js"></script>
+
+    <script src="js/jquery.fittext.js"></script>
+    <script src="js/jquery.touchSwipe.min.js"></script>
+    <script src="js/jquery.liquid-slider-custom.min.js"></script>
+    <script>
+        //Menu
+        new gnMenu( document.getElementById( 'gn-menu' ) );
+
+        // Venue slider
+         $('#main-slider').liquidSlider({
+            hashLinking:false,
+            crossLinks:true,
+            includeTitle:true,
+            mobileNavigation:false,
+            firstPanelToLoad:1,
+            autoHeight:false,
+            minHeight: 0,
+            swipe: true,
+            hideArrowsWhenMobile: true,
+            dynamicArrows: false,
+            slideEaseFunction:'easeInOutCubic',
+            slideEaseDuration:400,
+            heightEaseDuration:800
+            // animateIn:"slideInLeft",
+            // animateOut:"slideOutLeft"
+          });
+
+         //Fittext.js
+        jQuery(document).ready(function(){
+          jQuery("h1.location").fitText(1.3);
+          jQuery(".category").fitText(.6);
+          jQuery("h3.title").fitText(1.5);
+        });
+
+        //Animate.css
+        jQuery(document).ready(function(){
+          jQuery('#start-to-spray').addClass('animated pulse');
+        });
+    </script>
+
+</body>
+</html>

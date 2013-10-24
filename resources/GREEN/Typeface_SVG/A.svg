@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="139"
+   height="215"
+   id="svg2">
+  <defs
+     id="defs4">
+    <font
+       horiz-origin-x="0"
+       horiz-origin-y="0"
+       horiz-adv-x="1024"
+       vert-origin-x="45"
+       vert-origin-y="90"
+       vert-adv-y="90"
+       id="font2987" />
+    <filter
+       x="-0.25"
+       y="-0.25"
+       width="1.5"
+       height="1.5"
+       color-interpolation-filters="sRGB"
+       id="filter3847">
+      <feGaussianBlur
+         result="result1"
+         stdDeviation="5"
+         id="feGaussianBlur3849" />
+      <feTurbulence
+         result="result2"
+         baseFrequency="0.1"
+         type="fractalNoise"
+         seed="0"
+         numOctaves="1"
+         id="feTurbulence3851" />
+      <feDisplacementMap
+         in2="result2"
+         scale="5"
+         xChannelSelector="R"
+         yChannelSelector="G"
+         in="result1"
+         result="result3"
+         id="feDisplacementMap3853" />
+      <feComposite
+         in2="result3"
+         operator="atop"
+         id="feComposite3855" />
+    </filter>
+    <filter
+       color-interpolation-filters="sRGB"
+       id="filter3877">
+      <feGaussianBlur
+         id="feGaussianBlur3879"
+         stdDeviation="0.98198918" />
+    </filter>
+    <filter
+       x="-0.25"
+       y="-0.25"
+       width="1.5"
+       height="1.5"
+       color-interpolation-filters="sRGB"
+       id="filter3888">
+      <feGaussianBlur
+         result="result1"
+         stdDeviation="5"
+         id="feGaussianBlur3890" />
+      <feTurbulence
+         result="result2"
+         baseFrequency="0.1"
+         type="fractalNoise"
+         seed="0"
+         numOctaves="1"
+         id="feTurbulence3892" />
+      <feDisplacementMap
+         in2="result2"
+         scale="5"
+         xChannelSelector="R"
+         yChannelSelector="G"
+         in="result1"
+         result="result3"
+         id="feDisplacementMap3894" />
+      <feComposite
+         in2="result3"
+         operator="atop"
+         id="feComposite3896" />
+    </filter>
+    <filter
+       color-interpolation-filters="sRGB"
+       id="filter3857">
+      <feGaussianBlur
+         id="feGaussianBlur3859"
+         stdDeviation="1.085" />
+    </filter>
+  </defs>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(0,-837.36215)"
+     id="layer1">
+    <g
+       transform="matrix(1,0,0,0.97368421,10,24.272689)"
+       id="g3884" />
+    <path
+       d="M 15.773388,82.547226 30,56.864851 20,32.216203 0,70 z M 75,9.9939084 45,75.351339 35,63.027015 20,87.983771 35,99.999987 11.408967,139.96875 25,207.99188 C 25.449056,208.14894 85,39.995935 85,39.995935 L 108.4375,54.708096 115,244.00201 c 0,6 30,-12.01622 30,-12.01622 L 125,16.002016 z M 70,99.999987 61.438201,125.09113 95,143.13512 95,121.76563 z"
+       transform="matrix(0.9062559,0,0,0.88217567,4.3212679,832.0098)"
+       id="path3007"
+       style="fill:#00f500;fill-opacity:1;stroke:#fa4d00;stroke-width:3.20000005;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter3857)" />
+  </g>
+</svg>

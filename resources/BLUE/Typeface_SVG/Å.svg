@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="139"
+   height="215"
+   id="svg2">
+  <defs
+     id="defs4">
+    <font
+       horiz-origin-x="0"
+       horiz-origin-y="0"
+       horiz-adv-x="1024"
+       vert-origin-x="45"
+       vert-origin-y="90"
+       vert-adv-y="90"
+       id="font2987" />
+    <filter
+       x="-0.25"
+       y="-0.25"
+       width="1.5"
+       height="1.5"
+       color-interpolation-filters="sRGB"
+       id="filter3847">
+      <feGaussianBlur
+         result="result1"
+         stdDeviation="5"
+         id="feGaussianBlur3849" />
+      <feTurbulence
+         result="result2"
+         baseFrequency="0.1"
+         type="fractalNoise"
+         seed="0"
+         numOctaves="1"
+         id="feTurbulence3851" />
+      <feDisplacementMap
+         in2="result2"
+         scale="5"
+         xChannelSelector="R"
+         yChannelSelector="G"
+         in="result1"
+         result="result3"
+         id="feDisplacementMap3853" />
+      <feComposite
+         in2="result3"
+         operator="atop"
+         id="feComposite3855" />
+    </filter>
+    <filter
+       color-interpolation-filters="sRGB"
+       id="filter3877">
+      <feGaussianBlur
+         id="feGaussianBlur3879"
+         stdDeviation="0.98198918" />
+    </filter>
+    <filter
+       x="-0.25"
+       y="-0.25"
+       width="1.5"
+       height="1.5"
+       color-interpolation-filters="sRGB"
+       id="filter3888">
+      <feGaussianBlur
+         result="result1"
+         stdDeviation="5"
+         id="feGaussianBlur3890" />
+      <feTurbulence
+         result="result2"
+         baseFrequency="0.1"
+         type="fractalNoise"
+         seed="0"
+         numOctaves="1"
+         id="feTurbulence3892" />
+      <feDisplacementMap
+         in2="result2"
+         scale="5"
+         xChannelSelector="R"
+         yChannelSelector="G"
+         in="result1"
+         result="result3"
+         id="feDisplacementMap3894" />
+      <feComposite
+         in2="result3"
+         operator="atop"
+         id="feComposite3896" />
+    </filter>
+    <filter
+       color-interpolation-filters="sRGB"
+       id="filter6616">
+      <feGaussianBlur
+         id="feGaussianBlur6618"
+         stdDeviation="0.6" />
+    </filter>
+    <filter
+       color-interpolation-filters="sRGB"
+       id="filter3782">
+      <feGaussianBlur
+         id="feGaussianBlur3784"
+         stdDeviation="1.0124578" />
+    </filter>
+  </defs>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="matrix(0.93842123,0,0,0.98376142,-3.1038503,-820.90512)"
+     id="layer1">
+    <g
+       transform="translate(6.5087892,3.9775934)"
+       id="g6620">
+      <g
+         transform="matrix(0.96858242,0,0,0.9380016,0.34380962,64.939565)"
+         id="g3884" />
+    </g>
+  </g>
+  <path
+     d="m 105.06421,164.03601 c -0.0183,2.30147 -7.892836,18.14803 1.56813,29.79433 M 29.010269,123.26482 c -15.169755,-2.73287 -8.903624,44.28461 -8.624674,36.85089 1.073126,-28.59768 2.538706,-35.96268 8.624674,-36.85089 z M 80.804225,10.243442 c -17.521026,25.941727 1.663417,8.514733 15.637641,12.746605 44.174794,11.076036 1.883382,-38.688331 -15.637641,-12.746605 z m 18.89566,3.457896 c 7.431575,11.364813 -16.768733,1.591553 -8.419902,-2.200666 3.447335,-1.5658538 8.207568,-1.5731889 8.419902,2.200666 z M 4.3146465,72.013585 C 8.4110061,90.530566 25.973266,76.037858 31.463005,64.551478 29.735013,34.213391 1.6048312,54.685934 4.3146465,72.013585 z M 71.497147,28.813111 c -17.188371,9.022004 -7.969039,48.053615 -27.268149,50.752339 -4.316559,0.603611 -4.740041,-9.529278 -9.089383,-9.227698 -7.725452,0.535677 -14.943361,10.96734 -13.634075,18.455396 0.933422,5.338407 12.704584,3.888625 13.634075,9.227697 2.147626,12.336145 -20.070288,18.083575 -22.50334,30.368625 -3.5188617,17.76753 -4.9526745,50.95457 13.413957,52.6807 26.383341,2.47958 8.281288,-62.91175 33.56541,-70.70933 11.357965,2.18891 38.138042,47.22217 35.814741,5.63118 C 89.63574,104.57668 67.857014,105.20593 64.307748,92.938091 58.597679,67.276242 83.318944,35.169583 101.88977,63.186286 c 26.1933,41.206614 -34.913674,118.178434 5.96491,145.566984 7.93986,5.31967 28.19926,0.1601 27.26815,-9.2277 C 130.53314,153.25086 145.49043,72.969833 116.94406,33.42696 108.14222,21.234514 84.925592,21.764654 71.497147,28.813111 z"
+     transform="matrix(1.0000453,0,0,0.99633866,-0.0031536,0.7841302)"
+     id="path3007"
+     style="fill:#00ffff;fill-opacity:1;stroke:#fa0000;stroke-width:3.4000001;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter3782)" />
+</svg>
