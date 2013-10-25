@@ -85,6 +85,7 @@
 						xhr.setRequestHeader ("Authorization", authorization);
 					}
 				}).done(function( data ) {
+						localStorage.authorization=authorization;
 						window.location.replace("home.html");
 				}).fail(function( jqXHR, textStatus ) {
 					//TODO fix this - Error message needed
@@ -93,13 +94,6 @@
 				});
 
 			});
-
-
-			function make_base_auth(user, password) {
-				var tok = user + ':' + password;
-				var hash = Base64.encode(tok);
-				return "Basic " + hash;
-			}
 
 
 

@@ -39,7 +39,7 @@
                 <li><a class="gn-icon" href="profile.html"><span class="nav-icon icon-dude"></span>Profile</a></li>
                 <li><a class="gn-icon" href="gang.html"><span class="nav-icon icon-dudes"></span>Gang</a></li>
                 <li><a class="gn-icon" href="leaderboard.html"><span class="nav-icon icon-trophy"></span>Leaderboard</a></li>
-                <li><a class="gn-icon" href="spray.html"><span class="nav-icon icon-config"></span>Tweaks</a></li>                
+                <li><a class="gn-icon" href="spray.html"><span class="nav-icon icon-config"></span>Tweaks</a></li>
               </ul>
             </div><!-- /gn-scroller -->
           </nav>
@@ -51,7 +51,7 @@
           <div class="liquid-slider"  id="main-slider">
 
             <div class="venue">
-              <p class="owner"><span class="blue-owns">Blue</span> gang owns</p>              
+              <p class="owner"><span class="blue-owns">Blue</span> gang owns</p>
               <div class="category icon-sun"></div>
               <h3 class="title">great outdoors</h2>
               <h1 class="location">Toripolliisi</h2>
@@ -62,7 +62,7 @@
               <div class="category icon-moon"></div>
               <h3 class="title">nightlife spots</h2>
               <h1 class="location">Tivoli</h2>
-            </div> 
+            </div>
 
             <div class="owner">
               <p class="owner"><span class="green-owns">Green</span> gang owns</p>
@@ -86,12 +86,12 @@
             </div>
 
             <div class="venue">
-              <p class="owner"><span class="blue-owns">Blue</span> gang owns</p> 
+              <p class="owner"><span class="blue-owns">Blue</span> gang owns</p>
               <div class="category icon-office"></div>
               <h3 class="title">other places</h2>
               <h1 class="location">City Hall</h2>
             </div>
-            
+
             <div class="venue">
               <p class="owner"><span class="purple-owns">Purple</span> gang owns</p>
               <div class="category icon-cart"></div>
@@ -114,8 +114,8 @@
           </div><!-- /arrows -->
 
           <div id="start-to-spray">
-            <a class="spray icon-droplet" href="spray-purple.html"></a> 
-          </div> 
+            <a class="spray icon-droplet" href="spray-purple.html"></a>
+          </div>
 
 
 
@@ -129,7 +129,39 @@
     <script src="js/jquery.fittext.js"></script>
     <script src="js/jquery.touchSwipe.min.js"></script>
     <script src="js/jquery.liquid-slider-custom.min.js"></script>
+    <script src="js/scripts.js"></script>
     <script>
+
+        //Load venues or redirect
+        jQuery(document).ready(function(){
+
+
+          if (!localStorage.authorization) {
+            window.location.replace("splash.html");
+          } else {
+            var authorization=localStorage.authorization;
+            var endpoint = "http://vm0063.virtues.fi/venues/";
+            $.ajax({
+              type: "GET",
+              url: endpoint,
+              dataType: 'json',
+              beforeSend: function (xhr) {
+                xhr.setRequestHeader ("Authorization", authorization);
+              }
+            }).done(function( data ) {
+            //TODO Populate venues
+
+
+            }).fail(function( jqXHR, textStatus ) {
+            //TODO fix this
+              alert("Error");
+            });
+          }
+
+
+
+        });
+
         //Menu
         new gnMenu( document.getElementById( 'gn-menu' ) );
 

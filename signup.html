@@ -44,6 +44,7 @@
 		<!-- Scripts -->
 
 		<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+		<script src="js/scripts.js"></script>
 		<script>
 
 			//Animate.css
@@ -92,7 +93,8 @@
 				};
 
 				$.post( endpoint, attr).done(function( data ) {
-						//TODO save session variables
+						var authorization = make_base_auth(username, password);
+						localStorage.authorization=authorization;
 						window.location.replace("home.html");
 					}).fail(function( jqXHR, textStatus ) {
 					//TODO fix this

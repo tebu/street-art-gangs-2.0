@@ -140,3 +140,9 @@ var Base64 = {
 
 }
 
+
+var make_base_auth= function(user, password) {
+    var tok = user + ':' + password;
+    var hash = Base64.encode(tok);
+    return "Basic " + hash;
+}
