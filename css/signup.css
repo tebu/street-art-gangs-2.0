@@ -1,7 +1,10 @@
 /* Register screen **************************/
 
-body#signup {
+html {
+    height: 100%
+}
 
+body#signup {
     text-shadow: none;
     color:#fff;
     margin: 0;

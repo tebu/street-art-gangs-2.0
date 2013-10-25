@@ -1,12 +1,16 @@
 /* Register screen **************************/
 
-body {
+html {
+    height: 100%;
     background-image: -webkit-gradient(linear, right bottom, left top, color-stop(0%, #6d085b), color-stop(50%, #4e59df), color-stop(100%, #4feea6));
     background-image: -webkit-linear-gradient(right bottom, #6d085b 0%, #4e59df 50%, #4feea6 100%);
     background-image: -moz-linear-gradient(right bottom, #6d085b 0%, #4e59df 50%, #4feea6 100%);
     background-image: -ms-linear-gradient(right bottom, #6d085b 0%, #4e59df 50%, #4feea6 100%);
     background-image: -o-linear-gradient(right bottom, #6d085b 0%, #4e59df 50%, #4feea6 100%);
     background-image: linear-gradient(to left top, #6d085b 0%, #4e59df 50%, #4feea6 100%);
+}
+
+body {
     text-shadow: none;
     color:#fff;
     margin: 0;
