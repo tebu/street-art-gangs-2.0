@@ -76,7 +76,7 @@
 				//TODO: Validate.
 				//TODO Check same password
 
-				var endpoint = "http://vm0063.virtues.fi/users/";
+				var endpoint = "http://vm0063.virtues.fi/auth/register/";
 
 				var username = $('#username').val();
 				var email = $('#email').val();
@@ -87,22 +87,11 @@
 				var attr = {
 					username: username,
 					email: email,
-					password: password
+					password: password,
+					gang: gang
 				};
-				//Send user data
+
 				$.post( endpoint, attr).done(function( data ) {
-
-					//User successfully registered
-					var endpoint = "http://vm0063.virtues.fi/gangsters/";
-					var user = data.id;
-					var attr = {
-						user: user,
-						gang: gang
-					};
-
-					//Send UserProfile data
-					$.post( endpoint, attr).done(function( data ) {
-						//Go to home
 						//TODO save session variables
 						window.location.replace("home.html");
 					}).fail(function( jqXHR, textStatus ) {
@@ -110,10 +99,6 @@
 						alert( "Request failed: " + textStatus );
 					});
 
-				}).fail(function( jqXHR, textStatus ) {
-					//TODO fix this
-					alert( "Request failed: " + textStatus );
-				});
 
 			});
 		</script>
