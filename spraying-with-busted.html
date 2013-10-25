@@ -5,7 +5,13 @@
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <title>Spray - Purple</title>
+  <title>Spraying - busted</title>
+
+  <!-- Launch icons -->
+  <link rel="apple-touch-icon" href="img/icons/ios/icon.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="img/icons/icon-72.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="img/icons/icon@2x.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="img/icons/icon-72@2x.png" />
    
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/normalize.css">
@@ -13,10 +19,37 @@
   <link rel="stylesheet" href="css/animate.css">
   <link rel="stylesheet" href="css/universal.css" />
   <link rel="stylesheet" href="css/spraying.css">
-   
+
+   <script src="js/modernizr.custom_modal.js"></script>
 </head>
 
-<body class="purple-page"><!-- .purple-page = purple gang , .blue-page = blue gang, .green-page = green gang -->
+<body id="spraying-busted" class="purple">
+
+ <div class="md-modal md-effect-12" id="modal-12">
+                  <div class="md-content">
+                    <div>
+                      <p>Busted means that some rival player caught you spraying, and therefore this operation is cancelled. This will cause 100 points deduction.</p>
+                      <button class="md-close">Tap screen to close</button>
+                    </div>
+                  </div>
+                </div>
+      
+      <div class="busted">
+        <div>
+          <h1><span>You're</span>Busted!</h1>
+          <h3><span>by </span>Mr.Wh1te<span class="gang-name">Blue gang</span> </h2>
+        </div>
+        <span class="icon-surprised"></span>
+        <div class="centering">
+          <a href="#" class="btn2 md-trigger" data-modal="modal-12">?</a>
+          <a href="home.html" class="btn">Proceed <span class="icon-arrow-right-small"></span></a>
+                     
+
+        </div>
+
+      </div> <!-- /busted -->
+
+
       <div id="loading">
           <div class="bar-percentage" data-percentage="101"></div>
       </div>
@@ -44,8 +77,14 @@
         <p>Gongrats<br><span>1000</span><br> points earned!</p>
       </div>
 
+                <div class="md-overlay"></div><!-- the overlay element -->
+
     <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
-    <script src="js/ion.sound.min.js"></script>
+    <script src="js/ion.sound.min2.js"></script>
+    <script src="js/jquery.fittext.js"></script>
+
+    <script src="js/classie.js"></script>
+    <script src="js/modalEffects.js"></script>
 
     <script>
     
@@ -71,24 +110,34 @@
         // jQuery("p#progress").delay(5000).fadeIn(1000);
         jQuery("p#progress").delay(8000).fadeOut(1000); 
         // jQuery("p#finished").delay(19000).fadeIn(500);
-         jQuery("p#finished").delay(20000).fadeOut(300);
-         jQuery("#loading").delay(22000).fadeOut(300);
+        jQuery("p#finished").delay(20000).fadeOut(300);
+        jQuery("#loading").delay(22000).fadeOut(300);
+        jQuery(".icon-surprised").delay(9000).fadeOut(600);
 
         // Redirect to home screen after finished spraying
-        setTimeout(function() {
-        window.location.href = "home.html";
-      }, 27000);
+      //   setTimeout(function() {
+      //   window.location.href = "home.html";
+      // }, 27000);
     });
+
+    //Fittext.js
+        jQuery(document).ready(function(){
+          jQuery(".icon-surprised").fitText(.3);
+        });
 
     // Animate.css
     jQuery(document).ready(function(){
             jQuery('p#prepare, p#progress, p#finished').addClass('animated bounceInDown');
             jQuery('.load-wrap').addClass('animated wobble');
             jQuery('#can-spraying').addClass('animated pulse');
-            jQuery('.showup').addClass('animated bounceInDown');
+            jQuery('.showup, a.btn2').addClass('animated bounceInDown');
             jQuery('.disappear').addClass('animated bounceOutDown');
-            jQuery('.overlay').addClass('animated fadeIn');
-            jQuery('.points-earned').addClass('animated bounceInDown');
+            jQuery('.busted').addClass('animated fadeIn');
+            jQuery('.points-earned, .icon-surprised').addClass('animated bounceInDown');
+            jQuery('.busted h1').addClass('animated bounceInLeft');
+            jQuery('.busted h3').addClass('animated bounceInRight');
+            jQuery('a.btn').addClass('animated bounceInUp');
+
     });
 
     // Sound effects

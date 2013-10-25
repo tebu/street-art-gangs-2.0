@@ -1,0 +1,140 @@
+/* Leaderboard screen **************************/
+
+html {
+    width: 100%;
+    padding: 0;
+    margin: 0
+}
+body {
+    color:#fff;
+    margin: 0;
+    padding: 0;
+    font-family: "Lato";
+    width: 100%
+}
+
+    /*Purple background*/
+body#leaderboard.purple {
+    background-image: -webkit-gradient(linear, right bottom, left top, color-stop(25%, #b80068), color-stop(100%, #750142));
+    background-image: -webkit-linear-gradient(right bottom, #b80068 25%, #750142 100%);
+    background-image: -moz-linear-gradient(right bottom, #b80068 25%, #750142 100%);
+    background-image: -ms-linear-gradient(right bottom, #b80068 25%, #750142 100%);
+    background-image: -o-linear-gradient(right bottom, #b80068 25%, #750142 100%);
+    background-image: linear-gradient(to left top, #b80068 25%, #750142 100%);
+}
+    /*Blue background*/
+body#leaderboard.blue {
+    background-image: -webkit-gradient(linear, right bottom, left top, color-stop(25%, #4DBBFF), color-stop(100%, #3c8dcd));
+    background-image: -webkit-linear-gradient(right bottom, #4DBBFF 25%, #3c8dcd 100%);
+    background-image: -moz-linear-gradient(right bottom, #4DBBFF 25%, #3c8dcd 100%);
+    background-image: -ms-linear-gradient(right bottom, #4DBBFF 25%, #3c8dcd 100%);
+    background-image: -o-linear-gradient(right bottom, #4DBBFF 25%, #3c8dcd 100%);
+    background-image: linear-gradient(to left top, #4DBBFF 25%, #3c8dcd 100%);
+}
+    /*Green background*/
+body#leaderboard.green {
+    background-image: -webkit-gradient(linear, right bottom, left top, color-stop(25%, #54CC9A), color-stop(100%, #21a66f));
+    background-image: -webkit-linear-gradient(right bottom, #54CC9A 25%, #21a66f 100%);
+    background-image: -moz-linear-gradient(right bottom, #54CC9A 25%, #21a66f 100%);
+    background-image: -ms-linear-gradient(right bottom, #54CC9A 25%, #21a66f 100%);
+    background-image: -o-linear-gradient(right bottom, #54CC9A 25%, #21a66f 100%);
+    background-image: linear-gradient(to left top, #54CC9A 25%, #21a66f 100%);
+}
+
+.panel-wrapper {
+    padding: 0;
+    margin: 0
+}
+
+h2.title {
+    font-family: "Rock Salt"
+}
+
+.header .icon-trophy {
+    display: block;
+    font-size: 2em;
+    line-height: 0;
+    padding: 3em 0 0;
+    text-align: center;
+    color: white;
+}
+
+h4.instructions {
+    -webkit-animation-delay: 2s;
+    -webkit-animation-iteration-count: 3;
+    -moz-animation-delay: 2s;
+    -moz-animation-iteration-count: 3;
+    animation-delay: 2s;
+    animation-iteration-count: 3;
+}
+
+h4.instructions span {
+    position: relative;
+    top: 3px
+}
+
+.liquid-slider {
+    position: relative;
+    top: 0
+}
+
+table {
+    margin-top: 10px;
+    height: 100%;
+    width: 107%;
+    color:#fff;
+    font-size:12px;
+    position: relative;
+    left: -4%
+}
+
+table th {
+    padding:21px 25px 22px 10px;
+    text-align: left;
+    background:rgba(0,0,0,.2);
+    font-size: 1em;
+    text-transform: uppercase;
+    font-weight: 700
+}
+
+table#gang-board tr td {
+    padding: 15px;
+
+}
+
+table th:first-child{
+    text-align: left;
+    padding-left:20px;
+}
+
+table tr {
+    text-align: left;
+    padding-left:20px;
+}
+
+table tr td:first-child{
+    text-align: left;
+    padding-left:20px;
+    border-left: 0;
+}
+
+table tr td {
+    padding:10px;
+    border-top: 1px solid rgba(0,0,0,.1);
+    border-bottom:1px solid rgba(0,0,0,.1);
+    /*border-left: 1px solid rgba(0,0,0,.1);*/ 
+    background:rgba(0,0,0,.1);
+}
+
+table#player-board tr:nth-child(odd) td{
+    background:rgba(0,0,0,.15);
+}
+
+table tr.you td{
+    background:rgba(0,0,0,.5);
+}
+
+table tr:last-child td{
+    border-bottom:0;
+}
+

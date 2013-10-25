@@ -1,7 +1,7 @@
 /*Styles for home screen*/
 
 
-body.purple-page {
+body.purple {
     background-image: -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 116, color-stop(25%, #b80068), color-stop(100%, #990157));
     background-image: -webkit-radial-gradient(center bottom, farthest-side circle, #b80068 25%, #990157 100%);
     background-image: -moz-radial-gradient(center bottom, farthest-side circle, #b80068 25%, #990157 100%);
@@ -10,7 +10,7 @@ body.purple-page {
     background-image: radial-gradient(farthest-side circle at center bottom, #b80068 25%, #990157 100%);
 }
 
-body.blue-page {
+body.blue {
     background-image: -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 116, color-stop(25%, #CBF2FF), color-stop(100%, #4DBBFF));
     background-image: -webkit-radial-gradient(center bottom, farthest-side circle, #CBF2FF 25%, #4DBBFF 100%);
     background-image: -moz-radial-gradient(center bottom, farthest-side circle, #CBF2FF 25%, #4DBBFF 100%);
@@ -19,7 +19,7 @@ body.blue-page {
     background-image: radial-gradient(farthest-side circle at center bottom, #CBF2FF 25%, #4DBBFF 100%);
 }
 
-body.green-page {
+body.green {
     background-image: -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 116, color-stop(15%, #ABFFE2), color-stop(100%, #54CC9A));
     background-image: -webkit-radial-gradient(center bottom, farthest-side circle, #ABFFE2 25%, #54CC9A 100%);
     background-image: -moz-radial-gradient(center bottom, farthest-side circle, #ABFFE2 25%, #54CC9A 100%);
@@ -127,18 +127,17 @@ img#can {
 
 a.spray {
     font-size: 5em;
-/*   box-shadow: 0 20px 10px rgba(0, 0, 0, 0.2);*/
     padding: 20px;
     border-radius: 50%;
     color: #fff;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     transition: all 0.3s ease;
-        box-shadow: 0 8px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 5px rgba(0, 0, 0, 0.2);
 }
 
 a.spray:active {
-        box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 /*.purple-owns {
@@ -153,11 +152,6 @@ a.spray:active {
     color: #8FF2FF !important;
 }*/
 
-.centering {
-    position: relative;
-    text-align: center;
-    display: block
-}
 p.owner {
 /*   background: rgba(0,0,0,.4);*/
     color: #fff;
@@ -169,15 +163,15 @@ p.owner {
     font-weight: 700
 }
 
-body.purple-page .icon-droplet {
+body.purple .icon-droplet {
     color: #84004A !important;
 }
 
-body.blue-page .icon-droplet {
+body.blue .icon-droplet {
     color: #76D8FF !important;
 }
 
-body.green-page .icon-droplet {
+body.green .icon-droplet {
     color: #5CDDA8 !important;
 } 
 

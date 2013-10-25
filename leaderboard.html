@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+  <title>Leaderboard</title>
+
+  <!-- Launch icons -->
+  <link rel="apple-touch-icon" href="img/icons/ios/icon.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="img/icons/icon-72.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="img/icons/icon@2x.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="img/icons/icon-72@2x.png" />
+  
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/icons.css" />
+  <link rel="stylesheet" href="css/universal.css" />
+  <link rel="stylesheet" href="css/leaderboard.css" />
+  <link rel="stylesheet" href="css/liquid-slider.css">
+
+   <!-- Modernizr.js needed for the Menu -->
+  <script src="js/modernizr.custom.js"></script>
+</head>
+
+<body id="leaderboard" class="purple">
+
+    <div class="container">
+
+      <ul id="gn-menu" class="gn-menu-main">
+        <li class="gn-trigger">
+          <a class="gn-icon gn-icon-menu icon-list-2"><span class="hide">Menu</span></a>
+          <nav class="gn-menu-wrapper">
+            <div class="gn-scroller">
+              <ul class="gn-menu">
+                <li><a class="gn-icon" href="profile.html"><span class="nav-icon icon-dude"></span>Profile</a></li>
+                <li><a class="gn-icon" href="gang.html"><span class="nav-icon icon-dudes"></span>Gang</a></li>
+                <li><a class="gn-icon" href="leaderboard.html"><span class="nav-icon icon-trophy"></span>Leaderboard</a></li>
+                <li><a class="gn-icon" href="spray.html"><span class="nav-icon icon-config"></span>Tweaks</a></li>                
+              </ul>
+            </div><!-- /gn-scroller -->
+          </nav>
+        </li>
+        <li class="home"><a href="home.html"><span class="icon-home"></a></li>
+        <li class="messages"><a href="chat.html">4<span class="icon-message-bubble"></a></li>
+      </ul><!-- /gn-menu -->
+
+       <div class="header">
+            <span class="icon-trophy"></span>
+      </div><!-- /header -->
+
+      <div class="liquid-slider" id="leaderboards">
+           <div>
+                <h2 class="title">Gangs</h2>
+
+                <table id="gang-board" cellspacing='0'>
+                  <tr><th>#</th><th>Gang</th><th>Tags</th><th>Points</th></tr>
+
+                  <tr><td>1</td><td>Purple</td><td>56</td><td>5600</td></tr>
+                  <tr><td>2</td><td>Blue</td><td>43</td><td>4300</td></tr>
+                  <tr><td>3</td><td>Green</td><td>25</td><td>2500</td></tr>
+              </table> 
+              <h4 class="instructions"><span class="icon-arrow-left-small"></span> swipe to change <span class="icon-arrow-right-small"></span></h4>
+           </div>
+
+           <div>
+                <h2 class="title">Players</h2>
+                <table id="player-board" cellspacing='0'>
+                <tr><th>#</th><th>Player</th><th>Tags</th><th>Points</th></tr>
+          
+                <tr><td>1</td><td>Batman</td><td>23</td><td>2300</td></tr>
+                <tr><td>2</td><td>Superman</td><td>21</td><td>2100</td></tr>
+                <tr><td>3</td><td>Thor</td><td>19</td><td>1900</td></tr>
+                <tr><td>4</td><td>Hulk</td><td>18</td><td>1800</td></tr>
+                <tr><td>5</td><td>Daredevil</td><td>16</td><td>1600</td></tr>
+                <tr><td>6</td><td>Hellboy</td><td>14</td><td>1400</td></tr>
+                <tr><td>7</td><td>Ironman</td><td>13</td><td>1300</td></tr>
+                <tr><td>8</td><td>Loki</td><td>12</td><td>1200</td></tr>
+                <tr><td>9</td><td>Wolverine</td><td>11</td><td>1100</td></tr>
+                <tr><td>10</td><td>Catwoman</td><td>10</td><td>1000</td></tr>
+                <tr class="you"><td>21</td><td>You</td><td>2</td><td>200</td></tr>
+              </table> 
+           </div>
+      </div><!-- /liquid-slider -->
+
+    </div><!-- /container -->
+
+    <!-- Scripts -->
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+    <script src="js/jquery.touchSwipe.min.js"></script>
+    <script src="js/jquery.liquid-slider-custom.min.js"></script>
+    <script src="js/classie_menu.js"></script>
+    <script src="js/gnmenu.js"></script>
+
+   
+    <script>
+        //Menu
+        new gnMenu( document.getElementById( 'gn-menu' ) );
+
+        $('#leaderboards').liquidSlider({
+          slideEaseDuration: 500,
+          slideEaseFunction: "easeInOutExpo",
+          dynamicArrows: false
+        });
+
+        //Animate.css
+         $(document).ready(function(){
+           $('table#gang-board').addClass('animated slideInRight');
+           $('h4').addClass('animated pulse');
+           $('.icon-trophy').addClass('animated slideInDown');
+         });
+    </script>
+
+</body>
+</html>
