@@ -49,64 +49,18 @@
 
 
           <div class="liquid-slider"  id="main-slider">
-
+            <!-- Venue: Model
             <div class="venue">
               <p class="owner"><span class="blue-owns">Blue</span> gang owns</p>
               <div class="category icon-sun"></div>
               <h3 class="title">great outdoors</h2>
               <h1 class="location">Toripolliisi</h2>
             </div>
+            -->
+          </div>
+          <!-- /liquid-slider -->
 
-            <div class="venue">
-              <p class="owner"><span class="purple-owns">Purple</span> gang owns</p>
-              <div class="category icon-moon"></div>
-              <h3 class="title">nightlife spots</h2>
-              <h1 class="location">Tivoli</h2>
-            </div>
 
-            <div class="owner">
-              <p class="owner"><span class="green-owns">Green</span> gang owns</p>
-              <div class="category icon-ticket"></div>
-              <h3 class="title">arts & entertainment</h2>
-              <h1 class="location">Teatteri</h2>
-            </div>
-
-            <div class="venue">
-              <p class="owner"><span class="purple-owns">Purple</span> gang owns</p>
-              <div class="category icon-graduation"></div>
-              <h3 class="title">education</h2>
-              <h1 class="location">University</h2>
-            </div>
-
-            <div class="venue">
-              <p class="owner"><span class="blue-owns">Blue</span> gang owns</p>
-              <div class="category icon-food"></div>
-              <h3 class="title">food</h2>
-              <h1 class="location">Amarillo</h2>
-            </div>
-
-            <div class="venue">
-              <p class="owner"><span class="blue-owns">Blue</span> gang owns</p>
-              <div class="category icon-office"></div>
-              <h3 class="title">other places</h2>
-              <h1 class="location">City Hall</h2>
-            </div>
-
-            <div class="venue">
-              <p class="owner"><span class="purple-owns">Purple</span> gang owns</p>
-              <div class="category icon-cart"></div>
-              <h3 class="title">shops & services</h2>
-              <h1 class="location">Stockmann</h2>
-            </div>
-
-            <div class="venue">
-              <p class="owner"><span class="green-owns">Green</span> gang owns</p>
-              <div class="category icon-rocket"></div>
-              <h3 class="title">travel & transport</h2>
-              <h1 class="location">Bus station</h2>
-            </div>
-
-          </div><!-- /liquid-slider -->
 
           <div class="arrows">
             <a id="to-left" class="icon-arrow-left-big" href="#left" data-liquidslider-ref="main-slider"></a>
@@ -132,69 +86,140 @@
     <script src="js/scripts.js"></script>
     <script>
 
-        //Load venues or redirect
-        jQuery(document).ready(function(){
 
+      //Load venues or redirect
+      jQuery(document).ready(function(){
 
-          if (!localStorage.authorization) {
-            window.location.replace("splash.html");
-          } else {
-            var authorization=localStorage.authorization;
-            var endpoint = "http://vm0063.virtues.fi/venues/";
-            $.ajax({
-              type: "GET",
-              url: endpoint,
-              dataType: 'json',
-              beforeSend: function (xhr) {
-                xhr.setRequestHeader ("Authorization", authorization);
-              }
-            }).done(function( data ) {
-            //TODO Populate venues
-
-
-            }).fail(function( jqXHR, textStatus ) {
-            //TODO fix this
-              alert("Error");
-            });
-          }
-
-
-
-        });
+      if (!localStorage.authorization) {
+        window.location.replace("splash.html");
+      } else {
 
         //Menu
         new gnMenu( document.getElementById( 'gn-menu' ) );
-
-        // Venue slider
-         $('#main-slider').liquidSlider({
-            hashLinking:false,
-            crossLinks:true,
-            includeTitle:true,
-            mobileNavigation:false,
-            firstPanelToLoad:1,
-            autoHeight:false,
-            minHeight: 0,
-            swipe: true,
-            hideArrowsWhenMobile: true,
-            dynamicArrows: false,
-            slideEaseFunction:'easeInOutCubic',
-            slideEaseDuration:400,
-            heightEaseDuration:800
-            // animateIn:"slideInLeft",
-            // animateOut:"slideOutLeft"
-          });
-
-         //Fittext.js
-        jQuery(document).ready(function(){
-          jQuery("h1.location").fitText(1.3);
-          jQuery(".category").fitText(.6);
-          jQuery("h3.title").fitText(1.5);
-        });
 
         //Animate.css
         jQuery(document).ready(function(){
           jQuery('#start-to-spray').addClass('animated pulse');
         });
+
+        //Get Venues
+        var authorization=localStorage.authorization;
+        var endpoint = "http://vm0063.virtues.fi/venues/";
+        $.ajax({
+          type: "GET",
+          url: endpoint,
+          dataType: 'json',
+          beforeSend: function (xhr) {
+            xhr.setRequestHeader ("Authorization", authorization);
+          }
+        }).done(function( data ) {
+        //TODO Populate venues
+          for (var i = data.length - 1; i >= 0; i--) {
+            var venue = $("<div>").addClass("venue");
+            var owner = $("<p>").addClass("owner");
+            var ownerGang = $("<span>").addClass("purple-owns").text("Purple").appendTo(owner); //TODO put real gan name
+            owner.append(" gang owns").appendTo(venue);
+            var category = $("<div>").addClass("category").addClass(getCategoryClass(data[i].category)).appendTo(venue);
+            var title = $("<h3>").addClass("title").text(getCategory(data[i].category)).appendTo(venue);
+            var location = $("<h1>").addClass("location").text(data[i].name).appendTo(venue);
+            $('#main-slider').append(venue);
+          };
+
+          // Venue slider
+          $('#main-slider').liquidSlider({
+              hashLinking:false,
+              crossLinks:true,
+              includeTitle:true,
+              mobileNavigation:false,
+              firstPanelToLoad:1,
+              autoHeight:false,
+              minHeight: 0,
+              swipe: true,
+              hideArrowsWhenMobile: true,
+              dynamicArrows: false,
+              slideEaseFunction:'easeInOutCubic',
+              slideEaseDuration:400,
+              heightEaseDuration:800
+
+            // animateIn:"slideInLeft",
+            // animateOut:"slideOutLeft"
+          });
+
+          jQuery("h1.location").fitText(1.3);
+          jQuery(".category").fitText(.6);
+          jQuery("h3.title").fitText(1.5);
+
+        }).fail(function( jqXHR, textStatus ) {
+        //TODO fix this
+          alert("Error: something went wrong while loading the venues");
+        });
+      }
+    });
+
+
+
+      var getCategory = function (val) {
+
+        switch (val) {
+          case 'Ou':
+            return 'Great Outdoors';
+            break;
+          case 'Ni':
+            return 'Nightlife Spots';
+            break;
+          case 'Ar':
+            return 'Arts & Entertainment';
+            break;
+          case 'Ed':
+            return 'Education';
+            break;
+          case 'Fo':
+            return 'Food';
+            break;
+          case 'Ot':
+            return 'Other Places';
+            break;
+          case 'Sh':
+            return 'Shops & Services';
+            break;
+          case 'Tr':
+            return 'Travel & Transport';
+            break;
+        }
+      }
+
+      var getCategoryClass = function (val) {
+
+        switch (val) {
+          case 'Ou':
+            return 'icon-sun';
+            break;
+          case 'Ni':
+            return 'icon-sun';
+            break;
+          case 'Ar':
+            return 'icon-ticket';
+            break;
+          case 'Ed':
+            return 'icon-graduation';
+            break;
+          case 'Fo':
+            return 'icon-food';
+            break;
+          case 'Ot':
+            return 'icon-office';
+            break;
+          case 'Sh':
+            return 'icon-cart';
+            break;
+          case 'Tr':
+            return 'icon-rocket';
+            break;
+        }
+      }
+
+
+
     </script>
 
 </body>
