@@ -117,11 +117,17 @@
           for (var i = data.length - 1; i >= 0; i--) {
             var venue = $("<div>").addClass("venue");
             var owner = $("<p>").addClass("owner");
-            var ownerGang = $("<span>").addClass("purple-owns").text("Purple").appendTo(owner); //TODO put real gan name
-            owner.append(" gang owns").appendTo(venue);
-            var category = $("<div>").addClass("category").addClass(getCategoryClass(data[i].category)).appendTo(venue);
-            var title = $("<h3>").addClass("title").text(getCategory(data[i].category)).appendTo(venue);
-            var location = $("<h1>").addClass("location").text(data[i].name).appendTo(venue);
+            var gang = data[i].gang;
+            if (gang != null) {
+              $("<span>").addClass(gang+"-owns").text(gang).appendTo(owner);
+              owner.append(" gang owns it!").appendTo(venue);
+            } else {
+              owner.append("This place is still clean!").appendTo(venue); //TODO change with something better
+            }
+
+            $("<div>").addClass("category").addClass(getCategoryClass(data[i].category)).appendTo(venue);
+            $("<h3>").addClass("title").text(getCategory(data[i].category)).appendTo(venue);
+            $("<h1>").addClass("location").text(data[i].name).appendTo(venue);
             $('#main-slider').append(venue);
           };
 
