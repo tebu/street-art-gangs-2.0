@@ -163,8 +163,12 @@ p.owner {
     font-weight: 700
 }
 
-body.purple .icon-droplet {
-    color: #84004A !important;
+.icon-droplet {
+    color: white;
+}
+
+/*body.purple .icon-droplet {
+    color: #551071 !important;
 }
 
 body.blue .icon-droplet {
@@ -173,7 +177,7 @@ body.blue .icon-droplet {
 
 body.green .icon-droplet {
     color: #5CDDA8 !important;
-} 
+}*/ 
 
 
 
