@@ -27,112 +27,120 @@
   <!-- Needed for the Modal window -->
   <script src="js/modernizr.custom_modal.js"></script>
 
-  </head>
+</head>
 
-  <body id="gang-profile" class="purple">
+<body id="gang-profile" class="purple">
 
   <div class="md-modal md-effect-12" id="modal-12">
-          <div class="md-content">
-              <div>
-                  <p>howdy</p>
-                  <button class="md-close">Tap screen to close</button>
-              </div>
-          </div>
+    <div class="md-content">
+      <div>
+        <p>howdy</p>
+        <button class="md-close">Tap screen to close</button>
       </div>
-    <div class="container">
+    </div>
+  </div>
+  <div class="container">
 
-      <ul id="gn-menu" class="gn-menu-main">
-        <li class="gn-trigger">
-          <a class="gn-icon gn-icon-menu icon-list-2"><span class="hide">Menu</span></a>
-          <nav class="gn-menu-wrapper">
-            <div class="gn-scroller">
-              <ul class="gn-menu">
-                <li><a class="gn-icon" href="profile.html"><span class="nav-icon icon-dude"></span>Profile</a></li>
-                <li><a class="gn-icon" href="gang.html"><span class="nav-icon icon-dudes"></span>Gang</a></li>
-                <li><a class="gn-icon" href="leaderboard.html"><span class="nav-icon icon-trophy"></span>Leaderboard</a></li>
-                <li><a class="gn-icon" href="spray.html"><span class="nav-icon icon-config"></span>Tweaks</a></li>          
-              </ul>
-            </div><!-- /gn-scroller -->
-          </nav>
-        </li>
-        <li class="home"><a href="home.html"><span class="icon-home"></a></li>
-        <li class="messages"><a href="chat.html"><span class="icon-message-bubble"></a></li>
-      </ul>
+    <ul id="gn-menu" class="gn-menu-main">
+      <li class="gn-trigger">
+        <a class="gn-icon gn-icon-menu icon-list-2"><span class="hide">Menu</span></a>
+        <nav class="gn-menu-wrapper">
+          <div class="gn-scroller">
+            <ul class="gn-menu">
+              <li><a class="gn-icon" href="profile.html"><span class="nav-icon icon-dude"></span>Profile</a></li>
+              <li><a class="gn-icon" href="gang.html"><span class="nav-icon icon-dudes"></span>Gang</a></li>
+              <li><a class="gn-icon" href="leaderboard.html"><span class="nav-icon icon-trophy"></span>Leaderboard</a></li>
+              <li><a class="gn-icon" href="spray.html"><span class="nav-icon icon-config"></span>Tweaks</a></li>
+            </ul>
+          </div><!-- /gn-scroller -->
+        </nav>
+      </li>
+      <li class="home"><a href="home.html"><span class="icon-home"></a></li>
+      <li class="messages"><a href="chat.html"><span class="icon-message-bubble"></a></li>
+    </ul>
 
-      <header>
+    <header>
 
-        <div class="profile-header">
+      <div class="profile-header">
 
-          <div class="swiper-container">
-            <div class="swiper-wrapper">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
 
-              <!--First Slide-->
-              <div class="swiper-slide"> 
-                <div class="centering">    
-                  <button href="#" class="btn2 md-trigger" data-modal="modal-12">Button to open modal window</button>  
-                  <img src="img/purple-gang.png">
-                  <h2>Taggers</h2>
-                  <h3>tag 'n tools</h3>
-                </div>
+            <!--First Slide-->
+            <div class="swiper-slide">
+              <div class="centering">
+                <button href="#" class="btn2 md-trigger" data-modal="modal-12">Button to open modal window</button>
+                <img src="img/purple-gang.png">
+                <h2>Taggers</h2>
+                <h3>tag 'n tools</h3>
               </div>
-        
-              <!--Second Slide-->
-              <div class="swiper-slide">
-                <div class="centering">
-                  <div class="icon icon-dudes"></div>
-                  <h3>Members</h3>
-                  <h1 class="gang-info members">0106</h1>
-                </div>
+            </div>
+
+            <!--Second Slide-->
+            <div class="swiper-slide">
+              <div class="centering">
+                <div class="icon icon-dudes"></div>
+                <h3>Members</h3>
+                <h1 class="gang-info members">0106</h1>
               </div>
+            </div>
 
-              <!--Third Slide-->
-              <div class="swiper-slide">
-                <div class="centering">
-                  <div class="icon icon-star"></div>
-                  <h3>Points</h3>
-                  <h1 class="gang-info points">5100</h1>
-                </div>
+            <!--Third Slide-->
+            <div class="swiper-slide">
+              <div class="centering">
+                <div class="icon icon-star"></div>
+                <h3>Points</h3>
+                <h1 class="gang-info points">5100</h1>
               </div>
+            </div>
 
-        </div><!-- /profile-header -->
+          </div>
+        </div>
+      </div>
 
-      </header> 
+      <!-- /profile-header -->
 
-      <div class="pagination"></div>
+    </header>
 
-    </div><!-- /container -->
-    
-    <div class="md-overlay"></div><!-- the overlay element -->
+    <div class="pagination"></div>
+
+  </div><!-- /container -->
+
+  <div class="md-overlay"></div><!-- the overlay element -->
 
 
   <!-- Scripts -->
 
-    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
-    <script src="js/modalEffects.js"></script>
-    <script src="js/classie_menu.js"></script>
+  <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+  <script src="js/classie_menu.js"></script>
 
 
-    <script src="js/gnmenu.js"></script>
-    <script>
-      new gnMenu( document.getElementById( 'gn-menu' ) );
-    </script>
+  <script src="js/gnmenu.js"></script>
+  <script>
+  new gnMenu( document.getElementById( 'gn-menu' ) );
+  </script>
 
 
-
-    <script src="js/idangerous.swiper-2.2.min.js"></script>
+  <script src="js/modalEffects.js"></script>
+  <script src="js/idangerous.swiper-2.2.min.js"></script>
 
     <script>//Fix needed: modalEffects.js and this Swiper function not work in same time, maybe some conflict thingy here?
-      $(function(){
-            var mySwiper = $('.swiper-container').swiper({
-                mode:'horizontal',
-                loop: true,
-                createPagination: true,
-                pagination: '.pagination',
-                initialSlide: 0
-            });
-      })
+    $(function(){
+      var mySwiper = $('.swiper-container').swiper({
+        mode:'horizontal',
+        loop: true,
+        createPagination: true,
+        pagination: '.pagination',
+        initialSlide: 0
+      });
+
+      ModalEffects();
+
+    })
     </script>
 
 
-</body>
-</html>
+
+
+  </body>
+  </html>
