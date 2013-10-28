@@ -72,7 +72,7 @@
 			$('.btn.btntxt').one( "click", function() {
 				//TODO: Validate.
 
-				var endpoint = "http://vm0063.virtues.fi/users/";
+				var endpoint = "http://vm0063.virtues.fi/authentication/";
 				var username = $('#username').val();
 				var password = $('#password').val();
 				var authorization = make_base_auth(username, password);
@@ -86,6 +86,7 @@
 					}
 				}).done(function( data ) {
 						localStorage.authorization=authorization;
+						localStorage.color=data['color'];
 						window.location.replace("home.html");
 				}).fail(function( jqXHR, textStatus ) {
 					//TODO fix this - Error message needed
