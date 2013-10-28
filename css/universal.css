@@ -96,7 +96,7 @@ li.messages {
 }
 
 body.purple .gn-menu-main, body.purple .gn-menu-main .gn-menu-main ul {
-    background: #990157;
+    background: #421C52;
 }
 
 body.blue .gn-menu-main, body.blue .gn-menu-main .gn-menu-main ul {
@@ -108,19 +108,19 @@ body.green .gn-menu-main, body.green .gn-menu-main .gn-menu-main ul {
 }
 
 body.purple .gn-menu-main ul li:first-child {
-    background: #7c0046;
+    background: #380c4b;
 }
 
 body.purple .gn-menu-main ul li:nth-child(2) {
-    background: #880750;
+    background: #3e0d53;
 }
 
 body.purple .gn-menu-main ul li:nth-child(3) {
-    background: #950657;
+    background: #47125d;
 }
 
 body.purple .gn-menu-main ul li:nth-child(4) {
-    background: #9d065c;
+    background: #51166a;
 }
 
 body.green .gn-menu-main ul li:first-child {
@@ -176,7 +176,7 @@ body.blue .gn-menu-main ul li:nth-child(4) {
 }
 
 body.purple .gn-menu-main a:active, body.purple .gn-menu-main a:focus {
-    background: #6e003e;
+    background: #310842;
 }
 
 body.green .gn-menu-main a:active, body.green .gn-menu-main a:focus {
