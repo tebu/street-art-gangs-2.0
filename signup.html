@@ -30,10 +30,11 @@
 					<input type="password" class="input" placeholder="Password" id ="password">
 					<input type="password" class="input" placeholder="Password again" id ="rePassword">
 					<select id="gang" name="gang" class="feedback-input">
-						<option id="neutral" data-gang="1">Choose Your Gang</option>
-						<option id="purple"  data-gang="2">Purple</option>
-						<option id="greens"  data-gang="4">Green</option>
-						<option id="blues">Blue</option>
+						<option id="neutral">Choose Your Gang</option>
+						<!--TODO: Get data from the server-->
+						<option id="purple"  data-gang="1">Purple</option>
+						<option id="greens"  data-gang="2">Green</option>
+						<option id="blues" data-gang="3">Blue</option>
 					</select>
 			</div>
 
@@ -77,7 +78,7 @@
 				//TODO: Validate.
 				//TODO Check same password
 
-				var endpoint = "http://vm0063.virtues.fi/auth/register/";
+				var endpoint = "http://vm0063.virtues.fi/authentication/";
 
 				var username = $('#username').val();
 				var email = $('#email').val();
@@ -95,6 +96,7 @@
 				$.post( endpoint, attr).done(function( data ) {
 						var authorization = make_base_auth(username, password);
 						localStorage.authorization=authorization;
+						localStorage.color=data['color'];
 						window.location.replace("home.html");
 					}).fail(function( jqXHR, textStatus ) {
 					//TODO fix this

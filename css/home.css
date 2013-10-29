@@ -2,12 +2,12 @@
 
 
 body.purple {
-    background-image: -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 116, color-stop(25%, #b80068), color-stop(100%, #990157));
-    background-image: -webkit-radial-gradient(center bottom, farthest-side circle, #b80068 25%, #990157 100%);
-    background-image: -moz-radial-gradient(center bottom, farthest-side circle, #b80068 25%, #990157 100%);
-    background-image: -ms-radial-gradient(center bottom, farthest-side circle, #b80068 25%, #990157 100%);
-    background-image: -o-radial-gradient(center bottom, farthest-side circle, #b80068 25%, #990157 100%);
-    background-image: radial-gradient(farthest-side circle at center bottom, #b80068 25%, #990157 100%);
+    background-image: -webkit-gradient(linear, center bottom, center top, color-stop(0%, #a03bab), color-stop(100%, #421C52));
+    background-image: -webkit-linear-gradient(bottom, #a03bab 0%, #421C52 100%);
+    background-image: -moz-linear-gradient(bottom, #a03bab 0%, #421C52 100%);
+    background-image: -ms-linear-gradient(bottom, #a03bab 0%, #421C52 100%);
+    background-image: -o-linear-gradient(bottom, #a03bab 0%, #421C52 100%);
+    background-image: linear-gradient(to top, #a03bab 0%, #421C52 100%);
 }
 
 body.blue {
@@ -163,8 +163,12 @@ p.owner {
     font-weight: 700
 }
 
-body.purple .icon-droplet {
-    color: #84004A !important;
+.icon-droplet {
+    color: white;
+}
+
+/*body.purple .icon-droplet {
+    color: #551071 !important;
 }
 
 body.blue .icon-droplet {
@@ -173,7 +177,7 @@ body.blue .icon-droplet {
 
 body.green .icon-droplet {
     color: #5CDDA8 !important;
-} 
+}*/ 
 
 
 
