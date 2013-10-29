@@ -3,25 +3,33 @@
 
 html {
     overflow: hidden;
+    
 }
-
 body.purple {
-    background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 287, color-stop(0%, #a03bab), color-stop(100%, #421C52));
-    background-image: -webkit-radial-gradient(center center, farthest-corner, #a03bab 0%, #421C52 100%);
-    background-image: -moz-radial-gradient(center center, farthest-corner, #a03bab 0%, #421C52 100%);
-    background-image: -ms-radial-gradient(center center, farthest-corner, #a03bab 0%, #421C52 100%);
-    background-image: -o-radial-gradient(center center, farthest-corner, #a03bab 0%, #421C52 100%);
-    background-image: radial-gradient(farthest-corner at center center, #a03bab 0%, #421C52 100%);
-    height: 100%;
-    overflow: hidden;
+    background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #a03bab), color-stop(100%, #421C52));
+    background-image: -webkit-linear-gradient(left top, #a03bab 0%, #421C52 100%);
+    background-image: -moz-linear-gradient(left top, #a03bab 0%, #421C52 100%);
+    background-image: -ms-linear-gradient(left top, #a03bab 0%, #421C52 100%);
+    background-image: -o-linear-gradient(left top, #a03bab 0%, #421C52 100%);
+    background-image: linear-gradient(to right bottom, #a03bab 0%, #421C52 100%);
 }
 
 body.blue {
-    background: #4DBBFF;
+    background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #4DBBFF), color-stop(100%, #0e8edd));
+    background-image: -webkit-linear-gradient(left top, #4DBBFF 0%, #0e8edd 100%);
+    background-image: -moz-linear-gradient(left top, #4DBBFF 0%, #0e8edd 100%);
+    background-image: -ms-linear-gradient(left top, #4DBBFF 0%, #0e8edd 100%);
+    background-image: -o-linear-gradient(left top, #4DBBFF 0%, #0e8edd 100%);
+    background-image: linear-gradient(to right bottom, #4DBBFF 0%, #0e8edd 100%);
 }
 
 body.green {
-    background: #54CC9A;
+    background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #54CC9A), color-stop(100%, #29855e));
+    background-image: -webkit-linear-gradient(left top, #54CC9A 0%, #29855e 100%);
+    background-image: -moz-linear-gradient(left top, #54CC9A 0%, #29855e 100%);
+    background-image: -ms-linear-gradient(left top, #54CC9A 0%, #29855e 100%);
+    background-image: -o-linear-gradient(left top, #54CC9A 0%, #29855e 100%);
+    background-image: linear-gradient(to right bottom, #54CC9A 0%, #29855e 100%);
 }
 
 h1 {
@@ -29,7 +37,7 @@ h1 {
     text-align: center;
     position: relative;
     font-weight: 700;
-    margin-bottom: 40px
+    margin-bottom: 40px;
 }
 
 h2 {
@@ -39,7 +47,7 @@ h2 {
 }
 
 .container > header {
-    padding: 120px 20px 10px;
+    padding: 100px 20px 10px;
 }
 
 .container > header span.gang-info {
@@ -47,36 +55,40 @@ h2 {
     font-size: 100%;
     position: relative;
     top: 0;
-    right: 0
+    right: 0;
+}
+
+div.icon {
+    margin-top: 40px
 }
 
 .pagination {
-  position: fixed;
-  left: 0;
-  text-align: center;
-  bottom:5px;
-  width: 100%;
+    position: fixed;
+    left: 0;
+    text-align: center;
+    bottom: 5px;
+    width: 100%;
 }
 
 .swiper-pagination-switch {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  border-radius: 10px;
-  background: #999;
-  box-shadow: 0px 1px 2px #555 inset;
-  margin: 0 3px;
-  cursor: pointer;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background: #999;
+    box-shadow: 0px 1px 2px #555 inset;
+    margin: 0 3px;
+    cursor: pointer;
 }
 
 .swiper-active-switch {
-  background: #fff;
+    background: #fff;
 }
 
 img {
-    width: 80%;
+    width: 90%;
     height: auto;
-    margin: 0 auto
+    margin: 0 auto;
 }
 
 ul.gang-profile-list {
@@ -90,26 +102,27 @@ ul.gang-profile-list li {
     list-style: none;
     width: 45%;
     background: #310842;
-   float: left;
+    float: left;
     padding: 10px;
     margin: 2px 0;
 }
 
 ul.gang-profile-list li.first {
-    margin-right: 10%
-}
-span.gang-info {
-    font-size: 1.4em !important;
-    font-weight: 900;
-    font-family: "Raleway"
-}
-
-div.icon {
-    font-size: 3em
+    margin-right: 10%;
 }
 
 h1.gang-info {
-    font-size: 5em
+    font-size: 4em !important;
+    font-weight: 900;
+    font-family: "Raleway";
+}
+
+div.icon {
+    font-size: 3em;
+}
+
+h1.gang-info {
+    font-size: 5em;
 }
 
 .btn {
@@ -123,7 +136,7 @@ h1.gang-info {
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;
-    background:rgba(0,0,0,.2);
+    background: rgba(0,0,0,.2);
     padding: 20px 0;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
@@ -138,24 +151,65 @@ h1.gang-info {
     animation-delay: .5s;
     animation-iteration-count: 1;
 }
+
 .btn:active {
-    background:rgba(0,0,0,.5);
+    background: rgba(0,0,0,.5);
 }
 
-span {
+.modal-btn {
+    border: none;
+    border-radius: 2px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: block;
+    font-size: 0.8em;
+    font-weight: 700;
+    margin: 60px auto 20px;
+    padding: 0.7em 1.2em 0.5em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+body.purple .modal-btn {
+    background: #BE59D6;
+}
+
+body.green .modal-btn {
+    background: #5ED5A7;
+}
+
+body.blue .modal-btn {
+    background: #74BBF4;
+}
+
+body.purple .modal-btn:active {
+    background: #6D2D7D;
+}
+
+body.green .modal-btn:active  {
+    background: #358963;
+}
+
+body.blue .modal-btn:active  {
+    background: #378CDC;
+}
+
+span.icon-arrow-right-big {
+    color: #FFFFFF !important;
+    display: inline-block !important;
+    font-size: 1em !important;
+    top: 1px;
     position: relative;
-    top: 3px;
-    left: 10px
 }
 
 .md-modal {
-    position: fixed;
+    position: absolute;
     top: 50%;
-    left: 50%;
+    left: 35%;
     width: 50%;
-    max-width: 630px;
+  /*  max-width: 630px;*/
     min-width: 320px;
-    height: auto;
+    height: 100%;
     z-index: 5000;
     visibility: hidden;
     -webkit-backface-visibility: hidden;
@@ -180,12 +234,6 @@ span {
     left: 0;
     z-index: 4500;
     opacity: 0;
-    background-image: -webkit-gradient(linear, right bottom, left top, color-stop(0%, #6d085b), color-stop(50%, #4e59df), color-stop(100%, #4feea6));
-    background-image: -webkit-linear-gradient(right bottom, #6d085b 0%, #4e59df 50%, #4feea6 100%);
-    background-image: -moz-linear-gradient(right bottom, #6d085b 0%, #4e59df 50%, #4feea6 100%);
-    background-image: -ms-linear-gradient(right bottom, #6d085b 0%, #4e59df 50%, #4feea6 100%);
-    background-image: -o-linear-gradient(right bottom, #6d085b 0%, #4e59df 50%, #4feea6 100%);
-    background-image: linear-gradient(to left top, #6d085b 0%, #4e59df 50%, #4feea6 100%);
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s;
@@ -199,12 +247,6 @@ span {
 /* Content styles */
 .md-content {
     color: #fff;
-    background-image: -webkit-gradient(linear, right bottom, left top, color-stop(0%, #6d085b), color-stop(50%, #4e59df), color-stop(100%, #4feea6));
-    background-image: -webkit-linear-gradient(right bottom, #6d085b 0%, #4e59df 50%, #4feea6 100%);
-    background-image: -moz-linear-gradient(right bottom, #6d085b 0%, #4e59df 50%, #4feea6 100%);
-    background-image: -ms-linear-gradient(right bottom, #6d085b 0%, #4e59df 50%, #4feea6 100%);
-    background-image: -o-linear-gradient(right bottom, #6d085b 0%, #4e59df 50%, #4feea6 100%);
-    background-image: linear-gradient(to left top, #6d085b 0%, #4e59df 50%, #4feea6 100%);
     position: relative;
     border-radius: 3px;
     margin: 0 auto;
@@ -234,27 +276,46 @@ span {
     padding: 10px 0;
 }
 
-.md-content > div ul {
+/*.md-content > div ul {
     margin: 0;
     padding: 0 0 30px 20px;
 }
 
 .md-content > div ul li {
     padding: 5px 0;
-}
+}*/
 
-.md-content button {
-    background: #349FEB;
-    border: medium none;
-    border-radius: 2px;
+.md-close {
+    border: none;
     color: #FFFFFF;
     cursor: pointer;
     display: block;
     font-size: 0.8em;
-    margin: 10px auto;
-    padding: 0.6em 1.2em;
-    text-align: center;
+    padding: 0.8em 1.4em 0.8em;
+    text-align: left;
     text-transform: uppercase;
+    position: fixed;
+    top: 0;
+    left: 48px;
+    font-weight: 700;
+}
+
+body.purple .md-close {
+    background: #BE59D6;
+}
+
+body.green .md-close {
+    background: #5ED5A7;
+}
+
+body.blue .md-close {
+    background: #74BBF4;
+}
+
+.md-close span {
+    position: relative;
+    top: 1px;
+    left: 0;
 }
 
 
@@ -270,14 +331,32 @@ span {
     transition: all 0.3s;
 }
 
-.md-show.md-effect-12 ~ .md-overlay {
-    background-image: -webkit-gradient(linear, right bottom, left top, color-stop(0%, #6d085b), color-stop(50%, #4e59df), color-stop(100%, #4feea6));
-    background-image: -webkit-linear-gradient(right bottom, #6d085b 0%, #4e59df 50%, #4feea6 100%);
-    background-image: -moz-linear-gradient(right bottom, #6d085b 0%, #4e59df 50%, #4feea6 100%);
-    background-image: -ms-linear-gradient(right bottom, #6d085b 0%, #4e59df 50%, #4feea6 100%);
-    background-image: -o-linear-gradient(right bottom, #6d085b 0%, #4e59df 50%, #4feea6 100%);
-    background-image: linear-gradient(to left top, #6d085b 0%, #4e59df 50%, #4feea6 100%);
-} 
+body.purple .md-show.md-effect-12 ~ .md-overlay {
+    background-image: -webkit-gradient(linear, right bottom, left top, color-stop(0%, #a03bab), color-stop(100%, #421C52));
+    background-image: -webkit-linear-gradient(right bottom, #a03bab 0%, #421C52 100%);
+    background-image: -moz-linear-gradient(right bottom, #a03bab 0%, #421C52 100%);
+    background-image: -ms-linear-gradient(right bottom, #a03bab 0%, #421C52 100%);
+    background-image: -o-linear-gradient(right bottom, #a03bab 0%, #421C52 100%);
+    background-image: linear-gradient(to left top, #a03bab 0%, #421C52 100%);
+}
+
+body.green .md-show.md-effect-12 ~ .md-overlay {
+    background-image: -webkit-gradient(linear, right bottom, left top, color-stop(0%, #54CC9A), color-stop(100%, #29855e));
+    background-image: -webkit-linear-gradient(right bottom, #54CC9A 0%, #29855e 100%);
+    background-image: -moz-linear-gradient(right bottom, #54CC9A 0%, #29855e 100%);
+    background-image: -ms-linear-gradient(right bottom, #54CC9A 0%, #29855e 100%);
+    background-image: -o-linear-gradient(right bottom, #54CC9A 0%, #29855e 100%);
+    background-image: linear-gradient(to left top, #54CC9A 0%, #29855e 100%);
+}
+
+body.blue .md-show.md-effect-12 ~ .md-overlay {
+background-image: -webkit-gradient(linear, right bottom, left top, color-stop(0%, #4DBBFF), color-stop(100%, #00558a));
+background-image: -webkit-linear-gradient(right bottom, #4DBBFF 0%, #00558a 100%);
+background-image: -moz-linear-gradient(right bottom, #4DBBFF 0%, #00558a 100%);
+background-image: -ms-linear-gradient(right bottom, #4DBBFF 0%, #00558a 100%);
+background-image: -o-linear-gradient(right bottom, #4DBBFF 0%, #00558a 100%);
+background-image: linear-gradient(to left top, #4DBBFF 0%, #00558a 100%);
+}
 
 .md-effect-12 .md-content h3,
 .md-effect-12 .md-content {
@@ -292,4 +371,88 @@ span {
     opacity: 1;
 }
 
+ul.members-list {
+    width: 115%;
+    margin-top: 40px;
+}
+
+ul.members-list li {
+    font-size: .7em;
+    list-style: none;
+    padding: 5px 0;
+    text-align: left;
+    font-weight: 700;
+    width: 100%;
+}
+
+ul.members-list li:nth-child(odd) {
+    background: rgba(0,0,0,.08);
+}
+
+span.member-time {
+    width: 50px;
+    display: inline-block;
+    font-family: "Raleway";
+}
+
+ul.members-list span {
+    font-weight: 400;
+    margin-right: 5px;
+}
+
+.gang-points h4 {
+    text-transform: uppercase;
+    font-size: .6em;
+}
+
+a.link-btn {
+    text-transform: none;
+    color: white;
+    font-size: 1.1em;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 2px;
+    font-weight: 700;
+    font-family: "Raleway";
+}
+
+body.purple a.link-btn {
+    background: #BE59D6;
+}
+
+body.green a.link-btn {
+    background: #5ED5A7;
+}
+
+body.blue a.link-btn {
+    background: #74BBF4;
+}
+
+body.purple a.link-btn:active {
+    color: white;
+    background: #6D2D7D;
+}
+
+body.green a.link-btn:active {
+    color: white;
+    background: #358963;
+}
+
+body.blue a.link-btn:active {
+    color: white;
+    background: #378CDC;
+}
+
+span.icon-arrow-right-small {
+   position: relative;
+   top: 2px
+}
+
+.side {
+    display: block;
+}
+
+.gang-points .centering {
+    top: -30px
+}
 
