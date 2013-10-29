@@ -34,10 +34,41 @@
   <div class="md-modal md-effect-12" id="modal-12">
     <div class="md-content">
       <div>
-        <p>howdy</p>
-        <button class="md-close">Tap screen to close</button>
+        <ul class="members-list">
+          <li><span class="icon-history"></span><span class="member-time">45 d</span>The Majestic Master</li>
+          <li><span class="icon-history"></span><span class="member-time">45 d</span>The Nifty Conjurer</li>
+          <li><span class="icon-history"></span><span class="member-time">44 d</span>The Whispering Whiz</li>
+          <li><span class="icon-history"></span><span class="member-time">43 d</span>The Terrific Nightowl</li>
+          <li><span class="icon-history"></span><span class="member-time">43 d</span>Fire Panther</li>
+          <li><span class="icon-history"></span><span class="member-time">42 d</span>Captain Lucky Robin</li>
+          <li><span class="icon-history"></span><span class="member-time">41 d</span>Doctor Famous Fighter</li>
+          <li><span class="icon-history"></span><span class="member-time">41 d</span>Agent Fancy Cat</li>
+          <li><span class="icon-history"></span><span class="member-time">38 d</span>Iron Assassin</li>
+          <li><span class="icon-history"></span><span class="member-time">36 d</span>Galactic Gargoyle</li>
+          <li><span class="icon-history"></span><span class="member-time">36 d</span>The Light Veteran</li>
+          <li><span class="icon-history"></span><span class="member-time">36 d</span>The Confident Devil</li>
+          <li><span class="icon-history"></span><span class="member-time">32 d</span>The Hot Raccoon</li>
+          <li><span class="icon-history"></span><span class="member-time">30 d</span>The Eager Captain</li>
+          <li><span class="icon-history"></span><span class="member-time">30 d</span>Thunder Lord</li>
+          <li><span class="icon-history"></span><span class="member-time">30 d</span>Warden Steel</li>
+          <li><span class="icon-history"></span><span class="member-time">27 d</span>Quiet Cat</li>
+          <li><span class="icon-history"></span><span class="member-time">26 d</span>Misty Mastermind</li>
+          <li><span class="icon-history"></span><span class="member-time">24 d</span>Scarlet Sentinel</li>
+          <li><span class="icon-history"></span><span class="member-time">24 d</span>Dragon Boy</li>
+          <li><span class="icon-history"></span><span class="member-time">24 d</span>The Wonderman</li>
+          <li><span class="icon-history"></span><span class="member-time">17 d</span>The Storm Amazon</li>
+          <li><span class="icon-history"></span><span class="member-time">16 d</span>The Magical Swallow</li>
+          <li><span class="icon-history"></span><span class="member-time">16 d</span>The Scarlet Rhinoceros</li>
+          <li><span class="icon-history"></span><span class="member-time">16 d</span>Mister Panther</li>
+          <li><span class="icon-history"></span><span class="member-time">14 d</span>Quick Snipe</li>
+          <li><span class="icon-history"></span><span class="member-time">10 d</span>Captain Majestic</li>
+          <li><span class="icon-history"></span><span class="member-time">9 d</span>Warden Jolly</li>
+          <li><span class="icon-history"></span><span class="member-time">5 d</span>Death Roach</li>
+          <li><span class="icon-history"></span><span class="member-time">2 d</span>Iron Archer</li>
+        </ul>
       </div>
     </div>
+    <button class="md-close"><span class="icon-arrow-left-small"></span>Go back</button>
   </div>
   <div class="container">
 
@@ -69,28 +100,41 @@
             <!--First Slide-->
             <div class="swiper-slide">
               <div class="centering">
-                <button href="#" class="btn2 md-trigger" data-modal="modal-12">Button to open modal window</button>
-                <img src="img/purple-gang.png">
+                
+                <img class="tools" src="img/purple-gang.png">
+                 <!-- <img class="tools" src="img/green-gang.png"> -->
+                <!-- <img class="tools" src="img/blue-gang.png"> -->
                 <h2>Taggers</h2>
                 <h3>tag 'n tools</h3>
               </div>
             </div>
 
             <!--Second Slide-->
-            <div class="swiper-slide">
+            <div class="swiper-slide gang-members">
               <div class="centering">
                 <div class="icon icon-dudes"></div>
                 <h3>Members</h3>
-                <h1 class="gang-info members">0106</h1>
+                <h1 class="gang-info members">106</h1>
+                <button href="#" class="modal-btn md-trigger" data-modal="modal-12">See members list <span class="icon-arrow-right-big"></span></button>
               </div>
             </div>
 
             <!--Third Slide-->
-            <div class="swiper-slide">
+            <div class="swiper-slide gang-points">
               <div class="centering">
                 <div class="icon icon-star"></div>
                 <h3>Points</h3>
                 <h1 class="gang-info points">5100</h1>
+                <div class="side">
+                <h4>Best player</h4>
+                <a href="#" class="link-btn best-so-far">Alb3rt <span class="icon-arrow-right-small"></span></a>
+                </div>
+
+                <div class="side">
+                <h4>Latest points</h4>
+                <a href="#" class="link-btn latest">Batman <span class="icon-arrow-right-small"></span></a>
+                </div>
+
               </div>
             </div>
 
@@ -124,7 +168,8 @@
   <script src="js/modalEffects.js"></script>
   <script src="js/idangerous.swiper-2.2.min.js"></script>
 
-    <script>//Fix needed: modalEffects.js and this Swiper function not work in same time, maybe some conflict thingy here?
+    <script>
+
     $(function(){
       var mySwiper = $('.swiper-container').swiper({
         mode:'horizontal',
@@ -138,9 +183,6 @@
 
     })
     </script>
-
-
-
 
   </body>
   </html>
