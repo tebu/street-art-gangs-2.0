@@ -1,4 +1,4 @@
-/* Register screen **************************/
+/* Login screen **************************/
 
 html {
     height: 100%;
@@ -91,6 +91,7 @@ option {
 .btn {
     position: fixed;
     bottom: 0;
+    left: 0;
     width: 100%;
     height: auto;
     border-radius: none;
@@ -118,12 +119,13 @@ option {
     background:rgba(0,0,0,.5);
 }
 
+/*
 span {
     position: relative;
     top: 3px;
     left: 10px
 }
-
+*/
 
 .md-modal {
     position: fixed;
@@ -234,8 +236,6 @@ span {
     text-transform: uppercase;
 }
 
-
-/* Effect 12:  Just me */
 .md-effect-12 .md-content {
     -webkit-transform: scale(0.8);
     -moz-transform: scale(0.8);
@@ -269,8 +269,15 @@ span {
     opacity: 1;
 }
 
+/*Login error*/
+
 .problems {
     font-size: .8em;
     text-align: center;
 }
+
+.input.error {
+    background: rgba(255, 11, 68, 0.6);
+}
+
 
