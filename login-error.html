@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+	<title>Login</title>
+	
+	<!-- Launch icons -->
+	<link rel="apple-touch-icon" href="img/icons/ios/icon.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="img/icons/icon-72.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="img/icons/icon@2x.png" />
+	<link rel="apple-touch-icon" sizes="144x144" href="img/icons/icon-72@2x.png" />
+
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="font/sag/style.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/universal.css" />
+	<link rel="stylesheet" href="css/login.css">
+
+	<!-- Needed for the Modal window -->
+	<script src="js/modernizr.custom_modal.js"></script>
+
+</head>
+
+<body>
+
+	<div class="md-modal md-effect-12" id="modal-12">
+		<div class="md-content">
+			<div>
+				<p>You're in deep shit then!</p>
+				<button class="md-close">Tap screen to close</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="header">
+		<h1>Login</h1>
+	</div>
+
+	<div class="content">
+
+		<div class="form">
+		
+			<form action="" method="POST">
+				<input type="text" class="input" placeholder="Name" id="username" data-validation="required">
+				<input class="input" placeholder="Password" id="password" data-validation="required" data-validation-error-msg="Oops, wrong name or/and password" type="password">
+				<input type="submit" class="btn btntxt" value="I'm good to go">
+			</form>
+			
+		</div>
+
+		<div class="problems">
+			<a href="#" class="btn2 md-trigger" data-modal="modal-12">Problems with login?</a>
+		</div>
+
+	</div>
+
+
+	<div class="md-overlay"></div>
+
+	<!-- Scripts -->
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.1.15/jquery.form-validator.min.js"></script>
+	<script>
+		var myLanguage = {
+		      errorTitle : 'You entered wrong nickname or password',
+		      requiredFields : '',
+		      badTime : 'You have not given a correct time',
+		      badEmail : 'You have not given a correct e-mail address',
+		      badTelephone : 'You have not given a correct phone number',
+		      badSecurityAnswer : 'You have not given a correct answer to the security question',
+		      badDate : 'You have not given a correct date',
+		      tooLongStart : 'You have given an answer longer than ',
+		      tooLongEnd : ' characters',
+		      tooShortStart : 'You have given an answer shorter than ',
+		      tooShortEnd : ' characters',
+		      badLength : 'You have to give an answer between ',
+		      notConfirmed : 'Values could not be confirmed',
+		      badDomain : 'Incorrect domain value',
+		      badUrl : 'The answer you gave was not a correct URL',
+		      badCustomVal : 'You gave an incorrect answer',
+		      badInt : 'The answer you gave was not a correct number',
+		      badSecurityNumber : 'Your social security number was incorrect',
+		      badUKVatAnswer : 'Incorrect UK VAT Number',
+		      badStrength : 'The password isn\'t strong enough',
+		      badNumberOfSelectedOptionsStart : 'You have to choose at least ',
+		      badNumberOfSelectedOptionsEnd : ' answers',
+		      badAlphaNumeric : 'The answer you gave must contain only alphanumeric characters ',
+		      badAlphaNumericExtra: ' and ',
+		      wrongFileSize : 'The file you are trying to upload is too large',
+		      wrongFileType : 'The file you are trying to upload is of wrong type'
+		    };
+    
+		$.validate({
+			language : myLanguage,
+			modules : 'security',
+			borderColorOnError : '#E0245C'
+		});	
+	</script>
+
+	<script src="js/classie_menu.js"></script>
+	<script src="js/modalEffects.js"></script>
+	<script src="js/scripts.js"></script>
+
+</body>
+</html>
