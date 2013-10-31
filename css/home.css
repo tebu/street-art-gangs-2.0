@@ -2,12 +2,12 @@
 
 
 body.purple {
-    background-image: -webkit-gradient(linear, center bottom, center top, color-stop(0%, #7434B1), color-stop(100%, #3b174a));
-    background-image: -webkit-linear-gradient(bottom, #7434B1 0%, #3b174a 100%);
-    background-image: -moz-linear-gradient(bottom, #7434B1 0%, #3b174a 100%);
-    background-image: -ms-linear-gradient(bottom, #7434B1 0%, #3b174a 100%);
-    background-image: -o-linear-gradient(bottom, #7434B1 0%, #3b174a 100%);
-    background-image: linear-gradient(to top, #7434B1 0%, #3b174a 100%);
+    background-image: -webkit-gradient(linear, center bottom, center top, color-stop(0%, #3c0c6a), color-stop(100%, #3b174a));
+    background-image: -webkit-linear-gradient(bottom, #3c0c6a 0%, #3b174a 100%);
+    background-image: -moz-linear-gradient(bottom, #3c0c6a 0%, #3b174a 100%);
+    background-image: -ms-linear-gradient(bottom, #3c0c6a 0%, #3b174a 100%);
+    background-image: -o-linear-gradient(bottom, #3c0c6a 0%, #3b174a 100%);
+    background-image: linear-gradient(to top, #3c0c6a 0%, #3b174a 100%);
 }
 
 body.blue {
