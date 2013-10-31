@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>Tweaks</title>
+
+  <!-- Launch icons -->
+  <link rel="apple-touch-icon" href="img/icons/ios/icon.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="img/icons/icon-72.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="img/icons/icon@2x.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="img/icons/icon-72@2x.png" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+  <link rel="stylesheet" type="text/css" href="css/icons.css" />
+  <link rel="stylesheet" type="text/css" href="css/universal.css" />
+  <link rel="stylesheet" type="text/css" href="css/tweaks.css" />
+
+  <!-- Needed for the Menu -->
+  <script src="js/modernizr.custom.js"></script>
+
+  <!-- Needed for the Modal -->
+  <script src="js/modernizr.custom_modal.js"></script>
+  
+  </head>
+
+
+<body id="tweaks" class="blue">
+
+   <div class="md-modal md-effect-12" id="modal-info">
+
+            <div class="md-content">
+              <div>
+              <ul>
+              <li><i class="icon-info"></i> Setting status/full name will show in personal profile page</li>
+              <li><i class="icon-info"></i> Active options clicking switch button to ON state</li>
+              </ul>
+                <button class="md-close">Close <i class="icon-remove-x"></i></button>
+              </div>
+          </div>
+    </div><!-- /modal-info -->
+
+    <div class="md-modal md-effect-5" id="modal-logout">
+
+            <div class="md-content">
+              <div>
+                <p>Are you sure?</p>
+                <button class="confirm">Yes  <i class="icon-check"></i></button>
+                <button class="md-close"><i class="icon-remove-x"></i> Cancel</button>
+              </div>
+          </div>
+    </div><!-- /modal-logout -->
+
+  <div class="container">
+
+    <ul id="gn-menu" class="gn-menu-main">
+        <li class="gn-trigger">
+          <a class="gn-icon gn-icon-menu icon-list-2"><span class="hide">Menu</span></a>
+          <nav class="gn-menu-wrapper">
+            <div class="gn-scroller">
+              <ul class="gn-menu">
+                <li><a class="gn-icon" href="profile.html"><span class="nav-icon icon-dude"></span>Profile</a></li>
+                <li><a class="gn-icon" href="gang.html"><span class="nav-icon icon-dudes"></span>Gang</a></li>
+                <li><a class="gn-icon" href="leaderboard.html"><span class="nav-icon icon-trophy"></span>Leaderboard</a></li>
+                <li><a class="gn-icon" href="spray.html"><span class="nav-icon icon-config"></span>Tweaks</a></li>                
+              </ul>
+            </div><!-- /gn-scroller -->
+          </nav>
+        </li>
+        <li class="home"><a href="home.html"><span class="icon-home"></a></li>
+        <li class="messages"><a href="#">1<span class="icon-message-bubble"></a></li>
+    </ul><!-- /gn-menu -->
+
+    <div class="content">
+
+        <div class="centering">
+
+            <div class="tweak">
+                <a href="#" class="btn2 md-trigger" data-modal="modal-info">?</a> 
+                <div class="option">Set status</div>
+                <div class="onoffswitch">           
+                  <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch"> <!-- adding attribute "checked" makes it ON state -->
+                  <label class="onoffswitch-label" for="myonoffswitch">
+                    <div class="onoffswitch-inner"></div>
+                    <div class="onoffswitch-switch"></div>
+                  </label>
+                </div>
+
+                <div class="mood">
+                 <!--  <label>Mood</label> -->
+                  <input type="text" class="input" placeholder="Going to spray" id="mood">
+                </div>
+            </div><!-- /tweak -->
+
+            <div class="tweak">
+                <div class="option">Set full name</div>
+                <div class="onoffswitch">         
+                  <input type="checkbox" name="onoffswitch2" class="onoffswitch-checkbox" id="myonoffswitch2">
+                  <label class="onoffswitch-label" for="myonoffswitch2">
+                    <div class="onoffswitch-inner"></div>
+                    <div class="onoffswitch-switch"></div>
+                  </label>
+                </div>
+        
+                <div class="mood">
+                   <!--  <label>Full name</label> -->
+                  <input type="text" class="input" placeholder="John Doe" id="mood">
+                </div>
+            </div><!-- /tweak -->
+
+            <div class="tweak">
+              <button href="#" class="logout md-trigger" data-modal="modal-logout">Logout  <i class="icon-arrow-right-small "></i></button>
+            </div><!-- /tweak -->
+
+        </div><!-- /centering -->
+    
+    </div><!-- /content -->
+
+
+  </div><!-- /container -->
+
+  <div class="md-overlay"></div><!-- the overlay element -->
+
+
+  <!-- Scripts -->
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+    <script src="js/classie_menu.js"></script>
+    <script src="js/gnmenu.js"></script>
+    <script>
+      new gnMenu( document.getElementById( 'gn-menu' ) );
+    </script>
+    <script src="js/modalEffects-tweaks.js"></script>
+
+</body>
+</html>
