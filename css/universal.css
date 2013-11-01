@@ -187,11 +187,6 @@ body.blue .gn-menu-main a:active, body.blue .gn-menu-main a:focus {
     background: #117dc0;
 }
 
-.no-touch .gn-menu-main a:hover {
-    background: #CD1D51;
-    color: white;
-}
-
 .gn-menu-main > li {
     display: block;
     float: left;
