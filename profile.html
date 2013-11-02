@@ -25,7 +25,7 @@
   <script src="js/modernizr.custom.js"></script>
   </head>
 
-  <body id="player-profile" class="green">
+  <body id="player-profile">
 
     <div class="container">
 
@@ -38,7 +38,7 @@
                 <li><a class="gn-icon" href="profile.html"><span class="nav-icon icon-dude"></span>Profile</a></li>
                 <li><a class="gn-icon" href="gang.html"><span class="nav-icon icon-dudes"></span>Gang</a></li>
                 <li><a class="gn-icon" href="leaderboard.html"><span class="nav-icon icon-trophy"></span>Leaderboard</a></li>
-                <li><a class="gn-icon" href="spray.html"><span class="nav-icon icon-config"></span>Tweaks</a></li>                
+                <li><a class="gn-icon" href="spray.html"><span class="nav-icon icon-config"></span>Tweaks</a></li>
               </ul>
             </div><!-- /gn-scroller -->
           </nav>
@@ -59,7 +59,7 @@
 
       </div><!-- /profile-header -->
 
-      </header> 
+      </header>
 
        <ul class="profile-list">
           <li><span class="profile-icon icon-trophy"></span><span class="info">0001</span><span class="description">Ranking</span></li>
@@ -67,7 +67,7 @@
           <li><span class="profile-icon icon-check"></span><span class="info">0147</span><span class="description">Sprayed</span></li>
           <li class="no-border"><span class="profile-icon icon-remove-x erased"></span><span class="info">0068</span><span class="description">Erased</span></li>
           <li><span class="profile-icon icon-surprised"></span><span class="info">0002</span><span class="description">Busted</span></li>
-          <li class="no-border"><span class="profile-icon icon-blocked busts"></span><span class="info">0017</span><span class="description">Busts</span></li>               
+          <li class="no-border"><span class="profile-icon icon-blocked busts"></span><span class="info">0017</span><span class="description">Busts</span></li>
         </ul>
 
     </div><!-- /container -->
@@ -76,25 +76,8 @@
     <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
     <script src="js/classie_menu.js"></script>
     <script src="js/gnmenu.js"></script>
-    <script>
-      new gnMenu( document.getElementById( 'gn-menu' ) );
-    </script>
-
     <script src="js/jquery.fittext.js"></script>
-    <script>
-    // Fittext.js
-    jQuery(document).ready(function(){
-        jQuery("h1.player-name").fitText(.5);
-        jQuery("h3.mood").fitText(1.6);
-        jQuery("h2").fitText(1.6);
-    });
-
-    // animate.css
-    jQuery(document).ready(function(){
-      jQuery('.profile-header').addClass('animated slideInRight');
-      jQuery('ul.profile-list').addClass('animated slideInLeft');
-    });
- </script>
+    <script src="js/profile.js"></script>
 
 </body>
 </html>
