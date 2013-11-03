@@ -14,7 +14,8 @@
 
         //Get Profile
         var authorization=localStorage.authorization;
-        var endpoint = "http://vm0063.virtues.fi/gangsters/"; //TODO select correct user
+        var gangster = localStorage.gangster;
+        var endpoint = "http://vm0063.virtues.fi/gangsters/"+gangster+"/";
         $.ajax({
           type: "GET",
           url: endpoint,
@@ -24,7 +25,27 @@
           }
         }).done(function( data ) {
 
-            //TODO: Populate profile
+            $(".player-name").text(data.username);
+
+            if (data.full_name!=null && data.full_name!="") {
+              $(".player-full-name").text(data.full_name);
+            } else {
+              $(".player-full-name").text("Unknown");
+            }
+            if (data.mood!=null && data.mood!="") {
+              $(".mood").text(data.mood);
+            } else {
+              $(".mood").text("Unknown");
+            }
+
+            $("#ranking").text(data.ranking);
+            $("#points").text(data.points);
+            $("#tags_created").text(data.tags_created);
+            $("#tags_deleted").text(data.tags_deleted);
+            $("#busted").text(data.busted);
+            $("#busts").text(data.busts);
+
+
 
 
             // Fittext.js
@@ -39,7 +60,7 @@
 
         }).fail(function( jqXHR, textStatus ) {
         //TODO fix this
-          alert("Error: something went wrong while loading the profile");
+          alert("Error: something went wrong while loading the profile: "+ textStatus);
         });
       }
     });
