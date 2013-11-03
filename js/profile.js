@@ -1,7 +1,7 @@
       //Load venues or redirect
       jQuery(document).ready(function(){
 
-      if (!localStorage.authorization||!localStorage.color) {
+      if (!localStorage.authorization||!localStorage.color||!localStorage.gangster) {
         window.location.replace("splash.html");
       } else {
 
