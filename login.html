@@ -87,6 +87,7 @@
 				}).done(function( data ) {
 						localStorage.authorization=authorization;
 						localStorage.color=data['color'];
+						localStorage.gangster=data['id'];
 						window.location.replace("home.html");
 				}).fail(function( jqXHR, textStatus ) {
 					//TODO fix this - Error message needed

@@ -97,6 +97,8 @@
 						var authorization = make_base_auth(username, password);
 						localStorage.authorization=authorization;
 						localStorage.color=data['color'];
+						localStorage.gangster=data['id'];
+
 						window.location.replace("home.html");
 					}).fail(function( jqXHR, textStatus ) {
 					//TODO fix this
