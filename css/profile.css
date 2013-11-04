@@ -87,7 +87,9 @@ ul.profile-list {
     padding: 0;
     text-transform: uppercase;
     position: relative;
-    font-size: .8em
+    font-size: .8em;
+    -webkit-animation-delay: .5s;
+    animation-delay: .5s;
 }
 
 ul.profile-list li {
