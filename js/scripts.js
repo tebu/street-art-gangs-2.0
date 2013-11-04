@@ -1,4 +1,4 @@
-            /**
+/**
 *
 *  Base64 encode / decode
 *  http://www.webtoolkit.info/
@@ -154,36 +154,35 @@ var make_base_auth= function(user, password) {
 *
 **/
 
+var getCategory = function (val) {
 
-      var getCategory = function (val) {
-
-        switch (val) {
-          case 'Ou':
-            return 'Great Outdoors';
-            break;
-          case 'Ni':
-            return 'Nightlife Spots';
-            break;
-          case 'Ar':
-            return 'Arts & Entertainment';
-            break;
-          case 'Ed':
-            return 'Education';
-            break;
-          case 'Fo':
-            return 'Food';
-            break;
-          case 'Ot':
-            return 'Other Places';
-            break;
-          case 'Sh':
-            return 'Shops & Services';
-            break;
-          case 'Tr':
-            return 'Travel & Transport';
-            break;
-        }
-      }
+    switch (val) {
+      case 'Ou':
+        return 'Great Outdoors';
+        break;
+      case 'Ni':
+        return 'Nightlife Spots';
+        break;
+      case 'Ar':
+        return 'Arts & Entertainment';
+        break;
+      case 'Ed':
+        return 'Education';
+        break;
+      case 'Fo':
+        return 'Food';
+        break;
+      case 'Ot':
+        return 'Other Places';
+        break;
+      case 'Sh':
+        return 'Shops & Services';
+        break;
+      case 'Tr':
+        return 'Travel & Transport';
+        break;
+    }
+}
 
 
 /**
@@ -191,32 +190,32 @@ var make_base_auth= function(user, password) {
 *   Returns the category for the selected category
 *
 **/
-      var getCategoryClass = function (val) {
+var getCategoryClass = function (val) {
 
-        switch (val) {
-          case 'Ou':
-            return 'icon-sun';
-            break;
-          case 'Ni':
-            return 'icon-sun';
-            break;
-          case 'Ar':
-            return 'icon-ticket';
-            break;
-          case 'Ed':
-            return 'icon-graduation';
-            break;
-          case 'Fo':
-            return 'icon-food';
-            break;
-          case 'Ot':
-            return 'icon-office';
-            break;
-          case 'Sh':
-            return 'icon-cart';
-            break;
-          case 'Tr':
-            return 'icon-rocket';
-            break;
-        }
-      }
+    switch (val) {
+      case 'Ou':
+        return 'icon-sun';
+        break;
+      case 'Ni':
+        return 'icon-sun';
+        break;
+      case 'Ar':
+        return 'icon-ticket';
+        break;
+      case 'Ed':
+        return 'icon-graduation';
+        break;
+      case 'Fo':
+        return 'icon-food';
+        break;
+      case 'Ot':
+        return 'icon-office';
+        break;
+      case 'Sh':
+        return 'icon-cart';
+        break;
+      case 'Tr':
+        return 'icon-rocket';
+        break;
+    }
+}
