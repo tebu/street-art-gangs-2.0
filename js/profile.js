@@ -1,6 +1,6 @@
       //Load venues or redirect
       jQuery(document).ready(function(){
-            
+
       // animate.css
       $('ul.profile-list').addClass('animated bounceInUp');
 
@@ -35,6 +35,7 @@
             } else {
               $(".player-full-name").text("Unknown");
             }
+            $( ".mood-title" ).show( "slow" );
             if (data.mood!=null && data.mood!="") {
               $(".mood").text(data.mood);
             } else {

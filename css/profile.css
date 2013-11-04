@@ -35,6 +35,7 @@ h3 {
 
 h4.mood-title {
     text-align: center;
+    display: none;
 }
 
 h3.mood {
