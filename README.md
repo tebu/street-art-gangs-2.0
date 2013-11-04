@@ -8,3 +8,4 @@ Pages currently with some JS logic:
 - signup.html
 - login.html
 - home.html
+- profile.html
