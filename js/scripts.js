@@ -146,3 +146,77 @@ var make_base_auth= function(user, password) {
     var hash = Base64.encode(tok);
     return "Basic " + hash;
 }
+
+
+/**
+*   getCategory
+*   Returns the full name for the selected category
+*
+**/
+
+
+      var getCategory = function (val) {
+
+        switch (val) {
+          case 'Ou':
+            return 'Great Outdoors';
+            break;
+          case 'Ni':
+            return 'Nightlife Spots';
+            break;
+          case 'Ar':
+            return 'Arts & Entertainment';
+            break;
+          case 'Ed':
+            return 'Education';
+            break;
+          case 'Fo':
+            return 'Food';
+            break;
+          case 'Ot':
+            return 'Other Places';
+            break;
+          case 'Sh':
+            return 'Shops & Services';
+            break;
+          case 'Tr':
+            return 'Travel & Transport';
+            break;
+        }
+      }
+
+
+/**
+*   getCategoryClass
+*   Returns the category for the selected category
+*
+**/
+      var getCategoryClass = function (val) {
+
+        switch (val) {
+          case 'Ou':
+            return 'icon-sun';
+            break;
+          case 'Ni':
+            return 'icon-sun';
+            break;
+          case 'Ar':
+            return 'icon-ticket';
+            break;
+          case 'Ed':
+            return 'icon-graduation';
+            break;
+          case 'Fo':
+            return 'icon-food';
+            break;
+          case 'Ot':
+            return 'icon-office';
+            break;
+          case 'Sh':
+            return 'icon-cart';
+            break;
+          case 'Tr':
+            return 'icon-rocket';
+            break;
+        }
+      }
