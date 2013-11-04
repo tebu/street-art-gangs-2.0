@@ -126,8 +126,12 @@ span.profile-icon {
     margin-left: 15px
 }
 
-span.profile-icon.points, span.profile-icon.erased {
+span.profile-icon.points {
     margin-left: 12px
+}
+
+span.profile-icon.distance {
+    margin-left: 9px
 }
 
 span.profile-icon.busts {
