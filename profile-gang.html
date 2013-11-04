@@ -29,7 +29,7 @@
 
 </head>
 
-<body id="gang-profile" class="purple">
+<body id="gang-profile">
 
   <div class="md-modal md-effect-12" id="modal-12">
     <div class="md-content">
@@ -100,11 +100,11 @@
             <!--First Slide-->
             <div class="swiper-slide">
               <div class="centering">
-                
+
                 <img class="tools" src="img/purple-gang.png">
                  <!-- <img class="tools" src="img/green-gang.png"> -->
                 <!-- <img class="tools" src="img/blue-gang.png"> -->
-                <h2>Taggers</h2>
+                <h2 id="name"></h2>
                 <h3>tag 'n tools</h3>
               </div>
             </div>
@@ -114,7 +114,7 @@
               <div class="centering">
                 <div class="icon icon-dudes"></div>
                 <h3>Members</h3>
-                <h1 class="gang-info members">106</h1>
+                <h1 class="gang-info members">0</h1>
                 <button href="#" class="modal-btn md-trigger" data-modal="modal-12">See members list <span class="icon-arrow-right-big"></span></button>
               </div>
             </div>
@@ -160,29 +160,13 @@
 
 
   <script src="js/gnmenu.js"></script>
-  <script>
-  new gnMenu( document.getElementById( 'gn-menu' ) );
-  </script>
-
 
   <script src="js/modalEffects.js"></script>
   <script src="js/idangerous.swiper-2.2.min.js"></script>
 
-    <script>
+    <script src="js/scripts.js"></script>
+    <script src="js/profile-gang.js"></script>
 
-    $(function(){
-      var mySwiper = $('.swiper-container').swiper({
-        mode:'horizontal',
-        loop: true,
-        createPagination: true,
-        pagination: '.pagination',
-        initialSlide: 0
-      });
-
-      ModalEffects();
-
-    })
-    </script>
 
   </body>
   </html>
