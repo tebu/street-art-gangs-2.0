@@ -1,5 +1,8 @@
       //Load venues or redirect
       jQuery(document).ready(function(){
+            
+      // animate.css
+      $('ul.profile-list').addClass('animated bounceInUp');
 
       if (!localStorage.authorization||!localStorage.color||!localStorage.gangster||!localStorage.gang) {
         window.location.replace("splash.html");
@@ -46,17 +49,12 @@
             $("#busts").text(data.busts);
 
 
-
-
             // Fittext.js
 
             jQuery("h1.player-name").fitText(.5);
             jQuery("h3.mood").fitText(1.6);
             jQuery("h2").fitText(1.6);
 
-            // animate.css
-            jQuery('.profile-header').addClass('animated slideInRight');
-            jQuery('ul.profile-list').addClass('animated slideInLeft');
 
         }).fail(function( jqXHR, textStatus ) {
         //TODO fix this
