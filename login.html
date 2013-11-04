@@ -58,50 +58,8 @@
 		<script src="js/classie_menu.js"></script>
 		<script src="js/modalEffects.js"></script>
 		<script src="js/scripts.js"></script>
+		<script src="js/login.js"></script>
 
-		<script>
-
-			//Animate.css
-			$(document).ready(function(){
-				$('h1').addClass('animated pulse');
-				$('input, select').addClass('animated bounceInUp');
-				$('.btn').addClass('animated bounceInUp');
-			});
-
-			//On .btn.btntxt click
-			$('.btn.btntxt').one( "click", function() {
-				//TODO: Validate.
-
-				var endpoint = "http://vm0063.virtues.fi/authentication/";
-				var username = $('#username').val();
-				var password = $('#password').val();
-				var authorization = make_base_auth(username, password);
-
-				$.ajax({
-					type: "GET",
-					url: endpoint,
-					dataType: 'json',
-					beforeSend: function (xhr) {
-						xhr.setRequestHeader ("Authorization", authorization);
-					}
-				}).done(function( data ) {
-						localStorage.authorization=authorization;
-						localStorage.color=data['color'];
-						localStorage.gangster=data['id'];
-						localStorage.gang=data['gang'];
-						window.location.replace("home.html");
-				}).fail(function( jqXHR, textStatus ) {
-					//TODO fix this - Error message needed
-						//alert( "Request failed: " + textStatus );
-						window.location.replace("login.html");
-				});
-
-			});
-
-
-
-
-		</script>
 
 </body>
 </html>
