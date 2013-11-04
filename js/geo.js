@@ -16,6 +16,8 @@ function onGPSSuccess(pos) {
         " lon " + longitude +
         " accuracy " + accuracy
       );
+      updateUserPosition(latitude, longitude);
+
 
 
 }
