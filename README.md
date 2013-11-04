@@ -9,3 +9,4 @@ Pages currently with some JS logic:
 - login.html
 - home.html
 - profile.html
+- profile-gang.html
