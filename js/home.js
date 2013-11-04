@@ -1,5 +1,5 @@
-      //Load venues or redirect
-      jQuery(document).ready(function(){
+//Load venues or redirect
+jQuery(document).ready(function(){
 
       if (!localStorage.authorization||!localStorage.color||!localStorage.gangster) {
         window.location.replace("splash.html");
@@ -13,9 +13,7 @@
         new gnMenu( document.getElementById( 'gn-menu' ) );
 
         //Animate.css
-        jQuery(document).ready(function(){
-          jQuery('#start-to-spray').addClass('animated pulse');
-        });
+        jQuery('#start-to-spray').addClass('animated pulse');
 
         //Get Venues
         var authorization=localStorage.authorization;
@@ -28,7 +26,6 @@
             xhr.setRequestHeader ("Authorization", authorization);
           }
         }).done(function( data ) {
-        //TODO Populate venues
           for (var i = data.length - 1; i >= 0; i--) {
             var venue = $("<div>").addClass("venue");
             var owner = $("<p>").addClass("owner");
@@ -74,5 +71,5 @@
         //TODO fix this
           alert("Error: something went wrong while loading the venues");
         });
-      }
-    });
+    }
+});
