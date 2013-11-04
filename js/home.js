@@ -15,6 +15,9 @@ jQuery(document).ready(function(){
         //Animate.css
         jQuery('#start-to-spray').addClass('animated pulse');
 
+        //Check GPS
+        watchGPS();
+
         //Get Venues
         var authorization=localStorage.authorization;
         var endpoint = "http://vm0063.virtues.fi/venues/";
