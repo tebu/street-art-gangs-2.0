@@ -80,7 +80,6 @@
                 <div class="md-overlay"></div><!-- the overlay element -->
 
     <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
-    <script src="js/ion.sound.min2.js"></script>
     <script src="js/jquery.fittext.js"></script>
 
     <script src="js/classie.js"></script>
@@ -139,53 +138,6 @@
             jQuery('a.btn').addClass('animated bounceInUp');
 
     });
-
-    // Sound effects
-    $.ionSound({
-        sounds: [ 
-            "athmo", // set needed sounds names
-            "shake",
-            "spray",
-            "swoosh",
-            "bum",
-            "counter"
-        ],
-        path: "sounds/", // set path to sounds
-        multiPlay: true, // playing only 1 sound at once
-        volume: "0.3" // not so loud please
-    });
-              
-
-    setTimeout(function (){
-
-         $.ionSound.play("athmo");
-
-     }, 5000); // delay this sound
-
-    setTimeout(function (){
-
-        $.ionSound.play("swoosh");
-
-     }, 1500); // delay this sound
-
-    setTimeout(function (){
-      
-         $.ionSound.play("shake");
-
-     }, 2000); // delay this sound
-
-    setTimeout(function (){
-
-         $.ionSound.play("spray");
-
-     }, 8800); // delay this sound
-
-    setTimeout(function (){
-
-         $.ionSound.play("bum");
-          $.ionSound.play("counter");
-
-     }, 22500); // delay this sound
 
     // Points animation
     jQuery({someValue: 0}).delay(23000).animate({someValue:1260}, {
