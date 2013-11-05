@@ -12,14 +12,14 @@
   <link rel="apple-touch-icon" sizes="72x72" href="img/icons/icon-72.png" />
   <link rel="apple-touch-icon" sizes="114x114" href="img/icons/icon@2x.png" />
   <link rel="apple-touch-icon" sizes="144x144" href="img/icons/icon-72@2x.png" />
-   
+
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="font/sag/style.css">
   <link rel="stylesheet" href="css/animate.css">
   <link rel="stylesheet" href="css/universal.css" />
   <link rel="stylesheet" href="css/spraying.css">
-   
+
 </head>
 
 <body id="spraying" class="purple">
@@ -50,9 +50,9 @@
         <p>Gongrats<br><span>1000</span><br> points earned!</p>
       </div>
 
-    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+    <script src='js/jquery-1.10.2.min.js'></script>
     <script>
-    
+
       // Pervcentage loading
       $('.bar-percentage[data-percentage]').each(function () {
         var progress = $(this);
@@ -73,7 +73,7 @@
         // jQuery("p#prepare").fadeIn(1000);
         jQuery("p#prepare").delay(2000).fadeOut(1000);
         // jQuery("p#progress").delay(5000).fadeIn(1000);
-        jQuery("p#progress").delay(8000).fadeOut(1000); 
+        jQuery("p#progress").delay(8000).fadeOut(1000);
         // jQuery("p#finished").delay(19000).fadeIn(500);
          jQuery("p#finished").delay(20000).fadeOut(300);
          jQuery("#loading").delay(22000).fadeOut(300);
@@ -99,12 +99,12 @@
     jQuery({someValue: 0}).delay(23000).animate({someValue:1260}, {
         duration: 1000,
         easing:'swing',
-        step: function() { 
+        step: function() {
            $('.points-earned span').text (Math.ceil(this.someValue) + "");
         }
       });
 
-  </script> 
+  </script>
 
 </body>
 </html>
