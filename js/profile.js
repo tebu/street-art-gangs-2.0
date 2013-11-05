@@ -1,12 +1,12 @@
       //Load venues or redirect
       jQuery(document).ready(function(){
 
-      // animate.css
-      $('ul.profile-list').addClass('animated bounceInUp');
-
       if (!localStorage.authorization||!localStorage.color||!localStorage.gangster||!localStorage.gang) {
         window.location.replace("splash.html");
       } else {
+
+        // animate.css
+        $('ul.profile-list').addClass('animated bounceInUp');
 
         //Change color background depending on player's color
         var color = localStorage.color;
