@@ -14,7 +14,7 @@
   <link rel="apple-touch-icon" sizes="72x72" href="img/icons/icon-72.png" />
   <link rel="apple-touch-icon" sizes="114x114" href="img/icons/icon@2x.png" />
   <link rel="apple-touch-icon" sizes="144x144" href="img/icons/icon-72@2x.png" />
-  
+
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/animate.css">
@@ -28,7 +28,7 @@
   <script src="js/modernizr.custom.js"></script>
 </head>
 
-<body id="leaderboard" class="purple">
+<body id="leaderboard">
 
     <div class="container">
 
@@ -41,7 +41,7 @@
                 <li><a class="gn-icon" href="profile.html"><span class="nav-icon icon-dude"></span>Profile</a></li>
                 <li><a class="gn-icon" href="gang.html"><span class="nav-icon icon-dudes"></span>Gang</a></li>
                 <li><a class="gn-icon" href="leaderboard.html"><span class="nav-icon icon-trophy"></span>Leaderboard</a></li>
-                <li><a class="gn-icon" href="spray.html"><span class="nav-icon icon-config"></span>Tweaks</a></li>                
+                <li><a class="gn-icon" href="spray.html"><span class="nav-icon icon-config"></span>Tweaks</a></li>
               </ul>
             </div><!-- /gn-scroller -->
           </nav>
@@ -60,11 +60,12 @@
 
                 <table id="gang-board" cellspacing='0'>
                   <tr><th>#</th><th>Gang</th><th>Tags</th><th>Points</th></tr>
-
+<!-- Base Model:
                   <tr><td>1</td><td>Purple</td><td>56</td><td>5600</td></tr>
                   <tr><td>2</td><td>Blue</td><td>43</td><td>4300</td></tr>
                   <tr><td>3</td><td>Green</td><td>25</td><td>2500</td></tr>
-              </table> 
+-->
+              </table>
               <h4 class="instructions"><span class="icon-arrow-left-small"></span> swipe to change <span class="icon-arrow-right-small"></span></h4>
            </div>
 
@@ -72,7 +73,7 @@
                 <h2 class="title">Players</h2>
                 <table id="player-board" cellspacing='0'>
                 <tr><th>#</th><th>Player</th><th>Tags</th><th>Points</th></tr>
-          
+
                 <tr><td>1</td><td>Batman</td><td>23</td><td>2300</td></tr>
                 <tr><td>2</td><td>Superman</td><td>21</td><td>2100</td></tr>
                 <tr><td>3</td><td>Thor</td><td>19</td><td>1900</td></tr>
@@ -84,7 +85,7 @@
                 <tr><td>9</td><td>Wolverine</td><td>11</td><td>1100</td></tr>
                 <tr><td>10</td><td>Catwoman</td><td>10</td><td>1000</td></tr>
                 <tr class="you"><td>21</td><td>You</td><td>2</td><td>200</td></tr>
-              </table> 
+              </table>
            </div>
       </div><!-- /liquid-slider -->
 
@@ -96,25 +97,10 @@
     <script src="js/jquery.liquid-slider-custom.min.js"></script>
     <script src="js/classie_menu.js"></script>
     <script src="js/gnmenu.js"></script>
+    <script src="js/geo.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/leaderboard.js"></script>
 
-   
-    <script>
-        //Menu
-        new gnMenu( document.getElementById( 'gn-menu' ) );
-
-        $('#leaderboards').liquidSlider({
-          slideEaseDuration: 500,
-          slideEaseFunction: "easeInOutExpo",
-          dynamicArrows: false
-        });
-
-        //Animate.css
-         $(document).ready(function(){
-           $('table#gang-board').addClass('animated slideInRight');
-           $('h4').addClass('animated pulse');
-           $('.icon-trophy').addClass('animated slideInDown');
-         });
-    </script>
 
 </body>
 </html>
