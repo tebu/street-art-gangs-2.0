@@ -10,3 +10,4 @@ Pages currently with some JS logic:
 - home.html
 - profile.html
 - profile-gang.html
+- leaderboard.html
