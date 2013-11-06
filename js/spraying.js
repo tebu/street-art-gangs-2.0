@@ -28,6 +28,8 @@ jQuery(document).ready(function(){
         });
       });
 
+      //TODO: cascade of views
+
       // Showing and hiding text elements
       jQuery(document).ready(function() {
         // jQuery("p#prepare").fadeIn(1000);
@@ -35,12 +37,17 @@ jQuery(document).ready(function(){
         // jQuery("p#progress").delay(5000).fadeIn(1000);
         jQuery("p#progress").delay(8000).fadeOut(1000);
         // jQuery("p#finished").delay(19000).fadeIn(500);
+
+        setTimeout(function() {
+          registerSpray();
+        }, 20000);
+
          jQuery("p#finished").delay(20000).fadeOut(300);
          jQuery("#loading").delay(22000).fadeOut(300);
 
         // Redirect to home screen after finished spraying
         setTimeout(function() {
-          registerSprayAndRedirect();
+          window.location.href = "home.html";
         }, 27000);
     });
 
@@ -56,6 +63,7 @@ jQuery(document).ready(function(){
     });
 
     // Points animation
+    //TODO: Calculate points
     jQuery({someValue: 0}).delay(23000).animate({someValue:1260}, {
         duration: 1000,
         easing:'swing',
@@ -64,7 +72,7 @@ jQuery(document).ready(function(){
         }
       });
 
-var registerSprayAndRedirect = function() {
+var registerSpray = function() {
 
         var authorization=localStorage.authorization;
         var gangster = localStorage.gangster;
@@ -86,7 +94,6 @@ var registerSprayAndRedirect = function() {
             xhr.setRequestHeader ("Authorization", authorization);
           }
         }).done(function( data ) {
-          window.location.href = "home.html";
         }).fail(function( jqXHR, textStatus ) {
         //TODO fix this
           alert("Error: something went wrong while updating the location: "+ textStatus);
