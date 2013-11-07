@@ -64,7 +64,6 @@ body.green .chatter {
 
 textarea {
   border-radius: 0;
-  color: #fff !important
 }
 
 ::-webkit-input-placeholder { /* WebKit browsers */
