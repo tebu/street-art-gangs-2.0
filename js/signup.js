@@ -48,7 +48,7 @@ $(document).ready(function(){
                 localStorage.color=data['color'];
                 localStorage.gangster=data['id'];
                 localStorage.gang=data['gang'];
-                window.location.replace("home.html");
+                window.location.replace("index.html");
             }).fail(function( jqXHR, textStatus ) {
             //TODO fix this
                 //alert("Error");

@@ -7,7 +7,7 @@ Pages currently with some JS logic:
 - splash.html
 - signup.html
 - login.html
-- home.html
+- index.html
 - profile.html
 - profile-gang.html
 - leaderboard.html

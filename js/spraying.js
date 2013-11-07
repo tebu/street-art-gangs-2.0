@@ -47,7 +47,7 @@ jQuery(document).ready(function(){
 
         // Redirect to home screen after finished spraying
         setTimeout(function() {
-          window.location.href = "home.html";
+          window.location.href = "index.html";
         }, 27000);
     });
 
