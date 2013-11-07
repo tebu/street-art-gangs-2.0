@@ -11,3 +11,6 @@ Pages currently with some JS logic:
 - profile.html
 - profile-gang.html
 - leaderboard.html
+- chat.html
+- tweaks.html
+- spraying.html
