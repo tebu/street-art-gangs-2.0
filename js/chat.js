@@ -12,7 +12,8 @@ jQuery(document).ready(function(){
         //Retrieve messages - TODO filter by gang
         var authorization=localStorage.authorization;
         var gangster = localStorage.gangster;
-        var endpoint = "http://vm0063.virtues.fi/messages/";
+        var gang = localStorage.gang;
+        var endpoint = "http://vm0063.virtues.fi/messages?limit=10&gang="+gang;
         $.ajax({
           type: "GET",
           url: endpoint,
