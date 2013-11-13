@@ -7,8 +7,7 @@ jQuery(document).ready(function(){
         //Change color background depending on player's color
         var color = localStorage.color;
         $('body').removeClass().addClass(color)
-
-
+        $("#can-spraying").attr("src", "img/can-"+color+".png" );
       }
 
 });
