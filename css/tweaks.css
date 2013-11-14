@@ -1,183 +1,46 @@
 /*Styles for tweaks screen*/
 
-body.purple {
-    background-image: -webkit-gradient(linear, center bottom, center top, color-stop(0%, #3c0c6a), color-stop(100%, #3b174a));
-    background-image: -webkit-linear-gradient(bottom, #3c0c6a 0%, #3b174a 100%);
-    background-image: -moz-linear-gradient(bottom, #3c0c6a 0%, #3b174a 100%);
-    background-image: -ms-linear-gradient(bottom, #3c0c6a 0%, #3b174a 100%);
-    background-image: -o-linear-gradient(bottom, #3c0c6a 0%, #3b174a 100%);
-    background-image: linear-gradient(to top, #3c0c6a 0%, #3b174a 100%);
+body.blue {
+    background: #76C6FF
 }
 
-body.blue {
-    background-image: -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 116, color-stop(25%, #4F9FFF), color-stop(100%, #4DBBFF));
-    background-image: -webkit-radial-gradient(center bottom, farthest-side circle, #4F9FFF 25%, #4DBBFF 100%);
-    background-image: -moz-radial-gradient(center bottom, farthest-side circle, #4F9FFF 25%, #4DBBFF 100%);
-    background-image: -ms-radial-gradient(center bottom, farthest-side circle, #4F9FFF 25%, #4DBBFF 100%);
-    background-image: -o-radial-gradient(center bottom, farthest-side circle, #4F9FFF 25%, #4DBBFF 100%);
-    background-image: radial-gradient(farthest-side circle at center bottom, #4F9FFF 25%, #4DBBFF 100%);
+body.purple {
+    background: #633576
 }
 
 body.green {
-    background-image: -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 116, color-stop(15%, #4DB18E), color-stop(100%, #54CC9A));
-    background-image: -webkit-radial-gradient(center bottom, farthest-side circle, #4DB18E 25%, #54CC9A 100%);
-    background-image: -moz-radial-gradient(center bottom, farthest-side circle, #4DB18E 25%, #54CC9A 100%);
-    background-image: -ms-radial-gradient(center bottom, farthest-side circle, #4DB18E 25%, #54CC9A 100%);
-    background-image: -o-radial-gradient(center bottom, farthest-side circle, #4DB18E 25%, #54CC9A 100%);
-    background-image: radial-gradient(circle farthest-side at center bottom , #4DB18E 25%, #54CC9A 100%);
+    background: #6BD6AA
 }
 
 .content {
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
     position: relative;
-    top: 100px;
+    top: 70px;
 }
 
 .tweak {
     position: relative;
-    margin: 20px 0;
+    margin-bottom: 20px;
+/*    margin: 20px 0;*/
 }
 
-.onoffswitch {
-    position: relative;
-    width: 150px;
-    margin: 5px auto;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-}
-
-.onoffswitch-checkbox {
-    display: none;
-}
-
-.onoffswitch-label {
-    display: block;
-    overflow: hidden;
-    cursor: pointer;
-    border-radius: 20px;
-}
-
-body.purple .onoffswitch-label {
-    border: 2px solid #8C5CA0;
-}
-
-body.blue .onoffswitch-label {
-    border: 2px solid #4DBBFF;
-}
-
-body.green .onoffswitch-label {
-    border: 2px solid #54CC9A;
-}
-
-.onoffswitch-inner {
-    width: 200%;
-    margin-left: -100%;
-    -moz-transition: margin 0.3s ease-in 0s;
-    -webkit-transition: margin 0.3s ease-in 0s;
-    -o-transition: margin 0.3s ease-in 0s;
-    transition: margin 0.3s ease-in 0s;
-}
-
-.onoffswitch-inner:before, .onoffswitch-inner:after {
-    float: left;
-    width: 50%;
-    height: 29px;
-    padding: 0;
-    line-height: 29px;
-    font-size: 14px;
-    color: white;
-    font-family: Trebuchet, Arial, sans-serif;
-    font-weight: bold;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-.onoffswitch-inner:before {
-    content: "ON";
-    padding-left: 10px;
-    color: #FFFFFF;
-}
-
-body.purple .onoffswitch-inner:before {
-    background: #8C5CA0;
-}
-
-body.blue .onoffswitch-inner:before {
-    background: #62C3FF;
-}
-
-body.green .onoffswitch-inner:before {
-    background: #64DEAC;
-}
-
-.onoffswitch-inner:after {
-    content: "OFF";
-    padding-right: 10px;
-    background-color: #fff;
-    text-align: right;
-}
-
-body.purple .onoffswitch-inner:after {
-    color: #8C5CA0;
-}
-
-body.blue .onoffswitch-inner:after {
-    color: #4DBBFF;
-}
-
-body.green .onoffswitch-inner:after {
-    color: #64DEAC;
-}
-
-.onoffswitch-switch {
-    width: 32px;
-    margin: 0px;
-    background: #FFFFFF;
-    border-radius: 50%;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 118px;
-    -moz-transition: all 0.3s ease-in 0s;
-    -webkit-transition: all 0.3s ease-in 0s;
-    -o-transition: all 0.3s ease-in 0s;
-    transition: all 0.3s ease-in 0s;
-}
-
-body.purple .onoffswitch-switch {
-    border: 2px solid #62207e;
-}
-
-body.blue .onoffswitch-switch {
-    border: 2px solid #4DBBFF;
-}
-
-body.green .onoffswitch-switch {
-    border: 2px solid #54CC9A;
-}
-
-.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
-    margin-left: 0;
-}
-
-.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
-    right: 0px;
+.tweak.logginout {
+    margin-bottom: 0;
 }
 
 div.option {
     position: relative;
-    text-align: center;
+    text-align: left;
     color: #fff;
     font-weight: 700;
     font-size: 1em;
+    margin-bottom: 10px
 }
 
 input {
-    background: rgba(255,255,255, .2);
-    color: white;
+    width: 100%;
+    color: #fff;
     font-weight: 700;
     border: none;
     padding: 8px;
@@ -185,30 +48,45 @@ input {
     -webkit-appearance: none;
 }
 
+body.blue input {
+    background: #4FB2F8;
+    box-shadow: 0 0 4px #0096BF inset;
+}
+
+body.purple input {
+   background: #4D1A62;
+    box-shadow: 0 0 4px #411354 inset;
+}
+
+body.green input {
+   background: #41B183;
+    box-shadow: 0 0 4px #279D6C inset;
+}
+
 input:focus {
-    background: rgba(0,0,0, .1);
+    background: white;
 }
 
 ::-webkit-input-placeholder {
     color: white;
-    opacity: 1;
+    opacity: .7;
 }
 
 ::-moz-placeholder {
  /* Firefox 19+ */
     color: white;
-    opacity: 1;
+    opacity: .3;
 }
 
 :-ms-input-placeholder {
     color: white;
-    opacity: 1;
+    opacity:.3;
 }
 
 :-moz-placeholder {
  /* Firefox 18- */
     color: white;
-    opacity: 1;
+    opacity: .3;
 }
 
 .btn2 {
@@ -226,18 +104,16 @@ input:focus {
     box-shadow: 0 2px 1px rgba(0,0,0,.1);
 }
 
-.logout {
+.button {
     position: relative;
     top: 20px;
-    width: 200px;
+    width: 100%;
     height: auto;
     border-radius: none;
-    box-shadow: 0 2px 1px rgba(0,0,0,.1);
     cursor: pointer;
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;
-    background: rgba(255,255,255, .2);
     padding: 10px 0;
     color: white;
     border: none;
@@ -246,12 +122,96 @@ input:focus {
     transition: all 0.3s;
 }
 
-.logout:active, .logout:focus {
-    background: #72318C;
+body.purple .button {
+    background-image: -webkit-gradient(radial, 100% 0%, 0, 100% 0%, 448, color-stop(50%, #8700db), color-stop(50%, #7c01c6));
+    background-image: -webkit-radial-gradient(right top, farthest-side circle, #6F4381 50%, #58316D 50%);
+    background-image: -moz-radial-gradient(right top, farthest-side circle, #8700db 50%, #7c01c6 50%);
+    background-image: -ms-radial-gradient(right top, farthest-side circle, #8700db 50%, #7c01c6 50%);
+    background-image: -o-radial-gradient(right top, farthest-side circle, #8700db 50%, #7c01c6 50%);
+    background-image: radial-gradient(circle farthest-side at right top , #6F4381 50%, #58316D 50%);
+    box-shadow: 0 8px 0 #4D2262;
+}
+
+body.blue .button {
+    background-image: -webkit-gradient(radial, 100% 0%, 0, 100% 0%, 227, color-stop(50%, #3DB5FF), color-stop(50%, #4DBBFF));
+    background-image: -webkit-radial-gradient(right top, farthest-side circle, #3DB5FF 50%, #4DBBFF 50%);
+    background-image: -moz-radial-gradient(right top, farthest-side circle, #3DB5FF 50%, #4DBBFF 50%);
+    background-image: -ms-radial-gradient(right top, farthest-side circle, #3DB5FF 50%, #4DBBFF 50%);
+    background-image: -o-radial-gradient(right top, farthest-side circle, #3DB5FF 50%, #4DBBFF 50%);
+    background-image: radial-gradient(farthest-side circle at right top, #3DB5FF 50%, #4DBBFF 50%);
+    box-shadow: 0 8px 0 #1F9DEB;
+}
+
+body.green .button {
+    background-image: -webkit-gradient(radial, 100% 0%, 0, 100% 0%, 227, color-stop(50%, #4edaa0), color-stop(50%, #6ddfb0));
+    background-image: -webkit-radial-gradient(right top, farthest-side circle, #4edaa0 50%, #6ddfb0 50%);
+    background-image: -moz-radial-gradient(right top, farthest-side circle, #4edaa0 50%, #6ddfb0 50%);
+    background-image: -ms-radial-gradient(right top, farthest-side circle, #4edaa0 50%, #6ddfb0 50%);
+    background-image: -o-radial-gradient(right top, farthest-side circle, #4edaa0 50%, #6ddfb0 50%);
+    background-image: radial-gradient(farthest-side circle at right top, #4edaa0 50%, #6ddfb0 50%);
+    box-shadow: 0 8px 0 #4FB08B;
+}
+
+.button:active, .button:focus {
+    box-shadow: none
+}
+
+.button.logout {
+    top: 0;
+    background-image: -webkit-gradient(radial, 100% 0%, 0, 100% 0%, 227, color-stop(50%, #E74C3C), color-stop(50%, #F85948)) !important;
+    background-image: -webkit-radial-gradient(right top, farthest-side circle, #E74C3C 50%, #F85948 50%) !important;
+    background-image: -moz-radial-gradient(right top, farthest-side circle, #E74C3C 50%, #F85948 50%) !important;
+    background-image: -ms-radial-gradient(right top, farthest-side circle, #E74C3C 50%, #F85948 50%) !important;
+    background-image: -o-radial-gradient(right top, farthest-side circle, #E74C3C 50%, #F85948 50%) !important;
+    background-image: radial-gradient(farthest-side circle at right top, #E74C3C 50%, #F85948 50%) !important;
+    box-shadow: 0 8px 0 #BF2C00 !important;
 }
 
 .btn:active {
     background: rgba(0,0,0,.5);
+}
+
+li {
+    list-style: none;
+}
+
+i {
+    position: relative;
+    top: 2px;
+}
+
+i.icon-check {
+    position: relative;
+    top: 2px;
+    left: 10px
+}
+
+.confirm {
+    top: 20px;
+    left: -16px;
+    margin-bottom: 40px !important;
+    position: relative;
+}
+
+.tweak-section {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 10px 0;
+    padding: 20px;
+    border: 1px solid  rgba(0,0,0,.1)
+}
+
+body.blue .tweak-section {
+    background: #60BDFF
+}
+
+body.purple .tweak-section {
+    background: #592370
+}
+
+body.green .tweak-section {
+    background: #5AC69A
 }
 
 .md-modal {
@@ -431,18 +391,4 @@ input:focus {
     opacity: 1;
 }
 
-li {
-    list-style: none;
-}
 
-i {
-    position: relative;
-    top: 2px;
-}
-
-.confirm {
-    top: 20px;
-    left: -16px;
-    margin-bottom: 40px !important;
-    position: relative;
-}
