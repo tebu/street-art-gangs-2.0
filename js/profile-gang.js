@@ -1,9 +1,13 @@
       //Load venues or redirect
       jQuery(document).ready(function(){
 
-      if (!localStorage.authorization||!localStorage.color||!localStorage.gangster||!localStorage.gang) {
-        window.location.replace("splash.html");
-      } else {
+        //Animate.css
+        $('.tile').addClass('animated slideInLeft');
+
+
+       // if (!localStorage.authorization||!localStorage.color||!localStorage.gangster||!localStorage.gang) {
+       //   window.location.replace("splash.html");
+       // } else {
 
         //Change color background depending on player's color
         var color = localStorage.color;
@@ -35,20 +39,6 @@
           //TODO: Add points
           //TODO Add Best player
           //TODO Add Last Action
-
-
-
-            //Init Swiper
-            var mySwiper = $('.swiper-container').swiper({
-              mode:'horizontal',
-              loop: true,
-              createPagination: true,
-              pagination: '.pagination',
-              initialSlide: 0
-            });
-
-            //Init ModalEffects
-            ModalEffects();
 
 
 
