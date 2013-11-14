@@ -5,9 +5,9 @@
         $('.tile').addClass('animated slideInLeft');
 
 
-       // if (!localStorage.authorization||!localStorage.color||!localStorage.gangster||!localStorage.gang) {
-       //   window.location.replace("splash.html");
-       // } else {
+       if (!localStorage.authorization||!localStorage.color||!localStorage.gangster||!localStorage.gang) {
+         window.location.replace("splash.html");
+       } else {
 
         //Change color background depending on player's color
         var color = localStorage.color;
