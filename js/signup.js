@@ -1,8 +1,10 @@
 $(document).ready(function(){
     //Animate.css
     $('h1').addClass('animated pulse');
-    $('input, select').addClass('animated bounceInUp');
+    $('input, select').addClass('animated slideInLeft');
     $('.btn').addClass('animated bounceInUp');
+    $('a#about-gangs').addClass('animated slideInRight');
+     $('.icon-question').addClass('animated flash');
 
     //Change background depending on the gang
     $( "#gang" ).change(function () {
