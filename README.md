@@ -14,3 +14,4 @@ Pages currently with some JS logic:
 - chat.html
 - tweaks.html
 - spraying.html
+- faq.html
