@@ -1,11 +1,16 @@
 $(document).ready(function(){
+    
     //Animate.css
+    $('#about-gangs').click(function(){
+        $('.tile').addClass('animated slideInRight');
+        $('.icon-droplet').addClass('animated pulse');
+    });
+
     $('h1').addClass('animated pulse');
     $('input, select').addClass('animated slideInLeft');
     $('.btn').addClass('animated bounceInUp');
     $('a#about-gangs').addClass('animated slideInRight');
-     $('.icon-question').addClass('animated flash');
-
+    
     //Change background depending on the gang
     $( "#gang" ).change(function () {
         var gang = $( "#gang option:selected" ).attr('id');
