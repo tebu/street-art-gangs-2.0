@@ -81,7 +81,7 @@ input  {
     border-radius: none;
     padding: 15px 0 15px 20px;
     color: #fff;
-    background:rgba(0,0,0,.7);
+    background:rgba(0,0,0,.3);
     border-left: 5px solid rgba(0,0,0,.1);
     font-size: 1em;
 }
@@ -125,7 +125,7 @@ select {
     color: #fff;
     font-size: 1em;
     width: 100%;
-    background:rgba(0,0,0,.7);
+    background:rgba(0,0,0,.3);
     padding: 15px 0 15px 20px;
     border: none;
     border-radius: 0;
@@ -226,6 +226,10 @@ span {
     height: 100%;
 }
 
+.error .md-content {
+    padding-top: 40px
+}
+
 .md-content h3 {
     margin: 0;
     padding: 0.4em;
@@ -251,7 +255,7 @@ span {
 }
 
 .md-content button {
-    background: #333;
+    background: rgba(0,0,0,.1);
     border: none;
     color: #FFFFFF;
     cursor: pointer;
@@ -280,6 +284,22 @@ span {
 .md-show.md-effect-12 ~ .md-overlay {
     background: #000
 } 
+
+.md-show.error.md-effect-12 ~ .md-overlay {
+    background-image: -webkit-gradient(linear, center bottom, center top, color-stop(0%, #FF502D), color-stop(25%, #EB5600), color-stop(83%, #D62B00));
+    background-image: -webkit-linear-gradient(bottom, #FF502D 0%, #EB5600 25%, #D62B00 83%);
+    background-image: -moz-linear-gradient(bottom, #FF502D 0%, #EB5600 25%, #D62B00 83%);
+    background-image: -ms-linear-gradient(bottom, #FF502D 0%, #EB5600 25%, #D62B00 83%);
+    background-image: -o-linear-gradient(bottom, #FF502D 0%, #EB5600 25%, #D62B00 83%);
+    background-image: linear-gradient(to top, #FF502D 0%, #EB5600 25%, #D62B00 83%) ;
+} 
+
+.icon-blocked {
+    position: relative;
+    display: inline-block;
+    margin-top: 50px;
+    font-size: 3em
+}
 
 .md-effect-12 .md-content h3,
 .md-effect-12 .md-content {
@@ -410,3 +430,28 @@ i.icon-droplet {
 .tile.green-shamans i.icon-droplet {
     color: #56FFC4;
 }
+
+a#test {
+    position: absolute;
+    top: 0 !important;
+    right: 0;
+    font-family: "Lato";
+    background: #111;
+    padding: 5px;
+    z-index: 4000
+}
+
+small {
+    width: 60%;
+    display: block;
+    margin: 40px auto 0;
+}
+
+.visible {
+    display: block
+}
+
+.hide {
+    display: none
+}
+

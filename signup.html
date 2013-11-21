@@ -59,8 +59,32 @@
 			</div>
 		</div><!--/ modal -->
 
+
+		<!-- This modal window should appear after clicking I'm ready-button, and if error(s) happens -->
+
+		<div class="md-modal error md-effect-12" id="modal-error">
+			<div class="md-content">
+				<div>
+				<button class="md-close"><i class="icon-arrow-left-big"></i></button>
+					<i class="icon-blocked"></i>
+
+					<!-- Each error message is visible only if this error happens, in css there are classes visible and hide, maybe we can use them? -->
+					<p class="error" id="nickname-error">Nickname is not available</p>
+					<p class="error" id="email-error">Not valid email address</p>
+					<p class="error" id="password-error">Password mismatch</p>
+					<p class="error" id="gang-error">None gang selected</p>
+
+					<p><small>This modal window should appear after clicking I'M READY-button, and if error(s) happens</small></p>
+					
+				</div>
+			</div>
+		</div>
+
+		<!-- This button is just for testing, actually modal window should appear after clicking I'm ready-button, and if error(s) happens -->
+		<a href="#" id="test" class="md-trigger" data-modal="modal-error">Error modal</a>
+
 		<div class="header">
-			<a href="splash.html" class="back"><i class="icon-arrow-left-small"></i> Back</a>
+			<a href="splash.html" class="back"><i class="icon-arrow-left-big"></i></a>
 			<h1>Sign Up</h1>
 			<span class="icon-write"></span>
 		</div><!--/ header -->
@@ -68,7 +92,7 @@
 		<div class="content">
 
 			<div class="form">
-					<input type="text" class="input" placeholder="Name" id ="username">
+					<input type="text" class="input" placeholder="Nickname" id ="username">
 					<input type="text" class="input" placeholder="Email"  id ="email">
 					<input type="password" class="input" placeholder="Password" id ="password">
 					<input type="password" class="input" placeholder="Password again" id ="rePassword">
