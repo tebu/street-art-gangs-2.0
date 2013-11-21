@@ -26,18 +26,54 @@
 
 <body>
 
-	<div class="md-modal md-effect-12" id="modal-12">
+	<div class="md-modal help md-effect-12" id="modal-help">
 		<div class="md-content">
 			<div>
-			<button class="md-close"><i class="icon-arrow-left-big"></i></button>
-				<p>You're in deep shit then!</p>
+				<button class="md-close"><i class="icon-arrow-left-big"></i></button>
+				<p><i>Maybe we can send signup information to the player?</i></p>
+				<p>Enter an email address that you've used in signup.<p>
+				</p>
+
+				<div class="form-reset">
+					<input type="email" class="input" placeholder="Email" id="reset-email">
+					<input type="submit" class="submit" placeholder="Submit" id="submit">
+				</div>
 				
 			</div>
 		</div>
 	</div>
 
+	<!-- This modal window should appear after clicking LOGIN-button, and if name error happens -->
+
+	<div class="md-modal error md-effect-12" id="modal-name-error">
+		<div class="md-content">
+			<div>
+			<button class="md-close"><i class="icon-arrow-left-big"></i></button>
+				<i class="icon-blocked"></i>
+				<p>That name does not exist!</p>
+				<p><small>This modal window should appear after clicking LOGIN-button, and if name error happens</small></p>
+				
+			</div>
+		</div>
+	</div>
+
+	<!-- This modal window should appear after clicking LOGIN-button, and if password error happens -->
+
+	<div class="md-modal error md-effect-12" id="modal-password-error">
+		<div class="md-content">
+			<div>
+			<button class="md-close"><i class="icon-arrow-left-big"></i></button>
+				<i class="icon-blocked"></i>
+				<p>Wrong password!</p>
+				<p><small>This modal window should appear after clicking LOGIN-button, and if password error happens</small></p>
+				
+			</div>
+		</div>
+	</div>
+
+
 	<div class="header">
-		<a href="splash.html" class="back"><i class="icon-arrow-left-small"></i> Back</a>
+		<a href="splash.html" class="back"><i class="icon-arrow-left-big"></i></a>
 		<h1>Login</h1>
 	</div>
 
@@ -49,8 +85,16 @@
 		</div>
 
 		<div class="problems">
-			<a href="#" class="btn2 md-trigger" data-modal="modal-12">Problems with login?</a>
-		</div>
+			<a href="#" class="btn2 md-trigger" data-modal="modal-help">Problems with login?</a><br><br>
+
+			<!-- This button is just for testing, actually modal window should appear after clicking LOGIN-button, and if name error happens -->
+			<a href="#" class="btn2 md-trigger" data-modal="modal-name-error">Name error modal</a>
+
+			<br>
+
+			<!-- This button is just for testing, actually modal window should appear after clicking LOGIN-button, and if password error happens -->
+			<a href="#" class="btn2 md-trigger" data-modal="modal-password-error">Password error modal</a>			
+		</div><!-- /problems -->
 
 
 	</div>
