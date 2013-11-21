@@ -78,6 +78,20 @@ input  {
     border-left: 5px solid rgba(0,0,0,.1)
 }
 
+input.submit  {
+    font-size: 1em;
+    font-weight: 700;
+    width: 100%;
+    margin-bottom: 1px;
+    border: none;
+    border-radius: none;
+    padding: 15px 0 15px 0;
+    color: #fff;
+    background:rgba(0,0,0,.2);
+    border-left: none;
+    border-bottom: 6px solid rgba(0, 0, 0, 0.1)
+}
+
 input:nth-child(2) {
     -webkit-animation-delay: .1s;
     animation-delay: .1s;
@@ -192,6 +206,16 @@ input:focus {
     text-align: center;
 }
 
+.help .md-content {
+    padding-top: 40px
+}
+
+small {
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+}
+
 .md-content h3 {
     margin: 0;
     padding: 0.4em;
@@ -203,9 +227,22 @@ input:focus {
     border-radius: 3px 3px 0 0;
 }
 
-.md-content > div p {
+.help .md-content > div p {
+    margin: 0 auto;
+    padding: 10px 0;
+    width: 60%
+}
+
+.error .md-content > div p {
     margin: 0;
     padding: 10px 0;
+}
+
+.icon-blocked {
+    position: relative;
+    display: inline-block;
+    margin-top: 120px;
+    font-size: 3em
 }
 
 .md-content > div ul {
@@ -218,7 +255,7 @@ input:focus {
 }
 
 .md-content button {
-    background: #333;
+    background: rgba(0,0,0,.1);
     border: none;
     color: #FFFFFF;
     cursor: pointer;
@@ -245,7 +282,21 @@ input:focus {
 }
 
 .md-show.md-effect-12 ~ .md-overlay {
-    background: #e74c3c;
+    background-image: -webkit-gradient(linear, center bottom, center top, color-stop(0%, #2effe5), color-stop(25%, #009beb), color-stop(83%, #5d00d1));
+    background-image: -webkit-linear-gradient(bottom, #FF502D 0%, #EB5600 25%, #D62B00 83%);
+    background-image: -moz-linear-gradient(bottom, #2effe5 0%, #009beb 25%, #5d00d1 83%);
+    background-image: -ms-linear-gradient(bottom, #2effe5 0%, #009beb 25%, #5d00d1 83%);
+    background-image: -o-linear-gradient(bottom, #2effe5 0%, #009beb 25%, #5d00d1 83%);
+    background-image: linear-gradient(to top, #FF502D 0%, #EB5600 25%, #D62B00 83%) ;
+} 
+
+.md-show.help.md-effect-12 ~ .md-overlay {
+    background-image: -webkit-gradient(linear, center bottom, center top, color-stop(0%, #2effe5), color-stop(25%, #009beb), color-stop(83%, #5d00d1));
+    background-image: -webkit-linear-gradient(bottom, #2effe5 0%, #009beb 25%, #5d00d1 83%);
+    background-image: -moz-linear-gradient(bottom, #2effe5 0%, #009beb 25%, #5d00d1 83%);
+    background-image: -ms-linear-gradient(bottom, #2effe5 0%, #009beb 25%, #5d00d1 83%);
+    background-image: -o-linear-gradient(bottom, #2effe5 0%, #009beb 25%, #5d00d1 83%);
+    background-image: linear-gradient(to top, #2effe5 0%, #009beb 25%, #5d00d1 83%);
 } 
 
 .md-effect-12 .md-content h3,
@@ -266,6 +317,7 @@ input:focus {
 .problems {
     font-size: .8em;
     text-align: center;
+    margin-top: 50px
 }
 
 .input.error {
