@@ -29,7 +29,8 @@ $(document).ready(function(){
         }).fail(function( jqXHR, textStatus ) {
             //TODO fix this - Error message needed
                 //alert( "Request failed: " + textStatus );
-                window.location.replace("login.html");
+                $("#modal-name-error").addClass("md-show");
+                //window.location.replace("login.html");
         });
 
     });
