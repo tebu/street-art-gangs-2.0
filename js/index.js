@@ -34,10 +34,11 @@ jQuery(document).ready(function(){
             var owner = $("<p>").addClass("owner");
             var gang = data[i].gang;
             if (gang != null) {
+              owner.append("Tagged by ");
               $("<span>").addClass(gang+"-owns").text(gang).appendTo(owner);
-              owner.append(" gang owns it!").appendTo(venue);
+              owner.appendTo(venue);
             } else {
-              owner.append("This place is still clean!").appendTo(venue); //TODO change with something better
+              owner.append("Untagged").appendTo(venue); //TODO change with something better
             }
 
             $("<div>").addClass("category").addClass(getCategoryClass(data[i].category)).appendTo(venue);
