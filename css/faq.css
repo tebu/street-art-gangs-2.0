@@ -31,7 +31,7 @@ h1 {
 
 .faq-trigger {
     padding: 15px;
-    margin: 1px 0;
+    margin: 0;
     position: relative;
     cursor: pointer;
     font-family: "Lato";
@@ -48,6 +48,7 @@ body.purple .faq-trigger {
     background-image: -ms-linear-gradient(right bottom, #330052 0%, #39005b 100%);
     background-image: -o-linear-gradient(right bottom, #330052 0%, #39005b 100%);
     background-image: linear-gradient(to left top, #330052 0%, #39005b 100%);
+    border-bottom: 1px solid #2a0043;
 }
 
 body.green .faq-trigger {
@@ -57,6 +58,7 @@ body.green .faq-trigger {
     background-image: -ms-linear-gradient(right bottom, #35B882 0%, #45C18D 100%);
     background-image: -o-linear-gradient(right bottom, #35B882 0%, #45C18D 100%);
     background-image: linear-gradient(to left top, #35B882 0%, #45C18D 100%);
+    border-bottom: 1px solid #1d9463;
 }
 
 body.blue .faq-trigger {
@@ -66,6 +68,7 @@ body.blue .faq-trigger {
     background-image: -ms-linear-gradient(right bottom, #4DBBFF 0%, #62C3FF 100%);
     background-image: -o-linear-gradient(right bottom, #4DBBFF 0%, #62C3FF 100%);
     background-image: linear-gradient(to left top, #4DBBFF 0%, #62C3FF 100%);
+    border-bottom: 1px solid #31a3e9;
 }
 
 .faq-content {

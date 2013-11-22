@@ -1,6 +1,18 @@
 /*Styles for chat screen*/
 
-  .content {
+body.purple {
+    background: #3A025E;
+}
+
+body.blue {
+    background: #0A92E6;
+}
+
+body.green {
+    background: #1CBC7A;
+}
+
+.content {
     width: 100%;
     margin: 0 auto;
     position: relative;
@@ -19,11 +31,10 @@
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
-  outline: 3px solid rgba(0,0,0,0.05);
 }
 
 body.purple .chatter {
-    background: #3F1A48;
+    background: #3A025E;
 }
 
 body.blue .chatter {
