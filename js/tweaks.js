@@ -10,6 +10,12 @@ jQuery(document).ready(function(){
 
         //Menu
         new gnMenu( document.getElementById( 'gn-menu' ) );
+
+        //On .btn.btntxt click
+        $('.confirm').one( "click", function() {
+            localStorage.clear();
+            window.location.replace("splash.html");
+        });
     }
 
 });
