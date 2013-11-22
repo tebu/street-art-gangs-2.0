@@ -1,8 +1,7 @@
 $(document).ready(function(){
     //Animate.css
     $('h1').addClass('animated pulse');
-    $('input, select').addClass('animated bounceInUp');
-    $('.btn').addClass('animated bounceInUp');
+    $('input, .btn').addClass('animated slideInLeft');
 
 
     //On .btn.btntxt click

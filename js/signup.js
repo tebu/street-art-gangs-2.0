@@ -1,9 +1,16 @@
 $(document).ready(function(){
+    
     //Animate.css
-    $('h1').addClass('animated pulse');
-    $('input, select').addClass('animated bounceInUp');
-    $('.btn').addClass('animated bounceInUp');
+    $('#about-gangs').click(function(){
+        $('.tile').addClass('animated slideInRight');
+        $('.icon-droplet').addClass('animated pulse');
+    });
 
+    $('h1').addClass('animated pulse');
+    $('input, select').addClass('animated slideInLeft');
+    $('.btn').addClass('animated bounceInUp');
+    $('a#about-gangs').addClass('animated slideInRight');
+    
     //Change background depending on the gang
     $( "#gang" ).change(function () {
         var gang = $( "#gang option:selected" ).attr('id');

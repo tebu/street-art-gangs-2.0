@@ -1,0 +1,117 @@
+/*Styles for FAQ screen*/
+
+
+body.purple {
+    background: #3A025E;
+}
+
+body.blue {
+    background: #3EB1F8;
+}
+
+body.green {
+    background: #45C18D;
+}
+
+i {
+    position: absolute;
+    top: 15px;
+    right: 10px
+}
+
+h1 {
+    text-align: center;
+}
+
+.accordion {
+    max-width: 550px;
+    margin: 100px auto;
+    text-align: left;
+}
+
+.faq-trigger {
+    padding: 15px;
+    margin: 1px 0;
+    position: relative;
+    cursor: pointer;
+    font-family: "Lato";
+    font-weight: 400;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+body.purple .faq-trigger {
+    background-image: -webkit-gradient(linear, right bottom, left top, color-stop(0%, #330052), color-stop(100%, #39005b));
+    background-image: -webkit-linear-gradient(right bottom, #330052 0%, #39005b 100%);
+    background-image: -moz-linear-gradient(right bottom, #330052 0%, #39005b 100%);
+    background-image: -ms-linear-gradient(right bottom, #330052 0%, #39005b 100%);
+    background-image: -o-linear-gradient(right bottom, #330052 0%, #39005b 100%);
+    background-image: linear-gradient(to left top, #330052 0%, #39005b 100%);
+}
+
+body.green .faq-trigger {
+    background-image: -webkit-gradient(linear, right bottom, left top, color-stop(0%, #35B882), color-stop(100%, #45C18D));
+    background-image: -webkit-linear-gradient(right bottom, #35B882 0%, #45C18D 100%);
+    background-image: -moz-linear-gradient(right bottom, #35B882 0%, #45C18D 100%);
+    background-image: -ms-linear-gradient(right bottom, #35B882 0%, #45C18D 100%);
+    background-image: -o-linear-gradient(right bottom, #35B882 0%, #45C18D 100%);
+    background-image: linear-gradient(to left top, #35B882 0%, #45C18D 100%);
+}
+
+body.blue .faq-trigger {
+    background-image: -webkit-gradient(linear, right bottom, left top, color-stop(0%, #4DBBFF), color-stop(100%, #62C3FF));
+    background-image: -webkit-linear-gradient(right bottom, #4DBBFF 0%, #62C3FF 100%);
+    background-image: -moz-linear-gradient(right bottom, #4DBBFF 0%, #62C3FF 100%);
+    background-image: -ms-linear-gradient(right bottom, #4DBBFF 0%, #62C3FF 100%);
+    background-image: -o-linear-gradient(right bottom, #4DBBFF 0%, #62C3FF 100%);
+    background-image: linear-gradient(to left top, #4DBBFF 0%, #62C3FF 100%);
+}
+
+.faq-content {
+    display: none;
+    padding: 15px;
+    color: #fff;
+    font-size: .9em;
+    font-family: "Lato";
+}
+
+body.purple .faq-content {
+    background-color: #57008A;
+}
+
+body.green .faq-content {
+    background-color: #23A771;
+}
+
+body.blue .faq-content {
+    background-color: #35A5EA;
+}
+
+body.purple .highlight {
+    background: #57008A
+}
+
+body.green .highlight {
+    background: #23A771
+}
+
+body.blue .highlight {
+    background: #35A5EA
+}
+
+.open {
+    font-weight: bold;
+}
+
+body.purple .open {
+    border-left: 20px solid #4D007A;
+}
+
+body.green .open {
+    border-left: 20px solid #1F9D69;
+}
+
+body.blue .open {
+    border-left: 20px solid #289AE0;
+}
