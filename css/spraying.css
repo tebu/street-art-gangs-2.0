@@ -128,9 +128,6 @@ p#progress {
     -webkit-animation-delay: 5s;
 }
 
-p#finished {
-    -webkit-animation-delay: 19s;
-}
 
 .loading {
     background: rgba(0, 50, 250, 0);
