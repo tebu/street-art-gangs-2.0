@@ -6,12 +6,12 @@ body {
 }
 
 body.purple {
-    background: -moz-radial-gradient(center, ellipse cover,  #540035 0%, #990157 100%);
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#540035), color-stop(100%,#990157));
-    background: -webkit-radial-gradient(center, ellipse cover,  #540035 0%,#990157 100%);
-    background: -o-radial-gradient(center, ellipse cover,  #540035 0%,#990157 100%);
-    background: -ms-radial-gradient(center, ellipse cover,  #540035 0%,#990157 100%);
-    background: radial-gradient(ellipse at center,  #540035 0%,#990157 100%);
+    background: -moz-radial-gradient(center, ellipse cover, #68006d 0%, #3c0c6a 72%); 
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#68006d), color-stop(72%,#3c0c6a)); 
+	background: -webkit-radial-gradient(center, ellipse cover, #68006d 0%,#3c0c6a 72%); 
+	background: -o-radial-gradient(center, ellipse cover, #68006d 0%,#3c0c6a 72%); 
+	background: -ms-radial-gradient(center, ellipse cover, #68006d 0%,#3c0c6a 72%); 
+	background: radial-gradient(ellipse at center, #68006d 0%,#3c0c6a 72%); 
 }
 
 body.blue {
