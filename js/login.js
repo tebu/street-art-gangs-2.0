@@ -31,6 +31,10 @@ $(document).ready(function(){
                 //alert( "Request failed: " + textStatus );
                 $("#modal-name-error").addClass("md-show");
                 //window.location.replace("login.html");
+
+                //animation
+                $('.icon-locked').addClass('animated bounce');
+                $('.error .md-content button').addClass('animated fadeIn');
         });
 
     });

@@ -238,11 +238,11 @@ small {
     padding: 10px 0;
 }
 
-.icon-blocked {
+.icon-locked {
     position: relative;
     display: inline-block;
-    margin-top: 120px;
-    font-size: 3em
+    margin-top: 70px;
+    font-size: 3em;
 }
 
 .md-content > div ul {
@@ -268,6 +268,35 @@ small {
     top: -50px;
     left: -2px;
     z-index: 1000;
+}
+
+.error .md-content button {
+    background: #FF783E;
+    border: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: block;
+    font-size: .8em;
+    font-weight: 700;
+    padding: .8em 1.2em;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    top: 40px;
+    z-index: 1000;
+    width: 60%;
+    margin: 0 auto;
+    box-shadow: 0 2px 0 rgba(0,0,0,.15);
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+}
+
+.error .md-content button:hover, .error .md-content button:active, .error .md-content button:focus  {
+    background: #FF8E5E;
+    box-shadow: 0 2px 0 rgba(0,0,0,0)
 }
 
 .md-effect-12 .md-content {
@@ -317,11 +346,17 @@ small {
 .problems {
     font-size: .8em;
     text-align: center;
-    margin-top: 50px
+    margin-top: 30px
 }
 
 .input.error {
     background: rgba(255, 11, 68, 0.6);
 }
 
+.icon-ccw {
+    position: relative;
+    top: 2px;
+    left: 5px;
+    font-size: 1.3em
+}
 
