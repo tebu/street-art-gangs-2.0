@@ -180,6 +180,10 @@ body.blue .gn-menu-main ul li:nth-child(4) {
     background: #62c3ff;
 }
 
+body.blue .gn-menu-main ul li:nth-child(5) {
+    background: #7ccdff;
+}
+
 .gn-menu-main {
     position: fixed;
     top: 0;
