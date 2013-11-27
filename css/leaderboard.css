@@ -1,142 +1,207 @@
 /* Leaderboard screen **************************/
 
-html {
-    width: 100%;
-    padding: 0;
-    margin: 0
-}
+html, 
 body {
-    color:#fff;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    padding: 0;
     margin: 0;
-    padding: 0;
-    font-family: "Lato";
-    width: 100%
 }
 
-body#leaderboard.purple {
-    background-image: -webkit-gradient(linear, center bottom, center top, color-stop(0%, #3c0c6a), color-stop(100%, #3b174a));
-    background-image: -webkit-linear-gradient(bottom, #3c0c6a 0%, #3b174a 100%);
-    background-image: -moz-linear-gradient(bottom, #3c0c6a 0%, #3b174a 100%);
-    background-image: -ms-linear-gradient(bottom, #3c0c6a 0%, #3b174a 100%);
-    background-image: -o-linear-gradient(bottom, #3c0c6a 0%, #3b174a 100%);
-    background-image: linear-gradient(to top, #3c0c6a 0%, #3b174a 100%);
+body.purple {
+    color: #4D007A;
 }
 
-body#leaderboard.blue {
-    background-image: -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 116, color-stop(25%, #4F9FFF), color-stop(100%, #4DBBFF));
-    background-image: -webkit-radial-gradient(center bottom, farthest-side circle, #4F9FFF 25%, #4DBBFF 100%);
-    background-image: -moz-radial-gradient(center bottom, farthest-side circle, #4F9FFF 25%, #4DBBFF 100%);
-    background-image: -ms-radial-gradient(center bottom, farthest-side circle, #4F9FFF 25%, #4DBBFF 100%);
-    background-image: -o-radial-gradient(center bottom, farthest-side circle, #4F9FFF 25%, #4DBBFF 100%);
-    background-image: radial-gradient(farthest-side circle at center bottom, #4F9FFF 25%, #4DBBFF 100%);
+body.blue {
+    color: #5CC1FF;
 }
 
-body#leaderboard.green {
-    background-image: -webkit-gradient(linear, right bottom, left top, color-stop(25%, #54CC9A), color-stop(100%, #21a66f));
-    background-image: -webkit-linear-gradient(right bottom, #54CC9A 25%, #21a66f 100%);
-    background-image: -moz-linear-gradient(right bottom, #54CC9A 25%, #21a66f 100%);
-    background-image: -ms-linear-gradient(right bottom, #54CC9A 25%, #21a66f 100%);
-    background-image: -o-linear-gradient(right bottom, #54CC9A 25%, #21a66f 100%);
-    background-image: linear-gradient(to left top, #54CC9A 25%, #21a66f 100%);
+body.green {
+    color: #39C188
 }
 
-.panel-wrapper {
-    padding: 0;
-    margin: 0
-}
-
-h2.title {
-    font-family: "Rock Salt"
-}
-
-.header .icon-trophy {
-    display: block;
-    font-size: 2em;
+h1.location {
+    font-family: "Raleway", sans-serif;
+    text-transform: uppercase;
     line-height: 0;
-    padding: 3em 0 0;
+    position: relative;
+    top: -20px;
+}
+
+h3.title {
+    letter-spacing: .1em;
+    font-weight: 400;
+    position: relative;
+    top: -15px;
+}
+
+.title {
+    font-family: "Raleway", sans-serif;
+    position: relative;
+    top: 0;
     text-align: center;
-    color: white;
-}
-
-h4.instructions {
-    -webkit-animation-delay: 2s;
-    -webkit-animation-iteration-count: 3;
-    -moz-animation-delay: 2s;
-    -moz-animation-iteration-count: 3;
-    animation-delay: 2s;
-    animation-iteration-count: 3;
-}
-
-h4.instructions span {
-    position: relative;
-    top: 3px
-}
-
-.liquid-slider {
-    position: relative;
-    top: 0
+    font-size: 22px;
 }
 
 table {
-    margin-top: 10px;
+    margin: 10px 0;
     height: 100%;
-    width: 107%;
-    color:#fff;
-    font-size:12px;
+    width: 100%;
+    font-family: "Lato";
+    font-size: 12px;
     position: relative;
-    left: -4%
+}
+
+table#gang-board {
+    font-size: 14px;
 }
 
 table th {
-    padding:21px 25px 22px 10px;
+    padding: 21px 25px 22px 10px;
     text-align: left;
-    background:rgba(0,0,0,.2);
     font-size: 1em;
     text-transform: uppercase;
-    font-weight: 700
+    font-weight: 700;
+}
+
+table th span{
+    font-size: 2em;
 }
 
 table#gang-board tr td {
-    padding: 15px;
-
+    padding: 15px 10px;
 }
 
-table th:first-child{
+table th:first-child {
     text-align: left;
-    padding-left:20px;
+    padding-left: 20px;
 }
 
 table tr {
     text-align: left;
-    padding-left:20px;
+    padding-left: 20px;
 }
 
-table tr td:first-child{
-    text-align: left;
-    padding-left:20px;
-    border-left: 0;
+table td:nth-child(1) {
+    padding-left: 28px;
+}
+
+table#gang-board td:nth-child(1) {
+    padding-left: 30px;
 }
 
 table tr td {
-    padding:10px;
-    border-top: 1px solid rgba(0,0,0,.1);
-    border-bottom:1px solid rgba(0,0,0,.1);
-    /*border-left: 1px solid rgba(0,0,0,.1);*/
-    background:rgba(0,0,0,.1);
+    padding: 10px 5px;
+    border-bottom: 1px solid rgba(0,0,0,.02);
 }
 
 table#player-board tr:nth-child(odd) td{
-    background:rgba(0,0,0,.15);
+    background:#FEFEFE;
 }
 
-table tr.you td{
-    background:rgba(0,0,0,.5);
+body.purple table tr.you td {
+    background: #390358;
+    color: white
 }
 
-table tr:last-child td{
-    border-bottom:0;
+body.blue table tr.you td {
+    background: #30B0FF;
+    color: white
+}
+
+body.green table tr.you td {
+    background: #00AD82;
+    color: white
+}
+
+
+table tr:last-child td {
+    border-bottom: 0;
 }
 
 #leaderboards {
     display: none;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    padding: 30px 0;
+    margin: 55px auto 0;
+    position: relative;
+}
+
+.arrow-left {
+    bottom: 0;
+    left: 0;
+    height: 30px;
+    position: fixed;
+    padding: 4px 25px;
+    z-index: 6000;
+}
+
+.arrow-right {
+    bottom: 0;
+    right: 0;
+    height: 30px;
+    position: fixed;
+    padding: 4px 25px;
+    z-index: 6000;
+}
+
+.swiper-container {
+    height: 100%;
+    width: 100%;
+}
+
+.content-slide {
+    overflow-x: hidden;
+}
+
+.pagination {
+    bottom: 0;
+    left: 0;
+    padding: 10px 0;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    z-index: 5000;
+}
+
+body.purple .pagination {
+    background: #430069;
+}
+
+body.blue .pagination {
+    background: #4DBBFF;
+}
+
+body.green .pagination {
+    background: #39C188;
+}
+
+.footer {
+    bottom: 0;
+    left: 0;
+    padding: 10px 0;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    z-index: 5000;
+    height: 55px;
+}
+
+.swiper-pagination-switch {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background: rgba(255,255,255,.4);
+    margin: 0 3px;
+    cursor: pointer;
+}
+
+.swiper-active-switch {
+    background: #fff;
 }
