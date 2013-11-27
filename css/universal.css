@@ -165,23 +165,23 @@ body.green .gn-menu-main ul li:nth-child(5) {
 }
 
 body.blue .gn-menu-main ul li:first-child {
-    background: #1b8cd2;
+    background: #42b4fa;
 }
 
 body.blue .gn-menu-main ul li:nth-child(2) {
-    background: #2b97d9;
+    background: #54beff;
 }
 
 body.blue .gn-menu-main ul li:nth-child(3) {
-    background: #44aae9;
+    background: #64c3fe;
 }
 
 body.blue .gn-menu-main ul li:nth-child(4) {
-    background: #62c3ff;
+    background: #71c8fe;
 }
 
 body.blue .gn-menu-main ul li:nth-child(5) {
-    background: #7ccdff;
+    background: #7ecdfe;
 }
 
 .gn-menu-main {
