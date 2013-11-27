@@ -160,6 +160,10 @@ body.green .gn-menu-main ul li:nth-child(4) {
     background: #54cc9a;
 }
 
+body.green .gn-menu-main ul li:nth-child(5) {
+    background: #5dd6a4;
+}
+
 body.blue .gn-menu-main ul li:first-child {
     background: #1b8cd2;
 }
