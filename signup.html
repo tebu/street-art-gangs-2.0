@@ -65,16 +65,17 @@
 		<div class="md-modal error md-effect-12" id="modal-error">
 			<div class="md-content">
 				<div>
-				<button class="md-close"><i class="icon-arrow-left-big"></i></button>
-					<i class="icon-blocked"></i>
+					<!-- <i class="icon-blocked"></i> -->
 
 					<!-- Each error message is visible only if this error happens, in css there are classes visible and hide, maybe we can use them? -->
-					<p class="error" id="nickname-error">Nickname is not available</p>
-					<p class="error" id="email-error">Not valid email address</p>
-					<p class="error" id="password-error">Password mismatch</p>
-					<p class="error" id="gang-error">None gang selected</p>
+					<p>Some problems signing you up!</p>
+					<p class="error" id="nickname-error"><i class="icon-remove-x"></i> Nickname is not available</p>
+					<p class="error" id="email-error"><i class="icon-remove-x"></i> Not valid email address</p>
+					<p class="error" id="password-error"><i class="icon-remove-x"></i> Password mismatch</p>
+					<p class="error" id="gang-error"><i class="icon-remove-x"></i> None gang selected</p>
 
-					<p><small>This modal window should appear after clicking I'M READY-button, and if error(s) happens</small></p>
+					<!-- <p><small>This modal window should appear after clicking I'M READY-button, and if error(s) happens</small></p> -->
+					<button class="md-close">Please try again <i class="icon-ccw"></i></button>
 					
 				</div>
 			</div>

@@ -17,12 +17,13 @@ h1 {
 }
 
 body#signup.neutral{
-    background-image: -webkit-gradient(radial, 100% 100%, 0, 100% 100%, 680, color-stop(0%, #01f4df), color-stop(26.1905%, #0b5eb1), color-stop(53.1746%, #6b00e0), color-stop(100%, #000000));
-    background-image: -webkit-radial-gradient(right bottom, farthest-side circle, #01f4df 0%, #0b5eb1 33%, #6b00e0 67%, #000000 126%);
-    background-image: -moz-radial-gradient(right bottom, farthest-side circle, #01f4df 0%, #0b5eb1 33%, #6b00e0 67%, #000000 126%);
-    background-image: -ms-radial-gradient(right bottom, farthest-side circle, #01f4df 0%, #0b5eb1 33%, #6b00e0 67%, #000000 126%);
-    background-image: -o-radial-gradient(right bottom, farthest-side circle, #01f4df 0%, #0b5eb1 33%, #6b00e0 67%, #000000 126%);
-    background-image: radial-gradient(farthest-side circle at right bottom, #01f4df 0%, #0b5eb1 33%, #6b00e0 67%, #000000 126%);
+    background-image: -webkit-gradient(radial, 100% 100%, 0, 100% 100%, 680, color-stop(0%, #01f4df), color-stop(26.1905%, #0b5eb1), color-stop(53.1746%, #260032), color-stop(100%, #000000));
+    background-image: -webkit-radial-gradient(right bottom, farthest-side circle, #01f4df 0%, #0b5eb1 33%, #260032 67%, #000000 126%);
+    background-image: -moz-radial-gradient(right bottom, farthest-side circle, #01f4df 0%, #0b5eb1 33%, #260032 67%, #000000 126%);
+    background-image: -ms-radial-gradient(right bottom, farthest-side circle, #01f4df 0%, #0b5eb1 33%, #260032 67%, #000000 126%);
+    background-image: -o-radial-gradient(right bottom, farthest-side circle, #01f4df 0%, #0b5eb1 33%, #260032 67%, #000000 126%);
+    background-image: radial-gradient(farthest-side circle at right bottom, #01f4df 0%, #0b5eb1 33%, #260032 67%, #000000 126%);
+
 }
     /*Purple background*/
 body#signup.purple{
@@ -81,7 +82,7 @@ input  {
     border-radius: none;
     padding: 15px 0 15px 20px;
     color: #fff;
-    background:rgba(0,0,0,.3);
+    background:rgba(0,0,0,.4);
     border-left: 5px solid rgba(0,0,0,.1);
     font-size: 1em;
 }
@@ -125,7 +126,7 @@ select {
     color: #fff;
     font-size: 1em;
     width: 100%;
-    background:rgba(0,0,0,.3);
+    background:rgba(0,0,0,.4);
     padding: 15px 0 15px 20px;
     border: none;
     border-radius: 0;
@@ -227,7 +228,7 @@ span {
 }
 
 .error .md-content {
-    padding-top: 40px
+    padding-top: 100px;
 }
 
 .md-content h3 {
@@ -270,6 +271,35 @@ span {
     z-index: 1000;
 }
 
+.error .md-content button {
+    background: #FF783E;
+    border: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: block;
+    font-size: .8em;
+    font-weight: 700;
+    padding: .8em 1.2em;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    top: 40px;
+    z-index: 1000;
+    width: 60%;
+    margin: 0 auto;
+    box-shadow: 0 2px 0 rgba(0,0,0,.15);
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+}
+
+.error .md-content button:hover, .error .md-content button:active, .error .md-content button:focus  {
+    background: #FF8E5E;
+    box-shadow: 0 2px 0 rgba(0,0,0,0)
+}
+
 .md-effect-12 .md-content {
     -webkit-transform: scale(0.8);
     -moz-transform: scale(0.8);
@@ -282,7 +312,12 @@ span {
 }
 
 .md-show.md-effect-12 ~ .md-overlay {
-    background: #000
+    background-image: -webkit-gradient(linear, center bottom, center top, color-stop(0%, #01f4df), color-stop(33%, #0b5eb1), color-stop(67%, #530081), color-stop(100%, rgb(37, 0, 57)));
+    background-image: -webkit-linear-gradient(bottom, #01f4df 0%, #0b5eb1 33%, #530081 67%, #000000 126%);
+    background-image: -moz-linear-gradient(bottom, #01f4df 0%, #0b5eb1 33%, #530081 67%, #000000 126%);
+    background-image: -ms-linear-gradient(bottom, #01f4df 0%, #0b5eb1 33%, #530081 67%, #000000 126%);
+    background-image: -o-linear-gradient(bottom, #01f4df 0%, #0b5eb1 33%, #530081 67%, #000000 126%);
+    background-image: linear-gradient(to top, #01f4df 0%, #0b5eb1 33%, #530081 67%, #000000 126%);
 } 
 
 .md-show.error.md-effect-12 ~ .md-overlay {
@@ -291,14 +326,14 @@ span {
     background-image: -moz-linear-gradient(bottom, #FF502D 0%, #EB5600 25%, #D62B00 83%);
     background-image: -ms-linear-gradient(bottom, #FF502D 0%, #EB5600 25%, #D62B00 83%);
     background-image: -o-linear-gradient(bottom, #FF502D 0%, #EB5600 25%, #D62B00 83%);
-    background-image: linear-gradient(to top, #FF502D 0%, #EB5600 25%, #D62B00 83%) ;
+    background-image: linear-gradient(to top, #FF502D 0%, #EB5600 25%, #D62B00 83%);
 } 
 
 .icon-blocked {
     position: relative;
     display: inline-block;
     margin-top: 50px;
-    font-size: 3em
+    font-size: 3em;
 }
 
 .md-effect-12 .md-content h3,
@@ -313,7 +348,6 @@ span {
     transform: scale(1);
     opacity: 1;
 }
-
 
 a#about-gangs {
     position: absolute;
@@ -356,7 +390,7 @@ i.icon-droplet {
 
 .tile {
     height: 33.5%;
-    background: #000;
+    background: rgba(0,0,0,.5);
     padding: 10px 15px 0 60px;
     overflow: hidden;
     text-align: left;
@@ -380,15 +414,13 @@ i.icon-droplet {
     top: 20px;
     font-family: "Lato";
     font-weight: 700;
-    text-align: right;
 }
 
 .tile h2 {
     font-size: 1.4em;
     line-height: 0;
     position: relative;
-    text-align: right;
-    right: 10px;
+    left: 10px;
     top: 15px;
     font-family: "Raleway";
     font-weight: 400
@@ -407,16 +439,16 @@ i.icon-droplet {
 }
 
 .tile.purple-knights {
-    border-right: 1px solid #B24BFF;
+    border-right: 3px solid #B24BFF;
 }
 
 .tile.blue-angels {
-    border-right: 1px solid #6ADAFF;
+    border-right: 3px solid #6ADAFF;
 }
 
 .tile.green-shamans {
 
-    border-right: 1px solid #56FFC4;
+    border-right: 3px solid #56FFC4;
 }
 
 .tile.purple-knights i.icon-droplet {
@@ -453,5 +485,22 @@ small {
 
 .hide {
     display: none
+}
+
+.icon-ccw {
+    position: relative;
+    top: 2px;
+    left: 5px;
+    font-size: 1.3em
+}
+
+.icon-remove-x {
+    margin-right: 5px
+}
+
+p.error {
+    font-size: .8em;
+    text-align: left;
+    margin-left: 13%
 }
 
