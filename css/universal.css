@@ -125,19 +125,23 @@ body.green .gn-menu-main, body.green .gn-menu-main .gn-menu-main ul {
 }
 
 body.purple .gn-menu-main ul li:first-child {
-    background: #380c4b;
+    background: #4d007a;
 }
 
 body.purple .gn-menu-main ul li:nth-child(2) {
-    background: #3e0d53;
+    background: #540185;
 }
 
 body.purple .gn-menu-main ul li:nth-child(3) {
-    background: #47125d;
+    background: #58028b;
 }
 
 body.purple .gn-menu-main ul li:nth-child(4) {
-    background: #51166a;
+    background: #5e0294;
+}
+
+body.purple .gn-menu-main ul li:nth-child(5) {
+    background: #65019f;
 }
 
 body.green .gn-menu-main ul li:first-child {
