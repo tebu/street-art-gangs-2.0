@@ -70,14 +70,16 @@ container > header h1 {
 li.messages {
     position: relative;
     top: 0;
-    right: -15px;
+    right: -20px;
+    font-size: .7em
 }
 
 .icon-message-bubble {
-    float: left;
-    position: absolute;
-    top: 20px;
-    right: 45px;
+    position: relative;
+    top: 5px;
+    left: 0;
+    margin: 0 3px;
+    font-size: 1.6em
 }
 
 
