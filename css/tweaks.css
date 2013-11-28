@@ -1,15 +1,35 @@
 /*Styles for tweaks screen*/
 
+html,
+body {
+    min-height: 100%;
+}
+
 body.blue {
-    background: #76C6FF
+    background: -webkit-gradient(linear, center bottom, center top, color-stop(0%, #42b1ff), color-stop(100%, #60BDFF)) fixed;
+    background: -webkit-linear-gradient(bottom, #42b1ff 0%, #60BDFF 100%) fixed;
+    background: -moz-linear-gradient(bottom, #42b1ff 0%, #60BDFF 100%) fixed;
+    background: -ms-linear-gradient(bottom, #42b1ff 0%, #60BDFF 100%) fixed;
+    background: -o-linear-gradient(bottom, #42b1ff 0%, #60BDFF 100%) fixed;
+    background: linear-gradient(to top, #42b1ff 0%, #60BDFF 100%) fixed;
 }
 
 body.purple {
-    background: #633576
+    background: -webkit-gradient(linear, center bottom, center top, color-stop(0%, #3c0c6a), color-stop(100%, #21002F)) fixed;
+    background: -webkit-linear-gradient(bottom, #3c0c6a 0%, #57008A 100%) fixed;
+    background: -moz-linear-gradient(bottom, #3c0c6a 0%, #21002F 100%) fixed;
+    background: -ms-linear-gradient(bottom, #3c0c6a 0%, #21002F 100%) fixed;
+    background: -o-linear-gradient(bottom, #3c0c6a 0%, #21002F 100%) fixed;
+    background: linear-gradient(to top, #3c0c6a 0%, #21002F 100%) fixed;
 }
 
 body.green {
-    background: #6BD6AA
+    background: -webkit-gradient(linear, center bottom, center top, color-stop(0%, #4EB389), color-stop(100%, #6CE8B5)) fixed;
+    background: -webkit-linear-gradient(bottom, #4EB389 0%, #6CE8B5 100%) fixed;
+    background: -moz-linear-gradient(bottom, #4EB389 0%, #6CE8B5 100%) fixed;
+    background: -ms-linear-gradient(bottom, #4EB389 0%, #6CE8B5 100%) fixed;
+    background: -o-linear-gradient(bottom, #4EB389 0%, #6CE8B5 100%) fixed;
+    background: linear-gradient(to top, #4EB389 0%, #6CE8B5 100%) fixed;
 }
 
 .content {
@@ -22,49 +42,47 @@ body.green {
 .tweak {
     position: relative;
     margin-bottom: 20px;
-/*    margin: 20px 0;*/
-}
-
-.tweak.logginout {
-    margin-bottom: 0;
 }
 
 div.option {
     position: relative;
     text-align: left;
     color: #fff;
-    font-weight: 700;
-    font-size: 1em;
-    margin-bottom: 10px
+    font-weight: 400;
+    font-size: 1.6em;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    font-family: "Raleway"
 }
 
 input {
     width: 100%;
     color: #fff;
     font-weight: 700;
-    border: none;
-    padding: 8px;
+    font-size: .9em;
+    padding: 8px 8px 8px 20px;
     border-radius: 0;
     -webkit-appearance: none;
 }
 
 body.blue input {
-    background: #4FB2F8;
-    box-shadow: 0 0 4px #0096BF inset;
+    background: #4BB4FF;
+    border: 1px solid #39A4EF;
 }
 
 body.purple input {
-   background: #4D1A62;
-    box-shadow: 0 0 4px #411354 inset;
+    background: rgba(0,0,0,.3);
+    border: 1px solid #330054;
 }
 
 body.green input {
-   background: #41B183;
-    box-shadow: 0 0 4px #279D6C inset;
+    background: rgba(0,0,0,.08);
+    border: 1px solid #3FB48F;
 }
 
 input:focus {
-    background: white;
+    background: #111;
+    color: #fff
 }
 
 ::-webkit-input-placeholder {
@@ -111,7 +129,8 @@ input:focus {
     height: auto;
     border-radius: none;
     cursor: pointer;
-    font-weight: bold;
+    font-family: "Lato";
+    font-weight: 700;
     text-transform: uppercase;
     text-align: center;
     padding: 10px 0;
@@ -123,33 +142,18 @@ input:focus {
 }
 
 body.purple .button {
-    background-image: -webkit-gradient(radial, 100% 0%, 0, 100% 0%, 448, color-stop(50%, #8700db), color-stop(50%, #7c01c6));
-    background-image: -webkit-radial-gradient(right top, farthest-side circle, #6F4381 50%, #58316D 50%);
-    background-image: -moz-radial-gradient(right top, farthest-side circle, #8700db 50%, #7c01c6 50%);
-    background-image: -ms-radial-gradient(right top, farthest-side circle, #8700db 50%, #7c01c6 50%);
-    background-image: -o-radial-gradient(right top, farthest-side circle, #8700db 50%, #7c01c6 50%);
-    background-image: radial-gradient(circle farthest-side at right top , #6F4381 50%, #58316D 50%);
-    box-shadow: 0 8px 0 #4D2262;
+    background: #57008a;
+    box-shadow: 0 2px 0 rgba(0,0,0,.3);
 }
 
 body.blue .button {
-    background-image: -webkit-gradient(radial, 100% 0%, 0, 100% 0%, 227, color-stop(50%, #3DB5FF), color-stop(50%, #4DBBFF));
-    background-image: -webkit-radial-gradient(right top, farthest-side circle, #3DB5FF 50%, #4DBBFF 50%);
-    background-image: -moz-radial-gradient(right top, farthest-side circle, #3DB5FF 50%, #4DBBFF 50%);
-    background-image: -ms-radial-gradient(right top, farthest-side circle, #3DB5FF 50%, #4DBBFF 50%);
-    background-image: -o-radial-gradient(right top, farthest-side circle, #3DB5FF 50%, #4DBBFF 50%);
-    background-image: radial-gradient(farthest-side circle at right top, #3DB5FF 50%, #4DBBFF 50%);
-    box-shadow: 0 8px 0 #1F9DEB;
+    background: #36C0FF;
+    box-shadow: 0 2px 0 rgba(0,0,0,.3);
 }
 
 body.green .button {
-    background-image: -webkit-gradient(radial, 100% 0%, 0, 100% 0%, 227, color-stop(50%, #4edaa0), color-stop(50%, #6ddfb0));
-    background-image: -webkit-radial-gradient(right top, farthest-side circle, #4edaa0 50%, #6ddfb0 50%);
-    background-image: -moz-radial-gradient(right top, farthest-side circle, #4edaa0 50%, #6ddfb0 50%);
-    background-image: -ms-radial-gradient(right top, farthest-side circle, #4edaa0 50%, #6ddfb0 50%);
-    background-image: -o-radial-gradient(right top, farthest-side circle, #4edaa0 50%, #6ddfb0 50%);
-    background-image: radial-gradient(farthest-side circle at right top, #4edaa0 50%, #6ddfb0 50%);
-    box-shadow: 0 8px 0 #4FB08B;
+    background: #40D5A6;
+    box-shadow: 0 2px 0 rgba(0,0,0,.3);
 }
 
 .button:active, .button:focus {
@@ -158,13 +162,7 @@ body.green .button {
 
 .button.logout {
     top: 0;
-    background-image: -webkit-gradient(radial, 100% 0%, 0, 100% 0%, 227, color-stop(50%, #E74C3C), color-stop(50%, #F85948)) !important;
-    background-image: -webkit-radial-gradient(right top, farthest-side circle, #E74C3C 50%, #F85948 50%) !important;
-    background-image: -moz-radial-gradient(right top, farthest-side circle, #E74C3C 50%, #F85948 50%) !important;
-    background-image: -ms-radial-gradient(right top, farthest-side circle, #E74C3C 50%, #F85948 50%) !important;
-    background-image: -o-radial-gradient(right top, farthest-side circle, #E74C3C 50%, #F85948 50%) !important;
-    background-image: radial-gradient(farthest-side circle at right top, #E74C3C 50%, #F85948 50%) !important;
-    box-shadow: 0 8px 0 #BF2C00 !important;
+    margin-bottom: 50px
 }
 
 .btn:active {
@@ -197,21 +195,7 @@ i.icon-check {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    margin: 10px 0;
-    padding: 20px;
-    border: 1px solid  rgba(0,0,0,.1)
-}
-
-body.blue .tweak-section {
-    background: #60BDFF
-}
-
-body.purple .tweak-section {
-    background: #592370
-}
-
-body.green .tweak-section {
-    background: #5AC69A
+    margin: 30px 0 50px;
 }
 
 .md-modal {
@@ -231,6 +215,11 @@ body.green .tweak-section {
     -moz-transform: translateX(-50%) translateY(-50%);
     -ms-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
+}
+
+.md-modal p {
+    font-size: 1.6em;
+    font-family: "Raleway"
 }
 
 .md-show {
