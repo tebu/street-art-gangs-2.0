@@ -8,6 +8,7 @@ jQuery(document).ready(function(){
         var color = localStorage.color;
         $('body').removeClass().addClass(color)
         $("#can-spraying").attr("src", "img/can-"+color+".png" );
+		$('.particle').removeClass().addClass("spray"+color);
       }
 
 });
