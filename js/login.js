@@ -39,5 +39,8 @@ $(document).ready(function(){
 
     });
 
+    $('.md-close').one( "click", function() {
+        window.location.replace("login.html");
+    });
 });
 
