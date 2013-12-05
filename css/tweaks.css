@@ -1,214 +1,110 @@
 /*Styles for tweaks screen*/
 
-body.purple {
-    background-image: -webkit-gradient(linear, center bottom, center top, color-stop(0%, #3c0c6a), color-stop(100%, #3b174a));
-    background-image: -webkit-linear-gradient(bottom, #3c0c6a 0%, #3b174a 100%);
-    background-image: -moz-linear-gradient(bottom, #3c0c6a 0%, #3b174a 100%);
-    background-image: -ms-linear-gradient(bottom, #3c0c6a 0%, #3b174a 100%);
-    background-image: -o-linear-gradient(bottom, #3c0c6a 0%, #3b174a 100%);
-    background-image: linear-gradient(to top, #3c0c6a 0%, #3b174a 100%);
+html,
+body {
+    min-height: 100%;
 }
 
 body.blue {
-    background-image: -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 116, color-stop(25%, #4F9FFF), color-stop(100%, #4DBBFF));
-    background-image: -webkit-radial-gradient(center bottom, farthest-side circle, #4F9FFF 25%, #4DBBFF 100%);
-    background-image: -moz-radial-gradient(center bottom, farthest-side circle, #4F9FFF 25%, #4DBBFF 100%);
-    background-image: -ms-radial-gradient(center bottom, farthest-side circle, #4F9FFF 25%, #4DBBFF 100%);
-    background-image: -o-radial-gradient(center bottom, farthest-side circle, #4F9FFF 25%, #4DBBFF 100%);
-    background-image: radial-gradient(farthest-side circle at center bottom, #4F9FFF 25%, #4DBBFF 100%);
+    background: -webkit-gradient(linear, center bottom, center top, color-stop(0%, #42b1ff), color-stop(100%, #60BDFF)) fixed;
+    background: -webkit-linear-gradient(bottom, #42b1ff 0%, #60BDFF 100%) fixed;
+    background: -moz-linear-gradient(bottom, #42b1ff 0%, #60BDFF 100%) fixed;
+    background: -ms-linear-gradient(bottom, #42b1ff 0%, #60BDFF 100%) fixed;
+    background: -o-linear-gradient(bottom, #42b1ff 0%, #60BDFF 100%) fixed;
+    background: linear-gradient(to top, #42b1ff 0%, #60BDFF 100%) fixed;
+}
+
+body.purple {
+    background: -webkit-gradient(linear, center bottom, center top, color-stop(0%, #3c0c6a), color-stop(100%, #21002F)) fixed;
+    background: -webkit-linear-gradient(bottom, #3c0c6a 0%, #57008A 100%) fixed;
+    background: -moz-linear-gradient(bottom, #3c0c6a 0%, #21002F 100%) fixed;
+    background: -ms-linear-gradient(bottom, #3c0c6a 0%, #21002F 100%) fixed;
+    background: -o-linear-gradient(bottom, #3c0c6a 0%, #21002F 100%) fixed;
+    background: linear-gradient(to top, #3c0c6a 0%, #21002F 100%) fixed;
 }
 
 body.green {
-    background-image: -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 116, color-stop(15%, #4DB18E), color-stop(100%, #54CC9A));
-    background-image: -webkit-radial-gradient(center bottom, farthest-side circle, #4DB18E 25%, #54CC9A 100%);
-    background-image: -moz-radial-gradient(center bottom, farthest-side circle, #4DB18E 25%, #54CC9A 100%);
-    background-image: -ms-radial-gradient(center bottom, farthest-side circle, #4DB18E 25%, #54CC9A 100%);
-    background-image: -o-radial-gradient(center bottom, farthest-side circle, #4DB18E 25%, #54CC9A 100%);
-    background-image: radial-gradient(circle farthest-side at center bottom , #4DB18E 25%, #54CC9A 100%);
+    background: -webkit-gradient(linear, center bottom, center top, color-stop(0%, #4EB389), color-stop(100%, #6CE8B5)) fixed;
+    background: -webkit-linear-gradient(bottom, #4EB389 0%, #6CE8B5 100%) fixed;
+    background: -moz-linear-gradient(bottom, #4EB389 0%, #6CE8B5 100%) fixed;
+    background: -ms-linear-gradient(bottom, #4EB389 0%, #6CE8B5 100%) fixed;
+    background: -o-linear-gradient(bottom, #4EB389 0%, #6CE8B5 100%) fixed;
+    background: linear-gradient(to top, #4EB389 0%, #6CE8B5 100%) fixed;
 }
 
 .content {
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
     position: relative;
-    top: 100px;
+    top: 70px;
 }
 
 .tweak {
     position: relative;
-    margin: 20px 0;
-}
-
-.onoffswitch {
-    position: relative;
-    width: 150px;
-    margin: 5px auto;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-}
-
-.onoffswitch-checkbox {
-    display: none;
-}
-
-.onoffswitch-label {
-    display: block;
-    overflow: hidden;
-    cursor: pointer;
-    border-radius: 20px;
-}
-
-body.purple .onoffswitch-label {
-    border: 2px solid #8C5CA0;
-}
-
-body.blue .onoffswitch-label {
-    border: 2px solid #4DBBFF;
-}
-
-body.green .onoffswitch-label {
-    border: 2px solid #54CC9A;
-}
-
-.onoffswitch-inner {
-    width: 200%;
-    margin-left: -100%;
-    -moz-transition: margin 0.3s ease-in 0s;
-    -webkit-transition: margin 0.3s ease-in 0s;
-    -o-transition: margin 0.3s ease-in 0s;
-    transition: margin 0.3s ease-in 0s;
-}
-
-.onoffswitch-inner:before, .onoffswitch-inner:after {
-    float: left;
-    width: 50%;
-    height: 29px;
-    padding: 0;
-    line-height: 29px;
-    font-size: 14px;
-    color: white;
-    font-family: Trebuchet, Arial, sans-serif;
-    font-weight: bold;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-.onoffswitch-inner:before {
-    content: "ON";
-    padding-left: 10px;
-    color: #FFFFFF;
-}
-
-body.purple .onoffswitch-inner:before {
-    background: #8C5CA0;
-}
-
-body.blue .onoffswitch-inner:before {
-    background: #62C3FF;
-}
-
-body.green .onoffswitch-inner:before {
-    background: #64DEAC;
-}
-
-.onoffswitch-inner:after {
-    content: "OFF";
-    padding-right: 10px;
-    background-color: #fff;
-    text-align: right;
-}
-
-body.purple .onoffswitch-inner:after {
-    color: #8C5CA0;
-}
-
-body.blue .onoffswitch-inner:after {
-    color: #4DBBFF;
-}
-
-body.green .onoffswitch-inner:after {
-    color: #64DEAC;
-}
-
-.onoffswitch-switch {
-    width: 32px;
-    margin: 0px;
-    background: #FFFFFF;
-    border-radius: 50%;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 118px;
-    -moz-transition: all 0.3s ease-in 0s;
-    -webkit-transition: all 0.3s ease-in 0s;
-    -o-transition: all 0.3s ease-in 0s;
-    transition: all 0.3s ease-in 0s;
-}
-
-body.purple .onoffswitch-switch {
-    border: 2px solid #62207e;
-}
-
-body.blue .onoffswitch-switch {
-    border: 2px solid #4DBBFF;
-}
-
-body.green .onoffswitch-switch {
-    border: 2px solid #54CC9A;
-}
-
-.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
-    margin-left: 0;
-}
-
-.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
-    right: 0px;
+    margin-bottom: 20px;
 }
 
 div.option {
     position: relative;
-    text-align: center;
+    text-align: left;
     color: #fff;
-    font-weight: 700;
-    font-size: 1em;
+    font-weight: 400;
+    font-size: 1.6em;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    font-family: "Raleway"
 }
 
 input {
-    background: rgba(255,255,255, .2);
-    color: white;
+    width: 100%;
+    color: #fff;
     font-weight: 700;
-    border: none;
-    padding: 8px;
+    font-size: .9em;
+    padding: 8px 8px 8px 20px;
     border-radius: 0;
     -webkit-appearance: none;
 }
 
+body.blue input {
+    background: #4BB4FF;
+    border: 1px solid #39A4EF;
+}
+
+body.purple input {
+    background: rgba(0,0,0,.3);
+    border: 1px solid #330054;
+}
+
+body.green input {
+    background: rgba(0,0,0,.08);
+    border: 1px solid #3FB48F;
+}
+
 input:focus {
-    background: rgba(0,0,0, .1);
+    background: #111;
+    color: #fff
 }
 
 ::-webkit-input-placeholder {
     color: white;
-    opacity: 1;
+    opacity: .7;
 }
 
 ::-moz-placeholder {
  /* Firefox 19+ */
     color: white;
-    opacity: 1;
+    opacity: .3;
 }
 
 :-ms-input-placeholder {
     color: white;
-    opacity: 1;
+    opacity:.3;
 }
 
 :-moz-placeholder {
  /* Firefox 18- */
     color: white;
-    opacity: 1;
+    opacity: .3;
 }
 
 .btn2 {
@@ -226,18 +122,17 @@ input:focus {
     box-shadow: 0 2px 1px rgba(0,0,0,.1);
 }
 
-.logout {
+.button {
     position: relative;
     top: 20px;
-    width: 200px;
+    width: 100%;
     height: auto;
     border-radius: none;
-    box-shadow: 0 2px 1px rgba(0,0,0,.1);
     cursor: pointer;
-    font-weight: bold;
+    font-family: "Lato";
+    font-weight: 700;
     text-transform: uppercase;
     text-align: center;
-    background: rgba(255,255,255, .2);
     padding: 10px 0;
     color: white;
     border: none;
@@ -246,12 +141,61 @@ input:focus {
     transition: all 0.3s;
 }
 
-.logout:active, .logout:focus {
-    background: #72318C;
+body.purple .button {
+    background: #57008a;
+    box-shadow: 0 2px 0 rgba(0,0,0,.3);
+}
+
+body.blue .button {
+    background: #36C0FF;
+    box-shadow: 0 2px 0 rgba(0,0,0,.3);
+}
+
+body.green .button {
+    background: #40D5A6;
+    box-shadow: 0 2px 0 rgba(0,0,0,.3);
+}
+
+.button:active, .button:focus {
+    box-shadow: none
+}
+
+.button.logout {
+    top: 0;
+    margin-bottom: 50px
 }
 
 .btn:active {
     background: rgba(0,0,0,.5);
+}
+
+li {
+    list-style: none;
+}
+
+i {
+    position: relative;
+    top: 2px;
+}
+
+i.icon-check {
+    position: relative;
+    top: 2px;
+    left: 10px
+}
+
+.confirm {
+    top: 20px;
+    left: -16px;
+    margin-bottom: 40px !important;
+    position: relative;
+}
+
+.tweak-section {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 30px 0 50px;
 }
 
 .md-modal {
@@ -271,6 +215,11 @@ input:focus {
     -moz-transform: translateX(-50%) translateY(-50%);
     -ms-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
+}
+
+.md-modal p {
+    font-size: 1.6em;
+    font-family: "Raleway"
 }
 
 .md-show {
@@ -431,18 +380,4 @@ input:focus {
     opacity: 1;
 }
 
-li {
-    list-style: none;
-}
 
-i {
-    position: relative;
-    top: 2px;
-}
-
-.confirm {
-    top: 20px;
-    left: -16px;
-    margin-bottom: 40px !important;
-    position: relative;
-}

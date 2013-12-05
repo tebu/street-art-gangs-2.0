@@ -70,14 +70,16 @@ container > header h1 {
 li.messages {
     position: relative;
     top: 0;
-    right: -15px;
+    right: -20px;
+    font-size: .7em
 }
 
 .icon-message-bubble {
-    float: left;
-    position: absolute;
-    top: 20px;
-    right: 45px;
+    position: relative;
+    top: 5px;
+    left: 0;
+    margin: 0 3px;
+    font-size: 1.6em
 }
 
 
@@ -96,31 +98,50 @@ li.messages {
 }
 
 body.purple .gn-menu-main, body.purple .gn-menu-main .gn-menu-main ul {
-    background: #421C52;
+    background-image: -webkit-gradient(radial, 100% 0%, 0, 100% 0%, 448, color-stop(50%, #57008a), color-stop(50%, #4d007a));
+    background-image: -webkit-radial-gradient(right top, farthest-side circle, #57008a 50%, #4d007a 50%);
+    background-image: -moz-radial-gradient(right top, farthest-side circle, #57008a 50%, #4d007a 50%);
+    background-image: -ms-radial-gradient(right top, farthest-side circle, #57008a 50%, #4d007a 50%);
+    background-image: -o-radial-gradient(right top, farthest-side circle, #57008a 50%, #4d007a 50%);
+    background-image: radial-gradient(farthest-side circle at right top, #57008a 50%, #4d007a 50%);
 }
 
 body.blue .gn-menu-main, body.blue .gn-menu-main .gn-menu-main ul {
-    background: #4DBBFF;
+    background-image: -webkit-gradient(radial, 100% 0%, 0, 100% 0%, 227, color-stop(50%, #5cc1ff), color-stop(50%, #4DBBFF));
+    background-image: -webkit-radial-gradient(right top, farthest-side circle, #5cc1ff 50%, #4DBBFF 50%);
+    background-image: -moz-radial-gradient(right top, farthest-side circle, #5cc1ff 50%, #4DBBFF 50%);
+    background-image: -ms-radial-gradient(right top, farthest-side circle, #5cc1ff 50%, #4DBBFF 50%);
+    background-image: -o-radial-gradient(right top, farthest-side circle, #5cc1ff 50%, #4DBBFF 50%);
+    background-image: radial-gradient(farthest-side circle at right top, #5cc1ff 50%, #4DBBFF 50%);
 }
 
 body.green .gn-menu-main, body.green .gn-menu-main .gn-menu-main ul {
-    background: #54CC9A;
+    background-image: -webkit-gradient(radial, 100% 0%, 0, 100% 0%, 227, color-stop(50%, #58d5a1), color-stop(50%, #54CC9A));
+    background-image: -webkit-radial-gradient(right top, farthest-side circle, #58d5a1 50%, #54CC9A 50%);
+    background-image: -moz-radial-gradient(right top, farthest-side circle, #58d5a1 50%, #54CC9A 50%);
+    background-image: -ms-radial-gradient(right top, farthest-side circle, #58d5a1 50%, #54CC9A 50%);
+    background-image: -o-radial-gradient(right top, farthest-side circle, #58d5a1 50%, #54CC9A 50%);
+    background-image: radial-gradient(farthest-side circle at right top, #58d5a1 50%, #54CC9A 50%);
 }
 
 body.purple .gn-menu-main ul li:first-child {
-    background: #380c4b;
+    background: #4d007a;
 }
 
 body.purple .gn-menu-main ul li:nth-child(2) {
-    background: #3e0d53;
+    background: #540185;
 }
 
 body.purple .gn-menu-main ul li:nth-child(3) {
-    background: #47125d;
+    background: #58028b;
 }
 
 body.purple .gn-menu-main ul li:nth-child(4) {
-    background: #51166a;
+    background: #5e0294;
+}
+
+body.purple .gn-menu-main ul li:nth-child(5) {
+    background: #65019f;
 }
 
 body.green .gn-menu-main ul li:first-child {
@@ -139,20 +160,28 @@ body.green .gn-menu-main ul li:nth-child(4) {
     background: #54cc9a;
 }
 
+body.green .gn-menu-main ul li:nth-child(5) {
+    background: #5dd6a4;
+}
+
 body.blue .gn-menu-main ul li:first-child {
-    background: #1b8cd2;
+    background: #42b4fa;
 }
 
 body.blue .gn-menu-main ul li:nth-child(2) {
-    background: #2b97d9;
+    background: #54beff;
 }
 
 body.blue .gn-menu-main ul li:nth-child(3) {
-    background: #44aae9;
+    background: #64c3fe;
 }
 
 body.blue .gn-menu-main ul li:nth-child(4) {
-    background: #62c3ff;
+    background: #71c8fe;
+}
+
+body.blue .gn-menu-main ul li:nth-child(5) {
+    background: #7ecdfe;
 }
 
 .gn-menu-main {

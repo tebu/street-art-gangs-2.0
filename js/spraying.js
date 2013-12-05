@@ -8,6 +8,7 @@ jQuery(document).ready(function(){
         var color = localStorage.color;
         $('body').removeClass().addClass(color)
         $("#can-spraying").attr("src", "img/can-"+color+".png" );
+		$('.particle').removeClass().addClass("spray"+color);
       }
 
 });
@@ -35,13 +36,11 @@ jQuery(document).ready(function(){
         jQuery("p#prepare").delay(2000).fadeOut(1000);
         // jQuery("p#progress").delay(5000).fadeIn(1000);
         jQuery("p#progress").delay(8000).fadeOut(1000);
-        // jQuery("p#finished").delay(19000).fadeIn(500);
 
         setTimeout(function() {
           registerSpray();
         }, 20000);
 
-         jQuery("p#finished").delay(20000).fadeOut(300);
          jQuery("#loading").delay(22000).fadeOut(300);
 
         // Redirect to home screen after finished spraying
@@ -52,7 +51,7 @@ jQuery(document).ready(function(){
 
     // Animate.css
     jQuery(document).ready(function(){
-            jQuery('p#prepare, p#progress, p#finished').addClass('animated bounceInDown');
+            jQuery('p#prepare, p#progress').addClass('animated bounceInDown');
             jQuery('.load-wrap').addClass('animated wobble');
             jQuery('#can-spraying').addClass('animated pulse');
             jQuery('.showup').addClass('animated bounceInDown');
@@ -63,7 +62,7 @@ jQuery(document).ready(function(){
 
     // Points animation
     //TODO: Calculate points
-    jQuery({someValue: 0}).delay(23000).animate({someValue:1260}, {
+    jQuery({someValue: 0}).delay(23000).animate({someValue:100}, {
         duration: 1000,
         easing:'swing',
         step: function() {

@@ -1,8 +1,7 @@
 $(document).ready(function(){
     //Animate.css
     $('h1').addClass('animated pulse');
-    $('input, select').addClass('animated bounceInUp');
-    $('.btn').addClass('animated bounceInUp');
+    $('input, .btn').addClass('animated slideInLeft');
 
 
     //On .btn.btntxt click
@@ -30,10 +29,18 @@ $(document).ready(function(){
         }).fail(function( jqXHR, textStatus ) {
             //TODO fix this - Error message needed
                 //alert( "Request failed: " + textStatus );
-                window.location.replace("login.html");
+                $("#modal-name-error").addClass("md-show");
+                //window.location.replace("login.html");
+
+                //animation
+                $('.icon-locked').addClass('animated bounce');
+                $('.error .md-content button').addClass('animated fadeIn');
         });
 
     });
 
+    $('.md-close').one( "click", function() {
+        window.location.replace("login.html");
+    });
 });
 

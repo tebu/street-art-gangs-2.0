@@ -1,6 +1,18 @@
 /*Styles for chat screen*/
 
-  .content {
+body.purple {
+    background: #3A025E;
+}
+
+body.blue {
+    background: #0A92E6;
+}
+
+body.green {
+    background: #1CBC7A;
+}
+
+.content {
     width: 100%;
     margin: 0 auto;
     position: relative;
@@ -19,11 +31,10 @@
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
-  outline: 3px solid rgba(0,0,0,0.05);
 }
 
 body.purple .chatter {
-    background: #3F1A48;
+    background: #3A025E;
 }
 
 body.blue .chatter {
@@ -217,5 +228,17 @@ textarea {
   border-top: 8px solid transparent;
   border-bottom: 8px solid transparent;  
   border-right:8px solid rgba(255,255,255,.2); 
+}
+
+button#send-msg {
+    border: none;
+    bottom: 0;
+    height: 40px;
+    padding: 5px 15px;
+    position: fixed;
+    right: 0;
+    z-index: 3000;
+    background: #eee;
+    color: #111
 }
 

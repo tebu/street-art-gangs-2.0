@@ -5,8 +5,14 @@
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+	<link rel="shortcut icon" href="favicon.ico" />
 	<title>Login</title>
 
+	<!-- Launch icons -->
+  	<link rel="apple-touch-icon" href="img/icons/ios/icon.png" />
+  	<link rel="apple-touch-icon" sizes="72x72" href="img/icons/icon-72.png" />
+  	<link rel="apple-touch-icon" sizes="114x114" href="img/icons/icon@2x.png" />
+  	<link rel="apple-touch-icon" sizes="144x144" href="img/icons/icon-72@2x.png" />
 
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="font/sag/style.css">
@@ -14,51 +20,76 @@
 	<link rel="stylesheet" type="text/css" href="css/universal.css" />
 	<link rel="stylesheet" href="css/login.css">
 
-		 <script src="js/modernizr.custom_modal.js"></script>
+	<script src="js/modernizr.custom_modal.js"></script>
 
 </head>
 
 <body>
 
-			<div class="md-modal md-effect-12" id="modal-12">
-					<div class="md-content">
-							<div>
-									<p>You're in deep shit then!</p>
-									<button class="md-close">Tap screen to close</button>
-							</div>
-					</div>
-			</div>
+	<div class="md-modal help md-effect-12" id="modal-help">
+		<div class="md-content">
+			<div>
+				<button class="md-close"><i class="icon-arrow-left-big"></i></button>
+				<p><i>Maybe we can send signup information to the player?</i></p>
+				<p>Enter an email address that you've used in signup.<p>
+				</p>
 
-		<div class="header">
-				<h1>Login</h1>
+				<div class="form-reset">
+					<input type="email" class="input" placeholder="Email" id="reset-email">
+					<input type="submit" class="submit" placeholder="Submit" id="submit">
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- This modal window should appear after clicking LOGIN-button, and if name error happens -->
+
+	<div class="md-modal error md-effect-12" id="modal-name-error">
+		<div class="md-content">
+			<div>
+			<!-- <button class="md-close"><i class="icon-arrow-left-big"></i></button> -->
+				<i class="icon-locked"></i>
+				<p>Some problems signing you in!</p>
+				<p><small>Your username or password (or both!) might be wrong.</small></p>
+				<button class="md-close">Please try again <i class="icon-ccw"></i></button>
+			</div>
+		</div>
+	</div>
+
+	<!-- This modal window should appear after clicking LOGIN-button, and if password error happens -->
+
+
+	<div class="header">
+		<a href="splash.html" class="back"><i class="icon-arrow-left-big"></i></a>
+		<h1>Login</h1>
+	</div>
+
+	<div class="content">
+
+		<div class="form">
+			<input type="text" class="input" placeholder="Name" id="username">
+			<input type="password" class="input" placeholder="Password" id="password">
 		</div>
 
-		<div class="content">
-
-			 <div class="form">
-					<input type="text" class="input" placeholder="Name" id="username">
-					<input type="password" class="input" placeholder="Password" id="password">
-			</div>
-
-			<div class="problems">
-				<a href="#" class="btn2 md-trigger" data-modal="modal-12">Problems with login?</a>
-			</div>
+		<div class="problems">
+			<a href="#" class="btn2 md-trigger" data-modal="modal-help">Problems with login?</a>
+		</div><!-- /problems -->
 
 
+	</div>
 
-		</div>
+	<div class="btn btntxt">Login <span class="icon-arrow-right-small"></span></div>
 
-					<div class="btn btntxt">Login <span class="icon-arrow-right-small"></span></div>
+	<div class="md-overlay"></div><!-- the overlay element -->
 
-									 <div class="md-overlay"></div><!-- the overlay element -->
+	<!-- Scripts -->
 
-		<!-- Scripts -->
-
-		<script src='js/jquery-1.10.2.min.js'></script>
-		<script src="js/classie_menu.js"></script>
-		<script src="js/modalEffects.js"></script>
-		<script src="js/scripts.js"></script>
-		<script src="js/login.js"></script>
+	<script src='js/jquery-1.10.2.min.js'></script>
+	<script src="js/classie_menu.js"></script>
+	<script src="js/modalEffects-original.js"></script>
+	<script src="js/scripts.js"></script>
+	<script src="js/login.js"></script>
 
 
 </body>

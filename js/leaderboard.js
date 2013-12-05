@@ -59,12 +59,26 @@
           $("<td>").text(43643).appendTo(line); //TODO: insert points
           table.append(line);
         };
-      $('#leaderboards').show();
-      $('#leaderboards').liquidSlider({
-        slideEaseDuration: 500,
-        slideEaseFunction: "easeInOutExpo",
-        dynamicArrows: false
-      });
+
+      // Swiper starts
+      var mySwiper = new Swiper('.swiper-container',{
+          pagination: '.pagination',
+          mode : 'horizontal',
+          loop: false,
+          grabCursor: true,
+          paginationClickable: true,
+          calculateHeight: true
+      })
+      $('.arrow-left').on('click', function(e){
+          e.preventDefault()
+          mySwiper.swipePrev()
+      })
+      $('.arrow-right').on('click', function(e){
+          e.preventDefault()
+          mySwiper.swipeNext()
+      })
+      // Swiper ends
+
 
       }).fail(function( jqXHR, textStatus ) {
       //TODO fix this
@@ -77,9 +91,8 @@
       alert("Error: something went wrong while loading the gangs leaderboard: "+ textStatus);
     });
 
-
-     $('table#gang-board').addClass('animated slideInRight');
-     $('h4').addClass('animated pulse');
-     $('.icon-trophy').addClass('animated slideInDown');
+      // Animation
+     $('th').addClass('animated slideInRight');
+     $('td').addClass('animated slideInLeft');
    }
  });

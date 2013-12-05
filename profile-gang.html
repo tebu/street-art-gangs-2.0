@@ -5,6 +5,7 @@
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="shortcut icon" href="favicon.ico" />
   <title>Gang profile</title>
 
   <!-- Launch icons -->
@@ -14,7 +15,7 @@
   <link rel="apple-touch-icon" sizes="144x144" href="img/icons/icon-72@2x.png" />
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/idangerous.swiper.css">
+    <link rel="stylesheet" type="text/css" href="css/grid.css" />
   <link rel="stylesheet" href="css/animate.css">
   <link rel="stylesheet" type="text/css" href="css/normalize.css" />
   <link rel="stylesheet" type="text/css" href="css/icons.css" />
@@ -31,142 +32,287 @@
 
 <body id="gang-profile">
 
-  <div class="md-modal md-effect-12" id="modal-12">
+  <div class="md-modal modal-members md-effect-12" id="modal-members">
     <div class="md-content">
       <div>
+       <h2 class="description-title">Members list</h2>
+        <i class="modal-icon icon-dudes"></i>
         <ul class="members-list">
-          <li><span class="icon-history"></span><span class="member-time">45 d</span>The Majestic Master</li>
-          <li><span class="icon-history"></span><span class="member-time">45 d</span>The Nifty Conjurer</li>
-          <li><span class="icon-history"></span><span class="member-time">44 d</span>The Whispering Whiz</li>
-          <li><span class="icon-history"></span><span class="member-time">43 d</span>The Terrific Nightowl</li>
-          <li><span class="icon-history"></span><span class="member-time">43 d</span>Fire Panther</li>
-          <li><span class="icon-history"></span><span class="member-time">42 d</span>Captain Lucky Robin</li>
-          <li><span class="icon-history"></span><span class="member-time">41 d</span>Doctor Famous Fighter</li>
-          <li><span class="icon-history"></span><span class="member-time">41 d</span>Agent Fancy Cat</li>
-          <li><span class="icon-history"></span><span class="member-time">38 d</span>Iron Assassin</li>
-          <li><span class="icon-history"></span><span class="member-time">36 d</span>Galactic Gargoyle</li>
-          <li><span class="icon-history"></span><span class="member-time">36 d</span>The Light Veteran</li>
-          <li><span class="icon-history"></span><span class="member-time">36 d</span>The Confident Devil</li>
-          <li><span class="icon-history"></span><span class="member-time">32 d</span>The Hot Raccoon</li>
-          <li><span class="icon-history"></span><span class="member-time">30 d</span>The Eager Captain</li>
-          <li><span class="icon-history"></span><span class="member-time">30 d</span>Thunder Lord</li>
-          <li><span class="icon-history"></span><span class="member-time">30 d</span>Warden Steel</li>
-          <li><span class="icon-history"></span><span class="member-time">27 d</span>Quiet Cat</li>
-          <li><span class="icon-history"></span><span class="member-time">26 d</span>Misty Mastermind</li>
-          <li><span class="icon-history"></span><span class="member-time">24 d</span>Scarlet Sentinel</li>
-          <li><span class="icon-history"></span><span class="member-time">24 d</span>Dragon Boy</li>
-          <li><span class="icon-history"></span><span class="member-time">24 d</span>The Wonderman</li>
-          <li><span class="icon-history"></span><span class="member-time">17 d</span>The Storm Amazon</li>
-          <li><span class="icon-history"></span><span class="member-time">16 d</span>The Magical Swallow</li>
-          <li><span class="icon-history"></span><span class="member-time">16 d</span>The Scarlet Rhinoceros</li>
-          <li><span class="icon-history"></span><span class="member-time">16 d</span>Mister Panther</li>
-          <li><span class="icon-history"></span><span class="member-time">14 d</span>Quick Snipe</li>
-          <li><span class="icon-history"></span><span class="member-time">10 d</span>Captain Majestic</li>
-          <li><span class="icon-history"></span><span class="member-time">9 d</span>Warden Jolly</li>
-          <li><span class="icon-history"></span><span class="member-time">5 d</span>Death Roach</li>
-          <li><span class="icon-history"></span><span class="member-time">2 d</span>Iron Archer</li>
+          <li><span class="icon-hourglass"></span><span class="member-time">45 d</span>The Majestic Master</li>
+          <li><span class="icon-hourglass"></span><span class="member-time">45 d</span>The Nifty Conjurer</li>
+          <li><span class="icon-hourglass"></span><span class="member-time">44 d</span>The Whispering Whiz</li>
+          <li><span class="icon-hourglass"></span><span class="member-time">43 d</span>The Terrific Nightowl</li>
+          <li><span class="icon-hourglass"></span><span class="member-time">43 d</span>Fire Panther</li>
+          <li><span class="icon-hourglass"></span><span class="member-time">42 d</span>Captain Lucky Robin</li>
+          <li><span class="icon-hourglass"></span><span class="member-time">41 d</span>Doctor Famous Fighter</li>
+          <li><span class="icon-hourglass"></span><span class="member-time">41 d</span>Agent Fancy Cat</li>
+          <li><span class="icon-hourglass"></span><span class="member-time">38 d</span>Iron Assassin</li>
+          <li><span class="icon-hourglass"></span><span class="member-time">36 d</span>Galactic Gargoyle</li>
+          <li><span class="icon-hourglass"></span><span class="member-time">36 d</span>The Light Veteran</li>
+          <li><span class="icon-hourglass"></span><span class="member-time">36 d</span>The Confident Devil</li>
+          <li><span class="icon-hourglass"></span><span class="member-time">32 d</span>The Hot Raccoon</li>
+          <li><span class="icon-hourglass"></span><span class="member-time">30 d</span>The Eager Captain</li>
+          <li><span class="icon-hourglass"></span><span class="member-time">30 d</span>Thunder Lord</li>
+          <li><span class="icon-hourglass"></span><span class="member-time">30 d</span>Warden Steel</li>
+          <li><span class="icon-hourglass"></span><span class="member-time">27 d</span>Quiet Cat</li>
+          <li><span class="icon-hourglass"></span><span class="member-time">26 d</span>Misty Mastermind</li>
+          <li><span class="icon-hourglass"></span><span class="member-time">24 d</span>Scarlet Sentinel</li>
+          <li><span class="icon-hourglass"></span><span class="member-time">24 d</span>Dragon Boy</li>
+          <li><span class="icon-hourglass"></span><span class="member-time">24 d</span>The Wonderman</li>
+          <li><span class="icon-hourglass"></span><span class="member-time">17 d</span>The Storm Amazon</li>
+          <li><span class="icon-hourglass"></span><span class="member-time">16 d</span>The Magical Swallow</li>
+          <li><span class="icon-hourglass"></span><span class="member-time">16 d</span>The Scarlet Rhinoceros</li>
+          <li><span class="icon-hourglass"></span><span class="member-time">16 d</span>Mister Panther</li>
+          <li><span class="icon-hourglass"></span><span class="member-time">14 d</span>Quick Snipe</li>
+          <li><span class="icon-hourglass"></span><span class="member-time">10 d</span>Captain Majestic</li>
+          <li><span class="icon-hourglass"></span><span class="member-time">9 d</span>Warden Jolly</li>
+          <li><span class="icon-hourglass"></span><span class="member-time">5 d</span>Death Roach</li>
+          <li><span class="icon-hourglass"></span><span class="member-time">2 d</span>Iron Archer</li>
         </ul>
       </div>
     </div>
     <button class="md-close"><span class="icon-arrow-left-small"></span>Go back</button>
   </div>
-  <div class="container">
 
-    <ul id="gn-menu" class="gn-menu-main">
-      <li class="gn-trigger">
-        <a class="gn-icon gn-icon-menu icon-list-2"><span class="hide">Menu</span></a>
-        <nav class="gn-menu-wrapper">
-          <div class="gn-scroller">
-            <ul class="gn-menu">
-              <li><a class="gn-icon" href="profile.html"><span class="nav-icon icon-dude"></span>Profile</a></li>
-              <li><a class="gn-icon" href="profile-gang.html"><span class="nav-icon icon-dudes"></span>Gang</a></li>
-              <li><a class="gn-icon" href="leaderboard.html"><span class="nav-icon icon-trophy"></span>Leaderboard</a></li>
-              <li><a class="gn-icon" href="tweaks.html"><span class="nav-icon icon-config"></span>Tweaks</a></li>
-            </ul>
-          </div><!-- /gn-scroller -->
-        </nav>
-      </li>
-      <li class="home"><a href="index.html"><span class="icon-home"></a></li>
-      <li class="messages"><a href="chat.html"><span class="icon-message-bubble"></a></li>
-    </ul>
+  <div class="md-modal modal-cans md-effect-12" id="modal-cans">
+    <div class="md-content">
+      <div>
+       <h4 class="description">
+                  Purple Knight <span>Spray cans</span>
+        </h4>
+      </div>
+    </div>
+    <button class="md-close"><span class="icon-arrow-left-small"></span>Go back</button>
+  </div>
 
-    <header>
+    <div class="md-modal modal-tag md-effect-12" id="modal-tag">
+    <div class="md-content">
+      <div>
+             <h4 class="description">
+                  Tagged by <span>Purple Knights</span>
+                </h4>
+      </div>
+    </div>
+    <button class="md-close"><span class="icon-arrow-left-small"></span>Go back</button>
+  </div>
 
-      <div class="profile-header">
+  <div class="md-modal md-effect-12" id="modal-gang-description">
+    <div class="md-content">
+      <div>
+       <h2 class="description-title">The Legend</h2>
+       <i class="modal-icon icon-droplet"></i> 
+                <p class="description">
+                  Chivalry is not dead it just has a new definition at the other end of the spectrum... of visible light. Instead of brute force these knights apply paint.
+                </p>
+      </div>
+    </div>
+    <button class="md-close"><span class="icon-arrow-left-small"></span>Go back</button>
+  </div>
 
-        <div class="swiper-container">
-          <div class="swiper-wrapper">
+    <div class="md-modal modal-points md-effect-12" id="modal-points">
+    <div class="md-content">
+      <div>
+       <h2 class="description-title">Points</h2>
+       <i class="modal-icon bigger icon-star"></i>
+       <i class="modal-icon smaller rotate topright icon-star"></i>
+       <i class="modal-icon tiny icon-star"></i>   
+          <ul class="members-time-list">
+            <li><span class="icon-star"></span><span class="member-time">1320</span>The Majestic Master</li>
+            <li><span class="icon-star"></span><span class="member-time">1295</span>The Nifty Conjurer</li>
+            <li><span class="icon-star"></span><span class="member-time">1190</span>The Whispering Whiz</li>
+            <li><span class="icon-star"></span><span class="member-time">1185</span>The Terrific Nightowl</li>
+            <li><span class="icon-star"></span><span class="member-time">1180</span>Fire Panther</li>
+            <li><span class="icon-star"></span><span class="member-time">1095</span>Captain Lucky Robin</li>
+            <li><span class="icon-star"></span><span class="member-time">1045</span>Doctor Famous Fighter</li>
+            <li><span class="icon-star"></span><span class="member-time">1030</span>Agent Fancy Cat</li>
+            <li><span class="icon-star"></span><span class="member-time">1025</span>Iron Assassin</li>
+            <li><span class="icon-star"></span><span class="member-time">1010</span>Galactic Gargoyle</li>
+            <li><span class="icon-star"></span><span class="member-time">1005</span>The Light Veteran</li>
+            <li><span class="icon-star"></span><span class="member-time">0905</span>The Confident Devil</li>
+            <li><span class="icon-star"></span><span class="member-time">0900</span>The Hot Raccoon</li>
+            <li><span class="icon-star"></span><span class="member-time">0855</span>The Eager Captain</li>
+            <li><span class="icon-star"></span><span class="member-time">0845</span>Thunder Lord</li>
+            <li><span class="icon-star"></span><span class="member-time">0845</span>Warden Steel</li>
+            <li><span class="icon-star"></span><span class="member-time">0835</span>Quiet Cat</li>
+            <li><span class="icon-star"></span><span class="member-time">0830</span>Misty Mastermind</li>
+            <li><span class="icon-star"></span><span class="member-time">0745</span>Scarlet Sentinel</li>
+            <li><span class="icon-star"></span><span class="member-time">0715</span>Dragon Boy</li>
+            <li><span class="icon-star"></span><span class="member-time">0695</span>The Wonderman</li>
+            <li><span class="icon-star"></span><span class="member-time">0650</span>The Storm Amazon</li>
+            <li><span class="icon-star"></span><span class="member-time">0450</span>The Magical Swallow</li>
+            <li><span class="icon-star"></span><span class="member-time">0445</span>The Scarlet Rhinoceros</li>
+            <li><span class="icon-star"></span><span class="member-time">0440</span>Mister Panther</li>
+            <li><span class="icon-star"></span><span class="member-time">0420</span>Quick Snipe</li>
+            <li><span class="icon-star"></span><span class="member-time">0230</span>Captain Majestic</li>
+            <li><span class="icon-star"></span><span class="member-time">0190</span>Warden Jolly</li>
+            <li><span class="icon-star"></span><span class="member-time">0045</span>Death Roach</li>
+            <li><span class="icon-star"></span><span class="member-time">0010</span>Iron Archer</li>
+          </ul>
+      </div>
+    </div>
+    <button class="md-close"><span class="icon-arrow-left-small"></span>Go back</button>
+  </div>
 
-            <!--First Slide-->
-            <div class="swiper-slide">
-              <div class="centering">
+      <div class="md-modal modal-walked modalt-alt-color md-effect-12" id="modal-walked">
+    <div class="md-content">
+      <div>
+       <h2 class="description-title">Walked metres</h2>
+       <i class="modal-icon icons-paperplane"></i>
+        <ul class="members-list">
+          <li><span class="icons-paperplane"></span><span class="member-time">45 d</span>The Majestic Master</li>
+          <li><span class="icons-paperplane"></span><span class="member-time">45 d</span>The Nifty Conjurer</li>
+          <li><span class="icons-paperplane"></span><span class="member-time">44 d</span>The Whispering Whiz</li>
+          <li><span class="icons-paperplane"></span><span class="member-time">43 d</span>The Terrific Nightowl</li>
+          <li><span class="icons-paperplane"></span><span class="member-time">43 d</span>Fire Panther</li>
+          <li><span class="icons-paperplane"></span><span class="member-time">42 d</span>Captain Lucky Robin</li>
+          <li><span class="icons-paperplane"></span><span class="member-time">41 d</span>Doctor Famous Fighter</li>
+          <li><span class="icons-paperplane"></span><span class="member-time">41 d</span>Agent Fancy Cat</li>
+          <li><span class="icons-paperplane"></span><span class="member-time">38 d</span>Iron Assassin</li>
+          <li><span class="icons-paperplane"></span><span class="member-time">36 d</span>Galactic Gargoyle</li>
+          <li><span class="icons-paperplane"></span><span class="member-time">36 d</span>The Light Veteran</li>
+          <li><span class="icons-paperplane"></span><span class="member-time">36 d</span>The Confident Devil</li>
+          <li><span class="icons-paperplane"></span><span class="member-time">32 d</span>The Hot Raccoon</li>
+          <li><span class="icons-paperplane"></span><span class="member-time">30 d</span>The Eager Captain</li>
+          <li><span class="icons-paperplane"></span><span class="member-time">30 d</span>Thunder Lord</li>
+          <li><span class="icons-paperplane"></span><span class="member-time">30 d</span>Warden Steel</li>
+          <li><span class="icons-paperplane"></span><span class="member-time">27 d</span>Quiet Cat</li>
+          <li><span class="icons-paperplane"></span><span class="member-time">26 d</span>Misty Mastermind</li>
+          <li><span class="icons-paperplane"></span><span class="member-time">24 d</span>Scarlet Sentinel</li>
+          <li><span class="icons-paperplane"></span><span class="member-time">24 d</span>Dragon Boy</li>
+          <li><span class="icons-paperplane"></span><span class="member-time">24 d</span>The Wonderman</li>
+        </ul>
+      </div>
+    </div>
+    <button class="md-close"><span class="icon-arrow-left-small"></span>Go back</button>
+  </div>
 
-                <img class="tools" src="img/purple-gang.png">
-                 <!-- <img class="tools" src="img/green-gang.png"> -->
-                <!-- <img class="tools" src="img/blue-gang.png"> -->
-                <h2 id="name"></h2>
-                <h3>tag 'n tools</h3>
-              </div>
-            </div>
+  <div class="md-modal modalt-alt-color md-effect-12" id="modal-events">
+    <div class="md-content">
+      <div>
+       <h2 class="description-title">Events</h2>
+       <i class="modal-icon icon-history"></i>
+                <p class="description">
+                 Maybe we do not need modal window on this tile...?
+                </p>
+      </div>
+    </div>
+    <button class="md-close"><span class="icon-arrow-left-small"></span>Go back</button>
+  </div>
 
-            <!--Second Slide-->
-            <div class="swiper-slide gang-members">
-              <div class="centering">
-                <div class="icon icon-dudes"></div>
-                <h3>Members</h3>
-                <h1 class="gang-info members">0</h1>
-                <button href="#" class="modal-btn md-trigger" data-modal="modal-12">See members list <span class="icon-arrow-right-big"></span></button>
-              </div>
-            </div>
 
-            <!--Third Slide-->
-            <div class="swiper-slide gang-points">
-              <div class="centering">
-                <div class="icon icon-star"></div>
-                <h3>Points</h3>
-                <h1 class="gang-info points">5100</h1>
-                <div class="side">
-                <h4>Best player</h4>
-                <a href="#" class="link-btn best-so-far">Alb3rt <span class="icon-arrow-right-small"></span></a>
+
+  <ul id="gn-menu" class="gn-menu-main">
+    <li class="gn-trigger">
+      <a class="gn-icon gn-icon-menu icon-list-2"><span class="hide">Menu</span></a>
+      <nav class="gn-menu-wrapper">
+        <div class="gn-scroller">
+          <ul class="gn-menu">
+            <li><a class="gn-icon" href="profile.html"><span class="nav-icon icon-dude"></span>Profile</a></li>
+            <li><a class="gn-icon" href="profile-gang.html"><span class="nav-icon icon-dudes"></span>Gang</a></li>
+            <li><a class="gn-icon" href="leaderboard.html"><span class="nav-icon icon-trophy"></span>Leaderboard</a></li>
+            <li><a class="gn-icon" href="tweaks.html"><span class="nav-icon icon-config"></span>Tweaks</a></li>
+            <li><a class="gn-icon" href="faq.html"><span class="nav-icon icon-question"></span>FAQ</a></li>
+          </ul>
+        </div><!-- /gn-scroller -->
+      </nav>
+    </li>
+    <li class="home"><a href="index.html"><span class="icon-home"></a></li>
+    <li class="messages"><a href="chat.html"><span class="icon-message-bubble"></a></li>
+  </ul><!-- /gn-menu -->
+
+
+<div class="wrap">
+
+    <div class="onepcssgrid-1200">
+
+      <div class="onerow top">
+        <div class="col12">
+            <a href="#" class="modal-btn md-trigger" data-modal="modal-gang-description">
+                <div class="tile gang" id="first">
+                  <i class="icon-droplet rotate topright"></i>          
+                  <h2 class="gang-name" id="name">Blue Angels</h2>
                 </div>
+            </a>
+        </div>
 
-                <div class="side">
-                <h4>Latest points</h4>
-                <a href="#" class="link-btn latest">Batman <span class="icon-arrow-right-small"></span></a>
+      </div>
+
+      <div class="onerow short">
+        <div class="col4">
+            <a href="#" class="modal-btn md-trigger" data-modal="modal-members">
+                <div class="tile" id="second">
+                  <i class="icon-users small"></i>
+                  <h2 class="gang-info members">104</h2>
                 </div>
+            </a>
+        </div>
 
-              </div>
-            </div>
+        <div class="col4">
+            <a href="#" class="modal-btn md-trigger" data-modal="modal-points">
+                <div class="tile" id="third">
+                  <i class="icon-star small"></i>
+                  <h2 class="gang-info points">11204</h2>
+                </div>
+            </a>
+        </div>
 
-          </div>
+         <div class="col4 last">
+            <a href="#" class="modal-btn md-trigger" data-modal="modal-walked">
+                <div class="tile" id="fourth">
+                  <i class="icons-paperplane small"></i>
+                  <h2 class="gang-info walked">42115</h2>
+                </div>
+            </a>
         </div>
       </div>
 
-      <!-- /profile-header -->
+      <div class="onerow event">
+        <div class="col12">
+            <a href="#" class="modal-btn md-trigger" data-modal="modal-events">
+                <div class="tile" id="fifth">
+                  <i class="icon-history small left"></i>
+                  <h2 class="gang-info events">If possible some latest event here</h2>
+                </div>
+            </a>
+        </div>
+      </div>
 
-    </header>
+       <div class="onerow last-row">
+          <div class="col6">
+              <a href="#" class="modal-btn md-trigger" data-modal="modal-cans">
+                  <div class="tile" id="sixth">
+                  </div>
+              </a>
+          </div>
 
-    <div class="pagination"></div>
+          <div class="col6 last">
+              <a href="#" class="modal-btn md-trigger" data-modal="modal-tag">
+                  <div class="tile" id="seventh">
+                    <i class="icon-tag"></i>
+                    <h2 class="gang-info tag">Tag</h2>
+                  </div>
+              </a>
+          </div>
+      </div>
 
-  </div><!-- /container -->
+   
 
-  <div class="md-overlay"></div><!-- the overlay element -->
+    </div>
+
+  </div>
+
+             
+  <div class="md-overlay"></div>
 
 
   <!-- Scripts -->
 
   <script src='js/jquery-1.10.2.min.js'></script>
+  <script src="js/modalEffects-original.js"></script>
   <script src="js/classie_menu.js"></script>
-
-
   <script src="js/gnmenu.js"></script>
+  <script src="js/scripts.js"></script>
+  <script src="js/profile-gang.js"></script>
 
-  <script src="js/modalEffects.js"></script>
-  <script src="js/idangerous.swiper-2.2.min.js"></script>
-
-    <script src="js/scripts.js"></script>
-    <script src="js/profile-gang.js"></script>
-
-
-  </body>
-  </html>
+</body>
+</html>
