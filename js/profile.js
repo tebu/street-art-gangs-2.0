@@ -6,7 +6,7 @@
       } else {
 
         // animate.css
-        $('ul.profile-list').addClass('animated bounceInUp');
+        $('ul.profile-list li').addClass('animated slideInLeft');
 
         //Change color background depending on player's color
         var color = localStorage.color;
@@ -52,9 +52,7 @@
 
             // Fittext.js
 
-            jQuery("h1.player-name").fitText(.5);
-            jQuery("h3.mood").fitText(1.6);
-            jQuery("h2").fitText(1.6);
+            jQuery("h1.player-name").fitText(.6);
 
 
         }).fail(function( jqXHR, textStatus ) {
