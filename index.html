@@ -25,9 +25,28 @@
 
    <!-- Modernizr.js needed for the Menu -->
   <script src="js/modernizr.custom.js"></script>
+
+  <!-- Needed for the Modal window -->
+  <script src="js/modernizr.custom_modal.js"></script>
+  
 </head>
 
 <body id="home">
+
+  <!-- Modal for network error -->
+
+  <div class="md-modal modal-network-error md-effect-12" id="modal-network-error">
+    <div class="md-content">
+      <div>
+        <div id="network-error">
+            <p>Connection error</p>
+          </div>
+      </div>
+    </div>
+    <button class="md-close">I'll rise from this wormhole <span class="icon-check"></span></button>
+  </div>
+
+  <!-- / Modal for network error -->
 
     <div class="container">
 
@@ -49,6 +68,8 @@
         <li class="messages"><a href="chat.html">4<span class="icon-message-bubble"></a></li>
       </ul><!-- /gn-menu -->
 
+      <!--  This button is for demo purposes -->
+      <a href="#" class="modal-btn md-trigger" data-modal="modal-network-error">Error modal btn</a>
 
           <div class="liquid-slider"  id="main-slider">
             <!-- Venue: Model
@@ -82,6 +103,7 @@
     <script src="js/classie_menu.js"></script>
     <script src="js/gnmenu.js"></script>
 
+    <script src="js/network-error-loader.js"></script>
     <script src="js/jquery.fittext.js"></script>
     <script src="js/jquery.touchSwipe.min.js"></script>
     <script src="js/jquery.liquid-slider-custom.min.js"></script>
