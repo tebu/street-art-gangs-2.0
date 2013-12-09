@@ -23,7 +23,6 @@ jQuery(document).ready(function(){
             var endpoint = "http://vm0063.virtues.fi/gangsters/"+gangster+"/";
             var now = moment().format();
             var data =  {
-
                 mood: $('#mood').val(),
                 full_name: $('#name').val(),
                 last_action: now
@@ -46,10 +45,6 @@ jQuery(document).ready(function(){
 
         });
 
-
-
-
-}
     }
 
 });
