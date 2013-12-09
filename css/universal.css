@@ -285,7 +285,7 @@ body.blue .gn-menu-wrapper {
 .gn-scroller {
     position: absolute;
     overflow-y: scroll;
-    width: 370px;
+    width: 100%;
     height: 100%;
 }
 
@@ -370,7 +370,7 @@ li.home {
 }
 
 .gn-menu-wrapper.gn-open-all {
-    width: 340px;
+    width: 100%;
 }
 
 .gn-menu-wrapper.gn-open-all .gn-submenu li {
