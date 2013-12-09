@@ -45,11 +45,6 @@ jQuery(document).ready(function(){
           });
 
         });
-
-
-
-
-}
     }
 
 });
