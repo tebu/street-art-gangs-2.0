@@ -5,7 +5,7 @@
       var cHeight=61;
       var cTotalFrames=8;
       var cFrameWidth=80;
-      var cImageSrc='img/sprites.png';
+      var cImageSrc='img/network-error-loader.png';
       
       var cImageTimeout=false;
       var cIndex=0;
