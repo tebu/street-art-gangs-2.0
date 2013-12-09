@@ -35,7 +35,7 @@ jQuery(document).ready(function(){
                 xhr.setRequestHeader ("Authorization", authorization);
               }
           }).done(function( data ) {
-                mood: $('#mood').empty();
+                mood: $('#mood').val("");
           }).fail(function( jqXHR, textStatus ) {
             //TODO fix this
             alert("Error: something went wrong while updating the location: "+ textStatus);
