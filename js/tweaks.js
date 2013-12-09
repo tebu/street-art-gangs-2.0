@@ -23,9 +23,7 @@ jQuery(document).ready(function(){
             var endpoint = "http://vm0063.virtues.fi/gangsters/"+gangster+"/";
             var now = moment().format();
             var data =  {
-
                 mood: $('#mood').val(),
-                full_name: $('#name').val(),
                 last_action: now
             }
            $.ajax({
@@ -38,7 +36,6 @@ jQuery(document).ready(function(){
               }
           }).done(function( data ) {
                 mood: $('#mood').empty();
-                full_name: $('#name').empty();
           }).fail(function( jqXHR, textStatus ) {
             //TODO fix this
             alert("Error: something went wrong while updating the location: "+ textStatus);
