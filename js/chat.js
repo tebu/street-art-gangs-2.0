@@ -77,7 +77,7 @@ jQuery(document).ready(function(){
             var data =  {
                 gangster: gangster,
                 timestamp: now,
-                text: $(".chatter_field").val();
+                text: $(".chatter_field").val()
             }
            $.ajax({
               type: "POST",
