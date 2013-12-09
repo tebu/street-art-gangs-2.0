@@ -36,12 +36,14 @@ jQuery(document).ready(function(){
               }
           }).done(function( data ) {
                 mood: $('#mood').empty();
+
           }).fail(function( jqXHR, textStatus ) {
             //TODO fix this
             alert("Error: something went wrong while updating the location: "+ textStatus);
           });
 
         });
+
     }
 
 });
