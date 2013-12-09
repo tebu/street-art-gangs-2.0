@@ -69,6 +69,32 @@ jQuery(document).ready(function(){
           alert("Error: something went wrong while loading the profile: "+ textStatus);
         });
 
+        $('#send-msg').one( "click", function() {
+            var authorization=localStorage.authorization;
+            var gangster = localStorage.gangster;
+            var endpoint = "http://vm0063.virtues.fi/messages/";
+            var now = moment().format();
+            var data =  {
+                gangster: gangster,
+                timestamp: now,
+                text: $(".chatter_field").val();
+            }
+           $.ajax({
+              type: "POST",
+              url: endpoint,
+              dataType: 'json',
+              data: data,
+              beforeSend: function (xhr) {
+                xhr.setRequestHeader ("Authorization", authorization);
+              }
+          }).done(function( data ) {
+                mood: $('.chatter_field').val("");
 
+          }).fail(function( jqXHR, textStatus ) {
+            //TODO fix this
+            alert("Error: something went wrong while updating the location: "+ textStatus);
+          });
+
+        });
       }
 });
