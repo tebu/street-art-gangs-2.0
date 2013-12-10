@@ -4,7 +4,7 @@
       if (!localStorage.authorization||!localStorage.color||!localStorage.gangster||!localStorage.gang) {
         window.location.replace("splash.html");
       } else {
-
+		mixpanel.track("PageLaunch", {page:"profile"});
         // animate.css
         $('ul.profile-list li').addClass('animated slideInLeft');
 
