@@ -1,0 +1,1 @@
+mixpanel.track("PageLaunch", {page:"splash"});
