@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    
+    mixpanel.track("PageLaunch", {page:"signup"});
     //Animate.css
     $('#about-gangs').click(function(){
         $('.tile').addClass('animated slideInRight');

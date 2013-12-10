@@ -4,6 +4,7 @@
   if (!localStorage.authorization||!localStorage.color||!localStorage.gangster||!localStorage.gang){
     window.location.replace("splash.html");
   } else {
+	mixpanel.track("PageLaunch", {page:"leaderboard"});
     //Menu
     new gnMenu( document.getElementById( 'gn-menu' ) );
 
