@@ -97,7 +97,7 @@ var registerSpray = function() {
               var now = moment().format();
               var data =  {
                       points: localStorage.points,
-                      last_action: now: now
+                      last_action: now
                   }
 
               $.ajax({
