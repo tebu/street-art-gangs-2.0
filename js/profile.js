@@ -4,12 +4,15 @@
       if (!localStorage.authorization||!localStorage.color||!localStorage.gangster||!localStorage.gang) {
         window.location.replace("splash.html");
       } else {
+		var color = localStorage.color;
+		var gangster = localStorage.gangster;
+		
+		mixpanel.track("PageLaunch", {page:"profile", gang: color, gangster: gangster});
 
         // animate.css
         $('ul.profile-list li').addClass('animated slideInLeft');
 
         //Change color background depending on player's color
-        var color = localStorage.color;
         $('body').removeClass().addClass(color)
 
         //Menu

@@ -4,9 +4,12 @@ jQuery(document).ready(function(){
       if (!localStorage.authorization||!localStorage.color||!localStorage.gangster||!localStorage.gang) {
         window.location.replace("splash.html");
       } else {
-
-        //Change color background depending on player's color
-        var color = localStorage.color;
+	    var color = localStorage.color;
+		var gangster = localStorage.gangster;
+		
+		mixpanel.track("PageLaunch", {page:"index", gang: color, gangster: gangster});
+        
+		//Change color background depending on player's color
         $('body').removeClass().addClass(color)
 
         //Menu

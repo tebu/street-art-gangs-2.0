@@ -3,9 +3,12 @@ jQuery(document).ready(function(){
       if (!localStorage.authorization||!localStorage.color||!localStorage.gangster||!localStorage.gang) {
         window.location.replace("splash.html");
       } else {
-
+	    var color = localStorage.color;
+		var gangster = localStorage.gangster;
+		
+		mixpanel.track("PageLaunch", {page:"tweaks", gang: color, gangster: gangster});
         //Change color background depending on player's color
-        var color = localStorage.color;
+        
         $('body').removeClass().addClass(color)
 
         //Menu
@@ -36,12 +39,14 @@ jQuery(document).ready(function(){
               }
           }).done(function( data ) {
                 mood: $('#mood').val("");
+
           }).fail(function( jqXHR, textStatus ) {
             //TODO fix this
             alert("Error: something went wrong while updating the location: "+ textStatus);
           });
 
         });
+
     }
 
 });

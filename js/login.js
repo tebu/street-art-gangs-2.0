@@ -1,4 +1,6 @@
+
 $(document).ready(function(){
+	mixpanel.track("PageLaunch", {page:"login"});
     //Animate.css
     $('h1').addClass('animated pulse');
     $('input, .btn').addClass('animated slideInLeft');
@@ -26,6 +28,7 @@ $(document).ready(function(){
                 localStorage.gangster=data['id'];
                 localStorage.gang=data['gang'];
                 localStorage.points = data['points'];
+                localStorage.tags_created = = data['tags_created'];
                 window.location.replace("index.html");
         }).fail(function( jqXHR, textStatus ) {
             //TODO fix this - Error message needed
