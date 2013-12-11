@@ -28,7 +28,6 @@ $(document).ready(function(){
                 localStorage.gangster=data['id'];
                 localStorage.gang=data['gang'];
                 localStorage.points = data['points'];
-                localStorage.tags_created = = data['tags_created'];
                 window.location.replace("index.html");
         }).fail(function( jqXHR, textStatus ) {
             //TODO fix this - Error message needed
