@@ -92,6 +92,32 @@ var registerSpray = function() {
             xhr.setRequestHeader ("Authorization", authorization);
           }
         }).done(function( data ) {
+              localStorage.points += 100;
+              var endpoint = "http://vm0063.virtues.fi/gangsters/"+gangster+"/";
+              var now = moment().format();
+              var data =  {
+                      points: localStorage.points,
+                      last_action: now: now
+                  }
+
+              $.ajax({
+                type: "PATCH",
+                url: endpoint,
+                dataType: 'json',
+                data: data,
+                beforeSend: function (xhr) {
+                  xhr.setRequestHeader ("Authorization", authorization);
+                }
+              }).done(function( data ) {
+
+
+
+              }).fail(function( jqXHR, textStatus ) {
+              //TODO fix this
+                alert("Error: something went wrong while updating the location: "+ textStatus);
+              });
+
+
         }).fail(function( jqXHR, textStatus ) {
         //TODO fix this
           alert("Error: something went wrong while updating the location: "+ textStatus);

@@ -25,6 +25,7 @@ $(document).ready(function(){
                 localStorage.color=data['color'];
                 localStorage.gangster=data['id'];
                 localStorage.gang=data['gang'];
+                localStorage.points = data['points'];
                 window.location.replace("index.html");
         }).fail(function( jqXHR, textStatus ) {
             //TODO fix this - Error message needed
