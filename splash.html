@@ -31,9 +31,13 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
 
 <div class="rotate">
 
+<div class='waves'>
+  <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+</div>
+
     <div class="logo">
         <p><span class="street">street</span> <span class="art">Art</span> <span class="gangs">gangs</span></p>
-        <p id="slogan">tagging the city</p>
+        <p id="slogan">v.1.0</p>
     </div>
 
     </div>
@@ -56,8 +60,8 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
 
       //Animate.css
       $(document).ready(function(){
-        $('.logo').addClass('animated bounceInDown');
-        $('nav a').addClass('animated bounceInUp');
+        $('nav a:first-child').addClass('animated slideInLeft');
+        $('nav a:nth-child(2)').addClass('animated slideInRight');
       });
 
     </script>
