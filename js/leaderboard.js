@@ -4,12 +4,14 @@
   if (!localStorage.authorization||!localStorage.color||!localStorage.gangster||!localStorage.gang){
     window.location.replace("splash.html");
   } else {
-	mixpanel.track("PageLaunch", {page:"leaderboard"});
+	var color = localStorage.color;
+	var gangster = localStorage.gangster;
+		
+	mixpanel.track("PageLaunch", {page:"leaderboard", gang: color, gangster: gangster});
     //Menu
     new gnMenu( document.getElementById( 'gn-menu' ) );
 
     //Change color background depending on player's color
-    var color = localStorage.color;
     $('body').removeClass().addClass(color);
 
     var endpoint = "http://vm0063.virtues.fi/gangs/";
