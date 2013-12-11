@@ -96,8 +96,8 @@ var registerSpray = function() {
             xhr.setRequestHeader ("Authorization", authorization);
           }
         }).done(function( data ) {
-              localStorage.points += 100;
-              localStorage.tags_created++;
+              localStorage.points  = Number(localStorage.points) + 100;
+              localStorage.tags_created = Number(localStorage.tags_created ) + 1;
               var endpoint = "http://vm0063.virtues.fi/gangsters/"+gangster+"/";
               var now = moment().format();
               var data =  {
