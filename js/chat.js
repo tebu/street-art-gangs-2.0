@@ -65,7 +65,7 @@ var retrieveMSG = function() {
         var messageDiv = $("<div>").addClass("message-element");
         var bubleDiv = $("<div>").addClass("bubble");
         var itemSpan =$("<span>").addClass("chatter_msg_item").addClass("chatter_msg_item_user");
-        $("<span>").addClass("new").appendTo(itemSpan);
+
         $("<span>").addClass("timestamp").text(moment(data[i].timestamp).fromNow()).appendTo(itemSpan); //TODO put moment
         itemSpan.append(data[i].text).appendTo(bubleDiv); //TODO put message
         bubleDiv.appendTo(messageDiv);
