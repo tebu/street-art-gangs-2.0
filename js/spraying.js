@@ -6,9 +6,9 @@ jQuery(document).ready(function(){
       } else {
 	  	var color = localStorage.color;
 		var gangster = localStorage.gangster;
-		
+
 		mixpanel.track("PageLaunch", {page:"spraying", gang: color, gangster: gangster});
-		
+
         //Change color background depending on player's color
         $('body').removeClass().addClass(color)
         $("#can-spraying").attr("src", "img/can-"+color+".png" );
@@ -96,11 +96,13 @@ var registerSpray = function() {
             xhr.setRequestHeader ("Authorization", authorization);
           }
         }).done(function( data ) {
-              localStorage.points += 100;
+              localStorage.points  = Number(localStorage.points) + 100;
+              localStorage.tags_created = Number(localStorage.tags_created ) + 1;
               var endpoint = "http://vm0063.virtues.fi/gangsters/"+gangster+"/";
               var now = moment().format();
               var data =  {
                       points: localStorage.points,
+                      tags_created: localStorage.tags_created,
                       last_action: now
                   }
 
