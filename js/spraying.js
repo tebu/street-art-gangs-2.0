@@ -6,9 +6,11 @@ jQuery(document).ready(function(){
       } else {
 	  	var color = localStorage.color;
 		var gangster = localStorage.gangster;
-		mixpanel.register({gang: color, gangster: gangster});
+	
+		mixpanel.register({page:"spraying", gang: color, gangster: gangster});
 		mixpanel.track("PageLaunch", {page:"spraying"});
-		
+		mixpanel.track("SprayingFinalised", {done:"#score"}); 
+				
         //Change color background depending on player's color
         $('body').removeClass().addClass(color)
         $("#can-spraying").attr("src", "img/can-"+color+".png" );

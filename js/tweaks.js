@@ -5,10 +5,10 @@ jQuery(document).ready(function(){
       } else {
 	    var color = localStorage.color;
 		var gangster = localStorage.gangster;
-		var color = localStorage.mood;
+		var mood = localStorage.mood;
 		
 		mixpanel.track("PageLaunch", {page:"tweaks", gang: color, gangster: gangster});
-		mixpanel.track("MoodSet", {});
+
         //Change color background depending on player's color
         
         $('body').removeClass().addClass(color)
