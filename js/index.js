@@ -6,9 +6,10 @@ jQuery(document).ready(function(){
       } else {
 	    var color = localStorage.color;
 		var gangster = localStorage.gangster;
-		
-		mixpanel.track("PageLaunch", {page:"index", gang: color, gangster: gangster});
-        
+
+		mixpanel.register({gang: color, gangster: gangster});
+		mixpanel.track("PageLaunch", {page:"index"});
+
 		//Change color background depending on player's color
         $('body').removeClass().addClass(color)
 
