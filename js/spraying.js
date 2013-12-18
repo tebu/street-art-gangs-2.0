@@ -47,10 +47,7 @@ jQuery(document).ready(function(){
 
          jQuery("#loading").delay(22000).fadeOut(300);
 
-        // Redirect to home screen after finished spraying
-        setTimeout(function() {
-          window.location.href = "index.html";
-        }, 27000);
+
     });
 
     // Animate.css
@@ -116,6 +113,7 @@ var registerSpray = function() {
                 }
               }).done(function( data ) {
 
+          window.location.href = "index.html";
 
 
               }).fail(function( jqXHR, textStatus ) {
