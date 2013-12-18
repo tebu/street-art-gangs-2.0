@@ -6,7 +6,7 @@ jQuery(document).ready(function(){
 	    var color = localStorage.color;
 		var gangster = localStorage.gangster;
 		
-		mixpanel.track("PageLaunch", {page:"tweaks", gang: color, gangster: gangster});
+		mixpanel.track("PageLaunch", {page:"tweaks", gang: color, gangster: gangster}); //Track for mood is in "Click", No super property for gang/gangster because of cache issues
 		
 		
         //Change color background depending on player's color
@@ -47,14 +47,16 @@ jQuery(document).ready(function(){
           }).done(function( data ) {
 				
                 mood: $('#mood').val("");
+				location.reload();            
 				
           }).fail(function( jqXHR, textStatus ) {
             //TODO fix this
             alert("Error: something went wrong while updating the location: "+ textStatus);
           } 
 			);
-		location.reload(true);
-        });
+		
+        } );
+		
     }
 
 });
