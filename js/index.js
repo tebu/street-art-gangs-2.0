@@ -6,10 +6,12 @@ jQuery(document).ready(function(){
       } else {
 	    var color = localStorage.color;
 		var gangster = localStorage.gangster;
-
+		var locationLatitude = localStorage.latitude;
+		var locationLongitude = localStorage.longitude;
+		
 		mixpanel.register({gang: color, gangster: gangster}); //Track for the droplet click is in index.html
 		mixpanel.track("PageLaunch", {page:"index"});
-		
+		mixpanel.track("SprayingInitiated", {latitude: locationLatitude, longitude: locationLongitude});
 		
 		//Change color background depending on player's color
         $('body').removeClass().addClass(color)
