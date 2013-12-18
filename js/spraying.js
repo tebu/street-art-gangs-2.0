@@ -77,6 +77,7 @@ var registerSpray = function() {
         var gangster = localStorage.gangster;
 		var color = localStorage.color;
         //var venue = localStorage.venue;
+        var now = moment().format();
         var venue = 26; //TODO change with stored venue <---------------------------------!
         var endpoint = "http://vm0063.virtues.fi/venues/"+venue+"/";
         var data =  {
