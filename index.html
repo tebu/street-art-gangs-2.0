@@ -33,6 +33,9 @@ typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var
 b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);
 mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel --> 
 </head>
+<script>
+		mixpanel.track_links("#drop", "SprayingInitiated");
+</script>
 
 <body id="home">
 
@@ -94,7 +97,7 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
           </div><!-- /arrows -->
 
           <div id="start-to-spray">
-            <a class="spray icon-droplet" href="spraying.html"></a>
+            <a id="drop" class="spray icon-droplet" href="spraying.html"></a>
           </div>
 
     </div><!-- /container -->

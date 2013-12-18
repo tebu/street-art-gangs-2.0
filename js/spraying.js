@@ -6,9 +6,15 @@ jQuery(document).ready(function(){
       } else {
 	  	var color = localStorage.color;
 		var gangster = localStorage.gangster;
+<<<<<<< HEAD
 
 		mixpanel.track("PageLaunch", {page:"spraying", gang: color, gangster: gangster});
 
+=======
+	
+		mixpanel.track("PageLaunch", {page:"spraying", gang: color, gangster: gangster}); 
+				
+>>>>>>> origin/mixPanel
         //Change color background depending on player's color
         $('body').removeClass().addClass(color)
         $("#can-spraying").attr("src", "img/can-"+color+".png" );
@@ -78,14 +84,16 @@ var registerSpray = function() {
 
         var authorization=localStorage.authorization;
         var gangster = localStorage.gangster;
+		var color = localStorage.color;
         //var venue = localStorage.venue;
-        var venue = 2; //TODO change with stored venue
+        var venue = 26; //TODO change with stored venue <---------------------------------!
         var endpoint = "http://vm0063.virtues.fi/venues/"+venue+"/";
         var now = moment().format();
         var data =  {
                 gangster: gangster,
                 latestEditTimestamp: now
             }
+		mixpanel.track("SprayingFinalised", {Time:now, gang: color, gangster: gangster});
 
         $.ajax({
           type: "PATCH",

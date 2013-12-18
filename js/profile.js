@@ -33,11 +33,7 @@
 
             $(".player-name").text(data.username);
 
-            if (data.full_name!=null && data.full_name!="") {
-              $(".player-full-name").text(data.full_name);
-            } else {
-              $(".player-full-name").text("Unknown");
-            }
+ 
             $( ".mood-title" ).show( "slow" );
             if (data.mood!=null && data.mood!="") {
               $(".mood").text(data.mood);
