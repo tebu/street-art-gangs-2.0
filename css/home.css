@@ -111,6 +111,8 @@ h3.title {
     text-shadow: 0 0 20px #FFC7A7;
 }
 
+/*!*/
+
 #start-to-spray {
     position: fixed;
     bottom: 10%;
@@ -139,6 +141,45 @@ a.spray {
 a.spray:active {
     box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
 }
+
+/*droplet when inactive*/
+#not-to-spray {
+    position: fixed;
+    bottom: 10%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+embed.notspray {
+	font-size: 5em;
+    padding: 20px;
+    border-radius: 50%;
+    color: #fff;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+
+}
+
+/*droplet when close*/
+#maybe-to-spray {
+    position: fixed;
+    bottom: 10%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+embed.maybespray {
+	font-size: 5em;
+    padding: 20px;
+    border-radius: 50%;
+    color: #fff;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 5px rgba(0, 0, 0, 0.2);
+}
+
 
 /*.purple-owns {
     color: #FF9FFB !important;
