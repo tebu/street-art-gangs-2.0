@@ -39,7 +39,7 @@ jQuery(document).ready(function(){
           for (var i = data.length - 1; i >= 0; i--) {
             var venue = $("<div>").addClass("venue");
             var owner = $("<p>").addClass("owner");
-			
+			var distance = 12;      //location-check(); //JATKA TÄSTÄ!
             var gang = data[i].gang;
             if (gang != null) {
               owner.append("Tagged by ");
@@ -49,50 +49,22 @@ jQuery(document).ready(function(){
               owner.append("Untagged").appendTo(venue); //TODO change with something better
             }
 			
-			
-			
             $("<div>").addClass("category").addClass(getCategoryClass(data[i].category)).appendTo(venue);
             $("<h3>").addClass("title").text(getCategory(data[i].category)).appendTo(venue);
             $("<h1>").addClass("location").text(data[i].name).appendTo(venue);
-			                                        /*JATKA TÄSTÄ... Distance, pitää saada venuen ominaisuudeksi ja jokaiselle erikseen!*/
+			                                        
             $('#main-slider').append(venue);
-			
-			/* START Counting the distances, math works
-			
-			var locationLatitude = localStorage.latitude; //gangster location
-			var locationLongitude = localStorage.longitude;
-			var venueLatitude = data[i].latitude; //venue location
-			var venueLongitude = data[i].longitude;
-
-			// Compute spherical coordinates
-			var rho = 12756.32; // earth diameter in meters
-			// convert latitude and longitude to spherical coordinates in radians
-			// phi = 90 - latitude
-			var phi_1 = (90.0 - locationLatitude)*Math.PI/180.0;
-			var phi_2 = (90.0 - venuaLatitude)*Math.PI/180.0;
-			// theta = longitude
-			var theta_1 = locationLongitude*Math.PI/180.0;
-			var theta_2 = venueLongitude*Math.PI/180.0;
 	
-			// compute spherical distance from spherical coordinates
-			// arc length = \arccos(\sin\phi\sin\phi'\cos(\theta-\theta') + \cos\phi\cos\phi')
-			// distance = rho times arc length
-			var distance = rho*Math.acos( Math.sin(phi_1)*Math.sin(phi_2)*Math.cos(theta_1 - theta_2) + Math.cos(phi_1)*Math.cos(phi_2) ); 
-			
-			Counting the distance END*/
-			
-			var distance = 6; //Temporary!
-	
-			if (distance >15.00) {
-			$("#start-to-spray").replaceWith("<div id='not-to-spray'><embed class='notspray icon-droplet'</embed></div>"); 
-                                           //inactive droplet					   
+			if (distance <=10.00) {
+			$("#not-to-spray").replaceWith("<div id='start-to-spray'><a id='drop' class='spray icon-droplet' href='spraying.html'></a></div>"); 
+			$("#maybe-to-spray").replaceWith("<div id='start-to-spray'><a id='drop' class='spray icon-droplet' href='spraying.html'></a></div>"); //active droplet					   
 			}else if (distance >10.00 && distance<=15.00){
-			$("#start-to-spray").replaceWith("<div id='maybe-to-spray'><embed class='maybespray icon-droplet'</embed></div>"); 	//blinking droplet
-			}else  { 
-					//active droplet default
+			$("#not-to-spray").replaceWith("<div id='maybe-to-spray'><a class='maybespray icon-droplet'</a></div>"); 
+			$("#start-to-spray").replaceWith("<div id='maybe-to-spray'><a class='maybespray icon-droplet'</a></div>");//blinking droplet
+			}else{ 
+					//inactive droplet default
 			}
 
-			//Checking the location distances ENDs	
           };
 
           // Venue slider
@@ -123,5 +95,33 @@ jQuery(document).ready(function(){
         //TODO fix this
           alert("Error: something went wrong while loading the venues");
         });
+		/* START Counting the distances
+		
+		function location-check(data, ){  //JA LASKURIN ARVO  
+		
+			
+			var locationLatitude = localStorage.latitude; //gangster location
+			var locationLongitude = localStorage.longitude;
+			var venueLatitude = data[i].latitude; //venue location
+			var venueLongitude = data[i].longitude;
+
+			// Compute spherical coordinates
+			var rho = 12756.32; // earth diameter in meters
+			// convert latitude and longitude to spherical coordinates in radians
+			// phi = 90 - latitude
+			var phi_1 = (90.0 - locationLatitude)*Math.PI/180.0;
+			var phi_2 = (90.0 - venuaLatitude)*Math.PI/180.0;
+			// theta = longitude
+			var theta_1 = locationLongitude*Math.PI/180.0;
+			var theta_2 = venueLongitude*Math.PI/180.0;
+	
+			// compute spherical distance from spherical coordinates
+			// arc length = \arccos(\sin\phi\sin\phi'\cos(\theta-\theta') + \cos\phi\cos\phi')
+			// distance = rho times arc length
+			var distance = rho*Math.acos( Math.sin(phi_1)*Math.sin(phi_2)*Math.cos(theta_1 - theta_2) + Math.cos(phi_1)*Math.cos(phi_2) ); 
+			
+			return distance;	
+		}
+		Counting the distance END */
     }
 });
