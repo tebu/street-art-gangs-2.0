@@ -114,7 +114,7 @@ jQuery(document).ready(function(){
 			
 			// Compute spherical coordinates
 			
-			var rho = 6378,16; // earth ray in meters
+			var rho = 6378.16; // earth ray in meters
 			// convert latitude and longitude to spherical coordinates in radians
 			// phi = 90 - latitude
 			
