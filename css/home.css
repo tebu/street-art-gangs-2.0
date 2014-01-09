@@ -111,6 +111,8 @@ h3.title {
     text-shadow: 0 0 20px #FFC7A7;
 }
 
+/*!*/
+
 #start-to-spray {
     position: fixed;
     bottom: 10%;
@@ -138,6 +140,85 @@ a.spray {
 
 a.spray:active {
     box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+/*droplet when inactive*/
+#not-to-spray {
+    position: fixed;
+    bottom: 10%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+a.notspray {
+	font-size: 5em;
+    padding: 20px;
+    border-radius: 50%;
+    color: #fff;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 5px rgba(0, 0, 0, 0.2);
+	
+	filter:alpha(opacity=20);
+	-moz-opacity:0.2;
+	opacity: 0.2;	
+}
+
+/*droplet when close*/
+#maybe-to-spray {
+    position: fixed;
+    bottom: 10%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+a.maybespray {
+
+	font-size: 5em;
+    padding: 20px;
+    border-radius: 50%;
+    color: #fff;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 5px rgba(0, 0, 0, 0.2);
+	
+	animation: maybespray 2s;
+	-webkit-animation: maybespray 2s;
+	-moz-animation: maybespray 2s; 
+	-webkit-animation-iteration-count: infinite;
+	-moz-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-timing-function: ease-in;
+    -moz-animation-timing-function: ease-in;
+    -ms-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+
+}
+@keyframes maybespray{
+  0%{
+	color: rgba(255, 255, 255, 0.2);
+  }
+  50%{
+    color:rgba(255, 255, 255, 0.8);
+  }
+  100%{
+    color:rgba(255, 255, 255, 0.2);
+  }
+}
+@-webkit-keyframes maybespray{
+ 0%{
+	color: rgba(255, 255, 255, 0.2);
+  }
+  50%{
+    color:rgba(255, 255, 255, 0.8);
+  }
+  100%{
+    color:rgba(255, 255, 255, 0.2);
+  }
 }
 
 /*.purple-owns {
