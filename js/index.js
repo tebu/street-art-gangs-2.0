@@ -51,19 +51,18 @@ jQuery(document).ready(function(){
 			
             $("<div>").addClass("category").addClass(getCategoryClass(data[i].category)).appendTo(venue);
             $("<h3>").addClass("title").text(getCategory(data[i].category)).appendTo(venue);
-            $("<h1>").addClass("location").text(data[i].name).appendTo(venue);
-			                                        
-            $('#main-slider').append(venue);
-	
+			$("<h1>").addClass("location").text(data[i].name).appendTo(venue);
+			
 			if (distance <=10.00) {
-			$("#not-to-spray").replaceWith("<div id='start-to-spray'><a id='drop' class='spray icon-droplet' href='spraying.html'></a></div>"); 
-			$("#maybe-to-spray").replaceWith("<div id='start-to-spray'><a id='drop' class='spray icon-droplet' href='spraying.html'></a></div>"); //active droplet					   
+			$("<div>").attr('id','#start-to-spray').append("<a id='drop' class='spray icon-droplet' href='spraying.html'></a>").appendTo(venue); //active droplet					   
 			}else if (distance >10.00 && distance<=15.00){
-			$("#not-to-spray").replaceWith("<div id='maybe-to-spray'><a class='maybespray icon-droplet'</a></div>"); 
-			$("#start-to-spray").replaceWith("<div id='maybe-to-spray'><a class='maybespray icon-droplet'</a></div>");//blinking droplet
+			$("<div>").attr('id','#maybe-to-spray').append("<a class='maybespray icon-droplet'</a>").appendTo(venue); //blinking droplet
 			}else{ 
-					//inactive droplet default
+			$("<div>").attr('id','#not-to-spray').append("<a class='notspray icon-droplet'></a>").appendTo(venue);	//inactive droplet 
 			}
+			
+			$("<br>").appendTo(venue);			
+            $('#main-slider').append(venue);
 
           };
 
@@ -87,9 +86,12 @@ jQuery(document).ready(function(){
             // animateOut:"slideOutLeft"
           });
 
+
           jQuery("h1.location").fitText(1.6);
           jQuery(".category").fitText(.6);
           jQuery("h3.title").fitText(1.5);
+		  
+		
 
         }).fail(function( jqXHR, textStatus ) {
         //TODO fix this
@@ -97,7 +99,7 @@ jQuery(document).ready(function(){
         });
 		/* START Counting the distances
 		
-		function location-check(data, ){  //JA LASKURIN ARVO  
+		function location-check(data, i){  //JA LASKURIN ARVO  
 		
 			
 			var locationLatitude = localStorage.latitude; //gangster location
