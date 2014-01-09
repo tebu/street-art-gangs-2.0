@@ -114,7 +114,7 @@ jQuery(document).ready(function(){
 			
 			// Compute spherical coordinates
 			
-			var rho = 12756.32; // earth diameter in meters
+			var rho = 12756320.00; // earth diameter in meters
 			// convert latitude and longitude to spherical coordinates in radians
 			// phi = 90 - latitude
 			
