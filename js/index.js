@@ -63,9 +63,9 @@ jQuery(document).ready(function(){
 			$("<br>").appendTo(venue);  //TEMP. SOLUTION
 			$("<br>").appendTo(venue);
 			
-			if (distance <=10.00) {
+			if (distance <=0.015) {
 			$("<div>").attr('id','#start-to-spray').append("<a id='drop' class='spray icon-droplet' href='spraying.html'></a>").appendTo(venue); //active droplet					   
-			}else if (distance >10.00 && distance<=15.00){
+			}else if (distance >0.015 && distance<=0.020){
 			$("<div>").attr('id','#maybe-to-spray').append("<a class='maybespray icon-droplet'</a>").appendTo(venue); //blinking droplet
 			}else{ 
 			$("<div>").attr('id','#not-to-spray').append("<a class='notspray icon-droplet'></a>").appendTo(venue);	//inactive droplet 
