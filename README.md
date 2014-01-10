@@ -1,7 +1,6 @@
 street-art-gangs-2.0
 ====================
 
-Merry Xmas!
 
 Pages currently with some JS logic:
 
