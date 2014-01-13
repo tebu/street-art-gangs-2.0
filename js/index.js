@@ -59,13 +59,13 @@ jQuery(document).ready(function(){
             $("<h3>").addClass("title").text(getCategory(data[i].category)).appendTo(venue);
 			$("<h1>").addClass("location").text(data[i].name).appendTo(venue);
 			
-			$("<p>").text(""+distance+"").appendTo(venue);
+			$("<p>").text(""+distance+"").appendTo(venue); // For testing
 			$("<br>").appendTo(venue);  //TEMP. SOLUTION
 			$("<br>").appendTo(venue);
 			
 			if (distance <=0.015) {
 			$("<div>").attr('id','#start-to-spray').append("<a id='drop' class='spray icon-droplet' href='spraying.html'></a>").appendTo(venue); //active droplet					   
-			}else if (distance >0.015 && distance<=0.020){
+			}else if (distance >0.015 && distance<=0.030){
 			$("<div>").attr('id','#maybe-to-spray').append("<a class='maybespray icon-droplet'</a>").appendTo(venue); //blinking droplet
 			}else{ 
 			$("<div>").attr('id','#not-to-spray').append("<a class='notspray icon-droplet'></a>").appendTo(venue);	//inactive droplet 
@@ -108,15 +108,13 @@ jQuery(document).ready(function(){
           alert("Error: something went wrong while loading the venues");
         });
 		
-		// START Counting the distances
-
+		//Counting the distances between player and location
 		function locationCheck(locationLat, locationLon, venueLat, venueLon){    
 			
 			// Compute spherical coordinates
 			
 			var rho = 6378.16; // earth ray in meters
-			// convert latitude and longitude to spherical coordinates in radians
-			// phi = 90 - latitude
+			// convert latitude and longitude to spherical coordinates in radians, phi = 90 - latitude
 			
 			var phi_1 = (90.0 - locationLat)*Math.PI/180.0;
 			var phi_2 = (90.0 - venueLat)*Math.PI/180.0;
@@ -132,7 +130,7 @@ jQuery(document).ready(function(){
 			
 			return distance;	
 		}
-		
-		//Counting the distance ENDs
+	
     }
+	window.alert = function(){return null;}; //Javascript popups disabled, atleast for now
 });

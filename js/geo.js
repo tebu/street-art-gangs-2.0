@@ -17,8 +17,6 @@ function onGPSSuccess(pos) {
       localStorage.accuracy=accuracy;
       updateUserPosition(latitude, longitude);
 
-
-
 }
 
 function onGPSError(error) {
@@ -30,7 +28,7 @@ function watchGPS() {
       // Request repeated updates.
       watchId = navigator.geolocation.watchPosition(onGPSSuccess, onGPSError, {
           enableHighAccuracy: true,
-          maximumAge: 60000,
+          maximumAge: 0,
           timeout: 15000
         });
 }
