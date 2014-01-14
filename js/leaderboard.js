@@ -31,22 +31,26 @@
     }).done(function( data ) {
 
       var table = $('#gang-board');
-	  
+	  var gangTagsPoints2 = new Array();                                
 	   for (var i = 0; i < 3; i++) {  //1=Purple, 2=Blue and 3=Green, Apply only here, not equal to "gang" in gangsters database 
 	    var gangNumber = i+1;
 		var gangName = functionName(i);
 		var gangTagsPoints = functionTags (i, data);
 		
+		gangTagsPoints2[i-1] = new Array(gangTagsPoints);  //TODO Sort these in order by points
+		
+		
+		for (var j = gangTagsPoints2.length - 1; j >= 0; j--) {      //JATKA TÄSTÄ
         var line = $("<tr>");
-        $("<td>").text(i+1).appendTo(line);
-        $("<td>").text(gangName).appendTo(line);
-        $("<td>").text(gangTagsPoints[0]).appendTo(line); //TODO: insert tags created
-        $("<td>").text(gangTagsPoints[1]).appendTo(line); //TODO: insert points
+        $("<td>").text(j).appendTo(line);
+        $("<td>").text(gangTagsPoints2[j].gangName).appendTo(line); //GangName
+        $("<td>").text(gangTagsPoints2[j].gangTags).appendTo(line); //Tags Created by Gang
+        $("<td>").text(gangTagsPoints2[j].gangPoints).appendTo(line); //Full Points by Gang
         table.append(line);
+		}
       };
 
-	  
-		
+
 //Load Players Leaderboard
 
       $.ajax({
@@ -60,12 +64,15 @@
 
         var table = $('#player-board');
         //TODO: limit number of lines and select you
-        for (var i = 0; i < data.length; i++) {
+		var data2 = data.slice(0);
+		data2.sort(function(a,b) { return parseFloat(b.points) - parseFloat(a.points) } );
+
+        for (var i = 0; i < data2.length; i++) {
           var line = $("<tr>");
           $("<td>").text(i+1).appendTo(line);
-          $("<td>").text(data[i].username).appendTo(line);
-          $("<td>").text(643636).appendTo(line); //TODO: insert tags created
-          $("<td>").text(43643).appendTo(line); //TODO: insert points
+          $("<td>").text(data2[i].username).appendTo(line);
+          $("<td>").text(data2[i].tags_created).appendTo(line); //TODO: insert tags created
+          $("<td>").text(data2[i].points).appendTo(line); //TODO: insert points
           table.append(line);
         };
 
@@ -122,18 +129,21 @@
 			var gangTags = 0;
 			var gangPoints = 0;
 			for (var i = data.length - 1; i >= 0; i--) {
-			if (counterValueGang == 1 && data[i].color == "purple") {
+			if (counterValueGang == 1 && data[i].color == "purple"){
 			gangTags += data[i].tags_created;   //points and tags for team purple		
 			gangPoints += data[i].points;
+			gangName = "Purple Knights";
 			}else if (counterValueGang == 2 && data[i].color == "blue"){
 			gangTags += data[i].tags_created; //points and tags for team blue
 			gangPoints += data[i].points;
+			gangName = "Blue Angels";
 			}else if (counterValueGang == 3 && data[i].color == "green"){ 
 			gangTags += data[i].tags_created;//points and tags for team green
 			gangPoints += data[i].points;
+			gangName = "Green Shamans";
 			}
 			}
-   return [gangTags,gangPoints];
+   return [gangTags,gangPoints,gangName];
    }
    
  });
