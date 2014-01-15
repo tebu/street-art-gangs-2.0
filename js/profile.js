@@ -42,7 +42,7 @@
               $(".mood").text("Unknown");
             }
 			
-			var rank = sortRanking(data); //Call for sorting the rank*/
+			var rank = sortRanking(data)+1; //Call for sorting the rank*/
 			
 			
             $("#ranking").text("#"+rank);
