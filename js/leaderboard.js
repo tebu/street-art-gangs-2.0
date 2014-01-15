@@ -14,7 +14,6 @@
     //Change color background depending on player's color
     $('body').removeClass().addClass(color);
 
-    /*var endpoint = "http://vm0063.virtues.fi/gangs/"; */   //Rejected the use of gang data for now, for the lack of points there
     var endpoint2 = "http://vm0063.virtues.fi/gangsters/";
 
     var authorization=localStorage.authorization;
@@ -23,7 +22,7 @@
 
     $.ajax({
       type: "GET",
-      url: endpoint2,
+      url: endpoint2,                              //TODO Combine the data requests
       dataType: 'json',
       beforeSend: function (xhr) {
         xhr.setRequestHeader ("Authorization", authorization);
@@ -31,18 +30,19 @@
     }).done(function( data ) {
 
       var table = $('#gang-board');
-	  var gangTagsPoints2 = [];                                
-	   for (var i = 0; i < 3; i++) {  //1=Purple, 2=Blue and 3=Green, Apply only here, not equal to "gang" in gangsters database 
+	  var gangTagsPoints2 = [];    
+	  
+	   for (var i = 0; i < 3; i++) {  //1=Purple, 2=Blue and 3=Green, Apply only here n functionTags(), not equal to "gang" in gangsters database 
 
 		var gangTagsPoints = functionTags (i, data);
-		gangTagsPoints2.push(gangTagsPoints);  //TODO Sort these in order by points
+		gangTagsPoints2.push(gangTagsPoints);  
 		}
 		
-		gangTagsPoints2 = gangTagsPoints2.sort(function(a,b) {
-		return b[1] > a[1];
+		gangTagsPoints2 = gangTagsPoints2.sort(function(a,b) { //Sorts order by points
+		return b[1] - a[1];
 		});
 		
-		for (var j = 0; j <= 2; j++) {      //JATKA TÄSTÄ
+		for (var j = 0; j <= 2; j++) {      
         var line = $("<tr>");
         $("<td>").text(j+1).appendTo(line);
         $("<td>").text(gangTagsPoints2[j][2]).appendTo(line); //GangName
@@ -115,7 +115,7 @@
    }
    
    
-	function functionTags(counterValueGang, data){ //Gang tags by gangsters 
+	function functionTags(counterValueGang, data){ //Gang tags,points and name by gangsters combined
 			counterValueGang++;
 			var gangName = "";
 			var gangTags = 0;

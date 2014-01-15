@@ -20,8 +20,8 @@
 
         //Get Profile
         var authorization=localStorage.authorization;
-        var gangster = localStorage.gangster;
-        var endpoint = "http://vm0063.virtues.fi/gangsters/"+gangster+"/";
+        
+        var endpoint = "http://vm0063.virtues.fi/gangsters/";
         $.ajax({
           type: "GET",
           url: endpoint,
@@ -30,23 +30,27 @@
             xhr.setRequestHeader ("Authorization", authorization);
           }
         }).done(function( data ) {
-
-            $(".player-name").text(data.username);
-
- 
+			
+			
+			var gangsterKey =  getKey(data); 
+			
+            $(".player-name").text(data[gangsterKey].username);
             $( ".mood-title" ).show( "slow" );
-            if (data.mood!=null && data.mood!="") {
-              $(".mood").text(data.mood);
+            if (data[gangsterKey]!=null && data[gangsterKey].mood!="") {
+              $(".mood").text(data[gangsterKey].mood);
             } else {
               $(".mood").text("Unknown");
             }
-
-            $("#ranking").text(data.ranking);
-            $("#points").text(data.points);
-            $("#tags_created").text(data.tags_created);
-            $("#tags_deleted").text(data.tags_deleted);
-            $("#busted").text(data.busted);
-            $("#busts").text(data.busts);
+			
+			var rank = sortRanking(data); //Call for sorting the rank*/
+			
+			
+            $("#ranking").text("#"+rank);
+            $("#points").text(data[gangsterKey].points);
+            $("#tags_created").text(data[gangsterKey].tags_created);
+            $("#tags_deleted").text(data[gangsterKey].tags_deleted);
+            $("#busted").text(data[gangsterKey].busted);
+            $("#busts").text(data[gangsterKey].busts); 
 
 
             // Fittext.js
@@ -59,6 +63,19 @@
           alert("Error: something went wrong while loading the profile: "+ textStatus);
         });
       }
+	  function getKey(data){
+	  	for(var i = data.length - 1; i >= 0; i--){
+		if(data[i].id == gangster){
+		return i;}}
+	  }
+	  
+	  function sortRanking(data){
+	    var data2 = data.slice(0);
+		data2.sort(function(a,b) { return parseFloat(b.points) - parseFloat(a.points) } );
+		for(var j = data2.length - 1; j >= 0; j--){
+		if(data2[j].id == gangster){
+		return j;}}
+	  }
     });
 
 
