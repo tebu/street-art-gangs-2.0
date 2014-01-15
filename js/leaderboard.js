@@ -31,24 +31,26 @@
     }).done(function( data ) {
 
       var table = $('#gang-board');
-	  var gangTagsPoints2 = new Array();                                
+	  var gangTagsPoints2 = [];                                
 	   for (var i = 0; i < 3; i++) {  //1=Purple, 2=Blue and 3=Green, Apply only here, not equal to "gang" in gangsters database 
-	    var gangNumber = i+1;
-		var gangName = functionName(i);
+
 		var gangTagsPoints = functionTags (i, data);
-		
-		gangTagsPoints2[i-1] = new Array(gangTagsPoints);  //TODO Sort these in order by points
-		
-		
-		for (var j = gangTagsPoints2.length - 1; j >= 0; j--) {      //JATKA TÄSTÄ
-        var line = $("<tr>");
-        $("<td>").text(j).appendTo(line);
-        $("<td>").text(gangTagsPoints2[j].gangName).appendTo(line); //GangName
-        $("<td>").text(gangTagsPoints2[j].gangTags).appendTo(line); //Tags Created by Gang
-        $("<td>").text(gangTagsPoints2[j].gangPoints).appendTo(line); //Full Points by Gang
-        table.append(line);
+		gangTagsPoints2.push(gangTagsPoints);  //TODO Sort these in order by points
 		}
-      };
+		
+		gangTagsPoints2 = gangTagsPoints2.sort(function(a,b) {
+		return b[1] > a[1];
+		});
+		
+		for (var j = 0; j <= 2; j++) {      //JATKA TÄSTÄ
+        var line = $("<tr>");
+        $("<td>").text(j+1).appendTo(line);
+        $("<td>").text(gangTagsPoints2[j][2]).appendTo(line); //GangName
+        $("<td>").text(gangTagsPoints2[j][0]).appendTo(line); //Tags Created by Gang
+        $("<td>").text(gangTagsPoints2[j][1]).appendTo(line); //Full Points by Gang
+        table.append(line);
+		};
+      
 
 
 //Load Players Leaderboard
@@ -112,20 +114,10 @@
      $('td').addClass('animated slideInLeft');
    }
    
-   function functionName(counterValueGang){ //Gang Names by counter value
-			counterValueGang++;
-			if (counterValueGang == 1) {
-			gangName = "Purple Knights";
-			}else if (counterValueGang == 2){
-			gangName = "Blue Angels";
-			}else{ 
-			gangName = "Green Shamans";
-			}
-   return gangName;
-   }
    
 	function functionTags(counterValueGang, data){ //Gang tags by gangsters 
 			counterValueGang++;
+			var gangName = "";
 			var gangTags = 0;
 			var gangPoints = 0;
 			for (var i = data.length - 1; i >= 0; i--) {
