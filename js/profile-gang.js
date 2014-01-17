@@ -34,12 +34,12 @@
             xhr.setRequestHeader ("Authorization", authorization);
           }
         }).done(function( data ) {
-          //Populate Gang
-		 
-	    var gangTagsPoints2 = [];    
+        
+		   
 		
 		var gangMemberlist = gangMembers(); //JATKA TÄSTÄ
 		
+		var gangTagsPoints2 = []; 
 	    for (var i = 0; i < 3; i++) {  //1=Purple, 2=Blue and 3=Green, Apply only here n functionTags(), not equal to "gang" in gangsters database 
 		var gangTagsPoints = functionTags (i, data);   //Makes an array of gang's full population and points
 		gangTagsPoints2.push(gangTagsPoints);  
@@ -127,7 +127,7 @@
 			}
 			return gangList2;
 			})
-			}
+			} 
 			 
    
     });
