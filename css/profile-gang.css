@@ -485,6 +485,7 @@ body.blue .md-show.md-effect-12 ~ .md-overlay {
     transform: scale(1);
     opacity: 1;
 }
+/*Member-time-list modal style*/
 
 ul.members-list, ul.members-time-list {
     margin-top: 40px;
@@ -512,7 +513,33 @@ span.member-time {
     font-family: "Raleway";
     font-size: 2em;
 }
+/*Member-points-list modal style*/
+ul.members-list, ul.members-points-list {
+    margin-top: 40px;
+    position: relative;
+    left: -20px
+}
 
+ul.members-list li, ul.members-points-list li {
+    font-size: .7em;
+    list-style: none;
+    padding: 10px 0;
+    text-align: left;
+    font-weight: 700;
+    width: 100%;
+    font-family: "Lato";
+}
+
+ul.members-list li:nth-child(odd), ul.members-points-list li:nth-child(odd) {
+    background: rgba(0,0,0,.08);
+}
+
+span.member-points {
+    width: 70px;
+    display: inline-block;
+    font-family: "Raleway";
+    font-size: 2em;
+}
 ul.members-list span {
     font-weight: 400;
     margin-right: 5px;

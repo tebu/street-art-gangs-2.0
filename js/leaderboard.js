@@ -64,17 +64,18 @@
         }
       }).done(function( data ) {
 
-        var table = $('#player-board');
-        //TODO: limit number of lines and select you
+        
 		var data2 = data.slice(0);
 		data2.sort(function(a,b) { return parseFloat(b.points) - parseFloat(a.points) } );
 
+		var table = $('#player-board');
+        //TODO: limit number of lines and select you
         for (var i = 0; i < data2.length; i++) {
           var line = $("<tr>");
           $("<td>").text(i+1).appendTo(line);
           $("<td>").text(data2[i].username).appendTo(line);
-          $("<td>").text(data2[i].tags_created).appendTo(line); //TODO: insert tags created
-          $("<td>").text(data2[i].points).appendTo(line); //TODO: insert points
+          $("<td>").text(data2[i].tags_created).appendTo(line); //tags created
+          $("<td>").text(data2[i].points).appendTo(line); //points
           table.append(line);
         };
 
