@@ -35,22 +35,21 @@
           }
         }).done(function( data ) {
         
-		for(var i = 2; i >= 0; i--){
+		for(var i = 0; i <= 2; i++){
 		if(data[i].color === color){
-		var gangKey = i+1;}}
+		var gangKey = i;}}
 		
 		
-		var gangMemberlist = gangMembers(gangKey,data); //JATKA TÄSTÄ
-		//gangMemberlist.sort(function(a,b) { return parseFloat(b.[1]) - parseFloat(a.[1]) } );
+		var gangMemberlist = gangMembers(gangKey,data); //Separates gangs from gangsters
 		
 		var gangTagsPoints2 = [];
-	    for (var i = 0; i < 3; i++) {  //1=Purple, 2=Blue and 3=Green, Apply only here n functionTags(), not equal to "gang" in gangsters database 
+	    for (var i = 0; i <= 2; i++) {  //0=Purple, 1=Green and 2=Blue, Apply only here n functionTags(), not equal to "gang" in gangsters database 
 		var gangTagsPoints = functionTags (i, data);
 		gangTagsPoints2.push(gangTagsPoints);  
 		} 
 		
-          $("#name").text(gangTagsPoints2[gangKey][1]); 
-          $(".gang-info.members").text(gangTagsPoints2[gangKey][2]);
+          $("#name").text(gangTagsPoints2[gangKey][2]);
+          $(".gang-info.members").text(gangTagsPoints2[gangKey][1]);
 		  $(".gang-info.points").text(gangTagsPoints2[gangKey][0]);
 		  
 		  /* $(".gang-info.walked").text(gangTagsPoints2[gangKey][?]); */ //NEEDS TO BE DONE LATER
@@ -72,12 +71,41 @@
 		  list.append(line);
           };	
 		 $.text(list);
-
+		 
+		var d = new Date(); 
+		
+		for (var i = 0; i < gangMemberlist.length; i++) { //checking and placing the order for times and dates
+		    var date2 = gangMemberlist[i][2].split(":"); 
+			var date = [];
+            date[0] = parseInt(date2[0]);
+			date[1] = parseInt (date2[1]);
+			
+			var curMonth = d.getMonth()+1 - date[1];
+			var curDay = d.getDate() -date[2]; //placing more than a day mark for others...
+			if (date [0] == 0000 || date [0] < 2014){
+			   gangMemberlist[i][3] = "Day or More";
+			}else if (curMonth !=0 || curDay != 0){  // JATKA TÄSTÄ
+			   gangMemberlist[i][3] = "Day or More";
+			}else {
+			var hours = d.getHours()+1 - gangMemberlist[i][3];  
+			var minutes = d.getMinutes()+1 - gangMemberlist[i][4];
+			gangMemberlist[i][3] = hours;
+			gangMemberlist[i][4] = minutes;
+				}
+          };
+	
+		 
 		 var timeList = $('.members-list');                 //Styling for the list with timestamps not yet in order... A check for how long t has been TODO
 		  for (var i = 0; i < gangMemberlist.length; i++) {
 		  var line = $("<li>");
 		  $("<span>").addClass("icon-hourglass").appendTo(line);
-          $("<span>").addClass("member-time").text(gangMemberlist[i][3]).appendTo(line);
+		  
+		  if (gangMemberlist[i][3] === "Day or More"){ 
+		$("<span>").addClass("member-time").text("Day or More").appendTo(line);
+			}else{
+          $("<span>").addClass("member-time").text(gangMemberlist[i][3]+":"+gangMemberlist[i][4]).appendTo(line);
+		    }
+		  
 		  $("<span>").addClass("member-name").text(gangMemberlist[i][0]).appendTo(line);
 		  timeList.append(line);
           };	
@@ -90,27 +118,28 @@
 		
       }
 	  
-	 function functionTags(counterValueGang, data){ //Gang tags,points,name and population by gangsters combined
-			counterValueGang++;
+	 function functionTags(gangKey, data){ //Gang tags,points,name and population by gangsters combined
+			
 			var gangName = "";
 			var gangPoints = 0;
 			var gangPopulation = 0;
+			
 			for (var i = data.length - 1; i >= 0; i--) {
-			if (counterValueGang == 1 && data[i].color == "purple"){
+			if (gangKey == 0 && data[i].color === "purple"){
 			gangPoints += data[i].points;//points and tags for team purple	
+			gangPopulation ++;
 			gangName = "Purple Knights";
-			gangPopulation ++;
-			}else if (counterValueGang == 2 && data[i].color == "blue"){
-			gangPoints += data[i].points; //points and tags for team blue
-			gangName = "Blue Angels";
-			gangPopulation ++;
-			}else if (counterValueGang == 3 && data[i].color == "green"){ 
+			}else if (gangKey == 1 && data[i].color === "green"){
 			gangPoints += data[i].points; //points and tags for team green
-			gangName = "Green Shamans";
 			gangPopulation ++;
+			gangName = "Green Shamans";
+			}else if (gangKey == 2 && data[i].color === "blue"){ 
+			gangPoints += data[i].points; //points and tags for team blue
+			gangPopulation ++;
+			gangName = "Blue Angels";
 			}
 			}
-			return [gangPoints,gangName,gangPopulation];
+			return [gangPoints,gangPopulation,gangName];
 			} 
     
 	function gangMembers(gangKey,data) {	                
@@ -121,31 +150,49 @@
 			var date = "";
 			var clock = "";
 			
+			
 			for (var i = data.length - 1; i >= 0; i--) {
 			
-			if (gangKey == 1 && data[i].color === "purple"){   //member, points and time for team purple
+			if (gangKey == 0 && data[i].color === "purple"){   //member, points and time for team purple
 			gangMember = data[i].username;    		
 			if (data[i].last_action != null){ timeStamp = data[i].last_action.split("T");
 			date = timeStamp[0]; 
-			clock = timeStamp[1].slice(0,8);} else {date = "0000-00-00"; clock="00-00-00"};
+			hours2 = timeStamp[1].slice(0,1);
+			hours = parseInt(hours2);
+			hours + 2;        //From GMT to local time
+			minutes2 = timeStamp[1].slice(4,5);
+			minutes = parseInt(minutes2);
+			} else {date = "0000:00:00"; hours = 00; minutes = 00};
 			gangsterPoints = data[i].points;
 			var list = [gangMember,gangsterPoints,date,clock]
 			gangList.push(list);
-			}else if (gangKey == 2 && data[i].color === "blue"){ //member, points and time for team blue
+			
+			}else if (gangKey == 1 && data[i].color === "green"){ //member, points and time for team green
 			gangMember = data[i].username;    	
 			if (data[i].last_action != null){ timeStamp = data[i].last_action.split("T");
 			date = timeStamp[0]; 
-			clock = timeStamp[1].slice(0,8);} else {date = "0000-00-00"; clock="00-00-00"};
+			hours2 = timeStamp[1].slice(0,1);
+			hours = parseInt(hours2);
+			hours + 2;        //From GMT to local time
+			minutes2 = timeStamp[1].slice(4,5);
+			minutes = parseInt(minutes2);
+			} else {date = "0000:00:00"; hours = 00; minutes = 00};
 			gangsterPoints = data[i].points;
 			var list = [gangMember,gangsterPoints,date,clock]
 			gangList.push(list);
-			}else if (gangKey == 3 && data[i].color === "green"){ 
+			
+			}else if (gangKey == 2 && data[i].color === "blue"){ 
 			gangMember = data[i].username;                     //member, points and time for team blue		
 			if (data[i].last_action != null){ timeStamp = data[i].last_action.split("T");
 			date = timeStamp[0]; 
-			clock = timeStamp[1].slice(0,8);} else {date = "0000-00-00"; clock="00-00-00"};
+			hours2 = timeStamp[1].slice(0,1);
+			hours = parseInt(hours2);
+			hours + 2;        //From GMT to local time
+			minutes2 = timeStamp[1].slice(4,5);
+			minutes = parseInt(minutes2);
+			} else {date = "0000:00:00"; hours = 00; minutes = 00};
 			gangsterPoints = data[i].points;
-			var list = [gangMember,gangsterPoints,date,clock]
+			var list = [gangMember,gangsterPoints,date,hours,minutes]
 			gangList.push(list);
 			}
 			}
