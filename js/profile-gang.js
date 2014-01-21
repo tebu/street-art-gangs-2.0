@@ -19,9 +19,6 @@
         //Menu
         new gnMenu( document.getElementById( 'gn-menu' ) );
 
-
-
-
         //Get Profile
         var authorization=localStorage.authorization;
         
@@ -68,7 +65,7 @@
 		  return b[1] - a[1];
 		  }); 
 		
-		  var list = $('.members-points-list');                 //Something on the lines of last action list of players add comparison of day and then clock time
+		  var list = $('.members-points-list');                 //Styling for the points list
 		  for (var i = 0; i < gangMemberlist2.length; i++) {
 		  var line = $("<li>");
 		  $("<span>").addClass("icon-star").appendTo(line);
@@ -78,50 +75,63 @@
           };	
 		 $.text(list);
 		 
-		var d = new Date(); 
+		var d = new Date();         //Current date to compare the timestamps with
+		d.setHours(d.getHours()-2); //compensating for the timestamps being GMT
 		
-		for (var i = 0; i < gangMemberlist.length; i++) { //checking and placing the order for times and dates
-		    var date2 = gangMemberlist[i][2].split(":"); 
-			var date = [];
-            date[0] = parseInt(date2[0]);
-			date[1] = parseInt (date2[1]);
-			
-			var curMonth = d.getMonth()+1 - date[1];
-			var curDay = d.getDate() -date[2]; //placing more than a day mark for others...
-			if (date [0] == 0000 || date [0] < 2014){
-			   gangMemberlist[i][3] = "Day or More";
-			}else if (curMonth !=0 || curDay != 0){  // JATKA TÄSTÄ
-			   gangMemberlist[i][3] = "Day or More";
-			}else {
-			var hours = d.getHours()+1 - gangMemberlist[i][3];  
-			var minutes = d.getMinutes()+1 - gangMemberlist[i][4];
-			gangMemberlist[i][3] = hours;
-			gangMemberlist[i][4] = minutes;
-				}
+		for (var i = 0; i < gangMemberlist.length; i++) { //checking times and dates
+		    
+			var curMonth = d.getMonth()+1 - gangMemberlist[i][3];
+			var curDay = d.getDate() -gangMemberlist[i][4]; //placing more than a day mark for others...
+			if (gangMemberlist[i][2] == 0000 || gangMemberlist[i][2] < 2014){
+			   gangMemberlist[i][5] = 78;  //78 only to make sure these go to the end of the list, ugly I know, but it works
+			   gangMemberlist[i][6] = 78;
+			}else if (curMonth !=0 || curDay != 0){  
+			   gangMemberlist[i][5] = 78;
+			   gangMemberlist[i][6] = 78;
+			}else{
+			 var hours = gangMemberlist[i][5];
+			 
+			 gangMemberlist[i][5] = d.getHours()-hours;
+			 var minutes = 0;
+			 var minutes2= 0;
+			 minutes = gangMemberlist[i][6]-d.getMinutes();
+			 if (minutes >= 0)
+			 {gangMemberlist[i][6] = minutes;
+			 }else {
+			 minutes2 = d.getMinutes()-gangMemberlist[i][6];
+			 gangMemberlist[i][6] = minutes2;
+			 }
+			 }
           };
-	
+		  
+	     var gangMemberlist3 = gangMemberlist.slice(0); 
+		  gangMemberlist3.sort(function(a,b) { //Sorts order of the players by hours
+		  return a[5] - b[5];
+		  }); 
+		  gangMemberlist3.sort(function(a,b) { //Sorts order of the players by minutes
+		  return a[6] - b[6];
+		  }); 
 		 
-		 var timeList = $('.members-list');                 //Styling for the list with timestamps not yet in order... A check for how long t has been TODO
+		 var timeList = $('.members-list');      //Styling for the list with timestamps
 		  for (var i = 0; i < gangMemberlist.length; i++) {
 		  var line = $("<li>");
 		  $("<span>").addClass("icon-hourglass").appendTo(line);
 		  
-		  if (gangMemberlist[i][3] === "Day or More"){ 
+		  if (gangMemberlist3[i][5] == 78){ 
 		$("<span>").addClass("member-time").text("Day or More").appendTo(line);
+			}else if (gangMemberlist3[i][6] <= 9){
+          $("<span>").addClass("member-time").text(gangMemberlist3[i][5]+":0"+gangMemberlist3[i][6]).appendTo(line);
 			}else{
-          $("<span>").addClass("member-time").text(gangMemberlist[i][3]+":"+gangMemberlist[i][4]).appendTo(line);
+          $("<span>").addClass("member-time").text(gangMemberlist3[i][5]+":"+gangMemberlist3[i][6]).appendTo(line);
 		    }
-		  
-		  $("<span>").addClass("member-name").text(gangMemberlist[i][0]).appendTo(line);
+		  $("<span>").addClass("member-name").text(gangMemberlist3[i][0]).appendTo(line);
 		  timeList.append(line);
           };	
 		  $.text(timeList);
-		 
         }).fail(function( jqXHR, textStatus ) {
         //TODO fix this
           alert("Error: something went wrong while loading the profile: "+ textStatus);
-        });
-		
+        });	
       }
 	  
 	 function functionTags(gangKey, data){ //Gang tags,points,name and population by gangsters combined
@@ -148,64 +158,76 @@
 			return [gangPoints,gangPopulation,gangName];
 			} 
     
-	function gangMembers(gangKey,data) {	                
+	function gangMembers(gangKey,data) {	  //Sort of gangsters by gang, points and handling the timestamp data              
 			
 			var gangList = [];
 			var gangMember = "";
 			var timeStamp = ""; 
-			var date = "";
-			var clock = "";
-			
+			var timedate = "";
+			var date = [];
+			var clock = [];
 			
 			for (var i = data.length - 1; i >= 0; i--) {
-			
 			if (gangKey == 0 && data[i].color === "purple"){   //member, points and time for team purple
-			gangMember = data[i].username;    		
-			if (data[i].last_action != null){ timeStamp = data[i].last_action.split("T");
-			date = timeStamp[0]; 
-			hours2 = timeStamp[1].slice(0,1);
-			hours = parseInt(hours2);
-			hours + 2;        //From GMT to local time
-			minutes2 = timeStamp[1].slice(4,5);
-			minutes = parseInt(minutes2);
-			} else {date = "0000:00:00"; hours = 00; minutes = 00};
+			gangMember = data[i].username;    
+			
+			if (data[i].last_action != null){ timeStamp = data[i].last_action.split("T"); //Mebbe should put this into a function of its own
+			timedate = timeStamp[0];
+			var date2 = timedate.split("-"); 
+            var year = parseInt(date2[0]); //year
+			var month = parseInt (date2[1]); //month
+			var day = parseInt (date2[2]); //day
+			clock = timeStamp[1].split(":");
+			var hours = parseInt(clock[0]); 
+			var minutes = parseInt(clock[1]);
+			
+			} else {year = 0000; hours = 00; minutes = 00};
 			gangsterPoints = data[i].points;
-			var list = [gangMember,gangsterPoints,date,clock]
+			var list = [gangMember,gangsterPoints,year,month,day,hours,minutes]
 			gangList.push(list);
 			
 			}else if (gangKey == 1 && data[i].color === "green"){ //member, points and time for team green
-			gangMember = data[i].username;    	
+			gangMember = data[i].username;    	                            
 			if (data[i].last_action != null){ timeStamp = data[i].last_action.split("T");
-			date = timeStamp[0]; 
-			hours2 = timeStamp[1].slice(0,1);
-			hours = parseInt(hours2);
-			hours + 2;        //From GMT to local time
-			minutes2 = timeStamp[1].slice(4,5);
-			minutes = parseInt(minutes2);
-			} else {date = "0000:00:00"; hours = 00; minutes = 00};
+			timedate = timeStamp[0];
+			var date2 = timedate.split("-"); 
+            var year = parseInt(date2[0]); //year
+			var month = parseInt (date2[1]); //month
+			var day = parseInt (date2[2]); //day
+			
+			clock = timeStamp[1].split(":");
+			
+			var hours = parseInt(clock[0]); 
+			var minutes = parseInt(clock[1]);
+			
+			} else {year = 0000; hours = 00; minutes = 00};
 			gangsterPoints = data[i].points;
-			var list = [gangMember,gangsterPoints,date,clock]
+			var list = [gangMember,gangsterPoints,year,month,day,hours,minutes]
 			gangList.push(list);
 			
 			}else if (gangKey == 2 && data[i].color === "blue"){ 
 			gangMember = data[i].username;                     //member, points and time for team blue		
 			if (data[i].last_action != null){ timeStamp = data[i].last_action.split("T");
-			date = timeStamp[0]; 
-			hours2 = timeStamp[1].slice(0,1);
-			hours = parseInt(hours2);
-			hours + 2;        //From GMT to local time
-			minutes2 = timeStamp[1].slice(4,5);
-			minutes = parseInt(minutes2);
-			} else {date = "0000:00:00"; hours = 00; minutes = 00};
+			timedate = timeStamp[0];
+			var date2 = timedate.split("-"); 
+            var year = parseInt(date2[0]); //year
+			var month = parseInt (date2[1]); //month
+			var day = parseInt (date2[2]); //day
+			
+			clock = timeStamp[1].split(":");
+			
+			var hours = parseInt(clock[0]); 
+			var minutes = parseInt(clock[1]);
+			
+			} else {year = 0000; hours = 00; minutes = 00};
 			gangsterPoints = data[i].points;
-			var list = [gangMember,gangsterPoints,date,hours,minutes]
+			var list = [gangMember,gangsterPoints,year,month,day,hours,minutes]
 			gangList.push(list);
 			}
 			}
 			return gangList;
 			}
 			 
-   
     });
 
 
