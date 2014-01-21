@@ -105,12 +105,13 @@
           };
 		  
 	     var gangMemberlist3 = gangMemberlist.slice(0); 
-		  gangMemberlist3.sort(function(a,b) { //Sorts order of the players by hours
-		  return a[5] - b[5];
-		  }); 
 		  gangMemberlist3.sort(function(a,b) { //Sorts order of the players by minutes
 		  return a[6] - b[6];
 		  }); 
+		  gangMemberlist3.sort(function(a,b) { //Sorts order of the players by hours
+		  return a[5] - b[5];
+		  }); 
+
 		 
 		 var timeList = $('.members-list');      //Styling for the list with timestamps
 		  for (var i = 0; i < gangMemberlist.length; i++) {
