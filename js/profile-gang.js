@@ -49,14 +49,20 @@
 		} 
 		
           $("#name").text(gangTagsPoints2[gangKey][2]);
-          $(".gang-info.members").text(gangTagsPoints2[gangKey][1]);
+		  $(".description").text("Tagged by "+gangTagsPoints2[gangKey][2]);
+          if (gangKey == 0){
+		  $("#legend").text("Chivalry is not dead it just has a new definition at the other end of the spectrum... of visible light. Instead of brute force these knights apply paint.");
+		  } else if (gangKey == 2) { $("#legend").text("There are the sublime and the fallen ones and then there are those in between. All are welcome to spread the gospel of 'This city belongs to the Angels.'");
+		  } else if (gangKey == 1) { $("#legend").text("An eclectic mix of green peas and biohactivists who aim to reclaim the city for mother nature. Some say they have magic, some say they just are contagious.");}
+		  
+		  $(".gang-info.members").text(gangTagsPoints2[gangKey][1]);
 		  $(".gang-info.points").text(gangTagsPoints2[gangKey][0]);
 		  
 		  /* $(".gang-info.walked").text(gangTagsPoints2[gangKey][?]); */ //NEEDS TO BE DONE LATER
 		  
           //TODO: Add points
-          //TODO Add Last Action
-		  
+          //TODO Add random latest Action to the events
+ 		  
 		  var gangMemberlist2 = gangMemberlist.slice(0); 
 		  gangMemberlist2.sort(function(a,b) { //Sorts order by points
 		  return b[1] - a[1];
