@@ -61,6 +61,9 @@ var retrieveMSG = function() {
     }
   }).done(function( data ) {
     $(".chatter").empty();
+	
+	var senderList = retreiveSenders(data, authorization); // List of gangster ID corresponding names
+	
     for (var i = 0; i < data.length; i++) {
         var messageDiv = $("<div>").addClass("message-element");
         var bubleDiv = $("<div>").addClass("bubble");
@@ -72,11 +75,13 @@ var retrieveMSG = function() {
 
         var senderDiv = $("<div>").addClass("sender");
         var sender = "";
-        if (data[i].gangster == gangster)
+		
+		
+        if (data[i].gangster == gangster){
           sender = "You";
-        else
-          sender = "Team Mate";
-
+        }else{
+		  sender= senderList;}//for (var j = senderList.length - 1; j >= 0; j--) if (data[i].gangster == senderList[j][0]){sender = senderList[j][1];}}
+		 
         $("<a>").attr("href", "").addClass("chatter_avatar").text(sender).appendTo(senderDiv);//TODO put sender name
         senderDiv.appendTo(messageDiv);
 
@@ -97,3 +102,33 @@ var retrieveMSG = function() {
     alert("Error: something went wrong while loading the profile: "+ textStatus);
   });
 }
+	 function retreiveSenders(msgData, authorization){ /*
+		var endpoint2 = "http://vm0063.virtues.fi/gangsters/";
+		var authorization=localStorage.authorization;
+		$.ajax({
+		type: "GET",
+		url: endpoint2,                              //TODO Combine the data requests
+		dataType: 'json',
+		beforeSend: function (xhr) {
+        xhr.setRequestHeader ("Authorization", authorization);
+		}
+		}).done(function( data ) { */
+			var data =[[3,"Kolmonen"],[5,"Vitonen"],[6,"Kutonen"],[11,"Yksitoista"],[13,"Kolmetoista"]];
+			
+			var id = 0;
+			var gangsterName = "";
+			var list = [];
+			var gangList =[];
+			
+			for (var i = msgData.length - 1; i >= 0; i--) { //6x
+			id=msgData[i].gangster;
+			 for (var j = data.length - 1; j >= 0; j--) //3x
+				{if (id == data[j].id){ //
+				gangsterName=data[j].username;
+				var list = [id,gangsterName]
+				gangList.push(list);
+				} else {
+				continue;
+				}}} 
+			return data.length;
+			} //)}

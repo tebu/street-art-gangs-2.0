@@ -78,8 +78,7 @@
 		var d = new Date();         //Current date to compare the timestamps with
 		d.setHours(d.getHours()-2); //compensating for the timestamps being GMT
 		
-		for (var i = 0; i < gangMemberlist.length; i++) { //checking times and dates
-		    
+		for (var i = 0; i < gangMemberlist.length; i++) { //checking times and dates from gangMemberlist
 			var curMonth = d.getMonth()+1 - gangMemberlist[i][3];
 			var curDay = d.getDate() -gangMemberlist[i][4]; //placing more than a day mark for others...
 			if (gangMemberlist[i][2] == 0000 || gangMemberlist[i][2] < 2014){
@@ -113,7 +112,7 @@
 		  }); 
 
 		 
-		 var timeList = $('.members-list');      //Styling for the list with timestamps
+		 var timeList = $('.members-list');      //Styling for the LastAction Modal
 		  for (var i = 0; i < gangMemberlist.length; i++) {
 		  var line = $("<li>");
 		  $("<span>").addClass("icon-hourglass").appendTo(line);
@@ -176,8 +175,8 @@
 			timedate = timeStamp[0];
 			var date2 = timedate.split("-"); 
             var year = parseInt(date2[0]); //year
-			var month = parseInt (date2[1]); //month
-			var day = parseInt (date2[2]); //day
+			var month = parseInt(date2[1]); //month
+			var day = parseInt(date2[2]); //day
 			clock = timeStamp[1].split(":");
 			var hours = parseInt(clock[0]); 
 			var minutes = parseInt(clock[1]);
@@ -212,8 +211,8 @@
 			timedate = timeStamp[0];
 			var date2 = timedate.split("-"); 
             var year = parseInt(date2[0]); //year
-			var month = parseInt (date2[1]); //month
-			var day = parseInt (date2[2]); //day
+			var month = parseInt(date2[1]); //month
+			var day = parseInt(date2[2]); //day
 			
 			clock = timeStamp[1].split(":");
 			
