@@ -48,7 +48,7 @@ jQuery(document).ready(function(){
 				
                 mood: $('#mood').val("");
 
-				location.reload();            
+				location.reload();  //this needs to be taken into account in mixpanel registry for chat also          
 				
           }).fail(function( jqXHR, textStatus ) {
             //TODO fix this

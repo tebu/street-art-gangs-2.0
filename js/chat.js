@@ -37,7 +37,7 @@ jQuery(document).ready(function(){
           }).done(function( data ) {
                 mood: $('.chatter_field').val("");
                 retrieveMSG();
-
+				location.reload();  //this needs to be taken into account in mixpanel registry for tweaks also   
           }).fail(function( jqXHR, textStatus ) {
             //TODO fix this
             alert("Error: something went wrong while updating the location: "+ textStatus);
@@ -64,15 +64,15 @@ var retrieveMSG = function() {
     $(".chatter").empty();
 	
 	
-	var senderList = retreiveSenders(data,authorization); // List of gangster ID corresponding names
+	var senderList = retreiveSenders(data,authorization); // Array of gangster ID corresponding names
 	
     for (var i = 0; i < data.length; i++) {
         var messageDiv = $("<div>").addClass("message-element");
         var bubleDiv = $("<div>").addClass("bubble");
         var itemSpan =$("<span>").addClass("chatter_msg_item").addClass("chatter_msg_item_user");
 
-        $("<span>").addClass("timestamp").text(moment(data[i].timestamp).fromNow()).appendTo(itemSpan); //TODO put moment
-        itemSpan.append(data[i].text).appendTo(bubleDiv); //TODO put message
+        $("<span>").addClass("timestamp").text(moment(data[i].timestamp).fromNow()).appendTo(itemSpan); //put moment
+        itemSpan.append(data[i].text).appendTo(bubleDiv); //put message
         bubleDiv.appendTo(messageDiv);
 
         var senderDiv = $("<div>").addClass("sender");
@@ -82,9 +82,9 @@ var retrieveMSG = function() {
         if (data[i].gangster == gangster){
           sender = "You";
         }else{
-		  for (var j = senderList.length - 1; j >= 0; j--) if (data[i].gangster == senderList[j][0]){sender = senderList[j][1];}}
+		  for (var j = senderList.length - 1; j >= 0; j--) if (data[i].gangster == senderList[j][0]){sender = senderList[j][1];}} 
 		 
-        $("<a>").attr("href", "").addClass("chatter_avatar").text(sender).appendTo(senderDiv);//TODO put sender name
+        $("<a>").attr("href", "").addClass("chatter_avatar").text(sender).appendTo(senderDiv);
         senderDiv.appendTo(messageDiv);
 
         if (data[i].gangster == gangster)
