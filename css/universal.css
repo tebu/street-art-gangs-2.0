@@ -98,15 +98,30 @@ li.messages {
 }
 
 body.purple .gn-menu-main, body.purple .gn-menu-main .gn-menu-main ul {
-    background: #420067;
+    background-image: -webkit-gradient(radial, 100% 0%, 0, 100% 0%, 448, color-stop(50%, #57008a), color-stop(50%, #4d007a));
+    background-image: -webkit-radial-gradient(right top, farthest-side circle, #57008a 50%, #4d007a 50%);
+    background-image: -moz-radial-gradient(right top, farthest-side circle, #57008a 50%, #4d007a 50%);
+    background-image: -ms-radial-gradient(right top, farthest-side circle, #57008a 50%, #4d007a 50%);
+    background-image: -o-radial-gradient(right top, farthest-side circle, #57008a 50%, #4d007a 50%);
+    background-image: radial-gradient(farthest-side circle at right top, #57008a 50%, #4d007a 50%);
 }
 
 body.blue .gn-menu-main, body.blue .gn-menu-main .gn-menu-main ul {
-    background: #2FA8F2;
+    background-image: -webkit-gradient(radial, 100% 0%, 0, 100% 0%, 227, color-stop(50%, #5cc1ff), color-stop(50%, #4DBBFF));
+    background-image: -webkit-radial-gradient(right top, farthest-side circle, #5cc1ff 50%, #4DBBFF 50%);
+    background-image: -moz-radial-gradient(right top, farthest-side circle, #5cc1ff 50%, #4DBBFF 50%);
+    background-image: -ms-radial-gradient(right top, farthest-side circle, #5cc1ff 50%, #4DBBFF 50%);
+    background-image: -o-radial-gradient(right top, farthest-side circle, #5cc1ff 50%, #4DBBFF 50%);
+    background-image: radial-gradient(farthest-side circle at right top, #5cc1ff 50%, #4DBBFF 50%);
 }
 
 body.green .gn-menu-main, body.green .gn-menu-main .gn-menu-main ul {
-    background: #26AA73
+    background-image: -webkit-gradient(radial, 100% 0%, 0, 100% 0%, 227, color-stop(50%, #58d5a1), color-stop(50%, #54CC9A));
+    background-image: -webkit-radial-gradient(right top, farthest-side circle, #58d5a1 50%, #54CC9A 50%);
+    background-image: -moz-radial-gradient(right top, farthest-side circle, #58d5a1 50%, #54CC9A 50%);
+    background-image: -ms-radial-gradient(right top, farthest-side circle, #58d5a1 50%, #54CC9A 50%);
+    background-image: -o-radial-gradient(right top, farthest-side circle, #58d5a1 50%, #54CC9A 50%);
+    background-image: radial-gradient(farthest-side circle at right top, #58d5a1 50%, #54CC9A 50%);
 }
 
 body.purple .gn-menu-main ul li:first-child {
@@ -256,15 +271,15 @@ body.blue .gn-menu-main a:active, body.blue .gn-menu-main a:focus {
 }
 
 body.purple .gn-menu-wrapper {
-    background: #65019F;
+    background: #421C52;
 }
 
 body.green .gn-menu-wrapper {
-    background: #5DD6A4;
+    background: #54CC9A;
 }
 
 body.blue .gn-menu-wrapper {
-    background: #7ECDFE;
+    background: #4DBBFF;
 }
 
 .gn-scroller {
