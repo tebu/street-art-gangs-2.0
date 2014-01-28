@@ -47,16 +47,7 @@ jQuery(document).ready(function(){
           }).done(function( data ) {
 				
                 mood: $('#mood').val("");
-<<<<<<< HEAD
 
-          }).fail(function( jqXHR, textStatus ) {
-            //TODO fix this
-            alert("Error: something went wrong while updating the location: "+ textStatus);
-          });
-
-        });
-
-=======
 				location.reload();            
 				
           }).fail(function( jqXHR, textStatus ) {
@@ -67,7 +58,7 @@ jQuery(document).ready(function(){
 		
         } );
 		
->>>>>>> origin/mixPanel
+
     }
 
 });
