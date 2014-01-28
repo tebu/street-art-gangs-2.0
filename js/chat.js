@@ -37,7 +37,7 @@ jQuery(document).ready(function(){
           }).done(function( data ) {
                 mood: $('.chatter_field').val("");
                 retrieveMSG();
-				location.reload();  //this needs to be taken into account in mixpanel registry for tweaks also   
+				location.reload();  //this needs to be taken into account in mixpanel registry for tweaks also. TODO look for a better solution  
           }).fail(function( jqXHR, textStatus ) {
             //TODO fix this
             alert("Error: something went wrong while updating the location: "+ textStatus);
@@ -123,12 +123,12 @@ var retrieveMSG = function() {
 			var gangsterName = "";
 			var list = [];
 			
-			for (var i = msgData.length - 1; i >= 0; i--) { //6x
+			for (var i = msgData.length - 1; i >= 0; i--) { //goes through messages, there is a maximum of 10, pjew
 			id=msgData[i].gangster;
-			   for (var j = data.length - 1; j >= 0; j--) //3x
-				{if (id == data[j].id){ //
+			   for (var j = data.length - 1; j >= 0; j--) //goes through gangster data max of how many players there are
+				{if (id == data[j].id){ 
 				gangsterName=data[j].username;
-				var list = [id,gangsterName]
+				var list = [id,gangsterName];
 				gangList.push(list);
 				} else {
 				continue;
