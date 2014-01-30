@@ -2,34 +2,25 @@
 
 html,
 body {
-    min-height: 100%;
-}
-
-body.blue {
-    background: -webkit-gradient(linear, center bottom, center top, color-stop(0%, #42b1ff), color-stop(100%, #60BDFF)) fixed;
-    background: -webkit-linear-gradient(bottom, #42b1ff 0%, #60BDFF 100%) fixed;
-    background: -moz-linear-gradient(bottom, #42b1ff 0%, #60BDFF 100%) fixed;
-    background: -ms-linear-gradient(bottom, #42b1ff 0%, #60BDFF 100%) fixed;
-    background: -o-linear-gradient(bottom, #42b1ff 0%, #60BDFF 100%) fixed;
-    background: linear-gradient(to top, #42b1ff 0%, #60BDFF 100%) fixed;
+    height: 100%;
 }
 
 body.purple {
-    background: -webkit-gradient(linear, center bottom, center top, color-stop(0%, #3c0c6a), color-stop(100%, #21002F)) fixed;
-    background: -webkit-linear-gradient(bottom, #3c0c6a 0%, #57008A 100%) fixed;
-    background: -moz-linear-gradient(bottom, #3c0c6a 0%, #21002F 100%) fixed;
-    background: -ms-linear-gradient(bottom, #3c0c6a 0%, #21002F 100%) fixed;
-    background: -o-linear-gradient(bottom, #3c0c6a 0%, #21002F 100%) fixed;
-    background: linear-gradient(to top, #3c0c6a 0%, #21002F 100%) fixed;
+    background: url(../img/blur_purple.jpg) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+body.blue {
+    background: url(../img/blur_blue.jpg) no-repeat left;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 body.green {
-    background: -webkit-gradient(linear, center bottom, center top, color-stop(0%, #4EB389), color-stop(100%, #6CE8B5)) fixed;
-    background: -webkit-linear-gradient(bottom, #4EB389 0%, #6CE8B5 100%) fixed;
-    background: -moz-linear-gradient(bottom, #4EB389 0%, #6CE8B5 100%) fixed;
-    background: -ms-linear-gradient(bottom, #4EB389 0%, #6CE8B5 100%) fixed;
-    background: -o-linear-gradient(bottom, #4EB389 0%, #6CE8B5 100%) fixed;
-    background: linear-gradient(to top, #4EB389 0%, #6CE8B5 100%) fixed;
+    background: url(../img/blur_green.jpg) no-repeat left;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .content {
@@ -49,16 +40,21 @@ div.option {
     text-align: left;
     color: #fff;
     font-weight: 400;
-    font-size: 1.6em;
+    font-size: 1.4em;
     margin-bottom: 10px;
     padding-left: 20px;
-    font-family: "Raleway"
+}
+
+div.option i {
+    font-size: .8em;
+    margin-right: 10px;
+    color: #9930FF;
 }
 
 input {
     width: 100%;
     color: #fff;
-    font-weight: 700;
+    font-weight: 400;
     font-size: .9em;
     padding: 8px 8px 8px 20px;
     border-radius: 0;
@@ -119,7 +115,7 @@ input:focus {
     right: 20px;
     text-align: center;
     margin: 0;
-    box-shadow: 0 2px 1px rgba(0,0,0,.1);
+
 }
 
 .button {
@@ -128,9 +124,9 @@ input:focus {
     width: 100%;
     height: auto;
     border-radius: none;
+    font-family: 'signika_negativebold';
+    font-size: .7em;
     cursor: pointer;
-    font-family: "Lato";
-    font-weight: 700;
     text-transform: uppercase;
     text-align: center;
     padding: 10px 0;
@@ -141,9 +137,12 @@ input:focus {
     transition: all 0.3s;
 }
 
+.button#save {
+    top: -15px;
+}
+
 body.purple .button {
-    background: #57008a;
-    box-shadow: 0 2px 0 rgba(0,0,0,.3);
+    background: rgba(0,0,0,.6);
 }
 
 body.blue .button {
@@ -184,18 +183,11 @@ i.icon-check {
     left: 10px
 }
 
-.confirm {
-    top: 20px;
-    left: -16px;
-    margin-bottom: 40px !important;
-    position: relative;
-}
-
 .tweak-section {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    margin: 30px 0 50px;
+    margin: 10px 0;
 }
 
 .md-modal {
@@ -219,7 +211,6 @@ i.icon-check {
 
 .md-modal p {
     font-size: 1.6em;
-    font-family: "Raleway"
 }
 
 .md-show {
@@ -273,6 +264,7 @@ i.icon-check {
     position: relative;
     border-radius: 3px;
     margin: 0 auto;
+    text-align: center;
 }
 
 .md-content h3 {
@@ -308,16 +300,16 @@ i.icon-check {
 }
 
 .md-content button {
-    display: block;
-    margin: 0 auto;
-    font-size: 0.8em;
     background: #C0392B;
-    border: medium none;
+    border: none;
     border-radius: 2px;
     color: #FFFFFF;
     cursor: pointer;
-    margin: 3px auto;
+    display: block;
+    font-size: 0.8em;
+    margin: 20px auto;
     padding: 0.6em 1.2em;
+    text-align: center;
     text-transform: uppercase;
 }
 

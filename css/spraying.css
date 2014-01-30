@@ -1,35 +1,26 @@
 /* Spraying screen **************************/
 
+html,
 body {
-    text-shadow: none;
     height: 100%;
 }
 
 body.purple {
-    background: -moz-radial-gradient(center, ellipse cover, #68006d 0%, #3c0c6a 72%); 
-	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#68006d), color-stop(72%,#3c0c6a)); 
-	background: -webkit-radial-gradient(center, ellipse cover, #68006d 0%,#3c0c6a 72%); 
-	background: -o-radial-gradient(center, ellipse cover, #68006d 0%,#3c0c6a 72%); 
-	background: -ms-radial-gradient(center, ellipse cover, #68006d 0%,#3c0c6a 72%); 
-	background: radial-gradient(ellipse at center, #68006d 0%,#3c0c6a 72%); 
+    background: url(../img/blur_purple.jpg) no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 body.blue {
-    background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 338, color-stop(0%, #01588e), color-stop(100%, #4DBBFF));
-    background-image: -webkit-radial-gradient(center center, farthest-corner, #01588e 0%, #4DBBFF 100%);
-    background-image: -moz-radial-gradient(center center, farthest-corner, #01588e 0%, #4DBBFF 100%);
-    background-image: -ms-radial-gradient(center center, farthest-corner, #01588e 0%, #4DBBFF 100%);
-    background-image: -o-radial-gradient(center center, farthest-corner, #01588e 0%, #4DBBFF 100%);
-    background-image: radial-gradient(farthest-corner at center center, #01588e 0%, #4DBBFF 100%);
+    background: url(../img/blur_blue.jpg) no-repeat left;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 body.green {
-    background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 348, color-stop(0%, #24664a), color-stop(100%, #54CC9A));
-    background-image: -webkit-radial-gradient(center center, farthest-corner, #24664a 0%, #54CC9A 103%);
-    background-image: -moz-radial-gradient(center center, farthest-corner, #24664a 0%, #54CC9A 103%);
-    background-image: -ms-radial-gradient(center center, farthest-corner, #24664a 0%, #54CC9A 103%);
-    background-image: -o-radial-gradient(center center, farthest-corner, #24664a 0%, #54CC9A 103%);
-    background-image: radial-gradient(farthest-corner at center center, #24664a 0%, #54CC9A 103%);
+    background: url(../img/blur_green.jpg) no-repeat left;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .points-earned {
@@ -47,7 +38,6 @@ body.green {
 }
 
 .points-earned span {
-    font-family: "Raleway";
     font-weight: 900;
     font-size: 3em;
 }
@@ -65,7 +55,7 @@ body.green {
     border-radius: 20px 20px;
 }
 
-img#can-spraying {
+/*img#can-spraying {
     margin: 20% auto 0;
     width: 30%;
     -webkit-animation-iteration-count: 3;
@@ -77,7 +67,7 @@ img#can-spraying {
     z-index: 3000;
     position: relative;
     display: block
-}
+}*/
 
 .showup {
     animation-delay: 1s;
@@ -112,22 +102,44 @@ body#spraying-screen h1 {
 }
 
 #footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  text-align: center;
+    position: fixed;
+    bottom: 40%;
+    left: 0;
+    width: 100%;
+    text-align: center;
 }
 
 #spray-text p {
-
     color: #fff;
-    font-size: 1.5em;
+    font-size: 1em;
 }
 
 p#progress {
     -webkit-animation-delay: 5s;
+    animation-delay: 5s;
 }
+
+p#progress span {
+    font-family: 'signika_negativebold';
+    letter-spacing: .1em
+}
+
+.char2 {
+    font-size: 1.4em;
+}
+
+.char3 {
+    font-size: 1.6em;
+}
+
+.char4 {
+    font-size: 1.8em;
+}
+
+.char5 {
+    font-size: 2.2em;
+}
+
 
 /*Beginning of Spray Animations*/
 /*For Purple*/

@@ -45,8 +45,9 @@ jQuery(document).ready(function(){
               $("<span>").addClass(gang+"-owns").text(gang).appendTo(owner);
               owner.appendTo(venue);
             } else {
-              owner.append("Untagged").appendTo(venue); //TODO change with something better
+              owner.append("Untagged").appendTo(venue);
             }
+
 
             $("<div>").addClass("category").addClass(getCategoryClass(data[i].category)).appendTo(venue);
             $("<h3>").addClass("title").text(getCategory(data[i].category)).appendTo(venue);
@@ -74,9 +75,9 @@ jQuery(document).ready(function(){
             // animateOut:"slideOutLeft"
           });
 
-          jQuery("h1.location").fitText(1.6);
-          jQuery(".category").fitText(.6);
-          jQuery("h3.title").fitText(1.5);
+          jQuery("h1.location").fitText(1.4, { minFontSize: '20px', maxFontSize: '60px' })
+          jQuery(".category").fitText(1, { minFontSize: '10px', maxFontSize: '60px' })
+          jQuery("h3.title").fitText(3, { minFontSize: '10px', maxFontSize: '30px' })
 
         }).fail(function( jqXHR, textStatus ) {
         //TODO fix this

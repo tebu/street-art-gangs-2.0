@@ -95,7 +95,6 @@
     });
 
       // Animation
-     $('th').addClass('animated slideInRight');
-     $('td').addClass('animated slideInLeft');
+     $('table').addClass('animated slideInLeft');
    }
  });

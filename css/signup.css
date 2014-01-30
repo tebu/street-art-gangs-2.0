@@ -1,46 +1,53 @@
 /* Signup screen **************************/
 
-html {
-    height: 100%
+html,
+body {
+    min-height: 100%;
+    overflow-x: hidden;
 }
 
 body#signup {
     text-shadow: none;
-    color:#fff;
+    color: #fff;
     margin: 0;
-    font-family: "Raleway";
 }
 
 h1 {
-    font-family: "Raleway";
-    font-weight: 300
+    color: #A64200;
+    font-weight: 300;
 }
 
-body#signup.neutral{
-    background-image: -webkit-gradient(radial, 100% 100%, 0, 100% 100%, 680, color-stop(0%, #01f4df), color-stop(26.1905%, #0b5eb1), color-stop(53.1746%, #260032), color-stop(100%, #000000));
-    background-image: -webkit-radial-gradient(right bottom, farthest-side circle, #01f4df 0%, #0b5eb1 33%, #260032 67%, #000000 126%);
-    background-image: -moz-radial-gradient(right bottom, farthest-side circle, #01f4df 0%, #0b5eb1 33%, #260032 67%, #000000 126%);
-    background-image: -ms-radial-gradient(right bottom, farthest-side circle, #01f4df 0%, #0b5eb1 33%, #260032 67%, #000000 126%);
-    background-image: -o-radial-gradient(right bottom, farthest-side circle, #01f4df 0%, #0b5eb1 33%, #260032 67%, #000000 126%);
-    background-image: radial-gradient(farthest-side circle at right bottom, #01f4df 0%, #0b5eb1 33%, #260032 67%, #000000 126%);
+body#signup.neutral {
+    background: #111 url(../img/bg_neutral.jpg) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
 
+body#signup.purple {
+    background: #6600D6 url(../img/blur_purple.jpg) no-repeat right;
+    background-size: cover;
+    background-attachment: fixed;
 }
-    /*Purple background*/
-body#signup.purple{
-    background: #6600D6
+
+body#signup.blue {
+    background: #00AFFF url(../img/blur_blue.jpg) no-repeat right;
+    background-size: cover;
+    background-attachment: fixed;
 }
-    /*Blue background*/
-body#signup.blue{
-    background: #00AFFF
-}
-    /*Green background*/
-body#signup.green{
-    background: #0FD39C
+
+body#signup.green {
+    background: #0FD39C url(../img/blur_green.jpg) no-repeat right;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 body#signup .header {
-    margin: 2em 0 ;
+    margin: 2em 0;
     text-align: center;
+}
+
+body#signup.purple h1, body#signup.blue h1,  body#signup.green h1 {
+    color: #fff;
 }
 
 .back {
@@ -52,16 +59,15 @@ body#signup .header {
     padding: 0.6em 1em;
     text-align: center;
     position: absolute;
-    font-weight:400;
+    font-weight: 400;
     top: 0;
     left: 0;
     z-index: 1000;
-    font-family: "Lato"
 }
 
 .back i {
     position: relative;
-    top: 2px
+    top: 2px;
 }
 
 .form {
@@ -75,16 +81,16 @@ input, textarea {
     border-radius: 0;
 }
 
-input  {
+input {
     width: 100%;
     margin-bottom: 1px;
     border: none;
     border-radius: none;
-    padding: 15px 0 15px 20px;
+    padding: 10px 0 10px 20px;
     color: #fff;
-    background:rgba(0,0,0,.4);
+    background: rgba(0,0,0,.4);
     border-left: 5px solid rgba(0,0,0,.1);
-    font-size: 1em;
+    font-size: .8em;
 }
 
 input:nth-child(2) {
@@ -103,31 +109,32 @@ input:nth-child(4) {
 }
 
 input:focus {
-    background:rgba(0,0,0,.4);
+    background: rgba(0,0,0,.4);
     outline: none;
 }
 
 ::-webkit-input-placeholder {
     color: white;
-    opacity: 1
+    opacity: 1;
 }
 
-::-moz-placeholder { /* Firefox 19+ */
+::-moz-placeholder {
+ /* Firefox 19+ */
     color: white;
-    opacity: 1
+    opacity: 1;
 }
 
 :-ms-input-placeholder {
     color: white;
-    opacity: 1
+    opacity: 1;
 }
 
 select {
     color: #fff;
-    font-size: 1em;
+    font-size: .8em;
     width: 100%;
-    background:rgba(0,0,0,.4);
-    padding: 15px 0 15px 20px;
+    background: rgba(0,0,0,.4);
+    padding: 10px 0 10px 20px;
     border: none;
     border-radius: 0;
     border-left: 5px solid rgba(0,0,0,.1);
@@ -137,20 +144,22 @@ select {
 }
 
 option {
-    background:#000;
+    background: #000;
 }
 
 .btn {
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
     height: auto;
+    z-index: 3000;
     border-radius: none;
     cursor: pointer;
-    font-weight: bold;
+    font-family: 'signika_negativebold', sans-serif;
+    font-weight: normal;
     text-transform: uppercase;
     text-align: center;
-    background:rgba(0,0,0,.2);
+    background: rgba(0,0,0,.1);
     padding: 20px 0;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
@@ -165,14 +174,15 @@ option {
     animation-delay: .5s;
     animation-iteration-count: 1;
 }
+
 .btn:active {
-    background:rgba(0,0,0,.5);
+    background: rgba(0,0,0,.5);
 }
 
 span {
     position: relative;
     top: 3px;
-    left: 10px
+    left: 10px;
 }
 
 .md-modal {
@@ -271,21 +281,23 @@ span {
     z-index: 1000;
 }
 
-.error .md-content button {
+.error button {
     background: #FF783E;
     border: none;
     color: #FFFFFF;
     cursor: pointer;
     display: block;
     font-size: .8em;
-    font-weight: 700;
+    font-family: 'signika_negativebold', sans-serif;
+    font-weight: normal;
     padding: .8em 1.2em;
     text-align: center;
     text-transform: uppercase;
-    position: relative;
-    top: 40px;
+    position: fixed;
+    bottom: 0;
     z-index: 1000;
-    width: 60%;
+    width: 100%;
+    height: 60px;
     margin: 0 auto;
     box-shadow: 0 2px 0 rgba(0,0,0,.15);
     -webkit-transition: all 0.3s;
@@ -295,9 +307,9 @@ span {
     animation-delay: 1s;
 }
 
-.error .md-content button:hover, .error .md-content button:active, .error .md-content button:focus  {
+.error .md-content button:hover, .error .md-content button:active, .error .md-content button:focus {
     background: #FF8E5E;
-    box-shadow: 0 2px 0 rgba(0,0,0,0)
+    box-shadow: 0 2px 0 rgba(0,0,0,0);
 }
 
 .md-effect-12 .md-content {
@@ -318,7 +330,11 @@ span {
     background-image: -ms-linear-gradient(bottom, #01f4df 0%, #0b5eb1 33%, #530081 67%, #000000 126%);
     background-image: -o-linear-gradient(bottom, #01f4df 0%, #0b5eb1 33%, #530081 67%, #000000 126%);
     background-image: linear-gradient(to top, #01f4df 0%, #0b5eb1 33%, #530081 67%, #000000 126%);
-} 
+
+    background: url(../img/blur_neutral.jpg) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
 
 .md-show.error.md-effect-12 ~ .md-overlay {
     background-image: -webkit-gradient(linear, center bottom, center top, color-stop(0%, #FF502D), color-stop(25%, #EB5600), color-stop(83%, #D62B00));
@@ -327,7 +343,7 @@ span {
     background-image: -ms-linear-gradient(bottom, #FF502D 0%, #EB5600 25%, #D62B00 83%);
     background-image: -o-linear-gradient(bottom, #FF502D 0%, #EB5600 25%, #D62B00 83%);
     background-image: linear-gradient(to top, #FF502D 0%, #EB5600 25%, #D62B00 83%);
-} 
+}
 
 .icon-blocked {
     position: relative;
@@ -351,7 +367,7 @@ span {
 
 a#about-gangs {
     position: absolute;
-    padding: 10px 20px;
+    padding: 4px 20px;
     background: rgba(0,0,0,.2);
     bottom: 2px;
     right: 0;
@@ -359,11 +375,11 @@ a#about-gangs {
     -webkit-animation-delay: .5s;
 }
 
-span.icon-write {
+span.icon-pen2 {
     position: absolute;
     font-size: 26em;
     opacity: .06;
-    right: -210px
+    right: -210px;
 }
 
 span.icon-question {
@@ -376,7 +392,7 @@ i.icon-droplet {
     font-size: 3em;
     opacity: 1;
     left: 0;
-    top: 80px;
+    top: 50px;
     z-index: 0;
     -webkit-animation-delay: 1s;
     animation-delay: 1s;
@@ -390,11 +406,12 @@ i.icon-droplet {
 
 .tile {
     height: 33.5%;
-    background: rgba(0,0,0,.5);
+    background: rgba(0,0,0,.7);
     padding: 10px 15px 0 60px;
     overflow: hidden;
     text-align: left;
     position: relative;
+    border-bottom: 1px solid rgba(0,0,0,.1)
 }
 
 .tile:nth-child(2) {
@@ -411,19 +428,15 @@ i.icon-droplet {
     position: relative;
     font-size: .8em;
     z-index: 1;
-    top: 20px;
-    font-family: "Lato";
-    font-weight: 700;
+    top: 15px;
 }
 
 .tile h2 {
-    font-size: 1.4em;
+    font-size: 1em;
     line-height: 0;
     position: relative;
-    left: 10px;
-    top: 15px;
-    font-family: "Raleway";
-    font-weight: 400
+    left: 0;
+    top: 10px;
 }
 
 .tile.purple-knights h2 {
@@ -447,7 +460,6 @@ i.icon-droplet {
 }
 
 .tile.green-shamans {
-
     border-right: 3px solid #56FFC4;
 }
 
@@ -467,10 +479,9 @@ a#test {
     position: absolute;
     top: 0 !important;
     right: 0;
-    font-family: "Lato";
     background: #111;
     padding: 5px;
-    z-index: 4000
+    z-index: 4000;
 }
 
 small {
@@ -480,27 +491,42 @@ small {
 }
 
 .visible {
-    display: block
+    display: block;
 }
 
 .hide {
-    display: none
+    display: none;
 }
 
 .icon-ccw {
     position: relative;
     top: 2px;
     left: 5px;
-    font-size: 1.3em
+    font-size: 1.3em;
 }
 
-.icon-remove-x {
-    margin-right: 5px
+.icon-remove {
+    margin-right: 5px;
 }
 
 p.error {
     font-size: .8em;
     text-align: left;
-    margin-left: 13%
+    margin-left: 14%;
+    display: block;
+    position: relative;
 }
+
+@media all and (min-width: 1024px) {
+
+    span.icon-pen2 {
+        position: absolute;
+        font-size: 56em;
+        opacity: .06;
+        right: -210px;
+    };
+}
+
+
+
 

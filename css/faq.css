@@ -1,19 +1,30 @@
 /*Styles for FAQ screen*/
 
 
+html,
+body {
+    height: 100%;
+}
+
 body.purple {
-    background: #3A025E;
+    background: url(../img/blur_purple.jpg) no-repeat left;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 body.blue {
-    background: #3EB1F8;
+    background: url(../img/blur_blue.jpg) no-repeat left;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 body.green {
-    background: #45C18D;
+    background: url(../img/blur_green.jpg) no-repeat left;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
-i {
+.faq-trigger i {
     position: absolute;
     top: 15px;
     right: 10px
@@ -33,21 +44,16 @@ h1 {
     margin: 0;
     position: relative;
     cursor: pointer;
-    font-family: "Lato";
-    font-weight: 400;
+    font-family: 'signika_negativesemibold';
+    font-size: .8em;
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
     transition: all 0.2s ease;
 }
 
 body.purple .faq-trigger {
-    background-image: -webkit-gradient(linear, right bottom, left top, color-stop(0%, #330052), color-stop(100%, #39005b));
-    background-image: -webkit-linear-gradient(right bottom, #330052 0%, #39005b 100%);
-    background-image: -moz-linear-gradient(right bottom, #330052 0%, #39005b 100%);
-    background-image: -ms-linear-gradient(right bottom, #330052 0%, #39005b 100%);
-    background-image: -o-linear-gradient(right bottom, #330052 0%, #39005b 100%);
-    background-image: linear-gradient(to left top, #330052 0%, #39005b 100%);
-    border-bottom: 1px solid #2a0043;
+    background: rgba(0,0,0,.25);
+    border-bottom: 1px solid rgba(0,0,0,.8);
 }
 
 body.green .faq-trigger {
@@ -72,14 +78,32 @@ body.blue .faq-trigger {
 
 .faq-content {
     display: none;
-    padding: 15px;
+    padding: 15px 15px 15px 0;
     color: #fff;
-    font-size: .9em;
-    font-family: "Lato";
+    font-size: .8em;
+}
+
+.faq-content i {
+    padding-right: 10px
+}
+.faq-content p {
+    padding-left: 20px
+}
+
+img{
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    padding: 2px 20px 5px;
+}
+
+.faq-content ul li {
+    list-style: none;
+    margin: 7px 0;
 }
 
 body.purple .faq-content {
-    background-color: #57008A;
+    background-color: rgba(0,0,0,.7);
 }
 
 body.green .faq-content {
@@ -103,7 +127,7 @@ body.blue .highlight {
 }
 
 .open {
-    font-weight: bold;
+    font-family: 'signika_negativebold';
 }
 
 body.purple .open {

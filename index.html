@@ -45,55 +45,57 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
     <div class="md-content">
       <div>
         <div id="network-error">
-            <p>Connection error</p>
-          </div>
+           <div class="spinner">
+              <div class="double-bounce1"></div>
+              <div class="double-bounce2"></div>
+            </div>
+            <p>Oulu, we have a problem</p>
+            <p><small>Connection missing</small></p>
+        </div>
       </div>
     </div>
-    <button class="md-close">I'll rise from this wormhole <span class="icon-check"></span></button>
+    <button class="md-close">Okey <span class="icon-check"></span></button>
   </div>
 
   <!-- / Modal for network error -->
 
     <div class="container">
 
-      <ul id="gn-menu" class="gn-menu-main">
+    <ul id="gn-menu" class="gn-menu-main">
         <li class="gn-trigger">
-          <a class="gn-icon gn-icon-menu icon-list-2"><span class="hide">Menu</span></a>
+          <a class="gn-icon gn-icon-menu icon-list2"><span class="count-notification">4</span></a>
           <nav class="gn-menu-wrapper">
             <div class="gn-scroller">
               <ul class="gn-menu">
                 <li><a class="gn-icon" href="profile.html"><span class="nav-icon icon-dude"></span>Profile</a></li>
                 <li><a class="gn-icon" href="profile-gang.html"><span class="nav-icon icon-dudes"></span>Gang</a></li>
+                <li><a class="gn-icon" href="chat.html"><span class="nav-icon icon-talk"></span>Chat<span class="count">4</span></a></li>
                 <li><a class="gn-icon" href="leaderboard.html"><span class="nav-icon icon-trophy"></span>Leaderboard</a></li>
-                <li><a class="gn-icon" href="tweaks.html"><span class="nav-icon icon-config"></span>Tweaks</a></li>
+                <li><a class="gn-icon" href="tweaks.html"><span class="nav-icon icon-tweak"></span>Tweaks</a></li>
                 <li><a class="gn-icon" href="faq.html"><span class="nav-icon icon-question"></span>Help</a></li>
               </ul>
             </div><!-- /gn-scroller -->
           </nav>
         </li>
-        <li class="messages"><a href="chat.html">4<span class="icon-message-bubble"></a></li>
+       <!--     <li class="tm"><img class="tm" src="img/logo.svg"></li> -->
       </ul><!-- /gn-menu -->
 
       <!--  This button is for demo purposes -->
-      <a href="#" class="modal-btn md-trigger" data-modal="modal-network-error">Error modal btn</a>
+    <!--   <a href="#" class="modal-btn md-trigger" data-modal="modal-network-error">Error modal btn</a> -->
 
-          <div class="liquid-slider"  id="main-slider">
-            <!-- Venue: Model
-            <div class="venue">
-              <p class="owner"><span class="blue-owns">Blue</span> gang owns</p>
-              <div class="category icon-sun"></div>
-              <h3 class="title">great outdoors</h2>
-              <h1 class="location">Toripolliisi</h2>
-            </div>
-            -->
+      <!--  This button is for demo purposes -->
+     <!--  <a href="#" class="modal-btn md-trigger" data-modal="modal-network-error">Error</a> -->
+
+          <div class="liquid-slider"  id="main-slider">         
+
           </div>
           <!-- /liquid-slider -->
 
 
 
           <div class="arrows">
-            <a id="to-left" class="icon-arrow-left-big" href="#left" data-liquidslider-ref="main-slider"></a>
-            <a id="to-right" class="icon-arrow-right-big" href="#right" data-liquidslider-ref="main-slider"></a>
+            <a id="to-left" class="icon-arrow-left-small" href="#left" data-liquidslider-ref="main-slider"></a>
+            <a id="to-right" class="icon-arrow-rights-small" href="#right" data-liquidslider-ref="main-slider"></a>
           </div><!-- /arrows -->
 
           <div id="start-to-spray">
@@ -105,11 +107,11 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
     <div class="md-overlay"></div>
 
   <!-- Scripts -->
-    <script src='js/jquery-1.10.2.min.js'></script>
+  <script src='js/jquery-1.10.2.min.js'></script>
     <script src="js/classie_menu.js"></script>
     <script src="js/gnmenu.js"></script>
 
-    <script src="js/network-error-loader.js"></script>
+  
     <script src="js/modalEffects-original.js"></script>
     <script src="js/jquery.fittext.js"></script>
     <script src="js/jquery.touchSwipe.min.js"></script>

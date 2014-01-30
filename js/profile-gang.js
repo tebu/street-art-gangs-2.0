@@ -2,7 +2,7 @@
       jQuery(document).ready(function(){
 
         //Animate.css
-        $('.tile').addClass('animated slideInLeft');
+        $('.tile').addClass('animated rollIn');
 
 
        if (!localStorage.authorization||!localStorage.color||!localStorage.gangster||!localStorage.gang) {

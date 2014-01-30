@@ -35,36 +35,53 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
 </head>
 
 <body id="leaderboard">
-
     <div class="container">
 
-      <ul id="gn-menu" class="gn-menu-main">
+     <ul id="gn-menu" class="gn-menu-main">
         <li class="gn-trigger">
-          <a class="gn-icon gn-icon-menu icon-list-2"><span class="hide">Menu</span></a>
+          <a class="gn-icon gn-icon-menu icon-list2"><!-- <span class="hide">Menu</span> --><span class="count-notification">4</span></a>
           <nav class="gn-menu-wrapper">
             <div class="gn-scroller">
               <ul class="gn-menu">
+                <li><a class="gn-icon" href="index.html"><span class="nav-icon icon-droplet"></span>Home</a></li>
                 <li><a class="gn-icon" href="profile.html"><span class="nav-icon icon-dude"></span>Profile</a></li>
                 <li><a class="gn-icon" href="profile-gang.html"><span class="nav-icon icon-dudes"></span>Gang</a></li>
+                <li><a class="gn-icon" href="chat.html"><span class="nav-icon icon-talk"></span>Chat<span class="count">4</span></a></li>
                 <li><a class="gn-icon" href="leaderboard.html"><span class="nav-icon icon-trophy"></span>Leaderboard</a></li>
-                <li><a class="gn-icon" href="tweaks.html"><span class="nav-icon icon-config"></span>Tweaks</a></li>
+                <li><a class="gn-icon" href="tweaks.html"><span class="nav-icon icon-tweak"></span>Tweaks</a></li>
                 <li><a class="gn-icon" href="faq.html"><span class="nav-icon icon-question"></span>Help</a></li>
               </ul>
             </div><!-- /gn-scroller -->
           </nav>
         </li>
-        <li class="home"><a href="index.html"><span class="icon-home"></a></li>
-        <li class="messages"><a href="chat.html">2<span class="icon-message-bubble"></a></li>
+         <!--  <li class="tm"><img class="tm" src="img/logo.svg"></li> -->
+         <li class="site-name"><i class="icon-trophy"></i> Leaderboards</li>
       </ul><!-- /gn-menu -->
 
 
+
      <div class="wrapper">
-        <p class="title">Leaderboards</p>
 
         <div class="swiper-container">
           <div class="swiper-wrapper">
             <div class="swiper-slide gang-ranking">
               <div class="content-slide">
+
+
+            <!-- Future possible addons:
+            <div class="best">
+
+              <div>
+                <h3>Player of the Week</h3>
+                <p class="best-player">Paula <span class="best-players-gang">Purple Knights</span></p>
+              </div>
+
+              <div>
+                <h3>Gang of the Week</h3>
+                <p class="best-gang">Green Shamans</p>
+              </div>
+          
+            </div> -->
 
                <table id="gang-board" cellspacing='0'>
                 <tr><th><span class="icon-trophy icon"></span></th><th><span class="icon-dudes icon"></span></th><th><span class="icon-droplet icon"></span></th><th><span class="icon-star icon"></span></th></tr>
@@ -76,12 +93,8 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
                                   -->
 
                 </table>
-              </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="content-slide">
 
-            <table id="player-board" cellspacing='0'>
+                 <table id="player-board" cellspacing='0'>
                 <tr><th><span class="icon-trophy icon"></span></th><th><span class="icon-dude icon"></span></th><th><span class="icon-droplet icon"></span></th><th><span class="icon-star icon"></span></th></tr>
                 <!-- Base Model
 
@@ -100,17 +113,12 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
 
                  -->
               </table>
-          </div>
+              </div>
         </div>
+       <!--
+
       </div>
     </div><!-- /wrapper -->
-
-    <div class="pagination"></div>
-
-     <div class="footer">
-      <a class="arrow-left" href="#"><i class="icon-arrow-left-big"></i></a>
-      <a class="arrow-right" href="#"><i class="icon-arrow-right-big"></i></a>
-    </div>
 
   </div>
 

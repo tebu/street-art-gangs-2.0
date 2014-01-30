@@ -1,144 +1,135 @@
 /*Styles for chat screen*/
+html, body {
+    height: 100%;
+    min-height: 100%;
+}
 
 body.purple {
-    background: #3A025E;
+    background: url(../img/blur_purple.jpg) no-repeat top;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 body.blue {
-    background: #0A92E6;
+    background: url(../img/blur_blue.jpg) no-repeat top;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 body.green {
-    background: #1CBC7A;
+    background: url(../img/blur_green.jpg) no-repeat top;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .content {
+    height: 100%;
     width: 100%;
     margin: 0 auto;
     position: relative;
-    top: 40px
+    top: 60px;
 }
 
 .chatter {
-  position: relative;
-  top: 20px;
-  z-index: 1000;
-  margin: 0;
-  padding: 12px 12px 60px 12px;
-  width:100%;
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: 400;
-  -webkit-font-smoothing: antialiased;
-  font-smoothing: antialiased;
-}
-
-body.purple .chatter {
-    background: #3A025E;
-}
-
-body.blue .chatter {
-  background: #0A92E6;
-}
-
-body.green .chatter {
-  background: #1CBC7A;
+    position: relative;
+    top: 10px;
+    z-index: 1000;
+    margin: 0;
+    margin-bottom: 100px;
+    width: 100%;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
 }
 
 .chatter_field {
-  position: fixed;
-  bottom: 0;
-  margin:0;
-  padding: 0;
-  width: 100%;
-  display: block;
-  font-size: 16px;
-  line-height: 22px;
-  font-weight: 400;
-  color: #111;
-  -webkit-font-smoothing: antialiased;
-  font-smoothing: antialiased;
-  border: none;
-  outline: none;
-  background: #fff;
-  z-index: 2000
+    position: fixed;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: block;
+    line-height: 20px;
+    font-weight: 400;
+    color: #fff;
+    border: none;
+    outline: none;
+    background: rgba(0,0,0,.9);
+    z-index: 2000;
 }
 
 .chatter_field.chatter_message {
-  margin: 0;
-  padding: 11px 12px 9px 12px;
-  font-size: 14px;
-  line-height: 20px;
-  height: 40px;
-  resize: none;
+    margin: 0;
+    padding: 11px 12px 9px 12px;
+    font-size: .8em;
+    line-height: 20px;
+    height: 40px;
+    resize: none;
 }
 
 textarea {
-  border-radius: 0;
+    border-radius: 0;
 }
 
-::-webkit-input-placeholder { /* WebKit browsers */
-    color:    #111;
+::-webkit-input-placeholder {
+ /* WebKit browsers */
+    color: #A74DFF;
 }
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color:    #111;
+
+:-moz-placeholder {
+ /* Mozilla Firefox 4 to 18 */
+    color: #A74DFF;
 }
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color:    #111;
+
+::-moz-placeholder {
+ /* Mozilla Firefox 19+ */
+    color: #A74DFF;
 }
-:-ms-input-placeholder { /* Internet Explorer 10+ */
-    color:    #111;
+
+:-ms-input-placeholder {
+ /* Internet Explorer 10+ */
+    color: #A74DFF;
 }
 
 .chatter .chatter_msg_item {
-  position: relative;
-  margin: 5px 0 8px 0;
-  padding: 8px 10px;
-  display: block;
-  background: rgba(255,255,255,.1);
-  line-height: 1;
+    position: relative;
+    margin: 5px 0 8px 0;
+    padding: 10px 10px 6px;
+    display: block;
+/*  background: rgba(0,0,0,.4);*/
+    line-height: 1;
 }
-
-.myself .chatter_msg_item {
-  background: rgba(255,255,255,.2);
-}
-
-/*.chatter .chatter_msg_item .chatter_avatar {
-  position: relative;
-  top: 15px;
-  text-decoration: none;
-  color: white;
-  width: 30%
-}*/
 
 .message-element {
-  width: 100%;
-  position: relative;
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    margin: -2px 0;
+    border-bottom: 1px solid rgba(147, 0, 255, 0.2);
+}
+
+body.purple .message-element {
+    background: rgba(16, 0, 21, 0.5);
 }
 
 .bubble {
-  width: 75%;
-  position: relative;
-  display: inline-block;
+    width: 75%;
+    position: relative;
+    display: inline-block;
+    float: right;
+    padding-right: 60px;
 }
 
 .sender {
-  width: 20%;
-  position: relative;
-  display: inline-block;
-  text-align: left;
-  right: 0;
-  font-weight: 700;
-  letter-spacing: -1px
-}
-
-.myself .sender {
-  width: 10% !important;
-
-}
-
-.myself .bubble {
-  width: 85% !important;
+    width: 20%;
+    float: left;
+    position: relative;
+    display: inline-block;
+    text-align: left;
+    left: 0;
+    letter-spacing: -1px;
 }
 
 .chatter_avatar {
@@ -146,77 +137,48 @@ textarea {
     position: absolute;
     text-decoration: none;
     text-align: left;
-    top: -20px;
-    left: 10px
+    top: 15px;
+    left: 10px;
 }
 
-.myself .chatter_avatar {
-    color: #FFFFFF;
-    position: absolute;
-    text-decoration: none;
-    text-align: right;
-    top: 23px;
-    left: 0;
-}
-
-.myself .bubble {
-  width: 75%;
-  position: relative;
-  display: inline-block;
-  float: right;
-}
-
-.myself .sender {
-  width: 20%;
-  position: relative;
-  display: inline-block;
-  text-align: left;
-  right: 0;
-  float: left;
+.myself, .myself .chatter_avatar {
+    color: #A74DFF;
 }
 
 .timestamp {
-  display: block;
-  margin: 0 5px;
-  padding: 5px;
-  position: relative;
-  left: -10px;
-  font-size: 10px;
-}
-
-
-
-.others .chatter_msg_item.chatter_msg_item_user:before {
-  content: '';
-  position: absolute;
-  bottom: 15px;
-  right: -12px;
-  z-index: 10;
-  border: 6px solid transparent;
-  border-left-color: rgba(255,255,255,.1);
-}
-
-.myself .chatter_msg_item.chatter_msg_item_user:before {
-  content: "";
-  height: 0;
-  left: -8px;
-  position: absolute;
-  top: 20px;
-  width: 0;
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;  
-  border-right:8px solid rgba(255,255,255,.2); 
+    position: absolute;
+    font-size: 10px;
+    right: -50px;
+    top: 12px;
 }
 
 button#send-msg {
     border: none;
     bottom: 0;
     height: 40px;
-    padding: 5px 15px;
+    padding: 8px 15px;
     position: fixed;
     right: 0;
-    z-index: 3000;
-    background: #eee;
-    color: #111
+    z-index: 2000;
+    background: none;
+    color: #A74DFF;
+    font-size: 1.4em;
+}
+
+@media all and (min-width: 1024px) {
+    .chatter {
+        font-size: 1.2em;
+    }
+
+    .chatter .chatter_msg_item {
+        padding: 18px 10px;
+    }
+
+    .timestamp {
+        position: absolute;
+        font-size: .6em;
+        right: -50px;
+        top: 10px;
+    };
 }
 

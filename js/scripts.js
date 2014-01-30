@@ -197,7 +197,7 @@ var getCategoryClass = function (val) {
         return 'icon-sun';
         break;
       case 'Ni':
-        return 'icon-sun';
+        return 'icon-moon';
         break;
       case 'Ar':
         return 'icon-ticket';

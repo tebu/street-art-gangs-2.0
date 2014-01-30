@@ -35,37 +35,72 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
 
     <div class="container">
 
-      <ul id="gn-menu" class="gn-menu-main">
+     <ul id="gn-menu" class="gn-menu-main">
         <li class="gn-trigger">
-          <a class="gn-icon gn-icon-menu icon-list-2"><span class="hide">Menu</span></a>
+          <a class="gn-icon gn-icon-menu icon-list2"><span class="count-notification">4</span></a>
           <nav class="gn-menu-wrapper">
             <div class="gn-scroller">
               <ul class="gn-menu">
+                <li><a class="gn-icon" href="index.html"><span class="nav-icon icon-droplet"></span>Home</a></li>
                 <li><a class="gn-icon" href="profile.html"><span class="nav-icon icon-dude"></span>Profile</a></li>
                 <li><a class="gn-icon" href="profile-gang.html"><span class="nav-icon icon-dudes"></span>Gang</a></li>
+                <li><a class="gn-icon" href="chat.html"><span class="nav-icon icon-talk"></span>Chat<span class="count">4</span></a></li>
                 <li><a class="gn-icon" href="leaderboard.html"><span class="nav-icon icon-trophy"></span>Leaderboard</a></li>
-                <li><a class="gn-icon" href="tweaks.html"><span class="nav-icon icon-config"></span>Tweaks</a></li>
+                <li><a class="gn-icon" href="tweaks.html"><span class="nav-icon icon-tweak"></span>Tweaks</a></li>
                 <li><a class="gn-icon" href="faq.html"><span class="nav-icon icon-question"></span>Help</a></li>
               </ul>
             </div><!-- /gn-scroller -->
           </nav>
         </li>
-        <li class="home"><a href="index.html"><span class="icon-home"></a></li>
-        <li class="messages"><a href="chat.html">2<span class="icon-message-bubble"></a></li>
-      </ul>
+       <!--     <li class="tm"><img class="tm" src="img/logo.svg"></li> -->
+       <li class="site-name"><i class="icon-dude"></i> Profile</li>
+      </ul><!-- /gn-menu -->
 
 
-       <ul class="profile-list">
-          <li><h1 class="player-name"></h1></li>
-           <li><h3 class="mood-title">Mood</h3></li>
-            <li><h3 class="mood"></h3></li>
-          <li><span class="profile-icon icon-trophy"></span><span class="info" id="ranking">0</span><span class="description">Ranking</span></li>
-          <li class="no-border"><span class="profile-icon icon-star points"></span><span class="info"  id="points">31100</span><span class="description">Points</span></li>
-          <li><span class="profile-icon icon-droplet"></span><span class="info" id="tags_created">0</span><span class="description">Sprayed</span></li>
-          <li class="no-border"><span class="profile-icon icons-paperplane distance"></span><span class="info" id="distance">0</span><span class="description">Walked</span></li>
-          <li><span class="profile-icon icon-surprised"></span><span class="info" id="busted">0</span><span class="description">Busted</span></li>
-          <li class="no-border"><span class="profile-icon icon-blocked busts"></span><span class="info" id="busts">0</span><span class="description">Busts</span></li>
-        </ul>
+      <div class="profile-tiles">
+
+              <div>
+                <h3 class="player-name"></h3><i class="info-icon icon-dude"></i>
+                <i class="icon-mood2"></i>
+                <p class="mood"></p>
+              </div>
+
+
+              <div>
+                <h3><i class="info-icon icon-trophy"></i>Ranking</h3>
+                <p class="info" id="ranking"></p>
+              </div>
+
+              
+              <div>
+                <h3><i class="info-icon icon-star"></i>Points</h3>
+                <p class="info" id="points"></p>
+              </div>
+
+              <div>
+                <h3><i class="info-icon icon-droplet"></i>Sprayed</h3>
+                <p class="info" id="tags_created"></p>
+              </div>
+
+              <div>
+                <h3><i class="info-icon icon-busted"></i>Busts</h3>
+                <p class="info" id="busts"></p>
+              </div>
+
+
+              <div>
+                <h3><i class="info-icon icon-busted"></i>Busted</h3>
+                <p class="info" id="busted"></p>
+              </div>
+
+
+              <div>
+                <h3><i class="info-icon icon-paperplane"></i>Distance</h3>
+                <p class="info">8900</p>
+              </div>
+
+    </div>
+
 
     </div><!-- /container -->
 
