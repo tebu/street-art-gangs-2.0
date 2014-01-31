@@ -13,7 +13,7 @@ body.purple {
 }
 
 body.blue {
-    background: url(../img/blur_blue.jpg) no-repeat left;
+    background: url(../img/blur_blue.jpg) no-repeat right;
     background-size: cover;
     background-attachment: fixed;
 }
@@ -67,13 +67,8 @@ body.green .faq-trigger {
 }
 
 body.blue .faq-trigger {
-    background-image: -webkit-gradient(linear, right bottom, left top, color-stop(0%, #4DBBFF), color-stop(100%, #62C3FF));
-    background-image: -webkit-linear-gradient(right bottom, #4DBBFF 0%, #62C3FF 100%);
-    background-image: -moz-linear-gradient(right bottom, #4DBBFF 0%, #62C3FF 100%);
-    background-image: -ms-linear-gradient(right bottom, #4DBBFF 0%, #62C3FF 100%);
-    background-image: -o-linear-gradient(right bottom, #4DBBFF 0%, #62C3FF 100%);
-    background-image: linear-gradient(to left top, #4DBBFF 0%, #62C3FF 100%);
-    border-bottom: 1px solid #31a3e9;
+    background: rgba(0,0,0,.25);
+    border-bottom: 1px solid rgba(0,0,0,.2);
 }
 
 .faq-content {
@@ -86,6 +81,19 @@ body.blue .faq-trigger {
 .faq-content i {
     padding-right: 10px
 }
+
+body.purple .faq-content i {
+    color: #57008A;
+}
+
+body.blue .faq-content i {
+    color: #1c6adc;
+}
+
+body.green .faq-content i {
+    color: #23A771;
+}
+
 .faq-content p {
     padding-left: 20px
 }
@@ -111,7 +119,7 @@ body.green .faq-content {
 }
 
 body.blue .faq-content {
-    background-color: #35A5EA;
+    background-color: rgba(0,0,0,.7);
 }
 
 body.purple .highlight {
@@ -123,21 +131,28 @@ body.green .highlight {
 }
 
 body.blue .highlight {
-    background: #35A5EA
+    background: #1c6adc
 }
 
 .open {
     font-family: 'signika_negativebold';
 }
 
-body.purple .open {
-    border-left: 20px solid #4D007A;
+.faq-content .icon-droplet{
+    font-size: 2em;
+    position: relative;
+    top: 5px
 }
 
-body.green .open {
-    border-left: 20px solid #1F9D69;
+body.purple .faq-content .icon-droplet{
+    color: #57008A;
 }
 
-body.blue .open {
-    border-left: 20px solid #289AE0;
+body.blue .faq-content .icon-droplet{
+    color: #1c6adc;
 }
+
+body.green .faq-content .icon-droplet{
+    color: #23A771;
+}
+

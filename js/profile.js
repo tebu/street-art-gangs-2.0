@@ -39,7 +39,7 @@
             if (data.mood!=null && data.mood!="") {
               $(".mood").text(data.mood);
             } else {
-              $(".mood").text("Unknown");
+              $(".mood").text("Go to tweaks to write here");
             }
 
             $("#ranking").text(data.ranking);

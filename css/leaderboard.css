@@ -11,7 +11,7 @@ body.purple {
 }
 
 body.blue {
-    background: url(../img/blur_blue.jpg) no-repeat top;
+    background: url(../img/map_blue.jpg) no-repeat left;
     background-size: cover;
     background-attachment: fixed;
 }
@@ -34,7 +34,6 @@ table th {
     text-align: left;
     font-size: 1em;
     text-transform: uppercase;
-    font-weight: 700;
     border-bottom: 1px solid rgba(0,0,0,.05);
 }
 
@@ -44,12 +43,8 @@ body.purple table th {
 }
 
 body.blue table th {
-background-image: -webkit-gradient(linear, center top, center bottom, color-stop(0%, #3dabff), color-stop(100%, #1fa9ff));
-background-image: -webkit-linear-gradient(top, #3dabff 0%, #1fa9ff 100%);
-background-image: -moz-linear-gradient(top, #3dabff 0%, #1fa9ff 100%);
-background-image: -ms-linear-gradient(top, #3dabff 0%, #1fa9ff 100%);
-background-image: -o-linear-gradient(top, #3dabff 0%, #1fa9ff 100%);
-background-image: linear-gradient(to bottom, #3dabff 0%, #1fa9ff 100%);
+    background: rgba(0,0,0,.2);
+    color: #4A96FF
 }
 
 body.green table th {
@@ -85,7 +80,6 @@ table tr td {
 }
 
 body.purple table tr td {
-    background: #4f0877;
     background: rgba(58, 0, 95,.4);
 }
 
@@ -95,19 +89,17 @@ body.purple table tr:nth-child(odd) td{
 }
 
 body.blue table tr td {
-    background: #3dabff
+    background: rgba(0, 36, 69, 0.5);
 }
 
-body.blue table#player-board tr:nth-child(odd) td{
-    background: #4db2ff
+body.blue table tr:nth-child(odd) td{
+    background: #5e0b8d;
+    background: rgba(0, 10, 31, 0.6);
 }
 
-body.green table tr td {
-    background: #14ca92
-}
 
-body.green table#player-board tr:nth-child(odd) td{
-
+table tr td:first-child {
+    font-size: 1.2em
 }
 
 table tr.you td {

@@ -14,7 +14,7 @@ body#signup {
 
 h1 {
     color: #A64200;
-    font-weight: 300;
+    font-family: 'signika_negativelight';
 }
 
 body#signup.neutral {
@@ -24,19 +24,19 @@ body#signup.neutral {
 }
 
 body#signup.purple {
-    background: #6600D6 url(../img/blur_purple.jpg) no-repeat right;
+    background: #6600D6 url(../img/blur_purple.jpg) no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }
 
 body#signup.blue {
-    background: #00AFFF url(../img/blur_blue.jpg) no-repeat right;
+    background: #00AFFF url(../img/blur_blue.jpg) no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }
 
 body#signup.green {
-    background: #0FD39C url(../img/blur_green.jpg) no-repeat right;
+    background: #0FD39C url(../img/blur_green.jpg) no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }
@@ -88,7 +88,7 @@ input {
     border-radius: none;
     padding: 10px 0 10px 20px;
     color: #fff;
-    background: rgba(0,0,0,.4);
+    background: rgba(0,0,0,.3);
     border-left: 5px solid rgba(0,0,0,.1);
     font-size: .8em;
 }
@@ -133,7 +133,7 @@ select {
     color: #fff;
     font-size: .8em;
     width: 100%;
-    background: rgba(0,0,0,.4);
+    background: rgba(0,0,0,.3);
     padding: 10px 0 10px 20px;
     border: none;
     border-radius: 0;

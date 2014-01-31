@@ -5,13 +5,13 @@ html, body {
 }
 
 body.purple {
-    background: url(../img/blur_purple.jpg) no-repeat top;
+    background: url(../img/map_purple.jpg) no-repeat left;
     background-size: cover;
     background-attachment: fixed;
 }
 
 body.blue {
-    background: url(../img/blur_blue.jpg) no-repeat top;
+    background: url(../img/map_blue.jpg) no-repeat left;
     background-size: cover;
     background-attachment: fixed;
 }
@@ -39,7 +39,6 @@ body.green {
     width: 100%;
     font-size: 12px;
     line-height: 16px;
-    font-weight: 400;
     -webkit-font-smoothing: antialiased;
     font-smoothing: antialiased;
 }
@@ -52,7 +51,7 @@ body.green {
     width: 100%;
     display: block;
     line-height: 20px;
-    font-weight: 400;
+    font-family: 'signika_negativesemibold';
     color: #fff;
     border: none;
     outline: none;
@@ -73,24 +72,36 @@ textarea {
     border-radius: 0;
 }
 
-::-webkit-input-placeholder {
- /* WebKit browsers */
+body.purple ::-webkit-input-placeholder {
     color: #A74DFF;
 }
 
-:-moz-placeholder {
- /* Mozilla Firefox 4 to 18 */
+body.purple :-moz-placeholder {
     color: #A74DFF;
 }
 
-::-moz-placeholder {
- /* Mozilla Firefox 19+ */
+body.purple ::-moz-placeholder {
     color: #A74DFF;
 }
 
-:-ms-input-placeholder {
- /* Internet Explorer 10+ */
+body.purple :-ms-input-placeholder {
     color: #A74DFF;
+}
+
+body.blue ::-webkit-input-placeholder {
+    color: #4A96FF;
+}
+
+body.blue :-moz-placeholder {
+    color: #4A96FF;
+}
+
+body.blue ::-moz-placeholder {
+    color: #4A96FF;
+}
+
+body.blue :-ms-input-placeholder {
+    color: #4A96FF;
 }
 
 .chatter .chatter_msg_item {
@@ -106,11 +117,20 @@ textarea {
     display: inline-block;
     position: relative;
     width: 100%;
-    margin: -2px 0;
-    border-bottom: 1px solid rgba(147, 0, 255, 0.2);
+    margin: 0 0 -4px 0;
+    border-bottom: 1px solid rgba(0,0,0,.2);
+
 }
 
 body.purple .message-element {
+    background: rgba(16, 0, 21, 0.5);
+}
+
+body.blue .message-element {
+    background: rgba(0, 6, 72, 0.5);
+}
+
+body.green .message-element {
     background: rgba(16, 0, 21, 0.5);
 }
 
@@ -124,6 +144,7 @@ body.purple .message-element {
 
 .sender {
     width: 20%;
+    font-family: 'signika_negativesemibold';
     float: left;
     position: relative;
     display: inline-block;
@@ -141,7 +162,15 @@ body.purple .message-element {
     left: 10px;
 }
 
-.myself, .myself .chatter_avatar {
+body.purple .myself, body.purple .myself .chatter_avatar {
+    color: #A74DFF;
+}
+
+body.blue .myself, body.blue .myself .chatter_avatar {
+    color: #4A96FF;
+}
+
+body.green .myself, body.green .myself .chatter_avatar {
     color: #A74DFF;
 }
 
@@ -161,8 +190,20 @@ button#send-msg {
     right: 0;
     z-index: 2000;
     background: none;
-    color: #A74DFF;
+    color: #fff;
     font-size: 1.4em;
+}
+
+body.purple button#send-msg {
+    color: #A74DFF;
+}
+
+body.blue button#send-msg {
+    color: #4A96FF;
+}
+
+body.green button#send-msg {
+    color: #A74DFF;
 }
 
 @media all and (min-width: 1024px) {

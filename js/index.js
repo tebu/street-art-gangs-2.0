@@ -20,7 +20,8 @@ jQuery(document).ready(function(){
         new gnMenu( document.getElementById( 'gn-menu' ) );
 
         //Animate.css
-        jQuery('#start-to-spray').addClass('animated pulse');
+        $('#start-to-spray').addClass('animated pulse');
+        $('small').addClass('animated flash');
 
         //Check GPS
         watchGPS();

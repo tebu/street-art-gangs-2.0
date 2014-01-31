@@ -1,6 +1,5 @@
 /*Styles for Gang profile screen*/
 
-
 html,
 body {
     height: 100%;
@@ -13,7 +12,7 @@ body.purple {
 }
 
 body.blue {
-    background: url(../img/blur_blue.jpg) no-repeat left;
+    background: url(../img/blur_blue.jpg) no-repeat center;
     background-size: cover;
     background-attachment: fixed;
 }
@@ -59,7 +58,7 @@ li {
 
 h2.description-title {
     padding: 60px 0 0;
-    font-weight: 400
+    font-family: 'signika_negativelight';
 }
 
 p.description {
@@ -69,7 +68,6 @@ p.description {
 h2.gang-name {
     font-size:1.4em;
     padding: 10px 20px;
-    font-weight: 700;
     position: relative;
     z-index: 100;
 }
@@ -80,11 +78,14 @@ body.purple h2.gang-name {
 }
 
 body.blue h2.gang-name {
-
+    font-family: 'ceviche_oneregular';
+    color: #4A96FF;
+    text-transform: uppercase;
 }
 
 body.green h2.gang-name {
-
+    font-family: 'new_rockerregular';
+    text-transform: uppercase;
 }
 
 h3.slogan {
@@ -93,27 +94,18 @@ h3.slogan {
     top: -170px;
     z-index: 1000;
     font-size: .6em;
-    font-weight: 400;
     text-transform: uppercase;
     -webkit-animation-delay: 1s;
     animation-delay: 1s;
 }
 
-body.purple h3.slogan {
+h3.slogan {
     color: #fff;
 }
 
-body.blue h3.slogan {
-    color: #fff;
-}
-
-body.green h3.slogan {
-    color: #fff;
-}
 
 h2.gang-info {
     font-size: 1.1em;
-    font-weight: 400;
     line-height: 1em;
     position: relative;
     top: 0;
@@ -154,7 +146,7 @@ body.purple i.small {
 }
 
 body.blue i.small {
-    color: #A3DFFF;
+    color: #4A96FF;
 }
 
 body.green i.small {
@@ -197,8 +189,7 @@ body.purple i.icon-droplet {
 }
 
 body.blue i.icon-droplet {
-    color: #8FDFFF;
-    opacity: .5
+    color: rgba(0,0,0,.3);
 }
 
 body.green i.icon-droplet {
@@ -218,9 +209,20 @@ i.left {
 i.modal-icon {
     position: absolute;
     font-size: 23em;
-    opacity: .1;
      -webkit-animation: scale 20s infinite linear;
     animation: scale 20s infinite linear;
+}
+
+body.purple i.modal-icon {
+    color: rgba(0, 7, 54, 0.2);
+}
+
+body.blue i.modal-icon {
+    color: rgba(0, 7, 54, 0.2);
+}
+
+body.green i.modal-icon {
+    color: rgba(0, 7, 54, 0.2);
 }
 
 i.modal-icon.bigger {
@@ -272,7 +274,6 @@ h2 {
     position: relative;
     font-weight: 300;
     margin-bottom: 40px;
-    font-weight: 400;
 }
 
 img {
@@ -412,7 +413,6 @@ span.icon-arrow-right-big {
     padding: 0.4em;
     text-align: center;
     font-size: 2.4em;
-    font-weight: 400;
     opacity: 0.8;
     background: rgba(0,0,0,0.1);
     border-radius: 3px 3px 0 0;
@@ -430,7 +430,7 @@ span.icon-arrow-right-big {
     position: fixed;
     top: 0;
     left: 0;
-    font-weight: 700;
+    font-family: 'signika_negativebold';
 }
 
 body.purple .md-close {
@@ -442,7 +442,7 @@ body.green .md-close {
 }
 
 body.blue .md-close {
-    background: #74BBF4;
+    background: #4A96FF;
 }
 
 .md-close span {
@@ -504,12 +504,12 @@ body.green .md-show.md-effect-12 ~ .md-overlay {
 }
 
 body.blue .md-show.md-effect-12 ~ .md-overlay {
-    background-image: -webkit-gradient(radial, 100% 100%, 0, 100% 100%, 257, color-stop(0%, rgb(64, 172, 244)), color-stop(56.4356%, #0063c2), color-stop(100%, #1accff));
-    background-image: -webkit-radial-gradient(right bottom, farthest-corner circle, #4DBBFF -12%, #0063c2 57%, #1accff 101%);
-    background-image: -moz-radial-gradient(right bottom, farthest-corner circle, #4DBBFF -12%, #0063c2 57%, #1accff 101%);
-    background-image: -ms-radial-gradient(right bottom, farthest-corner circle, #4DBBFF -12%, #0063c2 57%, #1accff 101%);
-    background-image: -o-radial-gradient(right bottom, farthest-corner circle, #4DBBFF -12%, #0063c2 57%, #1accff 101%);
-    background-image: radial-gradient(farthest-corner circle at right bottom, #4DBBFF -12%, #0063c2 57%, #1accff 101%);
+background-image: -webkit-gradient(radial, 100% 0%, 0, 100% 0%, 227, color-stop(0%, #0055bd), color-stop(45%, #00398f), color-stop(100%, #002152));
+background-image: -webkit-radial-gradient(right top, farthest-side, #0055bd 0%, #00398f 45%, #002152 100%);
+background-image: -moz-radial-gradient(right top, farthest-side, #0055bd 0%, #00398f 45%, #002152 100%);
+background-image: -ms-radial-gradient(right top, farthest-side, #0055bd 0%, #00398f 45%, #002152 100%);
+background-image: -o-radial-gradient(right top, farthest-side, #0055bd 0%, #00398f 45%, #002152 100%);
+background-image: radial-gradient(farthest-side at right top, #0055bd 0%, #00398f 45%, #002152 100%);
 }
 
 .md-effect-12 .md-content h3,
@@ -532,11 +532,10 @@ ul.members-list, ul.members-time-list {
 }
 
 ul.members-list li, ul.members-time-list li {
-    font-size: .7em;
+    font-size: .8em;
     list-style: none;
-    padding: 10px 0;
+    padding: 5px 0;
     text-align: left;
-    font-weight: 700;
     width: 100%;
 }
 
@@ -546,23 +545,13 @@ ul.members-list li:nth-child(odd), ul.members-time-list li:nth-child(odd) {
 
 span.member-time {
     width: 70px;
+    font-family: 'signika_negativebold';
     display: inline-block;
-    font-size: 2em;
+    font-size: 1.4em;
 }
 
 ul.members-list span {
-    font-weight: 400;
     margin-right: 5px;
-}
-
-a.link-btn {
-    text-transform: none;
-    color: white;
-    font-size: .7em;
-    display: inline-block;
-    padding: 5px 10px;
-    border-radius: 2px;
-    font-weight: 700;
 }
 
 span.icon-arrow-right-small {
@@ -574,33 +563,23 @@ span.icon-arrow-right-small {
     height: 100%;
     position: relative;
     overflow: hidden;
-        -webkit-transition: all 2s;
+    -webkit-transition: all 2s;
     -moz-transition: all 2s;
     transition: all 2s;
 }
 
 body.purple .tile {
-    background: rgba(82, 0, 135,.6);
     background: rgba(57, 1, 105, 0.2);
-    box-shadow: inset 0 0 1px rgba(35, 0, 45,.9)
+    box-shadow: inset 0 0 1px rgba(35, 0, 45,.9);
 }
 
 body.blue .tile {
-    background-image: -webkit-gradient(radial, 100% 100%, 0, 100% 100%, 177, color-stop(0%, #0591FC), color-stop(100%, #29a2ff));
-    background-image: -webkit-radial-gradient(right bottom, farthest-side circle, #0591FC 0%, #29a2ff 100%);
-    background-image: -moz-radial-gradient(right bottom, farthest-side circle, #0591FC 0%, #29a2ff 100%);
-    background-image: -ms-radial-gradient(right bottom, farthest-side circle, #0591FC 0%, #29a2ff 100%);
-    background-image: -o-radial-gradient(right bottom, farthest-side circle, #0591FC 0%, #29a2ff 100%);
-    background-image: radial-gradient(farthest-side circle at right bottom, #0591FC 0%, #29a2ff 100%);
+    background: rgba(0, 50, 96, 0.3);
+    box-shadow: inset 0 0 1px rgba(0, 0, 0,.2);
 }
 
 body.green .tile {
-    background-image: -webkit-gradient(radial, 100% 100%, 0, 100% 100%, 177, color-stop(0%, #2DD3AA), color-stop(100%, #40DDB6));
-    background-image: -webkit-radial-gradient(right bottom, farthest-side circle, #2DD3AA 0%, #40DDB6 100%);
-    background-image: -moz-radial-gradient(right bottom, farthest-side circle, #2DD3AA 0%, #40DDB6 100%);
-    background-image: -ms-radial-gradient(right bottom, farthest-side circle, #2DD3AA 0%, #40DDB6 100%);
-    background-image: -o-radial-gradient(right bottom, farthest-side circle, #2DD3AA 0%, #40DDB6 100%);
-    background-image: radial-gradient(farthest-side circle at right bottom, #2DD3AA 0%, #40DDB6 100%);   
+ 
 }
 
 body.purple .tile:hover, body.purple .tile:focus {
@@ -667,56 +646,8 @@ body.purple #seventh {
     animation-delay: .7s;
 }
 
-body.green #first {
-    background-image: -webkit-gradient(radial, 0% 0%, 0, 0% 0%, 507, color-stop(0%, rgb(30, 236, 210)), color-stop(56.4356%, #00948a), color-stop(100%, #1affb1));
-    background-image: -webkit-radial-gradient(left top, farthest-corner circle, #24ffe1 -12%, #00948a 57%, #1affb1 101%);
-    background-image: -moz-radial-gradient(left top, farthest-corner circle, #24ffe1 -12%, #00948a 57%, #1affb1 101%);
-    background-image: -ms-radial-gradient(left top, farthest-corner circle, #24ffe1 -12%, #00948a 57%, #1affb1 101%);
-    background-image: -o-radial-gradient(left top, farthest-corner circle, #24ffe1 -12%, #00948a 57%, #1affb1 101%);
-    background-image: radial-gradient(farthest-corner circle at left top, #24ffe1 -12%, #00948a 57%, #1affb1 101%);
-
-    -webkit-animation-delay: .1s;
-    animation-delay: .1s;
-    overflow: hidden;
-}
-
-body.green #second {
-    -webkit-animation-delay: .2s;
-    animation-delay: .2s;
-}
-
-body.green #third {
-    -webkit-animation-delay: .3s;
-    animation-delay: .3s;
-}
-
-body.green #fourth {
-    -webkit-animation-delay: .4s;
-    animation-delay: .4s;
-}
-
-body.green #fifth {
-    -webkit-animation-delay: .5s;
-    animation-delay: .5s;
-}
-
-body.green #sixth {
-    -webkit-animation-delay: .6s;
-    animation-delay: .6s;
-}
-
-body.green #seventh {
-    -webkit-animation-delay: .7s;
-    animation-delay: .7s;
-}
-
 body.blue #first {
-    background-image: -webkit-gradient(radial, 100% 100%, 0, 100% 100%, 257, color-stop(0%, rgb(64, 172, 244)), color-stop(56.4356%, #0063c2), color-stop(100%, #1accff));
-    background-image: -webkit-radial-gradient(right bottom, farthest-corner circle, #4DBBFF -12%, #0063c2 57%, #1accff 101%);
-    background-image: -moz-radial-gradient(right bottom, farthest-corner circle, #4DBBFF -12%, #0063c2 57%, #1accff 101%);
-    background-image: -ms-radial-gradient(right bottom, farthest-corner circle, #4DBBFF -12%, #0063c2 57%, #1accff 101%);
-    background-image: -o-radial-gradient(right bottom, farthest-corner circle, #4DBBFF -12%, #0063c2 57%, #1accff 101%);
-    background-image: radial-gradient(farthest-corner circle at right bottom, #4DBBFF -12%, #0063c2 57%, #1accff 101%);
+    background: rgba(0, 50, 96, 0.5);
     -webkit-animation-delay: .1s;
     animation-delay: .1s;
     overflow: hidden;
@@ -752,6 +683,14 @@ body.blue #seventh {
     animation-delay: .7s;
 }
 
+
+
+
+
+
+
+
+
 .col12 {
     width: 100%;
 }
@@ -779,9 +718,7 @@ h4.description {
     text-align: center;
     position: relative;
     top: 50px;
-    font-weight: 700;
     margin-bottom: 40px;
-    font-weight: 400;
 }
 
 h4.description span {

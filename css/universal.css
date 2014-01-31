@@ -68,6 +68,30 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'new_rockerregular';
+    src: url('../font/newrocker/newrocker-regular-webfont.eot');
+    src: url('../font/newrocker/newrocker-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/newrocker/newrocker-regular-webfont.woff') format('woff'),
+         url('../font/newrocker/newrocker-regular-webfont.ttf') format('truetype'),
+         url('../font/newrocker/newrocker-regular-webfont.svg#new_rockerregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ceviche_oneregular';
+    src: url('../font/chevicheone/cevicheone-regular-webfont.eot');
+    src: url('../font/chevicheone/cevicheone-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/chevicheone/cevicheone-regular-webfont.woff') format('woff'),
+         url('../font/chevicheone/cevicheone-regular-webfont.ttf') format('truetype'),
+         url('../font/chevicheone/cevicheone-regular-webfont.svg#ceviche_oneregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 html {
     height: 100%;
 }
