@@ -79,8 +79,8 @@ var registerSpray = function() {
        
         var now = moment().format();
 		
-		var venue = localStorage.venueId; //venuen Id JATKA TÄSTÄ!!!
-        parseInt(venue); 
+		var venue = localStorage.venueId; parseInt(venue); //venuen Id JATKA TÄSTÄ!!!
+       
 		var endpoint = "http://vm0063.virtues.fi/venues/"+venue+"/";
         var data =  {
                 gangster: gangster,
@@ -119,7 +119,6 @@ var registerSpray = function() {
                 }
                }).done(function( data ) {
 
-			localStorage.removeItem('venueID');
             window.location.href = "index.html";
 
 

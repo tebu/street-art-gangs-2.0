@@ -41,8 +41,9 @@ jQuery(document).ready(function(){
             var owner = $("<p>").addClass("owner");
 			var venueLatitude = data[i].latitude; //venue location
 			var venueLongitude = data[i].longitude;
-			//var venueId = data[i].id;
+
 			var distance = locationCheck(locationLatitude,locationLongitude,venueLatitude,venueLongitude); 
+			
 			
             var gang = data[i].gang;
             if (gang != null) {
@@ -66,17 +67,23 @@ jQuery(document).ready(function(){
 			
 			if (distance <=0.500) {
 			$("<div>").attr('id','#start-to-spray').append("<a id='drop' class='spray icon-droplet' href='spraying.html'></a>").appendTo(venue);
-			$("#drop").click(function(){localStorage.setItem('venueId',venueId);}); //JATKA TÄSTÄ!!!			//active droplet, click sends counter for session storage to identify the venue on spraying page					  
+			
+				//Settin onclick id of event to local storage... see few lines below... CONTINUE FROM HERE					  
+			
 			}else if (distance >0.500&& distance<=1.000){
 			$("<div>").attr('id','#maybe-to-spray').append("<a class='maybespray icon-droplet'</a>").appendTo(venue); //blinking droplet
 			}else{ 
 			$("<div>").attr('id','#not-to-spray').append("<a class='notspray icon-droplet'></a>").appendTo(venue);//inactive droplet 
 			}
-			$("<br>").appendTo(venue);			
+			$("<br>").appendTo(venue);
+			
             $('#main-slider').append(venue);
-
+			
+			
+			$("body").on( "click","#drop", function() {alert( 'WORKS!' ); localStorage.setItem('venueId',data[i].id);});	//DOES NOT WORK YET!
+			
           };
-
+			
           // Venue slider
           $('#main-slider').liquidSlider({
               hashLinking:false,
@@ -97,11 +104,12 @@ jQuery(document).ready(function(){
             // animateOut:"slideOutLeft"
           });
 
-
+		
+			
           jQuery("h1.location").fitText(1.6);
           jQuery(".category").fitText(.6);
           jQuery("h3.title").fitText(1.5);
-		  
+		  			
 		
 
         }).fail(function( jqXHR, textStatus ) {
