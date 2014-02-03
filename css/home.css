@@ -135,11 +135,10 @@ a.spray {
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 5px rgba(0, 0, 0, 0.2);
 }
 
 a.spray:active {
-    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
+
 }
 
 /*droplet when inactive*/
@@ -158,7 +157,6 @@ a.notspray {
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 5px rgba(0, 0, 0, 0.2);
 	
 	filter:alpha(opacity=20);
 	-moz-opacity:0.2;
@@ -182,7 +180,6 @@ a.maybespray {
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 5px rgba(0, 0, 0, 0.2);
 	
 	animation: maybespray 2s;
 	-webkit-animation: maybespray 2s;

@@ -76,10 +76,12 @@ var registerSpray = function() {
         var authorization=localStorage.authorization;
         var gangster = localStorage.gangster;
 		var color = localStorage.color;
-        //var venue = localStorage.venue;
+       
         var now = moment().format();
-        var venue = 26; //TODO change with stored venue <---------------------------------!
-        var endpoint = "http://vm0063.virtues.fi/venues/"+venue+"/";
+		
+		var venue = localStorage.venueId; //venuen Id JATKA TÄSTÄ!!!
+        parseInt(venue); 
+		var endpoint = "http://vm0063.virtues.fi/venues/"+venue+"/";
         var data =  {
                 gangster: gangster,
                 latestEditTimestamp: now
@@ -89,6 +91,7 @@ var registerSpray = function() {
         $.ajax({
           type: "PATCH",
           url: endpoint,
+		  async: false, 
           dataType: 'json',
           data: data,
           beforeSend: function (xhr) {
@@ -109,26 +112,27 @@ var registerSpray = function() {
                 type: "PATCH",
                 url: endpoint,
                 dataType: 'json',
+				async: false, 
                 data: data,
                 beforeSend: function (xhr) {
                   xhr.setRequestHeader ("Authorization", authorization);
                 }
-              }).done(function( data ) {
+               }).done(function( data ) {
 
-          window.location.href = "index.html";
+			localStorage.removeItem('venueID');
+            window.location.href = "index.html";
 
 
               }).fail(function( jqXHR, textStatus ) {
               //TODO fix this
-                alert("Error: something went wrong while updating the location: "+ textStatus);
+                alert("First Error: something went wrong while updating the location: "+ textStatus);
               });
 
 
         }).fail(function( jqXHR, textStatus ) {
         //TODO fix this
-          alert("Error: something went wrong while updating the location: "+ textStatus);
+          alert("Second Error: something went wrong while updating the location: "+ textStatus);
         });
-
 
 
 }
