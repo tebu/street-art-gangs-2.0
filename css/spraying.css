@@ -12,15 +12,23 @@ body.purple {
 }
 
 body.blue {
-    background: url(../img/blur_blue.jpg) no-repeat left;
+    background: url(../img/blur_blue.jpg) no-repeat center;
     background-size: cover;
     background-attachment: fixed;
 }
 
 body.green {
-    background: url(../img/blur_green.jpg) no-repeat left;
+    background: url(../img/blur_green.jpg) no-repeat center;
     background-size: cover;
     background-attachment: fixed;
+}
+
+#loading {
+      font-size:2em;
+      font-family: 'signika_negativelight';
+      position: relative;
+      display: block;
+      bottom: -160px
 }
 
 .points-earned {
@@ -41,7 +49,6 @@ body.green {
     font-weight: 900;
     font-size: 3em;
 }
-
 
 #score {
     width: 200px;

@@ -19,7 +19,7 @@ body.blue {
 }
 
 body.green {
-    background: url(../img/blur_green.jpg) no-repeat left;
+    background: url(../img/blur_green.jpg) no-repeat top;
     background-size: cover;
     background-attachment: fixed;
 }
@@ -34,8 +34,20 @@ h1 {
     text-align: center;
 }
 
+.accordion:before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    right: 15px;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0 12px 12px 12px;
+    border-color: transparent transparent rgba(0,0,0,.25); 
+}
+
 .accordion {
-    margin: 100px auto;
+    margin: 60px auto;
     text-align: left;
 }
 
@@ -53,17 +65,12 @@ h1 {
 
 body.purple .faq-trigger {
     background: rgba(0,0,0,.25);
-    border-bottom: 1px solid rgba(0,0,0,.8);
+    border-bottom: 1px solid rgba(0,0,0,.2);
 }
 
 body.green .faq-trigger {
-    background-image: -webkit-gradient(linear, right bottom, left top, color-stop(0%, #35B882), color-stop(100%, #45C18D));
-    background-image: -webkit-linear-gradient(right bottom, #35B882 0%, #45C18D 100%);
-    background-image: -moz-linear-gradient(right bottom, #35B882 0%, #45C18D 100%);
-    background-image: -ms-linear-gradient(right bottom, #35B882 0%, #45C18D 100%);
-    background-image: -o-linear-gradient(right bottom, #35B882 0%, #45C18D 100%);
-    background-image: linear-gradient(to left top, #35B882 0%, #45C18D 100%);
-    border-bottom: 1px solid #1d9463;
+    background: rgba(0,0,0,.25);
+    border-bottom: 1px solid rgba(0,0,0,.2);
 }
 
 body.blue .faq-trigger {
@@ -115,7 +122,7 @@ body.purple .faq-content {
 }
 
 body.green .faq-content {
-    background-color: #23A771;
+    background-color: rgba(0,0,0,.7);
 }
 
 body.blue .faq-content {
@@ -123,15 +130,15 @@ body.blue .faq-content {
 }
 
 body.purple .highlight {
-    background: #57008A
-}
-
-body.green .highlight {
-    background: #23A771
+    background-color: rgba(0,0,0,.55);
 }
 
 body.blue .highlight {
-    background: #1c6adc
+    background-color: rgba(0,0,0,.55);
+}
+
+body.green .highlight {
+    background-color: rgba(0,0,0,.55);
 }
 
 .open {

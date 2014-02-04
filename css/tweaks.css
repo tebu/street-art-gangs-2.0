@@ -6,7 +6,7 @@ body {
 }
 
 body.purple {
-    background: url(../img/blur_purple.jpg) no-repeat;
+    background: url(../img/blur_purple.jpg) no-repeat top;
     background-size: cover;
     background-attachment: fixed;
 }
@@ -18,7 +18,7 @@ body.blue {
 }
 
 body.green {
-    background: url(../img/blur_green.jpg) no-repeat left;
+    background: url(../img/blur_green.jpg) no-repeat top;
     background-size: cover;
     background-attachment: fixed;
 }
@@ -60,7 +60,7 @@ body.blue div.option i {
 }
 
 body.green div.option i {
-    color: #9930FF;
+    color: #00c3a1;
 }
 
 input {
@@ -84,8 +84,8 @@ body.purple input {
 }
 
 body.green input {
-    background: rgba(0,0,0,.08);
-    border: 1px solid #3FB48F;
+    background: rgba(0,0,0,.1);
+    border: 1px solid rgba(0,0,0,.08);
 }
 
 input:focus {
@@ -158,8 +158,7 @@ body.blue .button {
 }
 
 body.green .button {
-    background: #40D5A6;
-    box-shadow: 0 2px 0 rgba(0,0,0,.3);
+    background: rgba(0,0,0,.3);
 }
 
 .button:active, .button:focus {

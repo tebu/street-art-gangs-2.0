@@ -2,8 +2,9 @@
 
 
 body.purple {
-    background: url(../img/map_purple.jpg) no-repeat left;
+    background: url(../img/map_purple.jpg) no-repeat;
     background-size: cover;
+
 }
 
 body.blue {
@@ -12,7 +13,7 @@ body.blue {
 }
 
 body.green {
-    background: #000 url(../img/main_bg_green.jpg) no-repeat;
+    background: #000 url(../img/map_green.jpg) no-repeat;
     background-size: cover;
 }
 
@@ -26,20 +27,20 @@ body.green {
 h1.location {
     line-height: 0;
     position: relative;
-    top: 10px;
+    top: -15px;
     font-weight: 400;
     letter-spacing: -.03em;
 }
 
 .category {
     position: relative;
-    top: 10px;
+    top: -10px;
 }
 
 h3.title {
     font-weight: 400;
     position: relative;
-    top: 5px;
+    top: -15px;
     text-transform: uppercase;
 }
 
@@ -104,6 +105,10 @@ body.blue a.spray {
     color: #1c6adc;
 }
 
+body.green a.spray {
+    color: #58FFB4;
+}
+
 a.spray:active, a.spray:hover {
     opacity: .8;
 }
@@ -122,8 +127,8 @@ p.owner span {
     text-transform: uppercase;
 /*    background: rgba(0,0,0,.2);*/
     padding: 2px 6px;
-    font-size: 1.3em;
-    letter-spacing: -.1em;
+    font-size: 1.1em;
+    letter-spacing: -.05em;
     font-family: 'signika_negativebold';
     text-shadow: 0 1px 2px rgba(0,0,0,.8);
 }
@@ -260,13 +265,12 @@ p.owner span {
 }
 
 .md-show.md-effect-12 ~ .md-overlay {
-/*    background-image: -webkit-gradient(linear, center bottom, center top, color-stop(0%, #FF502D), color-stop(25%, #EB5600), color-stop(83%, #D62B00));
+    background-image: -webkit-gradient(linear, center bottom, center top, color-stop(0%, #FF502D), color-stop(25%, #EB5600), color-stop(83%, #D62B00));
     background-image: -webkit-linear-gradient(bottom, #FF502D 0%, #EB5600 25%, #D62B00 83%);
     background-image: -moz-linear-gradient(bottom, #FF502D 0%, #EB5600 25%, #D62B00 83%);
     background-image: -ms-linear-gradient(bottom, #FF502D 0%, #EB5600 25%, #D62B00 83%);
     background-image: -o-linear-gradient(bottom, #FF502D 0%, #EB5600 25%, #D62B00 83%);
-    background-image: linear-gradient(to top, #FF502D 0%, #EB5600 25%, #D62B00 83%);*/
-    background: rgba(0, 0, 0,.1);
+    background-image: linear-gradient(to top, #FF502D 0%, #EB5600 25%, #D62B00 83%);
 }
 
 .md-effect-12 .md-content h3,

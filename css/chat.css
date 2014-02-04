@@ -17,7 +17,7 @@ body.blue {
 }
 
 body.green {
-    background: url(../img/blur_green.jpg) no-repeat top;
+    background: url(../img/map_green.jpg) no-repeat left;
     background-size: cover;
     background-attachment: fixed;
 }
@@ -27,7 +27,19 @@ body.green {
     width: 100%;
     margin: 0 auto;
     position: relative;
-    top: 60px;
+    top: 50px;
+}
+
+.chatter:before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    right: 15px;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0 12px 12px 12px;
+    border-color: transparent transparent rgba(0,0,0,.3); 
 }
 
 .chatter {
@@ -104,6 +116,23 @@ body.blue :-ms-input-placeholder {
     color: #4A96FF;
 }
 
+body.green ::-webkit-input-placeholder {
+    color: #00E3B9;
+}
+
+body.green :-moz-placeholder {
+    color: #00E3B9;
+}
+
+body.green ::-moz-placeholder {
+    color: #00E3B9;
+}
+
+body.green :-ms-input-placeholder {
+    color: #00E3B9;
+}
+
+
 .chatter .chatter_msg_item {
     position: relative;
     margin: 5px 0 8px 0;
@@ -131,7 +160,7 @@ body.blue .message-element {
 }
 
 body.green .message-element {
-    background: rgba(16, 0, 21, 0.5);
+    background: rgba(0, 30, 22, 0.5);
 }
 
 .bubble {
@@ -171,7 +200,7 @@ body.blue .myself, body.blue .myself .chatter_avatar {
 }
 
 body.green .myself, body.green .myself .chatter_avatar {
-    color: #A74DFF;
+    color: #00E3B9;
 }
 
 .timestamp {
@@ -203,7 +232,7 @@ body.blue button#send-msg {
 }
 
 body.green button#send-msg {
-    color: #A74DFF;
+    color: #00c3a1;
 }
 
 @media all and (min-width: 1024px) {

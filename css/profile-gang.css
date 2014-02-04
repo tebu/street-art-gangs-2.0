@@ -1,350 +1,216 @@
-/*Styles for Gang profile screen*/
+/*Styles for profile screen*/
 
-html,
+
 body {
     height: 100%;
 }
 
+.container {
+    height: 100%;
+    padding-top: 30px;
+}
+
 body.purple {
-    background: url(../img/blur_purple.jpg) no-repeat center;
+    background: url(../img/blur_purple.jpg) no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }
 
 body.blue {
-    background: url(../img/blur_blue.jpg) no-repeat center;
+    background: url(../img/blur_blue.jpg) no-repeat right;
     background-size: cover;
     background-attachment: fixed;
 }
 
 body.green {
-    background: url(../img/blur_green.jpg) no-repeat left;
+    background: url(../img/blur_green.jpg) no-repeat top;
     background-size: cover;
     background-attachment: fixed;
 }
 
-li {
-    list-style: none;
-}
-
-.onepcssgrid-1200 {
-    height: 100%;
-    max-width: 100%;
-    padding: 0;
-    overflow: scroll;
-}
-
-.onerow {
-    height: 20%;
-    padding: 0
-}
-
-.onerow.short {
-    height: 20%;
-}
-
-.onerow.event {
-    height: 15%;
-}
-
-.onerow.top {
-    margin-top: 60px;
-    height: 40%;
-}
-
-.onerow.last-row {
-    margin-bottom: 0 !important;
-}
-
-h2.description-title {
-    padding: 60px 0 0;
-    font-family: 'signika_negativelight';
-}
-
-p.description {
-    padding: 30px;
-}
-
 h2.gang-name {
-    font-size:1.4em;
-    padding: 10px 20px;
-    position: relative;
-    z-index: 100;
-}
-
-body.purple h2.gang-name {
-    font-family: 'phantombold', sans-serif;
-    color: #9930FF
-}
-
-body.blue h2.gang-name {
-    font-family: 'ceviche_oneregular';
-    color: #4A96FF;
-    text-transform: uppercase;
-}
-
-body.green h2.gang-name {
-    font-family: 'new_rockerregular';
-    text-transform: uppercase;
-}
-
-h3.slogan {
-    padding: 20px;
-    position: relative;
-    top: -170px;
-    z-index: 1000;
-    font-size: .6em;
-    text-transform: uppercase;
-    -webkit-animation-delay: 1s;
-    animation-delay: 1s;
-}
-
-h3.slogan {
+    font-size: 1.6em;
+    font-family: 'signika_negativelight';
+    line-height: 0;
     color: #fff;
+    margin-left: 10px;
+    position: relative;
+    top: 35px
 }
-
 
 h2.gang-info {
-    font-size: 1.1em;
-    line-height: 1em;
-    position: relative;
-    top: 0;
-}
-
-h2.gang-info.events{
-    font-size: .9em;
-    top: 10px;
-}
-
-h2.gang-info.tag {
-    font-size: 1.4em;
-}
-
-h2.gang-info.paint {
-    font-size: 1.4em;
-    top: 10px;
-    padding-right: 20px;
-    padding-left: 10px;
-}
-
-.tile i {
-    position: absolute;
-    font-size: 10em;
-    opacity: .3
-}
-
-.tile i.small {
-    position: relative;
-    font-size: 1.4em;
-    opacity: 1;
-    top: 10px;
-}
-
-body.purple i.small {
-    color: #C26FFF;
-    color: rgba(159, 51, 239, 0.7);
-}
-
-body.blue i.small {
-    color: #4A96FF;
-}
-
-body.green i.small {
-    color: #fff;
-}
-
-i.rotate {
-    -webkit-transform: rotate(55deg);
-    transform: rotate(55deg);
-}
-
-i.rotate2 {
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-}
-
-i.rotate.topright {
-    top: -30px;
-    right: -10px;
-    opacity: .1;
-    font-size: 11em;
-}
-i.rotate2.bottomleft {
-    font-size: 16em;
-    bottom: 0;
-    right: 10px;
-    opacity: .1;
-}
-
-i.icon-droplet {
-    position: relative;
-    top: -70px;
-    text-align: left;
-    font-size: 8em;
-    opacity: .4
-}
-
-body.purple i.icon-droplet {
-    color: #A207ED;
-}
-
-body.blue i.icon-droplet {
-    color: rgba(0,0,0,.3);
-}
-
-body.green i.icon-droplet {
-    color: #5CFFE1;
-}
-
-i.icon-spray, i.icon-tag {
-    font-size: 3em;
-}
-
-i.left {
-    float: left;
-    left: 10px;
-    top: 15px;
-}
-
-i.modal-icon {
-    position: absolute;
-    font-size: 23em;
-     -webkit-animation: scale 20s infinite linear;
-    animation: scale 20s infinite linear;
-}
-
-body.purple i.modal-icon {
-    color: rgba(0, 7, 54, 0.2);
-}
-
-body.blue i.modal-icon {
-    color: rgba(0, 7, 54, 0.2);
-}
-
-body.green i.modal-icon {
-    color: rgba(0, 7, 54, 0.2);
-}
-
-i.modal-icon.bigger {
-    font-size: 33em;
-    -webkit-animation: spin 8s infinite linear;
-    animation: spin 8s infinite linear;
-}
-
-i.modal-icon.smaller {
-    font-size: 13em;
-    -webkit-animation: spin 14s infinite linear;
-    animation: spin 14s infinite linear;
-    -webkit-filter: blur(8px);
-    filter: blur(8px);
-}
-
-@-webkit-keyframes spin {
-    from { -webkit-transform: rotate(0deg); }
-    to { -webkit-transform: rotate(360deg); }
-}
-
-@-webkit-keyframes scale {
-    from { -webkit-transform: scale(1); }
-    to { -webkit-transform: scale(2); }
-}
-
-@keyframes spin {
-    from {transform: rotate(0deg); }
-    to {transform: rotate(360deg); }
-}
-
-@keyframes scale {
-    from {transform: scale(1); }
-    to {transform: scale(2); }
-}
-
-
-i.modal-icon.tiny {
-    font-size: 6em;
-    -webkit-animation: spin 18s infinite linear;
-    animation: spin 18s infinite linear;
-    -webkit-filter: blur(4px)
-    filter: blur(4px)
-}
-
-h2 {
+    text-align: center;
     line-height: 0;
+    font-size: 1em
+}
+
+h2.description {
     text-align: center;
     position: relative;
-    font-weight: 300;
+    top: 50px;
     margin-bottom: 40px;
 }
 
-img {
-    width: 70%;
-    height: auto;
-    margin: 0 auto;
-}
-
-img.tag {
-    position: relative;
-    left: 50px;
-    top: 80px;
-    width: 100%;
-    -webkit-animation-delay: .3s;
-    animation-delay: .3s;
-}
-
-ul.gang-profile-list {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    text-align: center;
-}
-
-ul.gang-profile-list li {
-    list-style: none;
-    width: 45%;
-    background: #310842;
-    float: left;
-    padding: 10px;
-    margin: 2px 0;
-}
-
-ul.gang-profile-list li.first {
-    margin-right: 10%;
-}
-
-div.icon {
-    margin-top: 40px;
-    font-size: 20em;
-    position: absolute;
-    opacity: .1;
-    z-index: 0;
-    left: 0;
-}
-
-.btn {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: auto;
-    border-radius: none;
-    box-shadow: 0 -10px 0 rgba(0,0,0,.1), 0 -3px 0 rgba(0,0,0,.1), 0 -1px 0 rgba(0,0,0,.1);
-    cursor: pointer;
-    font-weight: bold;
+h2.description span {
+    display: block;
+    font-size: 1.2em;
+    font-family: 'signika_negativebold';
     text-transform: uppercase;
-    text-align: center;
-    background: rgba(0,0,0,.2);
-    padding: 20px 0;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-    -webkit-animation-duration: 1s;
-    -webkit-animation-delay: .5s;
-    -webkit-animation-iteration-count: 1;
-    animation-duration: 1s;
-    animation-delay: .5s;
-    animation-iteration-count: 1;
 }
 
-.btn:active {
+p.slogan {
+    padding-left: 120px;
+    position: relative;
+    top: -45px;
+    z-index: 1000;
+    text-align: left !important;
+    font-size: .7em !important;
+    text-transform: none;
+    line-height: 1em !important;
+}
+
+.gang-tiles h3 {
+    font-family: 'signika_negativeregular';
+    font-size: .8em;
+    line-height: 0;
+    color: #fff;
+}
+
+body.purple .gang-tiles h3 {
+    color: #A64AFF;
+}
+
+body.blue .gang-tiles h3 {
+    color: #4A96FF;
+}
+
+body.green .gang-tiles h3 {
+    color: #00c3a1;
+}
+
+.row-two, .row-three, .row-four {
+    display:-moz-box; /* Firefox */
+    display:-webkit-box; /* Safari and Chrome */
+    display:-ms-flexbox; /* Internet Explorer 10 */
+    display:box;
+    display: flex;
+}
+
+.gang-tiles p {
+    font-size: 1.1em;
+    line-height: .4em;
+    text-align: center;
+    font-family: 'signika_negativebold';
+}
+
+.row-one div:before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    right: 25px;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0 12px 12px 12px;
+    border-color: transparent transparent rgba(0,0,0,.5); 
+}
+
+.row-one div{
+    width: 100%;
+    position: relative;
+    padding: 0 20px 0 10px;
     background: rgba(0,0,0,.5);
+    height: 150px;
+    top: 10px;
+}
+
+.row-two div {
+    width: 100%;
+    position: relative;
+    padding: 10px 20px 10px 10px;
+    background: rgba(0,0,0,.7);
+    top: 10px
+}
+
+.row-three div, .row-four div{
+    -moz-box-flex:1.0; /* Firefox */
+    -webkit-box-flex:1.0; /* Safari and Chrome */
+    -ms-flex:1.0; /* Internet Explorer 10 */
+    box-flex:1.0;
+    flex: 1;
+    background: rgba(0,0,0,.4);
+    border-top: 1px solid rgba(0,0,0,.3);
+    padding: 5px 5px 1px;
+    text-align: center;
+}
+
+.row-three div {
+    padding: 5px 5px 10px;
+    position: relative;
+        top: 10px
+
+}
+
+.row-four div {
+    padding: 5px 5px 10px;
+    position: relative;
+        top: 10px
+
+}
+
+.gang-tiles i.info-icon {
+    color: #fff;
+    left: 0;
+    top: 0;
+    font-size: 1em;
+    opacity: .8;
+    padding-right: 5px;
+    position: relative;
+}
+
+body.purple .gang-tiles i.info-icon {
+    color: #9930FF;
+}
+
+body.blue .gang-tiles i.info-icon {
+    color: #4A96FF;
+}
+
+body.green .gang-tiles i.info-icon {
+    color: #00c3a1;
+}
+
+.icon-history {
+    margin-right: 5px
+}
+
+.row-one .icon-dudes {
+    font-size: 5em !important;
+    top: 30px !important;
+    display: inline-block;
+}
+
+.gang-tiles i.icon-speaker {
+    position: relative;
+    display: inline-block;
+    top: -30px;
+    left: -30px;
+    font-size: 2em;
+    color: #fff;
+    -webkit-animation-delay: .5s;
+    animation-delay: .5s;
+}
+
+body.purple .gang-tiles i.icon-speaker {
+    color: #9930FF;
+}
+
+body.blue .gang-tiles i.icon-speaker {
+    color: #4A96FF;
+}
+
+body.green .gang-tiles i.icon-speaker {
+    color: #00c3a1;
 }
 
 span.icon-arrow-right-big {
@@ -408,14 +274,15 @@ span.icon-arrow-right-big {
     text-align: center;
 }
 
-.md-content h3 {
+.md-content h2 {
     margin: 0;
-    padding: 0.4em;
+    position: relative;
+    top: 70px;
     text-align: center;
-    font-size: 2.4em;
+    font-family: 'signika_negativelight';
+    font-size: 1.4em;
     opacity: 0.8;
-    background: rgba(0,0,0,0.1);
-    border-radius: 3px 3px 0 0;
+    z-index: 1000
 }
 
 .md-close {
@@ -451,7 +318,6 @@ body.blue .md-close {
     left: 0;
 }
 
-
 /* Effect 12:  Just me */
 .md-effect-12 .md-content {
     -webkit-transform: scale(0.8);
@@ -473,43 +339,58 @@ body.purple .md-show.md-effect-12 ~ .md-overlay {
     background-image: radial-gradient(farthest-side at right top, #570085 0%, #450070 45%, #320052 100%);
 }
 
-body.purple .md-show.modal-cans.md-effect-12 ~ .md-overlay {
-    background: url(../img/purple-gang.png) no-repeat, #111;
-    background-size: 80%;
-    background-position: 50% 90%;
-}
-
-body.green .md-show.modal-cans.md-effect-12 ~ .md-overlay {
-    background: url(../img/green-gang.png) no-repeat, #111;
-    background-size: 80%;
-    background-position: 50% 90%;
-}
-
-body.purple .md-show.modal-tag.md-effect-12 ~ .md-overlay {
-    background: url(../img/purplespray.png) no-repeat center, #111;
-}
-
-body.green .md-show.modal-tag.md-effect-12 ~ .md-overlay {
-    background: url(../img/greenspray.png) no-repeat center, #111;
-}
-
-
 body.green .md-show.md-effect-12 ~ .md-overlay {
-    background-image: -webkit-gradient(radial, 0% 0%, 0, 0% 0%, 507, color-stop(0%, rgb(30, 236, 210)), color-stop(56.4356%, #00948a), color-stop(100%, #1affb1));
-    background-image: -webkit-radial-gradient(left top, farthest-corner circle, #24ffe1 -12%, #00948a 57%, #1affb1 101%);
-    background-image: -moz-radial-gradient(left top, farthest-corner circle, #24ffe1 -12%, #00948a 57%, #1affb1 101%);
-    background-image: -ms-radial-gradient(left top, farthest-corner circle, #24ffe1 -12%, #00948a 57%, #1affb1 101%);
-    background-image: -o-radial-gradient(left top, farthest-corner circle, #24ffe1 -12%, #00948a 57%, #1affb1 101%);
-    background-image: radial-gradient(farthest-corner circle at left top, #24ffe1 -12%, #00948a 57%, #1affb1 101%);
+    background-image: -webkit-gradient(radial, 100% 0%, 0, 100% 0%, 227, color-stop(0%, #32f5c9), color-stop(45%, #009981), color-stop(100%, #007055));
+    background-image: -webkit-radial-gradient(right top, farthest-side, #32f5c9 0%, #009981 45%, #007055 100%);
+    background-image: -moz-radial-gradient(right top, farthest-side, #32f5c9 0%, #009981 45%, #007055 100%);
+    background-image: -ms-radial-gradient(right top, farthest-side, #32f5c9 0%, #009981 45%, #007055 100%);
+    background-image: -o-radial-gradient(right top, farthest-side, #32f5c9 0%, #009981 45%, #007055 100%);
+    background-image: radial-gradient(farthest-side at right top, #32f5c9 0%, #009981 45%, #007055 100%);
 }
 
 body.blue .md-show.md-effect-12 ~ .md-overlay {
-background-image: -webkit-gradient(radial, 100% 0%, 0, 100% 0%, 227, color-stop(0%, #0055bd), color-stop(45%, #00398f), color-stop(100%, #002152));
-background-image: -webkit-radial-gradient(right top, farthest-side, #0055bd 0%, #00398f 45%, #002152 100%);
-background-image: -moz-radial-gradient(right top, farthest-side, #0055bd 0%, #00398f 45%, #002152 100%);
-background-image: -ms-radial-gradient(right top, farthest-side, #0055bd 0%, #00398f 45%, #002152 100%);
-background-image: -o-radial-gradient(right top, farthest-side, #0055bd 0%, #00398f 45%, #002152 100%);
-background-image: radial-gradient(farthest-side at right top, #0055bd 0%, #00398f 45%, #002152 100%);
+    background-image: -webkit-gradient(radial, 100% 0%, 0, 100% 0%, 227, color-stop(0%, #0055bd), color-stop(45%, #00398f), color-stop(100%, #002152));
+    background-image: -webkit-radial-gradient(right top, farthest-side, #0055bd 0%, #00398f 45%, #002152 100%);
+    background-image: -moz-radial-gradient(right top, farthest-side, #0055bd 0%, #00398f 45%, #002152 100%);
+    background-image: -ms-radial-gradient(right top, farthest-side, #0055bd 0%, #00398f 45%, #002152 100%);
+    background-image: -o-radial-gradient(right top, farthest-side, #0055bd 0%, #00398f 45%, #002152 100%);
+    background-image: radial-gradient(farthest-side at right top, #0055bd 0%, #00398f 45%, #002152 100%);
+}
+
+body.purple .md-show.modal-cans.md-effect-12 ~ .md-overlay {
+    background: url(../img/purple-gang.png) no-repeat, #000;
+    background-size: 40%;
+    background-position: 50% 70%;
+}
+
+body.green .md-show.modal-cans.md-effect-12 ~ .md-overlay {
+    background: url(../img/green-gang.png) no-repeat, #000;
+    background-size: 40%;
+    background-position: 50% 70%;
+}
+
+body.blue .md-show.modal-cans.md-effect-12 ~ .md-overlay {
+    background: url(../img/blue-gang.png) no-repeat, #000;
+    background-size: 40%;
+    background-position: 50% 70%;
+}
+
+body.purple .md-show.modal-tag.md-effect-12 ~ .md-overlay {
+    background: url(../img/purplespray.png) no-repeat center, #000;
+    background-size: 40%;
+    background-position: 50% 70%;
+}
+
+body.green .md-show.modal-tag.md-effect-12 ~ .md-overlay {
+    background: url(../img/greenspray.png) no-repeat center, #000;
+    background-size: 40%;
+    background-position: 50% 70%;
+}
+
+body.blue .md-show.modal-tag.md-effect-12 ~ .md-overlay {
+    background: url(../img/bluespray.png) no-repeat center, #000;
+    background-size: 40%;
+    background-position: 50% 70%;
 }
 
 .md-effect-12 .md-content h3,
@@ -526,7 +407,7 @@ background-image: radial-gradient(farthest-side at right top, #0055bd 0%, #00398
 }
 
 ul.members-list, ul.members-time-list {
-    margin-top: 40px;
+    margin-top: 110px;
     position: relative;
     left: -20px
 }
@@ -559,173 +440,89 @@ span.icon-arrow-right-small {
     top: 2px;
 }
 
-.tile {
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-    -webkit-transition: all 2s;
-    -moz-transition: all 2s;
-    transition: all 2s;
+i.modal-icon {
+    position: absolute;
+    font-size: 23em;
+     -webkit-animation: scale 20s infinite linear;
+    animation: scale 20s infinite linear;
 }
 
-body.purple .tile {
-    background: rgba(57, 1, 105, 0.2);
-    box-shadow: inset 0 0 1px rgba(35, 0, 45,.9);
+body.purple i.modal-icon {
+    color: rgba(139, 0, 197, 0.2);
 }
 
-body.blue .tile {
-    background: rgba(0, 50, 96, 0.3);
-    box-shadow: inset 0 0 1px rgba(0, 0, 0,.2);
+body.blue i.modal-icon {
+    color: rgba(0, 7, 54, 0.2);
 }
 
-body.green .tile {
- 
+body.green i.modal-icon {
+    color: rgba(0, 0, 0, 0.1);
 }
 
-body.purple .tile:hover, body.purple .tile:focus {
-    background: rgba(0, 0, 0,.4);
-     -webkit-transition: all .1s;
-    -moz-transition: all .1s;
-    transition: all .1s;
+i.modal-icon.bigger {
+    font-size: 33em;
+    -webkit-animation: spin 8s infinite linear;
+    animation: spin 8s infinite linear;
 }
 
-.tile span {
-    margin: 0 2px;
+i.modal-icon.smaller {
+    font-size: 13em;
+    -webkit-animation: spin 14s infinite linear;
+    animation: spin 14s infinite linear;
+    -webkit-filter: blur(8px);
+    filter: blur(8px);
 }
 
-.col1, .col2, .col3, .col4, .col5, .col6, .col7, .col8, .col9, .col10, .col11, .col12 {
-    color: #FFFFFF;
-    margin-bottom: 0;
-    padding: 0;
-    text-align: center;
-    height: 100%
+i.rotate {
+    -webkit-transform: rotate(55deg);
+    transform: rotate(55deg);
 }
 
-.modal-btn {
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    z-index: 20;
+i.rotate2 {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
 }
 
-body.purple #first {
-    background: rgba(57, 1, 105, 0.4);
-    -webkit-animation-delay: .1s;
-    animation-delay: .1s;
-    overflow: hidden;
+i.rotate.topright {
+    top: -30px;
+    right: -10px;
+    opacity: .1;
+    font-size: 11em;
+}
+i.rotate2.bottomleft {
+    font-size: 16em;
+    bottom: 0;
+    right: 10px;
+    opacity: .1;
 }
 
-body.purple #second {
-    -webkit-animation-delay: .2s;
-    animation-delay: .2s;
-}
-
-body.purple #third {
-    -webkit-animation-delay: .3s;
-    animation-delay: .3s;
-}
-
-body.purple #fourth {
-    -webkit-animation-delay: .4s;
-    animation-delay: .4s;
-}
-
-body.purple #fifth {
-    -webkit-animation-delay: .5s;
-    animation-delay: .5s;
-}
-
-body.purple #sixth {
-    -webkit-animation-delay: .6s;
-    animation-delay: .6s;
-}
-
-body.purple #seventh {
-    -webkit-animation-delay: .7s;
-    animation-delay: .7s;
-}
-
-body.blue #first {
-    background: rgba(0, 50, 96, 0.5);
-    -webkit-animation-delay: .1s;
-    animation-delay: .1s;
-    overflow: hidden;
-}
-
-body.blue #second {
-    -webkit-animation-delay: .2s;
-    animation-delay: .2s;
-}
-
-body.blue #third {
-    -webkit-animation-delay: .3s;
-    animation-delay: .3s;
-}
-
-body.blue #fourth {
-    -webkit-animation-delay: .4s;
-    animation-delay: .4s;
-}
-
-body.blue #fifth {
-    -webkit-animation-delay: .5s;
-    animation-delay: .5s;
-}
-
-body.blue #sixth {
-    -webkit-animation-delay: .6s;
-    animation-delay: .6s;
-}
-
-body.blue #seventh {
-    -webkit-animation-delay: .7s;
-    animation-delay: .7s;
+i.modal-icon.tiny {
+    font-size: 6em;
+    -webkit-animation: spin 18s infinite linear;
+    animation: spin 18s infinite linear;
+    -webkit-filter: blur(4px)
+    filter: blur(4px)
 }
 
 
-
-
-
-
-
-
-
-.col12 {
-    width: 100%;
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
 }
 
-.col4 {
-    width: 33.33%;
-    margin: 0
+@-webkit-keyframes scale {
+    from { -webkit-transform: scale(1); }
+    to { -webkit-transform: scale(2); }
 }
 
-.col6 {
-    width: 50%
+@keyframes spin {
+    from {transform: rotate(0deg); }
+    to {transform: rotate(360deg); }
 }
 
-.col1, .col2, .col3, .col4, .col5, .col6, .col7, .col8, .col9, .col10, .col11, .col12 {
-    margin: 0 !important
-}
-
-.col1.last, .col2.last, .col3.last, .col4.last, .col5.last, .col6.last, .col7.last, .col8.last, .col9.last, .col10.last, .col11.last, .col12 {
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-
-h4.description {
-    text-align: center;
-    position: relative;
-    top: 50px;
-    margin-bottom: 40px;
-}
-
-h4.description span {
-    display: block;
-    font-size: 1.6em;
-    font-weight: 900;
-    text-transform: uppercase;
+@keyframes scale {
+    from {transform: scale(1); }
+    to {transform: scale(2); }
 }
 
 
@@ -739,30 +536,19 @@ h4.description span {
         font-size: 4em;
     }
 
-    h3.slogan {
+    h3.mood {
         font-size: 2em;
-        width: 60%;
-        margin: 0 auto;
-        top: -300px
     }
 
-    h2.gang-info {
-        font-size: 3em !important;
+    span.info {
+        font-size: 6em;
     }
 
-
-    h2.gang-info.events{
-        font-size: 3em !important;
+    span.profile-icon {
+        font-size: 3em;
     }
 
-    i.icon-droplet {
-        position: relative;
-        top: -80px;
-        text-align: left;
-        font-size: 20em;
-        opacity: .2
-    }
+    i.icon-bullhorn {
+        font-size: 3em;
+    };
 }
-
-
-

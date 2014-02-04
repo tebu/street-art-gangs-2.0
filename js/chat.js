@@ -1,5 +1,9 @@
 jQuery(document).ready(function(){
 
+ 
+
+
+
       if (!localStorage.authorization||!localStorage.color||!localStorage.gangster||!localStorage.gang) {
         window.location.replace("splash.html");
       } else {
@@ -88,9 +92,25 @@ var retrieveMSG = function() {
         $(".chatter").append(messageDiv);
     };
 
+     // Hide navigation/top bar when scrolling down starts
+     $(window).scroll(
+        {
+            previousTop: 0
+        }, 
+        function () {
+        var currentTop = $(window).scrollTop();
+        if (currentTop < this.previousTop) {
 
-    jQuery('.chatter_msg_item').addClass('animated pulse');
-    jQuery('.new').addClass('animated flash');
+            $("#gn-menu").show();
+        } else {
+            $("#gn-menu").hide();
+        }
+        this.previousTop = currentTop;
+    }); // Hide navigation/top bar ends
+
+    // Hide navigation/top bar ends
+    $('.message-element').addClass('animated rollIn');
+   
 
   }).fail(function( jqXHR, textStatus ) {
   //TODO fix this

@@ -51,8 +51,7 @@
 
 
             // Fittext.js
-             $("p.player-name").fitText(.5);
-             $(".profile-tiles div:nth-child(1) h3").fitText(.9);
+             $("h3.player-name").fitText(.9);
 
 
         }).fail(function( jqXHR, textStatus ) {

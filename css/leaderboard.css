@@ -17,20 +17,40 @@ body.blue {
 }
 
 body.green {
-    background: url(../img/blur_green.jpg) no-repeat top;
+    background: url(../img/map_green.jpg) no-repeat left;
     background-size: cover;
     background-attachment: fixed;
 }
 
+table#gang-board:before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    right: 30px;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0 12px 12px 12px;
+    border-color: transparent transparent rgba(0,0,0,.25); 
+}
+
 table {
+    position: relative;
     margin: 10 0 60px; 
     height: 100%;
     width: 100%;
     font-size: 12px;
 }
 
+table#gang-board {
+    top: 20px;
+    margin-bottom: 40px
+}
+
+
+
 table th {
-    padding: 30px 25px 20px 10px;
+    padding: 20px 25px 20px 10px;
     text-align: left;
     font-size: 1em;
     text-transform: uppercase;
@@ -48,12 +68,8 @@ body.blue table th {
 }
 
 body.green table th {
-background-image: -webkit-gradient(linear, center bottom, center top, color-stop(0%, #00BB8D), color-stop(100%, #48D69B));
-background-image: -webkit-linear-gradient(bottom, #00BB8D 0%, #48D69B 100%);
-background-image: -moz-linear-gradient(bottom, #00BB8D 0%, #48D69B 100%);
-background-image: -ms-linear-gradient(bottom, #00BB8D 0%, #48D69B 100%);
-background-image: -o-linear-gradient(bottom, #00BB8D 0%, #48D69B 100%);
-background-image: linear-gradient(to top, #00BB8D 0%, #48D69B 100%);
+   background: rgba(0,0,0,.2);
+    color: #00c3a1
 }
 
 table th span{
@@ -84,7 +100,6 @@ body.purple table tr td {
 }
 
 body.purple table tr:nth-child(odd) td{
-    background: #5e0b8d;
     background: rgba(80, 0, 125, .6);
 }
 
@@ -93,9 +108,17 @@ body.blue table tr td {
 }
 
 body.blue table tr:nth-child(odd) td{
-    background: #5e0b8d;
     background: rgba(0, 10, 31, 0.6);
 }
+
+body.green table tr td {
+    background: rgba(0, 26, 19, 0.5);
+}
+
+body.green table tr:nth-child(odd) td{
+    background: rgba(0, 65, 51, 0.6);
+}
+
 
 
 table tr td:first-child {

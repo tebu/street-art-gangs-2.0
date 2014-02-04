@@ -7,23 +7,25 @@ body {
 
 .container {
     height: 100%;
-    padding-top: 60px;
+    padding-top: 30px;
 }
 
 body.purple {
-    background: url(../img/blur_purple.jpg) no-repeat left;
+    background: url(../img/blur_purple.jpg) no-repeat top;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 body.blue {
     background: url(../img/blur_blue.jpg) no-repeat right;
     background-size: cover;
-
+    background-attachment: fixed;
 }
 
 body.green {
-    background: url(../img/blur_green.jpg) no-repeat left;
+    background: url(../img/blur_green.jpg) no-repeat top;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 h1 {
@@ -45,7 +47,6 @@ h3.mood-title {
     font-size: .8em;
     line-height: 0;
     color: #fff;
-    margin-left: 10px;
 }
 
 body.purple .profile-tiles h3 {
@@ -56,14 +57,22 @@ body.blue .profile-tiles h3 {
     color: #4A96FF;
 }
 
-body.purple .profile-tiles h3 {
-    color: #9930FF;
+body.green .profile-tiles h3 {
+    color: #00c3a1;
+}
+
+.row-two, .row-three {
+    display:-moz-box; /* Firefox */
+    display:-webkit-box; /* Safari and Chrome */
+    display:-ms-flexbox; /* Internet Explorer 10 */
+    display:box;
+    display: flex;
 }
 
 .profile-tiles p {
     font-size: 1.1em;
-    line-height: 1em;
-    text-align: right;
+    line-height: .4em;
+    text-align: center;
     font-family: 'signika_negativebold';
 }
 
@@ -73,58 +82,92 @@ body.purple .profile-tiles h3 {
     line-height: 0;
     color: #9930FF;
     margin-left: 10px;
+    position: relative;
+    top: 20px
 }
 
 .profile-tiles div {
-    width: 33.33%;
+/*  width: 33.33%;
     float: left;
     padding: 5px 20px 0;
     background: rgba(0,0,0,.3);
-    box-shadow: 0 0 1px rgba(255,255,255,.1) inset;
-    position: relative;
+    border-right: 1px solid rgba(0,0,0,.1);
+    border-top: 1px solid rgba(0,0,0,.3);
+    position: relative;*/
 }
 
-.profile-tiles div:nth-child(1) {
+.row-one div:before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    right: 15px;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0 12px 12px 12px;
+    border-color: transparent transparent rgba(0,0,0,.5); 
+}
+
+.row-one div{
     width: 100%;
-    padding-bottom: 20px
+    position: relative;
+    padding: 0 20px 0 10px;
+    background: rgba(0,0,0,.5);
+    height: 150px;
 }
 
-.profile-tiles div:nth-child(2) {
+.row-two div, .row-three div{
+    -moz-box-flex:1.0; /* Firefox */
+    -webkit-box-flex:1.0; /* Safari and Chrome */
+    -ms-flex:1.0; /* Internet Explorer 10 */
+    box-flex:1.0;
+    flex: 1;
+    background: rgba(0,0,0,.4);
+    border-top: 1px solid rgba(0,0,0,.3);
+    padding: 5px 5px 1px;
+}
+
+.row-two div:nth-child(1) {
     -webkit-animation-delay: .1s;
     animation-delay: .1s;
 }
 
-.profile-tiles div:nth-child(3) {
+.row-two div:nth-child(2) {
     -webkit-animation-delay: .15s;
     animation-delay: .15s;
 }
 
-.profile-tiles div:nth-child(4) {
+.row-two div:nth-child(3) {
     -webkit-animation-delay: .2s;
     animation-delay: .2s;
 }
 
-.profile-tiles div:nth-child(5) {
+.row-three div:nth-child(1) {
     -webkit-animation-delay: .25s;
     animation-delay: .25s;
 }
 
-.profile-tiles div:nth-child(6) {
+.row-three div:nth-child(2) {
     -webkit-animation-delay: .3s;
     animation-delay: .3s;
 }
 
-.profile-tiles div:nth-child(7) {
+.row-three div:nth-child(3) {
     -webkit-animation-delay: .35s;
     animation-delay: .35s;
 }
 
-.profile-tiles div:nth-child(1) p {
-    padding-left: 110px;
+p.mood {
+    padding-left: 130px;
     position: relative;
-    top: -30px;
+    line-height: 1.1em;
+    top: -110px;
     text-align: left;
+    font-family: 'signika_negativeregular';
     font-size: .8em;
+     display: block;
+    -webkit-animation-delay: .6s;
+    animation-delay: .6s;
 }
 
 .profile-tiles i.info-icon {
@@ -134,7 +177,7 @@ body.purple .profile-tiles h3 {
     font-size: 1em;
     opacity: .8;
     padding: 10px;
-    position: absolute;
+    position: relative;
 }
 
 body.purple .profile-tiles i.info-icon {
@@ -145,22 +188,21 @@ body.blue .profile-tiles i.info-icon {
     color: #4A96FF;
 }
 
-.profile-tiles div:nth-child(1) i.info-icon {
+body.green .profile-tiles i.info-icon {
+    color: #00c3a1;
+}
+
+i.info-icon.icon-dude {
     font-size: 6em;
-    top: 40px;
-}
-
-.profile-tiles i.icon-mood2 {
-    font-size: 2em;
-    color: #9930FF;
-    position: relative;
-    top: 5px;
-    left: 70px;
+    top: 0;
+    display: inline-block;
 }
 
 .profile-tiles i.icon-mood2 {
     position: relative;
-    display: block;
+    display: inline-block;
+    top: -60px;
+    left: -30px;
     font-size: 2em;
     color: #fff;
     -webkit-animation-delay: .5s;
@@ -176,15 +218,8 @@ body.blue .profile-tiles i.icon-mood2 {
 }
 
 body.green .profile-tiles i.icon-mood2 {
-    color: #9930FF;
+    color: #00c3a1;
 }
-
-p.mood {
-    display: block;
-    -webkit-animation-delay: .6s;
-    animation-delay: .6s;
-}
-
 
 @media all and (min-width: 1024px) {
 

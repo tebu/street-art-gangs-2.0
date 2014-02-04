@@ -149,7 +149,7 @@ li.messages {
 span.count {
     border-radius: 50%;
     font-size: 1em;
-    font-weight: 400;
+    font-family: 'signika_negativesemibold';
     line-height: 30px;
     padding: 1px 7px;
     position: relative;
@@ -160,7 +160,7 @@ span.count {
 span.count-notification {
     border-radius: 50%;
     font-size: .3em;
-    font-weight: 600;
+    font-family: 'signika_negativesemibold';
     line-height: 24px;
     padding: 0 8px 1px;
     position: absolute;
@@ -178,6 +178,7 @@ body.blue span.count, body.blue span.count-notification {
 
 body.green span.count, body.green span.count-notification {
     background: #00c3a1;
+    color: #005233
 }
 
 li.tm {
@@ -219,7 +220,6 @@ li.site-name {
     color: #5f6f81;
     list-style: none;
     text-transform: none;
-    font-weight: 400;
     line-height: 40px;
 }
 

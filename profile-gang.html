@@ -82,9 +82,9 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
   <div class="md-modal modal-cans md-effect-12" id="modal-cans">
     <div class="md-content">
       <div>
-       <h4 class="description">
+       <h2 class="description">
                   Purple Knight <span>Spray cans</span>
-        </h4>
+        </h2>
       </div>
     </div>
     <button class="md-close"><span class="icon-arrow-left-small"></span></button>
@@ -93,9 +93,9 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
     <div class="md-modal modal-tag md-effect-12" id="modal-tag">
     <div class="md-content">
       <div>
-             <h4 class="description">
+             <h2 class="description">
                   Tagged by <span>Purple Knights</span>
-                </h4>
+                </h2>
       </div>
     </div>
     <button class="md-close"><span class="icon-arrow-left-small"></span></button>
@@ -205,7 +205,6 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
   </div>
 
 
-
      <ul id="gn-menu" class="gn-menu-main">
         <li class="gn-trigger">
           <a class="gn-icon gn-icon-menu icon-list2"><span class="count-notification">4</span></a>
@@ -228,78 +227,66 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
       </ul><!-- /gn-menu -->
 
 
-    <div class="onepcssgrid-1200">
+  <div class="container">
 
-      <div class="onerow top">
-        <div class="col12">
-                <div class="tile gang" id="first">
-                  <h2 class="gang-name" id="name">Blue Angels</h2>
-                   <i class="icon-droplet rotate"></i>
-                  <h3 class="slogan" id="slogan">Chivalry is not dead it just has a new definition at the other end of the spectrum... of visible light. Instead of brute force these knights apply paint.</h3>
+     <div class="gang-tiles">
+
+            <div class="row-one">
+                <div>
+                  <h2 class="gang-name" id="name">Blue Angels</h2><i class="info-icon icon-dudes"></i>
+               <!--    <i class="icon-speaker"></i> -->
+                  <p class="slogan" id="slogan">Chivalry is not dead it just has a new definition at the other end of the spectrum... of visible light. Instead of brute force these knights apply paint.</p>
                 </div>
-        </div>
+            </div><!-- /row-one -->
 
-      </div>
-
-      <div class="onerow event">
-        <div class="col12">
-                <div class="tile" id="fifth">
-                  <i class="icon-history small left"></i>
-                  <h2 class="gang-info events">If possible some latest event here</h2>
+             <div class="row-two">
+                <div>
+                  <h3><i class="info-icon icon-history"></i><span class="latest-event">If possible some latest event here</span></h3>
                 </div>
-        </div>
-      </div>
+             </div><!-- /row-two -->
 
-      <div class="onerow short">
-        <div class="col4">
-            <a href="#" class="modal-btn md-trigger" data-modal="modal-members">
-                <div class="tile" id="second">
-                  <i class="icon-dudes small"></i>
-                  <h2 class="gang-info members">104</h2>
+            <div class="row-three">
+                <div>
+                  <a href="#" class="modal-btn md-trigger" data-modal="modal-members">
+                    <h3><i class="info-icon icon-dudes"></i>Members</h3>
+                    <h2 class="gang-info members">100</h2>
+                  </a>
                 </div>
-            </a>
-        </div>
 
-        <div class="col4">
-            <a href="#" class="modal-btn md-trigger" data-modal="modal-points">
-                <div class="tile" id="third">
-                  <i class="icon-star small"></i>
-                  <h2 class="gang-info points">11204</h2>
+                <div>
+                  <a href="#" class="modal-btn md-trigger" data-modal="modal-points">
+                    <h3><i class="info-icon icon-star"></i>Points</h3>
+                    <h2 class="gang-info points">11204</h2>
+                  </a>
                 </div>
-            </a>
-        </div>
-
-         <div class="col4 last">
-            <a href="#" class="modal-btn md-trigger" data-modal="modal-walked">
-                <div class="tile" id="fourth">
-                  <i class="icon-paperplane small"></i>
-                  <h2 class="gang-info walked">42115</h2>
+              
+                <div>
+                  <a href="#" class="modal-btn md-trigger" data-modal="modal-walked">
+                    <h3><i class="info-icon icon-paperplane"></i>Walked</h3>
+                    <h2 class="gang-info walked">42115</h2>
+                  </a>
                 </div>
-            </a>
-        </div>
-      </div>
+            </div><!-- /row-three -->
 
-       <div class="onerow short last-row">
-          <div class="col6">
-              <a href="#" class="modal-btn md-trigger" data-modal="modal-cans">
-                  <div class="tile" id="sixth">
-                  <i class="icon-spray small"></i>
-                  </div>
-              </a>
-          </div>
+            <div class="row-four">
+                <div>
+                  <a href="#" class="modal-btn md-trigger" data-modal="modal-cans">
+                    <h3><i class="info-icon icon-spray"></i>Can</h3>
+                    <p class="info" id="busts"></p>
+                 </a>
+                </div>
+        
+                <div>
+                  <a href="#" class="modal-btn md-trigger" data-modal="modal-tag">
+                    <h3><i class="info-icon icon-tag"></i>Tag</h3>
+                    <p class="info" id="busted"></p>
+                  </a>
+                </div>            
+            </div><!-- /row-four -->
 
-          <div class="col6 last">
-              <a href="#" class="modal-btn md-trigger" data-modal="modal-tag">
-                  <div class="tile" id="seventh">
-                    <i class="icon-tag small"></i>
-                  </div>
-              </a>
-          </div>
-      </div>
- 
+      </div><!-- /gang-tiles-->
 
-    </div>
-
+  </div><!-- /container -->
              
   <div class="md-overlay"></div>
 

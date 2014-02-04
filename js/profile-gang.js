@@ -5,6 +5,7 @@
         $('.tile').addClass('animated rollIn');
 
 
+
        if (!localStorage.authorization||!localStorage.color||!localStorage.gangster||!localStorage.gang) {
          window.location.replace("splash.html");
        } else {
