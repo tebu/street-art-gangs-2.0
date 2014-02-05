@@ -6,7 +6,14 @@ body {
     height: 100%;
 }
 
-body.purple {
+body {
+    background: url(../img/splash.jpg) no-repeat left;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+/*body.purple {
     background: url(../img/blur_purple.jpg) no-repeat left;
     background-size: cover;
     background-attachment: fixed;
@@ -22,7 +29,7 @@ body.green {
     background: url(../img/blur_green.jpg) no-repeat top;
     background-size: cover;
     background-attachment: fixed;
-}
+}*/
 
 .faq-trigger i {
     position: absolute;
@@ -87,18 +94,6 @@ body.blue .faq-trigger {
 
 .faq-content i {
     padding-right: 10px
-}
-
-body.purple .faq-content i {
-    color: #57008A;
-}
-
-body.blue .faq-content i {
-    color: #1c6adc;
-}
-
-body.green .faq-content i {
-    color: #23A771;
 }
 
 .faq-content p {

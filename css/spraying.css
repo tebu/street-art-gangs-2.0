@@ -5,7 +5,13 @@ body {
     height: 100%;
 }
 
-body.purple {
+body {
+    background: url(../img/signup.jpg) no-repeat top;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/*body.purple {
     background: url(../img/blur_purple.jpg) no-repeat center;
     background-size: cover;
     background-attachment: fixed;
@@ -21,14 +27,20 @@ body.green {
     background: url(../img/blur_green.jpg) no-repeat center;
     background-size: cover;
     background-attachment: fixed;
-}
+}*/
 
 #loading {
-      font-size:2em;
+      font-size:1em;
       font-family: 'signika_negativelight';
       position: relative;
       display: block;
       bottom: -160px
+}
+
+.bar-percentage {
+    text-align: center;
+    padding: 100px;
+    color: #000
 }
 
 .points-earned {
@@ -530,13 +542,6 @@ p#progress span {
  }
 /*End Green*/
 /*End of Spray Animations*/
-
-
-.bar-percentage {
-    text-align: center;
-    padding: 100px;
-    color: #fff
-}
 
 .busted {
     position: fixed;

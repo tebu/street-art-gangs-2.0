@@ -4,7 +4,13 @@ html, body {
     min-height: 100%;
 }
 
-body.purple {
+body {
+    background: url(../img/splash.jpg) no-repeat left;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/*body.purple {
     background: url(../img/map_purple.jpg) no-repeat left;
     background-size: cover;
     background-attachment: fixed;
@@ -20,7 +26,7 @@ body.green {
     background: url(../img/map_green.jpg) no-repeat left;
     background-size: cover;
     background-attachment: fixed;
-}
+}*/
 
 .content {
     height: 100%;
@@ -147,11 +153,12 @@ body.green :-ms-input-placeholder {
     position: relative;
     width: 100%;
     margin: 0 0 -4px 0;
+    background: rgba(0,0,0,.7);
     border-bottom: 1px solid rgba(0,0,0,.2);
 
 }
 
-body.purple .message-element {
+/*body.purple .message-element {
     background: rgba(16, 0, 21, 0.5);
 }
 
@@ -161,7 +168,7 @@ body.blue .message-element {
 
 body.green .message-element {
     background: rgba(0, 30, 22, 0.5);
-}
+}*/
 
 .bubble {
     width: 75%;
@@ -192,7 +199,7 @@ body.green .message-element {
 }
 
 body.purple .myself, body.purple .myself .chatter_avatar {
-    color: #A74DFF;
+    color: #B160FF;
 }
 
 body.blue .myself, body.blue .myself .chatter_avatar {

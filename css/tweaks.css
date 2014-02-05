@@ -5,22 +5,9 @@ body {
     height: 100%;
 }
 
-body.purple {
-    background: url(../img/blur_purple.jpg) no-repeat top;
+body {
+    background: url(../img/login.jpg) no-repeat center;
     background-size: cover;
-    background-attachment: fixed;
-}
-
-body.blue {
-    background: url(../img/blur_blue.jpg) no-repeat right;
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-body.green {
-    background: url(../img/blur_green.jpg) no-repeat top;
-    background-size: cover;
-    background-attachment: fixed;
 }
 
 .content {
@@ -51,18 +38,6 @@ div.option i {
     color: #fff;
 }
 
-body.purple div.option i {
-    color: #9930FF;
-}
-
-body.blue div.option i {
-    color: #4A96FF;
-}
-
-body.green div.option i {
-    color: #00c3a1;
-}
-
 input {
     width: 100%;
     color: #fff;
@@ -73,19 +48,9 @@ input {
     -webkit-appearance: none;
 }
 
-body.blue input {
-    background: rgba(0, 27, 75, 0.3);
-    border: 1px solid rgba(23, 143, 255, 0.3);
-}
-
-body.purple input {
-    background: rgba(0,0,0,.3);
-    border: 1px solid #330054;
-}
-
-body.green input {
-    background: rgba(0,0,0,.1);
-    border: 1px solid rgba(0,0,0,.08);
+input {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.4);
 }
 
 input:focus {
@@ -128,6 +93,7 @@ input:focus {
 
 .button {
     position: relative;
+    background: rgba(0,0,0,.5);
     top: 20px;
     width: 100%;
     height: auto;
@@ -147,18 +113,6 @@ input:focus {
 
 .button#save {
     top: -15px;
-}
-
-body.purple .button {
-    background: rgba(0,0,0,.6);
-}
-
-body.blue .button {
-    background: rgba(23, 143, 255, 0.4);
-}
-
-body.green .button {
-    background: rgba(0,0,0,.3);
 }
 
 .button:active, .button:focus {

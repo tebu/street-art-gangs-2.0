@@ -337,6 +337,8 @@ body.blue .gn-menu-main a:active, body.blue .gn-menu-main a:focus {
 }
 
 .gn-menu-wrapper {
+    background: url(../img/splash.jpg) no-repeat;
+    background-size: cover;
     position: fixed;
     top: 60px;
     bottom: 0;
@@ -350,18 +352,6 @@ body.blue .gn-menu-main a:active, body.blue .gn-menu-main a:focus {
     -moz-transition: -moz-transform 0.3s, width 0.3s;
     transition: transform 0.3s, width 0.3s;
     z-index: 3000;
-}
-
-body.purple .gn-menu-wrapper {
-    background: rgba(82, 1, 148, 1);
-}
-
-body.green .gn-menu-wrapper {
-    background: #007f66;
-}
-
-body.blue .gn-menu-wrapper {
-    background: #005cbf;
 }
 
 .gn-scroller {

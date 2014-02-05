@@ -4,20 +4,8 @@ html, body {
     height: 100%;
 }
 
-body.purple {
-    background: url(../img/map_purple.jpg) no-repeat left;
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-body.blue {
-    background: url(../img/map_blue.jpg) no-repeat left;
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-body.green {
-    background: url(../img/map_green.jpg) no-repeat left;
+body {
+    background: url(../img/login.jpg) no-repeat top;
     background-size: cover;
     background-attachment: fixed;
 }
@@ -47,29 +35,13 @@ table#gang-board {
     margin-bottom: 40px
 }
 
-
-
 table th {
     padding: 20px 25px 20px 10px;
     text-align: left;
     font-size: 1em;
     text-transform: uppercase;
     border-bottom: 1px solid rgba(0,0,0,.05);
-}
-
-body.purple table th {
     background: rgba(0,0,0,.2);
-    color: #9930FF
-}
-
-body.blue table th {
-    background: rgba(0,0,0,.2);
-    color: #4A96FF
-}
-
-body.green table th {
-   background: rgba(0,0,0,.2);
-    color: #00c3a1
 }
 
 table th span{
@@ -95,31 +67,13 @@ table tr td {
     border-bottom: 1px solid rgba(0,0,0,.05);
 }
 
-body.purple table tr td {
-    background: rgba(58, 0, 95,.4);
+table tr td {
+    background: rgba(0, 0, 0,.4);
 }
 
-body.purple table tr:nth-child(odd) td{
-    background: rgba(80, 0, 125, .6);
+table tr:nth-child(odd) td{
+    background: rgba(0, 0, 0, .5);
 }
-
-body.blue table tr td {
-    background: rgba(0, 36, 69, 0.5);
-}
-
-body.blue table tr:nth-child(odd) td{
-    background: rgba(0, 10, 31, 0.6);
-}
-
-body.green table tr td {
-    background: rgba(0, 26, 19, 0.5);
-}
-
-body.green table tr:nth-child(odd) td{
-    background: rgba(0, 65, 51, 0.6);
-}
-
-
 
 table tr td:first-child {
     font-size: 1.2em
@@ -134,7 +88,6 @@ table tr:last-child td {
     border-bottom: 0;
 }
 
-
 .wrapper {
     width: 100%;
     height: 100%;
@@ -143,16 +96,16 @@ table tr:last-child td {
     position: relative;
 }
 
-.swiper-container {
+/*.swiper-container {
     height: 100%;
     width: 100%;
 }
 
 .content-slide {
     overflow-x: hidden;
-}
+}*/
 
-.best h3 {
+/*.best h3 {
     font-size: .8em
 }
 
@@ -160,20 +113,19 @@ table tr:last-child td {
     font-size: .7em
 }
 
-
 .best div {
     width: 50%;
     float: left;
     padding: 20px;
-}
+}*/
 
-span.best-players-gang:before {
+/*span.best-players-gang:before {
     content: " / ";
     display: block;
     position: relative;
     margin: 0 2px; 
     font-size: 1em
-}
+}*/
 
 
 @media all and (min-width: 1024px) {
