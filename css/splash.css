@@ -9,44 +9,53 @@ body {
 }
 
 body {
-    min-height: 100%;
-    background: url(../img/bg_neutral.jpg) no-repeat;
+    background: url(../img/splash.jpg) no-repeat center;
     background-size: cover;
     background-attachment: fixed;
 }
 
 h1 {
-    font-size: 1.4em;
+    font-size: 1.3em;
+    color: #fff
 }
 
 .logo {
-    width: 300px;
-    height: 300px;
-    position: absolute;
-    left: 50%;
-    top: 60%;
-    margin-left: -150px;
-    margin-top: -110px;
+    position: relative;
+    top: 40px;
     line-height: 0;
-    font-weight: normal;
     text-align: center;
-    color: #FEEFBE;
+    color: rgba(255,255,255,.9);
     -webkit-animation-delay: 1s;
     animation-delay: 1s;
-    font-size: 1.1em;
+    font-size: 1em;
+    -webkit-box-reflect: below -55px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(21%, transparent), to(rgba(255,255,255,0.2)));
+}
+
+img {
+    height: auto;
+    width: 50%;
+    margin: 0 auto;
+    position: relative;
+    top: 0x;
+    z-index: 0;
+    opacity: 1;
+    -webkit-animation-delay: .4s;
+    animation-delay: .4s;
 }
 
 p.brand {
     position: relative;
     z-index: 10;
-    top: 90px;
+    top: -35px;
+    display: block;
+    -webkit-animation-delay: .6s;
+    animation-delay: .6s;
 }
 
 span.art {
     font-family: 'mrs_sheppardsregular';
     font-size: 2em;
     text-transform: none;
-    color: #FEEFBE
 }
 
 .gangs {
@@ -66,12 +75,12 @@ p#credit {
 
 p#version {
     text-transform: none;
-    font-size: .9em;
+    font-size: .7em;
     font-weight: 400;
     position: relative;
     left: 0;
-    top: 100px;
-    color: rgba(255,255,255,.5);
+    top: -35px;
+    color: rgba(255,255,255,.8);
 }
 
 nav {
@@ -83,7 +92,7 @@ nav {
 }
 
 nav a {
-    line-height: 5em;
+    line-height: 3em;
     width: 40%;
     font-size: .7em;
     display: block;
@@ -118,11 +127,11 @@ nav a:first-child {
 }
 
 nav a:nth-child(2) {
-    background: rgba(0, 0, 0, .3);
+    background: rgba(0, 0, 0, .15);
 }
 
 nav a:nth-child(3) {
-    background: rgba(0, 0, 0, .35);
+    background: rgba(0, 0, 0, .18);
 }
 
 nav a:focus, nav a:active {
@@ -138,17 +147,6 @@ span {
     font-size: 2em;
     position: relative;
     top: 7px;
-}
-
-img {
-    height: auto;
-    width: 50%;
-    margin: 0 auto;
-    position: relative;
-    top: -60px;
-    z-index: 0;
-    opacity: 1;
-    -webkit-animation-delay: 2.2s;
 }
 
 .md-modal {
@@ -256,7 +254,7 @@ img {
 }
 
 .md-show.help.md-effect-12 ~ .md-overlay {
-    background: url(../img/bg_neutral.jpg) no-repeat bottom;
+    background: url(../img/splash.jpg) no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }
@@ -278,25 +276,24 @@ img {
     font-size: .6em;
 }
 
-@media all and (min-width: 1024px) {
+@media all and (min-width: 1280px) {
     .logo {
-        top: 40%;
-        font-size: 3em;
-        width: 600px;
-        margin-left: -300px;
+        font-size: 2em;
+    }
+
+    p.brand {
+        position: relative;
+        z-index: 10;
+        top: -160px;
     }
 
     img {
-        top: -155px;
+        padding: 20px;
+        max-width: 1000px
     }
 
-    p#credit {
-        font-size: .4em;
-        top: -55px;
-    }
 
     p#version {
-        font-size: .3em;
-        top: 20px;
-    };
+    top: -100px;
+    }
 }

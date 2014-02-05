@@ -32,7 +32,7 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
 
 <body class="splash">
 
-<div class="md-modal help md-effect-12" id="modal-help">
+  <div class="md-modal help md-effect-12" id="modal-help">
     <div class="md-content">
       <div>
         <button class="md-close"><i class="icon-arrow-left-big"></i></button>
@@ -47,10 +47,9 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
 
 
     <div class="logo">
-    <p id="credit" class="brand">NIMO presents</p>
-         <p class="brand"><span class="street">street</span> <span class="art">Art</span> <span class="gangs">gangs</span></p>
-        <p id="version" class="brand">v.1.0</p>
-       <!-- <img id="drops" src="img/logo.svg"> -->
+        <img id="drops" src="img/logo.svg">
+        <p class="brand"><span class="street">street</span> <span class="art">Art</span> <span class="gangs">gangs</span></p>
+        <p id="version" class="brand">v.1.0</p>      
     </div>
 
 
@@ -63,8 +62,7 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
 
     <div class="md-overlay"></div><!-- the overlay element -->
 
-    <!-- Scripts -->
-
+  <!-- Scripts -->
   <script src='js/jquery-1.10.2.min.js'></script>
   <script src="js/classie_modal.js"></script>
   <script src="js/modalEffects-original.js"></script>
@@ -73,9 +71,8 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
 
       //Animate.css
       $(document).ready(function(){
-        $('.logo').addClass('animated fadeIn');
-        $('nav').addClass('animated bounceInUp');
-
+        $('img').addClass('animated flipInY');
+        $('.brand').addClass('animated flipInY');
       });
 
     </script>

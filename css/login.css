@@ -2,7 +2,7 @@
 
 html {
     height: 100%;
-    background: url(../img/bg_neutral2.jpg) no-repeat;
+    background: url(../img/login.jpg) no-repeat center;
     background-size: cover;
     background-attachment: fixed;
 }
@@ -45,7 +45,7 @@ body .header {
 }
 
 h1 {
-    color: #3C287A;
+    color: #fff;
     font-family: 'signika_negativelight';
 }
 
