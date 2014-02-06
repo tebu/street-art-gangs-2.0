@@ -39,9 +39,10 @@ jQuery(document).ready(function(){
           for (var i = data.length - 1; i >= 0; i--) {
             var venue = $("<div>").addClass("venue");
             var owner = $("<p>").addClass("owner");
+			
 			var venueLatitude = data[i].latitude; //venue location
 			var venueLongitude = data[i].longitude;
-			//var venueId = data[i].id;
+			
 			var distance = locationCheck(locationLatitude,locationLongitude,venueLatitude,venueLongitude); 
 			
             var gang = data[i].gang;
@@ -58,20 +59,18 @@ jQuery(document).ready(function(){
             $("<h3>").addClass("title").text(getCategory(data[i].category)).appendTo(venue);
 			$("<h1>").addClass("location").text(data[i].name).appendTo(venue);
 			
-			var distance2 = distance*1000;                // Shows the distance from the venue For testing
-			var distance3 = distance2.toFixed(0); 
-			$("<p>").text(""+distance3+"m").appendTo(venue); 
+			$("<p>").text(""+distance+"").appendTo(venue); // For testing
 			$("<br>").appendTo(venue);  //TEMP. SOLUTION
 			$("<br>").appendTo(venue);
 			
-			if (distance <=0.500) {
-			$("<div>").attr('id','#start-to-spray').append("<a id='drop' class='spray icon-droplet' href='spraying.html'></a>").appendTo(venue);
-			$("#drop").click(function(){localStorage.setItem('venueId',venueId);}); //JATKA TÄSTÄ!!!			//active droplet, click sends counter for session storage to identify the venue on spraying page					  
-			}else if (distance >0.500&& distance<=1.000){
+			if (distance <=0.015) {
+			$("<div>").attr('id','#start-to-spray').append("<a id='drop' class='spray icon-droplet' href='spraying.html'></a>").appendTo(venue); //active droplet					   
+			}else if (distance >0.015 && distance<=0.030){
 			$("<div>").attr('id','#maybe-to-spray').append("<a class='maybespray icon-droplet'</a>").appendTo(venue); //blinking droplet
 			}else{ 
-			$("<div>").attr('id','#not-to-spray').append("<a class='notspray icon-droplet'></a>").appendTo(venue);//inactive droplet 
+			$("<div>").attr('id','#not-to-spray').append("<a class='notspray icon-droplet'></a>").appendTo(venue);	//inactive droplet 
 			}
+		
 			$("<br>").appendTo(venue);			
             $('#main-slider').append(venue);
 
