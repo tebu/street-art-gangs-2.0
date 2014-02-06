@@ -14,7 +14,6 @@ jQuery(document).ready(function(){
         $("#can-spraying").attr("src", "img/can-"+color+".png" );
 		$('.particle').removeClass().addClass("spray"+color);
       }
-
 });
 
       // Percentage loading
@@ -36,6 +35,7 @@ jQuery(document).ready(function(){
 
       // Showing and hiding text elements
       jQuery(document).ready(function() {
+	  
         // jQuery("p#prepare").fadeIn(1000);
         jQuery("p#prepare").delay(2000).fadeOut(1000);
         // jQuery("p#progress").delay(5000).fadeIn(1000);
@@ -71,15 +71,14 @@ jQuery(document).ready(function(){
         }
       });
 
-var registerSpray = function() {
+var registerSpray = function(venue) {
 
         var authorization=localStorage.authorization;
         var gangster = localStorage.gangster;
 		var color = localStorage.color;
-       
+        var venue2 = JSON.parse(localStorage.getItem('venueid')); 
+		var venue = parseInt(venue2);
         var now = moment().format();
-		
-		var venue = localStorage.venueId; parseInt(venue); //venuen Id JATKA TÄSTÄ!!!
        
 		var endpoint = "http://vm0063.virtues.fi/venues/"+venue+"/";
         var data =  {
