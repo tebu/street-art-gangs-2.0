@@ -66,7 +66,7 @@ jQuery(document).ready(function(){
 			var distance2 = distance*1000;                // Shows the distance from the venue For testing
 			var distance3 = distance2.toFixed(0); 
 			$("<p>").text(""+distance3+"m").appendTo(venue); 
-			$("<br>").appendTo(venue);  //TEMP. SOLUTION
+			$("<br>").appendTo(venue); //TEMP. SOLUTION
 			$("<br>").appendTo(venue);
 			
 			if (distance <=0.500) {	//DISTANCES ARE WIDE FOR TESTING... NARROW DOWN AT SOME POINT
