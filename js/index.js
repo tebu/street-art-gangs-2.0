@@ -44,11 +44,7 @@ jQuery(document).ready(function(){
 			
 			var venueLatitude = data[i].latitude; //venue location
 			var venueLongitude = data[i].longitude;
-<<<<<<< HEAD
-			
-=======
-				
->>>>>>> origin/PointsLeaderBoards
+
 			var distance = locationCheck(locationLatitude,locationLongitude,venueLatitude,venueLongitude); 
 			var venueId = data[i].id;	
 			var locator = "#";
@@ -71,6 +67,7 @@ jQuery(document).ready(function(){
 			$("<p>").text(""+distance+"").appendTo(venue); // For testing
 			$("<br>").appendTo(venue);  //TEMP. SOLUTION
 			$("<br>").appendTo(venue);
+			
 
 			if (distance <=0.500) {	//DISTANCES ARE WIDE FOR TESTING... NARROW DOWN AT SOME POINT
 				
@@ -89,6 +86,7 @@ jQuery(document).ready(function(){
 			$("<div>").attr('id','#not-to-spray').append("<a class='notspray icon-droplet'></a>").appendTo(venue);//inactive droplet 
 			}
 			$("<br>").appendTo(venue);
+			
 			
             $('#main-slider').append(venue);
 			

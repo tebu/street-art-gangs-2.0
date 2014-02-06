@@ -76,18 +76,11 @@ var registerSpray = function(venue) {
         var authorization=localStorage.authorization;
         var gangster = localStorage.gangster;
 		var color = localStorage.color;
-<<<<<<< HEAD
-        //var venue = localStorage.venue;
-        var now = moment().format();
-        var venue = 26; //TODO change with stored venue <---------------------------------!
-        var endpoint = "http://vm0063.virtues.fi/venues/"+venue+"/";
-=======
         var venue2 = JSON.parse(localStorage.getItem('venueid')); 
 		var venue = parseInt(venue2);
         var now = moment().format();
        
 		var endpoint = "http://vm0063.virtues.fi/venues/"+venue+"/";
->>>>>>> origin/PointsLeaderBoards
         var data =  {
                 gangster: gangster,
                 latestEditTimestamp: now
