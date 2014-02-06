@@ -64,8 +64,10 @@ jQuery(document).ready(function(){
             $("<h3>").addClass("title").text(getCategory(data[i].category)).appendTo(venue);
 			$("<h1>").addClass("location").text(data[i].name).appendTo(venue);
 			
-			$("<p>").text(""+distance+"").appendTo(venue); // For testing
-			$("<br>").appendTo(venue);  //TEMP. SOLUTION
+			var distance2 = distance*1000;                // Shows the distance from the venue For testing
+			var distance3 = distance2.toFixed(0); 
+			$("<p>").text(""+distance3+"m").appendTo(venue); 
+			$("<br>").appendTo(venue); //TEMP. SOLUTION
 			$("<br>").appendTo(venue);
 			
 
