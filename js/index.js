@@ -9,6 +9,8 @@ jQuery(document).ready(function(){
 		var locationLatitude = localStorage.latitude; //gangster location
 		var locationLongitude = localStorage.longitude;
 		
+		localStorage.removeItem('venueid');
+		
 		mixpanel.register({gang: color, gangster: gangster}); //Track for the droplet click is in index.html
 		mixpanel.track("PageLaunch", {page:"index"});
 		mixpanel.track("SprayingInitiated", {latitude: locationLatitude, longitude: locationLongitude});
@@ -42,8 +44,15 @@ jQuery(document).ready(function(){
 			
 			var venueLatitude = data[i].latitude; //venue location
 			var venueLongitude = data[i].longitude;
+<<<<<<< HEAD
 			
+=======
+				
+>>>>>>> origin/PointsLeaderBoards
 			var distance = locationCheck(locationLatitude,locationLongitude,venueLatitude,venueLongitude); 
+			var venueId = data[i].id;	
+			var locator = "#";
+			locator += venueId; //Creates an individual id for the droplet icons
 			
             var gang = data[i].gang;
             if (gang != null) {
@@ -54,7 +63,7 @@ jQuery(document).ready(function(){
               owner.append("Untagged").appendTo(venue); //TODO change with something better
             }
 			
-		
+			
             $("<div>").addClass("category").addClass(getCategoryClass(data[i].category)).appendTo(venue);
             $("<h3>").addClass("title").text(getCategory(data[i].category)).appendTo(venue);
 			$("<h1>").addClass("location").text(data[i].name).appendTo(venue);
@@ -62,20 +71,29 @@ jQuery(document).ready(function(){
 			$("<p>").text(""+distance+"").appendTo(venue); // For testing
 			$("<br>").appendTo(venue);  //TEMP. SOLUTION
 			$("<br>").appendTo(venue);
+
+			if (distance <=0.500) {	//DISTANCES ARE WIDE FOR TESTING... NARROW DOWN AT SOME POINT
+				
+			$("<div>").attr('id','#start-to-spray').append("<a id="+venueId+" class='spray icon-droplet'  href='spraying.html'></a>").appendTo(venue);
 			
-			if (distance <=0.015) {
-			$("<div>").attr('id','#start-to-spray').append("<a id='drop' class='spray icon-droplet' href='spraying.html'></a>").appendTo(venue); //active droplet					   
-			}else if (distance >0.015 && distance<=0.030){
+			$('body').on("click",locator, function() {
+				localStorage.setItem('venueid',JSON.stringify(this.id)); //Sends individual droplet icon id to spraying page	
+				event.stopPropagation();
+				});
+				
+			}else if (distance >0.500&& distance<=1.000){
+		
 			$("<div>").attr('id','#maybe-to-spray').append("<a class='maybespray icon-droplet'</a>").appendTo(venue); //blinking droplet
 			}else{ 
-			$("<div>").attr('id','#not-to-spray').append("<a class='notspray icon-droplet'></a>").appendTo(venue);	//inactive droplet 
-			}
 		
-			$("<br>").appendTo(venue);			
+			$("<div>").attr('id','#not-to-spray').append("<a class='notspray icon-droplet'></a>").appendTo(venue);//inactive droplet 
+			}
+			$("<br>").appendTo(venue);
+			
             $('#main-slider').append(venue);
-
+			
           };
-
+			
           // Venue slider
           $('#main-slider').liquidSlider({
               hashLinking:false,
@@ -96,11 +114,12 @@ jQuery(document).ready(function(){
             // animateOut:"slideOutLeft"
           });
 
-
+		
+			
           jQuery("h1.location").fitText(1.6);
           jQuery(".category").fitText(.6);
           jQuery("h3.title").fitText(1.5);
-		  
+		  			
 		
 
         }).fail(function( jqXHR, textStatus ) {
