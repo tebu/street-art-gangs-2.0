@@ -32,10 +32,9 @@
           }
         }).done(function( data ) {
         
-		for(var i = 0; i <= 2; i++){
-		if(data[i].color === color){
-		var gangKey = i;}}
-		
+		if(localStorage.color === 'purple'){
+		var gangKey = 0;}else if (localStorage.color === 'green'){ //0=Purple, 1=Green and 2=Blue, Apply only here n functionTags(), not equal to "gang" in gangsters database 
+		var gangKey = 1;}else {var gangKey = 2;}
 		
 		var gangMemberlist = gangMembers(gangKey,data); //Separates gangs from gangsters
 		
@@ -158,7 +157,7 @@
 			return [gangPoints,gangPopulation,gangName];
 			} 
     
-	function gangMembers(gangKey,data) {	  //Sort of gangsters by gang, points and handling the timestamp data              
+	function gangMembers(gangKey,data) { //Sort of gangsters by gang, points and handling the timestamp data              
 			
 			var gangList = [];
 			var gangMember = "";

@@ -38,16 +38,28 @@ jQuery(document).ready(function(){
             xhr.setRequestHeader ("Authorization", authorization);
           }
         }).done(function( data ) {
+		var venueArr = [];
+		
+		for (var i = data.length - 1; i >= 0; i--) {
+		
+		var distance = locationCheck(locationLatitude,locationLongitude,venueLatitude,venueLongitude);
+		
+		
+		}//TODO add distance to each event and sort, show the closest first 
+		
+		
           for (var i = data.length - 1; i >= 0; i--) {
+			
             var venue = $("<div>").addClass("venue");
             var owner = $("<p>").addClass("owner");
 			var venueLatitude = data[i].latitude; //venue location
 			var venueLongitude = data[i].longitude;
 				
 			var distance = locationCheck(locationLatitude,locationLongitude,venueLatitude,venueLongitude); 
+			
 			var venueId = data[i].id;	
 			var locator = "#";
-			locator += venueId; //Creates an individual id for the droplet icons
+			locator += venueId; //Creates an individual 'id's based on venue id for the droplet icons 
 			
             var gang = data[i].gang;
             if (gang != null) {
@@ -98,7 +110,7 @@ jQuery(document).ready(function(){
               crossLinks:true,
               includeTitle:true,
               mobileNavigation:false,
-              firstPanelToLoad:1,
+              firstPanelToLoad:1, // TEE TÄSTÄ LÄHIN
               autoHeight:false,
               minHeight: 0,
               swipe: true,

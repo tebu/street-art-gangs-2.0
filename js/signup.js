@@ -59,7 +59,7 @@ $(document).ready(function(){
             }).fail(function( jqXHR, textStatus ) {
             //TODO fix this
                 //alert("Error");
-                window.location.replace("signup.html");
+
             });
 
 });
