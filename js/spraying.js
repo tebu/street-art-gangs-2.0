@@ -6,13 +6,13 @@ jQuery(document).ready(function(){
       } else {
 	  	var color = localStorage.color;
 		var gangster = localStorage.gangster;
-
 		mixpanel.track("PageLaunch", {page:"spraying", gang: color, gangster: gangster}); 
-
+		sprayingInitialized();
         //Change color background depending on player's color
         $('body').removeClass().addClass(color)
         $("#can-spraying").attr("src", "img/can-"+color+".png" );
 		$('.particle').removeClass().addClass("spray"+color);
+		
       }
 });
 
@@ -83,7 +83,8 @@ var registerSpray = function(venue) {
 		var endpoint = "http://vm0063.virtues.fi/venues/"+venue+"/";
         var data =  {
                 gangster: gangster,
-                latestEditTimestamp: now
+                latestEditTimestamp: now,
+				sprayinginitialized:0
             }
 		mixpanel.track("SprayingFinalised", {Time:now, gang: color, gangster: gangster});
 
@@ -118,10 +119,7 @@ var registerSpray = function(venue) {
 
 
             window.location.href = "index.html";
-
-
-
-              }).fail(function( jqXHR, textStatus ) {
+				}).fail(function( jqXHR, textStatus ) {
               //TODO fix this
                 alert("Error: something went wrong while updating the location: "+ textStatus);
               });
@@ -131,7 +129,32 @@ var registerSpray = function(venue) {
         //TODO fix this
           alert("Error: something went wrong while updating the location: "+ textStatus);
         });
+		}		
+function sprayingInitialized(venue) { //UNTESTED
 
+        var authorization=localStorage.authorization;
+        var venue2 = JSON.parse(localStorage.getItem('venueid')); 
+		var venue = parseInt(venue2);
+       
+		var endpoint = "http://vm0063.virtues.fi/venues/"+venue+"/";
+        var data =  {
+				sprayinginitialized:1
+            }
+              $.ajax({
+                type: "PATCH",
+                url: endpoint,
+                dataType: 'json',
+                data: data,
+                beforeSend: function (xhr) {
+                  xhr.setRequestHeader ("Authorization", authorization);
+                }
+               }).done(function( data ) {
+
+			   
+              }).fail(function( jqXHR, textStatus ) {
+              //TODO fix this
+                alert("First Error: something went wrong while updating the location: "+ textStatus);
+              });
 
 
 }
