@@ -87,7 +87,6 @@ jQuery(document).ready(function(){
 			
 			$('body').on("click",locator, function() {
 				localStorage.setItem('venueid',JSON.stringify(this.id)); //Sends individual droplet icon id to spraying page	
-				event.stopPropagation();
 				});
 				
 			}else if (distance >0.500&& distance<=1.000){
