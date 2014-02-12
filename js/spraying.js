@@ -12,7 +12,7 @@ jQuery(document).ready(function(){
         $('body').removeClass().addClass(color)
         $("#can-spraying").attr("src", "img/can-"+color+".png" );
 		$('.particle').removeClass().addClass("spray"+color);
-		
+		window.onunload=function(){sprayingInterrupted();}; //Sets spraying initialized back to 0 if interrupted... Can be used fo
       }
 });
 
@@ -115,8 +115,8 @@ var registerSpray = function(venue) {
                 beforeSend: function (xhr) {
                   xhr.setRequestHeader ("Authorization", authorization);
                 }
-              }).done(function( data ) {
 
+               }).done(function( data ) {
 
             window.location.href = "index.html";
 				}).fail(function( jqXHR, textStatus ) {
@@ -130,7 +130,8 @@ var registerSpray = function(venue) {
           alert("Error: something went wrong while updating the location: "+ textStatus);
         });
 		}		
-function sprayingInitialized(venue) { //UNTESTED
+
+function sprayingInitialized(venue) { //SprayingInitialized to 1 in venue database
 
         var authorization=localStorage.authorization;
         var venue2 = JSON.parse(localStorage.getItem('venueid')); 
@@ -155,6 +156,29 @@ function sprayingInitialized(venue) { //UNTESTED
               //TODO fix this
                 alert("First Error: something went wrong while updating the location: "+ textStatus);
               });
+		}
+function sprayingInterrupted(venue) { 
 
+        var authorization=localStorage.authorization;
+        var venue2 = JSON.parse(localStorage.getItem('venueid')); 
+		var venue = parseInt(venue2);
+       
+		var endpoint = "http://vm0063.virtues.fi/venues/"+venue+"/";
+        var data =  {
+				sprayinginitialized:0
+            }
+              $.ajax({
+                type: "PATCH",
+                url: endpoint,
+                dataType: 'json',
+                data: data,
+                beforeSend: function (xhr) {
+                  xhr.setRequestHeader ("Authorization", authorization);
+                }
+               }).done(function( data ) {
 
+              }).fail(function( jqXHR, textStatus ) {
+              //TODO fix this
+                alert("First Error: something went wrong while updating the location: "+ textStatus);
+              });
 }
