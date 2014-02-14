@@ -71,10 +71,12 @@
   width: 1030px;
   /* Do not edit below this line */
   float: left;
-  overflow: hidden;
+  overflow: visible;
+
   position: relative;
   text-align: center;
 }
+
 .ls-wrapper .panel-container {
   /* Do not edit below this line */
   position: relative;

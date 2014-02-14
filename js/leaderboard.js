@@ -64,7 +64,8 @@
         };
 
       // Swiper starts
-      var mySwiper = new Swiper('.swiper-container',{
+     /*
+ var mySwiper = new Swiper('.swiper-container',{
           pagination: '.pagination',
           mode : 'horizontal',
           loop: false,
@@ -80,6 +81,7 @@
           e.preventDefault()
           mySwiper.swipeNext()
       })
+*/
       // Swiper ends
 
 
@@ -95,23 +97,8 @@
     });
 
       // Animation
-     $('table').addClass('animated slideInLeft');
+      $('table').addClass('animated slideInLeft');
 
-    // Hide navigation/top bar when scrolling down starts
-     $(window).scroll(
-        {
-            previousTop: 0
-        }, 
-        function () {
-        var currentTop = $(window).scrollTop();
-        if (currentTop < this.previousTop) {
-
-            $("#gn-menu").show();
-        } else {
-            $("#gn-menu").hide();
-        }
-        this.previousTop = currentTop;
-    }); // Hide navigation/top bar ends
 
    }
  });

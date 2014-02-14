@@ -1,15 +1,100 @@
 /* Leaderboard screen **************************/
 
 html, body {
-    height: 100%;
+    padding-bottom: 20px
 }
 
+/*
 body {
     background: url(../img/login.jpg) no-repeat top;
     background-size: cover;
     background-attachment: fixed;
 }
+*/
 
+body.purple {
+    background: url(../img/map_purple.jpg) no-repeat top;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+body.blue {
+    background: url(../img/map_blue.jpg) no-repeat top;
+    background-size: cover;
+	background-attachment: fixed;
+}
+
+body.green {
+    background: url(../img/map_green.jpg) no-repeat top;
+    background-size: cover;
+	background-attachment: fixed;
+}
+
+body.blue .bg {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../img/blue.jpg) no-repeat left;
+    background-position: 0px 0px;
+    opacity: 0;
+    background-size: stretch;
+   -webkit-animation: blurblue 1 ease 5s;
+      z-index: 1;
+}
+
+body.purple .bg {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../img/purple.jpg) no-repeat left;
+    background-position: 0px 0px;
+    opacity: 0;
+    background-size: stretch;
+   -webkit-animation: blurblue 1 ease 5s;
+      z-index: 1;
+}
+
+body.green .bg {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../img/green.jpg) no-repeat left;
+    background-position: 0px 0px;
+    opacity: 0;
+    background-size: stretch;
+   -webkit-animation: blurgreen 1 ease 5s;
+      z-index: 1;
+}
+
+@-webkit-keyframes blurblue { 
+   50% {
+    background-position: 100% 100%;
+    opacity: .9;
+    }
+}
+
+@-webkit-keyframes blurpurple { 
+   50% {
+    background-position: 100% 100%;
+    opacity: .9;
+    }
+}
+
+@-webkit-keyframes blurgreen { 
+   50% {
+    background-position: 100% 100%;
+    opacity: .9;
+    }
+}
+
+
+/*
 table#gang-board:before {
     content: "";
     position: absolute;
@@ -21,31 +106,33 @@ table#gang-board:before {
     border-width: 0 12px 12px 12px;
     border-color: transparent transparent rgba(0,0,0,.25); 
 }
+*/
 
 table {
     position: relative;
-    margin: 10 0 60px; 
     height: 100%;
     width: 100%;
     font-size: 12px;
+    -webkit-animation-delay: 1s;
+	animation-delay: 1s;
 }
 
 table#gang-board {
-    top: 20px;
+    top: 65px;
+    margin-bottom: 60px
+}
+
+table#player-board {
     margin-bottom: 40px
 }
 
 table th {
-    padding: 20px 25px 20px 10px;
+    padding: 30px 25px 20px 10px;
     text-align: left;
-    font-size: 1em;
+	font-size: 1.2em;
     text-transform: uppercase;
-    border-bottom: 1px solid rgba(0,0,0,.05);
-    background: rgba(0,0,0,.2);
-}
+/*    border-bottom: 1px solid #1c6adc;*/
 
-table th span{
-    font-size: 1.4em;
 }
 
 table th:first-child {
@@ -53,28 +140,63 @@ table th:first-child {
     padding-left: 23px;
 }
 
+
+table th:nth-child(2) .icon {
+	font-size: 2em;
+	position: relative;
+	display: block;
+}
+
+
 table tr {
     text-align: left;
     padding-left: 20px;
+
+}
+
+table tr td {
+	line-height: 2em;
+	width: 28%;
+    height: 100%;
+}
+
+body.blue table tr td {
+   background: rgba(0, 6, 72, 0.3);
+    border-bottom: 1px solid rgba(28,106,220,.2);
+}
+
+body.purple table tr td {
+   background: rgba(48, 0, 91, 0.3);
+   border-bottom: 1px solid rgba(96, 0, 181,.2);
+}
+
+body.green table tr td {
+   background: rgba(0,91,93,0.3);
+   border-bottom: 1px solid rgba(0,181,166,0.2);
 }
 
 table td:nth-child(1) {
     padding-left: 28px;
+    width: 4%;
+    font-size: 1.2em
 }
 
-table tr td {
-    padding: 5px 5px;
-    border-bottom: 1px solid rgba(0,0,0,.05);
+table td:nth-child(2) {
+    width: 40%;
 }
 
-table tr td {
-    background: rgba(0, 0, 0,.4);
+body.purple table tr:nth-of-type(odd) td {
+   background: rgba(48, 0, 91, 0.5);
 }
 
-table tr:nth-child(odd) td{
-    background: rgba(0, 0, 0, .5);
+body.blue table tr:nth-of-type(odd) td {
+   background: rgba(0, 6, 72, 0.5);
 }
 
+body.green table tr:nth-of-type(odd) td {
+   background: rgba(0,91,93,0.5);
+} 
+/*
 table tr td:first-child {
     font-size: 1.2em
 }
@@ -83,6 +205,7 @@ table tr.you td {
     background: #111 !important;
     color: white
 }
+*/
 
 table tr:last-child td {
     border-bottom: 0;

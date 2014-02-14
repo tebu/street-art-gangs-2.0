@@ -10,7 +10,7 @@
 		mixpanel.track("PageLaunch", {page:"profile", gang: color, gangster: gangster});
 
         // animate.css
-        $('.profile-tiles div').addClass('animated rollIn');
+        $('.profile-tiles div').addClass('animated slideInLeft');
         $('.icon-mood2, p.mood').addClass('animated flipInY');
 
         //Change color background depending on player's color
@@ -51,7 +51,7 @@
 
 
             // Fittext.js
-             $("h3.player-name").fitText(.9);
+             // $("h3.player-name").fitText(.8);
 
 
         }).fail(function( jqXHR, textStatus ) {

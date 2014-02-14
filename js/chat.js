@@ -70,9 +70,7 @@ var retrieveMSG = function() {
         var bubleDiv = $("<div>").addClass("bubble");
         var itemSpan =$("<span>").addClass("chatter_msg_item").addClass("chatter_msg_item_user");
 
-        $("<span>").addClass("timestamp").text(moment(data[i].timestamp).fromNow()).appendTo(itemSpan); //TODO put moment
-        itemSpan.append(data[i].text).appendTo(bubleDiv); //TODO put message
-        bubleDiv.appendTo(messageDiv);
+
 
         var senderDiv = $("<div>").addClass("sender");
         var sender = "";
@@ -83,6 +81,10 @@ var retrieveMSG = function() {
 
         $("<a>").attr("href", "").addClass("chatter_avatar").text(sender).appendTo(senderDiv);//TODO put sender name
         senderDiv.appendTo(messageDiv);
+        
+        $("<span>").addClass("timestamp").text(moment(data[i].timestamp).fromNow()).appendTo(senderDiv); //TODO put moment
+        itemSpan.append(data[i].text).appendTo(bubleDiv); //TODO put message
+        bubleDiv.appendTo(messageDiv);
 
         if (data[i].gangster == gangster)
           messageDiv.addClass("myself");
@@ -92,24 +94,7 @@ var retrieveMSG = function() {
         $(".chatter").append(messageDiv);
     };
 
-     // Hide navigation/top bar when scrolling down starts
-     $(window).scroll(
-        {
-            previousTop: 0
-        }, 
-        function () {
-        var currentTop = $(window).scrollTop();
-        if (currentTop < this.previousTop) {
-
-            $("#gn-menu").show();
-        } else {
-            $("#gn-menu").hide();
-        }
-        this.previousTop = currentTop;
-    }); // Hide navigation/top bar ends
-
-    // Hide navigation/top bar ends
-    $('.message-element').addClass('animated rollIn');
+         $('.message-element').addClass('animated rollIn');
    
 
   }).fail(function( jqXHR, textStatus ) {

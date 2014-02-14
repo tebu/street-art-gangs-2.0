@@ -2,7 +2,7 @@
       jQuery(document).ready(function(){
 
         //Animate.css
-        $('.tile').addClass('animated rollIn');
+        $('.gang-tiles div').addClass('animated slideInLeft');
 
 
 

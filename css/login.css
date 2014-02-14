@@ -1,10 +1,15 @@
 /* Login screen **************************/
 
-html {
-    height: 100%;
-    background: url(../img/login.jpg) no-repeat center;
-    background-size: cover;
-    background-attachment: fixed;
+body {
+/*
+    background-image: -webkit-gradient(linear, right bottom, left top, color-stop(2%, #7a0fff), color-stop(62%, #0472ec), color-stop(96%, #00faff));
+    background-image: -webkit-linear-gradient(right bottom, #7a0fff 2%, #0472ec 62%, #00faff 96%);
+    background-image: -moz-linear-gradient(right bottom, #7a0fff 2%, #0472ec 62%, #00faff 96%);
+    background-image: -ms-linear-gradient(right bottom, #7a0fff 2%, #0472ec 62%, #00faff 96%);
+    background-image: -o-linear-gradient(right bottom, #7a0fff 2%, #0472ec 62%, #00faff 96%);
+    background-image: linear-gradient(to left top, #7a0fff 2%, #0472ec 62%, #00faff 96%);
+*/
+    background: black;
 }
 
 body {
@@ -14,7 +19,7 @@ body {
 }
 
 body .header {
-    margin: 3em 0;
+    margin: 3em 0 0;
     text-align: center;
 }
 
@@ -45,14 +50,17 @@ body .header {
 }
 
 h1 {
+    position: relative;
+    top: 10px;
     color: #fff;
     font-family: 'signika_negativelight';
 }
 
 .form {
-    margin: 50px auto 20px;
+    margin: 10px auto 20px;
     overflow: hidden;
     position: relative;
+    top: 30px;
     width: 100%;
 }
 
@@ -64,13 +72,11 @@ input, textarea {
 input {
     font-size: .8em;
     width: 100%;
-    margin-bottom: 1px;
     border: none;
     border-radius: none;
-    padding: 15px 0 15px 20px;
+    padding: 10px 0 10px 20px;
     color: #fff;
     background: rgba(0,0,0,.2);
-    border-left: 5px solid rgba(0,0,0,.1);
 }
 
 input.submit {
@@ -349,7 +355,8 @@ small {
 .problems {
     font-size: .8em;
     text-align: center;
-    margin-top: 30px;
+    position: relative;
+    top: 40px;
 }
 
 .input.error {
@@ -361,5 +368,11 @@ small {
     top: 2px;
     left: 5px;
     font-size: 1.3em;
+}
+
+@media all and (min-width: 1024px) {
+    .bg {
+        display: none;
+    };
 }
 

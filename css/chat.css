@@ -4,11 +4,30 @@ html, body {
     min-height: 100%;
 }
 
-body {
+/*body {
     background: url(../img/splash.jpg) no-repeat left;
     background-size: cover;
     background-attachment: fixed;
+}*/
+
+body.blue {
+    background: url(../img/map_blue.jpg) no-repeat top center;
+    background-size: cover;
+	background-attachment: fixed;
 }
+
+body.purple {
+    background: url(../img/map_purple.jpg) no-repeat top center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+body.green {
+    background: url(../img/map_green.jpg) no-repeat top center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 
 /*body.purple {
     background: url(../img/map_purple.jpg) no-repeat left;
@@ -73,16 +92,17 @@ body.green {
     color: #fff;
     border: none;
     outline: none;
-    background: rgba(0,0,0,.9);
+    background: rgba(0,0,0,1);
+ overflow: hidden;
     z-index: 2000;
 }
 
 .chatter_field.chatter_message {
     margin: 0;
-    padding: 11px 12px 9px 12px;
+    padding: 11px 20px 9px 12px;
     font-size: .8em;
-    line-height: 20px;
-    height: 40px;
+
+
     resize: none;
 }
 
@@ -141,62 +161,56 @@ body.green :-ms-input-placeholder {
 
 .chatter .chatter_msg_item {
     position: relative;
-    margin: 5px 0 8px 0;
-    padding: 10px 10px 6px;
     display: block;
-/*  background: rgba(0,0,0,.4);*/
-    line-height: 1;
+    font-size: 1.2em;
+    padding: 4px 0 2px
 }
 
 .message-element {
-    display: inline-block;
+    display: block;
     position: relative;
     width: 100%;
-    margin: 0 0 -4px 0;
     background: rgba(0,0,0,.7);
-    border-bottom: 1px solid rgba(0,0,0,.2);
+    padding: 10px
+}
+
+
+.bubble {
+
+   display: block;
 
 }
 
-/*body.purple .message-element {
+.sender {
+	display: inline-block;
+	position: relative;
+}
+
+.timestamp {
+   display: inline-block;
+   font-size: 0.8em;
+}
+
+.chatter_avatar {
+    display: inline-block;
+    padding-right: 20px;
+}
+body.purple .message-element {
     background: rgba(16, 0, 21, 0.5);
+    border-bottom: 1px solid rgba(147,29,220,0.3);
 }
 
 body.blue .message-element {
-    background: rgba(0, 6, 72, 0.5);
+    background: rgba(3,50,160,0.5);
+    border-bottom: 1px solid rgba(28,106,220,.3);
 }
 
 body.green .message-element {
     background: rgba(0, 30, 22, 0.5);
-}*/
-
-.bubble {
-    width: 75%;
-    position: relative;
-    display: inline-block;
-    float: right;
-    padding-right: 60px;
+    border-bottom: 1px solid rgba(11,184,189,0.3);
 }
 
-.sender {
-    width: 20%;
-    font-family: 'signika_negativesemibold';
-    float: left;
-    position: relative;
-    display: inline-block;
-    text-align: left;
-    left: 0;
-    letter-spacing: -1px;
-}
 
-.chatter_avatar {
-    color: #FFFFFF;
-    position: absolute;
-    text-decoration: none;
-    text-align: left;
-    top: 15px;
-    left: 10px;
-}
 
 body.purple .myself, body.purple .myself .chatter_avatar {
     color: #B160FF;
@@ -210,22 +224,17 @@ body.green .myself, body.green .myself .chatter_avatar {
     color: #00E3B9;
 }
 
-.timestamp {
-    position: absolute;
-    font-size: 10px;
-    right: -50px;
-    top: 12px;
-}
+
 
 button#send-msg {
     border: none;
     bottom: 0;
-    height: 40px;
-    padding: 8px 15px;
+display: block;
+padding: 16px 5px;
     position: fixed;
     right: 0;
     z-index: 2000;
-    background: none;
+ background: black;
     color: #fff;
     font-size: 1.4em;
 }
@@ -243,19 +252,6 @@ body.green button#send-msg {
 }
 
 @media all and (min-width: 1024px) {
-    .chatter {
-        font-size: 1.2em;
-    }
 
-    .chatter .chatter_msg_item {
-        padding: 18px 10px;
-    }
-
-    .timestamp {
-        position: absolute;
-        font-size: .6em;
-        right: -50px;
-        top: 10px;
-    };
 }
 

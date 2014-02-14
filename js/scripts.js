@@ -209,7 +209,7 @@ var getCategoryClass = function (val) {
         return 'icon-food';
         break;
       case 'Ot':
-        return 'icon-office';
+        return 'icon-other-places';
         break;
       case 'Sh':
         return 'icon-cart';

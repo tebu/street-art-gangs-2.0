@@ -14,14 +14,14 @@ jQuery(document).ready(function(){
 		mixpanel.track("SprayingInitiated", {latitude: locationLatitude, longitude: locationLongitude});
 		
 		//Change color background depending on player's color
-        $('body').removeClass().addClass(color)
+         $('body').removeClass().addClass(color)
 
         //Menu
         new gnMenu( document.getElementById( 'gn-menu' ) );
 
         //Animate.css
-        $('#start-to-spray').addClass('animated pulse');
-        $('small').addClass('animated flash');
+        // $('#start-to-spray').addClass('animated pulse');
+        // $('small').addClass('animated flash');
 
         //Check GPS
         watchGPS();
@@ -42,17 +42,19 @@ jQuery(document).ready(function(){
             var owner = $("<p>").addClass("owner");
             var gang = data[i].gang;
             if (gang != null) {
-              owner.append("Tagged by ");
+              // owner.append("Tagged by ");
               $("<span>").addClass(gang+"-owns").text(gang).appendTo(owner);
               owner.appendTo(venue);
             } else {
               owner.append("Untagged").appendTo(venue);
             }
 
-
+            $("<i>").addClass("icon-droplet").text(data[i].icon).prependTo(owner);
             $("<div>").addClass("category").addClass(getCategoryClass(data[i].category)).appendTo(venue);
             $("<h3>").addClass("title").text(getCategory(data[i].category)).appendTo(venue);
             $("<h1>").addClass("location").text(data[i].name).appendTo(venue);
+
+           
             $('#main-slider').append(venue);
           };
 
@@ -76,9 +78,9 @@ jQuery(document).ready(function(){
             // animateOut:"slideOutLeft"
           });
 
-          jQuery("h1.location").fitText(1.4, { minFontSize: '20px', maxFontSize: '60px' })
-          jQuery(".category").fitText(1, { minFontSize: '10px', maxFontSize: '60px' })
-          jQuery("h3.title").fitText(3, { minFontSize: '10px', maxFontSize: '30px' })
+          jQuery("h1.location").fitText(1.25, { minFontSize: '16px', maxFontSize: '60px' })
+          // jQuery(".category").fitText(1, { minFontSize: '10px', maxFontSize: '60px' })
+          jQuery("h3.title").fitText(3, { minFontSize: '9px', maxFontSize: '30px' })
 
         }).fail(function( jqXHR, textStatus ) {
         //TODO fix this

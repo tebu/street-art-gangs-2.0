@@ -30,6 +30,8 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
 
 <body id="spraying">
 
+<div class="bg"></div>
+
 		
 		<div class="load-wrap"> 
 			<div class="particle"></div>
@@ -63,7 +65,10 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
       </div>
 
       <div class="points-earned" id="tagged">
-        <p>Congrats<br><span>0</span><br> points earned!</p>
+        <p>Gongrats!</p>
+        <section class="points-section">
+        	<p><span>0</span><small> pts</small</p>
+        </section>
       </div>
 
       <div id="loading">
@@ -77,10 +82,10 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
     <script src="js/jquery.lettering.js"></script>
 
     <script>
-  $(document).ready(function() {
-    $("#progress span").lettering();
-  });
-</script>
+		$(document).ready(function() {
+			$("#progress span").lettering();
+		});
+	</script>
 
 </body>
 </html>

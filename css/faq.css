@@ -6,35 +6,28 @@ body {
     height: 100%;
 }
 
-body {
-    background: url(../img/splash.jpg) no-repeat left;
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-
-/*body.purple {
-    background: url(../img/blur_purple.jpg) no-repeat left;
-    background-size: cover;
+body.purple {
+    background: url(../img/blur_purple.jpg) no-repeat top;
+    background-size: stretch;
     background-attachment: fixed;
 }
 
 body.blue {
-    background: url(../img/blur_blue.jpg) no-repeat right;
-    background-size: cover;
+    background: url(../img/blur_blue.jpg) no-repeat top;
+    background-size: stretch;
     background-attachment: fixed;
 }
 
 body.green {
-    background: url(../img/blur_green.jpg) no-repeat top;
-    background-size: cover;
+    background: url(../img/blur_green.jpg) no-repeat left;
+    background-size: stretch;
     background-attachment: fixed;
-}*/
+}
 
 .faq-trigger i {
     position: absolute;
     top: 15px;
-    right: 10px
+    right: 10px;
 }
 
 h1 {
@@ -50,7 +43,7 @@ h1 {
     height: 0px;
     border-style: solid;
     border-width: 0 12px 12px 12px;
-    border-color: transparent transparent rgba(0,0,0,.25); 
+    border-color: transparent transparent rgba(0,0,0,.25);
 }
 
 .accordion {
@@ -93,14 +86,14 @@ body.blue .faq-trigger {
 }
 
 .faq-content i {
-    padding-right: 10px
+    padding-right: 10px;
 }
 
 .faq-content p {
-    padding-left: 20px
+    padding-left: 20px;
 }
 
-img{
+img {
     width: 100%;
     margin: 0 auto;
     position: relative;
@@ -136,25 +129,21 @@ body.green .highlight {
     background-color: rgba(0,0,0,.55);
 }
 
-.open {
-    font-family: 'signika_negativebold';
-}
-
-.faq-content .icon-droplet{
+.faq-content .icon-droplet {
     font-size: 2em;
     position: relative;
-    top: 5px
+    top: 5px;
 }
 
-body.purple .faq-content .icon-droplet{
+body.purple .faq-content .icon-droplet {
     color: #57008A;
 }
 
-body.blue .faq-content .icon-droplet{
+body.blue .faq-content .icon-droplet {
     color: #1c6adc;
 }
 
-body.green .faq-content .icon-droplet{
+body.green .faq-content .icon-droplet {
     color: #23A771;
 }
 

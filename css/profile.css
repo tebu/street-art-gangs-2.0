@@ -7,14 +7,91 @@ body {
 
 .container {
     height: 100%;
-    padding-top: 30px;
+    padding-top: 50px;
 }
 
-body {
-    background: url(../img/login.jpg) no-repeat right;
+body.purple {
+    background: url(../img/map_purple.jpg) no-repeat center;
     background-size: cover;
     background-attachment: fixed;
+}
 
+body.blue {
+    background: url(../img/map_blue.jpg) no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+body.green {
+    background: url(../img/map_green.jpg) no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+body.blue .bg {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../img/blue.jpg) no-repeat left;
+    background-position: 0px 0px;
+    opacity: 0;
+    background-size: stretch;
+    -webkit-animation: blurblue 1 ease 3s;
+    z-index: 1;
+}
+
+body.purple .bg {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../img/purple.jpg) no-repeat left;
+    background-position: 0px 0px;
+    opacity: 0;
+    background-size: stretch;
+    -webkit-animation: blurpurple 1 ease 3s;
+    z-index: 1;
+}
+
+body.green .bg {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../img/green.jpg) no-repeat left;
+    background-position: 0px 0px;
+    opacity: 0;
+    background-size: stretch;
+    -webkit-animation: blurgreen 1 ease 3s;
+    z-index: 1;
+}
+
+@-webkit-keyframes blurblue {
+ 
+    50% {
+        background-position: 100% 100%;
+        opacity: .9;
+    };
+}
+
+@-webkit-keyframes blurpurple {
+ 
+    50% {
+        background-position: 100% 100%;
+        opacity: .9;
+    };
+}
+
+@-webkit-keyframes blurgreen {
+ 
+    50% {
+        background-position: 100% 100%;
+        opacity: .9;
+    };
 }
 
 h1 {
@@ -39,7 +116,7 @@ h3.mood-title {
 }
 
 body.purple .profile-tiles h3 {
-    color: #9930FF;
+    color: #fff;
 }
 
 body.blue .profile-tiles h3 {
@@ -51,10 +128,13 @@ body.green .profile-tiles h3 {
 }
 
 .row-two, .row-three {
-    display:-moz-box; /* Firefox */
-    display:-webkit-box; /* Safari and Chrome */
-    display:-ms-flexbox; /* Internet Explorer 10 */
-    display:box;
+    display: -moz-box;
+ /* Firefox */
+    display: -webkit-box;
+ /* Safari and Chrome */
+    display: -ms-flexbox;
+ /* Internet Explorer 10 */
+    display: box;
     display: flex;
 }
 
@@ -66,23 +146,12 @@ body.green .profile-tiles h3 {
 }
 
 .profile-tiles h3.player-name {
-    font-size: .8em;
-    font-family: 'signika_negativelight';
+    font-size: 1em;
+    font-family: 'signika_negativebold';
     line-height: 0;
-    color: #9930FF;
-    margin-left: 10px;
     position: relative;
-    top: 30px
-}
-
-.profile-tiles div {
-/*  width: 33.33%;
-    float: left;
-    padding: 5px 20px 0;
-    background: rgba(0,0,0,.3);
-    border-right: 1px solid rgba(0,0,0,.1);
-    border-top: 1px solid rgba(0,0,0,.3);
-    position: relative;*/
+    text-align: center;
+    top: 10px;
 }
 
 .row-one div:before {
@@ -94,24 +163,27 @@ body.green .profile-tiles h3 {
     height: 0px;
     border-style: solid;
     border-width: 0 12px 12px 12px;
-    border-color: transparent transparent rgba(0,0,0,.8); 
+    border-color: transparent transparent rgba(0,0,0,.5);
 }
 
-.row-one div{
+.row-one div {
     width: 100%;
     position: relative;
     padding: 0 20px 0 10px;
-    background: rgba(0,0,0,.8);
-    height: 150px;
+    background: rgba(0,0,0,.5);
+    height: 180px;
 }
 
-.row-two div, .row-three div{
-    -moz-box-flex:1.0; /* Firefox */
-    -webkit-box-flex:1.0; /* Safari and Chrome */
-    -ms-flex:1.0; /* Internet Explorer 10 */
-    box-flex:1.0;
+.row-two div, .row-three div {
+    -moz-box-flex: 1.0;
+ /* Firefox */
+    -webkit-box-flex: 1.0;
+ /* Safari and Chrome */
+    -ms-flex: 1.0;
+ /* Internet Explorer 10 */
+    box-flex: 1.0;
     flex: 1;
-    background: rgba(0,0,0,.7);
+    background: rgba(0,0,0,.6);
     border-top: 1px solid rgba(0,0,0,.3);
     padding: 5px 5px 1px;
 }
@@ -147,14 +219,13 @@ body.green .profile-tiles h3 {
 }
 
 p.mood {
-    padding-left: 130px;
     position: relative;
     line-height: 1.1em;
-    top: -70px;
-    text-align: left;
+    top: 20px;
+    text-align: center;
     font-family: 'signika_negativeregular';
     font-size: .8em;
-     display: block;
+    display: block;
     -webkit-animation-delay: .6s;
     animation-delay: .6s;
 }
@@ -183,21 +254,33 @@ body.green .profile-tiles i.info-icon {
 
 i.info-icon.icon-dude {
     font-size: 4em;
-    top: 30px;
-    display: inline-block;
+    top: 20px;
+    position: relative;
+    text-align: center;
+    display: block;
 }
 
-.profile-tiles i.icon-mood2 {
+.profile-tiles i.icon-bullhorn {
     position: relative;
-    display: inline-block;
-    top: -20px;
-    left: -10px;
-    font-size: 2em;
-    color: #fff;
+    display: block;
+    top: 20px;
+    text-align: center;
+    font-size: 1.6em;
     -webkit-animation-delay: .5s;
     animation-delay: .5s;
 }
 
+body.purple .profile-tiles i.icon-bullhorn {
+    color: #9930FF;
+}
+
+body.blue .profile-tiles i.icon-bullhorn {
+    color: #4A96FF;
+}
+
+body.green .profile-tiles i.icon-bullhorn {
+    color: #00c3a1;
+}
 
 @media all and (min-width: 1024px) {
 

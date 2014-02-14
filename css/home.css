@@ -1,40 +1,167 @@
 /*Styles for home screen*/
 
 
-body {
-    background: url(../img/splash.jpg) no-repeat right;
+body.purple .bg2 {
+    background: rgb(0, 19, 51) url(../img/map_purple.jpg) no-repeat right;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-position: 0px 0px;
     background-size: cover;
+	-webkit-animation: movepurple 1 ease 5s;
+    animation: movepurple 1 ease 5s;
+    z-index: 0;
+}
+
+body.blue .bg2 {
+    background: rgb(0, 19, 51) url(../img/map_blue.jpg) no-repeat top right;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-position: 0px 0px;
+    background-size: cover;
+    -webkit-animation: moveblue 1 ease 5s;
+    animation: moveblue 1 ease 5s;
+    z-index: 0;
+}
+
+body.green .bg2 {
+    background: rgb(0, 19, 51) url(../img/map_green.jpg) no-repeat top right;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-position: 0px 0px;
+    background-size: cover;
+    -webkit-animation: moveblue 1 ease 5s;
+    animation: moveblue 1 ease 5s;
+    z-index: 0;
+}
+
+@-webkit-keyframes moveblue  { 
+    50% {
+        background-position: 100% 100%;
+    }
+}
+
+@-webkit-keyframes movepurple  { 
+    50% {
+        background-position: 100% 100%;
+    }
+}
+
+@-webkit-keyframes movegreen  { 
+    50% {
+        background-position: 100% 100%;
+    }
+}
+
+@keyframes moveblue  { 
+    50% {
+        background-position: 100% 100%;
+    }
+}
+
+@keyframes movepurple  { 
+    50% {
+        background-position: 100% 100%;
+    }
+}
+
+@keyframes movegreen  { 
+    50% {
+        background-position: 100% 100%;
+    }
+}
+
+img.tm {
+    width: 14%;
+    position: fixed;
+    top: 5px;
+    right: 0;
 }
 
 .ls-wrapper .liquid-slider {
     position: fixed !important;
     width: 100%;
-    top: 20%;
+/*    top: 60px;*/
+ top: 20%;
     z-index: 2000;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    height: 180px;
+}
+
+body.purple .ls-wrapper .liquid-slider {
+  background: rgba(24, 0, 45,.4);
+}
+
+body.blue .ls-wrapper .liquid-slider {
+  background: rgba(0, 17, 51,.4);
 }
 
 h1.location {
-    line-height: 0;
+/*    line-height: 0;*/
     position: relative;
-    top: -15px;
+    font-family: 'signika_negativebold';
+    top: -53px;
+    z-index: 6;
     letter-spacing: -.03em;
+    text-transform: uppercase;
+
+    padding: 5px 0
 }
 
+/*.category {
+    font-size: 10em;
+   color: rgba(24, 0, 45,.7);
+    position: absolute;
+    left: 24%;
+    top: -20px;
+    z-index: 5;  
+}*/
+
 .category {
+    font-size: 1.8em;
     position: relative;
-    top: -10px;
+    top:-40px;
+    z-index: 5;
+    display: block;
 }
+
+/*h3.title {
+    position: relative;
+    top: 10px;
+     z-index: 6;
+    text-transform: uppercase;
+}*/
 
 h3.title {
     position: relative;
-    top: -15px;
+    display: block;
+    top: -40px;
+     z-index: 6;
     text-transform: uppercase;
 }
 
+.icon-droplet {
+    position: relative;
+    display: inline-block;
+    top: 2px;
+    padding-right: 5px;
+    left: 0;
+    font-size: 1em;
+}
+
 .arrows {
-    opacity: 0.6;
+    opacity: .4;
     position: fixed;
-    top: 40%;
+    top: 25%;
     z-index: 3000;
 }
 
@@ -45,16 +172,17 @@ h3.title {
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     transition: all 0.3s ease;
+    padding: 60px 10px;
 }
 
 .arrows a#to-left {
     position: fixed;
-    left: 10px;
+    left: -10px;
 }
 
 .arrows a#to-right {
     position: fixed;
-    right: 2px;
+    right: -10px;
 }
 
 .arrows a:active {
@@ -68,33 +196,36 @@ h3.title {
 
 #start-to-spray {
     position: fixed;
-    bottom: 8%;
+    bottom: 5%;
     left: 0;
     width: 100%;
     text-align: center;
+    z-index: 2000
 }
 
 a.spray {
-    font-size: 3em;
-    padding: 20px;
+    font-size: 2.5em;
+    padding: 10px;
     border-radius: 50%;
     color: #fff;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     transition: all 0.3s ease;
-    background: rgba(255,255,255,.25);
 }
 
 body.purple a.spray {
     color: #9930FF;
+     border: 4px solid #9930FF;
 }
 
 body.blue a.spray {
     color: #1c6adc;
+    border: 4px solid #1c6adc;
 }
 
 body.green a.spray {
     color: #00BA85;
+    border: 4px solid #00BA85;
 }
 
 a.spray:active, a.spray:hover {
@@ -104,18 +235,23 @@ a.spray:active, a.spray:hover {
 p.owner {
     display: inline-block;
     position: relative;
-    top: -30px;
+    top: -120px;
+    left: 95px;
     padding: 10px;
     margin: 0;
     font-size: .8em;
+    z-index: 7;
+    height: 30px;
+
 }
 
 p.owner span {
-    display: block;
+    display: inline-block;
     text-transform: uppercase;
     font-size: .9em;
     letter-spacing: -.05em;
-    font-family: 'signika_negativebold';
+    font-family: 'signika_negativesemibold';
+     z-index:9000
 }
 
 .owner-section {
@@ -124,6 +260,7 @@ p.owner span {
     text-align: center;
     top: 20px;
     width: 100%;
+
 }
 
 .owner-section i {
@@ -135,19 +272,19 @@ p.owner span {
 
 .Purple.Knights-owns {
     color: #C06CFF;
-    background: rgba(0,0,0,.3);
+
     padding: 2px 6px;
 }
 
 .Blue.Angels-owns {
-    color: #33CCFF;
-    background: rgba(0,0,0,.2);
+    color: #1c6adc;
+
     padding: 2px 6px;
 }
 
 .Green.Shamans-owns {
     color: #58FFB4;
-    background: rgba(0,0,0,.2);
+
     padding: 2px 6px;
 }
 
@@ -231,7 +368,7 @@ p.owner span {
     position: relative;
     text-align: center;
     text-transform: uppercase;
-    top: 110px;
+    top: 160px;
     width: 40%;
     margin: 0 auto;
     border-radius: 2px;
@@ -342,8 +479,9 @@ small {
     position: absolute;
     text-align: center;
     top: 10px;
-    width: 20%;
-    z-index: 4000
+    width: 10%;
+    z-index: 4000;
+    opacity: .5
 }
 
 .icon-check {
@@ -359,6 +497,21 @@ small {
 
 
 }
+
+
+#start-to-spray {
+    -webkit-animation: spray 1 ease 5s;
+}
+
+@-webkit-keyframes spray { 
+       50% {
+     -webkit-transform: rotate(-180deg);
+    }
+}
+
+
+
+
 
 
 

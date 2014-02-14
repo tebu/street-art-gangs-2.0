@@ -37,13 +37,16 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
 
 <body id="tweaks">
 
+ <div class="bg"></div>
+
+
     <div class="md-modal md-effect-5" id="modal-logout">
 
             <div class="md-content">
               <div>
-                <p>Are you sure?</p>
-                <button class="confirm">Yes  <i class="icon-check"></i></button>
-                <button class="md-close"><i class="icon-remove"></i> Cancel</button>
+                <p>Really?</p>
+                <button class="confirm"><span>Yep</span>, I need to go  <i class="icon-arrow-rights-small"></i></button>
+                <button class="md-close"><i class=" icon-arrow-left-small"></i><span> Nope</span>, take me back</button>
               </div>
           </div>
     </div><!-- /modal-logout -->
@@ -79,7 +82,7 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
 
             <div class="tweak">
                 <!-- <a href="#" class="btn2 md-trigger" data-modal="modal-info">?</a> -->
-                <div class="option"><i class="icon-mood2"></i> Set Mood</div>
+                <div class="option"><i class="icon-bullhorn"></i> Set Mood</div>
                 <div class="mood">
                  <!--  <label>Mood</label> -->
                   <input type="text" class="input" placeholder="How you feel goes here?" id="mood">
