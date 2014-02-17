@@ -12,7 +12,7 @@ jQuery(document).ready(function(){
         $('body').removeClass().addClass(color)
         $("#can-spraying").attr("src", "img/can-"+color+".png" );
 		$('.particle').removeClass().addClass("spray"+color);
-		window.onunload=function(){sprayingInterrupted();}; //Sets spraying initialized back to 0 if interrupted... Can be used fo
+		window.onunload=function(){sprayingInterrupted();}; //Sets spraying initialized back to 0 if interrupted... 
       }
 });
 
@@ -120,8 +120,13 @@ var registerSpray = function(venue) {
 
             window.location.href = "index.html";
 				}).fail(function( jqXHR, textStatus ) {
+<<<<<<< HEAD
               //TODO fix this
                 alert("Error: something went wrong while updating the location: "+ textStatus);
+=======
+              //TODO fix these and place redirect to index and clean venue id from local storage
+                alert("First Error: something went wrong while updating the location: "+ textStatus);
+>>>>>>> origin/PointsLeaderBoards
               });
 
 
@@ -130,7 +135,10 @@ var registerSpray = function(venue) {
           alert("Error: something went wrong while updating the location: "+ textStatus);
         });
 		}		
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/PointsLeaderBoards
 function sprayingInitialized(venue) { //SprayingInitialized to 1 in venue database
 
         var authorization=localStorage.authorization;
@@ -150,6 +158,7 @@ function sprayingInitialized(venue) { //SprayingInitialized to 1 in venue databa
                   xhr.setRequestHeader ("Authorization", authorization);
                 }
                }).done(function( data ) {
+<<<<<<< HEAD
 
 			   
               }).fail(function( jqXHR, textStatus ) {
@@ -177,6 +186,35 @@ function sprayingInterrupted(venue) {
                 }
                }).done(function( data ) {
 
+=======
+
+			   
+              }).fail(function( jqXHR, textStatus ) {
+              //TODO fix this
+                alert("First Error: something went wrong while updating the location: "+ textStatus);
+              });
+		}
+function sprayingInterrupted(venue) { 
+
+        var authorization=localStorage.authorization;
+        var venue2 = JSON.parse(localStorage.getItem('venueid')); 
+		var venue = parseInt(venue2);
+       
+		var endpoint = "http://vm0063.virtues.fi/venues/"+venue+"/";
+        var data =  {
+				sprayinginitialized:0
+            }
+              $.ajax({
+                type: "PATCH",
+                url: endpoint,
+                dataType: 'json',
+                data: data,
+                beforeSend: function (xhr) {
+                  xhr.setRequestHeader ("Authorization", authorization);
+                }
+               }).done(function( data ) {
+
+>>>>>>> origin/PointsLeaderBoards
               }).fail(function( jqXHR, textStatus ) {
               //TODO fix this
                 alert("First Error: something went wrong while updating the location: "+ textStatus);
