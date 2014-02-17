@@ -12,7 +12,7 @@ jQuery(document).ready(function(){
         $('body').removeClass().addClass(color)
         $("#can-spraying").attr("src", "img/can-"+color+".png" );
 		$('.particle').removeClass().addClass("spray"+color);
-		window.onunload=function(){sprayingInterrupted();}; //Sets spraying initialized back to 0 if interrupted... Can be used fo
+		window.onunload=function(){sprayingInterrupted();}; //Sets spraying initialized back to 0 if interrupted... 
       }
 });
 
@@ -121,7 +121,7 @@ var registerSpray = function(venue) {
 
             window.location.href = "index.html";
 				}).fail(function( jqXHR, textStatus ) {
-              //TODO fix this
+              //TODO fix these and place redirect to index and clean venue id from local storage
                 alert("First Error: something went wrong while updating the location: "+ textStatus);
               });
 
