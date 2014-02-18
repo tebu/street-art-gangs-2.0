@@ -1,6 +1,6 @@
 street-art-gangs-2.0
 ====================
-Hello!
+
 
 Pages currently with some JS logic:
 

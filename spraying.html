@@ -29,9 +29,9 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
 </head>
 
 <body id="spraying">
-      <div id="loading">
-          <div class="bar-percentage" data-percentage="101"></div>
-      </div>
+
+<div class="bg"></div>
+
 		
 		<div class="load-wrap"> 
 			<div class="particle"></div>
@@ -48,7 +48,7 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
         <div class="showup">
 
           <div class="disappear">
-            <img id="can-spraying"> <!-- if purple-page this is visible -->
+           <!--  <img id="can-spraying"> --> <!-- if purple-page this is visible -->
             <!-- <img id="can-spraying" src="img/can-blue.png"> -->  <!-- if blue-page this is visible -->
             <!-- <img id="can-spraying" src="img/can-green.png"> --> <!-- if green-page this is visible -->
           
@@ -59,18 +59,33 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
 
       <div id="footer">
         <div id="spray-text">
-          <p id="prepare">Wait! Preparing...</p>
-          <p id="progress">Here we go!</p>
+          <p id="prepare">Just a moment...<br>preparing</p>
+          <p id="progress">Here we <span>gooo!</span></p>
         </div>
       </div>
 
       <div class="points-earned" id="tagged">
-        <p>Congrats<br><span>0</span><br> points earned!</p>
+        <p>Gongrats!</p>
+        <section class="points-section">
+        	<p><span>0</span><small> pts</small</p>
+        </section>
       </div>
+
+      <div id="loading">
+          <div class="bar-percentage" data-percentage="101"></div>
+      </div>
+      
     <script src="js/moment.min.js"></script>
     <script src='js/jquery-1.10.2.min.js'></script>
     <script src="js/scripts.js"></script>
     <script src="js/spraying.js"></script>
+    <script src="js/jquery.lettering.js"></script>
+
+    <script>
+		$(document).ready(function() {
+			$("#progress span").lettering();
+		});
+	</script>
 
 </body>
 </html>

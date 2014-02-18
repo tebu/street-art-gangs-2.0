@@ -197,7 +197,7 @@ var getCategoryClass = function (val) {
         return 'icon-sun';
         break;
       case 'Ni':
-        return 'icon-sun';
+        return 'icon-moon';
         break;
       case 'Ar':
         return 'icon-ticket';
@@ -209,7 +209,7 @@ var getCategoryClass = function (val) {
         return 'icon-food';
         break;
       case 'Ot':
-        return 'icon-office';
+        return 'icon-other-places';
         break;
       case 'Sh':
         return 'icon-cart';

@@ -2,7 +2,8 @@
       jQuery(document).ready(function(){
 
         //Animate.css
-        $('.tile').addClass('animated slideInLeft');
+        $('.gang-tiles div').addClass('animated slideInLeft');
+
 
 
        if (!localStorage.authorization||!localStorage.color||!localStorage.gangster||!localStorage.gang) {

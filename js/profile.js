@@ -10,7 +10,8 @@
 		mixpanel.track("PageLaunch", {page:"profile", gang: color, gangster: gangster});
 
         // animate.css
-        $('ul.profile-list li').addClass('animated slideInLeft');
+        $('.profile-tiles div').addClass('animated slideInLeft');
+        $('.icon-mood2, p.mood').addClass('animated flipInY');
 
         //Change color background depending on player's color
         $('body').removeClass().addClass(color)
@@ -39,7 +40,7 @@
             if (data[gangsterKey]!=null && data[gangsterKey].mood!="") {
               $(".mood").text(data[gangsterKey].mood);
             } else {
-              $(".mood").text("Unknown");
+              $(".mood").text("Go to tweaks to write here");
             }
 			
 			var rank = sortRanking(data)+1; //Call for sorting the rank*/
@@ -54,8 +55,7 @@
 
 
             // Fittext.js
-
-            jQuery("h1.player-name").fitText(.6);
+             // $("h3.player-name").fitText(.8);
 
 
         }).fail(function( jqXHR, textStatus ) {

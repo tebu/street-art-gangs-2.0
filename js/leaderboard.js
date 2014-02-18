@@ -80,7 +80,8 @@
         };
 
       // Swiper starts
-      var mySwiper = new Swiper('.swiper-container',{
+     /*
+ var mySwiper = new Swiper('.swiper-container',{
           pagination: '.pagination',
           mode : 'horizontal',
           loop: false,
@@ -96,6 +97,7 @@
           e.preventDefault()
           mySwiper.swipeNext()
       })
+*/
       // Swiper ends
 
 
@@ -111,8 +113,9 @@
     });
 
       // Animation
-     $('th').addClass('animated slideInRight');
-     $('td').addClass('animated slideInLeft');
+      $('table').addClass('animated slideInLeft');
+
+
    }
    
    

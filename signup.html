@@ -16,14 +16,13 @@
 
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="css/grid.css">
-	<link rel="stylesheet" href="font/sag/style.css">
 	<link rel="stylesheet" href="css/animate.css">
 	<link rel="stylesheet" href="css/icons.css" />
 	<link rel="stylesheet" href="css/universal.css" />
 	<link rel="stylesheet" href="css/signup.css">
 
 	<!-- Scripts -->
-	<script src="js/modernizr.custom_modal.js"></script>
+	<script src="js/modernizr.custom_modalnew.js"></script>
 	
 	<!-- start Mixpanel --><script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==
 typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);
@@ -33,71 +32,18 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
 </head>
 
 <body id="signup" class="neutral">
-
-		<div class="md-modal md-effect-12" id="modal-12">
-			<div class="md-content">
-				<div>
-					<button class="md-close"><i class="icon-arrow-left-big"></i></button>
-
-					    <div class="wrap">
-						 
-						    <div class="tile purple-knights" id="first">
-						        <i class="icon-droplet"></i>          
-						        <h2 class="gang-name" id="name">Purple Knights</h2>
-						        <p>Chivalry is not dead it just has a new definition at the other end of the spectrum... of visible light. Instead of brute force these knights apply paint.</p>
-						    </div>					          
-						 
-						    <div class="tile blue-angels" id="second">
-						        <i class="icon-droplet"></i>          
-						        <h2 class="gang-name" id="name">Blue Angels</h2>
-						        <p>There are the sublime and the fallen ones and then there are those in between. All are welcome to spread the gospel of "This city belongs to the Angels".</p>
-						    </div>					          
-						 
-						    <div class="tile green-shamans" id="third">
-						        <i class="icon-droplet"></i>          
-						        <h2 class="gang-name" id="name">Green Shamans</h2>
-						        <p>An eclectic mix of green peas and biohactivists who aim to reclaim the city for mother nature. Some say they have magic, some say they just are contagious.</p>
-						    </div>					          
-
-						</div><!--/ wrap -->				
-				</div>
-			</div>
-		</div><!--/ modal -->
-
-
-		<!-- This modal window should appear after clicking I'm ready-button, and if error(s) happens -->
-
-		<div class="md-modal error md-effect-12" id="modal-error">
-			<div class="md-content">
-				<div>
-					<!-- <i class="icon-blocked"></i> -->
-
-					<!-- Each error message is visible only if this error happens, in css there are classes visible and hide, maybe we can use them? -->
-					<p>Some problems signing you up!</p>
-					<p class="error" id="nickname-error"><i class="icon-remove-x"></i> Nickname is not available</p>
-					<p class="error" id="email-error"><i class="icon-remove-x"></i> Not valid email address</p>
-					<p class="error" id="password-error"><i class="icon-remove-x"></i> Password mismatch</p>
-					<p class="error" id="gang-error"><i class="icon-remove-x"></i> None gang selected</p>
-
-					<!-- <p><small>This modal window should appear after clicking I'M READY-button, and if error(s) happens</small></p> -->
-					<button class="md-close">Please try again <i class="icon-ccw"></i></button>
-					
-				</div>
-			</div>
-		</div>
-
-		<!-- This button is just for testing, actually modal window should appear after clicking I'm ready-button, and if error(s) happens -->
-		<a href="#" id="test" class="md-trigger" data-modal="modal-error">Error modal</a>
+<div class="container">
 
 		<div class="header">
 			<a href="splash.html" class="back"><i class="icon-arrow-left-big"></i></a>
 			<h1>Sign Up</h1>
-			<span class="icon-write"></span>
+			<button id="trigger-overlay2" type="button">Alert</button><!-- This button is just for testing, actually modal window should appear after clicking I'm ready-button, and if error(s) happens -->
 		</div><!--/ header -->
 
 		<div class="content">
 
 			<div class="form">
+				<form>
 					<input type="text" class="input" placeholder="Nickname" id ="username" maxlength="8">
 					<input type="text" class="input" placeholder="Email"  id ="email">
 					<input type="password" class="input" placeholder="Password" id ="password">
@@ -105,26 +51,69 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
 					<select id="gang" name="gang" class="feedback-input">
 						<option id="neutral">Choose Your Gang</option>
 						<!--TODO: Get data from the server-->
-						<option id="purple"  data-gang="4">Purple</option>
-						<option id="greens"  data-gang="5">Green</option>
-						<option id="blues" data-gang="6">Blue</option>
+						<option id="purple"  data-gang="4">Purple Knights</option>
+						<option id="greens"  data-gang="5">Green Shamans</option>
+						<option id="blues" data-gang="6">Blue Angels</option>
 					</select>
-					<a href="#" id="about-gangs" class="md-trigger" data-modal="modal-12"><span class="icon-question"></span></a>
+					<button id="trigger-overlay" type="button"><span class="icon-question"></span></button>
+					<!-- <input type="submit" id="register" class="btn btntxt" value="Signup" /> -->
+								
+				</form>
 			</div><!--/ form -->
 
 			<div class="btn btntxt">I'm ready <span class="icon-check"></span></div>
 			
-		</div><!--/ content -->
+		</div><!--/ content -->		
 
-		<div class="md-overlay"></div><!-- the overlay element -->
+	</div>
 
-		<!-- Scripts -->
+	<div class="overlay overlay-contentpush">
+		<button type="button" class="overlay-close"><i class="icon-remove"></i></button>
+		 <div class="wrap">
+					 
+			    <div class="tile purple-knights" id="first">
+			        <i class="icon-droplet"></i>          
+			        <h2 class="gang-name" id="name">Purple Knights</h2>
+			        <p>Chivalry is not dead it just has a new definition at the other end of the spectrum... of visible light. Instead of brute force these knights apply paint.</p>
+			    </div>					          
+			 
+			    <div class="tile blue-angels" id="second">
+			        <i class="icon-droplet"></i>          
+			        <h2 class="gang-name" id="name">Blue Angels</h2>
+			        <p>There are the sublime and the fallen ones and then there are those in between. All are welcome to spread the gospel of "This city belongs to the Angels.</p>
+			    </div>					          
+			 
+			    <div class="tile green-shamans" id="third">
+			        <i class="icon-droplet"></i>          
+			        <h2 class="gang-name" id="name">Green Shamans</h2>
+			        <p>An eclectic mix of green peas and biohactivists who aim to reclaim the city for mother nature. Some say they have magic, some say they just are contagious.</p>
+			    </div>					          
 
-		<script src='js/jquery-1.10.2.min.js'></script>
-		<script src="js/classie_menu.js"></script>
-		<script src="js/modalEffects-original.js"></script>
-		<script src="js/scripts.js"></script>
-		<script src="js/signup.js"></script>
+			</div>				
+		</div>
+
+	<div class="alert overlay2 overlay-contentpush">
+		<button type="button" class="overlay-close"><i class="icon-remove"></i></button>
+
+		<section class="alert-content">
+
+			<!-- Each error message is visible only if this error happens, in css there are classes visible and hide, maybe we can use them? -->
+			<h2>Some problems signing you up...</h2>
+			<p class="error" id="nickname-error"><i class="icon-remove"></i> Nickname is not available</p>
+			<p class="error" id="email-error"><i class="icon-remove"></i> Not valid email address</p>
+			<p class="error" id="password-error"><i class="icon-remove"></i> Password mismatch</p>
+			<p class="error" id="gang-error"><i class="icon-remove"></i> None gang selected</p>			
+		</section>	
+	</div>
+
+
+<!-- Scripts -->
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/modalclassie.js"></script>
+<script src="js/modalscript.js"></script>
+ <script src="js/jquery.fittext.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/signup.js"></script>
 
 </body>
 </html>

@@ -1,100 +1,105 @@
 /*Styles for splash screen*/
 
+html,
 body {
-     min-height: 100%;
-     overflow: hidden;
-    background: -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 588, color-stop(10%, #2effd9), color-stop(43%, #427cff), color-stop(78%, #7500e6)) fixed;
-    background: -webkit-radial-gradient(center bottom, farthest-corner circle, #2effd9 10%, #427cff 43%, #7500e6 78%) fixed;
-    background: -moz-radial-gradient(center bottom, farthest-corner circle, #2effd9 10%, #427cff 43%, #7500e6 78%) fixed;
-    background: -ms-radial-gradient(center bottom, farthest-corner circle, #2effd9 10%, #427cff 43%, #7500e6 78%) fixed;
-    background: -o-radial-gradient(center bottom, farthest-corner circle, #2effd9 10%, #427cff 43%, #7500e6 78%) fixed;
-    background: radial-gradient(farthest-corner circle at center bottom, #2effd9 10%, #427cff 43%, #7500e6 78%) fixed;
-}
-
-.rotate {
+    margin: 0;
+    padding: 0;
+    width: 100%;
     height: 100%;
 }
 
+body {
+    background: url(../img/blur.jpg) no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+h1 {
+    font-size: 1.3em;
+    color: #fff;
+}
+
 .logo {
-    line-height: 0;
-    font-weight: normal;
-    text-align: center;
-    font-family: "Raleway";
     position: relative;
-    color: rgba(255,255,255,.5);
-    top: 160px;
-    -webkit-animation-delay: 2s;
-    animation-delay: 2s;
+    top: 60px;
+    line-height: 0;
+    text-align: center;
+    color: rgba(255,255,255,.9);
+    -webkit-animation-delay: .4s;
+    animation-delay: .4s;
+    font-size: 1em;
+    -webkit-box-reflect: below -20px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(21%, transparent), to(rgba(255,255,255,0.3)));
+}
+
+img.tm {
+    height: auto;
+    width: 50%;
+    margin: 0 auto;
+    -webkit-transform: rotate(-180deg);
+    -webkit-animation-delay: .8s;
+    animation-delay: .8s;
+}
+
+p.brand {
+    position: relative;
+    top: -20px;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
 }
 
 span.art {
-    font-family: "Mrs Sheppards";
+    font-family: 'mrs_sheppardsregular';
     font-size: 2em;
     text-transform: none;
-    color: rgba(255,255,255,.6);
-    text-shadow: -3px -4px 2px rgba(0,0,0,.1), -10px -10px 8px rgba(0,0,0,.1), -40px -20px 14px rgba(0,0,0,.04);
 }
 
-p#slogan {
-    text-transform: none;
-    font-size: .3em;
-    letter-spacing: .6em;
-    font-family: "Lato";
-    font-weight: 900;
+.gangs {
+    margin-left: 5px;
 }
 
-p#slogan span {
-    color: rgba(255,255,255,.6);
-}
-
-p#slogan2 {
-    text-transform: none;
-    font-size: .6em;
-    letter-spacing: .2em;
-    font-family: "Raleway";
-    font-weight: 900;
-    display: none;
-
+p#version {
+    color: rgba(255,255,255,.8);
 }
 
 nav {
     position: fixed;
     bottom: 0;
     width: 100%;
-    z-index: 1000
+    z-index: 1000;
+    position: block;
+    -webkit-animation-delay: .1s;
+    animation-delay: .1s;
 }
 
 nav a {
-    line-height: 3em;
-    width: 100%;
-    display: inline-block;
-    padding: 0 14px;
-    color: #FFFFFF;
+    line-height: 4em;
+    width: 40%;
+    font-size: .7em;
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    color: #fff !important;
     background: rgba(0, 0, 0, .1);
-    font-weight: 700;
+    font-family: 'signika_negativebold', sans-serif;
     letter-spacing: 1px;
     outline: medium none;
     position: relative;
     text-decoration: none;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
     text-transform: uppercase;
     text-align: center;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-    -webkit-animation-duration: 1s;
-    -webkit-animation-delay: 3s;
-    -webkit-animation-iteration-count: 1;
-    -moz-animation-duration: 1s;
-    -moz-animation-delay: 1s;
-    -moz-animation-iteration-count: 1;
-    animation-duration: 1s;
-    animation-delay: 1s;
-    animation-iteration-count: 1;
 }
 
 nav a:first-child {
-  border-bottom: 1px solid rgba(255,255,255,.1)
+    width: 20%;
+}
+
+nav a:nth-child(2) {
+    background: rgba(0, 0, 0, .15);
+}
+
+nav a:nth-child(3) {
+    background: rgba(0, 0, 0, .18);
 }
 
 nav a:focus, nav a:active {
@@ -103,126 +108,155 @@ nav a:focus, nav a:active {
 
 span {
     position: relative;
-    top: 1px
+    top: 1px;
 }
 
-.waves {
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  z-index: 2;
-  opacity: .8;
-/*  -webkit-filter: blur(6px);*/
+.icon-info {
+    font-size: 2em;
+    position: relative;
+    top: 7px;
 }
 
-i {
-  directionisplay: block;
+#tag {
+    font-size: .6em;
+}
+
+
+/* Overlay style */
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,.9);
+}
+
+/* Overlay closing cross */
+.overlay .overlay-close {
+    padding: 10px 20px 10px 25px;
     position: absolute;
-    width: 250px;
-    height: 250px;
-    left: -125px;
-    top: -70px;
-    border-radius: 250px;
+    right: -2px;
+    top: -2px;
+    background: rgba(0,0,0,.2);
+    overflow: hidden;
+    border: none;
+    color: white;
+    outline: none;
+    z-index: 100;
+}
+
+
+/* Effects */
+html, body {
+    overflow-x: hidden;
+}
+
+.container {
+    overflow-x: hidden;
+    height: 100%;
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+}
+
+.container.overlay-open {
+    -webkit-transform: translateX(50%);
+    transform: translateX(50%);
+}
+
+.container::after {
+    content: '';
     opacity: 0;
-    animation-name: scale;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-
-    -webkit-animation-name: scale;
-    -webkit-animation-duration: 3s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: linear;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    -webkit-transition: opacity 0.5s, visibility 0s 0.5s;
+    transition: opacity 0.5s, visibility 0s 0.5s;
 }
 
-i:nth-child(1) {
-    -webkit-animation-delay: 0.3s;
-    animation-delay: 0.3s;
-}
-
-i:nth-child(2) {
-    -webkit-animation-delay: 0.6s;
-    animation-delay: 0.6s;
-}
-
-i:nth-child(3) {
-    -webkit-animation-delay: 0.9s;
-    animation-delay: 0.9s;
-}
-
-i:nth-child(4) {
-    -webkit-animation-delay: 1.2s;
-    animation-delay: 1.2s;
-}
-
-i:nth-child(5) {
-    -webkit-animation-delay: 1.5s;
-    animation-delay: 1.5s;
-}
-
-i:nth-child(6) {
-    -webkit-animation-delay: 1.8s;
-    animation-delay: 1.8s;
-}
-
-i:nth-child(7) {
-    -webkit-animation-delay: 2.1s;
-    animation-delay: 2.1s;
-}
-
-i:nth-child(8) {
-    -webkit-animation-delay: 2.4s;
-    animation-delay: 2.4s;
-}
-
-i:nth-child(9) {
-    -webkit-animation-delay: 2.7s;
-    animation-delay: 2.7s;
-}
-
-i:nth-child(10) {
-    -webkit-animation-delay: 3s;
-    animation-delay: 3s;
-}
-
-@-webkit-keyframes scale {
-  0% {
-    -webkit-transform: scale(2);
-    opacity: 0;
-    box-shadow: 0px 0px 50px rgba(255, 255, 255, 0.5);
-  }
-
-  50% {
-    -webkit-transform: scale(1) translate(0px, -5px);
+.container.overlay-open::after {
+    visibility: visible;
     opacity: 1;
-    box-shadow: 0px 8px 20px rgba(255, 255, 255, 0.5);
-  }
-
-  100% {
-    -webkit-transform: scale(0.1) translate(0px, 5px);
-    opacity: 0;
-    box-shadow: 0px 10px 20px rgba(255, 255, 255, 0);
-  }
+    -webkit-transition: opacity 0.5s;
+    transition: opacity 0.5s;
 }
 
-@keyframes scale {
-    0% {
-        transform: scale(2);
-        opacity: 0;
-        box-shadow: 0px 0px 50px rgba(255, 255, 255, 0.5);
+.overlay-contentpush {
+    background: url(../img/blur.jpg) no-repeat top;
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+    visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    -webkit-transition: -webkit-transform 0.5s, visibility 0s 0.5s;
+    transition: transform 0.5s, visibility 0s 0.5s;
+}
+
+.overlay-contentpush h1 {
+    font-size: 2em;
+    margin-top: 100px;
+}
+
+.overlay-contentpush h2 {
+    font-size: 1.4em;
+    padding: 0 40px;
+}
+
+.overlay-contentpush p {
+    font-size: .9em;
+    color: #000;
+    padding: 0 40px;
+}
+
+.overlay-contentpush.open {
+    visibility: visible;
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+}
+
+section.alert-content {
+    text-align: left;
+    padding: 60px 40px;
+}
+
+@media screen and (max-height: 30.5em) {
+    .overlay nav {
+        height: 70%;
+        font-size: 34px;
     }
 
-    50% {
-        transform: scale(1) translate(0px, -5px);
-        opacity: 1;
-        box-shadow: 0px 8px 20px rgba(255, 255, 255, 0.5);
-    }
-
-    100% {
-        transform: scale(0.1) translate(0px, 5px);
-        opacity: 0;
-        box-shadow: 0px 10px 20px rgba(255, 255, 255, 0);
+    .overlay ul li {
+        min-height: 34px;
     };
 }
 
+@media all and (min-width: 1280px) {
+    .logo {
+        font-size: 2em;
+    }
 
+    p.brand {
+        position: relative;
+        z-index: 10;
+        top: -120px;
+    }
+
+    img {
+        padding: 20px;
+        max-width: 1000px;
+    }
+
+    .overlay {
+        padding-top: 100px;
+        color: white;
+    };
+}

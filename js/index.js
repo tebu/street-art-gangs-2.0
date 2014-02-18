@@ -16,13 +16,14 @@ jQuery(document).ready(function(){
 		mixpanel.track("SprayingInitiated", {latitude: locationLatitude, longitude: locationLongitude});
 		
 		//Change color background depending on player's color
-        $('body').removeClass().addClass(color)
+         $('body').removeClass().addClass(color)
 
         //Menu
         new gnMenu( document.getElementById( 'gn-menu' ) );
 
         //Animate.css
-        jQuery('#start-to-spray').addClass('animated pulse');
+        // $('#start-to-spray').addClass('animated pulse');
+        // $('small').addClass('animated flash');
 
         //Check GPS
         watchGPS();
@@ -64,11 +65,11 @@ jQuery(document).ready(function(){
 			
             var gang = data[i].gang;
             if (gang != null) {
-              owner.append("Tagged by ");
+              // owner.append("Tagged by ");
               $("<span>").addClass(gang+"-owns").text(gang).appendTo(owner);
               owner.appendTo(venue);
             } else {
-              owner.append("Untagged").appendTo(venue); //TODO change with something better
+              owner.append("Untagged").appendTo(venue);
             }
 			
 			
@@ -80,7 +81,6 @@ jQuery(document).ready(function(){
 			var distance3 = distance2.toFixed(0); 
 			$("<p>").text(""+distance3+"m").appendTo(venue); 
 			$("<br>").appendTo(venue); //TEMP. SOLUTION
-			$("<br>").appendTo(venue);
 			
 
 			if (distance <=0.500) {	//DISTANCES ARE WIDE FOR TESTING... NARROW DOWN AT SOME POINT
@@ -125,13 +125,9 @@ jQuery(document).ready(function(){
             // animateOut:"slideOutLeft"
           });
 
-		
-			
-          jQuery("h1.location").fitText(1.6);
-          jQuery(".category").fitText(.6);
-          jQuery("h3.title").fitText(1.5);
-		  			
-		
+          jQuery("h1.location").fitText(1.25, { minFontSize: '16px', maxFontSize: '60px' })
+          // jQuery(".category").fitText(1, { minFontSize: '10px', maxFontSize: '60px' })
+          jQuery("h3.title").fitText(3, { minFontSize: '9px', maxFontSize: '30px' })
 
         }).fail(function( jqXHR, textStatus ) {
         //TODO fix this

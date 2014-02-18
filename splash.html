@@ -20,6 +20,9 @@
   <link rel="stylesheet" type="text/css" href="css/icons.css" />
   <link rel="stylesheet" type="text/css" href="css/universal.css" />
   <link rel="stylesheet" type="text/css" href="css/splash.css" />
+
+  <!-- Scripts -->
+  <script src="js/modernizr.custom_modalnew.js"></script>
   
 <!-- start Mixpanel --><script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==
 typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);
@@ -28,44 +31,42 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
 </head>
 
 <body class="splash">
-
-<div class="rotate">
-
-<div class='waves'>
-  <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-</div>
+	<div class="container"> 	
 
     <div class="logo">
-        <p><span class="street">street</span> <span class="art">Art</span> <span class="gangs">gangs</span></p>
-        <p id="slogan">v.1.0</p>
+        <img class="tm" src="img/logo.svg">
+        <p class="brand"><span class="street">street</span> <span class="art">Art</span> <span class="gangs">gangs</span></p>
+        <p id="version" class="brand">v.1.0</p>      
     </div>
 
-    </div>
-
-    <nav id="cl-effect-19" class="cl-effect-19">
-      <a href="signup.html">Signup <span class="icon-arrow-right-small"></span></a>
-      <a href="login.html">Login <span class="icon-arrow-right-small"></span></a>
+    <nav>
+      <a href="#" id="trigger-overlay" data-modal="modal-help"><span class="icon-info"></span></a>
+      <a href="signup.html">Signup <span class="icon-arrow-rights-small"></span></a>
+      <a href="login.html">Login <span class="icon-arrow-rights-small"></span></a>
     </nav>
+    
+	</div>
 
-    <!-- Scripts -->
+   <div class="overlay overlay-contentpush">
+		<button type="button" class="overlay-close"><i class="icon-remove"></i></button>
+		 <div class="wrap">					 
+			<div class="about-text">
+				 <h1>Howdy folks!</h1>
+				 <h2>It's time to take ownership of the City of Oulu by tagging* venues.</h2>
+				 <p>The Gangs,<br> <b><span class="purple">Purple Knights</span>, <span class="green">Green Shamans</span> & <span class="blue">Blue Angels</span></b> needs your effort! <br>Collect points for your gang,  <br>...and don't get busted!</p>
+         		 <p id="tag">* to write Gang's graffiti on specific location</p>
+		 	</div>
 
-    <script src='js/jquery-1.10.2.min.js'></script>
-    <script src="js/jquery.fittext.js"></script>
-    <script>
+			</div>				
+	</div>
 
-      // Fittext.js
-      $(document).ready(function(){
-        $(".logo").fitText(1);
-      });
 
-      //Animate.css
-      $(document).ready(function(){
-        $('.logo').addClass('animated rotateIn');
-        $('nav a:first-child').addClass('animated slideInLeft');
-        $('nav a:nth-child(2)').addClass('animated slideInRight');
-      });
+  <!-- Scripts -->
+  <script src="js/jquery-1.10.2.min.js"></script>
+  <script src="js/modalclassie.js"></script>
+  <script src="js/modalscript.js"></script>
+  <script src="js/jquery.fittext.js"></script>
+  <script src="js/splash.js"></script>
 
-    </script>
-	<script src="js/splash.js"></script>
 </body>
 </html>

@@ -37,37 +37,42 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
 
 <body id="tweaks">
 
+ <div class="bg"></div>
+
+
     <div class="md-modal md-effect-5" id="modal-logout">
 
             <div class="md-content">
               <div>
-                <p>Are you sure?</p>
-                <button class="confirm">Yes  <i class="icon-check"></i></button>
-                <button class="md-close"><i class="icon-remove-x"></i> Cancel</button>
+                <p>Really?</p>
+                <button class="confirm"><span>Yep</span>, I need to go  <i class="icon-arrow-rights-small"></i></button>
+                <button class="md-close"><i class=" icon-arrow-left-small"></i><span> Nope</span>, take me back</button>
               </div>
           </div>
     </div><!-- /modal-logout -->
 
   <div class="container">
 
-    <ul id="gn-menu" class="gn-menu-main">
+     <ul id="gn-menu" class="gn-menu-main">
         <li class="gn-trigger">
-          <a class="gn-icon gn-icon-menu icon-list-2"><span class="hide">Menu</span></a>
+          <a class="gn-icon gn-icon-menu icon-list2"><span class="count-notification">4</span></a>
           <nav class="gn-menu-wrapper">
             <div class="gn-scroller">
               <ul class="gn-menu">
+                <li><a class="gn-icon" href="index.html"><span class="nav-icon icon-droplet"></span>Home</a></li>
                 <li><a class="gn-icon" href="profile.html"><span class="nav-icon icon-dude"></span>Profile</a></li>
                 <li><a class="gn-icon" href="profile-gang.html"><span class="nav-icon icon-dudes"></span>Gang</a></li>
+                <li><a class="gn-icon" href="chat.html"><span class="nav-icon icon-talk"></span>Chat<span class="count">4</span></a></li>
                 <li><a class="gn-icon" href="leaderboard.html"><span class="nav-icon icon-trophy"></span>Leaderboard</a></li>
-                <li><a class="gn-icon" href="tweaks.html"><span class="nav-icon icon-config"></span>Tweaks</a></li>
+                <li><a class="gn-icon" href="tweaks.html"><span class="nav-icon icon-tweak"></span>Tweaks</a></li>
                 <li><a class="gn-icon" href="faq.html"><span class="nav-icon icon-question"></span>Help</a></li>
               </ul>
             </div><!-- /gn-scroller -->
           </nav>
         </li>
-        <li class="home"><a href="index.html"><span class="icon-home"></a></li>
-        <li class="messages"><a href="chat.html"><span class="icon-message-bubble"></a></li>
-    </ul><!-- /gn-menu -->
+       <!--     <li class="tm"><img class="tm" src="img/logo.svg"></li> -->
+       <li class="site-name"><i class="icon-tweak"></i> Tweaks</li>
+      </ul><!-- /gn-menu -->
 
     <div class="content">
 
@@ -77,7 +82,7 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
 
             <div class="tweak">
                 <!-- <a href="#" class="btn2 md-trigger" data-modal="modal-info">?</a> -->
-                <div class="option">Set Mood</div>
+                <div class="option"><i class="icon-bullhorn"></i> Set Mood</div>
                 <div class="mood">
                  <!--  <label>Mood</label> -->
                   <input type="text" class="input" placeholder="How you feel goes here?" id="mood">
@@ -85,8 +90,7 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
             </div><!-- /tweak -->
 
             <div class="tweak">
-
-                <button href="#" class="button" id="save">Save  <i class="icon-check "></i></button>
+                <button href="#" class="button" id="save">Save  <i class="icon-arrow-rights-small"></i></button>
             </div><!-- /tweak -->
 
         </div>
@@ -94,8 +98,8 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
         <div class="tweak-section">
 
             <div class="tweak logginout">
-             <div class="option">Logging out</div>
-              <button href="#" class="button logout md-trigger" data-modal="modal-logout">Logout  <i class="icon-arrow-right-small "></i></button>
+             <div class="option"><i class="icon-logout"></i> Logging out</div>
+              <button href="#" class="button logout md-trigger" data-modal="modal-logout">Logout  <i class="icon-arrow-rights-small"></i></button>
             </div><!-- /tweak -->
 
         </div>

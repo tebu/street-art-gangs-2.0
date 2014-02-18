@@ -7,473 +7,304 @@ body {
 
 .container {
     height: 100%;
+    padding-top: 50px;
 }
 
 body.purple {
-    background: #7307B6;
+    background: url(../img/map_purple.jpg) no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 body.blue {
-    background: #4DBBFF;
+    background: url(../img/map_blue.jpg) no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 body.green {
-    background: #12E2B0;
+    background: url(../img/map_green.jpg) no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+body.blue .bg {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../img/blue.jpg) no-repeat left;
+    background-position: 0px 0px;
+    opacity: 0;
+    background-size: stretch;
+    -webkit-animation: blurblue 1 ease 3s;
+    z-index: 1;
+}
+
+body.purple .bg {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../img/purple.jpg) no-repeat left;
+    background-position: 0px 0px;
+    opacity: 0;
+    background-size: stretch;
+    -webkit-animation: blurpurple 1 ease 3s;
+    z-index: 1;
+}
+
+body.green .bg {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../img/green.jpg) no-repeat left;
+    background-position: 0px 0px;
+    opacity: 0;
+    background-size: stretch;
+    -webkit-animation: blurgreen 1 ease 3s;
+    z-index: 1;
+}
+
+@-webkit-keyframes blurblue {
+ 
+    50% {
+        background-position: 100% 100%;
+        opacity: .9;
+    };
+}
+
+@-webkit-keyframes blurpurple {
+ 
+    50% {
+        background-position: 100% 100%;
+        opacity: .9;
+    };
+}
+
+@-webkit-keyframes blurgreen {
+ 
+    50% {
+        background-position: 100% 100%;
+        opacity: .9;
+    };
 }
 
 h1 {
-    font-family: "Raleway";
-    font-weight: 900;
-    font-size: 5em;
+    font-size: 1.7em;
     line-height: 0;
-    z-index: 10;
     text-transform: none;
     position: relative;
-}
-
-body.purple h1 {
-    text-shadow: 1px 1px rgb(79, 5, 126), 2px 2px rgb(79, 5, 126), 3px 3px rgb(79, 5, 127), 4px 4px rgb(79, 5, 127), 5px 5px rgb(80, 5, 127), 6px 6px rgb(80, 5, 128), 7px 7px rgb(80, 5, 128), 8px 8px rgb(80, 5, 129), 9px 9px rgb(81, 5, 129), 10px 10px rgb(81, 5, 129), 11px 11px rgb(81, 5, 130), 12px 12px rgb(81, 5, 130), 13px 13px rgb(82, 5, 131), 14px 14px rgb(82, 5, 131), 15px 15px rgb(82, 5, 131), 16px 16px rgb(82, 5, 132), 17px 17px rgb(83, 5, 132), 18px 18px rgb(83, 5, 132), 19px 19px rgb(83, 5, 133), 20px 20px rgb(83, 5, 133), 21px 21px rgb(84, 5, 134), 22px 22px rgb(84, 5, 134), 23px 23px rgb(84, 5, 134), 24px 24px rgb(84, 5, 135), 25px 25px rgb(85, 5, 135), 26px 26px rgb(85, 5, 136), 27px 27px rgb(85, 5, 136), 28px 28px rgb(85, 5, 136), 29px 29px rgb(86, 5, 137), 30px 30px rgb(86, 5, 137), 31px 31px rgb(86, 5, 137), 32px 32px rgb(86, 5, 138), 33px 33px rgb(87, 5, 138), 34px 34px rgb(87, 5, 139), 35px 35px rgb(87, 5, 139), 36px 36px rgb(87, 5, 139), 37px 37px rgb(88, 5, 140), 38px 38px rgb(88, 5, 140), 39px 39px rgb(88, 5, 141), 40px 40px rgb(88, 5, 141), 41px 41px rgb(89, 5, 141), 42px 42px rgb(89, 5, 142), 43px 43px rgb(89, 5, 142), 44px 44px rgb(89, 5, 142), 45px 45px rgb(90, 5, 143), 46px 46px rgb(90, 5, 143), 47px 47px rgb(90, 5, 144), 48px 48px rgb(90, 5, 144), 49px 49px rgb(91, 5, 144), 50px 50px rgb(91, 5, 145), 51px 51px rgb(91, 5, 145), 52px 52px rgb(91, 5, 146), 53px 53px rgb(92, 5, 146), 54px 54px rgb(92, 5, 146), 55px 55px rgb(92, 5, 147), 56px 56px rgb(92, 5, 147), 57px 57px rgb(93, 5, 148), 58px 58px rgb(93, 5, 148), 59px 59px rgb(93, 5, 148), 60px 60px rgb(93, 5, 149), 61px 61px rgb(94, 5, 149), 62px 62px rgb(94, 5, 149), 63px 63px rgb(94, 5, 150), 64px 64px rgb(94, 5, 150), 65px 65px rgb(95, 5, 151), 66px 66px rgb(95, 5, 151), 67px 67px rgb(95, 5, 151), 68px 68px rgb(95, 5, 152), 69px 69px rgb(96, 5, 152), 70px 70px rgb(96, 5, 153), 71px 71px rgb(96, 5, 153), 72px 72px rgb(96, 5, 153), 73px 73px rgb(97, 6, 154), 74px 74px rgb(97, 6, 154), 75px 75px rgb(97, 6, 154), 76px 76px rgb(97, 6, 155), 77px 77px rgb(98, 6, 155), 78px 78px rgb(98, 6, 156), 79px 79px rgb(98, 6, 156), 80px 80px rgb(98, 6, 156), 81px 81px rgb(99, 6, 157), 82px 82px rgb(99, 6, 157), 83px 83px rgb(99, 6, 158), 84px 84px rgb(99, 6, 158), 85px 85px rgb(100, 6, 158), 86px 86px rgb(100, 6, 159), 87px 87px rgb(100, 6, 159), 88px 88px rgb(100, 6, 159), 89px 89px rgb(101, 6, 160), 90px 90px rgb(101, 6, 160), 91px 91px rgb(101, 6, 161), 92px 92px rgb(101, 6, 161), 93px 93px rgb(102, 6, 161), 94px 94px rgb(102, 6, 162), 95px 95px rgb(102, 6, 162), 96px 96px rgb(102, 6, 163), 97px 97px rgb(103, 6, 163), 98px 98px rgb(103, 6, 163), 99px 99px rgb(103, 6, 164), 100px 100px rgb(103, 6, 164), 101px 101px rgb(104, 6, 165), 102px 102px rgb(104, 6, 165), 103px 103px rgb(104, 6, 165), 104px 104px rgb(104, 6, 166), 105px 105px rgb(105, 6, 166), 106px 106px rgb(105, 6, 166), 107px 107px rgb(105, 6, 167), 108px 108px rgb(105, 6, 167), 109px 109px rgb(106, 6, 168), 110px 110px rgb(106, 6, 168), 111px 111px rgb(106, 6, 168), 112px 112px rgb(106, 6, 169), 113px 113px rgb(107, 6, 169), 114px 114px rgb(107, 6, 170), 115px 115px rgb(107, 6, 170), 116px 116px rgb(107, 6, 170), 117px 117px rgb(108, 6, 171), 118px 118px rgb(108, 6, 171), 119px 119px rgb(108, 6, 171), 120px 120px rgb(108, 6, 172), 121px 121px rgb(109, 6, 172), 122px 122px rgb(109, 6, 173), 123px 123px rgb(109, 6, 173), 124px 124px rgb(109, 6, 173), 125px 125px rgb(110, 6, 174), 126px 126px rgb(110, 6, 174), 127px 127px rgb(110, 6, 175), 128px 128px rgb(110, 6, 175), 129px 129px rgb(111, 6, 175), 130px 130px rgb(111, 6, 176), 131px 131px rgb(111, 6, 176), 132px 132px rgb(111, 6, 176), 133px 133px rgb(112, 6, 177), 134px 134px rgb(112, 6, 177), 135px 135px rgb(112, 6, 178), 136px 136px rgb(112, 6, 178), 137px 137px rgb(113, 6, 178), 138px 138px rgb(113, 6, 179), 139px 139px rgb(113, 6, 179), 140px 140px rgb(113, 6, 180), 141px 141px rgb(114, 6, 180), 142px 142px rgb(114, 6, 180), 143px 143px rgb(114, 6, 181), 144px 144px rgb(114, 6, 181), 145px 145px rgb(115, 7, 182);
-}
-
-body.blue h1 {
-    text-shadow: 1px 1px rgb(27, 161, 242), 2px 2px rgb(27, 161, 242), 3px 3px rgb(27, 161, 242), 4px 4px rgb(27, 161, 242), 5px 5px rgb(27, 161, 242), 6px 6px rgb(27, 161, 242), 7px 7px rgb(27, 161, 242), 8px 8px rgb(27, 161, 242), 9px 9px rgb(27, 161, 242), 10px 10px rgb(27, 161, 243), 11px 11px rgb(27, 161, 243), 12px 12px rgb(27, 161, 243), 13px 13px rgb(27, 161, 243), 14px 14px rgb(27, 161, 243), 15px 15px rgb(27, 161, 243), 16px 16px rgb(27, 161, 243), 17px 17px rgb(27, 162, 243), 18px 18px rgb(27, 162, 243), 19px 19px rgb(27, 162, 243), 20px 20px rgb(27, 162, 244), 21px 21px rgb(27, 162, 244), 22px 22px rgb(27, 162, 244), 23px 23px rgb(27, 162, 244), 24px 24px rgb(27, 162, 244), 25px 25px rgb(27, 162, 244), 26px 26px rgb(27, 162, 244), 27px 27px rgb(27, 162, 244), 28px 28px rgb(27, 162, 244), 29px 29px rgb(27, 162, 244), 30px 30px rgb(27, 162, 245), 31px 31px rgb(27, 162, 245), 32px 32px rgb(27, 162, 245), 33px 33px rgb(27, 163, 245), 34px 34px rgb(27, 163, 245), 35px 35px rgb(27, 163, 245), 36px 36px rgb(27, 163, 245), 37px 37px rgb(27, 163, 245), 38px 38px rgb(27, 163, 245), 39px 39px rgb(27, 163, 245), 40px 40px rgb(27, 163, 246), 41px 41px rgb(27, 163, 246), 42px 42px rgb(27, 163, 246), 43px 43px rgb(27, 163, 246), 44px 44px rgb(27, 163, 246), 45px 45px rgb(27, 163, 246), 46px 46px rgb(27, 163, 246), 47px 47px rgb(27, 163, 246), 48px 48px rgb(27, 163, 246), 49px 49px rgb(27, 164, 246), 50px 50px rgb(27, 164, 247), 51px 51px rgb(27, 164, 247), 52px 52px rgb(27, 164, 247), 53px 53px rgb(27, 164, 247), 54px 54px rgb(27, 164, 247), 55px 55px rgb(27, 164, 247), 56px 56px rgb(27, 164, 247), 57px 57px rgb(27, 164, 247), 58px 58px rgb(27, 164, 247), 59px 59px rgb(27, 164, 247), 60px 60px rgb(27, 164, 248), 61px 61px rgb(27, 164, 248), 62px 62px rgb(27, 164, 248), 63px 63px rgb(27, 164, 248), 64px 64px rgb(27, 164, 248), 65px 65px rgb(27, 165, 248), 66px 66px rgb(27, 165, 248), 67px 67px rgb(27, 165, 248), 68px 68px rgb(27, 165, 248), 69px 69px rgb(27, 165, 248), 70px 70px rgb(27, 165, 249), 71px 71px rgb(27, 165, 249), 72px 72px rgb(27, 165, 249), 73px 73px rgb(27, 165, 249), 74px 74px rgb(27, 165, 249), 75px 75px rgb(27, 165, 249), 76px 76px rgb(27, 165, 249), 77px 77px rgb(27, 165, 249), 78px 78px rgb(27, 165, 249), 79px 79px rgb(27, 165, 249), 80px 80px rgb(27, 165, 250), 81px 81px rgb(27, 166, 250), 82px 82px rgb(27, 166, 250), 83px 83px rgb(27, 166, 250), 84px 84px rgb(27, 166, 250), 85px 85px rgb(27, 166, 250), 86px 86px rgb(27, 166, 250), 87px 87px rgb(27, 166, 250), 88px 88px rgb(27, 166, 250), 89px 89px rgb(27, 166, 250), 90px 90px rgb(27, 166, 251), 91px 91px rgb(27, 166, 251), 92px 92px rgb(27, 166, 251), 93px 93px rgb(27, 166, 251), 94px 94px rgb(27, 166, 251), 95px 95px rgb(27, 166, 251), 96px 96px rgb(27, 166, 251), 97px 97px rgb(27, 167, 251), 98px 98px rgb(27, 167, 251), 99px 99px rgb(27, 167, 251), 100px 100px rgb(27, 167, 252), 101px 101px rgb(27, 167, 252), 102px 102px rgb(27, 167, 252), 103px 103px rgb(27, 167, 252), 104px 104px rgb(27, 167, 252), 105px 105px rgb(27, 167, 252), 106px 106px rgb(27, 167, 252), 107px 107px rgb(27, 167, 252), 108px 108px rgb(27, 167, 252), 109px 109px rgb(27, 167, 252), 110px 110px rgb(27, 167, 253), 111px 111px rgb(27, 167, 253), 112px 112px rgb(27, 167, 253), 113px 113px rgb(27, 168, 253), 114px 114px rgb(27, 168, 253), 115px 115px rgb(27, 168, 253), 116px 116px rgb(27, 168, 253), 117px 117px rgb(27, 168, 253), 118px 118px rgb(27, 168, 253), 119px 119px rgb(27, 168, 253), 120px 120px rgb(27, 168, 254), 121px 121px rgb(27, 168, 254), 122px 122px rgb(27, 168, 254), 123px 123px rgb(27, 168, 254), 124px 124px rgb(27, 168, 254), 125px 125px rgb(27, 168, 254), 126px 126px rgb(27, 168, 254), 127px 127px rgb(27, 168, 254), 128px 128px rgb(27, 168, 254), 129px 129px rgb(28, 169, 255);
-}
-
-body.green h1 {
-    text-shadow: 1px 1px rgb(14, 181, 141), 2px 2px rgb(14, 181, 141), 3px 3px rgb(14, 181, 141), 4px 4px rgb(14, 182, 141), 5px 5px rgb(14, 182, 142), 6px 6px rgb(14, 182, 142), 7px 7px rgb(14, 183, 142), 8px 8px rgb(14, 183, 142), 9px 9px rgb(14, 183, 143), 10px 10px rgb(14, 184, 143), 11px 11px rgb(14, 184, 143), 12px 12px rgb(14, 184, 143), 13px 13px rgb(14, 185, 144), 14px 14px rgb(14, 185, 144), 15px 15px rgb(14, 185, 144), 16px 16px rgb(14, 185, 144), 17px 17px rgb(14, 186, 145), 18px 18px rgb(14, 186, 145), 19px 19px rgb(14, 186, 145), 20px 20px rgb(14, 187, 145), 21px 21px rgb(14, 187, 146), 22px 22px rgb(14, 187, 146), 23px 23px rgb(14, 188, 146), 24px 24px rgb(14, 188, 146), 25px 25px rgb(14, 188, 147), 26px 26px rgb(14, 189, 147), 27px 27px rgb(14, 189, 147), 28px 28px rgb(14, 189, 147), 29px 29px rgb(14, 190, 148), 30px 30px rgb(14, 190, 148), 31px 31px rgb(14, 190, 148), 32px 32px rgb(14, 190, 148), 33px 33px rgb(14, 191, 148), 34px 34px rgb(14, 191, 149), 35px 35px rgb(14, 191, 149), 36px 36px rgb(14, 192, 149), 37px 37px rgb(15, 192, 149), 38px 38px rgb(15, 192, 150), 39px 39px rgb(15, 193, 150), 40px 40px rgb(15, 193, 150), 41px 41px rgb(15, 193, 150), 42px 42px rgb(15, 194, 151), 43px 43px rgb(15, 194, 151), 44px 44px rgb(15, 194, 151), 45px 45px rgb(15, 194, 151), 46px 46px rgb(15, 195, 152), 47px 47px rgb(15, 195, 152), 48px 48px rgb(15, 195, 152), 49px 49px rgb(15, 196, 152), 50px 50px rgb(15, 196, 153), 51px 51px rgb(15, 196, 153), 52px 52px rgb(15, 197, 153), 53px 53px rgb(15, 197, 153), 54px 54px rgb(15, 197, 154), 55px 55px rgb(15, 198, 154), 56px 56px rgb(15, 198, 154), 57px 57px rgb(15, 198, 154), 58px 58px rgb(15, 199, 155), 59px 59px rgb(15, 199, 155), 60px 60px rgb(15, 199, 155), 61px 61px rgb(15, 199, 155), 62px 62px rgb(15, 200, 155), 63px 63px rgb(15, 200, 156), 64px 64px rgb(15, 200, 156), 65px 65px rgb(15, 201, 156), 66px 66px rgb(15, 201, 156), 67px 67px rgb(15, 201, 157), 68px 68px rgb(15, 202, 157), 69px 69px rgb(15, 202, 157), 70px 70px rgb(15, 202, 157), 71px 71px rgb(15, 203, 158), 72px 72px rgb(15, 203, 158), 73px 73px rgb(16, 203, 158), 74px 74px rgb(16, 203, 158), 75px 75px rgb(16, 204, 159), 76px 76px rgb(16, 204, 159), 77px 77px rgb(16, 204, 159), 78px 78px rgb(16, 205, 159), 79px 79px rgb(16, 205, 160), 80px 80px rgb(16, 205, 160), 81px 81px rgb(16, 206, 160), 82px 82px rgb(16, 206, 160), 83px 83px rgb(16, 206, 161), 84px 84px rgb(16, 207, 161), 85px 85px rgb(16, 207, 161), 86px 86px rgb(16, 207, 161), 87px 87px rgb(16, 208, 162), 88px 88px rgb(16, 208, 162), 89px 89px rgb(16, 208, 162), 90px 90px rgb(16, 208, 162), 91px 91px rgb(16, 209, 162), 92px 92px rgb(16, 209, 163), 93px 93px rgb(16, 209, 163), 94px 94px rgb(16, 210, 163), 95px 95px rgb(16, 210, 163), 96px 96px rgb(16, 210, 164), 97px 97px rgb(16, 211, 164), 98px 98px rgb(16, 211, 164), 99px 99px rgb(16, 211, 164), 100px 100px rgb(16, 212, 165), 101px 101px rgb(16, 212, 165), 102px 102px rgb(16, 212, 165), 103px 103px rgb(16, 212, 165), 104px 104px rgb(16, 213, 166), 105px 105px rgb(16, 213, 166), 106px 106px rgb(16, 213, 166), 107px 107px rgb(16, 214, 166), 108px 108px rgb(16, 214, 167), 109px 109px rgb(17, 214, 167), 110px 110px rgb(17, 215, 167), 111px 111px rgb(17, 215, 167), 112px 112px rgb(17, 215, 168), 113px 113px rgb(17, 216, 168), 114px 114px rgb(17, 216, 168), 115px 115px rgb(17, 216, 168), 116px 116px rgb(17, 217, 169), 117px 117px rgb(17, 217, 169), 118px 118px rgb(17, 217, 169), 119px 119px rgb(17, 217, 169), 120px 120px rgb(17, 218, 169), 121px 121px rgb(17, 218, 170), 122px 122px rgb(17, 218, 170), 123px 123px rgb(17, 219, 170), 124px 124px rgb(17, 219, 170), 125px 125px rgb(17, 219, 171), 126px 126px rgb(17, 220, 171), 127px 127px rgb(17, 220, 171), 128px 128px rgb(17, 220, 171), 129px 129px rgb(17, 221, 172), 130px 130px rgb(17, 221, 172), 131px 131px rgb(17, 221, 172), 132px 132px rgb(17, 221, 172), 133px 133px rgb(17, 222, 173), 134px 134px rgb(17, 222, 173), 135px 135px rgb(17, 222, 173), 136px 136px rgb(17, 223, 173), 137px 137px rgb(17, 223, 174), 138px 138px rgb(17, 223, 174), 139px 139px rgb(17, 224, 174), 140px 140px rgb(17, 224, 174), 141px 141px rgb(17, 224, 175), 142px 142px rgb(17, 225, 175), 143px 143px rgb(17, 225, 175), 144px 144px rgb(17, 225, 175), 145px 145px rgb(18, 226, 176);
-}
-
-
-h3.mood {
-    text-transform: none;
-    color: #fff;
-    padding-left: 5px;
-    line-height: 1.1em;
+    position: relative;
+    top: -5px;
 }
 
 h3.mood-title {
     font-size: .9em;
     color: #fff;
-    line-height: 2em;
 }
 
-.avatar-frame, .avatar-frame img {
-    border-radius: 50%;
-    height: auto;
-    width: 100%;
-    position: relative;
-    z-index: 0;
-    top: -10px;
-    margin: 0 auto;
-    max-width: 100px;
-}
-
-.avatar-frame:after {
-    content: "";
-    display: block;
-    background: rgba(123, 0, 41, .6);
-    position: absolute;
-    top: -11px;
-    z-index: 10;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-/*    right: 0*/
-    ;
-}
-
-ul.profile-list {
-    top: 60px;
-    margin: 0;
-    position: relative;
-    height: 100%;
-    list-style: none;
-    width: 100%;
-    background: #fff;
-    padding: 0;
-    text-transform: uppercase;
+.profile-tiles h3 {
+    font-family: 'signika_negativeregular';
     font-size: .8em;
-    -webkit-animation-delay: .5s;
-    animation-delay: .5s;
-}
-
-ul.profile-list li {
-    text-decoration: none;
+    line-height: 0;
     color: #fff;
-    padding: 15px;
-    height: 20%;
-    float: left;
-    background: #fff;
+}
+
+body.purple .profile-tiles h3 {
+    color: #fff;
+}
+
+body.blue .profile-tiles h3 {
+    color: #4A96FF;
+}
+
+body.green .profile-tiles h3 {
+    color: #00c3a1;
+}
+
+.row-two, .row-three {
+    display: -moz-box;
+ /* Firefox */
+    display: -webkit-box;
+ /* Safari and Chrome */
+    display: -ms-flexbox;
+ /* Internet Explorer 10 */
+    display: box;
+    display: flex;
+}
+
+.profile-tiles p {
+    font-size: 1.1em;
+    line-height: .4em;
+    text-align: center;
+    font-family: 'signika_negativebold';
+}
+
+.profile-tiles h3.player-name {
+    font-size: 1em;
+    font-family: 'signika_negativebold';
+    line-height: 0;
     position: relative;
-    overflow: hidden;
-    width: 50%;
-}
-
-body.purple ul.profile-list li:nth-child(1) {
-    background-image: -webkit-gradient(radial, 100% 100%, 0, 100% 100%, 227, color-stop(72%, #7307b6), color-stop(99%, #5b0094));
-    background-image: -webkit-radial-gradient(right bottom, farthest-side circle, #7307b6 72%, #5b0094 99%);
-    background-image: -moz-radial-gradient(right bottom, farthest-side circle, #7307b6 72%, #5b0094 99%);
-    background-image: -ms-radial-gradient(right bottom, farthest-side circle, #7307b6 72%, #5b0094 99%);
-    background-image: -o-radial-gradient(right bottom, farthest-side circle, #7307b6 72%, #5b0094 99%);
-    background-image: radial-gradient(farthest-side circle at right bottom, #7307b6 72%, #5b0094 99%);
-    height: 30%;
-    width: 100%;
-}
-
-body.purple ul.profile-list li:nth-child(2) {
-    background: #370058;
-    height: 10%;
-    width: 20%;
-    padding: 0;
     text-align: center;
+    top: 10px;
+}
+
+.row-one div:before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    right: 15px;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0 12px 12px 12px;
+    border-color: transparent transparent rgba(0,0,0,.5);
+}
+
+.row-one div {
+    width: 100%;
+    position: relative;
+    padding: 0 20px 0 10px;
+    background: rgba(0,0,0,.5);
+    height: 180px;
+}
+
+.row-two div, .row-three div {
+    -moz-box-flex: 1.0;
+ /* Firefox */
+    -webkit-box-flex: 1.0;
+ /* Safari and Chrome */
+    -ms-flex: 1.0;
+ /* Internet Explorer 10 */
+    box-flex: 1.0;
+    flex: 1;
+    background: rgba(0,0,0,.6);
+    border-top: 1px solid rgba(0,0,0,.3);
+    padding: 5px 5px 1px;
+}
+
+.row-two div:nth-child(1) {
+    -webkit-animation-delay: .1s;
+    animation-delay: .1s;
+}
+
+.row-two div:nth-child(2) {
+    -webkit-animation-delay: .15s;
+    animation-delay: .15s;
+}
+
+.row-two div:nth-child(3) {
     -webkit-animation-delay: .2s;
     animation-delay: .2s;
 }
 
-body.purple ul.profile-list li:nth-child(3) {
-    background-image: -webkit-gradient(linear, left center, right center, color-stop(0%, #4D007A), color-stop(100%, #7307B6));
-    background-image: -webkit-linear-gradient(left, #4D007A 0%, #7307B6 100%);
-    background-image: -moz-linear-gradient(left, #4D007A 0%, #7307B6 100%);
-    background-image: -ms-linear-gradient(left, #4D007A 0%, #7307B6 100%);
-    background-image: -o-linear-gradient(left, #4D007A 0%, #7307B6 100%);
-    background-image: linear-gradient(to right, #4D007A 0%, #7307B6 100%);
-    height: 10%;
-    width: 80%;
-    padding: 0 0 0 5px;
+.row-three div:nth-child(1) {
+    -webkit-animation-delay: .25s;
+    animation-delay: .25s;
+}
+
+.row-three div:nth-child(2) {
     -webkit-animation-delay: .3s;
     animation-delay: .3s;
 }
 
-body.purple ul.profile-list li:nth-child(4) {
-    background: #62029a;
-    -webkit-animation-delay: .4s;
-    animation-delay: .4s;
+.row-three div:nth-child(3) {
+    -webkit-animation-delay: .35s;
+    animation-delay: .35s;
 }
 
-body.purple ul.profile-list li:nth-child(5) {
-    background: #6803a3;
-    -webkit-animation-delay: .5s;
-    animation-delay: .5s;
-}
-
-body.purple ul.profile-list li:nth-child(6) {
-    background: #8000cb;
-    -webkit-animation-delay: .6s;
-    animation-delay: .6s;
-}
-
-body.purple ul.profile-list li:nth-child(7) {
-    background: #8803d6;
-    -webkit-animation-delay: .7s;
-    animation-delay: .7s;
-}
-
-body.purple ul.profile-list li:nth-child(8) {
-    background: #9506ea;
-    -webkit-animation-delay: .8s;
-    animation-delay: .8s;
-}
-
-body.purple ul.profile-list li:nth-child(9) {
-    background: #9d09f4;
-    -webkit-animation-delay: .9s;
-    animation-delay: .9s;
-}
-
-body.blue ul.profile-list li:nth-child(1) {
-    background: #31004f;
-    background-image: -webkit-gradient(radial, 100% 100%, 0, 100% 100%, 227, color-stop(86%, #4DBBFF), color-stop(99%, #1CA9FF));
-    background-image: -webkit-radial-gradient(right bottom, farthest-side circle, #4DBBFF 86%, #1CA9FF 99%);
-    background-image: -moz-radial-gradient(right bottom, farthest-side circle, #4DBBFF 86%, #1CA9FF 99%);
-    background-image: -ms-radial-gradient(right bottom, farthest-side circle, #4DBBFF 86%, #1CA9FF 99%);
-    background-image: -o-radial-gradient(right bottom, farthest-side circle, #4DBBFF 86%, #1CA9FF 99%);
-    background-image: radial-gradient(farthest-side circle at right bottom, #4DBBFF 86%, #1CA9FF 99%);
-    height: 30%;
-    width: 100%;
-}
-
-body.blue ul.profile-list li:nth-child(2) {
-    background: #008CE3;
-    height: 10%;
-    width: 20%;
-    padding: 0;
+p.mood {
+    position: relative;
+    line-height: 1.1em;
+    top: 20px;
     text-align: center;
-    -webkit-animation-delay: .2s;
-    animation-delay: .2s;
-}
-
-body.blue ul.profile-list li:nth-child(3) {
-    background: #3f0064;
-    background-image: -webkit-gradient(linear, right center, left center, color-stop(0%, #4FBCFF), color-stop(100%, #0096F2));
-    background-image: -webkit-linear-gradient(right, #4FBCFF 0%, #0096F2 100%);
-    background-image: -moz-linear-gradient(right, #4FBCFF 0%, #0096F2 100%);
-    background-image: -ms-linear-gradient(right, #4FBCFF 0%, #0096F2 100%);
-    background-image: -o-linear-gradient(right, #4FBCFF 0%, #0096F2 100%);
-    background-image: linear-gradient(to left, #4FBCFF 0%, #0096F2 100%);
-    height: 10%;
-    width: 80%;
-    padding: 0 0 0 5px;
-    -webkit-animation-delay: .3s;
-    animation-delay: .3s;
-}
-
-body.blue ul.profile-list li:nth-child(4) {
-    background: #00a2ff;
-    -webkit-animation-delay: .4s;
-    animation-delay: .4s;
-}
-
-body.blue ul.profile-list li:nth-child(5) {
-    background: #13a9ff;
-    -webkit-animation-delay: .5s;
-    animation-delay: .5s;
-}
-
-body.blue ul.profile-list li:nth-child(6) {
-    background: #24afff;
-    -webkit-animation-delay: .6s;
-    animation-delay: .6s;
-}
-
-body.blue ul.profile-list li:nth-child(7) {
-    background: #34b5ff;
-    -webkit-animation-delay: .7s;
-    animation-delay: .7s;
-}
-
-body.blue ul.profile-list li:nth-child(8) {
-    background: #40b9ff;
-    -webkit-animation-delay: .8s;
-    animation-delay: .8s;
-}
-
-body.blue ul.profile-list li:nth-child(9) {
-    background: #4abdff;
-    -webkit-animation-delay: .9s;
-    animation-delay: .9s;
-}
-
-body.green ul.profile-list li:nth-child(1) {
-    background-image: -webkit-gradient(radial, 100% 100%, 0, 100% 100%, 227, color-stop(72%, #12e2b0), color-stop(99%, #02c596));
-    background-image: -webkit-radial-gradient(right bottom, farthest-side circle, #12e2b0 72%, #02c596 99%);
-    background-image: -moz-radial-gradient(right bottom, farthest-side circle, #12e2b0 72%, #02c596 99%);
-    background-image: -ms-radial-gradient(right bottom, farthest-side circle, #12e2b0 72%, #02c596 99%);
-    background-image: -o-radial-gradient(right bottom, farthest-side circle, #12e2b0 72%, #02c596 99%);
-    background-image: radial-gradient(farthest-side circle at right bottom, #12e2b0 72%, #02c596 99%);
-    height: 30%;
-    width: 100%;
-}
-
-body.green ul.profile-list li:nth-child(2) {
-    background: #01bc8f;
-    height: 10%;
-    width: 20%;
-    padding: 0;
-    text-align: center;
-    -webkit-animation-delay: .2s;
-    animation-delay: .2s;
-}
-
-body.green ul.profile-list li:nth-child(3) {
-    background-image: -webkit-gradient(linear, right center, left center, color-stop(0%, #12e2b0), color-stop(100%, #01cf9d));
-    background-image: -webkit-linear-gradient(right, #12e2b0 0%, #01cf9d 100%);
-    background-image: -moz-linear-gradient(right, #12e2b0 0%, #01cf9d 100%);
-    background-image: -ms-linear-gradient(right, #12e2b0 0%, #01cf9d 100%);
-    background-image: -o-linear-gradient(right, #12e2b0 0%, #01cf9d 100%);
-    background-image: linear-gradient(to left, #12e2b0 0%, #01cf9d 100%);
-    height: 10%;
-    width: 80%;
-    padding: 0 0 0 5px;
-    -webkit-animation-delay: .3s;
-    animation-delay: .3s;
-}
-
-body.green ul.profile-list li:nth-child(4) {
-    background: #00d09d;
-    -webkit-animation-delay: .4s;
-    animation-delay: .4s;
-}
-
-body.green ul.profile-list li:nth-child(5) {
-    background: #00dea8;
-    -webkit-animation-delay: .5s;
-    animation-delay: .5s;
-}
-
-body.green ul.profile-list li:nth-child(6) {
-    background: #01e7af;
-    -webkit-animation-delay: .6s;
-    animation-delay: .6s;
-}
-
-body.green ul.profile-list li:nth-child(7) {
-    background: #00f0b6;
-    -webkit-animation-delay: .7s;
-    animation-delay: .7s;
-}
-
-body.green ul.profile-list li:nth-child(8) {
-    background: #00f6bb;
-    -webkit-animation-delay: .8s;
-    animation-delay: .8s;
-}
-
-body.green ul.profile-list li:nth-child(9) {
-    background: #00ffc2;
-    -webkit-animation-delay: .9s;
-    animation-delay: .9s;
-}
-
-ul.profile-list li.no-border {
-    border-right: none;
-}
-
-.description {
+    font-family: 'signika_negativeregular';
+    font-size: .8em;
     display: block;
+    -webkit-animation-delay: .6s;
+    animation-delay: .6s;
+}
+
+.profile-tiles i.info-icon {
+    color: #fff;
+    left: 0;
+    top: 0;
+    font-size: 1em;
+    opacity: .8;
+    padding: 10px;
+    position: relative;
+}
+
+body.purple .profile-tiles i.info-icon {
+    color: #9930FF;
+}
+
+body.blue .profile-tiles i.info-icon {
+    color: #4A96FF;
+}
+
+body.green .profile-tiles i.info-icon {
+    color: #00c3a1;
+}
+
+i.info-icon.icon-dude {
+    font-size: 4em;
+    top: 20px;
+    position: relative;
+    text-align: center;
+    display: block;
+}
+
+.profile-tiles i.icon-bullhorn {
+    position: relative;
+    display: block;
+    top: 20px;
+    text-align: center;
     font-size: 1.6em;
-    position: absolute;
-    left: 20px;
-    bottom: 15px;
-    z-index: 10;
-    font-weight: 400;
-    text-transform: none;
+    -webkit-animation-delay: .5s;
+    animation-delay: .5s;
 }
 
-ul.profile-list li:nth-child(5) .description {
-    left: 27px;
+body.purple .profile-tiles i.icon-bullhorn {
+    color: #9930FF;
 }
 
-ul.profile-list li:nth-child(7) .description {
-    left: 25px;
+body.blue .profile-tiles i.icon-bullhorn {
+    color: #4A96FF;
 }
 
-ul.profile-list li:nth-child(8) .description {
-    left: 25px;
+body.green .profile-tiles i.icon-bullhorn {
+    color: #00c3a1;
 }
 
-ul.profile-list li:nth-child(9) .description {
-    left: 30px;
-}
+@media all and (min-width: 1024px) {
 
-span.profile-icon {
-    position: absolute;
-    font-size: 3em;
-    bottom: 43px;
-    left: 20px;
-    z-index: 0;
-}
+    i.small {
+        font-size: 5em;
+    }
 
-body.blue span.profile-icon, body.green span.profile-icon {
-    opacity: .5;
-}
+    h2.gang-name {
+        font-size: 4em;
+    }
 
-body.purple ul.profile-list li:nth-child(4) span.profile-icon {
-    color: #62029a;
-    text-shadow: 1px 1px rgb(78, 2, 123), 2px 2px rgb(78, 2, 123), 3px 3px rgb(78, 2, 123), 4px 4px rgb(78, 2, 123), 5px 5px rgb(78, 2, 124), 6px 6px rgb(78, 2, 124), 7px 7px rgb(78, 2, 124), 8px 8px rgb(79, 2, 124), 9px 9px rgb(79, 2, 124), 10px 10px rgb(79, 2, 125), 11px 11px rgb(79, 2, 125), 12px 12px rgb(79, 2, 125), 13px 13px rgb(79, 2, 125), 14px 14px rgb(79, 2, 125), 15px 15px rgb(80, 2, 126), 16px 16px rgb(80, 2, 126), 17px 17px rgb(80, 2, 126), 18px 18px rgb(80, 2, 126), 19px 19px rgb(80, 2, 127), 20px 20px rgb(80, 2, 127), 21px 21px rgb(80, 2, 127), 22px 22px rgb(81, 2, 127), 23px 23px rgb(81, 2, 127), 24px 24px rgb(81, 2, 128), 25px 25px rgb(81, 2, 128), 26px 26px rgb(81, 2, 128), 27px 27px rgb(81, 2, 128), 28px 28px rgb(81, 2, 128), 29px 29px rgb(82, 2, 129), 30px 30px rgb(82, 2, 129), 31px 31px rgb(82, 2, 129), 32px 32px rgb(82, 2, 129), 33px 33px rgb(82, 2, 130), 34px 34px rgb(82, 2, 130), 35px 35px rgb(82, 2, 130), 36px 36px rgb(82, 2, 130), 37px 37px rgb(83, 2, 130), 38px 38px rgb(83, 2, 131), 39px 39px rgb(83, 2, 131), 40px 40px rgb(83, 2, 131), 41px 41px rgb(83, 2, 131), 42px 42px rgb(83, 2, 131), 43px 43px rgb(83, 2, 132), 44px 44px rgb(84, 2, 132), 45px 45px rgb(84, 2, 132), 46px 46px rgb(84, 2, 132), 47px 47px rgb(84, 2, 133), 48px 48px rgb(84, 2, 133), 49px 49px rgb(84, 2, 133), 50px 50px rgb(84, 2, 133), 51px 51px rgb(85, 2, 133), 52px 52px rgb(85, 2, 134), 53px 53px rgb(85, 2, 134), 54px 54px rgb(85, 2, 134), 55px 55px rgb(85, 2, 134), 56px 56px rgb(85, 2, 134), 57px 57px rgb(85, 2, 135), 58px 58px rgb(86, 2, 135), 59px 59px rgb(86, 2, 135), 60px 60px rgb(86, 2, 135), 61px 61px rgb(86, 2, 136), 62px 62px rgb(86, 2, 136), 63px 63px rgb(86, 2, 136), 64px 64px rgb(86, 2, 136), 65px 65px rgb(86, 2, 136), 66px 66px rgb(87, 2, 137), 67px 67px rgb(87, 2, 137), 68px 68px rgb(87, 2, 137), 69px 69px rgb(87, 2, 137), 70px 70px rgb(87, 2, 137), 71px 71px rgb(87, 2, 138), 72px 72px rgb(87, 2, 138), 73px 73px rgb(88, 2, 138), 74px 74px rgb(88, 2, 138), 75px 75px rgb(88, 2, 139), 76px 76px rgb(88, 2, 139), 77px 77px rgb(88, 2, 139), 78px 78px rgb(88, 2, 139), 79px 79px rgb(88, 2, 139), 80px 80px rgb(89, 2, 140), 81px 81px rgb(89, 2, 140), 82px 82px rgb(89, 2, 140), 83px 83px rgb(89, 2, 140), 84px 84px rgb(89, 2, 140), 85px 85px rgb(89, 2, 141), 86px 86px rgb(89, 2, 141), 87px 87px rgb(90, 2, 141), 88px 88px rgb(90, 2, 141), 89px 89px rgb(90, 2, 142), 90px 90px rgb(90, 2, 142), 91px 91px rgb(90, 2, 142), 92px 92px rgb(90, 2, 142), 93px 93px rgb(90, 2, 142), 94px 94px rgb(90, 2, 143), 95px 95px rgb(91, 2, 143), 96px 96px rgb(91, 2, 143), 97px 97px rgb(91, 2, 143), 98px 98px rgb(91, 2, 143), 99px 99px rgb(91, 2, 144), 100px 100px rgb(91, 2, 144), 101px 101px rgb(91, 2, 144), 102px 102px rgb(92, 2, 144), 103px 103px rgb(92, 2, 145), 104px 104px rgb(92, 2, 145), 105px 105px rgb(92, 2, 145), 106px 106px rgb(92, 2, 145), 107px 107px rgb(92, 2, 145), 108px 108px rgb(92, 2, 146), 109px 109px rgb(93, 2, 146), 110px 110px rgb(93, 2, 146), 111px 111px rgb(93, 2, 146), 112px 112px rgb(93, 2, 146), 113px 113px rgb(93, 2, 147), 114px 114px rgb(93, 2, 147), 115px 115px rgb(93, 2, 147), 116px 116px rgb(94, 2, 147), 117px 117px rgb(94, 2, 148), 118px 118px rgb(94, 2, 148), 119px 119px rgb(94, 2, 148), 120px 120px rgb(94, 2, 148), 121px 121px rgb(94, 2, 148), 122px 122px rgb(94, 2, 149), 123px 123px rgb(94, 2, 149), 124px 124px rgb(95, 2, 149), 125px 125px rgb(95, 2, 149), 126px 126px rgb(95, 2, 149), 127px 127px rgb(95, 2, 150), 128px 128px rgb(95, 2, 150), 129px 129px rgb(95, 2, 150), 130px 130px rgb(95, 2, 150), 131px 131px rgb(96, 2, 151), 132px 132px rgb(96, 2, 151), 133px 133px rgb(96, 2, 151), 134px 134px rgb(96, 2, 151), 135px 135px rgb(96, 2, 151), 136px 136px rgb(96, 2, 152), 137px 137px rgb(96, 2, 152), 138px 138px rgb(97, 2, 152), 139px 139px rgb(97, 2, 152), 140px 140px rgb(97, 2, 152), 141px 141px rgb(97, 2, 153), 142px 142px rgb(97, 2, 153), 143px 143px rgb(97, 2, 153), 144px 144px rgb(97, 2, 153), 145px 145px rgb(98, 2, 154);
-}
+    h3.mood {
+        font-size: 2em;
+    }
 
-body.purple ul.profile-list li:nth-child(5) span.profile-icon {
-    color: #6803a3;
-    text-shadow: 1px 1px rgb(83, 2, 130), 2px 2px rgb(83, 2, 130), 3px 3px rgb(83, 2, 130), 4px 4px rgb(83, 2, 130), 5px 5px rgb(83, 2, 131), 6px 6px rgb(83, 2, 131), 7px 7px rgb(84, 2, 131), 8px 8px rgb(84, 2, 131), 9px 9px rgb(84, 2, 132), 10px 10px rgb(84, 2, 132), 11px 11px rgb(84, 2, 132), 12px 12px rgb(84, 2, 132), 13px 13px rgb(84, 2, 132), 14px 14px rgb(85, 2, 133), 15px 15px rgb(85, 2, 133), 16px 16px rgb(85, 2, 133), 17px 17px rgb(85, 2, 133), 18px 18px rgb(85, 2, 134), 19px 19px rgb(85, 2, 134), 20px 20px rgb(85, 2, 134), 21px 21px rgb(86, 2, 134), 22px 22px rgb(86, 2, 135), 23px 23px rgb(86, 2, 135), 24px 24px rgb(86, 2, 135), 25px 25px rgb(86, 2, 135), 26px 26px rgb(86, 2, 135), 27px 27px rgb(86, 2, 136), 28px 28px rgb(87, 2, 136), 29px 29px rgb(87, 2, 136), 30px 30px rgb(87, 2, 136), 31px 31px rgb(87, 2, 137), 32px 32px rgb(87, 2, 137), 33px 33px rgb(87, 2, 137), 34px 34px rgb(87, 2, 137), 35px 35px rgb(88, 2, 137), 36px 36px rgb(88, 2, 138), 37px 37px rgb(88, 2, 138), 38px 38px rgb(88, 2, 138), 39px 39px rgb(88, 2, 138), 40px 40px rgb(88, 2, 139), 41px 41px rgb(88, 2, 139), 42px 42px rgb(89, 2, 139), 43px 43px rgb(89, 2, 139), 44px 44px rgb(89, 2, 140), 45px 45px rgb(89, 2, 140), 46px 46px rgb(89, 2, 140), 47px 47px rgb(89, 2, 140), 48px 48px rgb(89, 2, 140), 49px 49px rgb(90, 2, 141), 50px 50px rgb(90, 2, 141), 51px 51px rgb(90, 2, 141), 52px 52px rgb(90, 2, 141), 53px 53px rgb(90, 2, 142), 54px 54px rgb(90, 2, 142), 55px 55px rgb(90, 2, 142), 56px 56px rgb(91, 2, 142), 57px 57px rgb(91, 2, 142), 58px 58px rgb(91, 2, 143), 59px 59px rgb(91, 2, 143), 60px 60px rgb(91, 2, 143), 61px 61px rgb(91, 2, 143), 62px 62px rgb(91, 2, 144), 63px 63px rgb(92, 2, 144), 64px 64px rgb(92, 2, 144), 65px 65px rgb(92, 2, 144), 66px 66px rgb(92, 2, 145), 67px 67px rgb(92, 2, 145), 68px 68px rgb(92, 2, 145), 69px 69px rgb(92, 2, 145), 70px 70px rgb(93, 2, 145), 71px 71px rgb(93, 2, 146), 72px 72px rgb(93, 2, 146), 73px 73px rgb(93, 2, 146), 74px 74px rgb(93, 2, 146), 75px 75px rgb(93, 2, 147), 76px 76px rgb(94, 2, 147), 77px 77px rgb(94, 2, 147), 78px 78px rgb(94, 2, 147), 79px 79px rgb(94, 2, 147), 80px 80px rgb(94, 2, 148), 81px 81px rgb(94, 2, 148), 82px 82px rgb(94, 2, 148), 83px 83px rgb(95, 2, 148), 84px 84px rgb(95, 2, 149), 85px 85px rgb(95, 2, 149), 86px 86px rgb(95, 2, 149), 87px 87px rgb(95, 2, 149), 88px 88px rgb(95, 2, 150), 89px 89px rgb(95, 2, 150), 90px 90px rgb(96, 2, 150), 91px 91px rgb(96, 2, 150), 92px 92px rgb(96, 2, 150), 93px 93px rgb(96, 2, 151), 94px 94px rgb(96, 2, 151), 95px 95px rgb(96, 2, 151), 96px 96px rgb(96, 2, 151), 97px 97px rgb(97, 2, 152), 98px 98px rgb(97, 2, 152), 99px 99px rgb(97, 2, 152), 100px 100px rgb(97, 2, 152), 101px 101px rgb(97, 2, 152), 102px 102px rgb(97, 2, 153), 103px 103px rgb(97, 2, 153), 104px 104px rgb(98, 2, 153), 105px 105px rgb(98, 2, 153), 106px 106px rgb(98, 2, 154), 107px 107px rgb(98, 2, 154), 108px 108px rgb(98, 2, 154), 109px 109px rgb(98, 2, 154), 110px 110px rgb(98, 2, 155), 111px 111px rgb(99, 2, 155), 112px 112px rgb(99, 2, 155), 113px 113px rgb(99, 2, 155), 114px 114px rgb(99, 2, 155), 115px 115px rgb(99, 2, 156), 116px 116px rgb(99, 2, 156), 117px 117px rgb(99, 2, 156), 118px 118px rgb(100, 2, 156), 119px 119px rgb(100, 2, 157), 120px 120px rgb(100, 2, 157), 121px 121px rgb(100, 2, 157), 122px 122px rgb(100, 2, 157), 123px 123px rgb(100, 2, 157), 124px 124px rgb(100, 2, 158), 125px 125px rgb(101, 2, 158), 126px 126px rgb(101, 2, 158), 127px 127px rgb(101, 2, 158), 128px 128px rgb(101, 2, 159), 129px 129px rgb(101, 2, 159), 130px 130px rgb(101, 2, 159), 131px 131px rgb(101, 2, 159), 132px 132px rgb(102, 2, 160), 133px 133px rgb(102, 2, 160), 134px 134px rgb(102, 2, 160), 135px 135px rgb(102, 2, 160), 136px 136px rgb(102, 2, 160), 137px 137px rgb(102, 2, 161), 138px 138px rgb(102, 2, 161), 139px 139px rgb(103, 2, 161), 140px 140px rgb(103, 2, 161), 141px 141px rgb(103, 2, 162), 142px 142px rgb(103, 2, 162), 143px 143px rgb(103, 2, 162), 144px 144px rgb(103, 2, 162), 145px 145px rgb(104, 3, 163);
-}
+    span.info {
+        font-size: 6em;
+    }
 
-body.purple ul.profile-list li:nth-child(6) span.profile-icon {
-    color: #8000cb;
-    text-shadow: 1px 1px rgb(102, 0, 162), 2px 2px rgb(102, 0, 162), 3px 3px rgb(102, 0, 162), 4px 4px rgb(102, 0, 163), 5px 5px rgb(102, 0, 163), 6px 6px rgb(103, 0, 163), 7px 7px rgb(103, 0, 163), 8px 8px rgb(103, 0, 164), 9px 9px rgb(103, 0, 164), 10px 10px rgb(103, 0, 164), 11px 11px rgb(103, 0, 165), 12px 12px rgb(104, 0, 165), 13px 13px rgb(104, 0, 165), 14px 14px rgb(104, 0, 165), 15px 15px rgb(104, 0, 166), 16px 16px rgb(104, 0, 166), 17px 17px rgb(105, 0, 166), 18px 18px rgb(105, 0, 167), 19px 19px rgb(105, 0, 167), 20px 20px rgb(105, 0, 167), 21px 21px rgb(105, 0, 167), 22px 22px rgb(105, 0, 168), 23px 23px rgb(106, 0, 168), 24px 24px rgb(106, 0, 168), 25px 25px rgb(106, 0, 169), 26px 26px rgb(106, 0, 169), 27px 27px rgb(106, 0, 169), 28px 28px rgb(107, 0, 169), 29px 29px rgb(107, 0, 170), 30px 30px rgb(107, 0, 170), 31px 31px rgb(107, 0, 170), 32px 32px rgb(107, 0, 171), 33px 33px rgb(107, 0, 171), 34px 34px rgb(108, 0, 171), 35px 35px rgb(108, 0, 171), 36px 36px rgb(108, 0, 172), 37px 37px rgb(108, 0, 172), 38px 38px rgb(108, 0, 172), 39px 39px rgb(108, 0, 173), 40px 40px rgb(109, 0, 173), 41px 41px rgb(109, 0, 173), 42px 42px rgb(109, 0, 173), 43px 43px rgb(109, 0, 174), 44px 44px rgb(109, 0, 174), 45px 45px rgb(110, 0, 174), 46px 46px rgb(110, 0, 175), 47px 47px rgb(110, 0, 175), 48px 48px rgb(110, 0, 175), 49px 49px rgb(110, 0, 175), 50px 50px rgb(110, 0, 176), 51px 51px rgb(111, 0, 176), 52px 52px rgb(111, 0, 176), 53px 53px rgb(111, 0, 176), 54px 54px rgb(111, 0, 177), 55px 55px rgb(111, 0, 177), 56px 56px rgb(112, 0, 177), 57px 57px rgb(112, 0, 178), 58px 58px rgb(112, 0, 178), 59px 59px rgb(112, 0, 178), 60px 60px rgb(112, 0, 178), 61px 61px rgb(112, 0, 179), 62px 62px rgb(113, 0, 179), 63px 63px rgb(113, 0, 179), 64px 64px rgb(113, 0, 180), 65px 65px rgb(113, 0, 180), 66px 66px rgb(113, 0, 180), 67px 67px rgb(114, 0, 180), 68px 68px rgb(114, 0, 181), 69px 69px rgb(114, 0, 181), 70px 70px rgb(114, 0, 181), 71px 71px rgb(114, 0, 182), 72px 72px rgb(114, 0, 182), 73px 73px rgb(115, 0, 182), 74px 74px rgb(115, 0, 182), 75px 75px rgb(115, 0, 183), 76px 76px rgb(115, 0, 183), 77px 77px rgb(115, 0, 183), 78px 78px rgb(115, 0, 184), 79px 79px rgb(116, 0, 184), 80px 80px rgb(116, 0, 184), 81px 81px rgb(116, 0, 184), 82px 82px rgb(116, 0, 185), 83px 83px rgb(116, 0, 185), 84px 84px rgb(117, 0, 185), 85px 85px rgb(117, 0, 186), 86px 86px rgb(117, 0, 186), 87px 87px rgb(117, 0, 186), 88px 88px rgb(117, 0, 186), 89px 89px rgb(117, 0, 187), 90px 90px rgb(118, 0, 187), 91px 91px rgb(118, 0, 187), 92px 92px rgb(118, 0, 188), 93px 93px rgb(118, 0, 188), 94px 94px rgb(118, 0, 188), 95px 95px rgb(119, 0, 188), 96px 96px rgb(119, 0, 189), 97px 97px rgb(119, 0, 189), 98px 98px rgb(119, 0, 189), 99px 99px rgb(119, 0, 189), 100px 100px rgb(119, 0, 190), 101px 101px rgb(120, 0, 190), 102px 102px rgb(120, 0, 190), 103px 103px rgb(120, 0, 191), 104px 104px rgb(120, 0, 191), 105px 105px rgb(120, 0, 191), 106px 106px rgb(121, 0, 191), 107px 107px rgb(121, 0, 192), 108px 108px rgb(121, 0, 192), 109px 109px rgb(121, 0, 192), 110px 110px rgb(121, 0, 193), 111px 111px rgb(121, 0, 193), 112px 112px rgb(122, 0, 193), 113px 113px rgb(122, 0, 193), 114px 114px rgb(122, 0, 194), 115px 115px rgb(122, 0, 194), 116px 116px rgb(122, 0, 194), 117px 117px rgb(122, 0, 195), 118px 118px rgb(123, 0, 195), 119px 119px rgb(123, 0, 195), 120px 120px rgb(123, 0, 195), 121px 121px rgb(123, 0, 196), 122px 122px rgb(123, 0, 196), 123px 123px rgb(124, 0, 196), 124px 124px rgb(124, 0, 197), 125px 125px rgb(124, 0, 197), 126px 126px rgb(124, 0, 197), 127px 127px rgb(124, 0, 197), 128px 128px rgb(124, 0, 198), 129px 129px rgb(125, 0, 198), 130px 130px rgb(125, 0, 198), 131px 131px rgb(125, 0, 199), 132px 132px rgb(125, 0, 199), 133px 133px rgb(125, 0, 199), 134px 134px rgb(126, 0, 199), 135px 135px rgb(126, 0, 200), 136px 136px rgb(126, 0, 200), 137px 137px rgb(126, 0, 200), 138px 138px rgb(126, 0, 201), 139px 139px rgb(126, 0, 201), 140px 140px rgb(127, 0, 201), 141px 141px rgb(127, 0, 201), 142px 142px rgb(127, 0, 202), 143px 143px rgb(127, 0, 202), 144px 144px rgb(127, 0, 202), 145px 145px rgb(128, 0, 203);
-}
+    span.profile-icon {
+        font-size: 3em;
+    }
 
-body.purple ul.profile-list li:nth-child(7) span.profile-icon {
-    color: #8803d6;
-    text-shadow: 1px 1px rgb(109, 2, 171), 2px 2px rgb(109, 2, 171), 3px 3px rgb(109, 2, 171), 4px 4px rgb(109, 2, 172), 5px 5px rgb(109, 2, 172), 6px 6px rgb(110, 2, 172), 7px 7px rgb(110, 2, 173), 8px 8px rgb(110, 2, 173), 9px 9px rgb(110, 2, 173), 10px 10px rgb(110, 2, 173), 11px 11px rgb(111, 2, 174), 12px 12px rgb(111, 2, 174), 13px 13px rgb(111, 2, 174), 14px 14px rgb(111, 2, 175), 15px 15px rgb(111, 2, 175), 16px 16px rgb(111, 2, 175), 17px 17px rgb(112, 2, 176), 18px 18px rgb(112, 2, 176), 19px 19px rgb(112, 2, 176), 20px 20px rgb(112, 2, 176), 21px 21px rgb(112, 2, 177), 22px 22px rgb(113, 2, 177), 23px 23px rgb(113, 2, 177), 24px 24px rgb(113, 2, 178), 25px 25px rgb(113, 2, 178), 26px 26px rgb(113, 2, 178), 27px 27px rgb(114, 2, 179), 28px 28px rgb(114, 2, 179), 29px 29px rgb(114, 2, 179), 30px 30px rgb(114, 2, 179), 31px 31px rgb(114, 2, 180), 32px 32px rgb(114, 2, 180), 33px 33px rgb(115, 2, 180), 34px 34px rgb(115, 2, 181), 35px 35px rgb(115, 2, 181), 36px 36px rgb(115, 2, 181), 37px 37px rgb(115, 2, 181), 38px 38px rgb(116, 2, 182), 39px 39px rgb(116, 2, 182), 40px 40px rgb(116, 2, 182), 41px 41px rgb(116, 2, 183), 42px 42px rgb(116, 2, 183), 43px 43px rgb(117, 2, 183), 44px 44px rgb(117, 2, 184), 45px 45px rgb(117, 2, 184), 46px 46px rgb(117, 2, 184), 47px 47px rgb(117, 2, 184), 48px 48px rgb(117, 2, 185), 49px 49px rgb(118, 2, 185), 50px 50px rgb(118, 2, 185), 51px 51px rgb(118, 2, 186), 52px 52px rgb(118, 2, 186), 53px 53px rgb(118, 2, 186), 54px 54px rgb(119, 2, 187), 55px 55px rgb(119, 2, 187), 56px 56px rgb(119, 2, 187), 57px 57px rgb(119, 2, 187), 58px 58px rgb(119, 2, 188), 59px 59px rgb(119, 2, 188), 60px 60px rgb(120, 2, 188), 61px 61px rgb(120, 2, 189), 62px 62px rgb(120, 2, 189), 63px 63px rgb(120, 2, 189), 64px 64px rgb(120, 2, 189), 65px 65px rgb(121, 2, 190), 66px 66px rgb(121, 2, 190), 67px 67px rgb(121, 2, 190), 68px 68px rgb(121, 2, 191), 69px 69px rgb(121, 2, 191), 70px 70px rgb(122, 2, 191), 71px 71px rgb(122, 2, 192), 72px 72px rgb(122, 2, 192), 73px 73px rgb(122, 2, 192), 74px 74px rgb(122, 2, 192), 75px 75px rgb(122, 2, 193), 76px 76px rgb(123, 2, 193), 77px 77px rgb(123, 2, 193), 78px 78px rgb(123, 2, 194), 79px 79px rgb(123, 2, 194), 80px 80px rgb(123, 2, 194), 81px 81px rgb(124, 2, 195), 82px 82px rgb(124, 2, 195), 83px 83px rgb(124, 2, 195), 84px 84px rgb(124, 2, 195), 85px 85px rgb(124, 2, 196), 86px 86px rgb(125, 2, 196), 87px 87px rgb(125, 2, 196), 88px 88px rgb(125, 2, 197), 89px 89px rgb(125, 2, 197), 90px 90px rgb(125, 2, 197), 91px 91px rgb(125, 2, 197), 92px 92px rgb(126, 2, 198), 93px 93px rgb(126, 2, 198), 94px 94px rgb(126, 2, 198), 95px 95px rgb(126, 2, 199), 96px 96px rgb(126, 2, 199), 97px 97px rgb(127, 2, 199), 98px 98px rgb(127, 2, 200), 99px 99px rgb(127, 2, 200), 100px 100px rgb(127, 2, 200), 101px 101px rgb(127, 2, 200), 102px 102px rgb(127, 2, 201), 103px 103px rgb(128, 2, 201), 104px 104px rgb(128, 2, 201), 105px 105px rgb(128, 2, 202), 106px 106px rgb(128, 2, 202), 107px 107px rgb(128, 2, 202), 108px 108px rgb(129, 2, 203), 109px 109px rgb(129, 2, 203), 110px 110px rgb(129, 2, 203), 111px 111px rgb(129, 2, 203), 112px 112px rgb(129, 2, 204), 113px 113px rgb(130, 2, 204), 114px 114px rgb(130, 2, 204), 115px 115px rgb(130, 2, 205), 116px 116px rgb(130, 2, 205), 117px 117px rgb(130, 2, 205), 118px 118px rgb(130, 2, 205), 119px 119px rgb(131, 2, 206), 120px 120px rgb(131, 2, 206), 121px 121px rgb(131, 2, 206), 122px 122px rgb(131, 2, 207), 123px 123px rgb(131, 2, 207), 124px 124px rgb(132, 2, 207), 125px 125px rgb(132, 2, 208), 126px 126px rgb(132, 2, 208), 127px 127px rgb(132, 2, 208), 128px 128px rgb(132, 2, 208), 129px 129px rgb(133, 2, 209), 130px 130px rgb(133, 2, 209), 131px 131px rgb(133, 2, 209), 132px 132px rgb(133, 2, 210), 133px 133px rgb(133, 2, 210), 134px 134px rgb(133, 2, 210), 135px 135px rgb(134, 2, 211), 136px 136px rgb(134, 2, 211), 137px 137px rgb(134, 2, 211), 138px 138px rgb(134, 2, 211), 139px 139px rgb(134, 2, 212), 140px 140px rgb(135, 2, 212), 141px 141px rgb(135, 2, 212), 142px 142px rgb(135, 2, 213), 143px 143px rgb(135, 2, 213), 144px 144px rgb(135, 2, 213), 145px 145px rgb(136, 3, 214);
-}
-
-body.purple ul.profile-list li:nth-child(8) span.profile-icon {
-    color: #9506ea;
-    text-shadow: 1px 1px rgb(119, 5, 187), 2px 2px rgb(119, 5, 187), 3px 3px rgb(119, 5, 187), 4px 4px rgb(119, 5, 188), 5px 5px rgb(120, 5, 188), 6px 6px rgb(120, 5, 188), 7px 7px rgb(120, 5, 189), 8px 8px rgb(120, 5, 189), 9px 9px rgb(120, 5, 189), 10px 10px rgb(121, 5, 190), 11px 11px rgb(121, 5, 190), 12px 12px rgb(121, 5, 190), 13px 13px rgb(121, 5, 191), 14px 14px rgb(121, 5, 191), 15px 15px rgb(122, 5, 191), 16px 16px rgb(122, 5, 192), 17px 17px rgb(122, 5, 192), 18px 18px rgb(122, 5, 192), 19px 19px rgb(122, 5, 193), 20px 20px rgb(123, 5, 193), 21px 21px rgb(123, 5, 193), 22px 22px rgb(123, 5, 194), 23px 23px rgb(123, 5, 194), 24px 24px rgb(123, 5, 194), 25px 25px rgb(124, 5, 195), 26px 26px rgb(124, 5, 195), 27px 27px rgb(124, 5, 195), 28px 28px rgb(124, 5, 196), 29px 29px rgb(125, 5, 196), 30px 30px rgb(125, 5, 196), 31px 31px rgb(125, 5, 197), 32px 32px rgb(125, 5, 197), 33px 33px rgb(125, 5, 197), 34px 34px rgb(126, 5, 198), 35px 35px rgb(126, 5, 198), 36px 36px rgb(126, 5, 198), 37px 37px rgb(126, 5, 198), 38px 38px rgb(126, 5, 199), 39px 39px rgb(127, 5, 199), 40px 40px rgb(127, 5, 199), 41px 41px rgb(127, 5, 200), 42px 42px rgb(127, 5, 200), 43px 43px rgb(127, 5, 200), 44px 44px rgb(128, 5, 201), 45px 45px rgb(128, 5, 201), 46px 46px rgb(128, 5, 201), 47px 47px rgb(128, 5, 202), 48px 48px rgb(128, 5, 202), 49px 49px rgb(129, 5, 202), 50px 50px rgb(129, 5, 203), 51px 51px rgb(129, 5, 203), 52px 52px rgb(129, 5, 203), 53px 53px rgb(129, 5, 204), 54px 54px rgb(130, 5, 204), 55px 55px rgb(130, 5, 204), 56px 56px rgb(130, 5, 205), 57px 57px rgb(130, 5, 205), 58px 58px rgb(131, 5, 205), 59px 59px rgb(131, 5, 206), 60px 60px rgb(131, 5, 206), 61px 61px rgb(131, 5, 206), 62px 62px rgb(131, 5, 207), 63px 63px rgb(132, 5, 207), 64px 64px rgb(132, 5, 207), 65px 65px rgb(132, 5, 208), 66px 66px rgb(132, 5, 208), 67px 67px rgb(132, 5, 208), 68px 68px rgb(133, 5, 209), 69px 69px rgb(133, 5, 209), 70px 70px rgb(133, 5, 209), 71px 71px rgb(133, 5, 210), 72px 72px rgb(133, 5, 210), 73px 73px rgb(134, 5, 210), 74px 74px rgb(134, 5, 210), 75px 75px rgb(134, 5, 211), 76px 76px rgb(134, 5, 211), 77px 77px rgb(134, 5, 211), 78px 78px rgb(135, 5, 212), 79px 79px rgb(135, 5, 212), 80px 80px rgb(135, 5, 212), 81px 81px rgb(135, 5, 213), 82px 82px rgb(135, 5, 213), 83px 83px rgb(136, 5, 213), 84px 84px rgb(136, 5, 214), 85px 85px rgb(136, 5, 214), 86px 86px rgb(136, 5, 214), 87px 87px rgb(137, 5, 215), 88px 88px rgb(137, 5, 215), 89px 89px rgb(137, 5, 215), 90px 90px rgb(137, 5, 216), 91px 91px rgb(137, 5, 216), 92px 92px rgb(138, 5, 216), 93px 93px rgb(138, 5, 217), 94px 94px rgb(138, 5, 217), 95px 95px rgb(138, 5, 217), 96px 96px rgb(138, 5, 218), 97px 97px rgb(139, 5, 218), 98px 98px rgb(139, 5, 218), 99px 99px rgb(139, 5, 219), 100px 100px rgb(139, 5, 219), 101px 101px rgb(139, 5, 219), 102px 102px rgb(140, 5, 220), 103px 103px rgb(140, 5, 220), 104px 104px rgb(140, 5, 220), 105px 105px rgb(140, 5, 221), 106px 106px rgb(140, 5, 221), 107px 107px rgb(141, 5, 221), 108px 108px rgb(141, 5, 222), 109px 109px rgb(141, 5, 222), 110px 110px rgb(141, 5, 222), 111px 111px rgb(141, 5, 222), 112px 112px rgb(142, 5, 223), 113px 113px rgb(142, 5, 223), 114px 114px rgb(142, 5, 223), 115px 115px rgb(142, 5, 224), 116px 116px rgb(143, 5, 224), 117px 117px rgb(143, 5, 224), 118px 118px rgb(143, 5, 225), 119px 119px rgb(143, 5, 225), 120px 120px rgb(143, 5, 225), 121px 121px rgb(144, 5, 226), 122px 122px rgb(144, 5, 226), 123px 123px rgb(144, 5, 226), 124px 124px rgb(144, 5, 227), 125px 125px rgb(144, 5, 227), 126px 126px rgb(145, 5, 227), 127px 127px rgb(145, 5, 228), 128px 128px rgb(145, 5, 228), 129px 129px rgb(145, 5, 228), 130px 130px rgb(145, 5, 229), 131px 131px rgb(146, 5, 229), 132px 132px rgb(146, 5, 229), 133px 133px rgb(146, 5, 230), 134px 134px rgb(146, 5, 230), 135px 135px rgb(146, 5, 230), 136px 136px rgb(147, 5, 231), 137px 137px rgb(147, 5, 231), 138px 138px rgb(147, 5, 231), 139px 139px rgb(147, 5, 232), 140px 140px rgb(147, 5, 232), 141px 141px rgb(148, 5, 232), 142px 142px rgb(148, 5, 233), 143px 143px rgb(148, 5, 233), 144px 144px rgb(148, 5, 233), 145px 145px rgb(149, 6, 234);
-}
-
-body.purple ul.profile-list li:nth-child(9) span.profile-icon {
-    color: #9d09f4;
-    text-shadow: 1px 1px rgb(126, 7, 195), 2px 2px rgb(126, 7, 195), 3px 3px rgb(126, 7, 196), 4px 4px rgb(126, 7, 196), 5px 5px rgb(127, 7, 196), 6px 6px rgb(127, 7, 197), 7px 7px rgb(127, 7, 197), 8px 8px rgb(127, 7, 197), 9px 9px rgb(127, 7, 198), 10px 10px rgb(128, 7, 198), 11px 11px rgb(128, 7, 198), 12px 12px rgb(128, 7, 199), 13px 13px rgb(128, 7, 199), 14px 14px rgb(128, 7, 199), 15px 15px rgb(129, 7, 200), 16px 16px rgb(129, 7, 200), 17px 17px rgb(129, 7, 200), 18px 18px rgb(129, 7, 201), 19px 19px rgb(130, 7, 201), 20px 20px rgb(130, 7, 201), 21px 21px rgb(130, 7, 202), 22px 22px rgb(130, 7, 202), 23px 23px rgb(130, 7, 202), 24px 24px rgb(131, 7, 203), 25px 25px rgb(131, 7, 203), 26px 26px rgb(131, 7, 203), 27px 27px rgb(131, 7, 204), 28px 28px rgb(131, 7, 204), 29px 29px rgb(132, 7, 204), 30px 30px rgb(132, 7, 205), 31px 31px rgb(132, 7, 205), 32px 32px rgb(132, 7, 205), 33px 33px rgb(133, 7, 206), 34px 34px rgb(133, 7, 206), 35px 35px rgb(133, 7, 206), 36px 36px rgb(133, 7, 207), 37px 37px rgb(133, 7, 207), 38px 38px rgb(134, 7, 207), 39px 39px rgb(134, 7, 208), 40px 40px rgb(134, 7, 208), 41px 41px rgb(134, 7, 208), 42px 42px rgb(134, 7, 209), 43px 43px rgb(135, 7, 209), 44px 44px rgb(135, 7, 209), 45px 45px rgb(135, 7, 210), 46px 46px rgb(135, 7, 210), 47px 47px rgb(136, 7, 210), 48px 48px rgb(136, 7, 211), 49px 49px rgb(136, 7, 211), 50px 50px rgb(136, 7, 211), 51px 51px rgb(136, 7, 212), 52px 52px rgb(137, 7, 212), 53px 53px rgb(137, 7, 212), 54px 54px rgb(137, 7, 213), 55px 55px rgb(137, 7, 213), 56px 56px rgb(137, 7, 213), 57px 57px rgb(138, 7, 214), 58px 58px rgb(138, 7, 214), 59px 59px rgb(138, 7, 214), 60px 60px rgb(138, 7, 215), 61px 61px rgb(139, 7, 215), 62px 62px rgb(139, 7, 215), 63px 63px rgb(139, 7, 216), 64px 64px rgb(139, 7, 216), 65px 65px rgb(139, 7, 216), 66px 66px rgb(140, 7, 217), 67px 67px rgb(140, 7, 217), 68px 68px rgb(140, 7, 217), 69px 69px rgb(140, 7, 218), 70px 70px rgb(140, 7, 218), 71px 71px rgb(141, 7, 218), 72px 72px rgb(141, 7, 219), 73px 73px rgb(141, 8, 219), 74px 74px rgb(141, 8, 220), 75px 75px rgb(142, 8, 220), 76px 76px rgb(142, 8, 220), 77px 77px rgb(142, 8, 221), 78px 78px rgb(142, 8, 221), 79px 79px rgb(142, 8, 221), 80px 80px rgb(143, 8, 222), 81px 81px rgb(143, 8, 222), 82px 82px rgb(143, 8, 222), 83px 83px rgb(143, 8, 223), 84px 84px rgb(143, 8, 223), 85px 85px rgb(144, 8, 223), 86px 86px rgb(144, 8, 224), 87px 87px rgb(144, 8, 224), 88px 88px rgb(144, 8, 224), 89px 89px rgb(145, 8, 225), 90px 90px rgb(145, 8, 225), 91px 91px rgb(145, 8, 225), 92px 92px rgb(145, 8, 226), 93px 93px rgb(145, 8, 226), 94px 94px rgb(146, 8, 226), 95px 95px rgb(146, 8, 227), 96px 96px rgb(146, 8, 227), 97px 97px rgb(146, 8, 227), 98px 98px rgb(146, 8, 228), 99px 99px rgb(147, 8, 228), 100px 100px rgb(147, 8, 228), 101px 101px rgb(147, 8, 229), 102px 102px rgb(147, 8, 229), 103px 103px rgb(148, 8, 229), 104px 104px rgb(148, 8, 230), 105px 105px rgb(148, 8, 230), 106px 106px rgb(148, 8, 230), 107px 107px rgb(148, 8, 231), 108px 108px rgb(149, 8, 231), 109px 109px rgb(149, 8, 231), 110px 110px rgb(149, 8, 232), 111px 111px rgb(149, 8, 232), 112px 112px rgb(149, 8, 232), 113px 113px rgb(150, 8, 233), 114px 114px rgb(150, 8, 233), 115px 115px rgb(150, 8, 233), 116px 116px rgb(150, 8, 234), 117px 117px rgb(151, 8, 234), 118px 118px rgb(151, 8, 234), 119px 119px rgb(151, 8, 235), 120px 120px rgb(151, 8, 235), 121px 121px rgb(151, 8, 235), 122px 122px rgb(152, 8, 236), 123px 123px rgb(152, 8, 236), 124px 124px rgb(152, 8, 236), 125px 125px rgb(152, 8, 237), 126px 126px rgb(152, 8, 237), 127px 127px rgb(153, 8, 237), 128px 128px rgb(153, 8, 238), 129px 129px rgb(153, 8, 238), 130px 130px rgb(153, 8, 238), 131px 131px rgb(154, 8, 239), 132px 132px rgb(154, 8, 239), 133px 133px rgb(154, 8, 239), 134px 134px rgb(154, 8, 240), 135px 135px rgb(154, 8, 240), 136px 136px rgb(155, 8, 240), 137px 137px rgb(155, 8, 241), 138px 138px rgb(155, 8, 241), 139px 139px rgb(155, 8, 241), 140px 140px rgb(155, 8, 242), 141px 141px rgb(156, 8, 242), 142px 142px rgb(156, 8, 242), 143px 143px rgb(156, 8, 243), 144px 144px rgb(156, 8, 243), 145px 145px rgb(157, 9, 244);
-}
-
-body.blue ul.profile-list li:nth-child(4) span.profile-icon {
-    color: #00a2ff;
-    text-shadow: 1px 1px rgb(0, 128, 201), 2px 2px rgb(0, 129, 202), 3px 3px rgb(0, 129, 203), 4px 4px rgb(0, 130, 204), 5px 5px rgb(0, 130, 205), 6px 6px rgb(0, 131, 206), 7px 7px rgb(0, 132, 207), 8px 8px rgb(0, 132, 208), 9px 9px rgb(0, 133, 209), 10px 10px rgb(0, 133, 210), 11px 11px rgb(0, 134, 211), 12px 12px rgb(0, 134, 211), 13px 13px rgb(0, 135, 212), 14px 14px rgb(0, 136, 213), 15px 15px rgb(0, 136, 214), 16px 16px rgb(0, 137, 215), 17px 17px rgb(0, 137, 216), 18px 18px rgb(0, 138, 217), 19px 19px rgb(0, 138, 218), 20px 20px rgb(0, 139, 219), 21px 21px rgb(0, 140, 220), 22px 22px rgb(0, 140, 221), 23px 23px rgb(0, 141, 222), 24px 24px rgb(0, 141, 222), 25px 25px rgb(0, 142, 223), 26px 26px rgb(0, 142, 224), 27px 27px rgb(0, 143, 225), 28px 28px rgb(0, 144, 226), 29px 29px rgb(0, 144, 227), 30px 30px rgb(0, 145, 228), 31px 31px rgb(0, 145, 229), 32px 32px rgb(0, 146, 230), 33px 33px rgb(0, 147, 231), 34px 34px rgb(0, 147, 232), 35px 35px rgb(0, 148, 233), 36px 36px rgb(0, 148, 233), 37px 37px rgb(0, 149, 234), 38px 38px rgb(0, 149, 235), 39px 39px rgb(0, 150, 236), 40px 40px rgb(0, 151, 237), 41px 41px rgb(0, 151, 238), 42px 42px rgb(0, 152, 239), 43px 43px rgb(0, 152, 240), 44px 44px rgb(0, 153, 241), 45px 45px rgb(0, 153, 242), 46px 46px rgb(0, 154, 243), 47px 47px rgb(0, 155, 244), 48px 48px rgb(0, 155, 244), 49px 49px rgb(0, 156, 245), 50px 50px rgb(0, 156, 246), 51px 51px rgb(0, 157, 247), 52px 52px rgb(0, 157, 248), 53px 53px rgb(0, 158, 249), 54px 54px rgb(0, 159, 250), 55px 55px rgb(0, 159, 251), 56px 56px rgb(0, 160, 252), 57px 57px rgb(0, 160, 253), 58px 58px rgb(0, 161, 254), 59px 59px rgb(0, 162, 255);
-}
-
-body.blue ul.profile-list li:nth-child(5) span.profile-icon {
-    color: #13a9ff;
-    text-shadow: 1px 1px rgb(15, 134, 201), 2px 2px rgb(15, 135, 202), 3px 3px rgb(15, 135, 203), 4px 4px rgb(15, 136, 204), 5px 5px rgb(15, 136, 205), 6px 6px rgb(15, 137, 206), 7px 7px rgb(15, 138, 207), 8px 8px rgb(15, 138, 208), 9px 9px rgb(15, 139, 209), 10px 10px rgb(15, 139, 210), 11px 11px rgb(15, 140, 211), 12px 12px rgb(15, 141, 211), 13px 13px rgb(15, 141, 212), 14px 14px rgb(15, 142, 213), 15px 15px rgb(16, 142, 214), 16px 16px rgb(16, 143, 215), 17px 17px rgb(16, 144, 216), 18px 18px rgb(16, 144, 217), 19px 19px rgb(16, 145, 218), 20px 20px rgb(16, 145, 219), 21px 21px rgb(16, 146, 220), 22px 22px rgb(16, 147, 221), 23px 23px rgb(16, 147, 222), 24px 24px rgb(16, 148, 222), 25px 25px rgb(16, 148, 223), 26px 26px rgb(16, 149, 224), 27px 27px rgb(16, 150, 225), 28px 28px rgb(16, 150, 226), 29px 29px rgb(16, 151, 227), 30px 30px rgb(17, 151, 228), 31px 31px rgb(17, 152, 229), 32px 32px rgb(17, 152, 230), 33px 33px rgb(17, 153, 231), 34px 34px rgb(17, 154, 232), 35px 35px rgb(17, 154, 233), 36px 36px rgb(17, 155, 233), 37px 37px rgb(17, 155, 234), 38px 38px rgb(17, 156, 235), 39px 39px rgb(17, 157, 236), 40px 40px rgb(17, 157, 237), 41px 41px rgb(17, 158, 238), 42px 42px rgb(17, 158, 239), 43px 43px rgb(17, 159, 240), 44px 44px rgb(17, 160, 241), 45px 45px rgb(18, 160, 242), 46px 46px rgb(18, 161, 243), 47px 47px rgb(18, 161, 244), 48px 48px rgb(18, 162, 244), 49px 49px rgb(18, 163, 245), 50px 50px rgb(18, 163, 246), 51px 51px rgb(18, 164, 247), 52px 52px rgb(18, 164, 248), 53px 53px rgb(18, 165, 249), 54px 54px rgb(18, 166, 250), 55px 55px rgb(18, 166, 251), 56px 56px rgb(18, 167, 252), 57px 57px rgb(18, 167, 253), 58px 58px rgb(18, 168, 254), 59px 59px rgb(19, 169, 255);
-}
-
-body.blue ul.profile-list li:nth-child(6) span.profile-icon {
-    color: #24afff;
-    text-shadow: 1px 1px rgb(28, 138, 201), 2px 2px rgb(28, 139, 202), 3px 3px rgb(28, 139, 203), 4px 4px rgb(28, 140, 204), 5px 5px rgb(28, 141, 205), 6px 6px rgb(28, 141, 206), 7px 7px rgb(28, 142, 207), 8px 8px rgb(29, 143, 208), 9px 9px rgb(29, 143, 209), 10px 10px rgb(29, 144, 210), 11px 11px rgb(29, 144, 211), 12px 12px rgb(29, 145, 211), 13px 13px rgb(29, 146, 212), 14px 14px rgb(29, 146, 213), 15px 15px rgb(30, 147, 214), 16px 16px rgb(30, 148, 215), 17px 17px rgb(30, 148, 216), 18px 18px rgb(30, 149, 217), 19px 19px rgb(30, 149, 218), 20px 20px rgb(30, 150, 219), 21px 21px rgb(30, 151, 220), 22px 22px rgb(30, 151, 221), 23px 23px rgb(31, 152, 222), 24px 24px rgb(31, 153, 222), 25px 25px rgb(31, 153, 223), 26px 26px rgb(31, 154, 224), 27px 27px rgb(31, 154, 225), 28px 28px rgb(31, 155, 226), 29px 29px rgb(31, 156, 227), 30px 30px rgb(32, 156, 228), 31px 31px rgb(32, 157, 229), 32px 32px rgb(32, 158, 230), 33px 33px rgb(32, 158, 231), 34px 34px rgb(32, 159, 232), 35px 35px rgb(32, 159, 233), 36px 36px rgb(32, 160, 233), 37px 37px rgb(33, 161, 234), 38px 38px rgb(33, 161, 235), 39px 39px rgb(33, 162, 236), 40px 40px rgb(33, 163, 237), 41px 41px rgb(33, 163, 238), 42px 42px rgb(33, 164, 239), 43px 43px rgb(33, 164, 240), 44px 44px rgb(33, 165, 241), 45px 45px rgb(34, 166, 242), 46px 46px rgb(34, 166, 243), 47px 47px rgb(34, 167, 244), 48px 48px rgb(34, 168, 244), 49px 49px rgb(34, 168, 245), 50px 50px rgb(34, 169, 246), 51px 51px rgb(34, 169, 247), 52px 52px rgb(35, 170, 248), 53px 53px rgb(35, 171, 249), 54px 54px rgb(35, 171, 250), 55px 55px rgb(35, 172, 251), 56px 56px rgb(35, 173, 252), 57px 57px rgb(35, 173, 253), 58px 58px rgb(35, 174, 254), 59px 59px rgb(36, 175, 255);
-}
-
-body.blue ul.profile-list li:nth-child(7) span.profile-icon {
-    color: #34b5ff;
-    text-shadow: 1px 1px rgb(41, 143, 201), 2px 2px rgb(41, 144, 202), 3px 3px rgb(41, 144, 203), 4px 4px rgb(41, 145, 204), 5px 5px rgb(41, 146, 205), 6px 6px rgb(42, 146, 206), 7px 7px rgb(42, 147, 207), 8px 8px rgb(42, 148, 208), 9px 9px rgb(42, 148, 209), 10px 10px rgb(42, 149, 210), 11px 11px rgb(43, 150, 211), 12px 12px rgb(43, 150, 211), 13px 13px rgb(43, 151, 212), 14px 14px rgb(43, 152, 213), 15px 15px rgb(43, 152, 214), 16px 16px rgb(43, 153, 215), 17px 17px rgb(44, 153, 216), 18px 18px rgb(44, 154, 217), 19px 19px rgb(44, 155, 218), 20px 20px rgb(44, 155, 219), 21px 21px rgb(44, 156, 220), 22px 22px rgb(45, 157, 221), 23px 23px rgb(45, 157, 222), 24px 24px rgb(45, 158, 222), 25px 25px rgb(45, 159, 223), 26px 26px rgb(45, 159, 224), 27px 27px rgb(46, 160, 225), 28px 28px rgb(46, 161, 226), 29px 29px rgb(46, 161, 227), 30px 30px rgb(46, 162, 228), 31px 31px rgb(46, 162, 229), 32px 32px rgb(46, 163, 230), 33px 33px rgb(47, 164, 231), 34px 34px rgb(47, 164, 232), 35px 35px rgb(47, 165, 233), 36px 36px rgb(47, 166, 233), 37px 37px rgb(47, 166, 234), 38px 38px rgb(48, 167, 235), 39px 39px rgb(48, 168, 236), 40px 40px rgb(48, 168, 237), 41px 41px rgb(48, 169, 238), 42px 42px rgb(48, 170, 239), 43px 43px rgb(49, 170, 240), 44px 44px rgb(49, 171, 241), 45px 45px rgb(49, 171, 242), 46px 46px rgb(49, 172, 243), 47px 47px rgb(49, 173, 244), 48px 48px rgb(49, 173, 244), 49px 49px rgb(50, 174, 245), 50px 50px rgb(50, 175, 246), 51px 51px rgb(50, 175, 247), 52px 52px rgb(50, 176, 248), 53px 53px rgb(50, 177, 249), 54px 54px rgb(51, 177, 250), 55px 55px rgb(51, 178, 251), 56px 56px rgb(51, 179, 252), 57px 57px rgb(51, 179, 253), 58px 58px rgb(51, 180, 254), 59px 59px rgb(52, 181, 255);
-}
-
-body.blue ul.profile-list li:nth-child(8) span.profile-icon {
-    color: #40b9ff;
-    text-shadow: 1px 1px rgb(51, 146, 201), 2px 2px rgb(51, 147, 202), 3px 3px rgb(51, 147, 203), 4px 4px rgb(51, 148, 204), 5px 5px rgb(52, 149, 205), 6px 6px rgb(52, 149, 206), 7px 7px rgb(52, 150, 207), 8px 8px rgb(52, 151, 208), 9px 9px rgb(52, 151, 209), 10px 10px rgb(53, 152, 210), 11px 11px rgb(53, 153, 211), 12px 12px rgb(53, 153, 211), 13px 13px rgb(53, 154, 212), 14px 14px rgb(54, 155, 213), 15px 15px rgb(54, 155, 214), 16px 16px rgb(54, 156, 215), 17px 17px rgb(54, 157, 216), 18px 18px rgb(54, 157, 217), 19px 19px rgb(55, 158, 218), 20px 20px rgb(55, 159, 219), 21px 21px rgb(55, 159, 220), 22px 22px rgb(55, 160, 221), 23px 23px rgb(56, 161, 222), 24px 24px rgb(56, 161, 222), 25px 25px rgb(56, 162, 223), 26px 26px rgb(56, 163, 224), 27px 27px rgb(56, 163, 225), 28px 28px rgb(57, 164, 226), 29px 29px rgb(57, 165, 227), 30px 30px rgb(57, 165, 228), 31px 31px rgb(57, 166, 229), 32px 32px rgb(58, 167, 230), 33px 33px rgb(58, 167, 231), 34px 34px rgb(58, 168, 232), 35px 35px rgb(58, 169, 233), 36px 36px rgb(58, 169, 233), 37px 37px rgb(59, 170, 234), 38px 38px rgb(59, 171, 235), 39px 39px rgb(59, 171, 236), 40px 40px rgb(59, 172, 237), 41px 41px rgb(60, 173, 238), 42px 42px rgb(60, 173, 239), 43px 43px rgb(60, 174, 240), 44px 44px rgb(60, 175, 241), 45px 45px rgb(60, 175, 242), 46px 46px rgb(61, 176, 243), 47px 47px rgb(61, 177, 244), 48px 48px rgb(61, 177, 244), 49px 49px rgb(61, 178, 245), 50px 50px rgb(62, 179, 246), 51px 51px rgb(62, 179, 247), 52px 52px rgb(62, 180, 248), 53px 53px rgb(62, 181, 249), 54px 54px rgb(62, 181, 250), 55px 55px rgb(63, 182, 251), 56px 56px rgb(63, 183, 252), 57px 57px rgb(63, 183, 253), 58px 58px rgb(63, 184, 254), 59px 59px rgb(64, 185, 255);
-}
-
-body.blue ul.profile-list li:nth-child(9) span.profile-icon {
-    color: #4abdff;
-    text-shadow: 1px 1px rgb(58, 149, 201), 2px 2px rgb(58, 150, 202), 3px 3px rgb(58, 151, 203), 4px 4px rgb(59, 151, 204), 5px 5px rgb(59, 152, 205), 6px 6px rgb(59, 153, 206), 7px 7px rgb(59, 153, 207), 8px 8px rgb(60, 154, 208), 9px 9px rgb(60, 155, 209), 10px 10px rgb(60, 155, 210), 11px 11px rgb(60, 156, 211), 12px 12px rgb(61, 157, 211), 13px 13px rgb(61, 157, 212), 14px 14px rgb(61, 158, 213), 15px 15px rgb(62, 159, 214), 16px 16px rgb(62, 159, 215), 17px 17px rgb(62, 160, 216), 18px 18px rgb(62, 161, 217), 19px 19px rgb(63, 161, 218), 20px 20px rgb(63, 162, 219), 21px 21px rgb(63, 163, 220), 22px 22px rgb(63, 163, 221), 23px 23px rgb(64, 164, 222), 24px 24px rgb(64, 165, 222), 25px 25px rgb(64, 165, 223), 26px 26px rgb(65, 166, 224), 27px 27px rgb(65, 167, 225), 28px 28px rgb(65, 167, 226), 29px 29px rgb(65, 168, 227), 30px 30px rgb(66, 169, 228), 31px 31px rgb(66, 170, 229), 32px 32px rgb(66, 170, 230), 33px 33px rgb(66, 171, 231), 34px 34px rgb(67, 172, 232), 35px 35px rgb(67, 172, 233), 36px 36px rgb(67, 173, 233), 37px 37px rgb(68, 174, 234), 38px 38px rgb(68, 174, 235), 39px 39px rgb(68, 175, 236), 40px 40px rgb(68, 176, 237), 41px 41px rgb(69, 176, 238), 42px 42px rgb(69, 177, 239), 43px 43px rgb(69, 178, 240), 44px 44px rgb(69, 178, 241), 45px 45px rgb(70, 179, 242), 46px 46px rgb(70, 180, 243), 47px 47px rgb(70, 180, 244), 48px 48px rgb(71, 181, 244), 49px 49px rgb(71, 182, 245), 50px 50px rgb(71, 182, 246), 51px 51px rgb(71, 183, 247), 52px 52px rgb(72, 184, 248), 53px 53px rgb(72, 184, 249), 54px 54px rgb(72, 185, 250), 55px 55px rgb(72, 186, 251), 56px 56px rgb(73, 186, 252), 57px 57px rgb(73, 187, 253), 58px 58px rgb(73, 188, 254), 59px 59px rgb(74, 189, 255);
-}
-
-body.green ul.profile-list li:nth-child(4) span.profile-icon {
-    color: #00d09d;
-    text-shadow: 1px 1px rgb(0, 166, 126), 2px 2px rgb(0, 167, 127), 3px 3px rgb(0, 168, 128), 4px 4px rgb(0, 169, 128), 5px 5px rgb(0, 170, 129), 6px 6px rgb(0, 171, 130), 7px 7px rgb(0, 172, 130), 8px 8px rgb(0, 173, 131), 9px 9px rgb(0, 174, 132), 10px 10px rgb(0, 175, 133), 11px 11px rgb(0, 176, 133), 12px 12px rgb(0, 177, 134), 13px 13px rgb(0, 178, 135), 14px 14px rgb(0, 179, 135), 15px 15px rgb(0, 180, 136), 16px 16px rgb(0, 181, 137), 17px 17px rgb(0, 182, 137), 18px 18px rgb(0, 183, 138), 19px 19px rgb(0, 184, 139), 20px 20px rgb(0, 185, 140), 21px 21px rgb(0, 186, 140), 22px 22px rgb(0, 187, 141), 23px 23px rgb(0, 187, 142), 24px 24px rgb(0, 188, 142), 25px 25px rgb(0, 189, 143), 26px 26px rgb(0, 190, 144), 27px 27px rgb(0, 191, 145), 28px 28px rgb(0, 192, 145), 29px 29px rgb(0, 193, 146), 30px 30px rgb(0, 194, 147), 31px 31px rgb(0, 195, 147), 32px 32px rgb(0, 196, 148), 33px 33px rgb(0, 197, 149), 34px 34px rgb(0, 198, 149), 35px 35px rgb(0, 199, 150), 36px 36px rgb(0, 200, 151), 37px 37px rgb(0, 201, 152), 38px 38px rgb(0, 202, 152), 39px 39px rgb(0, 203, 153), 40px 40px rgb(0, 204, 154), 41px 41px rgb(0, 205, 154), 42px 42px rgb(0, 206, 155), 43px 43px rgb(0, 207, 156), 44px 44px rgb(0, 208, 157);
-}
-
-body.green ul.profile-list li:nth-child(5) span.profile-icon {
-    color: #00dea8;
-    text-shadow: 1px 1px rgb(0, 179, 134), 2px 2px rgb(0, 180, 135), 3px 3px rgb(0, 181, 136), 4px 4px rgb(0, 182, 137), 5px 5px rgb(0, 183, 137), 6px 6px rgb(0, 184, 138), 7px 7px rgb(0, 185, 139), 8px 8px rgb(0, 186, 140), 9px 9px rgb(0, 187, 140), 10px 10px rgb(0, 188, 141), 11px 11px rgb(0, 189, 142), 12px 12px rgb(0, 190, 143), 13px 13px rgb(0, 191, 144), 14px 14px rgb(0, 192, 144), 15px 15px rgb(0, 193, 145), 16px 16px rgb(0, 194, 146), 17px 17px rgb(0, 195, 147), 18px 18px rgb(0, 196, 147), 19px 19px rgb(0, 197, 148), 20px 20px rgb(0, 198, 149), 21px 21px rgb(0, 199, 150), 22px 22px rgb(0, 200, 151), 23px 23px rgb(0, 201, 151), 24px 24px rgb(0, 202, 152), 25px 25px rgb(0, 203, 153), 26px 26px rgb(0, 204, 154), 27px 27px rgb(0, 205, 154), 28px 28px rgb(0, 206, 155), 29px 29px rgb(0, 207, 156), 30px 30px rgb(0, 208, 157), 31px 31px rgb(0, 209, 157), 32px 32px rgb(0, 210, 158), 33px 33px rgb(0, 211, 159), 34px 34px rgb(0, 212, 160), 35px 35px rgb(0, 213, 161), 36px 36px rgb(0, 214, 161), 37px 37px rgb(0, 215, 162), 38px 38px rgb(0, 216, 163), 39px 39px rgb(0, 217, 164), 40px 40px rgb(0, 218, 164), 41px 41px rgb(0, 219, 165), 42px 42px rgb(0, 220, 166), 43px 43px rgb(0, 221, 167), 44px 44px rgb(0, 222, 168);
-}
-
-body.green ul.profile-list li:nth-child(6) span.profile-icon {
-    color: #01e7af;
-    text-shadow: 1px 1px rgb(1, 186, 140), 2px 2px rgb(1, 187, 141), 3px 3px rgb(1, 188, 142), 4px 4px rgb(1, 189, 143), 5px 5px rgb(1, 190, 143), 6px 6px rgb(1, 191, 144), 7px 7px rgb(1, 192, 145), 8px 8px rgb(1, 193, 146), 9px 9px rgb(1, 194, 147), 10px 10px rgb(1, 195, 147), 11px 11px rgb(1, 196, 148), 12px 12px rgb(1, 197, 149), 13px 13px rgb(1, 198, 150), 14px 14px rgb(1, 199, 151), 15px 15px rgb(1, 200, 151), 16px 16px rgb(1, 201, 152), 17px 17px rgb(1, 202, 153), 18px 18px rgb(1, 203, 154), 19px 19px rgb(1, 204, 155), 20px 20px rgb(1, 205, 155), 21px 21px rgb(1, 206, 156), 22px 22px rgb(1, 208, 157), 23px 23px rgb(1, 209, 158), 24px 24px rgb(1, 210, 159), 25px 25px rgb(1, 211, 159), 26px 26px rgb(1, 212, 160), 27px 27px rgb(1, 213, 161), 28px 28px rgb(1, 214, 162), 29px 29px rgb(1, 215, 163), 30px 30px rgb(1, 216, 163), 31px 31px rgb(1, 217, 164), 32px 32px rgb(1, 218, 165), 33px 33px rgb(1, 219, 166), 34px 34px rgb(1, 220, 167), 35px 35px rgb(1, 221, 167), 36px 36px rgb(1, 222, 168), 37px 37px rgb(1, 223, 169), 38px 38px rgb(1, 224, 170), 39px 39px rgb(1, 225, 171), 40px 40px rgb(1, 226, 171), 41px 41px rgb(1, 227, 172), 42px 42px rgb(1, 228, 173), 43px 43px rgb(1, 229, 174), 44px 44px rgb(1, 231, 175);
-}
-
-body.green ul.profile-list li:nth-child(7) span.profile-icon {
-    color: #00f0b6;
-    text-shadow: 1px 1px rgb(0, 193, 146), 2px 2px rgb(0, 194, 147), 3px 3px rgb(0, 195, 148), 4px 4px rgb(0, 196, 149), 5px 5px rgb(0, 197, 150), 6px 6px rgb(0, 198, 150), 7px 7px rgb(0, 199, 151), 8px 8px rgb(0, 200, 152), 9px 9px rgb(0, 201, 153), 10px 10px rgb(0, 202, 154), 11px 11px rgb(0, 204, 155), 12px 12px rgb(0, 205, 155), 13px 13px rgb(0, 206, 156), 14px 14px rgb(0, 207, 157), 15px 15px rgb(0, 208, 158), 16px 16px rgb(0, 209, 159), 17px 17px rgb(0, 210, 159), 18px 18px rgb(0, 211, 160), 19px 19px rgb(0, 212, 161), 20px 20px rgb(0, 213, 162), 21px 21px rgb(0, 214, 163), 22px 22px rgb(0, 216, 164), 23px 23px rgb(0, 217, 164), 24px 24px rgb(0, 218, 165), 25px 25px rgb(0, 219, 166), 26px 26px rgb(0, 220, 167), 27px 27px rgb(0, 221, 168), 28px 28px rgb(0, 222, 168), 29px 29px rgb(0, 223, 169), 30px 30px rgb(0, 224, 170), 31px 31px rgb(0, 225, 171), 32px 32px rgb(0, 226, 172), 33px 33px rgb(0, 228, 173), 34px 34px rgb(0, 229, 173), 35px 35px rgb(0, 230, 174), 36px 36px rgb(0, 231, 175), 37px 37px rgb(0, 232, 176), 38px 38px rgb(0, 233, 177), 39px 39px rgb(0, 234, 177), 40px 40px rgb(0, 235, 178), 41px 41px rgb(0, 236, 179), 42px 42px rgb(0, 237, 180), 43px 43px rgb(0, 238, 181), 44px 44px rgb(0, 240, 182);
-}
-
-body.green ul.profile-list li:nth-child(8) span.profile-icon {
-    color: #00f6bb;
-    text-shadow: 1px 1px rgb(0, 198, 150), 2px 2px rgb(0, 199, 151), 3px 3px rgb(0, 200, 152), 4px 4px rgb(0, 201, 153), 5px 5px rgb(0, 202, 154), 6px 6px rgb(0, 203, 155), 7px 7px rgb(0, 204, 155), 8px 8px rgb(0, 205, 156), 9px 9px rgb(0, 207, 157), 10px 10px rgb(0, 208, 158), 11px 11px rgb(0, 209, 159), 12px 12px rgb(0, 210, 160), 13px 13px rgb(0, 211, 160), 14px 14px rgb(0, 212, 161), 15px 15px rgb(0, 213, 162), 16px 16px rgb(0, 214, 163), 17px 17px rgb(0, 215, 164), 18px 18px rgb(0, 217, 165), 19px 19px rgb(0, 218, 165), 20px 20px rgb(0, 219, 166), 21px 21px rgb(0, 220, 167), 22px 22px rgb(0, 221, 168), 23px 23px rgb(0, 222, 169), 24px 24px rgb(0, 223, 170), 25px 25px rgb(0, 224, 171), 26px 26px rgb(0, 225, 171), 27px 27px rgb(0, 227, 172), 28px 28px rgb(0, 228, 173), 29px 29px rgb(0, 229, 174), 30px 30px rgb(0, 230, 175), 31px 31px rgb(0, 231, 176), 32px 32px rgb(0, 232, 176), 33px 33px rgb(0, 233, 177), 34px 34px rgb(0, 234, 178), 35px 35px rgb(0, 235, 179), 36px 36px rgb(0, 237, 180), 37px 37px rgb(0, 238, 181), 38px 38px rgb(0, 239, 181), 39px 39px rgb(0, 240, 182), 40px 40px rgb(0, 241, 183), 41px 41px rgb(0, 242, 184), 42px 42px rgb(0, 243, 185), 43px 43px rgb(0, 244, 186), 44px 44px rgb(0, 246, 187);
-}
-
-body.green ul.profile-list li:nth-child(9) span.profile-icon {
-    color: #00ffc2;
-    text-shadow: 1px 1px rgb(0, 205, 155), 2px 2px rgb(0, 206, 156), 3px 3px rgb(0, 207, 157), 4px 4px rgb(0, 208, 158), 5px 5px rgb(0, 209, 159), 6px 6px rgb(0, 210, 160), 7px 7px rgb(0, 212, 161), 8px 8px rgb(0, 213, 162), 9px 9px rgb(0, 214, 162), 10px 10px rgb(0, 215, 163), 11px 11px rgb(0, 216, 164), 12px 12px rgb(0, 217, 165), 13px 13px rgb(0, 219, 166), 14px 14px rgb(0, 220, 167), 15px 15px rgb(0, 221, 168), 16px 16px rgb(0, 222, 169), 17px 17px rgb(0, 223, 170), 18px 18px rgb(0, 224, 170), 19px 19px rgb(0, 226, 171), 20px 20px rgb(0, 227, 172), 21px 21px rgb(0, 228, 173), 22px 22px rgb(0, 229, 174), 23px 23px rgb(0, 230, 175), 24px 24px rgb(0, 231, 176), 25px 25px rgb(0, 232, 177), 26px 26px rgb(0, 234, 178), 27px 27px rgb(0, 235, 178), 28px 28px rgb(0, 236, 179), 29px 29px rgb(0, 237, 180), 30px 30px rgb(0, 238, 181), 31px 31px rgb(0, 239, 182), 32px 32px rgb(0, 241, 183), 33px 33px rgb(0, 242, 184), 34px 34px rgb(0, 243, 185), 35px 35px rgb(0, 244, 186), 36px 36px rgb(0, 245, 186), 37px 37px rgb(0, 246, 187), 38px 38px rgb(0, 248, 188), 39px 39px rgb(0, 249, 189), 40px 40px rgb(0, 250, 190), 41px 41px rgb(0, 251, 191), 42px 42px rgb(0, 252, 192), 43px 43px rgb(0, 253, 193), 44px 44px rgb(0, 255, 194);
-}
-
-span.info {
-    padding: 0 20px 0 0;
-    font-size: 1.6em;
-    text-transform: uppercase;
-    position: absolute;
-    top: 30%;
-    right: 5px;
-    font-weight: 900;
-    z-index: 10;
-    font-family: "Raleway";
-}
-
-i.icon-dude {
-    position: absolute;
-    font-size: 5em;
-    top: 30px;
-    right: 30px;
-    z-index: 0;
-    color: rgba(0,0,0,.1);
+    i.icon-icon-mood2 {
+        font-size: 3em;
+    };
 }

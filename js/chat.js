@@ -1,5 +1,9 @@
 jQuery(document).ready(function(){
 
+ 
+
+
+
       if (!localStorage.authorization||!localStorage.color||!localStorage.gangster||!localStorage.gang) {
         window.location.replace("splash.html");
       } else {
@@ -71,9 +75,6 @@ var retrieveMSG = function() {
         var bubleDiv = $("<div>").addClass("bubble");
         var itemSpan =$("<span>").addClass("chatter_msg_item").addClass("chatter_msg_item_user");
 
-        $("<span>").addClass("timestamp").text(moment(data[i].timestamp).fromNow()).appendTo(itemSpan); //put moment
-        itemSpan.append(data[i].text).appendTo(bubleDiv); //put message
-        bubleDiv.appendTo(messageDiv);
 
         var senderDiv = $("<div>").addClass("sender");
         var sender = "";
@@ -86,6 +87,10 @@ var retrieveMSG = function() {
 		 
         $("<a>").attr("href", "").addClass("chatter_avatar").text(sender).appendTo(senderDiv);
         senderDiv.appendTo(messageDiv);
+        
+        $("<span>").addClass("timestamp").text(moment(data[i].timestamp).fromNow()).appendTo(senderDiv); //TODO put moment
+        itemSpan.append(data[i].text).appendTo(bubleDiv); //TODO put message
+        bubleDiv.appendTo(messageDiv);
 
         if (data[i].gangster == gangster)
           messageDiv.addClass("myself");
@@ -95,9 +100,8 @@ var retrieveMSG = function() {
         $(".chatter").append(messageDiv);
     };
 
-
-    jQuery('.chatter_msg_item').addClass('animated pulse');
-    jQuery('.new').addClass('animated flash');
+         $('.message-element').addClass('animated rollIn');
+   
 
   }).fail(function( jqXHR, textStatus ) {
   //TODO fix this
