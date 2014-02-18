@@ -37,10 +37,10 @@
 			
             $(".player-name").text(data[gangsterKey].username);
             $( ".mood-title" ).show( "slow" );
-            if (data[gangsterKey]!=null && data[gangsterKey].mood!="") {
+            if (data[gangsterKey].mood!=null) {
               $(".mood").text(data[gangsterKey].mood);
             } else {
-              $(".mood").text("Go to tweaks to write here");
+              $(".mood").text("Set mood from Tweaks");
             }
 			
 			var rank = sortRanking(data)+1; //Call for sorting the rank*/

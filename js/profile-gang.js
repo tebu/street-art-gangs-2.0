@@ -48,9 +48,9 @@
           $("#name").text(gangTagsPoints2[gangKey][2]);
 		  $(".description").text("Tagged by "+gangTagsPoints2[gangKey][2]);
           if (gangKey == 0){
-		  $("#legend").text("Chivalry is not dead it just has a new definition at the other end of the spectrum... of visible light. Instead of brute force these knights apply paint.");
-		  } else if (gangKey == 2) { $("#legend").text("There are the sublime and the fallen ones and then there are those in between. All are welcome to spread the gospel of 'This city belongs to the Angels.'");
-		  } else if (gangKey == 1) { $("#legend").text("An eclectic mix of green peas and biohactivists who aim to reclaim the city for mother nature. Some say they have magic, some say they just are contagious.");}
+		  $("#slogan").text("Chivalry is not dead it just has a new definition at the other end of the spectrum... of visible light. Instead of brute force these knights apply paint.");
+		  } else if (gangKey == 2) { $("#slogan").text("There are the sublime and the fallen ones and then there are those in between. All are welcome to spread the gospel of 'This city belongs to the Angels.'");
+		  } else if (gangKey == 1) { $("#slogan").text("An eclectic mix of green peas and biohactivists who aim to reclaim the city for mother nature. Some say they have magic, some say they just are contagious.");}
 		  
 		  $(".gang-info.members").text(gangTagsPoints2[gangKey][1]);
 		  $(".gang-info.points").text(gangTagsPoints2[gangKey][0]);
