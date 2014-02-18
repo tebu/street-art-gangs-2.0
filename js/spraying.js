@@ -79,13 +79,12 @@ var registerSpray = function(venue) {
         var venue2 = JSON.parse(localStorage.getItem('venueid')); 
 		var venue = parseInt(venue2);
         var now = moment().format();
-       
 		var endpoint = "http://vm0063.virtues.fi/venues/"+venue+"/";
         var data =  {
                 gangster: gangster,
                 latestEditTimestamp: now,
 				sprayinginitialized:0,
-				gangsterSpraying: null
+				gangsterSpraying: 0
             }
 		mixpanel.track("SprayingFinalised", {Time:now, gang: color, gangster: gangster});
 
@@ -165,7 +164,7 @@ function sprayingInterrupted(venue) {
 		var endpoint = "http://vm0063.virtues.fi/venues/"+venue+"/";
         var data =  {
 				sprayinginitialized:0,
-				gangsterSpraying: null
+				gangsterSpraying: 0
             }
               $.ajax({
                 type: "PATCH",
