@@ -84,7 +84,8 @@ var registerSpray = function(venue) {
         var data =  {
                 gangster: gangster,
                 latestEditTimestamp: now,
-				sprayinginitialized:0
+				sprayinginitialized:0,
+				gangsterSpraying: null
             }
 		mixpanel.track("SprayingFinalised", {Time:now, gang: color, gangster: gangster});
 
@@ -135,10 +136,11 @@ function sprayingInitialized(venue) { //SprayingInitialized to 1 in venue databa
         var authorization=localStorage.authorization;
         var venue2 = JSON.parse(localStorage.getItem('venueid')); 
 		var venue = parseInt(venue2);
-       
+        var gangster = localStorage.gangster;
 		var endpoint = "http://vm0063.virtues.fi/venues/"+venue+"/";
         var data =  {
-				sprayinginitialized:1
+				sprayinginitialized:1,
+				gangsterSpraying: gangster
             }
               $.ajax({
                 type: "PATCH",
@@ -162,7 +164,8 @@ function sprayingInterrupted(venue) {
        
 		var endpoint = "http://vm0063.virtues.fi/venues/"+venue+"/";
         var data =  {
-				sprayinginitialized:0
+				sprayinginitialized:0,
+				gangsterSpraying: null
             }
               $.ajax({
                 type: "PATCH",
