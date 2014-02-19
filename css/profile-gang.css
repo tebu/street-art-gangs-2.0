@@ -460,49 +460,6 @@ body.blue .md-show.md-effect-12 ~ .md-overlay {
     background-image: radial-gradient(farthest-side at right top, #0055bd 0%, #00398f 45%, #002152 100%);
 }
 
-body.purple .md-show.modal-cans.md-effect-12 ~ .md-overlay {
-    background: url(../img/purple-gang.png) no-repeat, #000;
-    background-size: 40%;
-    background-position: 50% 70%;
-}
-body.purple .md-show.modal-tag.md-effect-12 ~ .md-overlay {
-    background: url(../img/purplespray.png) no-repeat center, #111;
-}
-body.green .md-show.modal-cans.md-effect-12 ~ .md-overlay {
-    background: url(../img/green-gang.png) no-repeat, #000;
-    background-size: 40%;
-    background-position: 50% 70%;
-}
-
-body.green .md-show.modal-tag.md-effect-12 ~ .md-overlay {
-    background: url(../img/greenspray.png) no-repeat center, #111;
-}
-
-body.blue .md-show.modal-cans.md-effect-12 ~ .md-overlay {
-    background: url(../img/blue-gang.png) no-repeat, #111;
-    background-size: 80%;
-    background-position: 50% 90%;
-}
-body.blue .md-show.modal-tag.md-effect-12 ~ .md-overlay {
-    background: url(../img/bluespray.png) no-repeat center, #111;
-}
-
-body.green .md-show.md-effect-12 ~ .md-overlay {
-    background-image: -webkit-gradient(radial, 0% 0%, 0, 0% 0%, 507, color-stop(0%, rgb(30, 236, 210)), color-stop(56.4356%, #00948a), color-stop(100%, #1affb1));
-    background-image: -webkit-radial-gradient(left top, farthest-corner circle, #24ffe1 -12%, #00948a 57%, #1affb1 101%);
-    background-image: -moz-radial-gradient(left top, farthest-corner circle, #24ffe1 -12%, #00948a 57%, #1affb1 101%);
-    background-image: -ms-radial-gradient(left top, farthest-corner circle, #24ffe1 -12%, #00948a 57%, #1affb1 101%);
-    background-image: -o-radial-gradient(left top, farthest-corner circle, #24ffe1 -12%, #00948a 57%, #1affb1 101%);
-    background-image: radial-gradient(farthest-corner circle at left top, #24ffe1 -12%, #00948a 57%, #1affb1 101%);
-
-}
-
-body.blue .md-show.modal-tag.md-effect-12 ~ .md-overlay {
-    background: url(../img/bluespray.png) no-repeat center, #000;
-    background-size: 40%;
-    background-position: 50% 70%;
-}
-
 .md-effect-12 .md-content h3,
 .md-effect-12 .md-content {
     background: transparent;
@@ -515,10 +472,18 @@ body.blue .md-show.modal-tag.md-effect-12 ~ .md-overlay {
     transform: scale(1);
     opacity: 1;
 }
+
+.description-title {
+font-size: .9em;
+    list-style: none;
+    padding: 5px 0;
+    text-align: center;
+    width: 100%;
+}
 /*Member-time-list modal style*/
 
 ul.members-list, ul.members-time-list {
-    margin-top: 110px;
+    margin-top: 200px;
     position: relative;
     left: -20px
 }
