@@ -22,7 +22,7 @@ jQuery(document).ready(function(){
             window.location.replace("splash.html");
         });
 
-        $('#save').one( "click", function() {
+        $('#save').on( "click", function() {
             var authorization=localStorage.authorization;
             var gangster = localStorage.gangster;
             var endpoint = "http://vm0063.virtues.fi/gangsters/"+gangster+"/";

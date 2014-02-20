@@ -20,7 +20,7 @@ jQuery(document).ready(function(){
         retrieveMSG();
 
 
-        $('#send-msg').one( "click", function() {
+        $('#send-msg').on( "click", function() {
             var authorization=localStorage.authorization;
             var gangster = localStorage.gangster;
             var endpoint = "http://vm0063.virtues.fi/messages/";
@@ -41,7 +41,6 @@ jQuery(document).ready(function(){
           }).done(function( data ) {
                 mood: $('.chatter_field').val("");
                 retrieveMSG();
-				location.reload();  //this needs to be taken into account in mixpanel registry for tweaks also. TODO look for a better solution  
           }).fail(function( jqXHR, textStatus ) {
             //TODO fix this
             alert("Error: something went wrong while updating the location: "+ textStatus);
