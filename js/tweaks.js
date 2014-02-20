@@ -48,8 +48,6 @@ jQuery(document).ready(function(){
 				
                 mood: $('#mood').val("");
 
-				location.reload();  //this needs to be taken into account in mixpanel registry for chat also          
-				
           }).fail(function( jqXHR, textStatus ) {
             //TODO fix this
             alert("Error: something went wrong while updating the location: "+ textStatus);
