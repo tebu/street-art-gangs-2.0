@@ -57,7 +57,7 @@ jQuery(document).ready(function(){
 			var venueLatitude = data[i].latitude; //venue location
 			var venueLongitude = data[i].longitude;
 
-			setInterval(function() {var distance = locationCheck(locationLatitude,locationLongitude,venueLatitude,venueLongitude)}, 2000); 
+			setInterval(function() {var distance = locationCheck(locationLatitude,locationLongitude,venueLatitude,venueLongitude)}, 4000); 
 			
 			var venueId = data[i].id;	
 			var locator = "#";
