@@ -43,9 +43,9 @@ jQuery(document).ready(function(){
 
         setTimeout(function() {
           registerSpray();
-        }, 20000);
+        }, 24000);
 
-         jQuery("#loading").delay(22000).fadeOut(300);
+         jQuery("#loading").delay(26000).fadeOut(300);
 
 
     });
@@ -63,7 +63,7 @@ jQuery(document).ready(function(){
 
     // Points animation
     //TODO: Calculate points
-    jQuery({someValue: 0}).delay(23000).animate({someValue:100}, {
+    jQuery({someValue: 0}).delay(25000).animate({someValue:100}, {
         duration: 1000,
         easing:'swing',
         step: function() {

@@ -94,6 +94,26 @@ body.green .bg {
       display: block;
       bottom: -160px
 }
+#stop {
+    font-size: 2.5em;
+	filter:alpha(opacity=70);
+	-moz-opacity:0.7;
+	opacity: 0.7;	
+    padding: 10px;
+    border-radius: 50%;
+    color: #fff;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+	position: fixed;
+    bottom: 15%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+	z-index: 5;
+	
+	
+}
 
 .bar-percentage {
     text-align: center;

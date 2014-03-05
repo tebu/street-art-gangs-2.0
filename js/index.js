@@ -27,6 +27,7 @@ jQuery(document).ready(function(){
 
         //Check GPS
         watchGPS();
+		setInterval(function() {watchGPS();},2000);
 
         //Get Venues
         var authorization=localStorage.authorization;
@@ -43,8 +44,7 @@ jQuery(document).ready(function(){
 		
 		for (var i = data.length - 1; i >= 0; i--) {
 		
-		var distance = locationCheck(locationLatitude,locationLongitude,venueLatitude,venueLongitude);
-		
+		var distance = locationCheck(locationLatitude,locationLongitude,venueLatitude,venueLongitude);	
 		
 		}//TODO add distance to each event and sort, show the closest first 
 		
@@ -57,7 +57,7 @@ jQuery(document).ready(function(){
 			var venueLatitude = data[i].latitude; //venue location
 			var venueLongitude = data[i].longitude;
 
-			var distance = locationCheck(locationLatitude,locationLongitude,venueLatitude,venueLongitude); 
+			setInterval(function() {var distance = locationCheck(locationLatitude,locationLongitude,venueLatitude,venueLongitude)}, 2000); 
 			
 			var venueId = data[i].id;	
 			var locator = "#";
@@ -77,13 +77,13 @@ jQuery(document).ready(function(){
             $("<h3>").addClass("title").text(getCategory(data[i].category)).appendTo(venue);
 			$("<h1>").addClass("location").text(data[i].name).appendTo(venue);
 			
-			var distance2 = distance*1000;                // Shows the distance from the venue For testing
+			var distance2 = distance*1000;                // TEMP. Shows the distance from the venue For testing
 			var distance3 = distance2.toFixed(0); 
 			$("<p>").text(""+distance3+"m").appendTo(venue); 
 			$("<br>").appendTo(venue); //TEMP. SOLUTION
 			
 
-			if (distance <=0.500) {	//DISTANCES ARE WIDE FOR TESTING... NARROW DOWN AT SOME POINT
+			if (distance <=0.500) {	//TEMP. DISTANCES ARE WIDE FOR TESTING... NARROW DOWN AT SOME POINT
 				
 			$("<div>").attr('id','#start-to-spray').append("<a id="+venueId+" class='spray icon-droplet'  href='spraying.html'></a>").appendTo(venue);
 			
