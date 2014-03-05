@@ -29,7 +29,7 @@ function watchGPS() {
       watchId = navigator.geolocation.watchPosition(onGPSSuccess, onGPSError, {
           enableHighAccuracy: true,
           maximumAge: 0,
-          timeout: 15000
+          timeout: 1500
         });
 }
 

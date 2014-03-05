@@ -10,7 +10,6 @@ jQuery(document).ready(function(){
 		var locationLongitude = localStorage.longitude;
 		
 		localStorage.removeItem('venueid');
-		
 		mixpanel.register({gang: color, gangster: gangster}); //Track for the droplet click is in index.html
 		mixpanel.track("PageLaunch", {page:"index"});
 		mixpanel.track("SprayingInitiated", {latitude: locationLatitude, longitude: locationLongitude});
@@ -27,7 +26,7 @@ jQuery(document).ready(function(){
 
         //Check GPS
         watchGPS();
-		setInterval(function() {watchGPS();},2000);
+		//setInterval(function() {watchGPS();},5000);
 
         //Get Venues
         var authorization=localStorage.authorization;
@@ -35,6 +34,7 @@ jQuery(document).ready(function(){
         $.ajax({
           type: "GET",
           url: endpoint,
+		  async: true, 
           dataType: 'json',
           beforeSend: function (xhr) {
             xhr.setRequestHeader ("Authorization", authorization);
@@ -43,10 +43,10 @@ jQuery(document).ready(function(){
 		var venueArr = [];
 		
 		for (var i = data.length - 1; i >= 0; i--) {
-		
-		var distance = locationCheck(locationLatitude,locationLongitude,venueLatitude,venueLongitude);	
-		
-		}//TODO add distance to each event and sort, show the closest first 
+		var distance = locationCheck(locationLatitude,locationLongitude,venueLatitude,venueLongitude);
+		//setInterval(function() {var distance = locationCheck(locationLatitude,locationLongitude,venueLatitude,venueLongitude);},5000);
+		}
+		//TODO add distance to each event and sort, show the closest first 
 		
 		
           for (var i = data.length - 1; i >= 0; i--) {
@@ -57,7 +57,7 @@ jQuery(document).ready(function(){
 			var venueLatitude = data[i].latitude; //venue location
 			var venueLongitude = data[i].longitude;
 
-			setInterval(function() {var distance = locationCheck(locationLatitude,locationLongitude,venueLatitude,venueLongitude)}, 4000); 
+			
 			
 			var venueId = data[i].id;	
 			var locator = "#";
@@ -135,28 +135,28 @@ jQuery(document).ready(function(){
         });
 		
 		//Counting the distances between player and location
-		function locationCheck(locationLat, locationLon, venueLat, venueLon){    
-			
-			// Compute spherical coordinates
-			
-			var rho = 6378.16; // earth ray in meters
-			// convert latitude and longitude to spherical coordinates in radians, phi = 90 - latitude
-			
-			var phi_1 = (90.0 - locationLat)*Math.PI/180.0;
-			var phi_2 = (90.0 - venueLat)*Math.PI/180.0;
-			// theta = longitude
-			
-			var theta_1 = locationLon*Math.PI/180.0;
-			var theta_2 = venueLon*Math.PI/180.0;
-	
-			// compute spherical distance from spherical coordinates
-			// arc length = \arccos(\sin\phi\sin\phi'\cos(\theta-\theta') + \cos\phi\cos\phi')
-			// distance = rho times arc length
-			var distance = rho*Math.acos( Math.sin(phi_1)*Math.sin(phi_2)*Math.cos(theta_1 - theta_2) + Math.cos(phi_1)*Math.cos(phi_2) ); 
-			
-			return distance;	
-		}
-	
+         function locationCheck(locationLat, locationLon, venueLat, venueLon){
+
+         // Compute spherical coordinates
+
+           var rho = 6378.16; // earth ray in meters
+           // convert latitude and longitude to spherical coordinates in radians, phi = 90 - latitude
+
+         var phi_1 = (90.0 - locationLat)*Math.PI/180.0;
+         var phi_2 = (90.0 - venueLat)*Math.PI/180.0;
+         // theta = longitude
+
+           var theta_1 = locationLon*Math.PI/180.0;
+           var theta_2 = venueLon*Math.PI/180.0;
+
+            // compute spherical distance from spherical coordinates
+            // arc length = \arccos(\sin\phi\sin\phi'\cos(\theta-\theta') + \cos\phi\cos\phi')
+           // distance = rho times arc length
+           var distance = rho*Math.acos( Math.sin(phi_1)*Math.sin(phi_2)*Math.cos(theta_1 - theta_2) + Math.cos(phi_1)*Math.cos(phi_2) );
+
+          return distance;	
+         }
+
     }
-	window.alert = function(){return null;}; //Javascript popups disabled, atleast for now
+window.alert = function(){return null;}; //Javascript popups disabled, atleast for now
 });
