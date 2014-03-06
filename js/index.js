@@ -26,7 +26,7 @@ jQuery(document).ready(function(){
 
         //Check GPS
         watchGPS();
-		//setInterval(function() {watchGPS();},5000);
+		setInterval(function() {watchGPS();},15000); //watchPosition frequency/maximumAge too, but they dont always update
 
         //Get Venues
         var authorization=localStorage.authorization;

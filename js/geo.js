@@ -27,7 +27,7 @@ function onGPSError(error) {
 function watchGPS() {
       // Request repeated updates.
       watchId = navigator.geolocation.watchPosition(onGPSSuccess, onGPSError, {
-	     frequency: 4000,
+	      //frequency: 4000,
           enableHighAccuracy: true,
           maximumAge: 3000,
           timeout: 30000
