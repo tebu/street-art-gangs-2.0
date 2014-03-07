@@ -20,13 +20,11 @@ jQuery(document).ready(function(){
         //Menu
         new gnMenu( document.getElementById( 'gn-menu' ) );
 
-        //Animate.css
-        // $('#start-to-spray').addClass('animated pulse');
-        // $('small').addClass('animated flash');
 
         //Check GPS
         watchGPS();
-		setInterval(function() {watchGPS();},15000); //watchPosition frequency/maximumAge too, but they dont always update
+		setInterval(function() {watchGPS();},10000); //watchPosition maximumAge too, but they dont always update
+		//$('#to-left', '#to-right').on
 
         //Get Venues
         var authorization=localStorage.authorization;
@@ -40,17 +38,15 @@ jQuery(document).ready(function(){
             xhr.setRequestHeader ("Authorization", authorization);
           }
         }).done(function( data ) {
-		var venueArr = [];
-		
-		for (var i = data.length - 1; i >= 0; i--) {
-		var distance = locationCheck(locationLatitude,locationLongitude,venueLatitude,venueLongitude);
-		//setInterval(function() {var distance = locationCheck(locationLatitude,locationLongitude,venueLatitude,venueLongitude);},5000);
-		}
-		//TODO add distance to each event and sort, show the closest first 
-		
-		
+		//var venueArr = []; //TODO add distance to each event and sort, show the closest first 
+	
           for (var i = data.length - 1; i >= 0; i--) {
 			
+			var venueLatitude = data[i].latitude;
+		    var venueLongitude = data[i].longitude;
+		
+		    var distance = locationCheck(locationLatitude,locationLongitude,venueLatitude,venueLongitude);
+		
             var venue = $("<div>").addClass("venue");
             var owner = $("<p>").addClass("owner");
 			
@@ -99,11 +95,11 @@ jQuery(document).ready(function(){
 			$("<div>").attr('id','#not-to-spray').append("<a class='notspray icon-droplet'></a>").appendTo(venue);//inactive droplet 
 			}
 			$("<br>").appendTo(venue);
-			
-			
             $('#main-slider').append(venue);
 			
           };
+			
+
 			
           // Venue slider
           $('#main-slider').liquidSlider({
@@ -134,6 +130,7 @@ jQuery(document).ready(function(){
           alert("Error: something went wrong while loading the venues");
         });
 		
+		
 		//Counting the distances between player and location
          function locationCheck(locationLat, locationLon, venueLat, venueLon){
 
@@ -155,8 +152,66 @@ jQuery(document).ready(function(){
            var distance = rho*Math.acos( Math.sin(phi_1)*Math.sin(phi_2)*Math.cos(theta_1 - theta_2) + Math.cos(phi_1)*Math.cos(phi_2) );
 
           return distance;	
-         }
+         }	
 
+		 //Updating the slider content
+		 function updateVenueslider (data){
+		 
+			$(venue).remove();
+			for (var i = data.length - 1; i >= 0; i--) {
+			
+			var venueLatitude = data[i].latitude;
+		    var venueLongitude = data[i].longitude;
+		
+		    var distance = locationCheck(locationLatitude,locationLongitude,venueLatitude,venueLongitude);
+		
+            var venue = $("<div>").addClass("venue");
+            var owner = $("<p>").addClass("owner");
+			
+			var venueLatitude = data[i].latitude; //venue location
+			var venueLongitude = data[i].longitude;
+
+			var venueId = data[i].id;	
+			var locator = "#";
+			locator += venueId; //Creates an individual 'id's based on venue id for the droplet icons 
+			
+            var gang = data[i].gang;
+            if (gang != null) {
+              // owner.append("Tagged by ");
+              $("<span>").addClass(gang+"-owns").text(gang).appendTo(owner);
+              owner.appendTo(venue);
+            } else {
+              owner.append("Untagged").appendTo(venue);
+            }
+			
+            $("<div>").addClass("category").addClass(getCategoryClass(data[i].category)).appendTo(venue);
+            $("<h3>").addClass("title").text(getCategory(data[i].category)).appendTo(venue);
+			$("<h1>").addClass("location").text(data[i].name).appendTo(venue);
+			
+			var distance2 = distance*1000;                // TEMP. Shows the distance from the venue For testing
+			var distance3 = distance2.toFixed(0); 
+			$("<p>").text(""+distance3+"m").appendTo(venue); 
+			$("<br>").appendTo(venue); //TEMP. SOLUTION
+
+			if (distance <=0.500) {	//TEMP. DISTANCES ARE WIDE FOR TESTING... NARROW DOWN AT SOME POINT	
+			$("<div>").attr('id','#start-to-spray').append("<a id="+venueId+" class='spray icon-droplet'  href='spraying.html'></a>").appendTo(venue);
+			
+			$('body').on("click",locator, function() {
+				localStorage.setItem('venueid',JSON.stringify(this.id)); //Sends individual droplet icon id to spraying page	
+				});	
+			}else if (distance >0.500&& distance<=1.000){
+		
+			$("<div>").attr('id','#maybe-to-spray').append("<a class='maybespray icon-droplet'</a>").appendTo(venue); //blinking droplet
+			}else{ 
+		
+			$("<div>").attr('id','#not-to-spray').append("<a class='notspray icon-droplet'></a>").appendTo(venue);//inactive droplet 
+			}
+			$("<br>").appendTo(venue);
+			
+            $('#main-slider').append(venue);
+			
+          };
+		 } //Updating the slider content function ends	 
     }
 window.alert = function(){return null;}; //Javascript popups disabled, atleast for now
 });
