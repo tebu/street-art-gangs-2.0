@@ -228,8 +228,8 @@ var getCategoryClass = function (val) {
 *
 */
 
-var updateUserPosition = function(latitude, longitude) {
-
+var updateUserPosition = function(latitude,longitude) {
+        
         var authorization=localStorage.authorization;
         var gangster = localStorage.gangster;
         var endpoint = "http://vm0063.virtues.fi/gangsters/"+gangster+"/";
@@ -241,20 +241,18 @@ var updateUserPosition = function(latitude, longitude) {
             }
 
         $.ajax({
-          type: "PATCH",
-          url: endpoint,
-          dataType: 'json',
-          data: data,
-          beforeSend: function (xhr) {
-            xhr.setRequestHeader ("Authorization", authorization);
-          }
-        }).done(function( data ) {
+              type: "PATCH",
+              url: endpoint,
+              dataType: 'json',
+              data: data,
+              beforeSend: function (xhr) {
+                xhr.setRequestHeader ("Authorization", authorization);
+              }
+          }).done(function( data ) {
 
 
         }).fail(function( jqXHR, textStatus ) {
         //TODO fix this
           alert("Error: something went wrong while updating the location: "+ textStatus);
         });
-
-
-}
+        }

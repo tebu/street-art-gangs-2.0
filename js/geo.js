@@ -15,7 +15,7 @@ function onGPSSuccess(pos) {
       localStorage.latitude=latitude;
       localStorage.longitude=longitude;
       localStorage.accuracy=accuracy;
-      updateUserPosition(latitude, longitude);
+      updateUserPosition(latitude,longitude);
 
 }
 
@@ -25,12 +25,11 @@ function onGPSError(error) {
 }
 
 function watchGPS() {
-      // Request repeated updates.
       watchId = navigator.geolocation.watchPosition(onGPSSuccess, onGPSError, {
 	      //frequency: 4000,
           enableHighAccuracy: true,
-          maximumAge: 3000,
-          timeout: 30000
+          maximumAge: 15000,
+          timeout: 20000
         });
 }
 
@@ -38,3 +37,5 @@ function stopWatching() {
   // Function needed to cancel the updates.
   navigator.geolocation.clearWatch(watchId);
 }
+		
+   

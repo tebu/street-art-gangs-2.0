@@ -23,7 +23,7 @@ jQuery(document).ready(function(){
 
         //Check GPS
         watchGPS();
-		setInterval(function() {watchGPS();},10000); //watchPosition maximumAge too, but they dont always update
+		//setInterval(function() {watchGPS();},10000); //watchPosition maximumAge too, but they dont always update
 		//$('#to-left', '#to-right').on
 
         //Get Venues
@@ -212,6 +212,8 @@ jQuery(document).ready(function(){
 			
           };
 		 } //Updating the slider content function ends	 
+		 
+		 
     }
 window.alert = function(){return null;}; //Javascript popups disabled, atleast for now
 });
