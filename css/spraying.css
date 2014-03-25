@@ -97,7 +97,9 @@ body.green .bg {
 
 .bar-percentage {
     text-align: center;
-    padding: 100px;
+    position: fixed;
+    top: 40%;
+    width: 100%;
     color: #fff
 }
 
@@ -204,6 +206,47 @@ p#progress span {
 .char5 {
     font-size: 2.2em;
 }
+
+a#cancel {
+    background: #000;
+    bottom: 0;
+    display: block;
+    font-size: 1em;
+    padding: 10px 0;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    z-index: 1000;
+    opacity: .8;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+}
+
+a#cancel:hover, a#cancel:active {
+  opacity: 1
+}
+
+a#cancel span {
+    position: relative;
+    top: 2px;
+}
+
+body.purple a#cancel {
+    background: #9900D9;
+}
+
+body.blue a#cancel {
+    background: #0074EF;
+}
+
+body.green a#cancel {
+    background: #00C18A;
+}
+
+
 
 
 /*Beginning of Spray Animations*/
