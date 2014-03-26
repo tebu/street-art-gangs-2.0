@@ -59,7 +59,12 @@ jQuery(document).ready(function(){
             jQuery('.disappear').addClass('animated bounceOutDown');
             jQuery('.overlay').addClass('animated fadeIn');
             jQuery('.points-earned').addClass('animated bounceInDown');
+            jQuery('a#cancel').addClass('animated bounceInUp');
+            // Delaying this button 16 seconds to animating out
+            $('a#cancel').delay(16000).queue(function(){$('a#cancel').addClass('bounceOutDown')});
+
     });
+  
 
     // Points animation
     //TODO: Calculate points
