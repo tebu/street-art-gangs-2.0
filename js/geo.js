@@ -26,10 +26,10 @@ function onGPSError(error) {
 
 function watchGPS() {
       watchId = navigator.geolocation.watchPosition(onGPSSuccess, onGPSError, {
-	      //frequency: 4000,
+	      //frequency: 4000, Does not work, using maximumAge instead
           enableHighAccuracy: true,
-          maximumAge: 15000,
-          timeout: 20000
+          maximumAge: 4000,
+          timeout: 10000
         });
 }
 
