@@ -186,8 +186,12 @@ html, body {
 }
 
 .overlay-contentpush {
-    background: url(../img/blur.jpg) no-repeat top;
-    background-size: cover;
+    background: -moz-linear-gradient(top,  #89ffd2 0%, #30b4f2 49%, #8331f7 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#89ffd2), color-stop(49%,#30b4f2), color-stop(100%,#8331f7));
+    background: -webkit-linear-gradient(top,  #89ffd2 0%,#30b4f2 49%,#8331f7 100%);
+    background: -o-linear-gradient(top,  #89ffd2 0%,#30b4f2 49%,#8331f7 100%);
+    background: -ms-linear-gradient(top,  #89ffd2 0%,#30b4f2 49%,#8331f7 100%);
+    background: linear-gradient(to bottom,  #89ffd2 0%,#30b4f2 49%,#8331f7 100%);
     background-attachment: fixed;
     text-align: center;
     visibility: hidden;
@@ -201,12 +205,14 @@ html, body {
 
 .overlay-contentpush h1 {
     font-size: 2em;
-    margin-top: 100px;
+    margin-top: 80px;
+    color: #000;
 }
 
 .overlay-contentpush h2 {
     font-size: 1.4em;
     padding: 0 40px;
+    color: #000;
 }
 
 .overlay-contentpush p {
