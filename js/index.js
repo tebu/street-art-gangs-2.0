@@ -42,12 +42,21 @@ jQuery(document).ready(function(){
 			var venueArr = distanceSort(data);
 			updateVenueslider(data, venueArr);
 			
-			/*$.ajaxSetup({ cache: false }); //for IE 
-		    setInterval(function() {          //REFRESH UNDER WORK
-			$(".liquid-slider").toggleClass(" liquid-slider");
-            $('#main-slider').liquidSlider('refresh');
+			setInterval(function() {          //REFRESH UNDER WORK
+		     var venueArr = distanceSort(data);
 			}
-			,10000); */
+			,2000);
+			
+			$.ajaxSetup({ cache: false }); //for IE 
+		    setInterval(function() {          //REFRESH UNDER WORK
+			//$(".venue").toggleClass(" liquid-slider");
+			var venue = $("<div>").toggleClass( 'venue' );
+            $('.venue').liquidSlider('refresh');
+			
+			$("<br>").appendTo(venue);
+            $('#main-slider').append(venue);
+			}
+			,4000); //*/
 				
           // Venue slider
           $('#main-slider').liquidSlider({
@@ -104,7 +113,7 @@ function updateVenueslider (data,arraySorted){
 
 		    for (var i = data.length - 1; i >= 0; i--) { 
 
-			var j = arraySorted[i][0]; //[i][0] supposed to be the venue's location in data from the sorted array... 
+			var j = arraySorted[i][0]; //[i][0] the venue's location in data from the sorted array... 
 
             var venue = $("<div>").toggleClass( 'venue' );
             var owner = $("<p>").addClass("owner");
