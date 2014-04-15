@@ -47,7 +47,7 @@ jQuery(document).ready(function(){
 			}
 			,2000);
 			
-			$.ajaxSetup({ cache: false }); //for IE 
+			/* $.ajaxSetup({ cache: false }); //for IE 
 		    setInterval(function() {          //REFRESH UNDER WORK
 			//$(".venue").toggleClass(" liquid-slider");
 			var venue = $("<div>").toggleClass( 'venue' );
@@ -56,7 +56,7 @@ jQuery(document).ready(function(){
 			$("<br>").appendTo(venue);
             $('#main-slider').append(venue);
 			}
-			,4000); //*/
+			,4000); */
 				
           // Venue slider
           $('#main-slider').liquidSlider({
