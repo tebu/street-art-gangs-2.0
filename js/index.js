@@ -78,7 +78,7 @@ jQuery(document).ready(function(){
         //TODO fix this
           alert("Error: something went wrong while loading the venues");
         });
-		});
+        });
 		
 		//Counting the distances between player and location, called from distanceSort()
 function locationCheck(data,key,locationLat, locationLon, venueLat, venueLon){

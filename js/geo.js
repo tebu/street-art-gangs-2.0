@@ -29,7 +29,7 @@ function watchGPS() {
 	      //frequency: 4000, Does not work, using maximumAge instead
           enableHighAccuracy: true,
           maximumAge: 4000,
-          timeout: 10000
+          timeout: 3000
         });
 }
 
@@ -37,5 +37,6 @@ function stopWatching() {
   // Function needed to cancel the updates.
   navigator.geolocation.clearWatch(watchId);
 }
-		
+
+
    

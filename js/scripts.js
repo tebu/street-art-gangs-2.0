@@ -245,6 +245,7 @@ var updateUserPosition = function(latitude,longitude) {
               url: endpoint,
               dataType: 'json',
               data: data,
+			  async: false,
               beforeSend: function (xhr) {
                 xhr.setRequestHeader ("Authorization", authorization);
               }
