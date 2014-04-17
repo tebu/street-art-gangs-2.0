@@ -142,6 +142,7 @@ function sprayingInitialized(venue) { //SprayingInitialized to 1 in venue databa
         var venue2 = JSON.parse(localStorage.getItem('venueid')); 
 		var venue = parseInt(venue2);
         var gangster = localStorage.gangster;
+		var color = localStorage.color;
 		var endpoint = "http://vm0063.virtues.fi/venues/"+venue+"/";
         var data =  {
 				sprayinginitialized:1,
@@ -164,9 +165,12 @@ function sprayingInitialized(venue) { //SprayingInitialized to 1 in venue databa
 function sprayingInterrupted(venue) { 
 
         var authorization=localStorage.authorization;
+        var gangster = localStorage.gangster;
+		var color = localStorage.color;
         var venue2 = JSON.parse(localStorage.getItem('venueid')); 
 		var venue = parseInt(venue2);
-       
+        var gangster = localStorage.gangster; 
+		
 		var endpoint = "http://vm0063.virtues.fi/venues/"+venue+"/";
         var data =  {
 				sprayinginitialized:0,
@@ -182,10 +186,13 @@ function sprayingInterrupted(venue) {
                   xhr.setRequestHeader ("Authorization", authorization);
                 }
                }).done(function( data ) {
-			  var gangster = localStorage.gangster; 
+			  
+                      }).done(function( data ) {
+              
               var endpoint = "http://vm0063.virtues.fi/gangsters/"+gangster+"/";
               var now = moment().format();
               var data =  {
+                      
 					  bustedviapolice: 0
                   }
 
