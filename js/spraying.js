@@ -181,7 +181,8 @@ function sprayingInterrupted(venue) {
                 beforeSend: function (xhr) {
                   xhr.setRequestHeader ("Authorization", authorization);
                 }
-               }).done(function( data ) 
+               }).done(function( data ) {
+			  var gangster = localStorage.gangster; 
               var endpoint = "http://vm0063.virtues.fi/gangsters/"+gangster+"/";
               var now = moment().format();
               var data =  {
