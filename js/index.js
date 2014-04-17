@@ -21,9 +21,9 @@ jQuery(document).ready(function(){
         new gnMenu( document.getElementById( 'gn-menu' ) );
 
 		
-
+       
         //Check GPS
-        watchGPS();
+        $.when(watchGPS()).then(function( data ) {
 		//$('#to-left', '#to-right').on
 
         //Get Venues
@@ -49,16 +49,6 @@ jQuery(document).ready(function(){
 			}
 			,5000);
 			
-			/* $.ajaxSetup({ cache: false }); //for IE 
-		    setInterval(function() {          //REFRESH UNDER WORK
-			//$(".venue").toggleClass(" liquid-slider");
-			var venue = $("<div>").toggleClass( 'venue' );
-            $('.venue').liquidSlider('refresh');
-			
-			$("<br>").appendTo(venue);
-            $('#main-slider').append(venue);
-			}
-			,4000); */
 				
           // Venue slider
           $('#main-slider').liquidSlider({
@@ -88,7 +78,7 @@ jQuery(document).ready(function(){
         //TODO fix this
           alert("Error: something went wrong while loading the venues");
         });
-		
+		});
 		
 		//Counting the distances between player and location, called from distanceSort()
 function locationCheck(data,key,locationLat, locationLon, venueLat, venueLon){
@@ -122,10 +112,11 @@ function updateVenueslider (data,arraySorted){
 			
 			var venueId = data[j].id;	
 			var locator = "#";
-			locator += venueId; //Creates an individual 'id's based on venue id for the droplet icons 
-			/*var distanceId2 = venueId;
-			var distanceId = distanceId2+"Dist"; //TEMPORARY Creates individual id for distance (venueId + "Distance") for updating that on index page
-			locator += distanceId;*/
+			locator += venueId; 
+			
+			var locator2 = "#";
+			var distanceId = data[j].id+"Dist"; //TEMPORARY Creates individual id for distance (venueId + "Distance") for updating that on index page
+			locator2 += distanceId;
 			
             var gang = data[j].gang;
             if (gang != null) {
@@ -143,7 +134,7 @@ function updateVenueslider (data,arraySorted){
 			var distance = data[j].distance;
 			var distance2 = distance*1000;                // TEMP. Shows the distance from the venue For testing
 			var distance3 = distance2.toFixed(0); 
-			$("<p>").text(""+distance3+"m").appendTo(venue); //.attr('id',distanceId)
+			$("<p>").attr('id',distanceId).text(""+distance3+"m").appendTo(venue); //
 			$("<br>").appendTo(venue); //TEMP. SOLUTION
 			
 			if (distance <=0.500) {	//TEMP. DISTANCES ARE WIDE FOR TESTING... NARROW DOWN AT SOME POINT	
@@ -195,6 +186,7 @@ function distanceSort (data){
 /*fuction refreshDistances(){
 
 }*/		
+
 		 
     }
 window.alert = function(){return null;}; //Javascript popups disabled, atleast for now
