@@ -181,8 +181,29 @@ function sprayingInterrupted(venue) {
                 beforeSend: function (xhr) {
                   xhr.setRequestHeader ("Authorization", authorization);
                 }
+               }).done(function( data ) 
+              var endpoint = "http://vm0063.virtues.fi/gangsters/"+gangster+"/";
+              var now = moment().format();
+              var data =  {
+					  bustedviapolice: 0
+                  }
+
+              $.ajax({
+                type: "PATCH",
+                url: endpoint,
+                dataType: 'json',
+                data: data,
+                beforeSend: function (xhr) {
+                  xhr.setRequestHeader ("Authorization", authorization);
+                }
+
                }).done(function( data ) {
-			   
+
+            window.location.href = "index.html";
+				}).fail(function( jqXHR, textStatus ) {
+              //TODO fix these and place redirect to index and clean venue id from local storage
+                alert("First Error: something went wrong while updating the location: "+ textStatus);
+              });
 			   
 
               }).fail(function( jqXHR, textStatus ) {
