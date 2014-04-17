@@ -44,8 +44,10 @@ jQuery(document).ready(function(){
 			
 			setInterval(function() {          //REFRESH UNDER WORK
 		     var venueArr = distanceSort(data);
+			 //refreshDistances(venueArr);
+			 
 			}
-			,2000);
+			,5000);
 			
 			/* $.ajaxSetup({ cache: false }); //for IE 
 		    setInterval(function() {          //REFRESH UNDER WORK
@@ -121,6 +123,8 @@ function updateVenueslider (data,arraySorted){
 			var venueId = data[j].id;	
 			var locator = "#";
 			locator += venueId; //Creates an individual 'id's based on venue id for the droplet icons 
+			var distanceId= venueId+"Distance"; //TEMPORARY Creates individual id for distance (venueId + "Distance") for updating that on index page
+			locator += distanceId;
 			
             var gang = data[j].gang;
             if (gang != null) {
@@ -138,7 +142,7 @@ function updateVenueslider (data,arraySorted){
 			var distance = data[j].distance;
 			var distance2 = distance*1000;                // TEMP. Shows the distance from the venue For testing
 			var distance3 = distance2.toFixed(0); 
-			$("<p>").text(""+distance3+"m").appendTo(venue); 
+			$("<p>").attr('id',distanceId).text(""+distance3+"m").appendTo(venue); 
 			$("<br>").appendTo(venue); //TEMP. SOLUTION
 			
 			if (distance <=0.500) {	//TEMP. DISTANCES ARE WIDE FOR TESTING... NARROW DOWN AT SOME POINT	
@@ -186,7 +190,10 @@ function distanceSort (data){
             return venueArr;			
 			
 		} //Distance and sorting out
-			
+
+/*fuction refreshDistances(){
+
+}*/		
 		 
     }
 window.alert = function(){return null;}; //Javascript popups disabled, atleast for now
