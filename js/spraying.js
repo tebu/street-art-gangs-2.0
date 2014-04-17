@@ -89,7 +89,7 @@ var registerSpray = function(venue) {
                 gangster: gangster,
                 latestEditTimestamp: now,
 				sprayinginitialized:0,
-				gangsterSpraying: 0,
+				gangsterSpraying: 0
             }
 		mixpanel.track("SprayingFinalised", {Time:now, gang: color, gangster: gangster});
 
@@ -170,8 +170,8 @@ function sprayingInterrupted(venue) {
 		var endpoint = "http://vm0063.virtues.fi/venues/"+venue+"/";
         var data =  {
 				sprayinginitialized:0,
-				gangsterSpraying: 0,
-				bustedviapolice: 0
+				gangsterSpraying: 0
+				
             }
               $.ajax({
                 type: "PATCH",
@@ -182,6 +182,8 @@ function sprayingInterrupted(venue) {
                   xhr.setRequestHeader ("Authorization", authorization);
                 }
                }).done(function( data ) {
+			   
+			   
 
               }).fail(function( jqXHR, textStatus ) {
               //TODO fix this
