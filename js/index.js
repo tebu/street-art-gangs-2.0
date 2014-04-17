@@ -123,7 +123,8 @@ function updateVenueslider (data,arraySorted){
 			var venueId = data[j].id;	
 			var locator = "#";
 			locator += venueId; //Creates an individual 'id's based on venue id for the droplet icons 
-			var distanceId= venueId+"Distance"; //TEMPORARY Creates individual id for distance (venueId + "Distance") for updating that on index page
+			var distanceId2 = venueId;
+			var distanceId = distanceId2+"Dist"; //TEMPORARY Creates individual id for distance (venueId + "Distance") for updating that on index page
 			locator += distanceId;
 			
             var gang = data[j].gang;
@@ -153,10 +154,10 @@ function updateVenueslider (data,arraySorted){
 				});	
 			}else if (distance >0.500&& distance<=1.000){
 		
-			$("<div>").attr('id','#maybe-to-spray').append("<a class='maybespray icon-droplet'</a>").appendTo(venue); //blinking droplet
+			$("<div>").attr('id','#maybe-to-spray').append("<a id="+venueId+" class='maybespray icon-droplet'</a>").appendTo(venue); //blinking droplet
 			}else{ 
 		
-			$("<div>").attr('id','#not-to-spray').append("<a class='notspray icon-droplet'></a>").appendTo(venue);//inactive droplet 
+			$("<div>").attr('id','#not-to-spray').append("<a id="+venueId+" class='notspray icon-droplet'></a>").appendTo(venue);//inactive droplet 
 			}
 			$("<br>").appendTo(venue);
 			
