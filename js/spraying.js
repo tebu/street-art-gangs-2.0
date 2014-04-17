@@ -90,7 +90,6 @@ var registerSpray = function(venue) {
                 latestEditTimestamp: now,
 				sprayinginitialized:0,
 				gangsterSpraying: 0,
-				bustedviapolice: 0
             }
 		mixpanel.track("SprayingFinalised", {Time:now, gang: color, gangster: gangster});
 
@@ -110,7 +109,8 @@ var registerSpray = function(venue) {
               var data =  {
                       points: localStorage.points,
                       tags_created: localStorage.tags_created,
-                      last_action: now
+                      last_action: now,
+					  bustedviapolice: 0
                   }
 
               $.ajax({
