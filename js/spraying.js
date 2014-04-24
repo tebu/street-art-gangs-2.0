@@ -8,6 +8,7 @@ jQuery(document).ready(function(){
 		var gangster = localStorage.gangster;
 		mixpanel.track("PageLaunch", {page:"spraying", gang: color, gangster: gangster}); 
 		sprayingInitialized();
+		
         //Change color background depending on player's color
         $('body').removeClass().addClass(color)
         $("#can-spraying").attr("src", "img/can-"+color+".png" );
@@ -110,7 +111,8 @@ var registerSpray = function(venue) {
                       points: localStorage.points,
                       tags_created: localStorage.tags_created,
                       last_action: now,
-					  bustedviapolice: 0
+					  bustedviapolice: 0,
+					  spraying: 0
                   }
 
               $.ajax({
@@ -144,6 +146,7 @@ function sprayingInitialized(venue) { //SprayingInitialized to 1 in venue databa
         var gangster = localStorage.gangster;
 		var color = localStorage.color;
 		var endpoint = "http://vm0063.virtues.fi/venues/"+venue+"/";
+		var endpoint2 = "http://vm0063.virtues.fi/gangsters/"+gangster+"/";
         var data =  {
 				sprayinginitialized:1,
 				gangsterSpraying: gangster
@@ -157,11 +160,36 @@ function sprayingInitialized(venue) { //SprayingInitialized to 1 in venue databa
                   xhr.setRequestHeader ("Authorization", authorization);
                 }
                }).done(function( data ) {
+              
+              var endpoint = "http://vm0063.virtues.fi/gangsters/"+gangster+"/";
+              var now = moment().format();
+              var data =  {                  
+					  spraying: 1
+                  }
+
+              $.ajax({
+                type: "PATCH",
+                url: endpoint,
+                dataType: 'json',
+                data: data,
+                beforeSend: function (xhr) {
+                  xhr.setRequestHeader ("Authorization", authorization);
+                }
+
+               }).done(function( data ) {
+
+				}).fail(function( jqXHR, textStatus ) {
+              //TODO fix these and place redirect to index and clean venue id from local storage
+                alert("First Error: something went wrong while updating the location: "+ textStatus);
+              });
+			   
+
               }).fail(function( jqXHR, textStatus ) {
               //TODO fix this
                 alert("First Error: something went wrong while updating the location: "+ textStatus);
               });
-		}
+}
+		
 function sprayingInterrupted(venue) { 
 
         var authorization=localStorage.authorization;
@@ -191,7 +219,8 @@ function sprayingInterrupted(venue) {
               var now = moment().format();
               var data =  {
                       
-					  bustedviapolice: 0
+					  bustedviapolice: 0,
+					  spraying: 0
                   }
 
               $.ajax({

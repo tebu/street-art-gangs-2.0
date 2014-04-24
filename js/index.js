@@ -8,6 +8,8 @@ jQuery(document).ready(function(){
 		var gangster = localStorage.gangster;
 		var locationLatitude = localStorage.latitude; //gangster location
 		var locationLongitude = localStorage.longitude;
+		if (localStorage.gang = 4){ var gangName="Purple Knights";
+		}else if (localStorage.gang = 5){var gangName="Green Shamans"}else{var gangName="Blue Knights"};
 		
 		localStorage.removeItem('venueid');
 		mixpanel.register({gang: color, gangster: gangster}); //Track for the droplet click is in index.html
@@ -20,7 +22,9 @@ jQuery(document).ready(function(){
         //Menu
         new gnMenu( document.getElementById( 'gn-menu' ) );
 
-		
+		$('body').on("click",".bustButton",(function() {
+		alert("clicked");//bustCheck(locationLatitude,locationLongitude);
+        }));
        
         //Check GPS
         $.when(watchGPS()).then(function( data ) {
@@ -97,7 +101,9 @@ function locationCheck(data,key,locationLat, locationLon, venueLat, venueLon){
            var distance = rho*Math.acos( Math.sin(phi_1)*Math.sin(phi_2)*Math.cos(theta_1 - theta_2) + Math.cos(phi_1)*Math.cos(phi_2) );
 		   for (var i = data.length - 1; i >= 0; i--) {
            data[key].distance = distance; // adds distance to venue data, for sorting
+		   var owned =data[key].gang; //adds owner to venue data for placing the owned location to the end of array
 			}
+			
          }	
 
 		 //Updating the slider content
@@ -109,7 +115,6 @@ function updateVenueslider (data,arraySorted){
 
             var venue = $("<div>").toggleClass( 'venue' );
             var owner = $("<p>").addClass("owner");
-			
 			var venueId = data[j].id;	
 			var locator = "#";
 			locator += venueId; 
@@ -135,9 +140,9 @@ function updateVenueslider (data,arraySorted){
 			var distance2 = distance*1000;                // TEMP. Shows the distance from the venue For testing
 			var distance3 = distance2.toFixed(0); 
 			$("<p>").attr('id',distanceId).text(""+distance3+"m").appendTo(venue); //
-			$("<br>").appendTo(venue); //TEMP. SOLUTION
+			//TEMP. SOLUTION
 			
-			if (distance <=0.500) {	//TEMP. DISTANCES ARE WIDE FOR TESTING... NARROW DOWN AT SOME POINT	
+			if (distance <=0.500 && gangName != data[j].gang) {	//TEMP. DISTANCES ARE WIDE FOR TESTING... NARROW DOWN AT SOME POINT	
 			$("<div>").attr('id','#start-to-spray').append("<a id="+venueId+" class='spray icon-droplet'  href='spraying.html'></a>").appendTo(venue);
 			
 			$('body').on("click",locator, function() {
@@ -157,7 +162,7 @@ function updateVenueslider (data,arraySorted){
           };
 		 } //Updating the slider content function ends	 
 		 
-		 //Distance Check and Array from distance sorting
+		 //Distance Check and Array from distance sorting and Placing th eowned venues to the end of Array
 function distanceSort (data){
             locationLatitude = localStorage.latitude; //gangster location needs to be rechecked
 		    locationLongitude = localStorage.longitude;
@@ -166,6 +171,7 @@ function distanceSort (data){
 			var venueLatitude = data[i].latitude;
 		    var venueLongitude = data[i].longitude;
 		    var distance = locationCheck(data,i,locationLatitude,locationLongitude,venueLatitude,venueLongitude); 
+			var gang = localStorage.gang;
 		    }
 			
 			//venueArr =new Array();venueArr.length = 0;
@@ -178,6 +184,10 @@ function distanceSort (data){
 			venueArr.sort(function(a,b) { //Sorts order of the venues by distance
 		    return b[1] - a[1];
 		    }); 
+			//TODO Placing the tagged locations to the end of Array
+			/*for (var i = venueArr.length - 1; i >= 0; i--) {
+			venueArr[i][1]; //Location of the owner in venueArr
+			}*/
 			
             return venueArr;			
 			

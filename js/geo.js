@@ -16,8 +16,8 @@ function onGPSSuccess(pos) {
       localStorage.longitude=longitude;
       localStorage.accuracy=accuracy;
       updateUserPosition(latitude,longitude);
-
 }
+
 
 function onGPSError(error) {
 //TODO FIx this
@@ -28,8 +28,8 @@ function watchGPS() {
       watchId = navigator.geolocation.watchPosition(onGPSSuccess, onGPSError, {
 	      //frequency: 4000, Does not work, using maximumAge instead
           enableHighAccuracy: true,
-          maximumAge: 4000,
-          timeout: 3000
+          maximumAge: 3000,
+          timeout: 2000
         });
 }
 

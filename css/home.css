@@ -558,7 +558,22 @@ small {
     margin-left: 10px
 }
 
-
+.bust {
+	padding: 10px;
+	opacity:1;
+    z-index: 20000;
+    display: block;
+	margin-left: auto;
+    margin-right: auto
+}
+.bustButton {
+	padding: 0px;
+    z-index: 20000;
+	opacity:0.0;
+    display: block;
+	margin-left: auto;
+    margin-right: auto
+}
 @media all and (min-width: 1024px) {
 
    a.spray {

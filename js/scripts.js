@@ -257,3 +257,33 @@ var updateUserPosition = function(latitude,longitude) {
           alert("Error: something went wrong while updating the location: "+ textStatus);
         });
         }
+
+		var updateUserPositionSec = function(latitude,longitude) {
+        
+        var authorization=localStorage.authorization;
+        var gangster = localStorage.gangster;
+        var endpoint = "http://vm0063.virtues.fi/gangsters/"+gangster+"/";
+        var now = moment().format();
+        var data =  {
+                latitude: latitude,
+                longitude: longitude,
+                last_action: now
+            }
+
+        $.ajax({
+              type: "PATCH",
+              url: endpoint,
+              dataType: 'json',
+              data: data,
+			  async: true,
+              beforeSend: function (xhr) {
+                xhr.setRequestHeader ("Authorization", authorization);
+              }
+          }).done(function( data ) {
+
+
+        }).fail(function( jqXHR, textStatus ) {
+        //TODO fix this
+          alert("Error: something went wrong while updating the location: "+ textStatus);
+        });
+        }
