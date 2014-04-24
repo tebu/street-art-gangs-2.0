@@ -568,8 +568,8 @@ small {
 	margin-left:-35px
 }
 .bustButton {
-    top: 40;
-	padding: 50px;
+    
+	padding: 60px 30px 30px 0px;
     z-index: 25000;
 	opacity:0.0;
     position: relative
