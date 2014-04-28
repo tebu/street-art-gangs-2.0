@@ -15,7 +15,6 @@ jQuery(document).ready(function(){
 		
 		
 		localStorage.removeItem('venueid');
-		clearGangster();
 		
 		mixpanel.register({gang: color, gangster: gangster}); //Track for the droplet click is in index.html
 		mixpanel.track("PageLaunch", {page:"index"});
@@ -204,32 +203,8 @@ function distanceSort (data){
 /*fuction refreshDistances(){
 
 }*/		
-
-		 
+	 
     }
-	function clearGangster(){
-	           var authorization=localStorage.authorization;
-          var gangster = localStorage.gangster; 
-              var endpoint2 = "http://vm0063.virtues.fi/gangsters/"+gangster+"/";
-              var data =  {                  
-					  spraying: 0,
-					  bustedviapolice: 0
-                  }
-
-              $.ajax({
-                type: "PATCH",
-                url: endpoint2,
-                dataType: 'json',
-                data: data,
-                beforeSend: function (xhr) {
-                  xhr.setRequestHeader ("Authorization", authorization);
-                }
-               }).done(function( data ) {
-				}).fail(function( jqXHR, textStatus ) {
-              //TODO fix these and place redirect to index and clean venue id from local storage
-                alert("First Error: something went wrong while updating the location: "+ textStatus);
-              });
-             	}	
 				
 window.alert = function(){return null;}; //Javascript popups disabled, atleast for now
 });

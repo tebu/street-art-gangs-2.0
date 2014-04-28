@@ -225,7 +225,6 @@ function sprayingInterrupted(venue) {
                 type: "PATCH",
                 url: endpoint2,
                 dataType: 'json',
-				async: false,
                 data: data,
                 beforeSend: function (xhr) {
                   xhr.setRequestHeader ("Authorization", authorization);
