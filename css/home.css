@@ -164,7 +164,6 @@ h3.title {
     top: 25%;
     z-index: 3000;
 }
-
 .arrows a {
     display: inline-block;
     color: #fff !important;
@@ -198,7 +197,7 @@ h3.title {
 
 #start-to-spray {
     position: fixed;
-    bottom: 5%;
+    bottom: 45%;
     left: 0;
     width: 100%;
     text-align: center;
@@ -559,20 +558,22 @@ small {
 }
 
 .bust {
-    top: 40px;
+    top: -65px;
 	padding: 10px;
 	opacity:1;
     z-index: 5;
 	position: absolute;
 	left:50%;
-	margin-left:-35px
+	margin-left:-32px
 }
 .bustButton {
-    top: 40;
-	padding: 50px;
-    z-index: 25000;
-	opacity:0.0;
-    position: relative
+    top: -45px;
+	padding: 10px;
+	opacity:1;
+    z-index: 6;
+	position: absolute;
+	left:50%;
+	margin-left:-35px
 }
 @media all and (min-width: 1024px) {
 

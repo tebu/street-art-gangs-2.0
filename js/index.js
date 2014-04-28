@@ -65,7 +65,7 @@ jQuery(document).ready(function(){
               crossLinks:true,
               includeTitle:true,
               mobileNavigation:false,
-              firstPanelToLoad:1, // TEE TÄSTÄ LÄHIN
+              firstPanelToLoad:1, 
               autoHeight:false,
               minHeight: 0,
               swipe: true,
@@ -125,7 +125,7 @@ function updateVenueslider (data,arraySorted){
 			locator += venueId; 
 			
 			var locator2 = "#";
-			var distanceId = data[j].id+"Dist"; //TEMPORARY Creates individual id for distance (venueId + "Distance") for updating that on index page
+			var distanceId = data[j].id+"Dist"; //Creates individual id for distance (venueId + "Distance") for updating that on index page
 			locator2 += distanceId;
 			
             var gang = data[j].gang;
@@ -136,7 +136,11 @@ function updateVenueslider (data,arraySorted){
             } else {
               owner.append("Untagged").appendTo(venue);
             }
-			
+			$("<button>").attr('id',"bustButton").addClass(venueId).append("<img class='bust' src='img/bust.png' width='65' height='65'>").appendTo(venue); 
+			/*$('body').on("click",venueId, function() {
+				bustCheck(locationLatitude,locationLongitude); //check for spraying gangsters close by based on venueId
+				});	*/
+				
             $("<div>").addClass("category").addClass(getCategoryClass(data[j].category)).appendTo(venue);
             $("<h3>").addClass("title").text(getCategory(data[j].category)).appendTo(venue);
 			$("<h1>").addClass("location").text(data[j].name).appendTo(venue);
@@ -198,7 +202,7 @@ function distanceSort (data){
 			
 		} //Distance and sorting out
 
-
+function bustCheck(locationLatitude,locationLongitude){}
 
 /*fuction refreshDistances(){
 
