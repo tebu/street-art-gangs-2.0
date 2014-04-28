@@ -25,10 +25,6 @@ jQuery(document).ready(function(){
 
         //Menu
         new gnMenu( document.getElementById( 'gn-menu' ) );
-
-		$('body').on("click",".bustButton",(function() {
-		alert("clicked");//bustCheck(locationLatitude,locationLongitude);
-        }));
         
         //Check GPS
         $.when(watchGPS()).then(function( data ) {
@@ -136,7 +132,8 @@ function updateVenueslider (data,arraySorted){
             } else {
               owner.append("Untagged").appendTo(venue);
             }
-			$("<button>").attr('id',"bustButton").addClass(venueId).append("<img class='bust' src='img/bust.png' width='65' height='65'>").appendTo(venue); 
+			  //TODO place bust button only to three first venues
+			$("<button>").attr('id',"bustButton").addClass(venueId).append("<img class='bust' src='img/bust.png' width='65' height='65'>").appendTo(venue); //TODO bust button negative image for button BG
 			/*$('body').on("click",venueId, function() {
 				bustCheck(locationLatitude,locationLongitude); //check for spraying gangsters close by based on venueId
 				});	*/
@@ -167,11 +164,10 @@ function updateVenueslider (data,arraySorted){
 			$("<br>").appendTo(venue);
 			
             $('#main-slider').append(venue);
-			
           };
 		 } //Updating the slider content function ends	 
 		 
-		 //Distance Check and Array from distance sorting and Placing th eowned venues to the end of Array
+		 //Distance Check and Array from distance sorting and Placing the owned venues to the end of Array
 function distanceSort (data){
             locationLatitude = localStorage.latitude; //gangster location needs to be rechecked
 		    locationLongitude = localStorage.longitude;
@@ -202,7 +198,9 @@ function distanceSort (data){
 			
 		} //Distance and sorting out
 
-function bustCheck(locationLatitude,locationLongitude){}
+function bustCheck(locationLatitude,locationLongitude){
+               //TODO venue id, who is spraying and the location of the buster 
+            } //TODO check the gangsters not bustin themselves, they are on same location
 
 /*fuction refreshDistances(){
 
