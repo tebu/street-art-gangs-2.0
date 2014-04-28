@@ -13,7 +13,7 @@ jQuery(document).ready(function(){
         $('body').removeClass().addClass(color)
         $("#can-spraying").attr("src", "img/can-"+color+".png" );
 		$('.particle').removeClass().addClass("spray"+color);
-		window.onbeforeunload=function(){sprayingInterrupted();}; //Sets spraying initialized back to 0 if interrupted... 
+		window.onunload=function(){sprayingInterrupted();}; //Sets spraying initialized back to 0 if interrupted... 
       }
 });
 
