@@ -142,7 +142,7 @@ function updateVenueslider (data,arraySorted){
 			$("<p>").attr('id',distanceId).text(""+distance3+"m").appendTo(venue); //
 			//TEMP. SOLUTION
 			
-			if (distance <=0.500 && gangName != data[j].gang) {	//TEMP. DISTANCES ARE WIDE FOR TESTING... NARROW DOWN AT SOME POINT	
+			if (distance <=0.500 && gangName != gang) {	//TEMP. DISTANCES ARE WIDE FOR TESTING... NARROW DOWN AT SOME POINT	
 			$("<div>").attr('id','#start-to-spray').append("<a id="+venueId+" class='spray icon-droplet'  href='spraying.html'></a>").appendTo(venue);
 			
 			$('body').on("click",locator, function() {
