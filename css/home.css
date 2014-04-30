@@ -567,13 +567,39 @@ small {
 	margin-left:-32px
 }
 .bustButton {
-    top: -45px;
-	padding: 10px;
-	opacity:1;
-    z-index: 6;
+    
+    border: none;
+    background: url(../img/bust.png) no-repeat; 
+    height: 65px;
+    width: 65px;	
+    top: -65px;
+    z-index: 1000;
 	position: absolute;
 	left:50%;
-	margin-left:-35px
+	margin-left:-32px
+}
+
+.nobustButton {
+    border: none;
+    background: url(../img/noBust.png) no-repeat; 
+    height: 65px;
+    width: 65px;	
+    top: -65px;
+    z-index: 1000;
+	position: absolute;
+	left:50%;
+	margin-left:-32px
+}
+.bustsuccessButton{
+ border: none;
+    background: url(../img/successBust.png) no-repeat; 
+    height: 65px;
+    width: 65px;	
+    top: -65px;
+    z-index: 1000;
+	position: absolute;
+	left:50%;
+	margin-left:-32px
 }
 @media all and (min-width: 1024px) {
 

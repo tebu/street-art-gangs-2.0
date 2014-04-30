@@ -8,11 +8,6 @@ jQuery(document).ready(function(){
 		var gangster = localStorage.gangster;
 		var locationLatitude = localStorage.latitude; //gangster location
 		var locationLongitude = localStorage.longitude;
-		if(localStorage.gang = 4){ var gangName=4;
-		}else if(localStorage.gang = 5){
-		var gangName=5;}else{
-		var gangName=6;};
-		
 		
 		localStorage.removeItem('venueid');
 		
@@ -120,9 +115,11 @@ function updateVenueslider (data,arraySorted){
 			var locator = "#";
 			locator += venueId; 
 			
-			var locator2 = "#";
 			var distanceId = data[j].id+"Dist"; //Creates individual id for distance (venueId + "Distance") for updating that on index page
-			locator2 += distanceId;
+			
+			var locator2 = "#";
+			var bustId = data[j].id+"bust"; //Creates individual id for distance (venueId + "Distance") for updating that on index page
+			locator2 += bustId;
 			
             var gang = data[j].gang;
             if (gang != null) {
@@ -133,10 +130,14 @@ function updateVenueslider (data,arraySorted){
               owner.append("Untagged").appendTo(venue);
             }
 			  //TODO place bust button only to three first venues
-			$("<button>").attr('id',"bustButton").addClass(venueId).append("<img class='bust' src='img/bust.png' width='65' height='65'>").appendTo(venue); //TODO bust button negative image for button BG
-			/*$('body').on("click",venueId, function() {
-				bustCheck(locationLatitude,locationLongitude); //check for spraying gangsters close by based on venueId
-				});	*/
+			
+			if (i > 25){ 
+			$("<button>").addClass("bustButton").attr('id',bustId).appendTo(venue); 
+			$('body').on("click", locator2, function() {
+			    localStorage.setItem('bustId',JSON.stringify(this.id)); 
+				bustCheck(); //check for spraying gangsters close by based on venueId
+				});	
+				}
 				
             $("<div>").addClass("category").addClass(getCategoryClass(data[j].category)).appendTo(venue);
             $("<h3>").addClass("title").text(getCategory(data[j].category)).appendTo(venue);
@@ -146,9 +147,13 @@ function updateVenueslider (data,arraySorted){
 			var distance2 = distance*1000;                // TEMP. Shows the distance from the venue For testing
 			var distance3 = distance2.toFixed(0); 
 			$("<p>").attr('id',distanceId).text(""+distance3+"m").appendTo(venue); //
-			//TEMP. SOLUTION
 			
-			if (distance <=0.500 && gangName != gang) {	//TEMP. DISTANCES ARE WIDE FOR TESTING... NARROW DOWN AT SOME POINT	
+			if(localStorage.gang == 4){ var gangName="Purple Knights"; //this is for not allowing the gang tag same loc twice
+		    }else if(localStorage.gang == 5){
+		    var gangName="Green Shamans";}else{
+		    var gangName="Blue Knights";};
+			
+			if (distance <=0.500 && gang !== gangName && data[j].sprayinginitialized == 0) {	//TEMP. DISTANCES ARE WIDE FOR TESTING... NARROW DOWN AT SOME POINT	
 			$("<div>").attr('id','#start-to-spray').append("<a id="+venueId+" class='spray icon-droplet'  href='spraying.html'></a>").appendTo(venue);
 			
 			$('body').on("click",locator, function() {
@@ -189,19 +194,59 @@ function distanceSort (data){
 			venueArr.sort(function(a,b) { //Sorts order of the venues by distance
 		    return b[1] - a[1];
 		    }); 
-			//TODO Placing the tagged locations to the end of Array
-			/*for (var i = venueArr.length - 1; i >= 0; i--) {
-			venueArr[i][1]; //Location of the owner in venueArr
-			}*/
-			
             return venueArr;			
 			
 		} //Distance and sorting out
 
-function bustCheck(locationLatitude,locationLongitude){
-               //TODO venue id, who is spraying and the location of the buster 
-            } //TODO check the gangsters not bustin themselves, they are on same location
-
+function bustCheck(bustId){
+        
+		var venue4 = JSON.parse(localStorage.getItem('bustId'));  var venue3 = venue4.split("b");	var venue2 = venue3[0];
+		var venue = parseInt(venue2);   
+		var authorization=localStorage.authorization;
+        var endpoint = "http://vm0063.virtues.fi/venues/"+venue;
+        $.ajax({
+          type: "GET",
+          url: endpoint,
+		  async: true, 
+          dataType: 'json',
+          beforeSend: function (xhr) {
+            xhr.setRequestHeader ("Authorization", authorization);
+          }
+        }).done(function( data ) {   
+	      
+			   if (data[0].gangsterSpraying != 0 && data[0].gagsterSpraying != localStorage.gangster){
+			   var tagger = data[0].gangsterSpraying;
+			   var endpoint = "http://vm0063.virtues.fi/gangsters/"+tagger;
+               $.ajax({
+               type: "GET",
+               url: endpoint,
+		       async: true, 
+               dataType: 'json',
+               beforeSend: function (xhr) {
+               xhr.setRequestHeader ("Authorization", authorization);
+                 }
+               }).done(function( data ) { 
+			   
+			   }).fail(function( jqXHR, textStatus ) {
+               //TODO fix this
+               alert("Error: something went wrong while loading the tagger's data!");
+                });
+			   
+			   $("<button>").removeClass('bustButton').addClass("bustsuccessButton");
+			   $("<button>").delay(2000).removeClass('nobustButton').addClass("bustButton").attr('id',bustId);
+			   }else
+			   $("<button>").removeClass('bustButton').addClass("nobustButton");
+			   $("<button>").delay(500).removeClass('nobustButton').addClass("bustButton").attr('id',bustId);
+			   
+			   //TODO venue id, who is spraying and the location of the buster 
+			   
+			   
+             //TODO check the gangsters not bustin themselves, they are on same location
+        }).fail(function( jqXHR, textStatus ) {
+        //TODO fix this
+          alert("Error: something went wrong while loading the venue!");
+        });
+        }
 /*fuction refreshDistances(){
 
 }*/		
