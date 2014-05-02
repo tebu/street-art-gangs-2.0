@@ -198,7 +198,8 @@ function sprayingInitialized(venue) { //SprayingInitialized to 1 in venue databa
 		
 function sprayingInterrupted(venue) { 
         
-
+        bustCheck();
+		
         var authorization=localStorage.authorization;
 		var color = localStorage.color;
         var venue2 = JSON.parse(localStorage.getItem('venueid')); 
@@ -208,8 +209,7 @@ function sprayingInterrupted(venue) {
 		var endpoint = "http://vm0063.virtues.fi/venues/"+venue+"/";
         var data =  {
 				sprayinginitialized:0,
-				gangsterSpraying: 0
-				
+				gangsterSpraying: 0	
             }
               $.ajax({
                 type: "PATCH",
@@ -264,9 +264,8 @@ function bustCheck(){
             xhr.setRequestHeader ("Authorization", authorization);
           }
         }).done(function( data ) {   	
-			   var bustedornot = parseInt(data.bustedviaPolice);
+			   var bustedornot = parseInt(data.bustedviapolice);
 			   if (bustedornot == 1){ 	
-			   
 			   $("#modal-busted").addClass("md-show");
               //animation
                $('.icon-surprised').addClass('animated bounce');
