@@ -212,7 +212,7 @@ function sprayingInterrupted(venue) {
                 type: "PATCH",
                 url: endpoint,
                 dataType: 'json',
-				async: false,
+				async: true,
                 data: data,
                 beforeSend: function (xhr) {
                   xhr.setRequestHeader ("Authorization", authorization);
@@ -229,7 +229,7 @@ function sprayingInterrupted(venue) {
                 type: "PATCH",
                 url: endpoint2,
                 dataType: 'json',
-				async: false,
+				async: true,
                 data: data,
                 beforeSend: function (xhr) {
                   xhr.setRequestHeader ("Authorization", authorization);
@@ -244,7 +244,7 @@ function sprayingInterrupted(venue) {
 
               }).fail(function( jqXHR, textStatus ) {
               //TODO fix this
-                alert("First Error: something went wrong while updating the location: "+ textStatus);
+                alert("Second Error: something went wrong while updating the location: "+ textStatus);
               });
 }
 
