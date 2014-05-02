@@ -193,7 +193,9 @@ function sprayingInitialized(venue) { //SprayingInitialized to 1 in venue databa
 }
 		
 function sprayingInterrupted(venue) { 
-
+        
+		bustCheck();
+		
         var authorization=localStorage.authorization;
 		var color = localStorage.color;
         var venue2 = JSON.parse(localStorage.getItem('venueid')); 
