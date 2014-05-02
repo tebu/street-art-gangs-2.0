@@ -735,15 +735,15 @@ body.green a#cancel {
 }
 
 
+
 .md-modal {
     position: fixed;
     top: 50%;
     left: 50%;
-    width: 50%;
-    max-width: 630px;
+    width: 100%;
     min-width: 320px;
-    height: auto;
-    z-index: 5000;
+    height: 100%;
+    z-index: 7000;
     visibility: hidden;
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
@@ -752,12 +752,19 @@ body.green a#cancel {
     -moz-transform: translateX(-50%) translateY(-50%);
     -ms-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .md-show {
     visibility: visible;
 }
-
+.icon-locked {
+    position: relative;
+    display: inline-block;
+    margin-top: 70px;
+    font-size: 3em;
+}
 .md-overlay {
     position: fixed;
     width: 100%;
@@ -765,9 +772,8 @@ body.green a#cancel {
     visibility: hidden;
     top: 0;
     left: 0;
-    z-index: 4500;
+    z-index: 6500;
     opacity: 0;
-    background: #F76200;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s;
@@ -781,10 +787,11 @@ body.green a#cancel {
 /* Content styles */
 .md-content {
     color: #fff;
-    background: #e74c3c;
     position: relative;
     border-radius: 3px;
     margin: 0 auto;
+    top: 40%;
+    text-align: center;
 }
 
 .md-content h3 {
@@ -797,42 +804,31 @@ body.green a#cancel {
     border-radius: 3px 3px 0 0;
 }
 
-.md-content > div {
-    padding: 15px 40px 30px;
-    margin: 0;
-    font-size: 1.15em;
-}
-
-.md-content > div p {
-    margin: 0;
-    padding: 10px 0;
-}
-
-.md-content > div ul {
-    margin: 0;
-    padding: 0 0 30px 20px;
-}
-
-.md-content > div ul li {
-    padding: 5px 0;
-}
-
-.md-content button {
-    display: block;
-    margin: 0 auto;
-    font-size: 0.8em;
-    background: #C0392B;
-    border: medium none;
-    border-radius: 2px 2px 2px 2px;
+.md-close {
+    border: none;
+    background: #fd7121;
     color: #FFFFFF;
     cursor: pointer;
-    margin: 3px 2px;
-    padding: 0.6em 1.2em;
+    display: block;
+    font-size: 0.8em;
+    font-family: 'signika_negativebold';
+    left: 0;
+    padding: .5em 1.4em;
+    position: relative;
+    text-align: center;
     text-transform: uppercase;
+    top: 160px;
+    width: 40%;
+    margin: 0 auto;
+    border-radius: 2px;
 }
 
+.md-close span {
+    position: relative;
+    top: 1px;
+    left: 0;
+}
 
-/* Effect 12:  Just me */
 .md-effect-12 .md-content {
     -webkit-transform: scale(0.8);
     -moz-transform: scale(0.8);
@@ -845,8 +841,13 @@ body.green a#cancel {
 }
 
 .md-show.md-effect-12 ~ .md-overlay {
-    background: #e74c3c;
-} 
+    background-image: -webkit-gradient(linear, center bottom, center top, color-stop(0%, #FF502D), color-stop(25%, #EB5600), color-stop(83%, #D62B00));
+    background-image: -webkit-linear-gradient(bottom, #FF502D 0%, #EB5600 25%, #D62B00 83%);
+    background-image: -moz-linear-gradient(bottom, #FF502D 0%, #EB5600 25%, #D62B00 83%);
+    background-image: -ms-linear-gradient(bottom, #FF502D 0%, #EB5600 25%, #D62B00 83%);
+    background-image: -o-linear-gradient(bottom, #FF502D 0%, #EB5600 25%, #D62B00 83%);
+    background-image: linear-gradient(to top, #FF502D 0%, #EB5600 25%, #D62B00 83%);
+}
 
 .md-effect-12 .md-content h3,
 .md-effect-12 .md-content {
@@ -860,7 +861,84 @@ body.green a#cancel {
     transform: scale(1);
     opacity: 1;
 }
+.error .md-content > div p {
+    margin: 0;
+    padding: 10px 0;
+}
+#network-error p {
+    text-align: center;
+    font-size: 1.2em;
+    position: relative;
+    top: -120px;
+}
 
+small {
+    font-size: .7em;
+    position: relative;
+    top: 40px;
+    display: block;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    animation-duration: 5s !important;
+    -webkit-animation-duration: 5s !important;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    margin: 10px auto;
+}
+
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #fff;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  -webkit-animation: bounce 2.0s infinite ease-in-out;
+  animation: bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.2) }
+}
+
+@keyframes bounce {
+  0%, 100% { 
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% { 
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+  }
+}
+
+.md-trigger {
+    background: #FF0000;
+    right: 5%;
+    padding: 4px;
+    position: absolute;
+    text-align: center;
+    top: 10px;
+    width: 10%;
+    z-index: 4000;
+    opacity: .5
+}
+
+.icon-check {
+    margin-left: 10px
+}
 
 
 
