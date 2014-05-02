@@ -318,7 +318,7 @@ function bustCheck(){
                  alert("Second for venue: Something wnet wrong with bustcheck");
                  });
 			   
-               }else
+               }
 			   
 			   }).fail(function( jqXHR, textStatus ) {
               //TODO fix these and place redirect to index and clean venue id from local storage
