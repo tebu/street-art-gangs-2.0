@@ -77,7 +77,7 @@ jQuery(document).ready(function(){
         }
       });
 
-var registerSpray = function(venue) {
+var registerSpray = function() {
         
 		bustCheck();
 
@@ -142,7 +142,7 @@ var registerSpray = function(venue) {
           alert("Error: something went wrong while updating the location: "+ textStatus);
         });
 		}		
-function sprayingInitialized(venue) { //SprayingInitialized to 1 in venue database
+function sprayingInitialized() { //SprayingInitialized to 1 in venue database
 
         var authorization=localStorage.authorization;
         var venue2 = JSON.parse(localStorage.getItem('venueid')); 
@@ -196,9 +196,9 @@ function sprayingInitialized(venue) { //SprayingInitialized to 1 in venue databa
               });
 }
 		
-function sprayingInterrupted(venue) { 
+function sprayingInterrupted() { 
         
-        bustCheck(venue);
+        bustCheck();
 		
         var authorization=localStorage.authorization;
 		var color = localStorage.color;
@@ -250,7 +250,7 @@ function sprayingInterrupted(venue) {
               });
 }
 
-function bustCheck(venue){
+function bustCheck(){
       
 		var gangster = localStorage.gangster;
         var authorization=localStorage.authorization;

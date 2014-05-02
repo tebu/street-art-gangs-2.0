@@ -10,7 +10,7 @@ body.purple .bg2 {
     left: 0;
     background-position: 0px 0px;
     background-size: cover;
-	-webkit-animation: movepurple 1 ease 5s;
+-webkit-animation: movepurple 1 ease 5s;
     animation: movepurple 1 ease 5s;
     z-index: 0;
 }
@@ -43,37 +43,37 @@ body.green .bg2 {
     z-index: 0;
 }
 
-@-webkit-keyframes moveblue  { 
+@-webkit-keyframes moveblue {
     50% {
         background-position: 100% 100%;
     }
 }
 
-@-webkit-keyframes movepurple  { 
+@-webkit-keyframes movepurple {
     50% {
         background-position: 100% 100%;
     }
 }
 
-@-webkit-keyframes movegreen  { 
+@-webkit-keyframes movegreen {
     50% {
         background-position: 100% 100%;
     }
 }
 
-@keyframes moveblue  { 
+@keyframes moveblue {
     50% {
         background-position: 100% 100%;
     }
 }
 
-@keyframes movepurple  { 
+@keyframes movepurple {
     50% {
         background-position: 100% 100%;
     }
 }
 
-@keyframes movegreen  { 
+@keyframes movegreen {
     50% {
         background-position: 100% 100%;
     }
@@ -89,7 +89,7 @@ img.tm {
 .ls-wrapper .liquid-slider {
     position: fixed !important;
     width: 100%;
-/*    top: 60px;*/
+/* top: 60px;*/
  top: 20%;
     z-index: 2000;
     padding-top: 30px;
@@ -106,7 +106,7 @@ body.blue .ls-wrapper .liquid-slider {
 }
 
 h1.location {
-/*    line-height: 0;*/
+/* line-height: 0;*/
     position: relative;
     font-family: 'signika_negativebold';
     top: -53px;
@@ -118,12 +118,12 @@ h1.location {
 }
 
 /*.category {
-    font-size: 10em;
-   color: rgba(24, 0, 45,.7);
-    position: absolute;
-    left: 24%;
-    top: -20px;
-    z-index: 5;  
+font-size: 10em;
+color: rgba(24, 0, 45,.7);
+position: absolute;
+left: 24%;
+top: -20px;
+z-index: 5;
 }*/
 
 .category {
@@ -135,10 +135,10 @@ h1.location {
 }
 
 /*h3.title {
-    position: relative;
-    top: 10px;
-     z-index: 6;
-    text-transform: uppercase;
+position: relative;
+top: 10px;
+z-index: 6;
+text-transform: uppercase;
 }*/
 
 h3.title {
@@ -212,7 +212,7 @@ a.spray {
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     transition: all 0.3s ease;
-	box-shadow: 0 8px 5px rgba(0, 0, 0, 0.2);
+box-shadow: 0 8px 5px rgba(0, 0, 0, 0.2);
 }
 
 body.purple a.spray {
@@ -230,7 +230,7 @@ body.purple a.spray {
     z-index: 2000
 }
 a.notspray {
-	font-size: 2.5em;
+font-size: 2.5em;
     padding: 10px;
     border-radius: 50%;
     color: #fff;
@@ -238,10 +238,10 @@ a.notspray {
     -moz-transition: all 0.3s ease;
     transition: all 0.3s ease;
     box-shadow: 0 8px 5px rgba(0, 0, 0, 0.5);
-	
-	filter:alpha(opacity=20);
-	-moz-opacity:0.2;
-	opacity: 0.2;	
+
+filter:alpha(opacity=20);
+-moz-opacity:0.2;
+opacity: 0.2;	
 }
 
 /*droplet when close*/
@@ -255,7 +255,7 @@ a.notspray {
 }
 a.maybespray {
 
-	font-size: 2.5em;
+font-size: 2.5em;
     padding: 10px;
     border-radius: 50%;
     color: #fff;
@@ -263,13 +263,13 @@ a.maybespray {
     -moz-transition: all 0.3s ease;
     transition: all 0.3s ease;
     box-shadow: 0 8px 5px rgba(0, 0, 0, 0.2);
-	
-	animation: maybespray 2s;
-	-webkit-animation: maybespray 2s;
-	-moz-animation: maybespray 2s; 
-	-webkit-animation-iteration-count: infinite;
-	-moz-animation-iteration-count: infinite;
-	animation-iteration-count: infinite;
+
+animation: maybespray 2s;
+-webkit-animation: maybespray 2s;
+-moz-animation: maybespray 2s;
+-webkit-animation-iteration-count: infinite;
+-moz-animation-iteration-count: infinite;
+animation-iteration-count: infinite;
     -webkit-animation-duration: 2s;
     animation-duration: 2s;
     -webkit-animation-timing-function: ease-in;
@@ -280,7 +280,7 @@ a.maybespray {
 }
 @keyframes maybespray{
   0%{
-	color: rgba(255, 255, 255, 0.2);
+color: rgba(255, 255, 255, 0.2);
   }
   50%{
     color:rgba(255, 255, 255, 0.8);
@@ -291,7 +291,7 @@ a.maybespray {
 }
 @-webkit-keyframes maybespray{
  0%{
-	color: rgba(255, 255, 255, 0.2);
+color: rgba(255, 255, 255, 0.2);
   }
   50%{
     color:rgba(255, 255, 255, 0.8);
@@ -397,7 +397,7 @@ p.owner span {
     visibility: hidden;
     top: 0;
     left: 0;
-    z-index: 7000;
+    z-index: 6500;
     opacity: 0;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
@@ -540,10 +540,10 @@ small {
 }
 
 @keyframes bounce {
-  0%, 100% { 
+  0%, 100% {
     transform: scale(0.0);
     -webkit-transform: scale(0.0);
-  } 50% { 
+  } 50% {
     transform: scale(1.2);
     -webkit-transform: scale(1.2);
   }
@@ -567,47 +567,47 @@ small {
 
 .bust {
     top: -65px;
-	padding: 10px;
-	opacity:1;
+padding: 10px;
+opacity:1;
     z-index: 5;
-	position: absolute;
-	left:50%;
-	margin-left:-32px
+position: absolute;
+left:50%;
+margin-left:-32px
 }
 .bustButton {
     
     border: none;
-    background: url(../img/bust.png) no-repeat; 
+    background: url(../img/bust.png) no-repeat;
     height: 65px;
     width: 65px;	
     top: -65px;
     z-index: 1000;
-	position: absolute;
-	left:50%;
-	margin-left:-32px
+position: absolute;
+left:50%;
+margin-left:-32px
 }
 
 .nobustButton {
     border: none;
-    background: url(../img/noBust.png) no-repeat; 
+    background: url(../img/noBust.png) no-repeat;
     height: 65px;
     width: 65px;	
     top: -65px;
     z-index: 1000;
-	position: absolute;
-	left:50%;
-	margin-left:-32px
+position: absolute;
+left:50%;
+margin-left:-32px
 }
 .bustsuccessButton{
  border: none;
-    background: url(../img/successBust.png) no-repeat; 
+    background: url(../img/successBust.png) no-repeat;
     height: 65px;
     width: 65px;	
     top: -65px;
     z-index: 1000;
-	position: absolute;
-	left:50%;
-	margin-left:-32px
+position: absolute;
+left:50%;
+margin-left:-32px
 }
 @media all and (min-width: 1024px) {
 
@@ -623,7 +623,7 @@ small {
     -webkit-animation: spray 1 ease 5s;
 }
 
-@-webkit-keyframes spray { 
+@-webkit-keyframes spray {
        50% {
      -webkit-transform: rotate(-180deg);
     }
