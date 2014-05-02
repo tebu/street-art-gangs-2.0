@@ -100,6 +100,7 @@ var registerSpray = function(venue) {
           type: "PATCH",
           url: endpoint,
           dataType: 'json',
+		  async: true,
           data: data,
           beforeSend: function (xhr) {
             xhr.setRequestHeader ("Authorization", authorization);
@@ -121,6 +122,7 @@ var registerSpray = function(venue) {
                 type: "PATCH",
                 url: endpoint,
                 dataType: 'json',
+				async: true,
                 data: data,
                 beforeSend: function (xhr) {
                   xhr.setRequestHeader ("Authorization", authorization);
@@ -248,8 +250,7 @@ function sprayingInterrupted(venue) {
 }
 
 function bustCheck(){
-
-               
+      
 		var gangster = localStorage.gangster;
         var authorization=localStorage.authorization;
         var endpoint = "http://vm0063.virtues.fi/gangsters/"+gangster+"/";
@@ -301,7 +302,7 @@ function bustCheck(){
             }
               $.ajax({
                 type: "PATCH",
-                url: endpoint2,
+                url: endpoint,
                 dataType: 'json',
 				async: true,
                 data: data,
@@ -318,7 +319,6 @@ function bustCheck(){
                  });
 			   
                }else
-			   return;
 			   
 			   }).fail(function( jqXHR, textStatus ) {
               //TODO fix these and place redirect to index and clean venue id from local storage
