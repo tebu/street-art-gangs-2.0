@@ -44,7 +44,7 @@ jQuery(document).ready(function(){
 
         setTimeout(function() {
           registerSpray();
-        }, 24000);
+        }, 30000);
 
          jQuery("#loading").delay(26500).fadeOut(300);
 
@@ -265,9 +265,10 @@ function bustCheck(){
         }).done(function( data ) {   	
 			   var bustedornot = parseInt(data.bustedviaPolice);
 			   if (bustedornot == 1){ 	
+			   
 			   $("#modal-busted").addClass("md-show");
               //animation
-               $('.icon-locked').addClass('animated bounce');
+               $('.icon-surprised').addClass('animated bounce');
                $('.error .md-content button').addClass('animated fadeIn');
                $('.md-close').one( "click", function() {
                window.location.replace("index.html");
@@ -311,17 +312,16 @@ function bustCheck(){
                 }
                }).done(function( data ) {
 			      }).fail(function( jqXHR, textStatus ) {
-                 alert("First for venue: Something wnet wrong with bustcheck");
+                 alert("First for venue: Something went wrong with bustcheck");
                  });
 			   
 			     }).fail(function( jqXHR, textStatus ) {
-                 alert("Second for venue: Something wnet wrong with bustcheck");
+                 alert("Second for venue: Something went wrong with bustcheck");
                  });
-			   
                }
 			   
 			   }).fail(function( jqXHR, textStatus ) {
               //TODO fix these and place redirect to index and clean venue id from local storage
-                alert("Second Error: Something wnet wrong with bustcheck");
+                alert("Third Error: Something went wrong with bustcheck");
               });
 			  }
