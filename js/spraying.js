@@ -249,9 +249,11 @@ function sprayingInterrupted(venue) {
 }
 
 function bustCheck(){
-               var gangster = localStorage.gangster;
-               var authorization=localStorage.authorization;
-               var endpoint = "http://vm0063.virtues.fi/gangsters/"+gangster+"/";
+
+               
+		var gangster = localStorage.gangster;
+        var authorization=localStorage.authorization;
+        var endpoint = "http://vm0063.virtues.fi/gangsters/"+gangster+"/";
         $.ajax({
           type: "GET",
           url: endpoint,
@@ -272,10 +274,8 @@ function bustCheck(){
                window.location.replace("index.html");
                });
 
-				
                localStorage.points  = Number(localStorage.points) - 30;
                localStorage.busted = Number(localStorage.busted) + 1;
-			   var endpoint = "http://vm0063.virtues.fi/gangsters/"+gangster+"/";
                var data =  {
                       points: localStorage.points,
                       busts: localStorage.busted,
@@ -293,7 +293,7 @@ function bustCheck(){
                  }
                }).done(function( data ) {
 			     }).fail(function( jqXHR, textStatus ) {
-                 alert("First Error: something went wrong while updating the location: "+ textStatus);
+                 alert("Something wnet wrong with bustcheck");
                  });
 			   
                }else
@@ -301,6 +301,6 @@ function bustCheck(){
 			   
 			   }).fail(function( jqXHR, textStatus ) {
               //TODO fix these and place redirect to index and clean venue id from local storage
-                alert("First Error: something went wrong while updating the location: "+ textStatus);
+                alert("Second Error: Something wnet wrong with bustcheck");
               });
 			  }
