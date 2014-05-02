@@ -320,7 +320,7 @@ p.owner span {
     font-size: .9em;
     letter-spacing: -.05em;
     font-family: 'signika_negativesemibold';
-     z-index:9000
+     z-index:7000
 }
 
 .owner-section {
@@ -368,7 +368,7 @@ p.owner span {
     width: 100%;
     min-width: 320px;
     height: 100%;
-    z-index: 5000;
+    z-index: 7000;
     visibility: hidden;
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
@@ -384,7 +384,12 @@ p.owner span {
 .md-show {
     visibility: visible;
 }
-
+.icon-locked {
+    position: relative;
+    display: inline-block;
+    margin-top: 70px;
+    font-size: 3em;
+}
 .md-overlay {
     position: fixed;
     width: 100%;
@@ -392,7 +397,7 @@ p.owner span {
     visibility: hidden;
     top: 0;
     left: 0;
-    z-index: 4500;
+    z-index: 6500;
     opacity: 0;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
@@ -481,7 +486,10 @@ p.owner span {
     transform: scale(1);
     opacity: 1;
 }
-
+.error .md-content > div p {
+    margin: 0;
+    padding: 10px 0;
+}
 #network-error p {
     text-align: center;
     font-size: 1.2em;

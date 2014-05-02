@@ -134,11 +134,14 @@ function updateVenueslider (data,arraySorted){
 			if (i > 25){ 
 			$("<button>").addClass("bustButton").attr('id',bustId).appendTo(venue); 
 			$('body').on("click", locator2, function() {
+			    
 			    localStorage.setItem('bustId',JSON.stringify(this.id)); 
-				bustCheck(); //check for spraying gangsters close by based on venueId
+				bustCheck(bustId); //check for spraying gangsters close by based on venueId
+				
 				});	
 				}
-				
+			
+			 
             $("<div>").addClass("category").addClass(getCategoryClass(data[j].category)).appendTo(venue);
             $("<h3>").addClass("title").text(getCategory(data[j].category)).appendTo(venue);
 			$("<h1>").addClass("location").text(data[j].name).appendTo(venue);
@@ -203,7 +206,7 @@ function bustCheck(bustId){
 		var venue4 = JSON.parse(localStorage.getItem('bustId'));  var venue3 = venue4.split("b");	var venue2 = venue3[0];
 		var venue = parseInt(venue2);   
 		var authorization=localStorage.authorization;
-        var endpoint = "http://vm0063.virtues.fi/venues/"+venue;
+        var endpoint = "http://vm0063.virtues.fi/venues/"+venue+"/";
         $.ajax({
           type: "GET",
           url: endpoint,
@@ -213,40 +216,59 @@ function bustCheck(bustId){
             xhr.setRequestHeader ("Authorization", authorization);
           }
         }).done(function( data ) {   
-	      
-			   if (data[0].gangsterSpraying != 0 && data[0].gagsterSpraying != localStorage.gangster){
-			   var tagger = data[0].gangsterSpraying;
-			   var endpoint = "http://vm0063.virtues.fi/gangsters/"+tagger;
+	         	
+			   var tagger = data.gangsterSpraying;
+			   	 
+			   if (tagger == 0 || tagger == localStorage.gangster){   //TODO check the gangsters not bustin themselves, they are on same location
+			   
+			   $("#modal-bust-error").addClass("md-show");
+              //animation
+               $('.icon-locked').addClass('animated bounce');
+               $('.error .md-content button').addClass('animated fadeIn');
+               $('.md-close').one( "click", function() {
+               window.location.replace("index.html");
+               });  
+			   
+			   //$("<button>").removeClass('bustButton').addClass("bustsuccessButton").attr('id',bustId);
+			   //$("<button>").delay(2000).removeClass('nobustButton').addClass("bustButton").attr('id',bustId);
+			   
+			   }else{
+			   
+			   var endpoint2 = "http://vm0063.virtues.fi/gangsters/"+tagger+"/";
                $.ajax({
                type: "GET",
-               url: endpoint,
+               url: endpoint2,
 		       async: true, 
                dataType: 'json',
                beforeSend: function (xhr) {
                xhr.setRequestHeader ("Authorization", authorization);
                  }
-               }).done(function( data ) { 
-			   
-			   }).fail(function( jqXHR, textStatus ) {
-               //TODO fix this
-               alert("Error: something went wrong while loading the tagger's data!");
-                });
-			   
-			   $("<button>").removeClass('bustButton').addClass("bustsuccessButton");
-			   $("<button>").delay(2000).removeClass('nobustButton').addClass("bustButton").attr('id',bustId);
-			   }else
-			   $("<button>").removeClass('bustButton').addClass("nobustButton");
-			   $("<button>").delay(500).removeClass('nobustButton').addClass("bustButton").attr('id',bustId);
-			   
+               }).done(function( data ) {
+			   //$("#"+bustId).removeClass('bustButton').addClass("nobustButton").attr('id',bustId);
+			   //$("<button>").delay(500).removeClass('nobustButton').addClass("bustButton").attr('id',bustId);
+			   //}
 			   //TODO venue id, who is spraying and the location of the buster 
-			   
-			   
-             //TODO check the gangsters not bustin themselves, they are on same location
-        }).fail(function( jqXHR, textStatus ) {
-        //TODO fix this
-          alert("Error: something went wrong while loading the venue!");
-        });
-        }
+			    $("#modal-bust-success").addClass("md-show");
+              //animation
+               $('.icon-locked').addClass('animated bounce');
+			   $("<em>").append(tagger);
+               $('.error .md-content button').addClass('animated fadeIn');
+               $('.md-close').one( "click", function() {
+               window.location.replace("index.html");
+               });  
+               
+              }).fail(function( jqXHR, textStatus ) {
+              //TODO fix these and place redirect to index and clean venue id from local storage
+                alert("First Error: something went wrong while updating the location: "+ textStatus);
+              });
+			   }
+
+              }).fail(function( jqXHR, textStatus ) {
+              //TODO fix this
+                alert("First Error: something went wrong while updating the location: "+ textStatus);
+              });
+               }
+        
 /*fuction refreshDistances(){
 
 }*/		

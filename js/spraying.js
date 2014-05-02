@@ -79,6 +79,7 @@ jQuery(document).ready(function(){
 
 var registerSpray = function(venue) {
 
+
         var authorization=localStorage.authorization;
         var gangster = localStorage.gangster;
 		var color = localStorage.color;
