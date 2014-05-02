@@ -397,7 +397,7 @@ p.owner span {
     visibility: hidden;
     top: 0;
     left: 0;
-    z-index: 6500;
+    z-index: 7000;
     opacity: 0;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
