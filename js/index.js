@@ -227,10 +227,7 @@ function bustCheck(bustId){
                $('.error .md-content button').addClass('animated fadeIn');
                $('.md-close').one( "click", function() {
                window.location.replace("index.html");
-               });  
-			   
-			   //$("<button>").removeClass('bustButton').addClass("bustsuccessButton").attr('id',bustId);
-			   //$("<button>").delay(2000).removeClass('nobustButton').addClass("bustButton").attr('id',bustId);
+               });
 			   
 			   }else{
 			   
@@ -248,7 +245,7 @@ function bustCheck(bustId){
 			    $("#modal-bust-success").addClass("md-show");
               //animation
                $('.icon-locked').addClass('animated bounce');
-			   $("<em>").append(tagger);
+			   $("<em>").append(""+tagger+"");
                $('.error .md-content button').addClass('animated fadeIn');
                $('.md-close').one( "click", function() {
                window.location.replace("index.html");
@@ -270,9 +267,7 @@ function bustCheck(bustId){
                  }
                }).done(function( data ) {
 			   
-			   
-			   var endpoint2 = "http://vm0063.virtues.fi/gangsters/"+tagger+"/";
-               var data =  {
+               var data =  {        //Taggers change in busted... Points and busted counts are done from taggers end
                       bustedviapolice: 1
                   }
 			   $.ajax({
@@ -293,7 +288,7 @@ function bustCheck(bustId){
 			   }).fail(function( jqXHR, textStatus ) {
               //TODO fix these and place redirect to index and clean venue id from local storage
                 alert("First Error: something went wrong while updating the location: "+ textStatus);
-              });
+              }); //tähän asti
 			  
               }).fail(function( jqXHR, textStatus ) {
               //TODO fix these and place redirect to index and clean venue id from local storage
