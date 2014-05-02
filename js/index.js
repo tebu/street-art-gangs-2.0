@@ -244,10 +244,7 @@ function bustCheck(bustId){
                xhr.setRequestHeader ("Authorization", authorization);
                  }
                }).done(function( data ) {
-			   //$("#"+bustId).removeClass('bustButton').addClass("nobustButton").attr('id',bustId);
-			   //$("<button>").delay(500).removeClass('nobustButton').addClass("bustButton").attr('id',bustId);
-			   //}
-			   //TODO venue id, who is spraying and the location of the buster 
+			   
 			    $("#modal-bust-success").addClass("md-show");
               //animation
                $('.icon-locked').addClass('animated bounce');
@@ -256,7 +253,48 @@ function bustCheck(bustId){
                $('.md-close').one( "click", function() {
                window.location.replace("index.html");
                });  
-               
+               localStorage.points  = Number(localStorage.points) + 30;
+               localStorage.busts = Number(localStorage.busts ) + 1;
+			   var endpoint3 = "http://vm0063.virtues.fi/gangsters/"+gangster+"/";
+               var data =  {
+                      points: localStorage.points,
+                      busts: localStorage.busts
+                  }
+			   $.ajax({
+               type: "PATCH",
+               url: endpoint3,
+		       async: true, 
+               dataType: 'json',
+               beforeSend: function (xhr) {
+               xhr.setRequestHeader ("Authorization", authorization);
+                 }
+               }).done(function( data ) {
+			   
+			   
+			   var endpoint2 = "http://vm0063.virtues.fi/gangsters/"+tagger+"/";
+               var data =  {
+                      bustedviapolice: 1
+                  }
+			   $.ajax({
+               type: "PATCH",
+               url: endpoint2,
+		       async: true, 
+               dataType: 'json',
+               beforeSend: function (xhr) {
+               xhr.setRequestHeader ("Authorization", authorization);
+                 }
+               }).done(function( data ) {
+			   
+			   }).fail(function( jqXHR, textStatus ) {
+              //TODO fix these and place redirect to index and clean venue id from local storage
+                alert("First Error: something went wrong while updating the location: "+ textStatus);
+               });
+			  
+			   }).fail(function( jqXHR, textStatus ) {
+              //TODO fix these and place redirect to index and clean venue id from local storage
+                alert("First Error: something went wrong while updating the location: "+ textStatus);
+              });
+			  
               }).fail(function( jqXHR, textStatus ) {
               //TODO fix these and place redirect to index and clean venue id from local storage
                 alert("First Error: something went wrong while updating the location: "+ textStatus);
