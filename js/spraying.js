@@ -44,7 +44,7 @@ jQuery(document).ready(function(){
 
         setTimeout(function() {
           registerSpray();
-        }, 30000);
+        }, 27500);
 
          jQuery("#loading").delay(26500).fadeOut(300);
 
@@ -159,6 +159,7 @@ function sprayingInitialized(venue) { //SprayingInitialized to 1 in venue databa
                 type: "PATCH",
                 url: endpoint,
                 dataType: 'json',
+				async: true,
                 data: data,
                 beforeSend: function (xhr) {
                   xhr.setRequestHeader ("Authorization", authorization);
@@ -176,6 +177,7 @@ function sprayingInitialized(venue) { //SprayingInitialized to 1 in venue databa
                 url: endpoint,
                 dataType: 'json',
                 data: data,
+				async: true,
                 beforeSend: function (xhr) {
                   xhr.setRequestHeader ("Authorization", authorization);
                 }
