@@ -239,8 +239,7 @@ function sprayingInterrupted(venue) {
 				}).fail(function( jqXHR, textStatus ) {
               //TODO fix these and place redirect to index and clean venue id from local storage
                 alert("First Error: something went wrong while updating the location: "+ textStatus);
-              });
-			   
+              }); 
 
               }).fail(function( jqXHR, textStatus ) {
               //TODO fix this
@@ -264,8 +263,7 @@ function bustCheck(){
           }
         }).done(function( data ) {   	
 			   var bustedornot = parseInt(data.bustedviaPolice);
-			   if (bustedornot == 1){ 
-			   	
+			   if (bustedornot == 1){ 	
 			   $("#modal-busted").addClass("md-show");
               //animation
                $('.icon-locked').addClass('animated bounce');
@@ -292,8 +290,31 @@ function bustCheck(){
                xhr.setRequestHeader ("Authorization", authorization);
                  }
                }).done(function( data ) {
+	    
+		var venue2 = JSON.parse(localStorage.getItem('venueid')); 
+		var venue = parseInt(venue2);
+		var endpoint2 = "http://vm0063.virtues.fi/venues/"+venue+"/";
+        var data =  {
+				sprayinginitialized:0,
+				gangsterSpraying: 0
+				
+            }
+              $.ajax({
+                type: "PATCH",
+                url: endpoint2,
+                dataType: 'json',
+				async: true,
+                data: data,
+                beforeSend: function (xhr) {
+                  xhr.setRequestHeader ("Authorization", authorization);
+                }
+               }).done(function( data ) {
+			      }).fail(function( jqXHR, textStatus ) {
+                 alert("First for venue: Something wnet wrong with bustcheck");
+                 });
+			   
 			     }).fail(function( jqXHR, textStatus ) {
-                 alert("Something wnet wrong with bustcheck");
+                 alert("Second for venue: Something wnet wrong with bustcheck");
                  });
 			   
                }else
