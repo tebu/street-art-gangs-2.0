@@ -100,7 +100,7 @@ var registerSpray = function() {
           type: "PATCH",
           url: endpoint,
           dataType: 'json',
-		  async: true,
+		  async: false,
           data: data,
           beforeSend: function (xhr) {
             xhr.setRequestHeader ("Authorization", authorization);
@@ -122,7 +122,7 @@ var registerSpray = function() {
                 type: "PATCH",
                 url: endpoint,
                 dataType: 'json',
-				async: true,
+				async: false,
                 data: data,
                 beforeSend: function (xhr) {
                   xhr.setRequestHeader ("Authorization", authorization);
@@ -159,7 +159,7 @@ function sprayingInitialized() { //SprayingInitialized to 1 in venue database
                 type: "PATCH",
                 url: endpoint,
                 dataType: 'json',
-				async: true,
+				async: false,
                 data: data,
                 beforeSend: function (xhr) {
                   xhr.setRequestHeader ("Authorization", authorization);
@@ -177,7 +177,7 @@ function sprayingInitialized() { //SprayingInitialized to 1 in venue database
                 url: endpoint,
                 dataType: 'json',
                 data: data,
-				async: true,
+				async: false,
                 beforeSend: function (xhr) {
                   xhr.setRequestHeader ("Authorization", authorization);
                 }
@@ -215,7 +215,7 @@ function sprayingInterrupted() {
                 type: "PATCH",
                 url: endpoint,
                 dataType: 'json',
-				async: true,
+				async: false,
                 data: data,
                 beforeSend: function (xhr) {
                   xhr.setRequestHeader ("Authorization", authorization);
@@ -232,7 +232,7 @@ function sprayingInterrupted() {
                 type: "PATCH",
                 url: endpoint2,
                 dataType: 'json',
-				async: true,
+				async: false,
                 data: data,
                 beforeSend: function (xhr) {
                   xhr.setRequestHeader ("Authorization", authorization);
@@ -258,7 +258,7 @@ function bustCheck(){
         $.ajax({
           type: "GET",
           url: endpoint,
-		  async: true, 
+		  async: false, 
           dataType: 'json',
           beforeSend: function (xhr) {
             xhr.setRequestHeader ("Authorization", authorization);
@@ -268,7 +268,6 @@ function bustCheck(){
 			   
 			   if (bustedornot == 1){ 	
 			   
-
                localStorage.points  = Number(localStorage.points) - 30;
                localStorage.busted = Number(localStorage.busted) + 1;
                var data =  {
@@ -280,7 +279,7 @@ function bustCheck(){
 			   $.ajax({
                type: "PATCH",
                url: endpoint,
-		       async: true, 
+		       async: false, 
                dataType: 'json',
 			   data: data,
                beforeSend: function (xhr) {
@@ -301,7 +300,7 @@ function bustCheck(){
                 type: "PATCH",
                 url: endpoint,
                 dataType: 'json',
-				async: true,
+				async: false,
                 data: data,
                 beforeSend: function (xhr) {
                   xhr.setRequestHeader ("Authorization", authorization);
