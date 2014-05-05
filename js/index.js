@@ -235,7 +235,7 @@ function bustCheck(bustId){
                $('.error .md-content button').addClass('animated fadeIn');
                $('.md-close').one( "click", function() {
                window.location.replace("index.html");
-               });  
+               });
 			   
 			   var gangster = localStorage.gangster;
 			 

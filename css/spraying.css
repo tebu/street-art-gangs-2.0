@@ -734,8 +734,6 @@ body.green a#cancel {
     animation-delay: 11s;
 }
 
-
-
 .md-modal {
     position: fixed;
     top: 50%;
@@ -817,7 +815,7 @@ body.green a#cancel {
     position: relative;
     text-align: center;
     text-transform: uppercase;
-    top: 160px;
+    top: 50px;
     width: 40%;
     margin: 0 auto;
     border-radius: 2px;
@@ -915,10 +913,10 @@ small {
 }
 
 @keyframes bounce {
-  0%, 100% { 
+  0%, 100% {
     transform: scale(0.0);
     -webkit-transform: scale(0.0);
-  } 50% { 
+  } 50% {
     transform: scale(1.2);
     -webkit-transform: scale(1.2);
   }
@@ -939,6 +937,7 @@ small {
 .icon-check {
     margin-left: 10px
 }
+
 
 
 

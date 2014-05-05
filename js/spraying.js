@@ -13,8 +13,9 @@ jQuery(document).ready(function(){
         $('body').removeClass().addClass(color)
         $("#can-spraying").attr("src", "img/can-"+color+".png" );
 		$('.particle').removeClass().addClass("spray"+color);
-		window.onbeforeunload=function(){sprayingInterrupted();}; //Sets spraying initialized back to 0 if interrupted... 
-      }
+		window.onbeforeunload=function(){ 
+		   sprayingInterrupted();};  
+           }
 });
 
       // Percentage loading
@@ -48,7 +49,6 @@ jQuery(document).ready(function(){
 
          jQuery("#loading").delay(26500).fadeOut(300);
 
-
     });
 
     // Animate.css
@@ -67,15 +67,7 @@ jQuery(document).ready(function(){
     });
   
 
-    // Points animation
-    //TODO: Calculate points
-    jQuery({someValue: 0}).delay(24000).animate({someValue:100}, {
-        duration: 1000,
-        easing:'swing',
-        step: function() {
-           $('.points-earned span').text (Math.ceil(this.someValue) + "");
-        }
-      });
+
 
 var registerSpray = function() {
         
@@ -129,13 +121,20 @@ var registerSpray = function() {
                 }
 
                }).done(function( data ) {
-
-            window.location.href = "index.html";
+			   
+              // Points animation
+              jQuery({someValue: 0}).animate({someValue:100}, {
+              duration: 1000,
+              easing:'swing',
+              step: function() {
+              $('.points-earned span').text (Math.ceil(this.someValue) + "");
+              }
+              });
+              window.location.href = "index.html";
 				}).fail(function( jqXHR, textStatus ) {
               //TODO fix these and place redirect to index and clean venue id from local storage
                 alert("First Error: something went wrong while updating the location: "+ textStatus);
               });
-
 
         }).fail(function( jqXHR, textStatus ) {
         //TODO fix this
@@ -194,12 +193,11 @@ function sprayingInitialized() { //SprayingInitialized to 1 in venue database
               //TODO fix this
                 alert("sprayingInitialized, second error: something went wrong while updating the location: "+ textStatus);
               });
-}
+          }
 		
 function sprayingInterrupted() { 
         
-        bustCheck();
-		
+		bustCheck();
         var authorization=localStorage.authorization;
 		var color = localStorage.color;
         var venue2 = JSON.parse(localStorage.getItem('venueid')); 
@@ -320,9 +318,8 @@ function bustCheck(){
                $('.error .md-content button').addClass('animated fadeIn');
                $('.md-close').one( "click", function() {
                window.location.replace("index.html");
-               });
-			   
-               }
+               }); 
+               }else{break;};
 			   
 			   }).fail(function( jqXHR, textStatus ) {
               //TODO fix these and place redirect to index and clean venue id from local storage
