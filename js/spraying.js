@@ -122,14 +122,14 @@ var registerSpray = function() {
 
                }).done(function( data ) {
 			   
-              // Points animation
+              /*// Points animation
               jQuery({someValue: 0}).animate({someValue:100}, {
               duration: 1000,
               easing:'swing',
               step: function() {
               $('.points-earned span').text (Math.ceil(this.someValue) + "");
               }
-              });
+              }); */
               window.location.href = "index.html";
 				}).fail(function( jqXHR, textStatus ) {
               //TODO fix these and place redirect to index and clean venue id from local storage
@@ -319,7 +319,7 @@ function bustCheck(){
                $('.md-close').one( "click", function() {
                window.location.replace("index.html");
                }); 
-               }else{break;};
+               }
 			   
 			   }).fail(function( jqXHR, textStatus ) {
               //TODO fix these and place redirect to index and clean venue id from local storage
