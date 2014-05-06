@@ -90,6 +90,8 @@ $(document).ready(function(){
                 localStorage.gang=data['gang'];
                 localStorage.points = data['points'];
                 localStorage.tags_created  = data['tags_created'];
+				localStorage.busts = data['busts'];
+				localStorage.busted = data['busted'];
                 window.location.replace("index.html");
         }).fail(function( jqXHR, textStatus ) {
             //TODO fix this - Error message needed
