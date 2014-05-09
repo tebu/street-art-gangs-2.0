@@ -31,14 +31,16 @@ jQuery(document).ready(function(){
         $.ajax({
           type: "GET",
           url: endpoint,
+		  localCache   : true,
+		  cacheTTL  : 5,
 		  async: true, 
           dataType: 'json',
           beforeSend: function (xhr) {
             xhr.setRequestHeader ("Authorization", authorization);
-          }
-        }).done(function( data ) {
+          },
+		  success   : function (data){
+          }).done(function( data ) {
 			
-
 			var venueArr = distanceSort(data);
 			updateVenueslider(data, venueArr);
 			
@@ -79,7 +81,7 @@ jQuery(document).ready(function(){
           alert("Error: something went wrong while loading the venues");
         });
         });
-		
+		}
 		//Counting the distances between player and location, called from distanceSort()
 function locationCheck(data,key,locationLat, locationLon, venueLat, venueLon){
          
