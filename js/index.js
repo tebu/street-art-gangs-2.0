@@ -1,11 +1,14 @@
 //Load venues or redirect
 jQuery(document).ready(function(){
 
-        var AndroidAgent = navigator.userAgent.match(/Android/i) != null;
+        /*var AndroidAgent = navigator.userAgent.match(/Android/i) != null;
         if (AndroidAgent) {
 		//console.log("Backbutton pressed!");
 		//BackButton.override();
 		document.addEventListener('backKeyDown', backKeyDown); //preventing going back for spraying page from index, TODO, test if this really works 
+		function backKeyDown() { 
+        window.location.href = "index.html";
+        }*/
 		}
 		
 		
@@ -16,11 +19,6 @@ jQuery(document).ready(function(){
 		var gangster = localStorage.gangster;
 		var locationLatitude = localStorage.latitude; //gangster location
 		var locationLongitude = localStorage.longitude;
-		
-		
-		function backKeyDown() { 
-        window.location.href = "index.html";
-         }
 		 
 		localStorage.removeItem('venueid');
 		 
