@@ -3,9 +3,9 @@ jQuery(document).ready(function(){
 
         var AndroidAgent = navigator.userAgent.match(/Android/i) != null;
         if (AndroidAgent) {
-        BackButton.override();
-		document.addEventListener('backbutton', backKeyDown, false); //preventing going back for spraying page from index, TODO, test if this really works 
+		document.addEventListener('backbutton', backKeyDown, true); //preventing going back for spraying page from index, TODO, test if this really works 
 		}
+		navigator.app.overrideBackbutton(true);
 		function backKeyDown() { 
 		console.log("Backbutton pressed!");
         //window.location.replace("index.html");
