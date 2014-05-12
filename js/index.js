@@ -7,13 +7,13 @@ jQuery(document).ready(function(){
 		//BackButton.override();
 		document.addEventListener('backKeyDown', backKeyDown); //preventing going back for spraying page from index, TODO, test if this really works 
 		function backKeyDown() { 
-        window.location.href = "index.html";
+        window.location = "index.html";
         }
 		}*/
 		
 		
       if (!localStorage.authorization||!localStorage.color||!localStorage.gangster||!localStorage.gang) {
-        window.location.href = "splash.html";
+        window.location = "splash.html";
       } else {
 	    var color = localStorage.color;
 		var gangster = localStorage.gangster;
@@ -237,7 +237,7 @@ function bustCheck(bustId){
                $('.icon-surprised').addClass('animated bounce');
                $('.error .md-content button').addClass('animated fadeIn');
                $('.md-close').one( "click", function() {
-               window.location.href = "index.html";
+               window.location = "index.html";
                });
 			   
 			   }else{
@@ -246,7 +246,7 @@ function bustCheck(bustId){
                $('.icon-locked').addClass('animated bounce');
                $('.error .md-content button').addClass('animated fadeIn');
                $('.md-close').one( "click", function() {
-               window.location.href = "index.html";
+               window.location = "index.html";
                });
 			   
 			   var gangster = localStorage.gangster;
