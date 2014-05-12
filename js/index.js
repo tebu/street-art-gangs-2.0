@@ -10,7 +10,7 @@ jQuery(document).ready(function(){
 		
 		
       if (!localStorage.authorization||!localStorage.color||!localStorage.gangster||!localStorage.gang) {
-        window.location.replace("splash.html");
+        window.location.href = "splash.html";
       } else {
 	    var color = localStorage.color;
 		var gangster = localStorage.gangster;
@@ -19,7 +19,7 @@ jQuery(document).ready(function(){
 		
 		
 		function backKeyDown() { 
-        window.location.replace("index.html");
+        window.location.href = "index.html";
          }
 		 
 		localStorage.removeItem('venueid');
@@ -239,7 +239,7 @@ function bustCheck(bustId){
                $('.icon-surprised').addClass('animated bounce');
                $('.error .md-content button').addClass('animated fadeIn');
                $('.md-close').one( "click", function() {
-               window.location.replace("index.html");
+               window.location.href = "index.html";
                });
 			   
 			   }else{
@@ -248,7 +248,7 @@ function bustCheck(bustId){
                $('.icon-locked').addClass('animated bounce');
                $('.error .md-content button').addClass('animated fadeIn');
                $('.md-close').one( "click", function() {
-               window.location.replace("index.html");
+               window.location.href = "index.html";
                });
 			   
 			   var gangster = localStorage.gangster;
