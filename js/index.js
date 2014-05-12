@@ -3,13 +3,10 @@ jQuery(document).ready(function(){
 
         var AndroidAgent = navigator.userAgent.match(/Android/i) != null;
         if (AndroidAgent) {
+		navigator.app.overrideBackbutton(true);
 		document.addEventListener('backbutton', backKeyDown, true); //preventing going back for spraying page from index, TODO, test if this really works 
 		}
-		navigator.app.overrideBackbutton(true);
-		function backKeyDown() { 
-		console.log("Backbutton pressed!");
-        //window.location.replace("index.html");
-         }
+		
 		
       if (!localStorage.authorization||!localStorage.color||!localStorage.gangster||!localStorage.gang) {
         window.location.replace("splash.html");
@@ -19,6 +16,12 @@ jQuery(document).ready(function(){
 		var locationLatitude = localStorage.latitude; //gangster location
 		var locationLongitude = localStorage.longitude;
 		
+		
+		function backKeyDown() { 
+		console.log("Backbutton pressed!");
+        //window.location.replace("index.html");
+         }
+		 
 		localStorage.removeItem('venueid');
 		 
 		mixpanel.register({gang: color, gangster: gangster, latitude: localStorage.latitude, longitude: localStorage.longitude}); //Track for the droplet click is in index.html
