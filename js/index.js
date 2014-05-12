@@ -8,8 +8,8 @@ jQuery(document).ready(function(){
 		document.addEventListener('backKeyDown', backKeyDown); //preventing going back for spraying page from index, TODO, test if this really works 
 		function backKeyDown() { 
         window.location.href = "index.html";
-        }*/
-		}
+        }
+		}*/
 		
 		
       if (!localStorage.authorization||!localStorage.color||!localStorage.gangster||!localStorage.gang) {
