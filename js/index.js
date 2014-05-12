@@ -3,13 +3,9 @@ jQuery(document).ready(function(){
 
         var AndroidAgent = navigator.userAgent.match(/Android/i) != null;
         if (AndroidAgent) {
-		public boolean onKeyDown(int keyCode, KeyEvent event)  {
-          if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-        window.location.replace("index.html");// do something on back.
-        return true;
-         }
-         return super.onKeyDown(keyCode, event);
-        }
+		//console.log("Backbutton pressed!");
+		BackButton.override();
+		document.addEventListener('backKeyDown', backKeyDown); //preventing going back for spraying page from index, TODO, test if this really works 
 		}
 		
 		
@@ -22,9 +18,9 @@ jQuery(document).ready(function(){
 		var locationLongitude = localStorage.longitude;
 		
 		
-		/*function backKeyDown() { 
+		function backKeyDown() { 
         window.location.replace("index.html");
-         }*/
+         }
 		 
 		localStorage.removeItem('venueid');
 		 
