@@ -19,8 +19,7 @@ jQuery(document).ready(function(){
 		
 		
 		function backKeyDown() { 
-		console.log("Backbutton pressed!");
-        //window.location.replace("index.html");
+        window.location.replace("index.html");
          }
 		 
 		localStorage.removeItem('venueid');
