@@ -1,6 +1,12 @@
 //Load venues or redirect
 jQuery(document).ready(function(){
 
+        var AndroidAgent = navigator.userAgent.match(/Android/i) != null;
+        if (AndroidAgent) {
+        BackButton.override();
+		$(document).on('backKeyDown', backKeyDown); //preventing going back for spraying page from index, TODO, test if this really works 
+		}
+		
       if (!localStorage.authorization||!localStorage.color||!localStorage.gangster||!localStorage.gang) {
         window.location.replace("splash.html");
       } else {
@@ -10,11 +16,10 @@ jQuery(document).ready(function(){
 		var locationLongitude = localStorage.longitude;
 		
 		localStorage.removeItem('venueid');
-		
-		mixpanel.register({gang: color, gangster: gangster}); //Track for the droplet click is in index.html
+		 
+		mixpanel.register({gang: color, gangster: gangster, latitude: localStorage.latitude, longitude: localStorage.longitude}); //Track for the droplet click is in index.html
 		mixpanel.track("PageLaunch", {page:"index"});
-		mixpanel.track("SprayingInitiated", {latitude: locationLatitude, longitude: locationLongitude});
-		
+	
 		//Change color background depending on player's color
          $('body').removeClass().addClass(color);
 
@@ -31,14 +36,15 @@ jQuery(document).ready(function(){
         $.ajax({
           type: "GET",
           url: endpoint,
-		  localCache   : true,
-		  cacheTTL  : 5,
+		  cache: true,
+		  //localCache   : true,
+		  //cacheTTL  : 5,
 		  async: true, 
           dataType: 'json',
           beforeSend: function (xhr) {
             xhr.setRequestHeader ("Authorization", authorization);
-          },
-		  success   : function (data){
+          }
+		  //success   : function (data){
           }).done(function( data ) {
 			
 			var venueArr = distanceSort(data);
@@ -47,7 +53,6 @@ jQuery(document).ready(function(){
 			/* setInterval(function() {          //REFRESH UNDER WORK
 		     var venueArr = distanceSort(data);
 			 //refreshDistances(venueArr);
-			 
 			}
 			,5000); */
 			
@@ -81,7 +86,7 @@ jQuery(document).ready(function(){
           alert("Error: something went wrong while loading the venues");
         });
         });
-		}
+		//}
 		//Counting the distances between player and location, called from distanceSort()
 function locationCheck(data,key,locationLat, locationLon, venueLat, venueLon){
          
@@ -289,12 +294,15 @@ function bustCheck(bustId){
               });
 			  
 			   }
-             
+			   
+function backKeyDown() { 
+        window.location.replace("index.html");
+         }             
 /*fuction refreshDistances(){
 
 }*/		
 	 
-    }
+}
 				
 window.alert = function(){return null;}; //Javascript popups disabled, atleast for now
 });

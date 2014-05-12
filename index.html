@@ -35,7 +35,9 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
 </head>
 <script>
 		mixpanel.track_links("#drop", "SprayingInitiated");
-		
+		mixpanel.track_links(".bustButton", "bustInitiated");
+		mixpanel.track_links("#modal-bust-error", "bustError");
+		mixpanel.track_links("#modal-bust-success", "bustSuccess");
 </script>
 
 <body id="home">
@@ -65,13 +67,13 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
 
     <ul id="gn-menu" class="gn-menu-main">
         <li class="gn-trigger">
-          <a class="gn-icon gn-icon-menu icon-list2"><span class="count-notification">4</span></a>
+          <a class="gn-icon gn-icon-menu icon-list2"><!-- <span class="count-notification">4</span>--></a>
           <nav class="gn-menu-wrapper">
             <div class="gn-scroller">
               <ul class="gn-menu">
                 <li><a class="gn-icon" href="profile.html"><span class="nav-icon icon-dude"></span>Profile</a></li>
                 <li><a class="gn-icon" href="profile-gang.html"><span class="nav-icon icon-dudes"></span>Gang</a></li>
-                <li><a class="gn-icon" href="chat.html"><span class="nav-icon icon-talk"></span>Chat<span class="count">4</span></a></li>
+                <li><a class="gn-icon" href="chat.html"><span class="nav-icon icon-talk"></span>Chat</a></li>
                 <li><a class="gn-icon" href="leaderboard.html"><span class="nav-icon icon-trophy"></span>Leaderboard</a></li>
                 <li><a class="gn-icon" href="tweaks.html"><span class="nav-icon icon-tweak"></span>Tweaks</a></li>
                 <li><a class="gn-icon" href="faq.html"><span class="nav-icon icon-question"></span>Help</a></li>
