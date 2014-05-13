@@ -24,7 +24,7 @@ jQuery(document).ready(function(){
 		 
 		mixpanel.register({gang: color, gangster: gangster, latitude: localStorage.latitude, longitude: localStorage.longitude}); //Track for the droplet click is in index.html
 		mixpanel.track("PageLaunch", {page:"index"});
-	
+	    mixpanel.track_links("BustCheck", {".bustButton": "bustInitiated"});
 		//Change color background depending on player's color
          $('body').removeClass().addClass(color);
 
@@ -231,7 +231,7 @@ function bustCheck(bustId){
 			   var tagger = parseInt(data.gangsterSpraying);
 
 			   if (tagger == 0 || tagger == localStorage.gangster){   //TODO check the gangsters not bustin themselves, they are on same location
-			    
+			   mixpanel.track("BustCheck", {"BustFailure":"BustFailure"}); 
 			   $("#modal-bust-error").addClass("md-show");
               //animation
                $('.icon-surprised').addClass('animated bounce');
@@ -241,6 +241,7 @@ function bustCheck(bustId){
                });
 			   
 			   }else{
+			    mixpanel.track("BustCheck", {"BustSuccess":"BustSuccess"});
 			 	$("#modal-bust-success").addClass("md-show"); //Modal for successful bust
               //animation
                $('.icon-locked').addClass('animated bounce');

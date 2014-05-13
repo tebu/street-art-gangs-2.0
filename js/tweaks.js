@@ -28,13 +28,19 @@ jQuery(document).ready(function(){
 			var pointsAdded = 0;
             var endpoint = "http://vm0063.virtues.fi/gangsters/"+gangster+"/";
             var now = moment().format();
-			var a = moment();
+			var a = moment().format(DD);
+			var setMood = $('#mood').val();
 
-			if (localStorage.lastMood !=null) {var comparison = a.from(localStorage.lastMood, true);}
+			if (localStorage.lastMood !=null) {
+			   var lastMood = parseInt(localStorage.getItem('lastMood'));
+			   b = parseInt(a);
+			   var comparison = b - lastMood;} //THIS WILL ONLY WORK DURING THIS PARTICULAR GAME!!!
+			
 			localStorage.setItem('lastMood', a);
 			
-			if (localStorage.lastMood == null || comparison >= 1){  //JATKA TÄSTÄ
+			if (localStorage.lastMood == null || comparison <= 1 ){  //JATKA TÄSTÄ
 			            localStorage.points = Number(localStorage.points) + 30; pointsAdded + 30;}
+						
 			var color = localStorage.color;
 			var gangster = localStorage.gangster;
             var data =  {
@@ -43,7 +49,7 @@ jQuery(document).ready(function(){
                 last_action: now
             }
 			
-			mixpanel.track("SetMood", {Mood: data, Time: now, gang: color, gangster: gangster, PointsAdded: pointsAdded});
+			mixpanel.track("SetMood", {Mood: setMood, Time: now, gang: color, gangster: gangster, PointsAdded: pointsAdded});
            $.ajax({
               type: "PATCH",
               url: endpoint,

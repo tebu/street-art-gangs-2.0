@@ -6,8 +6,8 @@ jQuery(document).ready(function(){
 	   	var color = localStorage.color;
 		var gangster = localStorage.gangster;
 		
-		mixpanel.track("PageLaunch", {page:"faq", gang: color, gangster: gangster});
-		
+		mixpanel.register({gang: color, gangster: gangster, latitude: localStorage.latitude, longitude: localStorage.longitude});
+		mixpanel.track("PageLaunch", {page:"faq"});
         //Change color background depending on player's color
         
         $('body').removeClass().addClass(color)
@@ -33,7 +33,10 @@ jQuery(document).ready(function(){
               $(this).next('.faq-content').slideDown('slow');
               // add open class
               $(this).addClass('open');
-              $(this).addClass('highlight')
+              $(this).addClass('highlight');
+			  var identLink = "#"; 
+			  identLink += this.id;
+			  mixpanel.track_links("ClicksOnHelp", {".faq-trigger": identLink});
             }
           });
 
