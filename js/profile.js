@@ -44,7 +44,7 @@
             }
 			
 			var rank = sortRanking(data)+1; //Call for sorting the rank*/
-			
+			var taggedLocations = data[gangsterKey].venues.length;
 			
             $("#ranking").text("#"+rank);
             $("#points").text(data[gangsterKey].points);
@@ -52,7 +52,7 @@
             $("#tags_deleted").text(data[gangsterKey].tags_deleted);
             $("#busted").text(data[gangsterKey].busted);
             $("#busts").text(data[gangsterKey].busts); 
-
+            $("#venues").text(taggedLocations); 
 
             // Fittext.js
              // $("h3.player-name").fitText(.8);

@@ -54,7 +54,7 @@
 		  
 		  $(".gang-info.members").text(gangTagsPoints2[gangKey][1]);
 		  $(".gang-info.points").text(gangTagsPoints2[gangKey][0]);
-		  
+		  $(".gang-info.walked").text(gangTagsPoints2[gangKey][3]);
 		  /* $(".gang-info.walked").text(gangTagsPoints2[gangKey][?]); */ //NEEDS TO BE DONE LATER
 		  
           //TODO: Add points
@@ -139,23 +139,27 @@
 			var gangName = "";
 			var gangPoints = 0;
 			var gangPopulation = 0;
+			var busted = 0;
 			
 			for (var i = data.length - 1; i >= 0; i--) {
 			if (gangKey == 0 && data[i].color === "purple"){
 			gangPoints += data[i].points;//points and tags for team purple	
 			gangPopulation ++;
 			gangName = "Purple Knights";
+			busted += data[i].busted;
 			}else if (gangKey == 1 && data[i].color === "green"){
 			gangPoints += data[i].points; //points and tags for team green
 			gangPopulation ++;
 			gangName = "Green Shamans";
+			busted += data[i].busted;
 			}else if (gangKey == 2 && data[i].color === "blue"){ 
 			gangPoints += data[i].points; //points and tags for team blue
 			gangPopulation ++;
 			gangName = "Blue Angels";
+			busted += data[i].busted;
 			}
 			}
-			return [gangPoints,gangPopulation,gangName];
+			return [gangPoints,gangPopulation,gangName, busted];
 			} 
     
 	function gangMembers(gangKey,data) { //Sort of gangsters by gang, points and handling the timestamp data              

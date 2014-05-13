@@ -25,17 +25,25 @@ jQuery(document).ready(function(){
         $('#save').on( "click", function() {
             var authorization=localStorage.authorization;
             var gangster = localStorage.gangster;
+			var pointsAdded = 0;
             var endpoint = "http://vm0063.virtues.fi/gangsters/"+gangster+"/";
             var now = moment().format();
+			var a = moment();
+
+			if (localStorage.lastMood !=null) {var comparison = a.from(localStorage.lastMood, true);}
+			localStorage.setItem('lastMood', a);
+			
+			if (localStorage.lastMood == null || comparison >= 1){  //JATKA TÄSTÄ
+			            localStorage.points = Number(localStorage.points) + 30; pointsAdded + 30;}
 			var color = localStorage.color;
 			var gangster = localStorage.gangster;
             var data =  {
+			    points: localStorage.points,
                 mood: $('#mood').val(),
                 last_action: now
             }
 			
-			mixpanel.track("SetMood", {Mood: data, Time: now, gang: color, gangster: gangster});
-			
+			mixpanel.track("SetMood", {Mood: data, Time: now, gang: color, gangster: gangster, PointsAdded: pointsAdded});
            $.ajax({
               type: "PATCH",
               url: endpoint,
