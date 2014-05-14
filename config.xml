@@ -2,7 +2,9 @@
     id="com.example.streetartgangs"
     android:versionCode="1"
     android:versionName="1.0" >
-
+    
+	<name>StreetArtGangs</name>
+	
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="19" />
@@ -20,7 +22,7 @@
         android:theme="@style/AppTheme" >
     </application>
 
-	<name>StreetArtGangs</name>
+	
 
     <description></description>
 	
