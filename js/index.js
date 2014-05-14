@@ -11,7 +11,7 @@ jQuery(document).ready(function(){
           {
           window.location = "index.html";
             }
-		window.plugins.orientationLock.lock("portrait");
+		
 		}
 		
 		
