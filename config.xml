@@ -13,8 +13,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
-	<uses-permission android:name="android.permission.INTERNET"></uses-permission>	
-	<uses-permission android:name="android.permission.SET_ORIENTATION"></uses-permission>	
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -22,8 +21,11 @@
         android:theme="@style/AppTheme" >
     </application>
 
-	
-
+	<activity
+   android:screenOrientation="portrait"
+   android:configChanges="orientation|keyboardHidden">
+   </activity>
+   
     <description></description>
 	
     <preference name="orientation" value="portrait" />
