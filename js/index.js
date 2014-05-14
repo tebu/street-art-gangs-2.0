@@ -297,7 +297,7 @@ function bustCheck(bustId){
                     alert("First Error: something went wrong while updating the location: "+ textStatus);
                     });
 					
-			         } //if
+			         } 
                
 			   }).fail(function( jqXHR, textStatus ) {
               //TODO fix these and place redirect to index and clean venue id from local storage
