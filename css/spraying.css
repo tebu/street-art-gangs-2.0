@@ -734,6 +734,7 @@ body.green a#cancel {
     animation-delay: 11s;
 }
 
+
 .md-modal {
     position: fixed;
     top: 50%;
@@ -930,7 +931,7 @@ small {
     text-align: center;
     top: 10px;
     width: 10%;
-    z-index: 4000;
+    z-index: 6000;
     opacity: .5
 }
 
