@@ -1,15 +1,17 @@
 //Load venues or redirect
 jQuery(document).ready(function(){
 
-        /*var AndroidAgent = navigator.userAgent.match(/Android/i) != null;
+        var AndroidAgent = navigator.userAgent.match(/Android/i) != null; //Checs if the app is on Androind and overrides backbutton to refresh index page and prevents going back to spraying
         if (AndroidAgent) {
-		//console.log("Backbutton pressed!");
-		//BackButton.override();
-		document.addEventListener('backKeyDown', backKeyDown); //preventing going back for spraying page from index, TODO, test if this really works 
-		function backKeyDown() { 
-        window.location = "index.html";
-        }
-		}*/
+		document.addEventListener("deviceready", onDeviceReady, false);
+          function onDeviceReady() {
+        document.addEventListener("backbutton", onBackKeyDown, false);
+          }
+           function onBackKeyDown() 
+          {
+          window.location = "index.html";
+            }
+		}
 		
 		
       if (!localStorage.authorization||!localStorage.color||!localStorage.gangster||!localStorage.gang) {
@@ -42,12 +44,14 @@ jQuery(document).ready(function(){
           type: "GET",
           url: endpoint,
 		  cache: true,
+		  
 		  //localCache   : true,
 		  //cacheTTL  : 5,
 		  async: true, 
           dataType: 'json',
           beforeSend: function (xhr) {
             xhr.setRequestHeader ("Authorization", authorization);
+			//xhr.setRequestHeader ("Cache-Control", 'max-age=200');
           }
 		  //success   : function (data){
           }).done(function( data ) {

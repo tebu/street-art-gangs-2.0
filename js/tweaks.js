@@ -28,23 +28,21 @@ jQuery(document).ready(function(){
 			var pointsAdded = 0;
             var endpoint = "http://vm0063.virtues.fi/gangsters/"+gangster+"/";
             var now = moment().format();
-			var a = moment().format(DD);
+			//var a = moment().dayOfYear(Number); Commenting out the points for setting mood, also from FAQ n points: localStorage.points,
 			var setMood = $('#mood').val();
-
-			if (localStorage.lastMood !=null) {
+            			
+			/*if (localStorage.lastMood != null) {
 			   var lastMood = parseInt(localStorage.getItem('lastMood'));
 			   b = parseInt(a);
-			   var comparison = b - lastMood;} //THIS WILL ONLY WORK DURING THIS PARTICULAR GAME!!!
+			   var comparison = b - lastMood;} //COMPARING THE DATES 
 			
-			localStorage.setItem('lastMood', a);
-			
-			if (localStorage.lastMood == null || comparison <= 1 ){  //JATKA TÄSTÄ
+			if (localStorage.lastMood == null || comparison <= 1 ){  
 			            localStorage.points = Number(localStorage.points) + 30; pointsAdded + 30;}
+			localStorage.lastMood = a; */
 						
 			var color = localStorage.color;
 			var gangster = localStorage.gangster;
             var data =  {
-			    points: localStorage.points,
                 mood: $('#mood').val(),
                 last_action: now
             }
