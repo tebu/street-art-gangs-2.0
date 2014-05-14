@@ -3,15 +3,11 @@ jQuery(document).ready(function(){
 
         var AndroidAgent = navigator.userAgent.match(/Android/i) != null; //Checs if the app is on Androind and overrides backbutton to refresh index page and prevents going back to spraying
         if (AndroidAgent) {
-		document.addEventListener("deviceready", onDeviceReady, false);
-          function onDeviceReady() {
         document.addEventListener("backbutton", onBackKeyDown, false);
-          }
            function onBackKeyDown() 
           {
           window.location = "index.html";
             }
-		
 		}
 		
 		
