@@ -1,5 +1,7 @@
-<widget xmlns:android="http://schemas.android.com/apk/res/android"
-    id="com.example.streetartgangs"
+<widget xmlns       = "http://www.w3.org/ns/widgets"
+    xmlns:gap       = "http://phonegap.com/ns/1.0"
+    xmlns:android   ="http://schemas.android.com/apk/res/android"
+    id              ="com.example.streetartgangs"
     android:versionCode="1"
     android:versionName="1.0" >
     
@@ -23,6 +25,7 @@
    
     <description>Spray can for the game Street Art Gangs.</description>
 	
-    <preference name="orientation" value="portrait" />
+    <preference name="orientation" value="portrait"/>
+    <preference name="autorotate" value="false" readonly="true"/>
 	
 </widget>
