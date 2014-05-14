@@ -3,7 +3,9 @@ jQuery(document).ready(function(){
 
       if (!localStorage.authorization||!localStorage.color||!localStorage.gangster||!localStorage.gang) {
         window.location.replace("splash.html");
-      } else {
+      } else if (!localStorage.venueid) {
+	  window.location = "index.html";
+	  }else{
 	  	var color = localStorage.color;
 		var gangster = localStorage.gangster;
 		mixpanel.track("PageLaunch", {page:"spraying", gang: color, gangster: gangster}); 

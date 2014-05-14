@@ -1,11 +1,11 @@
 //Load venues or redirect
-         document.addEventListener("deviceready", onDeviceReady, false); //backbutton override
+        /* document.addEventListener("deviceready", onDeviceReady, false); //backbutton override, does not work
         function onDeviceReady() {
-        document.addEventListener("backbutton", onBackKeyDown, false);
+        document.addEventListener("backbutton", onBackKeyDown, true);
            function onBackKeyDown() 
           {
           window.location = "index.html";
-            }}
+            }}*/ 
 			
 jQuery(document).ready(function(){
 
@@ -16,6 +16,12 @@ jQuery(document).ready(function(){
 		var gangster = localStorage.gangster;
 		var locationLatitude = localStorage.latitude; //gangster location
 		var locationLongitude = localStorage.longitude;
+		
+       /* window.onunload=function(){ 
+		   if (!localStorage.venueid){
+		   window.location = "index.html";
+		   }  
+           }*/		
 		 
 		localStorage.removeItem('venueid');
 		 
@@ -24,7 +30,7 @@ jQuery(document).ready(function(){
 	    mixpanel.track_links("BustCheck", {".bustButton": "bustInitiated"});
 		//Change color background depending on player's color
          $('body').removeClass().addClass(color);
-
+        
         //Menu
         new gnMenu( document.getElementById( 'gn-menu' ) );
         
@@ -167,13 +173,13 @@ function updateVenueslider (data,arraySorted){
 		    var gangName="Green Shamans";}else{
 		    var gangName="Blue Knights";};
 			
-			if (distance <=0.015 && gang !== gangName && data[j].sprayinginitialized == 0) {	//TEMP. DISTANCES ARE WIDE FOR TESTING... NARROW DOWN AT SOME POINT	
+			if (distance <=0.515 && gang !== gangName && data[j].sprayinginitialized == 0) {	//TEMP. DISTANCES ARE WIDE FOR TESTING... NARROW DOWN AT SOME POINT	
 			$("<div>").attr('id','#start-to-spray').append("<a id="+venueId+" class='spray icon-droplet'  href='spraying.html'></a>").appendTo(venue);
 			
 			$('body').on("click",locator, function() {
 				localStorage.setItem('venueid',JSON.stringify(this.id)); //Sends individual droplet icon id to spraying page	
 				});	
-			}else if (distance >0.015&& distance<=0.050){
+			}else if (distance >0.515&& distance<=0.550){
 		
 			$("<div>").attr('id','#maybe-to-spray').append("<a id="+venueId+" class='maybespray icon-droplet'</a>").appendTo(venue); //blinking droplet
 			}else{ 
