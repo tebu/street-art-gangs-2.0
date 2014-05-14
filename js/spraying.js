@@ -73,8 +73,39 @@ jQuery(document).ready(function(){
 
 var registerSpray = function() {
         
-		bustCheck();
-
+		var checker = bustCheck();
+        
+		if (checker == 1){
+		       var gangster = localStorage.gangster;
+               var authorization=localStorage.authorization;
+               var endpoint = "http://vm0063.virtues.fi/gangsters/"+gangster+"/";
+			   localStorage.points  = Number(localStorage.points) - 30;
+               localStorage.busted = Number(localStorage.busted) + 1;
+               var data =  {
+                      points: localStorage.points,
+                      busted: localStorage.busted,
+					  spraying: 0,
+					  bustedviapolice: 0
+                  }
+			   $.ajax({
+               type: "PATCH",
+               url: endpoint,
+		       async: false, 
+               dataType: 'json',
+			   data: data,
+               beforeSend: function (xhr) {
+               xhr.setRequestHeader ("Authorization", authorization);
+                 }
+               }).done(function( data ) {
+	    		$(".points-earned").append("<p>Oh no, you got Busted</p>");
+				$(".points-section").append("<p><span>-30</span><small> pts</small></p>");
+				// Give notification of bust and point loss!!  
+                window.location.href = "index.html";				
+			     }).fail(function( jqXHR, textStatus ) {
+                 alert("Second for venue: Something went wrong with bustcheck");
+                 });
+				 
+		}else{
         var authorization=localStorage.authorization;
         var gangster = localStorage.gangster;
 		var color = localStorage.color;
@@ -144,6 +175,7 @@ var registerSpray = function() {
         //TODO fix this
           alert("Error: something went wrong while updating the location: "+ textStatus);
         });
+		}
 		}		
 function sprayingInitialized() { //SprayingInitialized to 1 in venue database
 
@@ -201,7 +233,7 @@ function sprayingInitialized() { //SprayingInitialized to 1 in venue database
 		
 function sprayingInterrupted() { 
         
-		//beginning the bustCheck
+		//first check if the gangster is busted
 		var gangster = localStorage.gangster;
         var authorization=localStorage.authorization;
         var endpoint = "http://vm0063.virtues.fi/gangsters/"+gangster+"/";
@@ -215,8 +247,11 @@ function sprayingInterrupted() {
           }
         }).done(function( data ) {   	
 			   var bustedornot = parseInt(data.bustedviapolice);
+			    
+			   if (bustedornot == 1){
+			   $(".points-earned").append("<p>Oh no, you got Busted</p>");
+			   $(".points-section").append("<p><span>-30</span><small> pts</small></p>");
 			   
-			   if (bustedornot == 1){ 	
 			   
                localStorage.points  = Number(localStorage.points) - 30;
                localStorage.busted = Number(localStorage.busted) + 1;
@@ -236,55 +271,24 @@ function sprayingInterrupted() {
                xhr.setRequestHeader ("Authorization", authorization);
                  }
                }).done(function( data ) {
-	    
-		var venue2 = JSON.parse(localStorage.getItem('venueid')); 
-		var venue = parseInt(venue2);
-		
-		var endpoint2 = "http://vm0063.virtues.fi/venues/"+venue+"/";
-        var data =  {
-				sprayinginitialized:0,
-				gangsterSpraying: 0
-				
-            }
-              $.ajax({
-                type: "PATCH",
-                url: endpoint,
-                dataType: 'json',
-				async: false,
-                data: data,
-                beforeSend: function (xhr) {
-                  xhr.setRequestHeader ("Authorization", authorization);
-                }
-               }).done(function( data ) {
-			      }).fail(function( jqXHR, textStatus ) {
-                 alert("First for venue: Something went wrong with bustcheck");
-                 });
-			   
+	    		
+				// Give notification of bust and point loss!!   
 			     }).fail(function( jqXHR, textStatus ) {
                  alert("Second for venue: Something went wrong with bustcheck");
                  });
-				 
-				 $("#modal-busted").addClass("md-show");
-              //animation
-               $('.icon-surprised').addClass('animated bounce');
-               $('.error .md-content button').addClass('animated fadeIn');
-               $('.md-close').one( "click", function() {
-               window.location.replace("spraying.html");
-               }); 
-               }
-			   
+			   }
 			   }).fail(function( jqXHR, textStatus ) {
               //TODO fix these and place redirect to index and clean venue id from local storage
                 alert("Third Error: Something went wrong with bustcheck");
               });
-			//End of Bust check  
+		
+		//Then clear the roster and continue
 		
         var authorization=localStorage.authorization;
 		var color = localStorage.color;
         var venue2 = JSON.parse(localStorage.getItem('venueid')); 
 		var venue = parseInt(venue2);
         
-		
 		var endpoint = "http://vm0063.virtues.fi/venues/"+venue+"/";
         var data =  {
 				sprayinginitialized:0,
@@ -344,63 +348,7 @@ function bustCheck(){
           }
         }).done(function( data ) {   	
 			   var bustedornot = parseInt(data.bustedviapolice);
-			   
-			   if (bustedornot == 1){ 	
-			   
-               localStorage.points  = Number(localStorage.points) - 30;
-               localStorage.busted = Number(localStorage.busted) + 1;
-               var data =  {
-                      points: localStorage.points,
-                      busted: localStorage.busted,
-					  spraying: 0,
-					  bustedviapolice: 0
-                  }
-			   $.ajax({
-               type: "PATCH",
-               url: endpoint,
-		       async: false, 
-               dataType: 'json',
-			   data: data,
-               beforeSend: function (xhr) {
-               xhr.setRequestHeader ("Authorization", authorization);
-                 }
-               }).done(function( data ) {
-	    
-		var venue2 = JSON.parse(localStorage.getItem('venueid')); 
-		var venue = parseInt(venue2);
-		
-		var endpoint2 = "http://vm0063.virtues.fi/venues/"+venue+"/";
-        var data =  {
-				sprayinginitialized:0,
-				gangsterSpraying: 0
-				
-            }
-              $.ajax({
-                type: "PATCH",
-                url: endpoint,
-                dataType: 'json',
-				async: false,
-                data: data,
-                beforeSend: function (xhr) {
-                  xhr.setRequestHeader ("Authorization", authorization);
-                }
-               }).done(function( data ) {
-			      }).fail(function( jqXHR, textStatus ) {
-                 alert("First for venue: Something went wrong with bustcheck");
-                 });
-			   
-			     }).fail(function( jqXHR, textStatus ) {
-                 alert("Second for venue: Something went wrong with bustcheck");
-                 });
-				 
-				 $("#modal-busted").addClass("md-show");
-              //animation
-               $('.icon-surprised').addClass('animated bounce');
-               $('.error .md-content button').addClass('animated fadeIn');
-               $('.md-close').one( "click", function() {
-               window.location.replace("spraying.html");
-               }); 
-               }
+			   return bustedornot;
 			   
 			   }).fail(function( jqXHR, textStatus ) {
               //TODO fix these and place redirect to index and clean venue id from local storage
