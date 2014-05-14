@@ -1,15 +1,14 @@
 //Load venues or redirect
-jQuery(document).ready(function(){
-
-        
+         document.addEventListener("deviceready", onDeviceReady, false); //backbutton override
+        function onDeviceReady() {
         document.addEventListener("backbutton", onBackKeyDown, false);
            function onBackKeyDown() 
           {
           window.location = "index.html";
-            }
-		
-		
-		
+            }}
+			
+jQuery(document).ready(function(){
+
       if (!localStorage.authorization||!localStorage.color||!localStorage.gangster||!localStorage.gang) {
         window.location = "splash.html";
       } else {
@@ -168,13 +167,13 @@ function updateVenueslider (data,arraySorted){
 		    var gangName="Green Shamans";}else{
 		    var gangName="Blue Knights";};
 			
-			if (distance <=0.500 && gang !== gangName && data[j].sprayinginitialized == 0) {	//TEMP. DISTANCES ARE WIDE FOR TESTING... NARROW DOWN AT SOME POINT	
+			if (distance <=0.015 && gang !== gangName && data[j].sprayinginitialized == 0) {	//TEMP. DISTANCES ARE WIDE FOR TESTING... NARROW DOWN AT SOME POINT	
 			$("<div>").attr('id','#start-to-spray').append("<a id="+venueId+" class='spray icon-droplet'  href='spraying.html'></a>").appendTo(venue);
 			
 			$('body').on("click",locator, function() {
 				localStorage.setItem('venueid',JSON.stringify(this.id)); //Sends individual droplet icon id to spraying page	
 				});	
-			}else if (distance >0.500&& distance<=1.000){
+			}else if (distance >0.015&& distance<=0.050){
 		
 			$("<div>").attr('id','#maybe-to-spray').append("<a id="+venueId+" class='maybespray icon-droplet'</a>").appendTo(venue); //blinking droplet
 			}else{ 
