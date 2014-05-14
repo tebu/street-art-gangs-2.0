@@ -1,20 +1,32 @@
 //Load venues or redirect
 jQuery(document).ready(function(){
 
+        var AndroidAgent = navigator.userAgent.match(/Android/i) != null; //Checs if the app is on Androind and overrides backbutton to refresh index page and prevents going back to spraying
+        if (AndroidAgent) {
+		document.addEventListener("deviceready", onDeviceReady, false);
+          function onDeviceReady() {
+        document.addEventListener("backbutton", onBackKeyDown, false);
+          }
+           function onBackKeyDown() 
+          {
+          window.location = "index.html";
+            }
+		}
+		
+		
       if (!localStorage.authorization||!localStorage.color||!localStorage.gangster||!localStorage.gang) {
-        window.location.replace("splash.html");
+        window.location = "splash.html";
       } else {
 	    var color = localStorage.color;
 		var gangster = localStorage.gangster;
 		var locationLatitude = localStorage.latitude; //gangster location
 		var locationLongitude = localStorage.longitude;
-		
+		 
 		localStorage.removeItem('venueid');
-		
-		mixpanel.register({gang: color, gangster: gangster}); //Track for the droplet click is in index.html
+		 
+		mixpanel.register({gang: color, gangster: gangster, latitude: localStorage.latitude, longitude: localStorage.longitude}); //Track for the droplet click is in index.html
 		mixpanel.track("PageLaunch", {page:"index"});
-		mixpanel.track("SprayingInitiated", {latitude: locationLatitude, longitude: locationLongitude});
-		
+	    mixpanel.track_links("BustCheck", {".bustButton": "bustInitiated"});
 		//Change color background depending on player's color
          $('body').removeClass().addClass(color);
 
@@ -31,21 +43,25 @@ jQuery(document).ready(function(){
         $.ajax({
           type: "GET",
           url: endpoint,
+		  cache: true,
+		  
+		  //localCache   : true,
+		  //cacheTTL  : 5,
 		  async: true, 
           dataType: 'json',
           beforeSend: function (xhr) {
             xhr.setRequestHeader ("Authorization", authorization);
+			//xhr.setRequestHeader ("Cache-Control", 'max-age=200');
           }
-        }).done(function( data ) {
+		  //success   : function (data){
+          }).done(function( data ) {
 			
-
 			var venueArr = distanceSort(data);
 			updateVenueslider(data, venueArr);
 			
 			/* setInterval(function() {          //REFRESH UNDER WORK
 		     var venueArr = distanceSort(data);
 			 //refreshDistances(venueArr);
-			 
 			}
 			,5000); */
 			
@@ -79,7 +95,7 @@ jQuery(document).ready(function(){
           alert("Error: something went wrong while loading the venues");
         });
         });
-		
+		//}
 		//Counting the distances between player and location, called from distanceSort()
 function locationCheck(data,key,locationLat, locationLon, venueLat, venueLon){
          
@@ -219,22 +235,23 @@ function bustCheck(bustId){
 			   var tagger = parseInt(data.gangsterSpraying);
 
 			   if (tagger == 0 || tagger == localStorage.gangster){   //TODO check the gangsters not bustin themselves, they are on same location
-			    
+			   mixpanel.track("BustCheck", {"BustFailure":"BustFailure"}); 
 			   $("#modal-bust-error").addClass("md-show");
               //animation
                $('.icon-surprised').addClass('animated bounce');
                $('.error .md-content button').addClass('animated fadeIn');
-               $('.md-close').one( "click", function() {
-               window.location.replace("index.html");
+               $('.md-close').on( "click", function() {
+               window.location = "index.html";
                });
 			   
 			   }else{
+			    mixpanel.track("BustCheck", {"BustSuccess":"BustSuccess"});
 			 	$("#modal-bust-success").addClass("md-show"); //Modal for successful bust
               //animation
                $('.icon-locked').addClass('animated bounce');
                $('.error .md-content button').addClass('animated fadeIn');
-               $('.md-close').one( "click", function() {
-               window.location.replace("index.html");
+               $('.md-close').on( "click", function() {
+               window.location = "index.html";
                });
 			   
 			   var gangster = localStorage.gangster;
@@ -287,12 +304,13 @@ function bustCheck(bustId){
               });
 			  
 			   }
+			   
              
 /*fuction refreshDistances(){
 
 }*/		
 	 
-    }
+}
 				
 window.alert = function(){return null;}; //Javascript popups disabled, atleast for now
 });

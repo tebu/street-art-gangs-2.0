@@ -25,8 +25,21 @@ jQuery(document).ready(function(){
         $('#save').on( "click", function() {
             var authorization=localStorage.authorization;
             var gangster = localStorage.gangster;
+			var pointsAdded = 0;
             var endpoint = "http://vm0063.virtues.fi/gangsters/"+gangster+"/";
             var now = moment().format();
+			//var a = moment().dayOfYear(Number); Commenting out the points for setting mood, also from FAQ n points: localStorage.points,
+			var setMood = $('#mood').val();
+            			
+			/*if (localStorage.lastMood != null) {
+			   var lastMood = parseInt(localStorage.getItem('lastMood'));
+			   b = parseInt(a);
+			   var comparison = b - lastMood;} //COMPARING THE DATES 
+			
+			if (localStorage.lastMood == null || comparison <= 1 ){  
+			            localStorage.points = Number(localStorage.points) + 30; pointsAdded + 30;}
+			localStorage.lastMood = a; */
+						
 			var color = localStorage.color;
 			var gangster = localStorage.gangster;
             var data =  {
@@ -34,8 +47,7 @@ jQuery(document).ready(function(){
                 last_action: now
             }
 			
-			mixpanel.track("SetMood", {Mood: data, Time: now, gang: color, gangster: gangster});
-			
+			mixpanel.track("SetMood", {Mood: setMood, Time: now, gang: color, gangster: gangster, PointsAdded: pointsAdded});
            $.ajax({
               type: "PATCH",
               url: endpoint,

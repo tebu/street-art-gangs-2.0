@@ -10,8 +10,8 @@ jQuery(document).ready(function(){
 	    var color = localStorage.color;
 		var gangster = localStorage.gangster;
 		
-		
-		mixpanel.track("PageLaunch", {page:"chat", gang: color, gangster: gangster});
+		mixpanel.register({gang: color, gangster: gangster, latitude: localStorage.latitude, longitude: localStorage.longitude});
+		mixpanel.track("PageLaunch", {page:"chat"});
         //Change color background depending on player's color
         
         $('body').removeClass().addClass(color)      // GNMmenu.js
@@ -25,6 +25,9 @@ jQuery(document).ready(function(){
             var gangster = localStorage.gangster;
             var endpoint = "http://vm0063.virtues.fi/messages/";
             var now = moment().format();
+			var msgContent = $(".chatter_field").val();
+			mixpanel.track("Chat", {Message: msgContent, Time: now, gang: color, gangster: gangster});
+			
             var data =  {
                 gangster: gangster,
                 timestamp: now,

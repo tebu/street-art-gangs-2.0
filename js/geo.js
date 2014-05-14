@@ -29,7 +29,7 @@ function watchGPS() {
 	      //frequency: 4000, Does not work, using maximumAge instead
           enableHighAccuracy: true,
           maximumAge: 3000,
-          timeout: 2000
+          timeout: 2500
         });
 }
 

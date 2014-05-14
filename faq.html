@@ -36,14 +36,14 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
 
      <ul id="gn-menu" class="gn-menu-main">
         <li class="gn-trigger">
-          <a class="gn-icon gn-icon-menu icon-list2"><span class="count-notification">4</span></a>
+          <a class="gn-icon gn-icon-menu icon-list2"><!-- <span class="count-notification">4</span>--></a>
           <nav class="gn-menu-wrapper">
             <div class="gn-scroller">
               <ul class="gn-menu">
                 <li><a class="gn-icon" href="index.html"><span class="nav-icon icon-droplet"></span>Home</a></li>
                 <li><a class="gn-icon" href="profile.html"><span class="nav-icon icon-dude"></span>Profile</a></li>
                 <li><a class="gn-icon" href="profile-gang.html"><span class="nav-icon icon-dudes"></span>Gang</a></li>
-                <li><a class="gn-icon" href="chat.html"><span class="nav-icon icon-talk"></span>Chat<span class="count">4</span></a></li>
+                <li><a class="gn-icon" href="chat.html"><span class="nav-icon icon-talk"></span>Chat</a></li>
                 <li><a class="gn-icon" href="leaderboard.html"><span class="nav-icon icon-trophy"></span>Leaderboard</a></li>
                 <li><a class="gn-icon" href="tweaks.html"><span class="nav-icon icon-tweak"></span>Tweaks</a></li>
                 <li><a class="gn-icon" href="faq.html"><span class="nav-icon icon-question"></span>Help</a></li>
@@ -62,7 +62,7 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
 
          <div class="accordion">
 
-			       <div class="faq-trigger">
+			       <div class="faq-trigger" id="GameIstructions">
                 How is this game played? <i class="icon-arrow-rights-small"></i>
               </div>
               <div class="faq-content">
@@ -75,7 +75,7 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
               </div>
 
 
-              <div class="faq-trigger">
+              <div class="faq-trigger" id="CollectingPoints">
                 How do I get points? <i class="icon-arrow-rights-small"></i>
               </div>
               <div class="faq-content">
@@ -84,13 +84,12 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
                     <li><i class="icon-check"></i> Tagging a location gives 100p</li>
                     <li><i class="icon-check"></i> Busting a member of another gang 30p</li>
                     <li><i class="icon-check"></i> Changing status once a day 10p</li>
-                    <li><i class="icon-check"></i> Walking a kilometre within the game area 5p/km</li>
                     <li><i class="icon-check"></i> Getting busted! -30p</li>
                   </ul>               
               </div>
 
 
-              <div class="faq-trigger">
+              <div class="faq-trigger" id="GameArea">
                 What is the game area?  <i class="icon-arrow-rights-small"></i>
               </div>
               <div class="faq-content">
@@ -98,34 +97,47 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
                     <br><img src="img/gamearea.svg">                 
               </div>
 
-              <div class="faq-trigger">
+              <div class="faq-trigger" id="Spraying">
                 How do I start spraying?  <i class="icon-arrow-rights-small"></i>
               </div>
               <div class="faq-content">
                     <p>Push the <span class="icon-droplet"></span> icon on "Home" screen. The icon is clear and visible, when you are close enough to tag.</p>              
               </div>
 
-              <div class="faq-trigger">
+              <div class="faq-trigger" id="Busting">
                 What "Bust" and "Busted" means? <i class="icon-arrow-rights-small"></i>
               </div>
               <div class="faq-content">
                     <p>You get busted when a member of a rival gang or a police man interrupts your tagging.</p>
                     <p>You bust someone by interrupting them by being in close proximity as they try to spray.</p>              
               </div>
-
-              <div class="faq-trigger">
+              
+			  <div class="faq-trigger" id="TroubleShoot">
+                Trouble Shooting <i class="icon-arrow-rights-small"></i>
+              </div>
+              <div class="faq-content">
+                    <p><b>Issue:</b> The content fields and/or the location slider is empty.</p> 
+                    <p><b>Answer:</b> There is no connections or the game server is down. Try refreshing the page or logging out and logging back in to the game. If the probem persists, contact the admin.</p>	
+                    <p><b>Issue:</b> The app freezes and does not respond to touch.</p> 
+                    <p><b>Answer:</b> Wait or try restarting the app. Well, you popably already did, since you are here. Try to avoid repetitive taps and page refreshes. Because the app uses realtime data from game server lag causes some delay.</p>
+                    <p><b>Issue:</b> There is no distance from location and I cannot tag.</p> 
+                    <p><b>Answer:</b> Refresh the page.</p>					
+              </div>
+			  
+              <div class="faq-trigger" id="WhatCanDo">
                 What can I do with this app? <i class="icon-arrow-rights-small"></i>
               </div>
               <div class="faq-content">
                     <p>Tag locations, follow your own and your gang's progress, set your mood from "Tweaks" and chat with your homies</p>        
               </div>
 
-              <div class="faq-trigger">
+              <div class="faq-trigger" id="LogOut">
                 How do I log out? <i class="icon-arrow-rights-small"></i>
               </div>
               <div class="faq-content">
                     <p>You stay logged in unless you log out. You can logout from "Tweaks"</p>        
               </div>
+			  
 
           </div><!-- /accordion -->
      
