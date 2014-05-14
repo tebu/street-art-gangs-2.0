@@ -249,9 +249,14 @@ function sprayingInterrupted() {
 			   var bustedornot = parseInt(data.bustedviapolice);
 			    
 			   if (bustedornot == 1){
-			   $(".points-earned").append("<p>Oh no, you got Busted</p>");
-			   $(".points-section").append("<p><span>-30</span><small> pts</small></p>");
 			   
+			   $("#modal-busted").addClass("md-show");
+              //animation
+               $('.icon-surprised').addClass('animated bounce');
+               $('.error .md-content button').addClass('animated fadeIn');
+               $('.md-close').one( "click", function() {
+               window.location.replace("index.html");
+               }); 
 			   
                localStorage.points  = Number(localStorage.points) - 30;
                localStorage.busted = Number(localStorage.busted) + 1;
