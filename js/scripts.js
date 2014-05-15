@@ -240,7 +240,7 @@ var updateUserPosition = function(latitude,longitude) {
                 last_action: now
             }
 			
-        setInterval(function(){ mixpanel.track("PlayerLocation", {Time:now, gang: color, gangster: gangster, latitude: latitude, longitude: longitude});},10000);
+        setInterval(function(){ mixpanel.track("PlayerLocation", {Time:now, gang: color, gangster: gangster, latitude: latitude, longitude: longitude});},5000);
         $.ajax({
               type: "PATCH",
               url: endpoint,
