@@ -87,6 +87,8 @@ var registerSpray = function() {
 					  spraying: 0,
 					  bustedviapolice: 0
                   }
+				  mixpanel.track("GotBusted", {Time:now, gang: color, gangster: gangster, venue: venue});
+
 			   $.ajax({
                type: "PATCH",
                url: endpoint,
@@ -119,7 +121,7 @@ var registerSpray = function() {
 				sprayinginitialized:0,
 				gangsterSpraying: 0
             }
-		mixpanel.track("SprayingFinalised", {Time:now, gang: color, gangster: gangster});
+		mixpanel.track("SprayingFinalised", {Time:now, gang: color, gangster: gangster, venue: venue});
 
         $.ajax({
           type: "PATCH",
@@ -182,6 +184,7 @@ function sprayingInitialized() { //SprayingInitialized to 1 in venue database
         var authorization=localStorage.authorization;
         var venue2 = JSON.parse(localStorage.getItem('venueid')); 
 		var venue = parseInt(venue2);
+		var now = moment().format();
         var gangster = localStorage.gangster;
 		var color = localStorage.color;
 		var endpoint = "http://vm0063.virtues.fi/venues/"+venue+"/";
@@ -190,6 +193,7 @@ function sprayingInitialized() { //SprayingInitialized to 1 in venue database
 				sprayinginitialized:1,
 				gangsterSpraying: gangster
             }
+		mixpanel.track("SprayingInitialised", {Time:now, gang: color, gangster: gangster, venue: venue});
               $.ajax({
                 type: "PATCH",
                 url: endpoint,
@@ -266,6 +270,7 @@ function sprayingInterrupted() {
 					  spraying: 0,
 					  bustedviapolice: 0
                   }
+			mixpanel.track("GotBusted", {Time:now, gang: color, gangster: gangster, venue: venue});
 			   $.ajax({
                type: "PATCH",
                url: endpoint,
@@ -315,7 +320,7 @@ function sprayingInterrupted() {
 					  spraying: 0,
 					  bustedviapolice: 0
                   }
-
+             mixpanel.track("SprayingInterrupted", {Time:now, gang: color, gangster: gangster, venue: venue});
               $.ajax({
                 type: "PATCH",
                 url: endpoint2,
