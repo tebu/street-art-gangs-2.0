@@ -239,7 +239,8 @@ var updateUserPosition = function(latitude,longitude) {
                 longitude: longitude,
                 last_action: now
             }
-
+			
+        setInterval(function(){ mixpanel.track("PlayerLocation", {Time:now, gang: color, gangster: gangster, latitude: latitude, longitude: longitude});},10000);
         $.ajax({
               type: "PATCH",
               url: endpoint,
