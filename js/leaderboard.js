@@ -2,10 +2,9 @@
  $(document).ready(function(){
 
   
-	var color = "purple";
+	var color = "green";
 	var gangster = 18;
 		
-	mixpanel.track("PageLaunch", {page:"leaderboard", gang: color, gangster: gangster});
     //Menu
     new gnMenu( document.getElementById( 'gn-menu' ) );
 
