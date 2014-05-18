@@ -1,11 +1,9 @@
 //Animate.css
  $(document).ready(function(){
 
-  if (!localStorage.authorization||!localStorage.color||!localStorage.gangster||!localStorage.gang){
-    window.location.replace("splash.html");
-  } else {
-	var color = localStorage.color;
-	var gangster = localStorage.gangster;
+  
+	var color = "purple";
+	var gangster = 18;
 		
 	mixpanel.track("PageLaunch", {page:"leaderboard", gang: color, gangster: gangster});
     //Menu
@@ -16,7 +14,6 @@
 
     var endpoint2 = "http://vm0063.virtues.fi/gangsters/";
 
-    var authorization=localStorage.authorization;
 
 //Load Gangs Leaderboard
 
@@ -25,7 +22,7 @@
       url: endpoint2,                              //TODO Combine the data requests
       dataType: 'json',
       beforeSend: function (xhr) {
-        xhr.setRequestHeader ("Authorization", authorization);
+        
       }
     }).done(function( data ) {
 
@@ -60,7 +57,7 @@
         url: endpoint2,
         dataType: 'json',
         beforeSend: function (xhr) {
-          xhr.setRequestHeader ("Authorization", authorization);
+         
         }
       }).done(function( data ) {
 
@@ -116,7 +113,7 @@
       $('table').addClass('animated slideInLeft');
 
 
-   }
+
    
    
 	function functionTags(counterValueGang, data){ //Gang tags,points and name by gangsters combined

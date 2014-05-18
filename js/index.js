@@ -35,7 +35,7 @@ jQuery(document).ready(function(){
         new gnMenu( document.getElementById( 'gn-menu' ) );
         
         //Check GPS
-        $.when(watchGPS()).then(function( data ) {
+        $.when(watchGPS()).then(function( data ) { //Might be one of the causes for the frontpage freeze
 		//$('#to-left', '#to-right').on
 
         //Get Venues
