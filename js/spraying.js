@@ -270,7 +270,7 @@ function sprayingInterrupted() {
 					  spraying: 0,
 					  bustedviapolice: 0
                   }
-			mixpanel.track("GotBusted", {Time:now, gang: color, gangster: gangster, venue: venue});
+			
 			   $.ajax({
                type: "PATCH",
                url: endpoint,
@@ -320,7 +320,7 @@ function sprayingInterrupted() {
 					  spraying: 0,
 					  bustedviapolice: 0
                   }
-             mixpanel.track("SprayingInterrupted", {Time:now, gang: color, gangster: gangster, venue: venue});
+             
               $.ajax({
                 type: "PATCH",
                 url: endpoint2,
