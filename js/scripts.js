@@ -231,6 +231,7 @@ var getCategoryClass = function (val) {
 var updateUserPosition = function(latitude,longitude) {
         
         var authorization=localStorage.authorization;
+		var color = localStorage.color;
         var gangster = localStorage.gangster;
         var endpoint = "http://vm0063.virtues.fi/gangsters/"+gangster+"/";
         var now = moment().format();
@@ -240,7 +241,7 @@ var updateUserPosition = function(latitude,longitude) {
                 last_action: now
             }
 			
-        setInterval(function(){ mixpanel.track("PlayerLocation", {Time:now, gang: color, gangster: gangster, latitude: latitude, longitude: longitude});},5000);
+        
         $.ajax({
               type: "PATCH",
               url: endpoint,
@@ -270,7 +271,7 @@ var updateUserPosition = function(latitude,longitude) {
                 longitude: longitude,
                 last_action: now
             }
-
+        
         $.ajax({
               type: "PATCH",
               url: endpoint,
