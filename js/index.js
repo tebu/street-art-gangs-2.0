@@ -25,7 +25,7 @@ jQuery(document).ready(function(){
 		 
 		localStorage.removeItem('venueid');
 		 
-		mixpanel.register({gang: color, gangster: gangster, latitude: localStorage.latitude, longitude: localStorage.longitude}); //Track for the droplet click is in index.html
+		mixpanel.register({gang: color, gangster: gangster, latitude: locationLatitude, longitude: locationLongitude}); //Track for the droplet click is in index.html
 		mixpanel.track("PageLaunch", {page:"index"});
 	    mixpanel.track_links("BustCheck", {".bustButton": "bustInitiated"});
 		//Change color background depending on player's color

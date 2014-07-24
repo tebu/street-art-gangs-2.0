@@ -271,7 +271,7 @@ var updateUserPosition = function(latitude,longitude) {
                 longitude: longitude,
                 last_action: now
             }		
-     /*   setInterval(function(){ mixpanel.track("PlayerLocation", {Time:now, gang: color, gangster: gangster, latitude: latitude, longitude: longitude});},10000);
+     /*   mixpanel.track("PlayerLocation", {Time:now, gang: color, gangster: gangster, latitude: latitude, longitude: longitude}); TOO DATAPOINT CONSUMING TO TRACK HERE
      */
         $.ajax({
               type: "PATCH",
