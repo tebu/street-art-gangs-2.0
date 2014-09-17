@@ -257,7 +257,7 @@ function bustCheck(bustId){
 			   
 			   var gangster = localStorage.gangster;
 			 
-               localStorage.points  = Number(localStorage.points) + 30;
+               localStorage.points  = Number(localStorage.points) + 10;
                localStorage.busts = Number(localStorage.busts) + 1;
 			   var endpoint3 = "http://vm0063.virtues.fi/gangsters/"+gangster+"/";
                var data =  {

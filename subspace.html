@@ -6,7 +6,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <link rel="shortcut icon" href="favicon.ico" />
-  <title>Spraying</title>
+  <title>Subspace</title>
 
   <!-- Launch icons -->
   <link rel="apple-touch-icon" href="img/icons/ios/icon.png" />
@@ -59,21 +59,16 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
 
       <div id="footer">
         <div id="spray-text">
-          <p id="prepare">Just a moment...<br>preparing</p>
-          <p id="progress">Here we <span>gooo!</span></p>
-        </div>
-
-      </div>
-
-       <a href="subspace.html" id="cancel" class="second-anim"><span class="icon-arrow-left-small"></span> Tap here if you need to give up</a>
-   
-      
-
-      <div id="loading">
-          <div class="bar-percentage" data-percentage="101"></div>
-      </div>
-      
+          <p id="prepare">Just a moment...<br>Checking whether you're trying to bail out</p>
+        </div>  
 	  
+	  <!-- This notification should appear if the tagger did not get busted-->
+	  <div class="points-earned" id="tagged">
+        <p>Gongrats!</p>
+        <section class="points-section">
+        	<p><span>100</span><small> pts</small></p>
+        </section>
+      </div>
 	   <!-- This modal window should appear if the tagger got busted somewhere during the taggin-->
 
 	<div class="md-modal error md-effect-12" id="modal-busted">
@@ -93,7 +88,7 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
     <script src="js/moment.min.js"></script>
     <script src='js/jquery-1.10.2.min.js'></script>
     <script src="js/scripts.js"></script>
-    <script src="js/spraying.js"></script>
+    <script src="js/subspace.js"></script>
     <script src="js/jquery.lettering.js"></script>
 	<script src="js/modalEffects-tweaks.js"></script>
     <script>
