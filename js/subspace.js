@@ -6,11 +6,13 @@ jQuery(document).ready(function(){
       } else if (!localStorage.venueid) {
 	  window.location = "index.html";
 	  }else{
+	  
 	  	var color = localStorage.color;
 		var gangster = localStorage.gangster;
 		mixpanel.track("PageLaunch", {page:"subspace", gang: color, gangster: gangster}); 
 		
-        registerSpray();
+		var checker = bustCheck();
+        registerSpray(checker);
        
   
 		//Change color background depending on player's color
@@ -28,13 +30,12 @@ jQuery(document).ready(function(){
         // jQuery("p#progress").delay(5000).fadeIn(1000);
         setTimeout(function() {
         window.location.href = "index.html";
-         }, 3000);
+         }, 4000);
     });
 
-var registerSpray = function() {
+var registerSpray = function(checker) {
           //first check if the gangster is busted
-		var checker = bustCheck();
-        
+		
 		if (checker == 1){
 		       var gangster = localStorage.gangster;
                var authorization=localStorage.authorization;
@@ -71,7 +72,7 @@ var registerSpray = function() {
                  alert("Second for venue: Something went wrong with bustcheck");
                  });
 				 
-		}else{
+		}else if (checker = 0){
         var authorization=localStorage.authorization;
         var gangster = localStorage.gangster;
 		var color = localStorage.color;
@@ -108,7 +109,7 @@ var registerSpray = function() {
 					  bustedviapolice: 0,
 					  spraying: 0
                   }
-
+             
               $.ajax({
                 type: "PATCH",
                 url: endpoint,
@@ -120,9 +121,10 @@ var registerSpray = function() {
                 }
                
                }).done(function( data ) {
-               
-			   jQuery('.points-earned').addClass('animated bounceInDown');  
-                
+			   setTimeout(function() {
+                jQuery('.points-earned').addClass('animated bounceInDown'); 
+               }, 3000);
+			     
               /*// Points animation
               jQuery({someValue: 0}).animate({someValue:100}, {
               duration: 1000,
@@ -136,7 +138,6 @@ var registerSpray = function() {
               //TODO fix these and place redirect to index and clean venue id from local storage
                 alert("First Error: something went wrong while updating the location: "+ textStatus);
               });
-
         }).fail(function( jqXHR, textStatus ) {
         //TODO fix this
           alert("Error: something went wrong while updating the location: "+ textStatus);
@@ -151,11 +152,13 @@ var registerSpray = function() {
 		var color = localStorage.color;
         var venue2 = JSON.parse(localStorage.getItem('venueid')); 
 		var venue = parseInt(venue2);
-        
+        var gangsterowns2 = JSON.parse(localStorage.getItem('gangsterowns')); 
+		var gangsterowns = parseInt(gangsterowns2);
 		var endpoint = "http://vm0063.virtues.fi/venues/"+venue+"/";
         var data =  {
 				sprayinginitialized:0,
-				gangsterSpraying: 0	
+				gangsterSpraying: 0,
+				gangster: gangsterowns 
             }
               $.ajax({
                 type: "PATCH",
@@ -166,7 +169,8 @@ var registerSpray = function() {
                 beforeSend: function (xhr) {
                   xhr.setRequestHeader ("Authorization", authorization);
                 }
-               }).done(function( data ) {
+               }).done(function( data ){
+			  
               var gangster = localStorage.gangster; 
               var endpoint2 = "http://vm0063.virtues.fi/gangsters/"+gangster+"/";
               var data =  {                  
@@ -210,7 +214,12 @@ function bustCheck(){
             xhr.setRequestHeader ("Authorization", authorization);
           }
         }).done(function( data ) {   	
+		       
+			   var checker = localStorage.checker; 
+			   if (checker !=3){
 			   var bustedornot = parseInt(data.bustedviapolice);
+			   }else{
+			   var bustedornot = checker;}
 			   return bustedornot;
 			   
 			   }).fail(function( jqXHR, textStatus ) {

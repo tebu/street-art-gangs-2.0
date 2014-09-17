@@ -6,6 +6,12 @@ jQuery(document).ready(function(){
       } else if (!localStorage.venueid) {
 	  window.location = "index.html";
 	  }else{
+	    
+		$('.cancel').on("click", function() { //sets checker to three oppose to 1 = busted or 0 = successful spray... this is for subspace
+			    localStorage.setItem('checker',3); 
+				});	
+				
+	    getGangster(); 
 	  	var color = localStorage.color;
 		var gangster = localStorage.gangster;
 		mixpanel.track("PageLaunch", {page:"spraying", gang: color, gangster: gangster}); 
@@ -235,7 +241,30 @@ function sprayingInterrupted() {
                 alert("Second Error: something went wrong while updating the location: "+ textStatus);
               });
 }
-
+function getGangster() {
+ 
+        var authorization=localStorage.authorization;
+        var venue2 = JSON.parse(localStorage.getItem('venueid')); 
+		var venue = parseInt(venue2);
+		
+		var endpoint = "http://vm0063.virtues.fi/venues/"+venue+"/";
+		
+               $.ajax({
+             type: "GET",
+             url: endpoint,
+		     async: true, 
+             dataType: 'json',
+             beforeSend: function (xhr) {
+                  xhr.setRequestHeader ("Authorization", authorization);
+                }
+               }).done(function( data ) {
+                localStorage.setItem('gangsterowns',JSON.stringify(data.gangster)); //takes a backup of who owns the venue... To prevent the ownership from moving in-case of bust
+                }).fail(function( jqXHR, textStatus ) {
+              //TODO fix these and place redirect to index and clean venue id from local storage
+                alert("Error: something went wrong while trying to establish ownership: "+ textStatus);
+              }); 
+	}
+	
 function bustCheck(){
       
 		var gangster = localStorage.gangster;
