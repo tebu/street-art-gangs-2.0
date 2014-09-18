@@ -6,16 +6,21 @@ jQuery(document).ready(function(){
       } else if (!localStorage.venueid) {
 	  window.location = "index.html";
 	  }else{
-	    
-		$('.cancel').on("click", function() { //sets checker to three oppose to 1 = busted or 0 = successful spray... this is for subspace
-			    localStorage.setItem('checker',3); 
+	    var color = localStorage.color;
+		var gangster = localStorage.gangster;
+		var venue2 = JSON.parse(localStorage.getItem('venueid')); 
+		var venue = parseInt(venue2);
+		
+		mixpanel.track("PageLaunch", {page:"spraying", gang: color, gangster: gangster, venue: venue}); 
+		
+		$('#cancel').on("click", function() { //sets checker to two oppose to 1 = busted or 0 = successful spray... this is for subspace
+			    var checker = 2;
+				localStorage.setItem('checker',checker); 
+				mixpanel.track("SprayingInterrupted", {gang: color, gangster: gangster, venue: venue});
 				});	
 				
 	    getGangster(); 
-	  	var color = localStorage.color;
-		var gangster = localStorage.gangster;
-		mixpanel.track("PageLaunch", {page:"spraying", gang: color, gangster: gangster}); 
-		sprayingInitialized();
+	  	sprayingInitialized();
 		
         //Change color background depending on player's color
         $('body').removeClass().addClass(color)
@@ -53,9 +58,9 @@ jQuery(document).ready(function(){
 
         setTimeout(function() {
         window.location.href = "subspace.html";
-         }, 26000);
+         }, 25000);
 
-         jQuery("#loading").delay(25000).fadeOut(300);
+         jQuery("#loading").delay(24000).fadeOut(300);
         
     });
 
@@ -73,10 +78,6 @@ jQuery(document).ready(function(){
             $('a#cancel').delay(16000).queue(function(){$('a#cancel').addClass('bounceOutDown')});
 			
     });
-  
-
-
-
 		
 function sprayingInitialized() { //SprayingInitialized to 1 in venue database
 
@@ -134,113 +135,7 @@ function sprayingInitialized() { //SprayingInitialized to 1 in venue database
               });
           }
 		
-function sprayingInterrupted() { 
-        
-		//first check if the gangster is busted
-		var gangster = localStorage.gangster;
-        var authorization=localStorage.authorization;
-        var endpoint = "http://vm0063.virtues.fi/gangsters/"+gangster+"/";
-        $.ajax({
-          type: "GET",
-          url: endpoint,
-		  async: false, 
-          dataType: 'json',
-          beforeSend: function (xhr) {
-            xhr.setRequestHeader ("Authorization", authorization);
-          }
-        }).done(function( data ) {   	
-			   var bustedornot = parseInt(data.bustedviapolice);
-			    
-			   if (bustedornot == 1){
-			   
-			   $("#modal-busted").addClass("md-show");
-              //animation
-               $('.icon-surprised').addClass('animated bounce');
-               $('.error .md-content button').addClass('animated fadeIn');
-               $('.md-close').one( "click", function() {
-               window.location.replace("index.html");
-               }); 
-			   
-               localStorage.points  = Number(localStorage.points) - 30;
-               localStorage.busted = Number(localStorage.busted) + 1;
-               var data =  {
-                      points: localStorage.points,
-                      busted: localStorage.busted,
-					  spraying: 0,
-					  bustedviapolice: 0
-                  }
-			
-			   $.ajax({
-               type: "PATCH",
-               url: endpoint,
-		       async: false, 
-               dataType: 'json',
-			   data: data,
-               beforeSend: function (xhr) {
-               xhr.setRequestHeader ("Authorization", authorization);
-                 }
-               }).done(function( data ) {
-	    		
-				// Give notification of bust and point loss!!   
-			     }).fail(function( jqXHR, textStatus ) {
-                 alert("Second for venue: Something went wrong with bustcheck");
-                 });
-			   }
-			   }).fail(function( jqXHR, textStatus ) {
-              //TODO fix these and place redirect to index and clean venue id from local storage
-                alert("Third Error: Something went wrong with bustcheck");
-              });
-		
-		//Then clear the roster and continue
-		
-        var authorization=localStorage.authorization;
-		var color = localStorage.color;
-        var venue2 = JSON.parse(localStorage.getItem('venueid')); 
-		var venue = parseInt(venue2);
-        
-		var endpoint = "http://vm0063.virtues.fi/venues/"+venue+"/";
-        var data =  {
-				sprayinginitialized:0,
-				gangsterSpraying: 0	
-            }
-              $.ajax({
-                type: "PATCH",
-                url: endpoint,
-                dataType: 'json',
-				async: false,
-                data: data,
-                beforeSend: function (xhr) {
-                  xhr.setRequestHeader ("Authorization", authorization);
-                }
-               }).done(function( data ) {
-              var gangster = localStorage.gangster; 
-              var endpoint2 = "http://vm0063.virtues.fi/gangsters/"+gangster+"/";
-              var data =  {                  
-					  spraying: 0,
-					  bustedviapolice: 0
-                  }
-             
-              $.ajax({
-                type: "PATCH",
-                url: endpoint2,
-                dataType: 'json',
-				async: false,
-                data: data,
-                beforeSend: function (xhr) {
-                  xhr.setRequestHeader ("Authorization", authorization);
-                }
-               }).done(function( data ) {
-
-				}).fail(function( jqXHR, textStatus ) {
-              //TODO fix these and place redirect to index and clean venue id from local storage
-                alert("First Error: something went wrong while updating the location: "+ textStatus);
-              }); 
-
-              }).fail(function( jqXHR, textStatus ) {
-              //TODO fix this
-                alert("Second Error: something went wrong while updating the location: "+ textStatus);
-              });
-}
+//Take a backup of the original owner of the venue, in case 
 function getGangster() {
  
         var authorization=localStorage.authorization;
@@ -258,32 +153,10 @@ function getGangster() {
                   xhr.setRequestHeader ("Authorization", authorization);
                 }
                }).done(function( data ) {
-                localStorage.setItem('gangsterowns',JSON.stringify(data.gangster)); //takes a backup of who owns the venue... To prevent the ownership from moving in-case of bust
+                localStorage.setItem('gangsterowns',JSON.stringify(data.gangster)); //takes a backup of who owns the venue... To prevent the ownership from moving in-case of bust or interruption
                 }).fail(function( jqXHR, textStatus ) {
               //TODO fix these and place redirect to index and clean venue id from local storage
                 alert("Error: something went wrong while trying to establish ownership: "+ textStatus);
               }); 
 	}
 	
-function bustCheck(){
-      
-		var gangster = localStorage.gangster;
-        var authorization=localStorage.authorization;
-        var endpoint = "http://vm0063.virtues.fi/gangsters/"+gangster+"/";
-        $.ajax({
-          type: "GET",
-          url: endpoint,
-		  async: false, 
-          dataType: 'json',
-          beforeSend: function (xhr) {
-            xhr.setRequestHeader ("Authorization", authorization);
-          }
-        }).done(function( data ) {   	
-			   var bustedornot = parseInt(data.bustedviapolice);
-			   return bustedornot;
-			   
-			   }).fail(function( jqXHR, textStatus ) {
-              //TODO fix these and place redirect to index and clean venue id from local storage
-                alert("Third Error: Something went wrong with bustcheck");
-              });
-			  }

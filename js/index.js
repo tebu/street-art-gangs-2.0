@@ -25,6 +25,7 @@ jQuery(document).ready(function(){
 		 
 		localStorage.removeItem('venueid');
 		localStorage.removeItem('checker');
+		localStorage.removeItem('gangsterowns');
 		
 		mixpanel.register({gang: color, gangster: gangster, latitude: locationLatitude, longitude: locationLongitude}); //Track for the droplet click is in index.html
 		mixpanel.track("PageLaunch", {page:"index"});
