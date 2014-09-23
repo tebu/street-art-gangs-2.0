@@ -1,7 +1,7 @@
 
 $(document).ready(function(){
 	mixpanel.track("PageLaunch", {page:"login"});
-    
+    watchGPS();
     //Animate.css
     $('h1').addClass('animated pulse');
     $('input, .btn').addClass('animated slideInLeft');

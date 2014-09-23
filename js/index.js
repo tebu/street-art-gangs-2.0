@@ -37,7 +37,7 @@ jQuery(document).ready(function(){
         new gnMenu( document.getElementById( 'gn-menu' ) );
         
         //Check GPS
-        $.when(watchGPS()).then(function( data ) {
+        watchGPS();
 		//$('#to-left', '#to-right').on
 
         //Get Venues
@@ -95,7 +95,7 @@ jQuery(document).ready(function(){
         //TODO fix this
           alert("Error: something went wrong while loading the venues");
         });
-        });
+        
 		//}
 		//Counting the distances between player and location, called from distanceSort()
 function locationCheck(data,key,locationLat, locationLon, venueLat, venueLon){
@@ -173,13 +173,13 @@ function updateVenueslider (data,arraySorted){
 		    var gangName="Green Shamans";}else{
 		    var gangName="Blue Knights";};
 			
-			if (distance <=1.025 && gang !== gangName && data[j].sprayinginitialized == 0) {	//TEMP. DISTANCES ARE WIDE FOR TESTING... 	
+			if (distance <=0.035 && gang !== gangName && data[j].sprayinginitialized == 0) {	//TEMP. DISTANCES ARE WIDE FOR TESTING... 	
 			$("<div>").attr('id','#start-to-spray').append("<a id="+venueId+" class='spray icon-droplet'  href='spraying.html'></a>").appendTo(venue);
 			
 			$('body').on("click",locator, function() {
 				localStorage.setItem('venueid',JSON.stringify(this.id)); //Sends individual droplet icon id to spraying page	
 				});	
-			}else if (distance >1.025&& distance<=1.070){
+			}else if (distance >0.035&& distance<=0.070){
 		
 			$("<div>").attr('id','#maybe-to-spray').append("<a id="+venueId+" class='maybespray icon-droplet'</a>").appendTo(venue); //blinking droplet
 			}else{ 

@@ -15,9 +15,7 @@ jQuery(document).ready(function(){
 		
         
 		var checker = bustCheck();
-        registerSpray(checker);
-         
-
+     
 		//Change color background depending on player's color
         $('body').removeClass().addClass(color)
 
@@ -27,7 +25,7 @@ jQuery(document).ready(function(){
       jQuery(document).ready(function() {
 	  
         // jQuery("p#prepare").fadeIn(1000);
-        jQuery("p#prepare").delay(1000).fadeOut(3000);
+        jQuery("p#prepare").delay(500).fadeOut(2000);
         // jQuery("p#progress").delay(5000).fadeIn(1000);
         setTimeout(function() {
         window.location.href = "index.html";
@@ -69,7 +67,8 @@ function bustCheck(){
 			   if (checker === 0){
 			   var bustedornot = checker;
 			   localStorage.setItem('wassit',bustedornot);
-			   return bustedornot;                    //breaks if spaying was a success -30 p
+			   registerSpray();
+			   return bustedornot;                    //breaks if spaying was a success 100 p
 			   }
 			   
 			   }).fail(function( jqXHR, textStatus ) {
@@ -84,6 +83,7 @@ function registerBust() {
                 $("#spray-text").append("<p id='progress'>Oh no, got busted and loosed 30 p!</p>");   
 		       var gangster = localStorage.gangster;
 			   var color = localStorage.color;
+			   var now = moment().format();
                var authorization=localStorage.authorization;
                var endpoint = "http://vm0063.virtues.fi/gangsters/"+gangster+"/";
 			   localStorage.points  = Number(localStorage.points) - 30;
@@ -129,8 +129,10 @@ function registerBust() {
                 }
                }).done(function( data ){
 			   
-			   mixpanel.track("GotBusted", {gang: color, gangster: gangster, venue: venue});
-			   
+			   mixpanel.track("GotBusted", {aika: now, gang: color, gangster: gangster, venue: venue});
+			   $("#allgood-text").append("<p id='progress'>Oh no, you got busted and loosed 30 p!</p>").delay(500).fadeOut(2000);
+                 },2000);
+				 
 			     }).fail(function( jqXHR, textStatus ) {
                  alert("Second for venue: Something went wrong with bustcheck");
                  });
@@ -143,8 +145,10 @@ function registerInterruption() {
 		$("#spray-text").append("<p id='progress'>All good</p>");
 		var authorization=localStorage.authorization;
 		var color = localStorage.color;
+		var gangster = localStorage.gangster;
         var venue2 = JSON.parse(localStorage.getItem('venueid')); 
 		var venue = parseInt(venue2);
+		var now = moment().format();
         var gangsterowns2 = JSON.parse(localStorage.getItem('gangsterowns')); 
 		var gangsterowns = parseInt(gangsterowns2);
 		var endpoint = "http://vm0063.virtues.fi/venues/"+venue+"/";
@@ -153,6 +157,7 @@ function registerInterruption() {
 				gangsterSpraying: 0,
 				gangster: gangsterowns 
             }
+		mixpanel.track("SprayingInterrupted", {aika: now, gang: color, gangster: gangster, venue: venue});
               $.ajax({
                 type: "PATCH",
                 url: endpoint,
@@ -163,8 +168,7 @@ function registerInterruption() {
                   xhr.setRequestHeader ("Authorization", authorization);
                 }
                }).done(function( data ){
-			  
-              var gangster = localStorage.gangster; 
+			   
               var endpoint2 = "http://vm0063.virtues.fi/gangsters/"+gangster+"/";
               var data =  {                  
 					  spraying: 0,
@@ -181,7 +185,11 @@ function registerInterruption() {
                   xhr.setRequestHeader ("Authorization", authorization);
                 }
                }).done(function( data ) {
-
+               
+			setTimeout(function (){
+				$("#allgood-text").append("<br><br><br><p id='progress'>Sometimes it is wise to give up</p>").delay(500).fadeOut(2000);
+                 },2000);
+				 
 				}).fail(function( jqXHR, textStatus ) {
               //TODO fix these and place redirect to index and clean venue id from local storage
                 alert("First Error: something went wrong while updating the location: "+ textStatus);
@@ -210,7 +218,7 @@ function registerSpray(){
 				sprayinginitialized:0,
 				gangsterSpraying: 0
             }
-		mixpanel.track("SprayingFinalised", {Time:now, gang: color, gangster: gangster, venue: venue});
+		mixpanel.track("SprayingFinalised", {aika: now, gang: color, gangster: gangster, venue: venue});
 
         $.ajax({
           type: "PATCH",
@@ -246,8 +254,10 @@ function registerSpray(){
                
                }).done(function( data ) {
 			    
-				$("spray-text").append("<p id='progress'>All good <span>You win 100 p!</span></p>");
-            
+				setTimeout(function (){
+				$("#allgood-text").append("<br><br><br><p id='progress'>All good <span>You win 100 p!</span></p>").delay(500).fadeOut(2000);
+                 },2000);
+				 
 				}).fail(function( jqXHR, textStatus ) {
               //TODO fix these and place redirect to index and clean venue id from local storage
                 alert("First Error: something went wrong while updating the location: "+ textStatus);

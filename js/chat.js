@@ -9,7 +9,7 @@ jQuery(document).ready(function(){
       } else {
 	    var color = localStorage.color;
 		var gangster = localStorage.gangster;
-		
+		watchGPS();
 		mixpanel.register({gang: color, gangster: gangster, latitude: localStorage.latitude, longitude: localStorage.longitude});
 		mixpanel.track("PageLaunch", {page:"chat"});
         //Change color background depending on player's color
@@ -18,7 +18,7 @@ jQuery(document).ready(function(){
         new gnMenu( document.getElementById( 'gn-menu' ) );
 
         retrieveMSG();
-
+		
 
         $('#send-msg').on( "click", function() {
             var authorization=localStorage.authorization;
