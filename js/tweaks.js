@@ -69,5 +69,5 @@ jQuery(document).ready(function(){
         } );
 		
     }
-
+window.alert = function(){return null;}; //Javascript popups disabled, atleast for now
 });
