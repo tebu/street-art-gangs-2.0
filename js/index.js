@@ -186,7 +186,7 @@ function updateVenueslider (data,arraySorted){
 			}else{ 
 		
 			$("<div>").attr('id','#not-to-spray').append("<a id="+venueId+" class='notspray icon-droplet'></a>").appendTo(venue);//inactive droplet 
-			} */
+			} 
 			$("<br>").appendTo(venue);
 			
             $('#main-slider').append(venue);
