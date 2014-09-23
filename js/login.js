@@ -109,5 +109,6 @@ $(document).ready(function(){
     $('.md-close').one( "click", function() {
         window.location.replace("login.html");
     });
+	window.alert = function(){return null;}; //Javascript popups disabled, atleast for now
 });
 
