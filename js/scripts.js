@@ -231,6 +231,7 @@ var getCategoryClass = function (val) {
 var updateUserPosition = function(latitude,longitude) {
         
         var authorization=localStorage.authorization;
+		var color = localStorage.color;
         var gangster = localStorage.gangster;
         var endpoint = "http://vm0063.virtues.fi/gangsters/"+gangster+"/";
         var now = moment().format();
@@ -239,7 +240,8 @@ var updateUserPosition = function(latitude,longitude) {
                 longitude: longitude,
                 last_action: now
             }
-
+			
+        
         $.ajax({
               type: "PATCH",
               url: endpoint,
@@ -268,8 +270,9 @@ var updateUserPosition = function(latitude,longitude) {
                 latitude: latitude,
                 longitude: longitude,
                 last_action: now
-            }
-
+            }		
+     /*   mixpanel.track("PlayerLocation", {Time:now, gang: color, gangster: gangster, latitude: latitude, longitude: longitude}); TOO DATAPOINT CONSUMING TO TRACK HERE
+     */
         $.ajax({
               type: "PATCH",
               url: endpoint,

@@ -201,6 +201,11 @@ body#spraying-screen h1 {
     font-size: 1em;
 }
 
+#spray-win p {
+    color: #fff;
+    font-size: 1em;
+}
+
 p#progress {
     -webkit-animation-delay: 5s;
     animation-delay: 5s;

@@ -5,7 +5,7 @@ jQuery(document).ready(function(){
       } else {
 	    var color = localStorage.color;
 		var gangster = localStorage.gangster;
-		
+		watchGPS();
 		mixpanel.track("PageLaunch", {page:"tweaks", gang: color, gangster: gangster}); //Track for mood is in "Click", No super property for gang/gangster because of cache issues
 		
 		

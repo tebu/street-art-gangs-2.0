@@ -11,7 +11,8 @@ function onGPSSuccess(pos) {
       var latitude = pos.coords.latitude;
       var longitude = pos.coords.longitude;
       var accuracy = pos.coords.accuracy;
-
+	  
+      
       localStorage.latitude=latitude;
       localStorage.longitude=longitude;
       localStorage.accuracy=accuracy;

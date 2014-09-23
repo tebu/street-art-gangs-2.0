@@ -1,7 +1,7 @@
 
 $(document).ready(function(){
 	mixpanel.track("PageLaunch", {page:"login"});
-    
+    watchGPS();
     //Animate.css
     $('h1').addClass('animated pulse');
     $('input, .btn').addClass('animated slideInLeft');
@@ -109,5 +109,6 @@ $(document).ready(function(){
     $('.md-close').one( "click", function() {
         window.location.replace("login.html");
     });
+	window.alert = function(){return null;}; //Javascript popups disabled, atleast for now
 });
 

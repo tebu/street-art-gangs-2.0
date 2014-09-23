@@ -24,8 +24,10 @@ jQuery(document).ready(function(){
            }*/		
 		 
 		localStorage.removeItem('venueid');
-		 
-		mixpanel.register({gang: color, gangster: gangster, latitude: localStorage.latitude, longitude: localStorage.longitude}); //Track for the droplet click is in index.html
+		localStorage.removeItem('checker');
+		localStorage.removeItem('gangsterowns');
+		
+		mixpanel.register({gang: color, gangster: gangster, latitude: locationLatitude, longitude: locationLongitude}); //Track for the droplet click is in index.html
 		mixpanel.track("PageLaunch", {page:"index"});
 	    mixpanel.track_links("BustCheck", {".bustButton": "bustInitiated"});
 		//Change color background depending on player's color
@@ -35,7 +37,7 @@ jQuery(document).ready(function(){
         new gnMenu( document.getElementById( 'gn-menu' ) );
         
         //Check GPS
-        $.when(watchGPS()).then(function( data ) {
+        watchGPS();
 		//$('#to-left', '#to-right').on
 
         //Get Venues
@@ -44,8 +46,6 @@ jQuery(document).ready(function(){
         $.ajax({
           type: "GET",
           url: endpoint,
-		  cache: true,
-		  
 		  //localCache   : true,
 		  //cacheTTL  : 5,
 		  async: true, 
@@ -95,7 +95,7 @@ jQuery(document).ready(function(){
         //TODO fix this
           alert("Error: something went wrong while loading the venues");
         });
-        });
+        
 		//}
 		//Counting the distances between player and location, called from distanceSort()
 function locationCheck(data,key,locationLat, locationLon, venueLat, venueLon){
@@ -146,9 +146,9 @@ function updateVenueslider (data,arraySorted){
             } else {
               owner.append("Untagged").appendTo(venue);
             }
-			  //TODO place bust button only to three first venues
+			  //place bust button only to few first venues, hard-coded: 50 venues in the database, so counter is 5 less!
 			
-			if (i > 25){ 
+			if (i > 45){ 
 			$("<button>").addClass("bustButton").attr('id',bustId).appendTo(venue); 
 			$('body').on("click", locator2, function() {
 			    
@@ -173,16 +173,14 @@ function updateVenueslider (data,arraySorted){
 		    var gangName="Green Shamans";}else{
 		    var gangName="Blue Knights";};
 			
-
-			if (distance <=0.015 && gang !== gangName && data[j].sprayinginitialized == 0) {	//TEMP. DISTANCES ARE WIDE FOR TESTING... NARROW DOWN AT SOME POINT	
+			if (distance <=0.035 && gang !== gangName && data[j].sprayinginitialized == 0) {	//TEMP. DISTANCES ARE WIDE FOR TESTING... 	
 
 			$("<div>").attr('id','#start-to-spray').append("<a id="+venueId+" class='spray icon-droplet'  href='spraying.html'></a>").appendTo(venue);
 			
 			$('body').on("click",locator, function() {
 				localStorage.setItem('venueid',JSON.stringify(this.id)); //Sends individual droplet icon id to spraying page	
 				});	
-			}else if (distance >0.015&& distance<=0.050){
-
+			}else if (distance >0.035&& distance<=0.070){
 		
 			$("<div>").attr('id','#maybe-to-spray').append("<a id="+venueId+" class='maybespray icon-droplet'</a>").appendTo(venue); //blinking droplet
 			}else{ 
@@ -260,7 +258,7 @@ function bustCheck(bustId){
 			   
 			   var gangster = localStorage.gangster;
 			 
-               localStorage.points  = Number(localStorage.points) + 30;
+               localStorage.points  = Number(localStorage.points) + 10;
                localStorage.busts = Number(localStorage.busts) + 1;
 			   var endpoint3 = "http://vm0063.virtues.fi/gangsters/"+gangster+"/";
                var data =  {
