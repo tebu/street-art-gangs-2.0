@@ -231,7 +231,7 @@ function bustCheck(bustId){
               //animation
                $('.icon-surprised').addClass('animated bounce');
                $('.error .md-content button').addClass('animated fadeIn');
-               $('.md-close').on( "click", function() {
+               $('.md-close').one( "click", function() {
                window.location = "index.html";
                });
 			   
@@ -241,7 +241,7 @@ function bustCheck(bustId){
               //animation
                $('.icon-locked').addClass('animated bounce');
                $('.error .md-content button').addClass('animated fadeIn');
-               $('.md-close').on( "click", function() {
+               $('.md-close').one( "click", function() {
                window.location = "index.html";
                });
 			   
