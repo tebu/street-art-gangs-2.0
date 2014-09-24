@@ -46,15 +46,11 @@ jQuery(document).ready(function(){
         $.ajax({
           type: "GET",
           url: endpoint,
-		  //localCache   : true,
-		  //cacheTTL  : 5,
 		  async: true, 
           dataType: 'json',
           beforeSend: function (xhr) {
             xhr.setRequestHeader ("Authorization", authorization);
-			//xhr.setRequestHeader ("Cache-Control", 'max-age=200');
           }
-		  //success   : function (data){
           }).done(function( data ) {
 			
 			var venueArr = distanceSort(data);
@@ -121,7 +117,7 @@ function locationCheck(data,key,locationLat, locationLon, venueLat, venueLon){
 
 		 //Updating the slider content
 function updateVenueslider (data,arraySorted){
-
+			
 		    for (var i = data.length - 1; i >= 0; i--) { 
 
 			var j = arraySorted[i][0]; //[i][0] the venue's location in data from the sorted array... 
@@ -135,8 +131,8 @@ function updateVenueslider (data,arraySorted){
 			var distanceId = data[j].id+"Dist"; //Creates individual id for distance (venueId + "Distance") for updating that on index page
 			
 			var locator2 = "#";
-			var bustId = data[j].id+"bust"; //Creates individual id for distance (venueId + "Distance") for updating that on index page
-			locator2 += bustId;
+			var bustId = data[j].id+"bust"; //Creates individual id for bustlogo (venueId + "bust") for updating that on index page
+			locator2 += bustId;             //Creates individual id for bustlogo on click event
 			
             var gang = data[j].gang;
             if (gang != null) {
@@ -235,7 +231,7 @@ function bustCheck(bustId){
         }).done(function( data ) {   	
 			   var tagger = parseInt(data.gangsterSpraying);
 
-			   if (tagger == 0 || tagger == localStorage.gangster){   //TODO check the gangsters not bustin themselves, they are on same location
+			   if (tagger == 0 || tagger == localStorage.gangster){   //check the gangsters not bustin themselves, they are on same location
 			   mixpanel.track("BustCheck", {"BustFailure":"BustFailure"}); 
 			   $("#modal-bust-error").addClass("md-show");
               //animation
