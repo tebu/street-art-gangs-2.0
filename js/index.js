@@ -1,5 +1,5 @@
 //Load venues or redirect
-        /* document.addEventListener("deviceready", onDeviceReady, false); //backbutton override, does not work
+        /* document.addEventListener("deviceready", onDeviceReady, false); //TODO backbutton override to refresh
         function onDeviceReady() {
         document.addEventListener("backbutton", onBackKeyDown, true);
            function onBackKeyDown() 
@@ -16,13 +16,7 @@ jQuery(document).ready(function(){
 		var gangster = localStorage.gangster;
 		var locationLatitude = localStorage.latitude; //gangster location
 		var locationLongitude = localStorage.longitude;
-		
-       /* window.onunload=function(){ 
-		   if (!localStorage.venueid){
-		   window.location = "index.html";
-		   }  
-           }*/		
-		 
+				 
 		localStorage.removeItem('venueid');
 		localStorage.removeItem('checker');
 		localStorage.removeItem('gangsterowns');
@@ -33,13 +27,13 @@ jQuery(document).ready(function(){
 		//Change color background depending on player's color
          $('body').removeClass().addClass(color);
         
+		//Check GPS
+        watchGPS();
+		//$('#to-left', '#to-right').on
+		
         //Menu
         new gnMenu( document.getElementById( 'gn-menu' ) );
         
-        //Check GPS
-        watchGPS();
-		//$('#to-left', '#to-right').on
-
         //Get Venues
         var authorization=localStorage.authorization;
         var endpoint = "http://vm0063.virtues.fi/venues/";

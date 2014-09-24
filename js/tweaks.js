@@ -3,6 +3,9 @@ jQuery(document).ready(function(){
       if (!localStorage.authorization||!localStorage.color||!localStorage.gangster||!localStorage.gang) {
         window.location.replace("splash.html");
       } else {
+	  
+	    window.alert = function(){return null;}; //Javascript popups disabled, atleast for now
+		
 	    var color = localStorage.color;
 		var gangster = localStorage.gangster;
 		watchGPS();
@@ -69,5 +72,5 @@ jQuery(document).ready(function(){
         } );
 		
     }
-window.alert = function(){return null;}; //Javascript popups disabled, atleast for now
+
 });
