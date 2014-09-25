@@ -259,7 +259,7 @@ i.icon-check {
     max-width: 630px;
     min-width: 320px;
     height: auto;
-    z-index: 5000;
+    z-index: 2000;
     visibility: hidden;
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
@@ -285,7 +285,7 @@ i.icon-check {
     visibility: hidden;
     top: 0;
     left: 0;
-    z-index: 4500;
+    z-index: 1000;
     opacity: 0;
     background: #e74c3c;
     -webkit-transition: all 0.3s;

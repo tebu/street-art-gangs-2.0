@@ -154,7 +154,7 @@ function updateVenueslider (data,arraySorted){
 			$("<h1>").addClass("location").text(data[j].name).appendTo(venue);
 			
 			var distance = data[j].distance;
-			var distance2 = distance*1000;                // TEMP. Shows the distance from the venue For testing
+			var distance2 = distance*1000;                // Shows the distance from the venue 
 			var distance3 = distance2.toFixed(0); 
 			$("<p>").attr('id',distanceId).text(""+distance3+"m").appendTo(venue); //
 			
@@ -163,7 +163,7 @@ function updateVenueslider (data,arraySorted){
 		    var gangName="Green Shamans";}else{
 		    var gangName="Blue Knights";};
 			
-			if (distance <=0.035 && gang !== gangName && data[j].sprayinginitialized == 0) {	//TEMP. DISTANCES ARE WIDE FOR TESTING... 	
+			if (distance <=0.035 && gang !== gangName && data[j].sprayinginitialized == 0) {	//35 m from the location 	
 			$("<div>").attr('id','#start-to-spray').append("<a id="+venueId+" class='spray icon-droplet'  href='spraying.html'></a>").appendTo(venue);
 			
 			$('body').on("click",locator, function() {
@@ -229,7 +229,7 @@ function bustCheck(bustId){
 			   mixpanel.track("BustCheck", {"BustFailure":"BustFailure"}); 
 			   $("#modal-bust-error").addClass("md-show");
               //animation
-               $('.icon-surprised').addClass('animated bounce');
+        
                $('.error .md-content button').addClass('animated fadeIn');
                $('.md-close').one( "click", function() {
                window.location = "index.html";
@@ -239,7 +239,7 @@ function bustCheck(bustId){
 			    mixpanel.track("BustCheck", {"BustSuccess":"BustSuccess"});
 			 	$("#modal-bust-success").addClass("md-show"); //Modal for successful bust
               //animation
-               $('.icon-locked').addClass('animated bounce');
+               
                $('.error .md-content button').addClass('animated fadeIn');
                $('.md-close').one( "click", function() {
                window.location = "index.html";
