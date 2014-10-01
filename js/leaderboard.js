@@ -133,6 +133,10 @@
 			gangTags += data[i].tags_created; //points and tags for team blue
 			gangPoints += data[i].points;
 			gangName = "Blue Angels";
+			}else if (counterValueGang == 4 && data[i].color == "gray"){
+			gangTags += data[i].tags_created; //points and tags for team gray
+			gangPoints += data[i].points;
+			gangName = "Gray Grays";
 			}else if (counterValueGang == 3 && data[i].color == "green"){ 
 			gangTags += data[i].tags_created;//points and tags for team green
 			gangPoints += data[i].points;

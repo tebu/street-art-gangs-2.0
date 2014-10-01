@@ -20,6 +20,9 @@ $(document).ready(function(){
             case 'blues':
                 $('#signup').removeClass().addClass('blue')
                 break;
+			case 'grays':
+                $('#signup').removeClass().addClass('gray')
+                break;
             default:
                 $('#signup').removeClass().addClass('neutral')
         }
