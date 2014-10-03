@@ -225,7 +225,7 @@ body.blue table tr:nth-of-type(odd) td {
 body.green table tr:nth-of-type(odd) td {
    background: rgba(0,91,93,0.5);
 } 
-body.green table tr:nth-of-type(odd) td {
+body.gray table tr:nth-of-type(odd) td {
    background: rgba(75,99,99,0.5);
 } 
 /*

@@ -27,7 +27,11 @@ body.green {
     background-size: cover;
     background-attachment: fixed;
 }
-
+body.gray {
+    background: url(../img/gray.jpg) no-repeat left;
+    background-size: cover;
+	background-attachment: fixed;
+}
 body.blue .bg {
     height: 100%;
     width: 100%;
@@ -93,7 +97,12 @@ body.green .bg {
         opacity: .9;
     };
 }
-
+@-webkit-keyframes blurgray { 
+   50% {
+    background-position: 100% 100%;
+    opacity: .4;
+    }
+}
 h1 {
     font-size: 1.7em;
     line-height: 0;
@@ -126,7 +135,9 @@ body.blue .profile-tiles h3 {
 body.green .profile-tiles h3 {
     color: #00c3a1;
 }
-
+body.gray .profile-tiles h3 {
+    color: #00c3a1;
+}
 .row-two, .row-three {
     display: -moz-box;
  /* Firefox */
@@ -251,7 +262,9 @@ body.blue .profile-tiles i.info-icon {
 body.green .profile-tiles i.info-icon {
     color: #00c3a1;
 }
-
+body.gray .profile-tiles i.info-icon {
+    color: #00c3a1;
+}
 i.info-icon.icon-dude {
     font-size: 4em;
     top: 20px;
@@ -281,7 +294,9 @@ body.blue .profile-tiles i.icon-bullhorn {
 body.green .profile-tiles i.icon-bullhorn {
     color: #00c3a1;
 }
-
+body.gray .profile-tiles i.info-bullhorn {
+    color: #00c3a1;
+}
 @media all and (min-width: 1024px) {
 
     i.small {

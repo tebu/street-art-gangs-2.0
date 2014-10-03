@@ -32,7 +32,7 @@
       var table = $('#gang-board');
 	  var gangTagsPoints2 = [];    
 	  
-	   for (var i = 0; i < 3; i++) {  //1=Purple, 2=Blue and 3=Green, Apply only here n functionTags(), not equal to "gang" in gangsters database 
+	   for (var i = 0; i < 4; i++) {  //1=Purple, 2=Blue and 3=Green,4=gray Apply only here n functionTags(), not equal to "gang" in gangsters database 
 
 		var gangTagsPoints = functionTags (i, data);
 		gangTagsPoints2.push(gangTagsPoints);  

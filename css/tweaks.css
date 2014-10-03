@@ -23,6 +23,12 @@ body.green {
 	background-attachment: fixed;
 }
 
+body.gray {
+    background: url(../img/gray.jpg) no-repeat left;
+    background-size: cover;
+	background-attachment: fixed;
+}
+
 body.blue .bg {
     height: 100%;
     width: 100%;
@@ -65,6 +71,20 @@ body.green .bg {
       z-index: 1;
 }
 
+body.gray .bg {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../img/gray.jpg) no-repeat left;
+    background-position: 0px 0px;
+    opacity: 0;
+    background-size: stretch;
+   -webkit-animation: blurgreen 1 ease 2s;
+      z-index: 1;
+}
+
 @-webkit-keyframes blurblue { 
    50% {
     background-position: 100% 100%;
@@ -80,6 +100,13 @@ body.green .bg {
 }
 
 @-webkit-keyframes blurgreen { 
+   50% {
+    background-position: 100% 100%;
+    opacity: .9;
+    }
+}
+
+@-webkit-keyframes blurgray { 
    50% {
     background-position: 100% 100%;
     opacity: .9;
@@ -212,6 +239,10 @@ body.blue .button {
 
 body.green .button {
  	background: rgba(36,255,241,0.3);
+}
+
+body.gray .button {
+ 	background: rgba(72,211,177,0.3);
 }
 .button#save {
     top: -15px;

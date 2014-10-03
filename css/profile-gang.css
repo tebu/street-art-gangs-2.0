@@ -5,29 +5,28 @@ body {
     height: 100%;
 }
 
-.container {
-    height: 100%;
-    padding-top: 30px;
-    position: relative;
-    z-index: 10;
+body.purple {
+    background: url(../img/purple.jpg) no-repeat left;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
-body.purple {
-    background: url(../img/map_purple.jpg) no-repeat center;
+body.blue {
+    background: url(../img/blue.jpg) no-repeat left;
     background-size: cover;
 	background-attachment: fixed;
 }
 
-body.blue {
-    background: url(../img/map_blue.jpg) no-repeat right;
+body.green {
+    background: url(../img/green.jpg) no-repeat left;
     background-size: cover;
-    background-attachment: fixed;
+	background-attachment: fixed;
 }
 
-body.green {
-    background: url(../img/map_green.jpg) no-repeat right;
+body.gray {
+    background: url(../img/gray.jpg) no-repeat left;
     background-size: cover;
-    background-attachment: fixed;
+	background-attachment: fixed;
 }
 
 body.blue .bg {
@@ -40,9 +39,8 @@ body.blue .bg {
     background-position: 0px 0px;
     opacity: 0;
     background-size: stretch;
-   -webkit-animation: blurblue 1 ease 5s;
-   animation: blurblue 1 ease 5s;
-    z-index: 1;
+   -webkit-animation: blurblue 1 ease 2s;
+      z-index: 1;
 }
 
 body.purple .bg {
@@ -55,9 +53,8 @@ body.purple .bg {
     background-position: 0px 0px;
     opacity: 0;
     background-size: stretch;
-   -webkit-animation: blurpurple 1 ease 5s;
-    animation: blurpurple 1 ease 5s;
-     z-index: 1;
+   -webkit-animation: blurblue 1 ease 2s;
+      z-index: 1;
 }
 
 body.green .bg {
@@ -70,9 +67,22 @@ body.green .bg {
     background-position: 0px 0px;
     opacity: 0;
     background-size: stretch;
-    -webkit-animation: blurgreen 1 ease 5s;
-    animation: blurgreen 1 ease 5s;
-    z-index: 1;
+   -webkit-animation: blurgreen 1 ease 2s;
+      z-index: 1;
+}
+
+body.gray .bg {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../img/gray.jpg) no-repeat left;
+    background-position: 0px 0px;
+    opacity: 0;
+    background-size: stretch;
+   -webkit-animation: blurgreen 1 ease 2s;
+      z-index: 1;
 }
 
 @-webkit-keyframes blurblue { 
@@ -90,6 +100,12 @@ body.green .bg {
 }
 
 @-webkit-keyframes blurgreen { 
+   50% {
+    background-position: 100% 100%;
+    opacity: .4;
+    }
+}
+@-webkit-keyframes blurgray { 
    50% {
     background-position: 100% 100%;
     opacity: .4;
@@ -117,7 +133,12 @@ body.green .bg {
     }
 }
 
-
+@keyframes blurgray { 
+   50% {
+    background-position: 100% 100%;
+    opacity: .4;
+    }
+}
 
 h2.gang-name {
     font-size: 1.6em;
@@ -204,6 +225,9 @@ body.purple .row-one div:before {
 body.blue .row-one div:before {
     border-color: transparent transparent rgba(47,110,255,0.1); 
 }
+body.gray .row-one div:before {
+    border-color: transparent transparent rgba(0,247,255,0.1); 
+}
 
 .row-one div{
     width: 100%;
@@ -225,7 +249,9 @@ body.blue .row-one div{
 body.green .row-one div{
     background: rgba(0,247,255,0.1);
 }
-
+body.gray .row-one div{
+    background: rgba(0,247,255,0.1);
+}
 .row-two div {
     width: 100%;
     position: relative;
@@ -295,7 +321,9 @@ body.blue .gang-tiles i.info-icon {
 body.green .gang-tiles i.info-icon {
     color: #00c3a1;
 }
-
+body.gray .gang-tiles i.info-icon {
+    color: #00c3a1;
+}
 .icon-history {
     margin-right: 5px
 }
@@ -414,6 +442,9 @@ body.green .md-close {
 body.blue .md-close {
     background: #4A96FF;
 }
+body.gray .md-close {
+    background: #99CCB7;
+}
 
 .md-close span {
     position: relative;
@@ -458,6 +489,15 @@ body.blue .md-show.md-effect-12 ~ .md-overlay {
     background-image: -ms-radial-gradient(right top, farthest-side, #0055bd 0%, #00398f 45%, #002152 100%);
     background-image: -o-radial-gradient(right top, farthest-side, #0055bd 0%, #00398f 45%, #002152 100%);
     background-image: radial-gradient(farthest-side at right top, #0055bd 0%, #00398f 45%, #002152 100%);
+}
+body.gray .md-show.md-effect-12 ~ .md-overlay {
+    background-image: #8ae2af; /* Old browsers */
+    background-image: -moz-linear-gradient(top, #8ae2af 25%, #82998f 100%); /* FF3.6+ */
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(25%,#8ae2af), color-stop(100%,#82998f)); /* Chrome,Safari4+ */
+    background-image: -webkit-linear-gradient(top, #8ae2af 25%,#82998f 100%); /* Chrome10+,Safari5.1+ */
+    background-image: -o-linear-gradient(top, #8ae2af 25%,#82998f 100%); /* Opera 11.10+ */
+    background-image: -ms-linear-gradient(top, #8ae2af 25%,#82998f 100%); /* IE10+ */
+    background-image: linear-gradient(to bottom, #8ae2af 25%,#82998f 100%); /* W3C */
 }
 
 .md-effect-12 .md-content h3,
@@ -558,6 +598,9 @@ body.blue i.modal-icon {
 }
 
 body.green i.modal-icon {
+    color: rgba(0, 0, 0, 0.1);
+}
+body.gray i.modal-icon {
     color: rgba(0, 0, 0, 0.1);
 }
 

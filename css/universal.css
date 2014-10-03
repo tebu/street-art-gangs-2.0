@@ -180,7 +180,10 @@ body.green span.count, body.green span.count-notification {
     background: #00c3a1;
     color: #005233
 }
-
+body.grayn span.count, body.green span.count-notification {
+    background: #C9E0DC;
+    color: #5B8C79
+}
 li.tm {
     display: block;
     position: absolute;
@@ -238,7 +241,10 @@ body.green#chat .gn-menu-main, body.green#leaderboard .gn-menu-main {
    background: rgba(0,57,59,0.85);
     height: 60px
 }
-
+body.gray#chat .gn-menu-main, body.gray#leaderboard .gn-menu-main {
+   background: rgba(0,57,59,0.85);
+    height: 60px
+}
 
 .gn-menu-main ul li {
     border-bottom: 1px solid rgba(0,0,0,.2);
@@ -330,7 +336,9 @@ body.blue .gn-menu-main a:active, body.blue .gn-menu-main a:focus {
     background: #117dc0;
 }
 
-
+body.gray .gn-menu-main a:active, body.gray .gn-menu-main a:focus {
+    background: #7CA593;
+}
 /* icon-only trigger (menu item) */
 
 .gn-menu-main li.gn-trigger .icon-list2 {
@@ -425,6 +433,24 @@ background-image: -o-linear-gradient(right bottom, #04b497 0%, #007a67 100%);
 background-image: linear-gradient(to left top, #04b497 0%, #007a67 100%);
 }
 
+body.gray .gn-menu-wrapper {
+/*    background: url(../img/gray.jpg) no-repeat bottom left;
+    background-size: cover;*/
+/*background-image: -webkit-gradient(radial, 100% 0%, 0, 100% 0%, 227, color-stop(0%, #0055bd), color-stop(45%, #00398f), color-stop(100%, #002152));
+    background-image: -webkit-radial-gradient(right top, farthest-side, #0055bd 0%, #00398f 45%, #002152 100%);
+    background-image: -moz-radial-gradient(right top, farthest-side, #0055bd 0%, #00398f 45%, #002152 100%);
+    background-image: -ms-radial-gradient(right top, farthest-side, #0055bd 0%, #00398f 45%, #002152 100%);
+    background-image: -o-radial-gradient(right top, farthest-side, #0055bd 0%, #00398f 45%, #002152 100%);
+    background-image: radial-gradient(farthest-side at right top, #0055bd 0%, #00398f 45%, #002152 100%);*/
+    background: #96ddc5; /* Old browsers */
+background-image: -moz-linear-gradient(top, #96ddc5 0%, #183f3b 100%); /* FF3.6+ */
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#96ddc5), color-stop(100%,#183f3b)); /* Chrome,Safari4+ */
+background-image: -webkit-linear-gradient(top, #96ddc5 0%,#183f3b 100%); /* Chrome10+,Safari5.1+ */
+background-image: -o-linear-gradient(top, #96ddc5 0%,#183f3b 100%); /* Opera 11.10+ */
+background-image: -ms-linear-gradient(top, #96ddc5 0%,#183f3b 100%); /* IE10+ */
+background-image: linear-gradient(to bottom, #96ddc5 0%,#183f3b 100%); /* W3C */
+}
+
 .gn-scroller {
     position: absolute;
     overflow-y: scroll;
@@ -476,6 +502,9 @@ body.blue .nav-icon {
 
 body.green .nav-icon {
     color: #00c3a1;
+}
+body.gray .nav-icon {
+    color: #94CEC3;
 }
 
 .gn-icon::before {
