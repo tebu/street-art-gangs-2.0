@@ -169,7 +169,7 @@ function updateVenueslider (data,arraySorted){
 			$('body').on("click",locator, function() {
 				localStorage.setItem('venueid',JSON.stringify(this.id)); //Sends individual droplet icon id to spraying page	
 				});	
-			}else if (distance >0.235&& distance<=2.070){
+			}else if (distance >0.235&& distance<=0.070){
 		
 			$("<div>").attr('id','#maybe-to-spray').append("<a id="+venueId+" class='maybespray icon-droplet'</a>").appendTo(venue); //blinking droplet
 			}else{ 
