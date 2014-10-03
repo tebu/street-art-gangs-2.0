@@ -136,7 +136,6 @@ function registerBust() {
 			     }).fail(function( jqXHR, textStatus ) {
                  alert("Second for venue: Something went wrong with bustcheck");
                  });
-				 });
 				 }
 		
 function registerInterruption() {

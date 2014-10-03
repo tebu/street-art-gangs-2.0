@@ -23,6 +23,11 @@ body.green {
     background-size: stretch;
     background-attachment: fixed;
 }
+body.gray {
+    background: url(../img/blur_gray.jpg) no-repeat left;
+    background-size: stretch;
+    background-attachment: fixed;
+}
 
 .faq-trigger i {
     position: absolute;
@@ -77,6 +82,10 @@ body.blue .faq-trigger {
     background: rgba(0,0,0,.25);
     border-bottom: 1px solid rgba(0,0,0,.2);
 }
+body.gray .faq-trigger {
+    background: rgba(0,0,0,.25);
+    border-bottom: 1px solid rgba(0,0,0,.2);
+}
 
 .faq-content {
     display: none;
@@ -116,6 +125,9 @@ body.green .faq-content {
 body.blue .faq-content {
     background-color: rgba(0,0,0,.7);
 }
+body.gray .faq-content {
+    background-color: rgba(0,0,0,.7);
+}
 
 body.purple .highlight {
     background-color: rgba(0,0,0,.55);
@@ -126,6 +138,9 @@ body.blue .highlight {
 }
 
 body.green .highlight {
+    background-color: rgba(0,0,0,.55);
+}
+body.gray .highlight {
     background-color: rgba(0,0,0,.55);
 }
 
@@ -145,5 +160,8 @@ body.blue .faq-content .icon-droplet {
 
 body.green .faq-content .icon-droplet {
     color: #23A771;
+}
+body.gray .faq-content .icon-droplet {
+    color: #CED9D7;
 }
 
