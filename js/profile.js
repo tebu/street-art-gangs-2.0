@@ -6,9 +6,9 @@
       } else {
 		var color = localStorage.color;
 		var gangster = localStorage.gangster;
-		
+		watchGPS();
 		mixpanel.track("PageLaunch", {page:"profile", gang: color, gangster: gangster});
-
+        window.alert = function(){return null;}; //Javascript popups disabled, geo js seems to cause
         // animate.css
         $('.profile-tiles div').addClass('animated slideInLeft');
         $('.icon-mood2, p.mood').addClass('animated flipInY');

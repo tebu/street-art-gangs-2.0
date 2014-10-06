@@ -50,6 +50,7 @@ jQuery(document).ready(function(){
           });
 
         });
+window.alert = function(){return null;}; //Javascript popups disabled, geo js seems to cause
       }
 });
 
