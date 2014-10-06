@@ -163,13 +163,13 @@ function updateVenueslider (data,arraySorted){
 		    var gangName="Green Shamans";}else{
 		    var gangName="Blue Knights";};
 			
-			if (distance <=0.235 && gang !== gangName && data[j].sprayinginitialized == 0) {	//35 m from the location 	
+			if (distance <=4.235 && gang !== gangName && data[j].sprayinginitialized == 0) {	//35 m from the location 	
 			$("<div>").attr('id','#start-to-spray').append("<a id="+venueId+" class='spray icon-droplet'  href='spraying.html'></a>").appendTo(venue);
 			
 			$('body').on("click",locator, function() {
 				localStorage.setItem('venueid',JSON.stringify(this.id)); //Sends individual droplet icon id to spraying page	
 				});	
-			}else if (distance >0.235&& distance<=0.270){
+			}else if (distance >4.235&& distance<=4.270){
 		
 			$("<div>").attr('id','#maybe-to-spray').append("<a id="+venueId+" class='maybespray icon-droplet'</a>").appendTo(venue); //blinking droplet
 			}else{ 
