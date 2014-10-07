@@ -38,7 +38,7 @@
 		if(localStorage.color === 'purple'){
 		var gangKey = 0;}else if (localStorage.color === 'green'){ //0=Purple, 1=Green and 2=Blue 3=gray, Apply only here n functionTags(), not equal to "gang" in gangsters database 
 		var gangKey = 1;}else if (localStorage.color === 'blue')
-		{var gangKey = 2;}else {var gangKey = 3;}
+		{var gangKey = 2;}else {var gangKey = 3;} //gray
 		
 		var gangMemberlist = gangMembers(gangKey,data); //Separates gangs from gangsters
 		
