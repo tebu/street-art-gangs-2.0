@@ -158,10 +158,13 @@ function updateVenueslider (data,arraySorted){
 			var distance3 = distance2.toFixed(0); 
 			$("<p>").attr('id',distanceId).text(""+distance3+"m").appendTo(venue); //
 			
-			if(localStorage.gang == 4){ var gangName="Purple Knights"; //this is for not allowing the gang tag same loc twice
-		    }else if(localStorage.gang == 5){
-		    var gangName="Green Shamans";}else{
-		    var gangName="Blue Knights";};
+			if(localStorage.gang == 5){ var gangName="Purple Knights"; //this is for not allowing the gang tag same loc twice
+		    }else if(localStorage.gang == 6){
+		    var gangName="Green Shamans";
+			}else if(localStorage.gang == 7){
+		    var gangName="Blue Knights";
+			}else{var gangName="Gray Grays";
+			};
 			
 			if (distance <=4.235 && gang !== gangName && data[j].sprayinginitialized == 0) {	//35 m from the location 	
 
