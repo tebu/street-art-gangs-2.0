@@ -112,7 +112,7 @@ function locationCheck(data,key,locationLat, locationLon, venueLat, venueLon){
 		 //Updating the slider content
 function updateVenueslider (data,arraySorted){
 			
-		    for (var i = data.length - 1; i >= 0; i--) { 
+		    for (var i = 14; i >= 0; i--) { //data.length - 1 replaced with 15 -1, to make the slider lighter
 
 			var j = arraySorted[i][0]; //[i][0] the venue's location in data from the sorted array... 
 
@@ -136,9 +136,9 @@ function updateVenueslider (data,arraySorted){
             } else {
               owner.append("Untagged").appendTo(venue);
             }
-			  //place bust button only to few first venues, hard-coded: 51 venues in the database, so counter is 5 less!
+			  //place bust button only to few first venues, hard-coded for four less than there are venues on the slider!
 			
-			if (i > 46){ 
+			if (i > 11){ 
 			$("<button>").addClass("bustButton").attr('id',bustId).appendTo(venue); 
 			$('body').on("click", locator2, function() {
 			    
