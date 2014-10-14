@@ -6,21 +6,27 @@ body {
 }
 
 body.purple {
-    background: #000 url(../img/blur_purple.jpg) no-repeat center;
+    background: url(../img/purple.jpg) no-repeat left;
     background-size: cover;
     background-attachment: fixed;
 }
 
 body.blue {
-    background: #000 url(../img/blur_blue.jpg) no-repeat center;
+    background: url(../img/blue.jpg) no-repeat left;
     background-size: cover;
-    background-attachment: fixed;
+	background-attachment: fixed;
 }
 
 body.green {
-    background: #000 url(../img/blur_green.jpg) no-repeat center;
+    background: url(../img/green.jpg) no-repeat left;
     background-size: cover;
-    background-attachment: fixed;
+	background-attachment: fixed;
+}
+
+body.gray {
+    background: url(../img/gray.jpg) no-repeat left;
+    background-size: cover;
+	background-attachment: fixed;
 }
 
 body.blue .bg {
@@ -47,7 +53,7 @@ body.purple .bg {
     background-position: 0px 0px;
     opacity: 0;
     background-size: stretch;
-   -webkit-animation: blurpurple 1 ease 2s;
+   -webkit-animation: blurblue 1 ease 2s;
       z-index: 1;
 }
 
@@ -58,6 +64,20 @@ body.green .bg {
     top: 0;
     left: 0;
     background: url(../img/green.jpg) no-repeat left;
+    background-position: 0px 0px;
+    opacity: 0;
+    background-size: stretch;
+   -webkit-animation: blurgreen 1 ease 2s;
+      z-index: 1;
+}
+
+body.gray .bg {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../img/gray.jpg) no-repeat left;
     background-position: 0px 0px;
     opacity: 0;
     background-size: stretch;
@@ -271,7 +291,9 @@ body.green a#cancel {
     background: #00C18A;
 }
 
-
+body.gray a#cancel {
+    background: #00C18A;
+}
 
 
 /*Beginning of Spray Animations*/
@@ -655,6 +677,131 @@ body.green a#cancel {
   }
  }
 /*End Green*/
+
+/*For Gray*/
+.spraygray{
+	background:rgba(170,191,170,0.5);
+	border-radius:100%; 
+	position:absolute;
+	margin-left:0%; margin-top:0px;
+	top:20%; left:50%;
+	width: 0px; height: 0px;
+	animation: spraygreen 3s;
+	-webkit-animation: spraygreen 3s;
+	-moz-animation: spraygreen 3s; 
+	-webkit-animation-iteration-count: 3;
+	-moz-animation-iteration-count: 3;
+	animation-iteration-count: 3;
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+    -webkit-animation-timing-function: ease-in;
+    -moz-animation-timing-function: ease-in;
+    -ms-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    position:absolute;
+	z-index:1;
+
+}
+.spraygray:nth-child(1){
+  background:rgba(237,237,237,1);
+  animation-delay: 10025ms;
+  -webkit-animation-delay: 10025ms;
+  -moz-animation-delay: 10025ms;
+}
+.spraygray:nth-child(2){
+  -webkit-animation-delay: 10050ms;
+  animation-delay: 10050ms;
+}
+.spraygray:nth-child(3){
+  -webkit-animation-delay: 10100ms;
+  animation-delay: 10100ms;
+}
+.spraygray:nth-child(4){
+  -webkit-animation-delay: 10150ms;
+  animation-delay: 10150ms;
+}
+.spraygray:nth-child(5){
+  -webkit-animation-delay: 10200ms;
+  animation-delay: 10200ms;
+}
+.spraygray:nth-child(6){
+  -webkit-animation-delay: 10250ms;
+  animation-delay: 10250ms;
+}
+.spraygray:nth-child(7){
+  -webkit-animation-delay: 10300ms;
+  animation-delay: 10300ms;
+}
+.spraygray:nth-child(8){
+  -webkit-animation-delay: 10350ms;
+  animation-delay: 10350ms;
+}
+.spraygray:nth-child(9){
+  -webkit-animation-delay: 10400ms;
+  animation-delay: 10400ms;
+}
+.spraygray:nth-child(10){
+  -webkit-animation-delay: 10450ms;
+  animation-delay: 10450ms;
+}
+@keyframes spraygray{
+  0%{
+    transform-origin:0px; 
+  }
+  50%{
+    background:rgba(139,186,148,0.5);
+    transform-origin:3px;
+    transform:rotate(1080deg); 
+	width: 70px; height: 70px; 
+  }
+  100%{
+    background:rgba(34,35,34,0.2);
+    transform-origin:5px; 
+    width: 100px; height: 100px;  
+  }
+}
+@-webkit-keyframes spraygray{
+  0%{
+	transform-origin:0px;
+    -webkit-transform-origin:0px; 
+  }
+  50%{
+    background:rgba(139,186,148,0.5);
+    transform-origin:3px;
+	-webkit-transform-origin: 3px;
+    transform:rotate(1080deg); 
+	-webkit-transform:rotate(1080deg);
+	width: 70px; height: 70px; 
+  }
+  100%{
+    background:rgba(34,35,34,0.2);
+    transform-origin:5px; 
+	-webkit-transform-origin: 3px;
+    width: 100px; height: 100px;  
+  }
+  }
+ @-moz-keyframes spraygray {
+ 0%{
+	transform-origin:0px;
+    -moz-transform-origin:0px; 
+  }
+  50%{
+    background:rgba(139,186,148,0.5);
+    transform-origin:3px;
+	-moz-transform-origin: 3px;
+    transform:rotate(1080deg); 
+	-moz-transform:rotate(1080deg);
+	width: 70px; height: 70px; 
+  }
+  100%{
+    background:rgba(34,35,34,0.2);
+    transform-origin:5px; 
+	-moz-transform-origin: 3px;
+    width: 100px; height: 100px;  
+  }
+ }
+/*End Gray*/
+
 /*End of Spray Animations*/
 
 .busted {

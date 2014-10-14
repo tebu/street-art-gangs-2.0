@@ -73,7 +73,15 @@ body#signup.green {
     background-image: -o-radial-gradient(right top, farthest-side, #32eff5 0%, #009699 45%, #00706c 100%);
     background-image: radial-gradient(farthest-side at right top, #32eff5 0%, #009699 45%, #00706c 100%);
 }
-
+body#signup.gray {
+    background: #8ae2af; /* Old browsers */
+    background: -moz-linear-gradient(top, #8ae2af 25%, #82998f 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(25%,#8ae2af), color-stop(100%,#82998f)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #8ae2af 25%,#82998f 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #8ae2af 25%,#82998f 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #8ae2af 25%,#82998f 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #8ae2af 25%,#82998f 100%); /* W3C */
+}
 body#signup .header {
     margin: 2em 0;
     text-align: center;
@@ -168,7 +176,10 @@ body.blue input {
     color: #0d73f1;
     background: rgba(0,0,0,.2);
 }
-
+body.gray input {
+    color: #91C1B4;
+    background: rgba(0,0,0,.2);
+}
 input:nth-child(2) {
     -webkit-animation-delay: .1s;
     animation-delay: .1s;
@@ -205,6 +216,10 @@ body.green ::-webkit-input-placeholder {
 }
 
 body.blue ::-webkit-input-placeholder {
+    color: #fff;
+    opacity: 1;
+}
+body.gray ::-webkit-input-placeholder {
     color: #fff;
     opacity: 1;
 }
@@ -248,6 +263,10 @@ body.blue select {
     color: #0d73f1;
     background: rgba(0,0,0,.2);
 }
+body.gray select {
+    color: #91C1B4;
+    background: rgba(0,0,0,.2);
+}
 
 option {
     background: #000;
@@ -286,6 +305,10 @@ body.blue .btn {
     color: #0d73f1;
 }
 
+body.gray .btn {
+    color: #91C1B4;
+}
+
 .btn:active {
     background: rgba(0,0,0,.5);
 }
@@ -319,7 +342,7 @@ i.icon-droplet {
 }
 
 .tile {
-    height: 30%;
+    height: 25%;
     background: rgba(0,0,0,.7);
     padding: 10px 10px 10px 60px;
     overflow: hidden;
@@ -330,7 +353,7 @@ i.icon-droplet {
 
 .tile:nth-child(1) {
     padding-top: 40px;
-    height: 40%;
+    height: 28%;
 }
 
 .tile p {
@@ -362,6 +385,10 @@ i.icon-droplet {
     color: #58FFB4;
 }
 
+.tile.gray-grays {
+    color: #F4F7F6;
+}
+
 .tile.purple-knights {
     border-left: 3px solid #C06CFF;
 }
@@ -373,7 +400,9 @@ i.icon-droplet {
 .tile.green-shamans {
     border-left: 3px solid #58FFB4;
 }
-
+.tile.gray-grays {
+    border-left: 3px solid #F4F7F6;
+}
 .tile.purple-knights i.icon-droplet {
     color: #C06CFF;
     top: 70px;
@@ -385,6 +414,9 @@ i.icon-droplet {
 
 .tile.green-shamans i.icon-droplet {
     color: #58FFB4;
+}
+.tile.gray-grays i.icon-droplet {
+    color: #F4F7F6;
 }
 
 small {

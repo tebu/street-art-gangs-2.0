@@ -32,7 +32,7 @@
       var table = $('#gang-board');
 	  var gangTagsPoints2 = [];    
 	  
-	   for (var i = 0; i < 3; i++) {  //1=Purple, 2=Blue and 3=Green, Apply only here n functionTags(), not equal to "gang" in gangsters database 
+	   for (var i = 0; i < 4; i++) {  //1=Purple, 2=Blue and 3=Green,4=gray Apply only here n functionTags(), not equal to "gang" in gangsters database 
 
 		var gangTagsPoints = functionTags (i, data);
 		gangTagsPoints2.push(gangTagsPoints);  
@@ -133,6 +133,10 @@
 			gangTags += data[i].tags_created; //points and tags for team blue
 			gangPoints += data[i].points;
 			gangName = "Blue Angels";
+			}else if (counterValueGang == 4 && data[i].color == "gray"){
+			gangTags += data[i].tags_created; //points and tags for team gray
+			gangPoints += data[i].points;
+			gangName = "Gray Grays";
 			}else if (counterValueGang == 3 && data[i].color == "green"){ 
 			gangTags += data[i].tags_created;//points and tags for team green
 			gangPoints += data[i].points;

@@ -21,7 +21,7 @@ jQuery(document).ready(function(){
 		localStorage.removeItem('checker');
 		localStorage.removeItem('gangsterowns');
 		
-		mixpanel.register({gang: color, gangster: gangster, latitude: locationLatitude, longitude: locationLongitude}); //Track for the droplet click is in index.html
+		mixpanel.register({gang: color, gangster: gangster}); //Track for the droplet click is in index.html
 		mixpanel.track("PageLaunch", {page:"index"});
 	    mixpanel.track_links("BustCheck", {".bustButton": "bustInitiated"});
 		//Change color background depending on player's color
@@ -136,9 +136,9 @@ function updateVenueslider (data,arraySorted){
             } else {
               owner.append("Untagged").appendTo(venue);
             }
-			  //place bust button only to few first venues, hard-coded: 50 venues in the database, so counter is 5 less!
+			  //place bust button only to few first venues, hard-coded: 51 venues in the database, so counter is 5 less!
 			
-			if (i > 45){ 
+			if (i > 46){ 
 			$("<button>").addClass("bustButton").attr('id',bustId).appendTo(venue); 
 			$('body').on("click", locator2, function() {
 			    
@@ -164,12 +164,15 @@ function updateVenueslider (data,arraySorted){
 		    var gangName="Blue Knights";};
 			
 			if (distance <=4.235 && gang !== gangName && data[j].sprayinginitialized == 0) {	//35 m from the location 	
+
 			$("<div>").attr('id','#start-to-spray').append("<a id="+venueId+" class='spray icon-droplet'  href='spraying.html'></a>").appendTo(venue);
 			
 			$('body').on("click",locator, function() {
 				localStorage.setItem('venueid',JSON.stringify(this.id)); //Sends individual droplet icon id to spraying page	
 				});	
+
 			}else if (distance >4.235&& distance<=4.270){
+
 		
 			$("<div>").attr('id','#maybe-to-spray').append("<a id="+venueId+" class='maybespray icon-droplet'</a>").appendTo(venue); //blinking droplet
 			}else{ 

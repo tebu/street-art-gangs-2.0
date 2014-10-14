@@ -30,6 +30,12 @@ body.green {
 	background-attachment: fixed;
 }
 
+body.gray {
+    background: url(../img/map_gray.jpg) no-repeat top;
+    background-size: cover;
+	background-attachment: fixed;
+}
+
 body.blue .bg {
     height: 100%;
     width: 100%;
@@ -71,6 +77,19 @@ body.green .bg {
    -webkit-animation: blurgreen 1 ease 5s;
       z-index: 1;
 }
+body.gray .bg {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../img/gray.jpg) no-repeat left;
+    background-position: 0px 0px;
+    opacity: 0;
+    background-size: stretch;
+   -webkit-animation: blurblue 1 ease 5s;
+      z-index: 1;
+}
 
 @-webkit-keyframes blurblue { 
    50% {
@@ -87,6 +106,12 @@ body.green .bg {
 }
 
 @-webkit-keyframes blurgreen { 
+   50% {
+    background-position: 100% 100%;
+    opacity: .9;
+    }
+}
+@-webkit-keyframes blurgray { 
    50% {
     background-position: 100% 100%;
     opacity: .9;
@@ -174,6 +199,10 @@ body.green table tr td {
    background: rgba(0,91,93,0.3);
    border-bottom: 1px solid rgba(0,181,166,0.2);
 }
+body.gray table tr td {
+   background: rgba(75,99,99,0.3);
+   border-bottom: 1px solid rgba(0,181,166,0.2);
+}
 
 table td:nth-child(1) {
     padding-left: 28px;
@@ -195,6 +224,9 @@ body.blue table tr:nth-of-type(odd) td {
 
 body.green table tr:nth-of-type(odd) td {
    background: rgba(0,91,93,0.5);
+} 
+body.gray table tr:nth-of-type(odd) td {
+   background: rgba(75,99,99,0.5);
 } 
 /*
 table tr td:first-child {
