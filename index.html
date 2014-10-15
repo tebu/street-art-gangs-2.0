@@ -44,20 +44,7 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
 <div class="bg2">
   <!-- Modal for network error -->
 
-  <div class="md-modal modal-network-error md-effect-12" id="modal-network-error">
-    <div class="md-content">
-      <div>
-        <div id="network-error">
-           <div class="spinner">
-              <div class="double-bounce1"></div>
-              <div class="double-bounce2"></div>
-            </div>
-            <p><small>Connection missing</small></p>
-        </div>
-      </div>
-    </div>
-    <button class="md-close">Try again <span class="icon-refresh"></span></button>
-  </div>
+
 
   <!-- / Modal for network error -->
 
@@ -112,8 +99,9 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
     </div><!-- /container -->
 
 <!-- This modal window should appear after clicking BUST-button, if cannot bust -->
-
-	<div class="md-modal error md-effect-12" id="modal-bust-error">
+    <div class="md-overlay"></div>
+	
+	<div class="md-modal" id="modal-bust-error">
 		<div class="md-content">
 			<div>
 			<!-- <button class="md-close"><i class="icon-arrow-left-big"></i></button> -->
@@ -126,7 +114,7 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
 	
 <!-- This modal window should appear after clicking BUST-button, if Bust is successful -->
 
-	<div class="md-modal error md-effect-12" id="modal-bust-success">
+	<div class="md-modal" id="modal-bust-success">
 		<div class="md-content">
 			<div>
 			<!-- <button class="md-close"><i class="icon-arrow-left-big"></i></button> -->
@@ -140,7 +128,7 @@ mixpanel.init("21b5b03d56c32459d17071cb2073ffce");</script><!-- end Mixpanel -->
 	</div>
 
 	
-    <div class="md-overlay"></div>
+
 
 	<!-- Scripts -->
     <script src='js/jquery-1.10.2.min.js'></script>

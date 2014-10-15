@@ -403,13 +403,22 @@ p.owner span {
     font-size: 2em !important;
 }
 
+
+.icon-locked {
+    position: relative;
+    display: inline-block;
+    margin-top: 70px;
+    font-size: 3em;
+}
+
 .md-modal {
     position: fixed;
     top: 50%;
     left: 50%;
-    width: 100%;
+    width: 50%;
+    max-width: 630px;
     min-width: 320px;
-    height: 100%;
+    height: auto;
     z-index: 7000;
     visibility: hidden;
     -webkit-backface-visibility: hidden;
@@ -418,19 +427,16 @@ p.owner span {
     -moz-transform: translateX(-50%) translateY(-50%);
     -ms-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
-    overflow-y: scroll;
-    overflow-x: hidden;
+}
+
+.md-modal p {
+    font-size: 1.6em;
 }
 
 .md-show {
     visibility: visible;
 }
-.icon-locked {
-    position: relative;
-    display: inline-block;
-    margin-top: 70px;
-    font-size: 3em;
-}
+
 .md-overlay {
     position: fixed;
     width: 100%;
@@ -438,8 +444,9 @@ p.owner span {
     visibility: hidden;
     top: 0;
     left: 0;
-    z-index: 6500;
+    z-index: 6000;
     opacity: 0;
+    background: #e74c3c;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s;
@@ -447,18 +454,36 @@ p.owner span {
 
 .md-show ~ .md-overlay {
     opacity: 1;
-	filter:alpha(opacity=100);
-    -moz-opacity:1.0;
+    visibility: visible;
+}
+
+.md-overlay2 {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+    z-index: 4500;
+    opacity: 0;
+    background: #e74c3c;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.md-show ~ .md-overlay2 {
+    opacity: 1;
     visibility: visible;
 }
 
 /* Content styles */
 .md-content {
     color: #fff;
+    background: #e74c3c;
     position: relative;
     border-radius: 3px;
     margin: 0 auto;
-    top: 40%;
     text-align: center;
 }
 
@@ -467,72 +492,46 @@ p.owner span {
     padding: 0.4em;
     text-align: center;
     font-size: 2.4em;
+    font-weight: 400;
     opacity: 0.8;
     background: rgba(0,0,0,0.1);
     border-radius: 3px 3px 0 0;
 }
 
-.md-close {
+.md-content > div {
+    padding: 15px 40px 30px;
+    margin: 0;
+    font-weight: 400;
+    font-size: 1.15em;
+}
+
+.md-content > div p {
+    margin: 0;
+    padding: 10px 0;
+}
+
+.md-content > div ul {
+    margin: 0;
+    padding: 0 0 30px;
+}
+
+.md-content > div ul li {
+    padding: 5px 0;
+}
+
+.md-content button {
+    background: #C0392B;
     border: none;
-    background: #fd7121;
+    border-radius: 2px;
     color: #FFFFFF;
     cursor: pointer;
     display: block;
     font-size: 0.8em;
-    font-family: 'signika_negativebold';
-    left: 0;
-    padding: .5em 1.4em;
-    position: relative;
+    margin: 20px auto;
+    padding: 0.6em 1.2em;
     text-align: center;
-    text-transform: uppercase;
-    top: 50px;
-    width: 40%;
-    margin: 0 auto;
-    border-radius: 2px;
 }
 
-.md-close span {
-    position: relative;
-    top: 1px;
-    left: 0;
-}
-
-.md-effect-12 .md-content {
-    -webkit-transform: scale(0.8);
-    -moz-transform: scale(0.8);
-    -ms-transform: scale(0.8);
-    transform: scale(0.8);
-    opacity: 0;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    transition: all 0.3s;
-}
-
-.md-show.md-effect-12 ~ .md-overlay {
-    background-image: -webkit-gradient(linear, center bottom, center top, color-stop(0%, #FF502D), color-stop(25%, #EB5600), color-stop(83%, #D62B00));
-    background-image: -webkit-linear-gradient(bottom, #FF502D 0%, #EB5600 25%, #D62B00 83%);
-    background-image: -moz-linear-gradient(bottom, #FF502D 0%, #EB5600 25%, #D62B00 83%);
-    background-image: -ms-linear-gradient(bottom, #FF502D 0%, #EB5600 25%, #D62B00 83%);
-    background-image: -o-linear-gradient(bottom, #FF502D 0%, #EB5600 25%, #D62B00 83%);
-    background-image: linear-gradient(to top, #FF502D 0%, #EB5600 25%, #D62B00 83%);
-}
-
-.md-effect-12 .md-content h3,
-.md-effect-12 .md-content {
-    background: transparent;
-}
-
-.md-show.md-effect-12 .md-content {
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    transform: scale(1);
-    opacity: 1;
-}
-.error .md-content > div p {
-    margin: 0;
-    padding: 10px 0;
-}
 #network-error p {
     text-align: center;
     font-size: 1.2em;
