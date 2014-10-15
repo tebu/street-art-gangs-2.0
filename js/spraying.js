@@ -16,7 +16,7 @@ jQuery(document).ready(function(){
 		$('#cancel').on("click", function() { //sets checker to two oppose to 1 = busted or 0 = successful spray... this is for subspace
 			    var checker = 2;
 				localStorage.setItem('checker',checker); 
-				mixpanel.track("SprayingInterrupted", {gang: color, gangster: gangster, venue: venue});
+				mixpanel.track("SprayingInterruptionAttempt", {gang: color, gangster: gangster, venue: venue});
 				});	
 				
 	    getGangster(); 

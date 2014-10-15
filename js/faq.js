@@ -5,8 +5,13 @@ jQuery(document).ready(function(){
        } else {
 	   	var color = localStorage.color;
 		var gangster = localStorage.gangster;
+		watchGPS();
+		var locationLatitude = localStorage.latitude; //gangster location
+		var locationLongitude = localStorage.longitude;
+		var loc = "" + locationLatitude + locationLongitude;
+		window.alert = function(){return null;}; //Javascript popups disabled, geo js seems to cause
 		
-		mixpanel.register({gang: color, gangster: gangster, latitude: localStorage.latitude, longitude: localStorage.longitude});
+		mixpanel.register({gang: color, gangster: gangster, loc: loc});
 		mixpanel.track("PageLaunch", {page:"faq"});
         //Change color background depending on player's color
         
@@ -36,7 +41,8 @@ jQuery(document).ready(function(){
               $(this).addClass('highlight');
 			  var identLink = "#"; 
 			  identLink += this.id;
-			  mixpanel.track_links("ClicksOnHelp", {".faq-trigger": identLink});
+			  mixpanel.track("ClicksOnHelp", {"helpTrigger": ""+identLink+""});
+			  mixpanel.track("PageLaunch", {page:"gangprofile"});
             }
           });
 

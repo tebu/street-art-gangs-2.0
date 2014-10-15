@@ -10,7 +10,10 @@ jQuery(document).ready(function(){
 	    var color = localStorage.color;
 		var gangster = localStorage.gangster;
 		watchGPS();
-		mixpanel.register({gang: color, gangster: gangster, latitude: localStorage.latitude, longitude: localStorage.longitude});
+		var locationLatitude = localStorage.latitude; //gangster location
+		var locationLongitude = localStorage.longitude;
+		var loc = "" + locationLatitude + locationLongitude;
+		mixpanel.register({gang: color, gangster: gangster, loc: loc});
 		mixpanel.track("PageLaunch", {page:"chat"});
         //Change color background depending on player's color
         

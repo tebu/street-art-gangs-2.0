@@ -9,7 +9,10 @@ jQuery(document).ready(function(){
 	  
 	  	var color = localStorage.color;
 		var gangster = localStorage.gangster;
-		mixpanel.track("PageLaunch", {page:"subspace", gang: color, gangster: gangster}); 
+		var venue2 = JSON.parse(localStorage.getItem('venueid')); 
+		var venue = parseInt(venue2); 
+		mixpanel.register({gang: color, gangster: gangster, venue: venue}); 
+		mixpanel.track("PageLaunch", {page:"subspace"}); 
 		
 		//first check if the gangster is busted or interrupted
 		
@@ -109,14 +112,22 @@ function registerBust() {
 			   
                var venue2 = JSON.parse(localStorage.getItem('venueid')); 
 		       var venue = parseInt(venue2);
-               var gangsterowns2 = JSON.parse(localStorage.getItem('gangsterowns')); 
-		       var gangsterowns = parseInt(gangsterowns2);
-		       var endpoint = "http://vm0063.virtues.fi/venues/"+venue+"/";
-               var data =  {
-				sprayinginitialized:0,
+			   var gangsterowns2 = JSON.parse(localStorage.getItem('gangsterowns'));
+               var gangsterowns = parseInt(gangsterowns2);
+		
+		        if (gangsterowns2 == null || gangsterowns2 == 'undefined' || gangsterowns2 == NaN){ //check if the venue ownership is not yet established
+		        var data = {
+		        sprayinginitialized:0,
 				gangsterSpraying: 0,
-				gangster: gangsterowns 
-               }
+				gangster: null
+				}}else{
+			    var data = {
+			    sprayinginitialized:0,
+				gangsterSpraying: 0,
+				gangster: gangsterowns
+			    }}	
+
+		      var endpoint = "http://vm0063.virtues.fi/venues/"+venue+"/";
 			   
               $.ajax({
                 type: "PATCH",
@@ -129,7 +140,7 @@ function registerBust() {
                 }
                }).done(function( data ){
 			   
-			   mixpanel.track("GotBusted", {aika: now, gang: color, gangster: gangster, venue: venue});
+			   mixpanel.track("GotBusted",{});
 			   $("#allgood-text").append("<p id='progress'>Oh no, you got busted and loosed 30 p!</p>").delay(500).fadeOut(2000);
                  },2000);
 				 
@@ -148,15 +159,24 @@ function registerInterruption() {
         var venue2 = JSON.parse(localStorage.getItem('venueid')); 
 		var venue = parseInt(venue2);
 		var now = moment().format();
-        var gangsterowns2 = JSON.parse(localStorage.getItem('gangsterowns')); 
-		var gangsterowns = parseInt(gangsterowns2);
-		var endpoint = "http://vm0063.virtues.fi/venues/"+venue+"/";
-        var data =  {
-				sprayinginitialized:0,
+        var gangsterowns2 = JSON.parse(localStorage.getItem('gangsterowns'));
+        var gangsterowns = parseInt(gangsterowns2);
+		
+		if (gangsterowns2 == null || gangsterowns2 == 'undefined' || gangsterowns2 == NaN){
+		var data = {
+		        sprayinginitialized:0,
 				gangsterSpraying: 0,
-				gangster: gangsterowns 
-            }
-		mixpanel.track("SprayingInterrupted", {aika: now, gang: color, gangster: gangster, venue: venue});
+				gangster: null
+				}}else{
+			    var data = {
+			    sprayinginitialized:0,
+				gangsterSpraying: 0,
+				gangster: gangsterowns
+			    }}
+
+		var endpoint = "http://vm0063.virtues.fi/venues/"+venue+"/";
+		
+		mixpanel.track("SprayingInterrupted", {aika: now});
               $.ajax({
                 type: "PATCH",
                 url: endpoint,
@@ -186,7 +206,7 @@ function registerInterruption() {
                }).done(function( data ) {
                
 			setTimeout(function (){
-				$("#allgood-text").append("<br><br><br><p id='progress'>Sometimes it is wise to give up</p>").delay(500).fadeOut(2000);
+				$("#allgood-text").append("<p id='progress'>Sometimes it is wise to give up</p>").delay(500).fadeOut(2000);
                  },2000);
 				 
 				}).fail(function( jqXHR, textStatus ) {

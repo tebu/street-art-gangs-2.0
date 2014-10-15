@@ -1,11 +1,4 @@
-//Load venues or redirect
-        /* document.addEventListener("deviceready", onDeviceReady, false); //TODO backbutton override to refresh
-        function onDeviceReady() {
-        document.addEventListener("backbutton", onBackKeyDown, true);
-           function onBackKeyDown() 
-          {
-          window.location = "index.html";
-            }}*/ 
+
 			
 jQuery(document).ready(function(){
 
@@ -16,12 +9,12 @@ jQuery(document).ready(function(){
 		var gangster = localStorage.gangster;
 		var locationLatitude = localStorage.latitude; //gangster location
 		var locationLongitude = localStorage.longitude;
-				 
+		var loc = "" + locationLatitude + locationLongitude;	 
 		localStorage.removeItem('venueid');
 		localStorage.removeItem('checker');
 		localStorage.removeItem('gangsterowns');
-		
-		mixpanel.register({gang: color, gangster: gangster}); //Track for the droplet click is in index.html
+		localStorage.removeItem('wassit');
+		mixpanel.register({gang: color, gangster: gangster, loc: loc}); //Track for the droplet click is in index.html
 		mixpanel.track("PageLaunch", {page:"index"});
 	    mixpanel.track_links("BustCheck", {".bustButton": "bustInitiated"});
 		//Change color background depending on player's color
@@ -166,7 +159,7 @@ function updateVenueslider (data,arraySorted){
 			}else{var gangName="Gray Grays";
 			};
 			
-			if (distance <=4.235 && gang !== gangName && data[j].sprayinginitialized == 0) {	//35 m from the location 	
+			if (distance <=3.035 && gang !== gangName && data[j].sprayinginitialized == 0) {	//35 m from the location 	
 
 			$("<div>").attr('id','#start-to-spray').append("<a id="+venueId+" class='spray icon-droplet'  href='spraying.html'></a>").appendTo(venue);
 			
@@ -174,7 +167,7 @@ function updateVenueslider (data,arraySorted){
 				localStorage.setItem('venueid',JSON.stringify(this.id)); //Sends individual droplet icon id to spraying page	
 				});	
 
-			}else if (distance >4.235&& distance<=4.270){
+			}else if (distance >3.035&& distance<=3.070){
 
 		
 			$("<div>").attr('id','#maybe-to-spray').append("<a id="+venueId+" class='maybespray icon-droplet'</a>").appendTo(venue); //blinking droplet

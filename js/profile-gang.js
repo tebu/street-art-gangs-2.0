@@ -11,8 +11,13 @@
        } else {
 	   	var color = localStorage.color;
 		var gangster = localStorage.gangster;
+		watchGPS();
+		var locationLatitude = localStorage.latitude; //gangster location
+		var locationLongitude = localStorage.longitude;
+		var loc = "" + locationLatitude + locationLongitude;
+		window.alert = function(){return null;}; //Javascript popups disabled, geo js seems to cause
 		
-		mixpanel.register({gang: color, gangster: gangster}); 
+		mixpanel.register({gang: color, gangster: gangster, loc: loc}); 
 		mixpanel.track("PageLaunch", {page:"gangprofile"});
         mixpanel.track_links("#member-page", "GangMembersModal");
 		mixpanel.track_links("#point-page", "GangPointsModal");

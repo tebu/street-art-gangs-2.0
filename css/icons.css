@@ -110,6 +110,9 @@
 .icon-other-places:before {
 	content: "\e002";
 }
+.icon-graduation:before {
+	content: "\e002";
+}
 .icon-paint:before {
 	content: "\e004";
 }
@@ -137,12 +140,14 @@
 .icon-gang:before {
 	content: "\e00c";
 }
-.icon-education:before {
-	content: "\e00d";
+.icon-graduation:before {
+	content: "\e002";
 }
+
 .icon-sun:before {
 	content: "\e00e";
 }
+
 .icon-trash:before {
 	content: "\e00f";
 }
