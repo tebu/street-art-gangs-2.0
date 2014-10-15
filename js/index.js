@@ -159,7 +159,7 @@ function updateVenueslider (data,arraySorted){
 			}else{var gangName="Gray Grays";
 			};
 			
-			if (distance <=3.035 && gang !== gangName && data[j].sprayinginitialized == 0) {	//35 m from the location 	
+			if (distance <=0.035 && gang !== gangName && data[j].sprayinginitialized == 0) {	//35 m from the location 	
 
 			$("<div>").attr('id','#start-to-spray').append("<a id="+venueId+" class='spray icon-droplet'  href='spraying.html'></a>").appendTo(venue);
 			
@@ -167,7 +167,7 @@ function updateVenueslider (data,arraySorted){
 				localStorage.setItem('venueid',JSON.stringify(this.id)); //Sends individual droplet icon id to spraying page	
 				});	
 
-			}else if (distance >3.035&& distance<=3.070){
+			}else if (distance >0.035&& distance<=0.070){
 
 		
 			$("<div>").attr('id','#maybe-to-spray').append("<a id="+venueId+" class='maybespray icon-droplet'</a>").appendTo(venue); //blinking droplet
