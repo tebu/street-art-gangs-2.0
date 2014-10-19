@@ -1,14 +1,10 @@
 //Animate.css
  $(document).ready(function(){
 
-  if (!localStorage.authorization||!localStorage.color||!localStorage.gangster||!localStorage.gang){
-    window.location.replace("splash.html");
-  } else {
 	var color = localStorage.color;
 	var gangster = localStorage.gangster;
 		
-	mixpanel.track("PageLaunch", {page:"leaderboard", gang: color, gangster: gangster});
-    //Menu
+	
     new gnMenu( document.getElementById( 'gn-menu' ) );
 
     //Change color background depending on player's color
@@ -116,7 +112,7 @@
       $('table').addClass('animated slideInLeft');
 
 
-   }
+  
    
    
 	function functionTags(counterValueGang, data){ //Gang tags,points and name by gangsters combined
