@@ -105,7 +105,7 @@ function locationCheck(data,key,locationLat, locationLon, venueLat, venueLon){
 		 //Updating the slider content
 function updateVenueslider (data,arraySorted){
 			
-		    for (var i = 0; i <= 15; i++) { //data.length - 1 replaced with 15 -1, to make the slider lighter
+		    for (var i = 14; i >= 0; i--) { //data.length - 1 replaced with 15 -1, to make the slider lighter
 
 			var j = arraySorted[i][0]; //[i][0] the venue's location in data from the sorted array... 
 
@@ -131,7 +131,7 @@ function updateVenueslider (data,arraySorted){
             }
 			  //place bust button only to few first venues, hard-coded for four less than there are venues on the slider!
 			
-			if (i < 3){ 
+			if (i > 11){ 
 			$("<button>").addClass("bustButton").attr('id',bustId).appendTo(venue); 
 			$('body').on("click", locator2, function() {
 			    
@@ -201,7 +201,7 @@ function distanceSort (data){
 			venueArr.push(venueSort);
 			}
 			venueArr.sort(function(a,b) { //Sorts order of the venues by distance
-		    return a[1] - b[1];
+		    return b[1] - a[1];
 		    }); 
             return venueArr;			
 			
