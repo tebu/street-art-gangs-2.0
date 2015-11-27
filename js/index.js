@@ -173,14 +173,22 @@ function updateVenueslider (data,arraySorted){
 		    var gangName="Green Shamans";}else{
 		    var gangName="Blue Knights";};
 			
+<<<<<<< HEAD
 			if (distance <=10.035 && gang !== gangName && data[j].sprayinginitialized == 0) {	//TEMP. DISTANCES ARE WIDE FOR TESTING... 	
+=======
+			if (distance <=0.035 && gang !== gangName && data[j].sprayinginitialized == 0) {	//TEMP. DISTANCES ARE WIDE FOR TESTING... 	
+>>>>>>> parent of 8e37725... area for demovid
 
 			$("<div>").attr('id','#start-to-spray').append("<a id="+venueId+" class='spray icon-droplet'  href='spraying.html'></a>").appendTo(venue);
 			
 			$('body').on("click",locator, function() {
 				localStorage.setItem('venueid',JSON.stringify(this.id)); //Sends individual droplet icon id to spraying page	
 				});	
+<<<<<<< HEAD
 			}else if (distance >10.035&& distance<=10.070){
+=======
+			}else if (distance >0.035&& distance<=0.070){
+>>>>>>> parent of 8e37725... area for demovid
 		
 			$("<div>").attr('id','#maybe-to-spray').append("<a id="+venueId+" class='maybespray icon-droplet'</a>").appendTo(venue); //blinking droplet
 			}else{ 
